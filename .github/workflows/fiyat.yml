@@ -1,0 +1,95 @@
+name: BIST kapanis fiyatlari
+
+on:
+  schedule:
+    - cron: "30 15 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  guncelle:
+    runs-on: ubuntu-latest
+    env:
+      HISSELER: "THYAO,PGSUS"
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fiyatlari al
+        run: |
+          python3 - <<'PY'
+          import json, os, sys, datetime, urllib.request
+
+          syms = [s.strip().upper() for s in os.environ["HISSELER"].split(",") if s.strip()]
+          now = datetime.datetime.utcnow()
+          ist = now + datetime.timedelta(hours=3)
+          bugun = ist.strftime("%Y-%m-%d")
+          kapanis_oldu = (ist.hour, ist.minute) >= (18, 20)
+
+          def al(sym):
+              url = "https://query1.finance.yahoo.com/v8/finance/chart/%s?range=1mo&interval=1d" % sym
+              req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+              j = json.load(urllib.request.urlopen(req, timeout=30))
+              r = j["chart"]["result"][0]
+              off = r["meta"].get("gmtoffset", 10800)
+              out = {}
+              for t, c in zip(r["timestamp"], r["indicators"]["quote"][0]["close"]):
+                  if c and c > 0:
+                      d = datetime.datetime.utcfromtimestamp(t + off).strftime("%Y-%m-%d")
+                      out[d] = round(c, 2)
+              return out
+
+          sonuc, hata = {}, []
+          for s in syms:
+              try:
+                  sonuc[s] = al(s + ".IS")
+              except Exception as e:
+                  hata.append(s)
+                  print("HATA", s, e)
+          try:
+              bist = al("XU100.IS")
+          except Exception as e:
+              bist = {}
+              hata.append("BIST100")
+              print("HATA BIST100", e)
+
+          try:
+              veri = json.load(open("prices.json"))
+          except Exception:
+              veri = {}
+          gunler = veri.setdefault("days", {})
+
+          tarihler = set(bist)
+          for s in sonuc:
+              tarihler |= set(sonuc[s])
+          eklenen = 0
+          for d in sorted(tarihler):
+              if d == bugun and not kapanis_oldu:
+                  continue
+              g = gunler.setdefault(d, {"p": {}})
+              g.setdefault("p", {})
+              for s in sonuc:
+                  if d in sonuc[s]:
+                      g["p"][s] = sonuc[s][d]
+                      eklenen += 1
+              if d in bist:
+                  g["b"] = bist[d]
+                  eklenen += 1
+
+          if not eklenen:
+              print("Hic fiyat alinamadi")
+              sys.exit(1)
+          veri["updated"] = bugun
+          veri["updatedAt"] = now.strftime("%Y-%m-%dT%H:%M:%SZ")
+          json.dump(veri, open("prices.json", "w"), indent=1, sort_keys=True)
+          print("Tamam:", eklenen, "fiyat yazildi. Hata:", hata)
+          PY
+
+      - name: Kaydet
+        run: |
+          git config user.name "fiyat-bot"
+          git config user.email "fiyat-bot@users.noreply.github.com"
+          git add prices.json
+          git diff --cached --quiet || git commit -m "Kapanis fiyatlari"
+          git push
