@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Günlük Kâr/Zarar Takibi</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light;--bg:#f4f6f9;--card:#fff;--tx:#14181f;--mut:#667085;--bd:#e0e4ea;--pos:#0a7f3f;--neg:#c62828;--acc:#1f3864;--accx:#fff;--inp:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#101317;--card:#1a1f26;--tx:#e8ebf0;--mut:#9aa4b2;--bd:#2d343e;--pos:#4cc47f;--neg:#ff7a72;--acc:#6f95e8;--accx:#0b0f14;--inp:#12161b}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#101317;--card:#1a1f26;--tx:#e8ebf0;--mut:#9aa4b2;--bd:#2d343e;--pos:#4cc47f;--neg:#ff7a72;--acc:#6f95e8;--accx:#0b0f14;--inp:#12161b}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--tx);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;font-size:15px}
+main{max-width:640px;margin:0 auto;padding:14px}
+h1{font-size:19px;margin:6px 0 12px}
+h2{font-size:15px;margin:0 0 10px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:14px;margin-bottom:12px}
+.big{font-size:26px;font-weight:700}
+.mut{color:var(--mut);font-size:12.5px}
+.pos{color:var(--pos)}.neg{color:var(--neg)}
+.row{display:flex;gap:8px;align-items:center;margin-bottom:8px}
+.row label{flex:1;font-weight:600}
+input{font:inherit;color:var(--tx);background:var(--inp);border:1px solid var(--bd);border-radius:8px;padding:9px;min-width:0}
+input.sm{width:100%}
+button{font:inherit;border:0;border-radius:8px;padding:10px 14px;background:var(--acc);color:var(--accx);font-weight:600}
+button.ghost{background:transparent;color:var(--mut);border:1px solid var(--bd);padding:8px 10px}
+.grid{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:6px;align-items:center;margin-bottom:6px}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13px;white-space:nowrap}
+th,td{text-align:right;padding:7px 8px;border-bottom:1px solid var(--bd)}
+th:first-child,td:first-child{text-align:left}
+th{color:var(--mut);font-weight:600}
+.err{color:var(--neg);font-size:13px;margin-top:6px;min-height:16px}
+:root{--hero1:#5b3df5;--hero2:#00b3a4;--b1:#5b3df5;--b2:#8a5cf6;--posbg:#e3f6ec;--negbg:#fde8e7;--c1:#ff7a59;--c2:#00a896;--c3:#f5a300}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--hero1:#3b2bb5;--hero2:#0b8277;--b1:#7a63ff;--b2:#b184ff;--posbg:#12301f;--negbg:#3a1a19;--c1:#ff8f73;--c2:#2fd3bf;--c3:#ffc23d}}
+:root[data-theme="dark"]{--hero1:#3b2bb5;--hero2:#0b8277;--b1:#7a63ff;--b2:#b184ff;--posbg:#12301f;--negbg:#3a1a19;--c1:#ff8f73;--c2:#2fd3bf;--c3:#ffc23d}
+h1{font-size:23px;background:linear-gradient(90deg,var(--b1),var(--c1));-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;display:inline-block}
+.card{border-top:4px solid var(--b1);box-shadow:0 2px 10px rgba(91,61,245,.08)}
+.card:nth-of-type(2){border-top-color:var(--c1)}.card:nth-of-type(2) h2{color:var(--c1)}
+.card:nth-of-type(3){border-top-color:var(--c2)}.card:nth-of-type(3) h2{color:var(--c2)}
+.card:nth-of-type(4){border-top-color:var(--c3)}.card:nth-of-type(4) h2{color:var(--c3)}
+#sum{background:linear-gradient(135deg,var(--hero1),var(--hero2));color:#fff;border:0;box-shadow:0 6px 18px rgba(91,61,245,.3)}
+#sum .mut{color:rgba(255,255,255,.85)}
+#sum .pos,#sum .neg{display:block;width:fit-content;padding:4px 10px;border-radius:999px;margin-top:6px}
+#sum .pos{background:#e3f6ec;color:#0a7f3f}
+#sum .neg{background:#fde8e7;color:#c62828}
+button{background:linear-gradient(135deg,var(--b1),var(--b2));color:#fff}
+input:focus{outline:2px solid var(--b1);border-color:var(--b1)}
+th{color:var(--b1)}
+tr:nth-child(even) td{background:rgba(127,127,127,.07)}
+td.pos{background:var(--posbg)!important;font-weight:600}
+td.neg{background:var(--negbg)!important;font-weight:600}
+svg.ch{width:100%;height:auto;display:block}
+textarea{width:100%;min-height:70px;font:12px monospace;color:var(--tx);background:var(--inp);border:1px solid var(--bd);border-radius:8px;padding:8px}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.lg{font-size:12.5px;color:var(--mut);margin-top:4px}.lg b{display:inline-block;width:10px;height:10px;border-radius:3px;margin:0 4px 0 0}.lg span{margin-right:12px}
+.card:nth-of-type(5){border-top-color:var(--b2)}.card:nth-of-type(5) h2{color:var(--b2)}
+.card:nth-of-type(6){border-top-color:var(--c2)}.card:nth-of-type(6) h2{color:var(--c2)}
+.card:nth-of-type(7){border-top-color:var(--c1)}.card:nth-of-type(7) h2{color:var(--c1)}
+select{font:inherit;color:var(--tx);background:var(--inp);border:1px solid var(--bd);border-radius:8px;padding:9px;min-width:0}
+#kp .row{flex-wrap:wrap}
+a.lnk{padding:8px 12px;border-radius:8px;border:1px solid var(--b1);color:var(--b1);text-decoration:none;font-weight:600;font-size:13px}
+.rbs{display:flex;justify-content:space-between;gap:6px;margin:6px 0}
+button.rb{background:transparent;color:var(--mut);padding:9px 12px;font-weight:700}
+button.rb.on{background:var(--bd);color:var(--tx)}
+.bd{display:inline-block;padding:7px 16px;border-radius:8px;font-weight:700;color:#fff}
+.bd.up{background:#5fae4d}.bd.dn{background:#cf4a41}
+.cl>summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:10px}.cl>summary::-webkit-details-marker{display:none}.cl>summary h2{margin:0}.cl>summary::after{content:"Göster ▾";font-size:12.5px;font-weight:700;color:var(--b1);border:1px solid var(--bd);border-radius:8px;padding:4px 10px;white-space:nowrap}.cl[open]>summary::after{content:"Gizle ▴"}.cl[open]>summary{margin-bottom:10px}
+.ac{margin-top:12px;padding-top:10px;border-top:1px dashed var(--bd);font-size:12.5px;line-height:1.5;color:var(--mut)}.ac b{color:var(--tx)}
+.ac summary{cursor:pointer;font-weight:700;color:var(--b1);font-size:13px;padding:2px 0}.ac[open] summary{margin-bottom:6px}
+.ast{padding:10px 12px;border-radius:10px;margin:0 0 12px;font-size:13.5px;font-weight:600;line-height:1.45}.ast.ok{background:var(--posbg);color:var(--pos)}.ast.no{background:var(--negbg);color:var(--neg)}.ast.na{background:rgba(127,127,127,.14);color:var(--mut)}
+</style>
+</head>
+<body>
+<main>
+<h1>📈 Günlük Kâr/Zarar Takibi</h1>
+
+<div class="ast na" id="ast">Otomatik fiyat güncellemesi kontrol ediliyor…</div>
+<div class="card" id="sum"></div>
+<details class="ac" style="margin:-4px 6px 14px;border-top:0;padding-top:0"><summary>🔗 Özet kartı neye bağlı?</summary>• <b>Değer</b> = eldeki adet × son fiyat. Adet ve maliyet “Alım / satım işlemleri”nden, fiyat “Gün sonu fiyatlarını gir”den gelir.<br>• <b>Toplam K/Z</b> = değer − kalan maliyet + gerçekleşen K/Z (satışlardan) + temettü.<br>• <b>Günlük</b> = toplam K/Z’nin bir önceki kayıtlı güne göre farkı.<br>• İşlem veya temettü eklersen, düzenlersen ya da silersen kart hemen değişir. Gün sonu fiyatı kaydedersen “(tahmini)” ibaresi kalkar ve rakam kesinleşir.</details>
+
+<div class="card">
+<h2>Gün sonu fiyatlarını gir</h2>
+<div class="btns"><button id="kb">Kapanış fiyatlarını göster</button></div>
+<div id="kp" style="display:none"></div>
+
+<div class="row"><label for="dt">Tarih</label><input type="date" id="dt" style="flex:2"></div>
+<details class="ac" style="margin:0 0 10px"><summary>🤖 Otomatik fiyat sistemi (GitHub) nasıl çalışır?</summary>• Hafta içi her akşam yaklaşık <b>18:30’da</b> (Türkiye saati) GitHub, sen açık olmasan da THYAO, PGSUS gibi hisselerin ve BIST 100’ün gün sonu fiyatlarını alır ve <b>prices.json</b> dosyasına yazar.<br>• Panel açılınca bu dosyayı okur ve fiyatları kendiliğinden <b>Geçmiş, Hisse bazında durum, Haftalık/aylık özet ve Grafikler</b>e işler. Elle girmene gerek kalmaz.<br>• Elle girdiğin fiyatın üzerine yazmaz, yalnızca boş günleri ve boş fiyatları doldurur. Yanlış bir fiyat gelirse <b>Geçmiş’ten Düzenle</b> ile düzeltebilirsin.<br>• Hangi hisselerin fiyatının çekileceği GitHub’daki <b>fiyat.yml</b> dosyasında <b>HISSELER</b> satırında yazar. Yeni hisse alırsan kodunu oraya eklemen gerekir (örnek: THYAO,PGSUS,ASELS). Satılan hisseyi çıkarmak şart değil.<br>• Hafta sonu ve resmî tatillerde çalışmaz, o gün için fiyat yazılmaz.<br>• GitHub bazen çalışmayı 10-30 dakika geç başlatır. Şerit yeşil değilse biraz bekleyip yenile. Hâlâ kırmızıysa GitHub’da <b>Actions</b> sekmesinde son çalışmada kırmızı çarpı (✗) var mı bak.</details>
+<div class="mut" id="am" style="margin-bottom:8px"></div>
+<details class="ac" style="margin:0 0 10px"><summary>⏰ Otomatik fiyat ayarı</summary>
+<table style="font-size:13px;white-space:normal"><tr><td>Kaynak</td><td style="text-align:right">GitHub (prices.json)</td></tr>
+<tr><td>Zamanı</td><td style="text-align:right">Hafta içi her gün 18:30 (Türkiye saati)</td></tr>
+<tr><td>Aranan hisseler</td><td style="text-align:right" id="gtk">-</td></tr>
+<tr><td>Son otomatik güncelleme</td><td style="text-align:right" id="gtl">Henüz çalışmadı</td></tr>
+<tr><td>Son kaydedilen kapanış günü</td><td style="text-align:right" id="gtd">-</td></tr></table>
+<div class="row" style="margin-top:10px"><label for="gu">GitHub fiyat dosyası adresi (isteğe bağlı)</label></div><div class="row"><input id="gu" type="text" placeholder="https://raw.githubusercontent.com/KULLANICI/bist-fiyat/main/prices.json" style="flex:1"><button class="ghost" id="gub">Kaydet</button></div><div class="mut" id="gum"></div>
+</details>
+
+<div id="prices"></div>
+<div class="row"><label for="bi">BIST 100 kapanış (isteğe bağlı)</label><input id="bi" type="text" inputmode="decimal" placeholder="0,00" style="flex:1"></div>
+<button id="save">Kaydet</button>
+<div class="err" id="err"></div>
+<details class="ac"><summary>🔗 Neyi değiştirir?</summary>• Kaydettiğin kapanış fiyatları <b>Özet kartı, Hisse bazında durum, Geçmiş, Haftalık/aylık özet ve Grafikler</b>i günceller.<br>• BIST 100 kapanışı girersen <b>BIST karşılaştırması</b> (özet kartı) ve <b>grafikteki BIST çizgisi</b> güncellenir.<br>• Hangi hisselerin fiyat kutusu çıkacağı <b>Alım / satım işlemleri</b>ne bağlıdır: seçtiğin tarihte elinde olan hisseler listelenir.<br>• Aynı tarihe tekrar kaydedersen o günün kaydı değişir. Fiyat girmediğin işlem günleri son işlem fiyatıyla tahmini hesaplanır.</details>
+</div>
+
+<div class="card"><h2>Hisse bazında durum</h2><div class="scroll"><table id="bys"></table></div><div class="mut" id="bysd" style="margin-top:6px"></div><details class="ac"><summary>🔗 Bu tablo neye bağlı?</summary>• <b>Adet, ort. maliyet ve gerçekleşen K/Z</b> tüm alım/satım işlemlerinden hesaplanır. İşlem ekleyince tablo anında değişir.<br>• <b>Alım</b> adedi artırır ve ort. maliyeti günceller. <b>Satım</b> adedi azaltır, ort. maliyeti değiştirmez, kârı/zararı gerçekleşen K/Z’ye ekler. Tamamen satılan hissede adet 0 olur, yalnızca gerçekleşen K/Z kalır.<br>• <b>Fiyat</b> son kayıtlı kapanıştan gelir. Gün sonu fiyatını değiştirirsen Değer, K/Z, % ve Pay güncellenir. İşlem yaptığın gün kapanış girilmediyse * işaretli son işlem fiyatı kullanılır.<br>• <b>Temettü</b> girersen ilgili hissenin K/Z’sine eklenir. <b>Toplam</b> satırı Özet kartıyla aynı rakamı verir.</details></div>
+
+<div class="card"><details class="cl" id="clw"><summary><h2>Haftalık ve aylık özet</h2></summary><div class="mut" style="margin-bottom:4px">Haftalık (pazartesi–pazar)</div><div class="scroll" style="max-height:280px;overflow-y:auto"><table id="per"></table></div><div class="mut" style="margin:12px 0 4px">Aylık</div><div class="scroll" style="max-height:280px;overflow-y:auto"><table id="perm"></table></div><div class="mut" id="perd" style="margin-top:6px"></div><details class="ac"><summary>🔗 Bu özet neye bağlı?</summary>• Haftalık/aylık K/Z, <b>Geçmiş</b> tablosundaki günlük toplam K/Z farklarından; yüzde getiri ise işlemlerden etkilenmeyen getiri hesabından gelir.<br>• Gün sonu fiyatı kaydedersen / düzenlersen / silersen, işlem veya temettü eklersen ilgili hafta ve ay anında yeniden hesaplanır. Yeni hafta ve ay otomatik eklenir.<br>• * işareti: dönem ilk kayıt gününden başlıyor, öncesi kayıtlı değil.</details></details></div>
+
+<div class="card"><details class="cl" id="clg"><summary><h2>Grafikler</h2></summary><div class="mut">Getiri: portföy ve BIST 100 (ilk kayıt gününe göre %)</div><div id="c2"></div><div class="lg"><span><b style="background:var(--b1)"></b>Portföy</span><span><b style="background:var(--c1)"></b>BIST 100</span></div><details class="ac"><summary>🔗 Grafik neye bağlı?</summary>• Çizgiler <b>Geçmiş</b> tablosundaki günlerden çizilir. Fiyat veya işlem değişince grafik de değişir.<br>• <b>Portföy</b> çizgisi getiri hesabıdır: hisse alıp satman getiriyi bozmaz, yalnızca fiyat hareketi ve temettü etkiler.<br>• <b>BIST 100</b> çizgisi “Gün sonu fiyatlarını gir”e yazdığın BIST kapanışlarından gelir. BIST girmediğin günlerde çizgi kesik kalır.</details></details></div>
+
+<div class="card"><details class="cl" id="clh">
+<summary><h2>Geçmiş</h2></summary>
+<div class="scroll"><table id="hist"></table></div>
+<div class="mut" id="empty" style="margin-top:8px"></div>
+<details class="ac"><summary>🔗 Bu tablo neye bağlı?</summary>• Her satır bir günün kapanış fiyatları ve o günkü durumdur. Satırlar <b>Gün sonu fiyatları</b> ve <b>işlemler</b>den hesaplanır.<br>• <b>Düzenle</b> o günün fiyatlarını yukarıdaki forma getirir, Kaydet’le değişir. <b>Sil</b> yalnızca o günün fiyat kaydını siler, işlemlerin silinmez.<br>• Geçmişe işlem eklersen veya düzenlersen, o tarihten sonraki <b>tüm günlerin K/Z’si</b> yeniden hesaplanır. Yeni bir hisseyi geriye dönük eklersen o günlerde “Fiyat eksik” çıkar, Düzenle ile tamamla.<br>• Buradaki her değişiklik Özet, Hisse bazında durum, Haftalık/aylık özet ve Grafikleri de günceller.</details></details></div>
+
+<div class="card"><details class="cl" id="clt">
+<summary><h2>Alım / satım işlemleri</h2></summary>
+<div class="mut" id="pos" style="margin-bottom:10px"></div>
+<div class="row"><label for="td">Tarih</label><input type="date" id="td" style="flex:2"></div>
+<div class="row"><label for="tt">Hisse</label><input id="tt" type="text" placeholder="THYAO" style="flex:2"></div>
+<div class="row"><label for="ty">İşlem</label><select id="ty" style="flex:2"><option value="a">Alım</option><option value="s">Satım</option></select></div>
+<div class="row"><label for="tq">Adet</label><input id="tq" type="text" inputmode="decimal" style="flex:2"></div>
+<div class="row"><label for="tp">Fiyat (TL)</label><input id="tp" type="text" inputmode="decimal" style="flex:2"></div>
+<div class="row"><label for="tk">Komisyon (TL, isteğe bağlı)</label><input id="tk" type="text" inputmode="decimal" style="flex:2"></div>
+<button id="tadd">İşlemi ekle</button> <button class="ghost" id="tcan" style="display:none" onclick="tcancel()">Vazgeç</button>
+<div class="err" id="terr"></div>
+<div class="scroll"><table id="tl"></table></div>
+<p class="mut">Alımlarda ortalama maliyet güncellenir. Satımlarda gerçekleşen kâr/zarar ayrıca hesaplanır ve toplam kâr/zarara eklenir. “Hisse bazında durum” işlemi hemen gösterir. Üstteki toplam ve geçmiş ise işlem gününün kapanış fiyatı girilince güncellenir. Yüzde oranları kalan maliyete göre hesaplanır. Veriler yalnızca bu cihazdaki tarayıcıda saklanır.</p>
+<details class="ac"><summary>🔗 Neyi değiştirir?</summary>• İşlem ekleme, düzenleme veya silme <b>tüm bölümleri</b> günceller: Özet kartı, Hisse bazında durum, Geçmiş, Haftalık/aylık özet ve Grafikler.<br>• Elindeki adetten fazlasını satamazsın. Bir alımı silmek sonraki satımları geçersiz kılacaksa program engeller.<br>• Komisyon, alımda maliyete eklenir, satışta gerçekleşen K/Z’den düşülür.<br>• Yeni hisse alınca “Gün sonu fiyatlarını gir” bölümünde o hisse için fiyat kutusu otomatik açılır.</details></details></div>
+
+<div class="card"><details class="cl" id="clv">
+<summary><h2>Temettü kayıtları</h2></summary>
+<div class="row"><label for="vd">Tarih</label><input type="date" id="vd" style="flex:2"></div>
+<div class="row"><label for="vt">Hisse</label><input id="vt" type="text" placeholder="FROTO" style="flex:2"></div>
+<div class="row"><label for="vm">Net tutar (TL)</label><input id="vm" type="text" inputmode="decimal" style="flex:2"></div>
+<button id="vadd">Temettüyü ekle</button> <button class="ghost" id="vcan" style="display:none" onclick="vcancel()">Vazgeç</button>
+<div class="err" id="verr"></div>
+<div class="scroll"><table id="vl"></table></div>
+<p class="mut">Hesabına geçen net tutarı gir (stopaj düşülmüş hali). Temettü toplam kâr/zarara ve getiri hesabına eklenir. Tarih, temettünün hesabına geçtiği gündür.</p>
+<details class="ac"><summary>🔗 Neyi değiştirir?</summary>• Temettü kaydı <b>Toplam K/Z</b> (Özet kartı), <b>Hisse bazında durum</b>daki ilgili hisse, <b>Geçmiş</b>, <b>Haftalık/aylık özet</b> ve <b>Grafikteki portföy getirisi</b>ni, girdiğin tarihten itibaren günceller.<br>• Hisse, işlemlerde bulunmalıdır. Düzenle veya Sil dersen bütün bu bölümler eski haline döner.</details></details></div>
+
+<div class="card"><details class="cl" id="clb"><summary><h2>Yedekle / geri yükle</h2></summary><div class="btns"><button id="bk">Yedeği göster ve kopyala</button><button class="ghost" id="rs">Geri yükle</button></div><textarea id="bt" placeholder="Yedek metni burada görünür. Geri yüklemek için yedek metnini buraya yapıştırıp Geri yükle’ye bas."></textarea><div class="mut" id="bm"></div><details class="ac"><summary>🔗 Neyi kapsar?</summary>• Yedek metni tüm verini içerir: <b>işlemler, gün sonu fiyatları, BIST kapanışları, temettüler</b>.<br>• Geri yüklersen mevcut verinin <b>yerine</b> geçer ve tüm bölümler yeniden hesaplanır. Veriler yalnızca bu dosyanın tarayıcısında saklanır; yeni dosya veya başka tarayıcıya geçerken yedek al.</details></details></div>
+</main>
+<script>
+var KEY="bist-takip-v2",PL=[];
+var S={"d":[],"t":[],"v":[],"seed":6};
+function mig(o){if(!o.t){o.t=(o.h||[]).map(function(h){return{d:"2026-11-01",t:h.t,y:"a",q:h.q,p:h.c,o:1};});delete o.h;}return o;}
+try{var raw=localStorage.getItem(KEY);if(raw){var o0=JSON.parse(raw);if(o0&&o0.d)S=mig(o0);}}catch(e){}
+function persist(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+var SEED=[];
+(function(){if(S.seed>=6)return;if(!(S.seed>=5)){var ds=["2026-11-02","2026-11-03"].concat(SEED.map(function(s){return s[0];}));S.d=S.d.filter(function(x){return ds.indexOf(x.d)<0;});}SEED.forEach(function(s){var f=S.d.filter(function(x){return x.d===s[0];})[0];if(f){if(!(f.b>0))f.b=s[2];}else S.d.push({d:s[0],p:s[1],b:s[2]});});S.seed=6;persist();})();
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+function num(x){var t=String(x),n=parseFloat(t.indexOf(",")>=0?t.replace(/\./g,"").replace(",","."):t);return isNaN(n)?0:n;}
+function fmt(n){return n.toLocaleString("tr-TR",{minimumFractionDigits:2,maximumFractionDigits:2});}
+function fq(n){return n.toLocaleString("tr-TR",{maximumFractionDigits:4});}
+function sg(n){return (n>0?"+":"")+fmt(n);}
+function pc(n){return (n>0?"+":"")+(n*100).toFixed(2).replace(".",",")+"%";}
+function cls(n){return n>0?"pos":(n<0?"neg":"");}
+function ar(n){return n>0?"▲ ":(n<0?"▼ ":"");}
+function today(){var d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");}
+function trDate(s){var a=s.split("-");return a[2]+"."+a[1]+"."+a[0];}
+function srt(L){return L.slice().sort(function(a,b){return a.d<b.d?-1:(a.d>b.d?1:0);});}
+function tks(){var a=[];S.t.forEach(function(x){if(a.indexOf(x.t)<0)a.push(x.t);});return a;}
+function pos(d){var m={};srt(S.t).forEach(function(x){if(x.d>d)return;var z=m[x.t]||(m[x.t]={q:0,c:0,r:0}),k=x.k||0;
+ if(x.y==="a"){z.c=(z.q*z.c+x.q*x.p+k)/(z.q+x.q);z.q+=x.q;}else{z.r+=(x.p-z.c)*x.q-k;z.q-=x.q;if(z.q<1e-9)z.q=0;}});(S.v||[]).forEach(function(x){if(x.d>d)return;var z=m[x.t]||(m[x.t]={q:0,c:0,r:0});z.dv=(z.dv||0)+x.m;});return m;}
+function okq(L){var q={};return srt(L).every(function(x){q[x.t]=(q[x.t]||0)+(x.y==="a"?x.q:-x.q);return q[x.t]>-1e-9;});}
+function dayv(day){var m=pos(day.d),v=0,cb=0,r=0,dv=0;for(var t in m){var z=m[t];r+=z.r;dv+=z.dv||0;if(z.q>0){var p=day.p[t];if(!(p>0))return null;v+=z.q*p;cb+=z.q*z.c;}}return{v:v,cb:cb,r:r,dv:dv,m:m};}
+function rows(){
+  var asc=S.d.slice().sort(function(a,b){return a.d<b.d?-1:1;}),out=[],pv=null,pk=null,pb=0,ix=1;
+  if(asc.length){var ld=asc[asc.length-1].d,md=ld;S.t.forEach(function(x){if(!x.o&&x.d>md)md=x.d;});(S.v||[]).forEach(function(x){if(x.d>md)md=x.d;});
+    if(md>ld){var pm=pos(md),pp={};for(var tk in pm){if(pm[tk].q>0){var lq=lastPx(tk);if(lq)pp[tk]=lq.p;else{var bt=srt(S.t).filter(function(x){return x.t===tk&&x.y==='a';}).pop();if(bt)pp[tk]=bt.p;}}}
+      asc.push({d:md,p:pp,est:1});}}
+  asc.forEach(function(day){
+    var y=dayv(day);
+    if(!y){out.push({d:day.d,v:null,p:day.p});return;}
+    var kz=y.v-y.cb+y.r+y.dv,dc=pk===null?null:kz-pk,dp=pv?dc/pv:null;
+    if(dp!==null)ix*=1+dp;
+    out.push({est:day.est,d:day.d,p:day.p,v:y.v,cb:y.cb,r:y.r,dv:y.dv,m:y.m,kz:kz,kp:y.cb?kz/y.cb:0,dc:dc,dp:dp,ix:ix,b:day.b,bp:(day.b>0&&pb)?day.b/pb-1:null});
+    if(day.b>0)pb=day.b;pv=y.v;pk=kz;
+  });
+  return out.reverse();
+}
+function latest(r){for(var i=0;i<r.length;i++){if(r[i].v!==null)return r[i];}return null;}
+function cmpHtml(){var a=rows().filter(function(x){return x.v!==null&&x.b>0;}).reverse();if(a.length<2)return '';var f=a[0],l=a[a.length-1],pr=l.ix/f.ix-1,br=l.b/f.b-1,d=(pr-br)*100;return '<div style="margin-top:8px;font-size:13px;border-top:1px solid rgba(255,255,255,.3);padding-top:8px">BIST 100’e göre ('+trDate(f.d)+' → '+trDate(l.d)+')<br>Portföy '+pc(pr)+' · BIST 100 '+pc(br)+' · Fark '+(d>0?'+':'')+d.toFixed(2).replace('.',',')+' puan</div>';}
+function pth(){return tks().map(function(t){return '<th>'+esc(t)+'</th>';}).join('');}
+function ptd(p){return tks().map(function(t){return '<td>'+(p&&p[t]>0?fmt(p[t]):'-')+'</td>';}).join('');}
+function render(){
+  var r=rows(),last=latest(r),s=document.getElementById("sum");
+  if(!last){s.innerHTML='<div class="mut">Başlamak için aşağıya ilk gün sonu fiyatlarını gir.</div>';}
+  else{s.innerHTML='<div class="mut">'+trDate(last.d)+' itibarıyla portföy değeri'+(last.est?' (tahmini)':'')+'</div><div class="big">'+fmt(last.v)+' TL</div>'+
+    '<div class="'+cls(last.kz)+'" style="font-weight:600;margin-top:4px">Toplam: '+ar(last.kz)+sg(last.kz)+' TL ('+pc(last.kp)+')</div>'+
+    (last.dc===null?'':'<div class="'+cls(last.dc)+'" style="margin-top:2px">Günlük: '+ar(last.dc)+sg(last.dc)+' TL ('+pc(last.dp)+')</div>')+
+    '<div class="mut" style="margin-top:6px">Kalan maliyet: '+fmt(last.cb)+' TL'+(last.r?' · Gerçekleşen K/Z: '+sg(last.r)+' TL':'')+(last.dv?' · Temettü: '+sg(last.dv)+' TL':'')+'</div>'+cmpHtml()+sumNote(last,r);}
+  var h='<tr><th>Tarih</th>'+pth()+'<th>Değer</th><th>Toplam K/Z</th><th>%</th><th>Günlük</th><th>Gün %</th><th>BIST 100</th><th>BIST %</th><th></th></tr>';
+  r.forEach(function(x){
+    if(x.v===null){h+='<tr><td>'+trDate(x.d)+'</td>'+ptd(x.p)+'<td colspan="7">Fiyat eksik</td><td><button class="ghost" onclick="edd(\''+x.d+'\')">Düzenle</button> <button class="ghost" onclick="del(\''+x.d+'\')">Sil</button></td></tr>';return;}
+    h+='<tr><td>'+trDate(x.d)+(x.est?' <span class="mut">(tahmini)</span>':'')+'</td>'+ptd(x.p)+'<td>'+fmt(x.v)+'</td><td class="'+cls(x.kz)+'">'+sg(x.kz)+'</td><td class="'+cls(x.kp)+'">'+pc(x.kp)+'</td>'+
+      '<td class="'+cls(x.dc)+'">'+(x.dc===null?"-":sg(x.dc))+'</td><td class="'+cls(x.dp)+'">'+(x.dp===null?"-":pc(x.dp))+'</td><td>'+(x.b>0?fmt(x.b):"-")+'</td><td class="'+cls(x.bp)+'">'+(x.bp===null?"-":pc(x.bp))+'</td>'+
+      '<td>'+(x.est?'<button class="ghost" onclick="setd(\''+x.d+'\')">Fiyat gir</button>':'<button class="ghost" onclick="edd(\''+x.d+'\')">Düzenle</button> <button class="ghost" onclick="del(\''+x.d+'\')">Sil</button>')+'</td></tr>';
+  });
+  document.getElementById("hist").innerHTML=r.length?h:"";
+  document.getElementById("empty").textContent=r.length?"":"Henüz kayıt yok.";
+}
+function lastPx(t){var c=null,tr=null;S.d.forEach(function(x){if(x.p&&x.p[t]>0&&(!c||x.d>c.d))c={p:x.p[t],d:x.d};});srt(S.t).forEach(function(x){if(!x.o&&x.t===t&&(!c||x.d>c.d)&&(!tr||x.d>=tr.d))tr={p:x.p,d:x.d,est:1};});return tr||c;}
+function renderBys(){
+  var m=pos("9999-12-31"),t=document.getElementById('bys'),dd=document.getElementById('bysd'),L=[],tv=0,tcb=0,tkz=0,np=[],ep=[],ds={};
+  for(var k in m){var z=m[k],e=z.r+(z.dv||0);
+    if(z.q>0){var lp=lastPx(k),est=lp&&lp.est?1:0;if(!lp){var bt=srt(S.t).filter(function(x){return x.t===k&&x.y==='a';}).pop();if(bt){lp={p:bt.p,d:bt.d};est=1;}}
+      if(lp){var v=z.q*lp.p,cb=z.q*z.c,g=v-cb+e;tv+=v;tcb+=cb;tkz+=g;if(est)ep.push(k);else ds[lp.d]=1;L.push({k:k,z:z,lp:lp,est:est,v:v,g:g,gp:cb?g/cb:0});}
+      else{np.push(k);L.push({k:k,z:z,lp:null});}}
+    else if(z.r||z.dv){tkz+=e;L.push({k:k,z:z,sold:1,g:e});}}
+  if(!L.length){t.innerHTML='';dd.textContent='Henüz hisse yok. Alım / satım işlemleri bölümünden ekle.';return;}
+  var h='<tr><th>Hisse</th><th>Adet</th><th>Ort. maliyet</th><th>Fiyat</th><th>Değer</th><th>K/Z</th><th>%</th><th>Pay</th></tr>';
+  L.forEach(function(x){var z=x.z;
+    if(x.sold){h+='<tr><td>'+esc(x.k)+'</td><td>0</td><td>-</td><td>-</td><td>-</td><td class="'+cls(x.g)+'">'+sg(x.g)+'</td><td>-</td><td>-</td></tr>';}
+    else if(!x.lp){h+='<tr><td>'+esc(x.k)+'</td><td>'+fq(z.q)+'</td><td>'+fmt(z.c)+'</td><td colspan="5">Kapanış fiyatı girilmedi</td></tr>';}
+    else{h+='<tr><td>'+esc(x.k)+'</td><td>'+fq(z.q)+'</td><td>'+fmt(z.c)+'</td><td>'+fmt(x.lp.p)+(x.est?'*':'')+'</td><td>'+fmt(x.v)+'</td><td class="'+cls(x.g)+'">'+sg(x.g)+'</td><td class="'+cls(x.gp)+'">'+pc(x.gp)+'</td><td>'+(tv?(x.v/tv*100).toFixed(1).replace('.',','):'0')+'%</td></tr>';}});
+  if(L.length>1&&tv>0){var tp=tcb?tkz/tcb:0;h+='<tr><td><b>Toplam</b></td><td></td><td></td><td></td><td><b>'+fmt(tv)+'</b></td><td class="'+cls(tkz)+'"><b>'+sg(tkz)+'</b></td><td class="'+cls(tp)+'"><b>'+pc(tp)+'</b></td><td>100%</td></tr>';}
+  t.innerHTML=h;
+  var dl=Object.keys(ds).sort(),n='Adet ve maliyet, tüm işlemlerin güncel durumudur. ';
+  n+=dl.length===1?'Fiyatlar '+trDate(dl[0])+' kapanışına göre. ':(dl.length?'Fiyatlar her hissenin son girilen kapanışına göre ('+trDate(dl[0])+' – '+trDate(dl[dl.length-1])+'). ':'');
+  n+='K/Z, gerçekleşen kısmı ve temettüyü de içerir.';
+  if(ep.length)n+=' *'+ep.map(esc).join(', ')+' için kapanış girilmedi, kapanış yerine son işlem fiyatı kullanıldı (tahmini).';
+  if(np.length)n+=' '+np.map(esc).join(', ')+' için kapanış fiyatı girilmediği için toplama dahil değil; “Gün sonu fiyatlarını gir” bölümünden ekle.';
+  dd.innerHTML=n;}
+function sumNote(last,r){var pn=0,ms=[],o=[];
+  S.t.forEach(function(x){if(!x.o&&x.d>last.d)pn++;});(S.v||[]).forEach(function(x){if(x.d>last.d)pn++;});
+  r.forEach(function(x){if(x.v===null)ms.push(trDate(x.d));});ms.reverse();
+  if(last.est)o.push('ℹ Bu değer tahminidir: '+trDate(last.d)+' işlemleri eklendi, fiyatlar, o gün işlem yaptığın hisseler için son işlem fiyatıyla, diğerleri için son kapanışla hesaplandı. Gerçek kapanışı girince kesinleşir.');
+  if(ms.length)o.push('⚠ '+ms.join(', ')+' için kapanış fiyatı eksik, bu günler hesaplara girmiyor. Geçmiş tablosunda Düzenle ile tamamla.');
+  return o.length?'<div style="margin-top:8px;font-size:12.5px;border-top:1px solid rgba(255,255,255,.3);padding-top:8px">'+o.join('<br>')+'</div>':'';}
+function chart(id,xs,ss,lf){var el=document.getElementById(id);if(xs.length<2){el.innerHTML='<div class="mut">Grafik için en az 2 gün gerekir.</div>';return;}var W=320,H=150,L=46,R=8,T=10,B=22,all=[];ss.forEach(function(s){s.v.forEach(function(n){if(n!==null)all.push(n);});});var mn=Math.min.apply(null,all),mx=Math.max.apply(null,all);if(mn===mx){mn-=1;mx+=1;}var pd=(mx-mn)*0.1;mn-=pd;mx+=pd;function X(i){return L+i*(W-L-R)/(xs.length-1);}function Y(v){return T+(mx-v)*(H-T-B)/(mx-mn);}var g='';for(var k=0;k<=3;k++){var val=mn+(mx-mn)*k/3,y=Y(val);g+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+y+'" y2="'+y+'" style="stroke:var(--bd)"/><text x="'+(L-4)+'" y="'+(y+3)+'" text-anchor="end" font-size="9" style="fill:var(--mut)">'+ss[0].f(val)+'</text>';}xs.forEach(function(d,i){g+='<text x="'+X(i)+'" y="'+(H-6)+'" text-anchor="middle" font-size="9" style="fill:var(--mut)">'+(lf?lf(d):d.slice(8)+'.'+d.slice(5,7))+'</text>';});ss.forEach(function(s){var p=[];s.v.forEach(function(v,i){if(v!==null)p.push(X(i)+','+Y(v));});g+='<polyline fill="none" stroke-width="2.5" style="stroke:'+s.c+'" points="'+p.join(' ')+'"/>';s.v.forEach(function(v,i){if(v!==null)g+='<circle cx="'+X(i)+'" cy="'+Y(v)+'" r="3" style="fill:'+s.c+'"/>';});});el.innerHTML='<svg class="ch" viewBox="0 0 '+W+' '+H+'">'+g+'</svg>';}
+function iso(d){return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");}
+function per(f,t){var a=rows().filter(function(x){return x.v!==null;}).reverse(),i=a.filter(function(x){return x.d>=f&&x.d<=t;});if(!i.length)return null;var p=a.filter(function(x){return x.d<f;}),b=p.length?p[p.length-1]:i[0],e=i[i.length-1];if(b===e)return null;var bs=null,ws=null;i.forEach(function(x){if(x.dc===null)return;if(!bs||x.dc>bs.dc)bs=x;if(!ws||x.dc<ws.dc)ws=x;});return{tl:e.kz-b.kz,pc:e.ix/b.ix-1,part:!p.length,bs:bs,ws:ws};}
+function renderPer(){
+  var a=rows().filter(function(x){return x.v!==null;}),pe=document.getElementById("per"),pm=document.getElementById("perm"),pd=document.getElementById("perd");
+  if(!a.length){pe.innerHTML="";pm.innerHTML="";pd.textContent="Kayıt girince burada haftalık ve aylık özet görünür.";return;}
+  var f=a[a.length-1].d.split("-"),n=new Date(),pt=false;
+  function tab(L){var h='<tr><th>Dönem</th><th>K/Z (TL)</th><th>%</th></tr>';
+    L.forEach(function(x){var r=per(iso(x[0]),iso(x[1]));if(!r)return;if(r.part)pt=true;
+      var cur=iso(n)>=iso(x[0])&&iso(n)<=iso(x[1]);
+      h+='<tr><td>'+trDate(iso(x[0])).slice(0,5)+' – '+trDate(iso(x[1]))+(r.part?'*':'')+(cur?' <span class="mut">(devam ediyor)</span>':'')+'</td><td class="'+cls(r.tl)+'">'+sg(r.tl)+'</td><td class="'+cls(r.pc)+'">'+pc(r.pc)+'</td></tr>';});
+    return h;}
+  var fd=new Date(+f[0],+f[1]-1,+f[2]),W=[],M=[],w=new Date(fd.getFullYear(),fd.getMonth(),fd.getDate()-((fd.getDay()+6)%7)),m=new Date(fd.getFullYear(),fd.getMonth(),1);
+  while(w<=n){W.unshift([w,new Date(w.getFullYear(),w.getMonth(),w.getDate()+6)]);w=new Date(w.getFullYear(),w.getMonth(),w.getDate()+7);}
+  while(m<=n){M.unshift([m,new Date(m.getFullYear(),m.getMonth()+1,0)]);m=new Date(m.getFullYear(),m.getMonth()+1,1);}
+  pe.innerHTML=tab(W);pm.innerHTML=tab(M);
+  pd.textContent=pt?"* İlk kayıt gününden itibaren, öncesi kayıtlı değil.":"";
+}
+function renderCharts(){var a=rows().filter(function(x){return x.v!==null;}).reverse(),xs=a.map(function(x){return x.d;});var b0=null;a.forEach(function(x){if(b0===null&&x.b>0)b0=x;});var bs=b0||a[0];if(!bs){chart('c2',[],[]);return;}var pv=a.map(function(x){return x.d>=bs.d?(x.ix/bs.ix-1)*100:null;}),bv=a.map(function(x){return(b0&&x.b>0&&x.d>=bs.d)?(x.b/b0.b-1)*100:null;});chart('c2',xs,[{c:'var(--b1)',v:pv,f:function(n){return n.toFixed(1).replace('.',',')+'%';}},{c:'var(--c1)',v:bv}]);}
+function renderPrices(){
+  var d=document.getElementById("dt").value||today(),m=pos(d),ld=S.d.slice().sort(function(a,b){return a.d<b.d?1:-1;})[0],h="";PL=[];
+  tks().forEach(function(t){if(m[t]&&m[t].q>0)PL.push(t);});
+  PL.forEach(function(t,i){var ph=ld&&ld.p[t]?fmt(ld.p[t]):"0,00";
+    h+='<div class="row"><label for="p'+i+'">'+esc(t)+' kapanış (TL)</label><input id="p'+i+'" type="text" inputmode="decimal" placeholder="'+ph+'" style="flex:1"></div>';});
+  document.getElementById("prices").innerHTML=h;
+}
+function renderTx(){var m=pos("9999-12-31"),h=[];for(var t in m){if(m[t].q>0)h.push(esc(t)+" "+fq(m[t].q)+" adet (ort. maliyet "+fmt(m[t].c)+")");}
+  document.getElementById("pos").innerHTML="Mevcut: "+(h.join(" · ")||"hisse yok");
+  var L=S.t.map(function(x,i){return{x:x,i:i};}).sort(function(a,b){return a.x.d<b.x.d?1:(a.x.d>b.x.d?-1:b.i-a.i);}),
+  s='<tr><th>Tarih</th><th>Hisse</th><th>İşlem</th><th>Adet</th><th>Fiyat</th><th>Kom.</th><th></th></tr>';
+  L.forEach(function(r){var x=r.x;s+='<tr><td>'+trDate(x.d)+'</td><td>'+esc(x.t)+'</td><td>'+(x.o?'Açılış':(x.y==="a"?'Alım':'Satım'))+'</td><td>'+fq(x.q)+'</td><td>'+fmt(x.p)+'</td><td>'+(x.k?fmt(x.k):'-')+'</td><td><button class="ghost" onclick="edt('+r.i+')">Düzenle</button> <button class="ghost" onclick="dtx('+r.i+')">Sil</button></td></tr>';});
+  document.getElementById("tl").innerHTML=s;}
+function renderDiv(){var L=(S.v||[]).map(function(x,i){return{x:x,i:i};}).sort(function(a,b){return a.x.d<b.x.d?1:(a.x.d>b.x.d?-1:b.i-a.i);}),h='<tr><th>Tarih</th><th>Hisse</th><th>Net tutar (TL)</th><th></th></tr>';
+  L.forEach(function(r){h+='<tr><td>'+trDate(r.x.d)+'</td><td>'+esc(r.x.t)+'</td><td>'+fmt(r.x.m)+'</td><td><button class="ghost" onclick="edv('+r.i+')">Düzenle</button> <button class="ghost" onclick="dvx('+r.i+')">Sil</button></td></tr>';});
+  document.getElementById("vl").innerHTML=L.length?h:"";}
+function dvx(i){S.v=(S.v||[]).filter(function(x,j){return j!==i;});persist();vcancel();all();}
+var ET=null,EV=null;
+function fx(n){return String(n).replace(".",",");}
+function note(id,t){var e=document.getElementById(id);e.style.color="var(--mut)";e.textContent=t;}
+function setd(d){document.getElementById('dt').value=d;renderPrices();note('err',trDate(d)+' için gerçek kapanış fiyatlarını gir ve Kaydet’e bas.');document.getElementById('dt').scrollIntoView({behavior:'smooth',block:'center'});}
+function edd(d){var x=S.d.filter(function(y){return y.d===d;})[0];if(!x)return;
+  document.getElementById("dt").value=d;renderPrices();
+  PL.forEach(function(t,i){document.getElementById("p"+i).value=x.p[t]>0?fx(x.p[t]):"";});
+  document.getElementById("bi").value=x.b>0?fx(x.b):"";
+  note("err",trDate(d)+" kaydını düzenliyorsun. Değiştirip Kaydet’e bas.");
+  document.getElementById("dt").scrollIntoView({behavior:"smooth",block:"center"});}
+function edt(i){var x=S.t[i];ET=i;
+  document.getElementById("td").value=x.d;document.getElementById("tt").value=x.t;document.getElementById("ty").value=x.y;document.getElementById("tq").value=fx(x.q);document.getElementById("tp").value=fx(x.p);document.getElementById("tk").value=x.k?fx(x.k):"";
+  document.getElementById("tadd").textContent="Güncelle";document.getElementById("tcan").style.display="inline-block";
+  note("terr","İşlemi düzenliyorsun. Değiştirip Güncelle’ye bas.");document.getElementById("td").scrollIntoView({behavior:"smooth",block:"center"});}
+function tcancel(){ET=null;document.getElementById("tadd").textContent="İşlemi ekle";document.getElementById("tcan").style.display="none";["tt","tq","tp","tk"].forEach(function(id){document.getElementById(id).value="";});document.getElementById("td").value=today();document.getElementById("terr").textContent="";}
+function edv(i){var x=S.v[i];EV=i;
+  document.getElementById("vd").value=x.d;document.getElementById("vt").value=x.t;document.getElementById("vm").value=fx(x.m);
+  document.getElementById("vadd").textContent="Güncelle";document.getElementById("vcan").style.display="inline-block";
+  note("verr","Temettüyü düzenliyorsun. Değiştirip Güncelle’ye bas.");document.getElementById("vd").scrollIntoView({behavior:"smooth",block:"center"});}
+function vcancel(){EV=null;document.getElementById("vadd").textContent="Temettüyü ekle";document.getElementById("vcan").style.display="none";["vt","vm"].forEach(function(id){document.getElementById(id).value="";});document.getElementById("vd").value=today();document.getElementById("verr").textContent="";}
+var DY={THYAO:[["2000-12-22",1.12],["2001-12-28",0.89],["2002-12-31",0.68],["2003-12-31",0.89],["2004-12-29",0.91],["2005-12-30",0.97],["2006-12-29",0.70],["2007-12-31",0.98],["2008-12-31",0.65],["2009-12-31",3.47],["2010-12-31",3.76],["2011-12-30",1.77],["2012-12-31",5.24],["2013-12-31",6.29],["2014-12-31",9.41],["2015-12-31",7.22],["2016-12-30",4.89],["2017-12-29",15.33],["2018-12-31",15.74],["2019-12-31",14.13],["2020-12-31",12.61],["2021-12-31",19.56],["2022-12-30",137.64],["2023-12-29",223.32],["2024-12-31",274.5],["2025-12-31",268.5],["2026-11-09",310]],
+FROTO:[["2000-12-22",0.04],["2001-12-28",0.06],["2002-12-31",0.05],["2003-12-31",0.14],["2004-12-29",0.17],["2005-12-30",0.25],["2006-12-29",0.27],["2007-12-31",0.32],["2008-12-31",0.13],["2009-12-31",0.33],["2010-12-31",0.52],["2011-12-30",0.68],["2012-12-31",1.04],["2013-12-31",1.14],["2014-12-31",1.66],["2015-12-31",1.60],["2016-12-30",1.72],["2017-12-29",3.57],["2018-12-31",3.14],["2019-12-31",4.77],["2020-12-31",9.09],["2021-12-31",18.03],["2022-12-30",41.95],["2023-12-29",62.75],["2024-12-31",83.61],["2025-12-31",89.58],["2026-11-09",74.45]]};
+function renderDy(){
+  var T=Object.keys(DY),n=DY.THYAO.length-1;
+  function pq(a,b){var v=b/a-1;return '<span class="'+cls(v)+'">'+(Math.min(a,b)<0.5?'≈':'')+pc(v)+'</span>';}
+  var h='<tr><th>Yıl sonu</th><th>THYAO</th><th>%</th><th>FROTO</th><th>%</th></tr>';
+  DY.THYAO.forEach(function(x,i){var f=DY.FROTO[i][1];
+    h+='<tr><td>'+x[0].slice(0,4)+(i===n?' (9 Kas)':'')+'</td><td>'+fmt(x[1])+'</td><td>'+(i?pq(DY.THYAO[i-1][1],x[1]):'-')+'</td><td>'+fmt(f)+'</td><td>'+(i?pq(DY.FROTO[i-1][1],f):'-')+'</td></tr>';});
+  document.getElementById("dyt").innerHTML=h;
+  function mx(t){var r=DY[t][n][1]/DY[t][0][1];return(DY[t][0][1]<0.1?'≈':'')+'×'+r.toLocaleString('tr-TR',{maximumFractionDigits:r>100?0:1});}
+  document.getElementById("dyn").textContent="2000 sonu → 9 Kasım 2026 (yalnızca fiyat): THYAO "+mx("THYAO")+", FROTO "+mx("FROTO")+".";
+}
+var CT=null,CR="5Y",RG={"1W":[7,"d"],"1A":[31,"d"],"1Y":[365,"w"],"5Y":[1826,"m"],"Maks":[0,"y"]};
+function numA(s){return /^\d{1,3}(,\d{3})+(\.\d+)?$/.test(s)?parseFloat(s.replace(/,/g,"")):num(s);}
+function pts(t){var m={},a=[];((S.ox&&S.ox[t])||[]).forEach(function(x){m[x[0]]={d:x[0],o:x[1],h:x[2],l:x[3],c:x[4]};});
+  S.d.forEach(function(x){if(x.p&&x.p[t]>0&&!m[x.d])m[x.d]={d:x.d,c:x.p[t],cl:1};});
+  srt(S.t).forEach(function(x){if(x.o||x.t!==t)return;var e=m[x.d];if(e&&!e.tx)return;if(!e)e=m[x.d]={d:x.d,c:x.p,cl:1,tx:1,fo:x.p,hx:x.p,lx:x.p};e.c=x.p;e.hx=Math.max(e.hx,x.p);e.lx=Math.min(e.lx,x.p);});
+  var pc=null;Object.keys(m).sort().forEach(function(k){var x=m[k];if(x.cl){x.o=pc===null?(x.fo||x.c):pc;x.h=Math.max(x.o,x.c,x.hx||0);x.l=Math.min(x.o,x.c,x.lx||1e18);}pc=x.c;a.push(x);});return a;}
+function gkey(d,g){if(g==="d")return d;if(g==="m")return d.slice(0,7);if(g==="y")return d.slice(0,4);var x=new Date(+d.slice(0,4),+d.slice(5,7)-1,+d.slice(8,10));x.setDate(x.getDate()-((x.getDay()+6)%7));return iso(x);}
+function agg(a,g){var o=[],k=null,c=null;a.forEach(function(x){var q=gkey(x.d,g);if(q!==k){c={d:x.d,o:x.o,h:x.h,l:x.l,c:x.c};o.push(c);k=q;}else{c.h=Math.max(c.h,x.h);c.l=Math.min(c.l,x.l);c.c=x.c;}});return o;}
+function dyC(t){var D=DY[t],o=[];if(!D)return o;D.forEach(function(x,i){var p=i?D[i-1][1]:x[1];o.push({d:x[0],o:p,h:Math.max(p,x[1]),l:Math.min(p,x[1]),c:x[1]});});
+  var a=pts(t),l=a[a.length-1],q=o[o.length-1];if(l&&l.d>q.d){q.c=l.c;q.h=Math.max(q.h,l.c);q.l=Math.min(q.l,l.c);q.d=l.d;}return o;}
+function cand(t,r){var a=pts(t),cf=RG[r],ld=a.length?a[a.length-1].d:(DY[t]?DY[t][DY[t].length-1][0]:null),cut=null,note="",C,g=cf[1];
+  if(!ld)return{C:[],g:g,n:""};
+  if(cf[0]){var x=new Date(+ld.slice(0,4),+ld.slice(5,7)-1,+ld.slice(8,10)-cf[0]);cut=iso(x);}
+  if(r==="Maks"){C=DY[t]?dyC(t):agg(a,"y");g="y";}
+  else{C=agg(a.filter(function(x){return !cut||x.d>=cut;}),g);
+    if(C.length<4&&DY[t]&&(r==="1Y"||r==="5Y")){C=dyC(t).filter(function(x){return !cut||x.d>=cut;});g="y";note="Ayrıntılı veri yok, yıllık mumlar gösteriliyor. Aylık veya günlük mum için aşağıdan Investing verisi ekle.";}}
+  var la=a[a.length-1];if(la&&la.tx&&r!=="Maks")note+=(note?' ':'')+'Son mum bugünkü işlem fiyatlarından oluşturuldu (tahmini), kapanışı girince kesinleşir.';return{C:C,g:g,n:note};}
+function drawC(el,C,g){
+  var W=360,H=220,L=6,R=56,T=10,B=22,lo=1e18,hi=-1e18,n=C.length,s="",tk=[],i;
+  C.forEach(function(x){if(x.l<lo)lo=x.l;if(x.h>hi)hi=x.h;});
+  var lg=hi/lo>25;if(lg){lo=Math.log(lo);hi=Math.log(hi);}
+  var pd=(hi-lo)*0.06||1;lo-=pd;hi+=pd;if(!lg&&lo<0)lo=0;
+  function Y(v){v=lg?Math.log(v):v;return T+(hi-v)*(H-T-B)/(hi-lo);}
+  if(lg){var a0=Math.exp(lo),b0=Math.exp(hi);for(var p=Math.pow(10,Math.floor(Math.log10(a0)));p<=b0;p*=10){[1,2,5].forEach(function(m){var v=p*m;if(v>=a0&&v<=b0)tk.push(v);});}}
+  else{var rw=(hi-lo)/4,mg=Math.pow(10,Math.floor(Math.log10(rw))),fr=rw/mg,st=(fr<1.5?1:fr<3.5?2:fr<7.5?5:10)*mg;for(var v=Math.ceil(lo/st)*st;v<=hi+1e-9;v+=st)tk.push(Math.abs(v)<st/1e6?0:v);}
+  tk.forEach(function(v){var y=Y(v);s+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+y+'" y2="'+y+'" style="stroke:var(--bd)"/><text x="'+(W-R+4)+'" y="'+(y+3)+'" font-size="10" style="fill:var(--mut)">'+fmt(v)+'</text>';});
+  var sw=(W-L-R)/n,bw=Math.max(2,Math.min(16,sw*0.7)),stp=Math.max(1,Math.round(n/5));
+  C.forEach(function(x,i){var cx=L+(i+0.5)*sw,col=x.c>=x.o?'var(--pos)':'var(--neg)',yt=Y(Math.max(x.o,x.c)),yb=Y(Math.min(x.o,x.c)),y=+x.d.slice(0,4),mo=+x.d.slice(5,7),lb=null;
+    s+='<line x1="'+cx+'" x2="'+cx+'" y1="'+Y(x.h)+'" y2="'+Y(x.l)+'" stroke-width="1.2" style="stroke:'+col+'"/><rect x="'+(cx-bw/2)+'" y="'+yt+'" width="'+bw+'" height="'+Math.max(1.5,yb-yt)+'" style="fill:'+col+'"/>';
+    if(g==="y")lb=(n<=8||y%5===0)?String(y):null;
+    else if(g==="m")lb=mo===1?String(y):null;
+    else lb=(i%stp===0)?x.d.slice(8)+"."+x.d.slice(5,7):null;
+    if(lb)s+='<text x="'+cx+'" y="'+(H-6)+'" text-anchor="middle" font-size="9" style="fill:var(--mut)">'+lb+'</text>';});
+  var ly=Y(C[n-1].c);
+  s+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+ly+'" y2="'+ly+'" stroke-dasharray="3 3" style="stroke:var(--mut)"/><rect x="'+(W-R+1)+'" y="'+(ly-8)+'" width="'+(R-3)+'" height="16" rx="3" style="fill:var(--tx)"/><text x="'+(W-R+4)+'" y="'+(ly+3.5)+'" font-size="10" font-weight="700" style="fill:var(--bg)">'+fmt(C[n-1].c)+'</text>';
+  el.innerHTML='<svg class="ch" viewBox="0 0 '+W+' '+H+'">'+s+'</svg>';}
+function setR(k){CR=k;renderChart();}
+function renderChart(){
+  var hm=pos("9999-12-31"),T=tks().filter(function(t){return hm[t]&&hm[t].q>0&&(pts(t).length||DY[t]);}),sel=document.getElementById("cts");if(!T.length){sel.innerHTML='';document.getElementById("cc").innerHTML='<div class="mut">Elinde hisse yok. Hisse alınca grafiği burada görünür.</div>';document.getElementById("cbd").innerHTML='';document.getElementById("cn").textContent='';document.getElementById("rb").innerHTML='';return;}
+  if(T.indexOf(CT)<0)CT=T[0];
+  sel.innerHTML=T.map(function(t){return '<option value="'+esc(t)+'"'+(t===CT?' selected':'')+'>'+esc(t)+'</option>';}).join('');
+  document.getElementById("rb").innerHTML=Object.keys(RG).map(function(k){return '<button class="rb'+(k===CR?' on':'')+'" onclick="setR(\''+k+'\')">'+k+'</button>';}).join('');
+  var r=cand(CT,CR),C=r.C,el=document.getElementById("cc");
+  if(C.length<1){el.innerHTML='<div class="mut">Bu aralıkta yeterli veri yok.</div>';document.getElementById("cbd").innerHTML="";document.getElementById("cn").textContent="";return;}
+  drawC(el,C,r.g);
+  var v=C[C.length-1].c/C[0].o-1;
+  document.getElementById("cbd").innerHTML='<span class="bd '+(v>=0?'up':'dn')+'">'+pc(v)+'</span>';
+  document.getElementById("cn").textContent=r.n;}
+function all(){render();renderBys();renderPer();renderCharts();renderPrices();renderTx();renderDiv();}
+function del(d){S.d=S.d.filter(function(x){return x.d!==d;});persist();all();}
+function dtx(i){var L=S.t.filter(function(x,j){return j!==i;}),e=document.getElementById("terr");if(!okq(L)){e.textContent="Bu alımı silersen sonraki satımlar için yeterli adet kalmaz.";return;}S.t=L;persist();tcancel();all();}
+document.getElementById("tadd").onclick=function(){
+  var e=document.getElementById("terr"),d=document.getElementById("td").value,t=document.getElementById("tt").value.trim().toUpperCase(),y=document.getElementById("ty").value,q=num(document.getElementById("tq").value),p=num(document.getElementById("tp").value),k=num(document.getElementById("tk").value);
+  e.style.color="";if(!d||!t||!(q>0)||!(p>0)){e.textContent="Tarih, hisse, adet ve fiyatı doldur.";return;}
+  var x={d:d,t:t,y:y,q:q,p:p,k:k};if(ET!==null&&S.t[ET].o)x.o=1;var L=S.t.slice();if(ET!==null)L[ET]=x;else L.push(x);if(!okq(L)){e.textContent=ET!==null?"Bu değişiklikle elindeki adetten fazlası satılmış olur.":"Elindeki adetten fazlasını satamazsın.";return;}
+  S.t=L;persist();tcancel();all();
+  var rc=S.d.filter(function(z){return z.d===d;})[0],mp=pos(d)[t];
+  if(mp&&mp.q>0&&!(rc&&rc.p&&rc.p[t]>0)){document.getElementById("dt").value=d;renderPrices();note("terr","İşlem eklendi. Toplama yansıması için “Gün sonu fiyatlarını gir” bölümünde "+trDate(d)+" kapanış fiyatlarını da kaydet (tarih bu güne ayarlandı).");}
+};
+document.getElementById("save").onclick=function(){
+  var d=document.getElementById("dt").value,e=document.getElementById("err");e.style.color="";
+  if(!d){e.textContent="Tarih seç.";return;}
+  var p={},ob=(S.d.filter(function(x){return x.d===d;})[0]||{}).b;
+  for(var i=0;i<PL.length;i++){
+    var v=num(document.getElementById("p"+i).value);
+    if(!(v>0)){e.textContent=PL[i]+" için fiyat gir.";return;}
+    p[PL[i]]=v;
+  }
+  var bv=num(document.getElementById("bi").value),en={d:d,p:p};if(bv>0)en.b=bv;else if(ob>0)en.b=ob;
+  S.d=S.d.filter(function(x){return x.d!==d;});
+  S.d.push(en);persist();e.textContent="";all();document.getElementById("bi").value="";
+};
+
+document.getElementById("vadd").onclick=function(){
+  var e=document.getElementById("verr"),d=document.getElementById("vd").value,t=document.getElementById("vt").value.trim().toUpperCase(),m=num(document.getElementById("vm").value);
+  e.style.color="";if(!d||!t||!(m>0)){e.textContent="Tarih, hisse ve tutarı doldur.";return;}
+  if(tks().indexOf(t)<0){e.textContent="Bu hisse işlemlerde yok.";return;}
+  S.v=S.v||[];if(EV!==null)S.v[EV]={d:d,t:t,m:m};else S.v.push({d:d,t:t,m:m});persist();vcancel();all();
+};
+document.getElementById("bk").onclick=function(){var t=document.getElementById("bt"),m=document.getElementById("bm"),ok=false;t.value=JSON.stringify(S);t.select();try{ok=document.execCommand("copy");}catch(e){}try{if(navigator.clipboard){navigator.clipboard.writeText(t.value);ok=true;}}catch(e){}m.textContent=ok?"Yedek kopyalandı. Bir notlar uygulamasına yapıştırıp sakla.":"Metin seçildi, elle kopyalayabilirsin.";};
+document.getElementById("rs").onclick=function(){var m=document.getElementById("bm");try{var o=mig(JSON.parse(document.getElementById("bt").value));if(!o||!o.d||!o.t)throw 0;o.seed=Math.max(o.seed||0,6);S=o;persist();all();m.textContent="Yedek yüklendi.";}catch(e){m.textContent="Yedek metni geçersiz.";}};
+var INV={THYAO:"https://www.investing.com/equities/turk-hava-yollari-historical-data",FROTO:"https://www.investing.com/equities/ford-otosan-historical-data"};
+document.getElementById("kb").onclick=function(){
+  var k=document.getElementById("kp"),h="";
+  if(k.style.display==="block"){k.style.display="none";return;}
+  PL.forEach(function(t){h+='<div class="row"><label>'+esc(t)+'</label>'+'<a class="lnk" target="_blank" rel="noopener noreferrer" href="'+(INV[t]||'https://www.investing.com/search/?q='+encodeURIComponent(t))+'">Investing</a></div>';});
+  h+='<div class="row"><label>BIST 100</label><a class="lnk" target="_blank" rel="noopener noreferrer" href="https://www.investing.com/search/?q=BIST%20100">Investing</a></div><div class="mut" style="margin-bottom:10px">Bağlantılar yeni sekmede açılır. Tarihe göre kapanış değerini oradan okuyup aşağıya yaz.</div>';
+  k.innerHTML=h;k.style.display="block";
+};
+document.getElementById("dt").onchange=renderPrices;
+document.getElementById("dt").value=today();
+document.getElementById("td").value=today();
+document.getElementById("vd").value=today();
+function ist(){var o={};new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/Istanbul",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",hour12:false,weekday:"short"}).formatToParts(new Date()).forEach(function(p){o[p.type]=p.value;});return{d:o.year+"-"+o.month+"-"+o.day,h:+o.hour%24,m:+o.minute,w:o.weekday};}
+function expDay(){var n=ist(),we=n.w==="Sat"||n.w==="Sun";if(!we&&(n.h>18||(n.h===18&&n.m>=30)))return{d:n.d,due:1};var dt=new Date(n.d+"T12:00:00Z");do{dt.setUTCDate(dt.getUTCDate()-1);}while(dt.getUTCDay()===0||dt.getUTCDay()===6);return{d:dt.toISOString().slice(0,10),due:0,today:!we};}
+function setAst(c,t){var e=document.getElementById("ast");if(e){e.className="ast "+c;e.textContent=t;}}
+function renderAst(f){
+  var ex=expDay(),day=f&&f.days&&f.days[ex.d],m=pos(ex.d),miss=[];
+  for(var k in m){if(m[k].q>0&&!(day&&day.p&&day.p[k]>0))miss.push(k);}
+  if(!(day&&day.b>0))miss.push("BIST 100");
+  var man=S.d.filter(function(z){return z.d===ex.d;})[0];
+  if(day&&!miss.length){var tm="";try{if(f.updatedAt)tm=" ("+new Date(f.updatedAt).toLocaleTimeString("tr-TR",{timeZone:"Europe/Istanbul",hour:"2-digit",minute:"2-digit"})+")";}catch(e){}
+    setAst("ok","✅ Otomatik güncelleme tamam: "+trDate(ex.d)+" kapanışları alındı"+tm+"."+(ex.today?" Bugünün güncellemesi 18:15’te çalışacak.":""));}
+  else setAst("no","❌ Otomatik güncelleme yok: "+trDate(ex.d)+" kapanışları gelmedi"+(miss.length&&day?" ("+miss.join(", ")+" eksik)":"")+"."+(man?" Bu günün fiyatları elle girilmiş, panelde mevcut.":" Fiyatları elle girebilirsin.")+" Tatil günü olabilir.");}
+var DBR=null,LT="",AUTO=0,FEED=undefined;
+var _all=all;all=function(){_all();try{pushT();}catch(e){}try{var gk=document.getElementById("gtk");if(gk){var q=pos("9999-12-31"),a=["BIST 100"];for(var k in q){if(q[k].q>0)a.unshift(k);}gk.textContent=a.join(", ");}}catch(e){}};
+function pushT(){if(!DBR)return;var m=pos("9999-12-31"),t=[];for(var k in m){if(m[k].q>0)t.push(k);}var key=t.join(",");if(key===LT)return;LT=key;DBR.doc("feed/meta").set({tickers:t,updated:today()}).catch(function(){});}
+var FD={days:{},updated:"",updatedAt:""};
+function addFeed(f){if(!f)return;var ds=f.days||{};Object.keys(ds).forEach(function(d){var x=ds[d]||{},t=FD.days[d]||(FD.days[d]={p:{}});t.p=t.p||{};for(var k in (x.p||{})){if(x.p[k]>0)t.p[k]=x.p[k];}if(x.b>0)t.b=x.b;});
+  if(f.updated&&f.updated>FD.updated)FD.updated=f.updated;if(f.updatedAt&&f.updatedAt>FD.updatedAt)FD.updatedAt=f.updatedAt;mergeFeed(FD);}
+var DEFURL="https://raw.githubusercontent.com/saidgunbek-rgb/bist-fiyat/main/prices.json";
+function feedUrl(){try{return localStorage.getItem("bist-feed-url")||DEFURL;}catch(e){return DEFURL;}}
+function loadUrl(){var u=feedUrl();if(!u)return;
+  fetch(u+(u.indexOf("?")<0?"?":"&")+"t="+Date.now()).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(j){addFeed(j);}).catch(function(){if(FEED===undefined)setAst("no","❌ GitHub fiyat dosyası okunamadı. Adresi “Otomatik fiyat ayarı” sekmesinde kontrol et.");});}
+function mergeFeed(f){var days=S.t.length?((f&&f.days)||{}):{},ch=0,fd=S.t.length?srt(S.t)[0].d:"",last="";if(typeof SEED!=="undefined"&&SEED.length&&SEED[0][0]>fd)fd=SEED[0][0];
+  var n0=S.d.length;S.d=S.d.filter(function(z){return z.d>=fd||dayv(z)!==null;});if(S.d.length!==n0)ch++;
+  Object.keys(days).sort().forEach(function(d){var x=days[d];if(!x||d<fd)return;var rec=S.d.filter(function(z){return z.d===d;})[0];if(!rec){rec={d:d,p:{}};S.d.push(rec);ch++;}
+    for(var t in (x.p||{})){if(!(rec.p[t]>0)&&x.p[t]>0){rec.p[t]=x.p[t];ch++;}}
+    if(!(rec.b>0)&&x.b>0){rec.b=x.b;ch++;}last=d;});
+  if(ch){AUTO+=ch;persist();all();}
+  FEED=f;renderAst(f);var gl=document.getElementById("gtl"),gd=document.getElementById("gtd");if(gl&&f&&f.updated)gl.textContent=trDate(f.updated);if(gd&&last)gd.textContent=trDate(last);var am=document.getElementById("am");if(am&&f&&f.updated)am.textContent="Otomatik fiyat sistemi açık. Son otomatik güncelleme: "+trDate(f.updated)+(last?" (son kapanış kaydı "+trDate(last)+")":"")+".";}
+if((typeof claude==="undefined"||!claude.use)&&!feedUrl())setAst("na","Otomatik fiyat ayarlı değil. “Otomatik fiyat ayarı” sekmesine GitHub fiyat dosyası adresini ekleyebilirsin. Şimdilik fiyatları elle gir.");
+loadUrl();
+(function(){var gi=document.getElementById("gu"),gb=document.getElementById("gub");if(!gi||!gb)return;gi.value=feedUrl();
+  gb.onclick=function(){var v=gi.value.trim(),m=document.getElementById("gum");try{if(v)localStorage.setItem("bist-feed-url",v);else localStorage.removeItem("bist-feed-url");}catch(e){}
+    m.textContent=v?"Kaydedildi. Fiyatlar okunuyor…":"Adres silindi.";if(v)loadUrl();else setAst("na","Otomatik fiyat ayarlı değil.");};})();
+try{if(typeof claude!=="undefined"&&claude.use){claude.use("db").then(function(db){if(!db){setAst("na","Otomatik güncelleme durumu alınamadı.");return;}DBR=db;pushT();db.doc("feed/closes").onSnapshot(function(sn){if(sn.exists)addFeed(sn.data());else if(!feedUrl()){FEED=null;renderAst(null);}},function(){setAst("na","Otomatik güncelleme durumu alınamadı.");});setTimeout(function(){if(FEED===undefined)setAst("na","Otomatik güncelleme durumu alınamadı (bağlantı yok olabilir).");},10000);}).catch(function(){});}}catch(e){}
+all();
+</script>
+</body>
+</html>
