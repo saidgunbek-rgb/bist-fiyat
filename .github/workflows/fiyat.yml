@@ -1,12 +1,15 @@
+# Her hafta içi akşamı BIST kapanış fiyatlarını alıp prices.json dosyasına yazar.
+# Yeni hisse alınca aşağıdaki HISSELER satırını değiştir (virgülle ayır, örn: "THYAO,PGSUS,ASELS").
 name: BIST kapanis fiyatlari
 
 on:
   schedule:
-    - cron: "30 15 * * 1-5"
-  workflow_dispatch:
+    - cron: "30 15 * * 1-5"   # 18:30 Türkiye saati, hafta içi
+  workflow_dispatch:           # elle çalıştırma düğmesi
 
 permissions:
   contents: write
+  actions: write      # zamanlamanin kendiliginden kapanmasini onlemek icin
 
 jobs:
   guncelle:
@@ -93,3 +96,9 @@ jobs:
           git add prices.json
           git diff --cached --quiet || git commit -m "Kapanis fiyatlari"
           git push
+
+      - name: Zamanlamayi canli tut
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow enable fiyat.yml --repo "$GITHUB_REPOSITORY"  
