@@ -401,7 +401,7 @@ function renderAst(f){
   if(!(day&&day.b>0))miss.push("BIST 100");
   var man=S.d.filter(function(z){return z.d===ex.d;})[0];
   if(day&&!miss.length){var tm="";try{if(f.updatedAt)tm=" ("+new Date(f.updatedAt).toLocaleTimeString("tr-TR",{timeZone:"Europe/Istanbul",hour:"2-digit",minute:"2-digit"})+")";}catch(e){}
-    setAst("ok","✅ Otomatik güncelleme tamam: "+trDate(ex.d)+" kapanışları alındı"+tm+"."+(ex.today?" Bugünün güncellemesi 18:15’te çalışacak.":""));}
+    setAst("ok","✅ Otomatik güncelleme tamam: "+trDate(ex.d)+" kapanışları alındı"+tm+"."+(ex.today?" Bugünün güncellemesi 18:30’da çalışacak.":""));}
   else setAst("no","❌ Otomatik güncelleme yok: "+trDate(ex.d)+" kapanışları gelmedi"+(miss.length&&day?" ("+miss.join(", ")+" eksik)":"")+"."+(man?" Bu günün fiyatları elle girilmiş, panelde mevcut.":" Fiyatları elle girebilirsin.")+" Tatil günü olabilir.");}
 var DBR=null,LT="",AUTO=0,FEED=undefined;
 var _all=all;all=function(){_all();try{pushT();}catch(e){}try{var gk=document.getElementById("gtk");if(gk){var q=pos("9999-12-31"),a=["BIST 100"];for(var k in q){if(q[k].q>0)a.unshift(k);}gk.textContent=a.join(", ");}}catch(e){}};
@@ -413,7 +413,7 @@ var DEFURL="https://raw.githubusercontent.com/saidgunbek-rgb/bist-fiyat/main/pri
 function feedUrl(){try{return localStorage.getItem("bist-feed-url")||DEFURL;}catch(e){return DEFURL;}}
 function loadUrl(){var u=feedUrl();if(!u)return;
   fetch(u+(u.indexOf("?")<0?"?":"&")+"t="+Date.now()).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(j){addFeed(j);}).catch(function(){if(FEED===undefined)setAst("no","❌ GitHub fiyat dosyası okunamadı. Adresi “Otomatik fiyat ayarı” sekmesinde kontrol et.");});}
-function mergeFeed(f){var days=S.t.length?((f&&f.days)||{}):{},ch=0,fd=S.t.length?srt(S.t)[0].d:"",last="";if(typeof SEED!=="undefined"&&SEED.length&&SEED[0][0]>fd)fd=SEED[0][0];
+function mergeFeed(f){var days=S.t.length?((f&&f.days)||{}):{},ch=0,fd=S.t.length?srt(S.t)[0].d:"",last="";if("2026-11-04">fd)fd="2026-11-04";
   var n0=S.d.length;S.d=S.d.filter(function(z){return z.d>=fd||dayv(z)!==null;});if(S.d.length!==n0)ch++;
   Object.keys(days).sort().forEach(function(d){var x=days[d];if(!x||d<fd)return;var rec=S.d.filter(function(z){return z.d===d;})[0];if(!rec){rec={d:d,p:{}};S.d.push(rec);ch++;}
     for(var t in (x.p||{})){if(!(rec.p[t]>0)&&x.p[t]>0){rec.p[t]=x.p[t];ch++;}}
