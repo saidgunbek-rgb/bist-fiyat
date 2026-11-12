@@ -4,7 +4,7 @@ name: BIST kapanis fiyatlari
 
 on:
   schedule:
-    - cron: "30 15 * * 1-5"   # 18:30 Türkiye saati, hafta içi
+    - cron: "23 15 * * 1-5"   # 18:30 Türkiye saati, hafta içi
   workflow_dispatch:           # elle çalıştırma düğmesi
 
 permissions:
