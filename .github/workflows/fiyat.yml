@@ -1,10 +1,11 @@
 # Her hafta içi akşamı BIST kapanış fiyatlarını alıp prices.json dosyasına yazar.
 # Yeni hisse alınca aşağıdaki HISSELER satırını değiştir (virgülle ayır, örn: "THYAO,PGSUS,ASELS").
+# Panelde yazdığın ad borsa kodundan farklıysa: PANELADI=BORSAKODU yaz, örn: AKBANK=AKBNK
 name: BIST kapanis fiyatlari
 
 on:
   schedule:
-    - cron: "23 15 * * 1-5"   # 18:23 Türkiye saati, hafta içi
+    - cron: "23 15 * * 1-5"   # 18:23 Türkiye saati, hafta içi (yoğun olmayan dakika)
   workflow_dispatch:           # elle çalıştırma düğmesi
 
 permissions:
@@ -15,7 +16,7 @@ jobs:
   guncelle:
     runs-on: ubuntu-latest
     env:
-      HISSELER: "THYAO,AKBNK"
+      HISSELER: "THYAO,PGSUS,AKBANK=AKBNK"
     steps:
       - uses: actions/checkout@v4
 
@@ -24,7 +25,15 @@ jobs:
           python3 - <<'PY'
           import json, os, sys, datetime, urllib.request
 
-          syms = [s.strip().upper() for s in os.environ["HISSELER"].split(",") if s.strip()]
+          syms, kodlar = [], {}
+          for oge in os.environ["HISSELER"].split(","):
+              oge = oge.strip().upper()
+              if not oge:
+                  continue
+              ad, _, kod = oge.partition("=")
+              ad = ad.strip()
+              syms.append(ad)
+              kodlar[ad] = (kod.strip() or ad)
           now = datetime.datetime.utcnow()
           ist = now + datetime.timedelta(hours=3)
           bugun = ist.strftime("%Y-%m-%d")
@@ -46,7 +55,7 @@ jobs:
           sonuc, hata = {}, []
           for s in syms:
               try:
-                  sonuc[s] = al(s + ".IS")
+                  sonuc[s] = al(kodlar[s] + ".IS")
               except Exception as e:
                   hata.append(s)
                   print("HATA", s, e)
@@ -56,6 +65,15 @@ jobs:
               bist = {}
               hata.append("BIST100")
               print("HATA BIST100", e)
+
+          ekstra = {}
+          for ad, sy in (("altin", "GC=F"), ("usd", "USDTRY=X"), ("eur", "EURTRY=X")):
+              try:
+                  ekstra[ad] = al(sy)
+              except Exception as e:
+                  ekstra[ad] = {}
+                  hata.append(ad)
+                  print("HATA", ad, e)
 
           try:
               veri = json.load(open("prices.json"))
@@ -79,6 +97,15 @@ jobs:
               if d in bist:
                   g["b"] = bist[d]
                   eklenen += 1
+              ons = ekstra["altin"].get(d)
+              usd = ekstra["usd"].get(d)
+              eur = ekstra["eur"].get(d)
+              if usd:
+                  g["u"] = round(usd, 4)
+              if eur:
+                  g["e"] = round(eur, 4)
+              if ons and usd:
+                  g["g"] = round(ons / 31.1035 * usd, 2)
 
           if not eklenen:
               print("Hic fiyat alinamadi")
@@ -101,4 +128,6 @@ jobs:
         continue-on-error: true
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh workflow enable fiyat.yml --repo "$GITHUB_REPOSITORY"  
+        run: gh workflow enable fiyat.yml --repo "$GITHUB_REPOSITORY"
+```"
+}
