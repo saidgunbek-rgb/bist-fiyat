@@ -103,7 +103,8 @@ button.rb.on{background:var(--bd);color:var(--tx)}
 <details class="ac"><summary>🔗 Neyi değiştirir?</summary>• Kaydettiğin kapanış fiyatları <b>Özet kartı, Hisse bazında durum, Geçmiş, Haftalık/aylık özet ve Grafikler</b>i günceller.<br>• BIST 100 kapanışı girersen <b>BIST karşılaştırması</b> (özet kartı) ve <b>grafikteki BIST çizgisi</b> güncellenir.<br>• Hangi hisselerin fiyat kutusu çıkacağı <b>Alım / satım işlemleri</b>ne bağlıdır: seçtiğin tarihte elinde olan hisseler listelenir.<br>• Aynı tarihe tekrar kaydedersen o günün kaydı değişir. Fiyat girmediğin işlem günleri son işlem fiyatıyla tahmini hesaplanır.</details>
 </div>
 
-<div class="card"><h2>Hisse bazında durum</h2><div class="scroll"><table id="bys"></table></div><div class="mut" id="bysd" style="margin-top:6px"></div><details class="ac"><summary>🔗 Bu tablo neye bağlı?</summary>• <b>Adet, ort. maliyet ve gerçekleşen K/Z</b> tüm alım/satım işlemlerinden hesaplanır. İşlem ekleyince tablo anında değişir.<br>• <b>Alım</b> adedi artırır ve ort. maliyeti günceller. <b>Satım</b> adedi azaltır, ort. maliyeti değiştirmez, kârı/zararı gerçekleşen K/Z’ye ekler. Tamamen satılan hissede adet 0 olur, yalnızca gerçekleşen K/Z kalır.<br>• <b>Fiyat</b> son kayıtlı kapanıştan gelir. Gün sonu fiyatını değiştirirsen Değer, K/Z, % ve Pay güncellenir. İşlem yaptığın gün kapanış girilmediyse * işaretli son işlem fiyatı kullanılır.<br>• <b>Temettü</b> girersen ilgili hissenin K/Z’sine eklenir. <b>Toplam</b> satırı Özet kartıyla aynı rakamı verir.</details></div>
+<div class="card"><h2>Hisse bazında durum</h2><div class="scroll"><table id="bys"></table></div><div class="mut" id="bysd" style="margin-top:6px"></div><details class="ac"><summary>🔗 Bu tablo neye bağlı?</summary>• <b>Adet, ort. maliyet ve gerçekleşen K/Z</b> tüm alım/satım işlemlerinden hesaplanır. İşlem ekleyince tablo anında değişir.<br>• <b>Alım</b> adedi artırır ve ort. maliyeti günceller. <b>Satım</b> adedi azaltır, ort. maliyeti değiştirmez, kârı/zararı gerçekleşen K/Z’ye ekler. Tamamen satılan hissede adet 0 olur, yalnızca gerçekleşen K/Z kalır.<br>• <b>Fiyat</b> son kayıtlı kapanıştan gelir. Gün sonu fiyatını değiştirirsen Değer, K/Z, % ve Pay güncellenir. İşlem yaptığın gün kapanış girilmediyse * işaretli son işlem fiyatı kullanılır.<br>• <b>Temettü</b> girersen ilgili hissenin K/Z’sine eklenir. <b>Toplam</b> satırı yalnızca elindeki hisselerin toplamıdır. Satılan hisseler ve gerçekleşen kâr aşağıdaki “Satışlar ve gerçekleşen kâr” bölümündedir; Özet kartı ikisini birlikte gösterir.</details></div>
+<div class="card"><details class="cl" id="cls"><summary><h2>Satışlar ve gerçekleşen kâr</h2></summary><div class="scroll"><table id="sls"></table></div><div class="mut" id="slsd" style="margin-top:6px"></div><details class="ac"><summary>🔗 Bu tablo neye bağlı?</summary>• Her satır, tamamen veya kısmen sattığın bir hissedir. <b>Alım / satım işlemleri</b> bölümündeki satım kayıtlarından hesaplanır.<br>• <b>Satış tarihi</b> o hissenin son satışının tarihidir. <b>Ort. alış</b> satılan adetlerin ortalama maliyeti, <b>Satış fiyatı</b> ortalama satış fiyatıdır. <b>Satış tutarı</b> adet × satış fiyatıdır.<br>• <b>K/Z</b> komisyon düşülmüş gerçekleşen kârdır. Toplamı Özet kartındaki “Gerçekleşen K/Z” ile aynıdır.<br>• Satım eklersen, düzenlersen veya silersen tablo anında güncellenir.</details></details></div>
 
 <div class="card"><details class="cl" id="clw"><summary><h2>Haftalık ve aylık özet</h2></summary><div class="mut" style="margin-bottom:4px">Haftalık (pazartesi–pazar)</div><div class="scroll" style="max-height:280px;overflow-y:auto"><table id="per"></table></div><div class="mut" style="margin:12px 0 4px">Aylık</div><div class="scroll" style="max-height:280px;overflow-y:auto"><table id="perm"></table></div><div class="mut" id="perd" style="margin-top:6px"></div><details class="ac"><summary>🔗 Bu özet neye bağlı?</summary>• Haftalık/aylık K/Z, <b>Geçmiş</b> tablosundaki günlük toplam K/Z farklarından; yüzde getiri ise işlemlerden etkilenmeyen getiri hesabından gelir.<br>• Gün sonu fiyatı kaydedersen / düzenlersen / silersen, işlem veya temettü eklersen ilgili hafta ve ay anında yeniden hesaplanır. Yeni hafta ve ay otomatik eklenir.<br>• * işareti: dönem ilk kayıt gününden başlıyor, öncesi kayıtlı değil.</details></details></div>
 
@@ -204,25 +205,38 @@ function render(){
   document.getElementById("empty").textContent=r.length?"":"Henüz kayıt yok.";
 }
 function lastPx(t){var c=null,tr=null;S.d.forEach(function(x){if(x.p&&x.p[t]>0&&(!c||x.d>c.d))c={p:x.p[t],d:x.d};});srt(S.t).forEach(function(x){if(!x.o&&x.t===t&&(!c||x.d>c.d)&&(!tr||x.d>=tr.d))tr={p:x.p,d:x.d,est:1};});return tr||c;}
-function saleNote(k,z){var sd=srt(S.t).filter(function(y){return y.t===k&&y.y!=='a';}).map(function(y){return y.d;}).pop();if(!sd)return '';return '<div class="mut" style="font-size:12px">satış '+trDate(sd)+(z.q>0&&z.r?' · gerçekleşen '+sg(z.r):'')+'</div>';}
+function saleStats(k){var q=0,c=0,sq=0,sv=0,sc=0;srt(S.t).forEach(function(x){if(x.t!==k)return;if(x.y==='a'){c=(q*c+x.q*x.p+(x.k||0))/(q+x.q);q+=x.q;}else{sq+=x.q;sv+=x.q*x.p;sc+=x.q*c;q-=x.q;}});return sq?{q:sq,c:sc/sq,p:sv/sq,v:sv,cost:sc}:null;}
+function renderSales(){
+  var m=pos("9999-12-31"),R=[],tr=0,t=document.getElementById('sls'),dd=document.getElementById('slsd');
+  for(var k in m){var ss=saleStats(k);if(!ss)continue;var z=m[k];
+    var sd=srt(S.t).filter(function(y){return y.t===k&&y.y!=='a';}).map(function(y){return y.d;}).pop();
+    R.push({k:k,z:z,ss:ss,sd:sd});tr+=z.r;}
+  if(!R.length){t.innerHTML='';dd.textContent='Henüz satış yok. Bir hisseyi satınca burada görünür.';return;}
+  R.sort(function(a,b){return a.sd<b.sd?1:(a.sd>b.sd?-1:0);});
+  var h='<tr><th>Hisse</th><th>Satış tarihi</th><th>Satılan adet</th><th>Ort. alış</th><th>Satış fiyatı</th><th>Satış tutarı</th><th>K/Z</th><th>%</th></tr>';
+  R.forEach(function(x){var g=x.z.r,pc2=x.ss.cost?g/x.ss.cost:0;
+    h+='<tr><td>'+esc(x.k)+(x.z.q>0?'<div class="mut" style="font-size:12px">'+fq(x.z.q)+' adet elinde</div>':'')+'</td><td>'+trDate(x.sd)+'</td><td>'+fq(x.ss.q)+'</td><td>'+fmt(x.ss.c)+'</td><td>'+fmt(x.ss.p)+'</td><td>'+fmt(x.ss.v)+'</td><td class="'+cls(g)+'">'+sg(g)+(x.z.q===0&&x.z.dv?'<div class="mut" style="font-size:12px">temettü '+sg(x.z.dv)+'</div>':'')+'</td><td class="'+cls(pc2)+'">'+pc(pc2)+'</td></tr>';});
+  if(R.length>1)h+='<tr><td><b>Toplam</b></td><td></td><td></td><td></td><td></td><td></td><td class="'+cls(tr)+'"><b>'+sg(tr)+'</b></td><td></td></tr>';
+  t.innerHTML=h;
+  dd.textContent='Toplam gerçekleşen kâr: '+sg(tr)+' TL. K/Z komisyon düşülmüş satış kârıdır.';}
 function renderBys(){
   var m=pos("9999-12-31"),t=document.getElementById('bys'),dd=document.getElementById('bysd'),L=[],tv=0,tcb=0,tkz=0,np=[],ep=[],ds={};
   for(var k in m){var z=m[k],e=z.r+(z.dv||0);
     if(z.q>0){var lp=lastPx(k),est=lp&&lp.est?1:0;if(!lp){var bt=srt(S.t).filter(function(x){return x.t===k&&x.y==='a';}).pop();if(bt){lp={p:bt.p,d:bt.d};est=1;}}
       if(lp){var v=z.q*lp.p,cb=z.q*z.c,g=v-cb+e;tv+=v;tcb+=cb;tkz+=g;if(est)ep.push(k);else ds[lp.d]=1;L.push({k:k,z:z,lp:lp,est:est,v:v,g:g,gp:cb?g/cb:0});}
       else{np.push(k);L.push({k:k,z:z,lp:null});}}
-    else if(z.r||z.dv){tkz+=e;L.push({k:k,z:z,sold:1,g:e});}}
-  if(!L.length){t.innerHTML='';dd.textContent='Henüz hisse yok. Alım / satım işlemleri bölümünden ekle.';return;}
+  }
+  if(!L.length){t.innerHTML='';dd.textContent=S.t.some(function(x){return x.y!=='a';})?'Elinde hisse yok. Satılan hisseler aşağıdaki “Satışlar ve gerçekleşen kâr” bölümünde.':'Henüz hisse yok. Alım / satım işlemleri bölümünden ekle.';return;}
   var h='<tr><th>Hisse</th><th>Adet</th><th>Ort. maliyet</th><th>Fiyat</th><th>Değer</th><th>K/Z</th><th>%</th><th>Pay</th></tr>';
   L.forEach(function(x){var z=x.z;
-    if(x.sold){h+='<tr><td>'+esc(x.k)+saleNote(x.k,z)+'</td><td>0</td><td>-</td><td>-</td><td>-</td><td class="'+cls(x.g)+'">'+sg(x.g)+'</td><td>-</td><td>-</td></tr>';}
-    else if(!x.lp){h+='<tr><td>'+esc(x.k)+saleNote(x.k,z)+'</td><td>'+fq(z.q)+'</td><td>'+fmt(z.c)+'</td><td colspan="5">Kapanış fiyatı girilmedi</td></tr>';}
-    else{h+='<tr><td>'+esc(x.k)+saleNote(x.k,z)+'</td><td>'+fq(z.q)+'</td><td>'+fmt(z.c)+'</td><td>'+fmt(x.lp.p)+(x.est?'*':'')+'</td><td>'+fmt(x.v)+'</td><td class="'+cls(x.g)+'">'+sg(x.g)+'</td><td class="'+cls(x.gp)+'">'+pc(x.gp)+'</td><td>'+(tv?(x.v/tv*100).toFixed(1).replace('.',','):'0')+'%</td></tr>';}});
-  if(L.length>1&&tv>0){var tp=tcb?tkz/tcb:0;h+='<tr><td><b>Toplam</b></td><td></td><td></td><td></td><td><b>'+fmt(tv)+'</b></td><td class="'+cls(tkz)+'"><b>'+sg(tkz)+'</b></td><td class="'+cls(tp)+'"><b>'+pc(tp)+'</b></td><td>100%</td></tr>';}
+    if(!x.lp){h+='<tr><td>'+esc(x.k)+'</td><td>'+fq(z.q)+'</td><td>'+fmt(z.c)+'</td><td colspan="5">Kapanış fiyatı girilmedi</td></tr>';}
+    else{h+='<tr><td>'+esc(x.k)+'</td><td>'+fq(z.q)+'</td><td>'+fmt(z.c)+'</td><td>'+fmt(x.lp.p)+(x.est?'*':'')+'</td><td>'+fmt(x.v)+'</td><td class="'+cls(x.g)+'">'+sg(x.g)+'</td><td class="'+cls(x.gp)+'">'+pc(x.gp)+'</td><td>'+(tv?(x.v/tv*100).toFixed(1).replace('.',','):'0')+'%</td></tr>';}});
+  if(L.length>1&&tv>0){var tp=tcb?tkz/tcb:0;h+='<tr><td><b>Toplam (elindekiler)</b></td><td></td><td></td><td></td><td><b>'+fmt(tv)+'</b></td><td class="'+cls(tkz)+'"><b>'+sg(tkz)+'</b></td><td class="'+cls(tp)+'"><b>'+pc(tp)+'</b></td><td>100%</td></tr>';}
   t.innerHTML=h;
   var dl=Object.keys(ds).sort(),n='Adet ve maliyet, tüm işlemlerin güncel durumudur. ';
   n+=dl.length===1?'Fiyatlar '+trDate(dl[0])+' kapanışına göre. ':(dl.length?'Fiyatlar her hissenin son girilen kapanışına göre ('+trDate(dl[0])+' – '+trDate(dl[dl.length-1])+'). ':'');
   n+='K/Z, gerçekleşen kısmı ve temettüyü de içerir.';
+  if(S.t.some(function(x){return x.y!=='a';}))n+=' Satılan hisseler ve gerçekleşen kâr “Satışlar ve gerçekleşen kâr” bölümünde.';
   if(ep.length)n+=' *'+ep.map(esc).join(', ')+' için kapanış girilmedi, kapanış yerine son işlem fiyatı kullanıldı (tahmini).';
   if(np.length)n+=' '+np.map(esc).join(', ')+' için kapanış fiyatı girilmediği için toplama dahil değil; “Gün sonu fiyatlarını gir” bölümünden ekle.';
   dd.innerHTML=n;}
@@ -348,7 +362,7 @@ function renderChart(){
   var v=C[C.length-1].c/C[0].o-1;
   document.getElementById("cbd").innerHTML='<span class="bd '+(v>=0?'up':'dn')+'">'+pc(v)+'</span>';
   document.getElementById("cn").textContent=r.n;}
-function all(){render();renderBys();renderPer();renderCharts();renderPrices();renderTx();renderDiv();}
+function all(){render();renderBys();renderSales();renderPer();renderCharts();renderPrices();renderTx();renderDiv();}
 function del(d){S.d=S.d.filter(function(x){return x.d!==d;});persist();all();}
 function dtx(i){var L=S.t.filter(function(x,j){return j!==i;}),e=document.getElementById("terr");if(!okq(L)){e.textContent="Bu alımı silersen sonraki satımlar için yeterli adet kalmaz.";return;}S.t=L;persist();tcancel();all();}
 document.getElementById("tadd").onclick=function(){
