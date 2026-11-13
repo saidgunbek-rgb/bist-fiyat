@@ -15,7 +15,7 @@ jobs:
   guncelle:
     runs-on: ubuntu-latest
     env:
-      HISSELER: "THYAO,PGSUS"
+      HISSELER: "THYAO,AKBANK"
     steps:
       - uses: actions/checkout@v4
 
