@@ -108,7 +108,7 @@ button.rb.on{background:var(--bd);color:var(--tx)}
 
 <div class="card"><details class="cl" id="clw"><summary><h2>Haftalık ve aylık özet</h2></summary><div class="mut" style="margin-bottom:4px">Haftalık (pazartesi–pazar)</div><div class="scroll" style="max-height:280px;overflow-y:auto"><table id="per"></table></div><div class="mut" style="margin:12px 0 4px">Aylık</div><div class="scroll" style="max-height:280px;overflow-y:auto"><table id="perm"></table></div><div class="mut" id="perd" style="margin-top:6px"></div><details class="ac"><summary>🔗 Bu özet neye bağlı?</summary>• Haftalık/aylık K/Z, <b>Geçmiş</b> tablosundaki günlük toplam K/Z farklarından; yüzde getiri ise işlemlerden etkilenmeyen getiri hesabından gelir.<br>• Gün sonu fiyatı kaydedersen / düzenlersen / silersen, işlem veya temettü eklersen ilgili hafta ve ay anında yeniden hesaplanır. Yeni hafta ve ay otomatik eklenir.<br>• * işareti: dönem ilk kayıt gününden başlıyor, öncesi kayıtlı değil.</details></details></div>
 
-<div class="card"><details class="cl" id="clg"><summary><h2>Grafikler</h2></summary><div class="mut">Getiri: portföy ve BIST 100 (ilk kayıt gününe göre %)</div><div id="c2"></div><div class="lg"><span><b style="background:var(--b1)"></b>Portföy</span><span><b style="background:var(--c1)"></b>BIST 100</span></div><details class="ac"><summary>🔗 Grafik neye bağlı?</summary>• Çizgiler <b>Geçmiş</b> tablosundaki günlerden çizilir. Fiyat veya işlem değişince grafik de değişir.<br>• <b>Portföy</b> çizgisi getiri hesabıdır: hisse alıp satman getiriyi bozmaz, yalnızca fiyat hareketi ve temettü etkiler.<br>• <b>BIST 100</b> çizgisi “Gün sonu fiyatlarını gir”e yazdığın BIST kapanışlarından gelir. BIST girmediğin günlerde çizgi kesik kalır.</details></details></div>
+<div class="card"><details class="cl" id="clg"><summary><h2>Grafikler</h2></summary><div class="mut">Getiri: portföy, BIST 100, altın ve döviz (ilk kayıt gününe göre %)</div><div id="c2"></div><div class="lg" id="lg2"><span><b style="background:var(--b1)"></b>Portföy</span><span><b style="background:var(--c1)"></b>BIST 100</span></div><div class="mut" style="font-size:12px">Altın, dolar ve euro çizgilerini adına basarak kapatıp açabilirsin.</div><details class="ac"><summary>🔗 Grafik neye bağlı?</summary>• Çizgiler <b>Geçmiş</b> tablosundaki günlerden çizilir. Fiyat veya işlem değişince grafik de değişir.<br>• <b>Portföy</b> çizgisi getiri hesabıdır: hisse alıp satman getiriyi bozmaz, yalnızca fiyat hareketi ve temettü etkiler.<br>• <b>BIST 100</b> çizgisi “Gün sonu fiyatlarını gir”e yazdığın BIST kapanışlarından gelir. BIST girmediğin günlerde çizgi kesik kalır.<br>• <b>Altın (gram), Dolar ve Euro</b> çizgileri GitHub fiyat dosyasından otomatik gelir (BIST kapanış saatine yakın bir andaki değer). Gram altın = ons altın ÷ 31,1035 × dolar/TL; kuyumcu veya Kapalıçarşı fiyatından küçük farklı olabilir. Hepsi aynı başlangıç gününe göre yüzde değişimdir, portföy ve BIST 100 ile karşılaştırmak içindir.</details></details></div>
 
 <div class="card"><details class="cl" id="clh">
 <summary><h2>Geçmiş</h2></summary>
@@ -178,7 +178,7 @@ function rows(){
     if(!y){out.push({d:day.d,v:null,p:day.p});return;}
     var kz=y.v-y.cb+y.r+y.dv,dc=pk===null?null:kz-pk,dp=pv?dc/pv:null;
     if(dp!==null)ix*=1+dp;
-    out.push({est:day.est,d:day.d,p:day.p,v:y.v,cb:y.cb,r:y.r,dv:y.dv,m:y.m,kz:kz,kp:y.cb?kz/y.cb:0,dc:dc,dp:dp,ix:ix,b:day.b,bp:(day.b>0&&pb)?day.b/pb-1:null});
+    out.push({est:day.est,d:day.d,p:day.p,v:y.v,cb:y.cb,r:y.r,dv:y.dv,m:y.m,kz:kz,kp:y.cb?kz/y.cb:0,dc:dc,dp:dp,ix:ix,b:day.b,g:day.g,u:day.u,e:day.e,bp:(day.b>0&&pb)?day.b/pb-1:null});
     if(day.b>0)pb=day.b;pv=y.v;pk=kz;
   });
   return out.reverse();
@@ -266,7 +266,16 @@ function renderPer(){
   pe.innerHTML=tab(W);pm.innerHTML=tab(M);
   pd.textContent=pt?"* İlk kayıt gününden itibaren, öncesi kayıtlı değil.":"";
 }
-function renderCharts(){var a=rows().filter(function(x){return x.v!==null;}).reverse(),xs=a.map(function(x){return x.d;});var b0=null;a.forEach(function(x){if(b0===null&&x.b>0)b0=x;});var bs=b0||a[0];if(!bs){chart('c2',[],[]);return;}var pv=a.map(function(x){return x.d>=bs.d?(x.ix/bs.ix-1)*100:null;}),bv=a.map(function(x){return(b0&&x.b>0&&x.d>=bs.d)?(x.b/b0.b-1)*100:null;});chart('c2',xs,[{c:'var(--b1)',v:pv,f:function(n){return n.toFixed(1).replace('.',',')+'%';}},{c:'var(--c1)',v:bv}]);}
+var CHOFF={};try{CHOFF=JSON.parse(localStorage.getItem('bist-chart-off')||'{}')||{};}catch(e){CHOFF={};}
+function chartTog(k){CHOFF[k]=!CHOFF[k];try{localStorage.setItem('bist-chart-off',JSON.stringify(CHOFF));}catch(e){}renderCharts();}
+function renderCharts(){var a=rows().filter(function(x){return x.v!==null;}).reverse(),xs=a.map(function(x){return x.d;});var b0=null;a.forEach(function(x){if(b0===null&&x.b>0)b0=x;});var bs=b0||a[0];if(!bs){chart('c2',[],[]);return;}
+  var pf=function(n){return n.toFixed(1).replace('.',',')+'%';},
+  pv=a.map(function(x){return x.d>=bs.d?(x.ix/bs.ix-1)*100:null;}),bv=a.map(function(x){return(b0&&x.b>0&&x.d>=bs.d)?(x.b/b0.b-1)*100:null;}),
+  ss=[{c:'var(--b1)',v:pv,f:pf},{c:'var(--c1)',v:bv}],ex=[['g','Altın (gram)','var(--c3)'],['u','Dolar','var(--c2)'],['e','Euro','#3b82f6']],lg='<span><b style="background:var(--b1)"></b>Portföy</span><span><b style="background:var(--c1)"></b>BIST 100</span>';
+  ex.forEach(function(m){var k=m[0],bk=null;a.forEach(function(x){if(bk===null&&x[k]>0&&x.d>=bs.d)bk=x;});if(!bk)return;var off=CHOFF[k],cnt=a.filter(function(x){return x[k]>0;}).length;if(cnt<2)return;
+    lg+='<span onclick="chartTog(\''+k+'\')" style="cursor:pointer;opacity:'+(off?0.4:1)+'"><b style="background:'+m[2]+'"></b>'+m[1]+(off?' (kapalı)':'')+'</span>';
+    if(!off)ss.push({c:m[2],v:a.map(function(x){return(x[k]>0&&x.d>=bk.d)?(x[k]/bk[k]-1)*100:null;})});});
+  chart('c2',xs,ss);var l=document.getElementById('lg2');if(l)l.innerHTML=lg;}
 function renderPrices(){
   var d=document.getElementById("dt").value||today(),m=pos(d),ld=S.d.slice().sort(function(a,b){return a.d<b.d?1:-1;})[0],h="";PL=[];
   tks().forEach(function(t){if(m[t]&&m[t].q>0)PL.push(t);});
@@ -378,13 +387,13 @@ document.getElementById("tadd").onclick=function(){
 document.getElementById("save").onclick=function(){
   var d=document.getElementById("dt").value,e=document.getElementById("err");e.style.color="";
   if(!d){e.textContent="Tarih seç.";return;}
-  var p={},ob=(S.d.filter(function(x){return x.d===d;})[0]||{}).b;
+  var p={},old=S.d.filter(function(x){return x.d===d;})[0]||{},ob=old.b;
   for(var i=0;i<PL.length;i++){
     var v=num(document.getElementById("p"+i).value);
     if(!(v>0)){e.textContent=PL[i]+" için fiyat gir.";return;}
     p[PL[i]]=v;
   }
-  var bv=num(document.getElementById("bi").value),en={d:d,p:p};if(bv>0)en.b=bv;else if(ob>0)en.b=ob;
+  var bv=num(document.getElementById("bi").value),en={d:d,p:p};if(bv>0)en.b=bv;else if(ob>0)en.b=ob;["g","u","e"].forEach(function(k){if(old[k]>0)en[k]=old[k];});
   S.d=S.d.filter(function(x){return x.d!==d;});
   S.d.push(en);persist();e.textContent="";all();document.getElementById("bi").value="";
 };
@@ -424,7 +433,7 @@ var DBR=null,LT="",AUTO=0,FEED=undefined;
 var _all=all;all=function(){_all();try{pushT();}catch(e){}try{var gk=document.getElementById("gtk");if(gk){var q=pos("9999-12-31"),a=["BIST 100"];for(var k in q){if(q[k].q>0)a.unshift(k);}gk.textContent=a.join(", ");}}catch(e){}};
 function pushT(){if(!DBR)return;var m=pos("9999-12-31"),t=[];for(var k in m){if(m[k].q>0)t.push(k);}var key=t.join(",");if(key===LT)return;LT=key;DBR.doc("feed/meta").set({tickers:t,updated:today()}).catch(function(){});}
 var FD={days:{},updated:"",updatedAt:""};
-function addFeed(f){if(!f)return;var ds=f.days||{};Object.keys(ds).forEach(function(d){var x=ds[d]||{},t=FD.days[d]||(FD.days[d]={p:{}});t.p=t.p||{};for(var k in (x.p||{})){if(x.p[k]>0)t.p[k]=x.p[k];}if(x.b>0)t.b=x.b;});
+function addFeed(f){if(!f)return;var ds=f.days||{};Object.keys(ds).forEach(function(d){var x=ds[d]||{},t=FD.days[d]||(FD.days[d]={p:{}});t.p=t.p||{};for(var k in (x.p||{})){if(x.p[k]>0)t.p[k]=x.p[k];}if(x.b>0)t.b=x.b;["g","u","e"].forEach(function(k){if(x[k]>0)t[k]=x[k];});});
   if(f.updated&&f.updated>FD.updated)FD.updated=f.updated;if(f.updatedAt&&f.updatedAt>FD.updatedAt)FD.updatedAt=f.updatedAt;mergeFeed(FD);}
 var DEFURL="https://raw.githubusercontent.com/saidgunbek-rgb/bist-fiyat/main/prices.json";
 function feedUrl(){try{return localStorage.getItem("bist-feed-url")||DEFURL;}catch(e){return DEFURL;}}
@@ -434,7 +443,8 @@ function mergeFeed(f){var days=S.t.length?((f&&f.days)||{}):{},ch=0,fd=S.t.lengt
   var n0=S.d.length;S.d=S.d.filter(function(z){return z.d>=fd||dayv(z)!==null;});if(S.d.length!==n0)ch++;
   Object.keys(days).sort().forEach(function(d){var x=days[d];if(!x||d<fd)return;var rec=S.d.filter(function(z){return z.d===d;})[0];if(!rec){rec={d:d,p:{}};S.d.push(rec);ch++;}
     for(var t in (x.p||{})){if(!(rec.p[t]>0)&&x.p[t]>0){rec.p[t]=x.p[t];ch++;}}
-    if(!(rec.b>0)&&x.b>0){rec.b=x.b;ch++;}last=d;});
+    if(!(rec.b>0)&&x.b>0){rec.b=x.b;ch++;}
+    ["g","u","e"].forEach(function(k){if(!(rec[k]>0)&&x[k]>0){rec[k]=x[k];ch++;}});last=d;});
   if(ch){AUTO+=ch;persist();all();}
   FEED=f;renderAst(f);var gl=document.getElementById("gtl"),gd=document.getElementById("gtd");if(gl&&f&&f.updated)gl.textContent=trDate(f.updated);if(gd&&last)gd.textContent=trDate(last);var am=document.getElementById("am");if(am&&f&&f.updated)am.textContent="Otomatik fiyat sistemi açık. Son otomatik güncelleme: "+trDate(f.updated)+(last?" (son kapanış kaydı "+trDate(last)+")":"")+".";}
 if((typeof claude==="undefined"||!claude.use)&&!feedUrl())setAst("na","Otomatik fiyat ayarlı değil. “Otomatik fiyat ayarı” sekmesine GitHub fiyat dosyası adresini ekleyebilirsin. Şimdilik fiyatları elle gir.");
