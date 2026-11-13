@@ -85,7 +85,7 @@ button.rb.on{background:var(--bd);color:var(--tx)}
 <div id="kp" style="display:none"></div>
 
 <div class="row"><label for="dt">Tarih</label><input type="date" id="dt" style="flex:2"></div>
-<details class="ac" style="margin:0 0 10px"><summary>🤖 Otomatik fiyat sistemi (GitHub) nasıl çalışır?</summary>• Hafta içi her akşam yaklaşık <b>18:23’da</b> (Türkiye saati) GitHub, sen açık olmasan da THYAO, PGSUS gibi hisselerin ve BIST 100’ün gün sonu fiyatlarını alır ve <b>prices.json</b> dosyasına yazar.<br>• Panel açılınca bu dosyayı okur ve fiyatları kendiliğinden <b>Geçmiş, Hisse bazında durum, Haftalık/aylık özet ve Grafikler</b>e işler. Elle girmene gerek kalmaz.<br>• Elle girdiğin fiyatın üzerine yazmaz, yalnızca boş günleri ve boş fiyatları doldurur. Yanlış bir fiyat gelirse <b>Geçmiş’ten Düzenle</b> ile düzeltebilirsin.<br>• Hangi hisselerin fiyatının çekileceği GitHub’daki <b>fiyat.yml</b> dosyasında <b>HISSELER</b> satırında yazar. Yeni hisse alırsan kodunu oraya eklemen gerekir (örnek: THYAO,PGSUS,ASELS). Satılan hisseyi çıkarmak şart değil.<br>• Hafta sonu ve resmî tatillerde çalışmaz, o gün için fiyat yazılmaz.<br>• GitHub bazen çalışmayı 10-30 dakika geç başlatır. Şerit yeşil değilse biraz bekleyip yenile. Hâlâ kırmızıysa GitHub’da <b>Actions</b> sekmesinde son çalışmada kırmızı çarpı (✗) var mı bak.</details>
+<details class="ac" style="margin:0 0 10px"><summary>🤖 Otomatik fiyat sistemi (GitHub) nasıl çalışır?</summary>• Hafta içi her akşam yaklaşık <b>18:23’te</b> (Türkiye saati) GitHub, sen açık olmasan da THYAO, PGSUS gibi hisselerin ve BIST 100’ün gün sonu fiyatlarını alır ve <b>prices.json</b> dosyasına yazar.<br>• Panel açılınca bu dosyayı okur ve fiyatları kendiliğinden <b>Geçmiş, Hisse bazında durum, Haftalık/aylık özet ve Grafikler</b>e işler. Elle girmene gerek kalmaz.<br>• Elle girdiğin fiyatın üzerine yazmaz, yalnızca boş günleri ve boş fiyatları doldurur. Yanlış bir fiyat gelirse <b>Geçmiş’ten Düzenle</b> ile düzeltebilirsin.<br>• Hangi hisselerin fiyatının çekileceği GitHub’daki <b>fiyat.yml</b> dosyasında <b>HISSELER</b> satırında yazar. Yeni hisse alırsan kodunu oraya eklemen gerekir (örnek: THYAO,PGSUS,ASELS). Satılan hisseyi çıkarmak şart değil.<br>• Hafta sonu ve resmî tatillerde çalışmaz, o gün için fiyat yazılmaz.<br>• GitHub bazen çalışmayı 10-30 dakika geç başlatır. Şerit yeşil değilse biraz bekleyip yenile. Hâlâ kırmızıysa GitHub’da <b>Actions</b> sekmesinde son çalışmada kırmızı çarpı (✗) var mı bak.</details>
 <div class="mut" id="am" style="margin-bottom:8px"></div>
 <details class="ac" style="margin:0 0 10px"><summary>⏰ Otomatik fiyat ayarı</summary>
 <table style="font-size:13px;white-space:normal"><tr><td>Kaynak</td><td style="text-align:right">GitHub (prices.json)</td></tr>
@@ -204,6 +204,7 @@ function render(){
   document.getElementById("empty").textContent=r.length?"":"Henüz kayıt yok.";
 }
 function lastPx(t){var c=null,tr=null;S.d.forEach(function(x){if(x.p&&x.p[t]>0&&(!c||x.d>c.d))c={p:x.p[t],d:x.d};});srt(S.t).forEach(function(x){if(!x.o&&x.t===t&&(!c||x.d>c.d)&&(!tr||x.d>=tr.d))tr={p:x.p,d:x.d,est:1};});return tr||c;}
+function saleNote(k,z){var sd=srt(S.t).filter(function(y){return y.t===k&&y.y!=='a';}).map(function(y){return y.d;}).pop();if(!sd)return '';return '<div class="mut" style="font-size:12px">satış '+trDate(sd)+(z.q>0&&z.r?' · gerçekleşen '+sg(z.r):'')+'</div>';}
 function renderBys(){
   var m=pos("9999-12-31"),t=document.getElementById('bys'),dd=document.getElementById('bysd'),L=[],tv=0,tcb=0,tkz=0,np=[],ep=[],ds={};
   for(var k in m){var z=m[k],e=z.r+(z.dv||0);
@@ -214,9 +215,9 @@ function renderBys(){
   if(!L.length){t.innerHTML='';dd.textContent='Henüz hisse yok. Alım / satım işlemleri bölümünden ekle.';return;}
   var h='<tr><th>Hisse</th><th>Adet</th><th>Ort. maliyet</th><th>Fiyat</th><th>Değer</th><th>K/Z</th><th>%</th><th>Pay</th></tr>';
   L.forEach(function(x){var z=x.z;
-    if(x.sold){h+='<tr><td>'+esc(x.k)+'</td><td>0</td><td>-</td><td>-</td><td>-</td><td class="'+cls(x.g)+'">'+sg(x.g)+'</td><td>-</td><td>-</td></tr>';}
-    else if(!x.lp){h+='<tr><td>'+esc(x.k)+'</td><td>'+fq(z.q)+'</td><td>'+fmt(z.c)+'</td><td colspan="5">Kapanış fiyatı girilmedi</td></tr>';}
-    else{h+='<tr><td>'+esc(x.k)+'</td><td>'+fq(z.q)+'</td><td>'+fmt(z.c)+'</td><td>'+fmt(x.lp.p)+(x.est?'*':'')+'</td><td>'+fmt(x.v)+'</td><td class="'+cls(x.g)+'">'+sg(x.g)+'</td><td class="'+cls(x.gp)+'">'+pc(x.gp)+'</td><td>'+(tv?(x.v/tv*100).toFixed(1).replace('.',','):'0')+'%</td></tr>';}});
+    if(x.sold){h+='<tr><td>'+esc(x.k)+saleNote(x.k,z)+'</td><td>0</td><td>-</td><td>-</td><td>-</td><td class="'+cls(x.g)+'">'+sg(x.g)+'</td><td>-</td><td>-</td></tr>';}
+    else if(!x.lp){h+='<tr><td>'+esc(x.k)+saleNote(x.k,z)+'</td><td>'+fq(z.q)+'</td><td>'+fmt(z.c)+'</td><td colspan="5">Kapanış fiyatı girilmedi</td></tr>';}
+    else{h+='<tr><td>'+esc(x.k)+saleNote(x.k,z)+'</td><td>'+fq(z.q)+'</td><td>'+fmt(z.c)+'</td><td>'+fmt(x.lp.p)+(x.est?'*':'')+'</td><td>'+fmt(x.v)+'</td><td class="'+cls(x.g)+'">'+sg(x.g)+'</td><td class="'+cls(x.gp)+'">'+pc(x.gp)+'</td><td>'+(tv?(x.v/tv*100).toFixed(1).replace('.',','):'0')+'%</td></tr>';}});
   if(L.length>1&&tv>0){var tp=tcb?tkz/tcb:0;h+='<tr><td><b>Toplam</b></td><td></td><td></td><td></td><td><b>'+fmt(tv)+'</b></td><td class="'+cls(tkz)+'"><b>'+sg(tkz)+'</b></td><td class="'+cls(tp)+'"><b>'+pc(tp)+'</b></td><td>100%</td></tr>';}
   t.innerHTML=h;
   var dl=Object.keys(ds).sort(),n='Adet ve maliyet, tüm işlemlerin güncel durumudur. ';
@@ -401,7 +402,7 @@ function renderAst(f){
   if(!(day&&day.b>0))miss.push("BIST 100");
   var man=S.d.filter(function(z){return z.d===ex.d;})[0];
   if(day&&!miss.length){var tm="";try{if(f.updatedAt)tm=" ("+new Date(f.updatedAt).toLocaleTimeString("tr-TR",{timeZone:"Europe/Istanbul",hour:"2-digit",minute:"2-digit"})+")";}catch(e){}
-    setAst("ok","✅ Otomatik güncelleme tamam: "+trDate(ex.d)+" kapanışları alındı"+tm+"."+(ex.today?" Bugünün güncellemesi 18:23’da çalışacak.":""));}
+    setAst("ok","✅ Otomatik güncelleme tamam: "+trDate(ex.d)+" kapanışları alındı"+tm+"."+(ex.today?" Bugünün güncellemesi 18:23’te çalışacak.":""));}
   else setAst("no","❌ Otomatik güncelleme yok: "+trDate(ex.d)+" kapanışları gelmedi"+(miss.length&&day?" ("+miss.join(", ")+" eksik)":"")+"."+(man?" Bu günün fiyatları elle girilmiş, panelde mevcut.":" Fiyatları elle girebilirsin.")+" Tatil günü olabilir.");}
 var DBR=null,LT="",AUTO=0,FEED=undefined;
 var _all=all;all=function(){_all();try{pushT();}catch(e){}try{var gk=document.getElementById("gtk");if(gk){var q=pos("9999-12-31"),a=["BIST 100"];for(var k in q){if(q[k].q>0)a.unshift(k);}gk.textContent=a.join(", ");}}catch(e){}};
