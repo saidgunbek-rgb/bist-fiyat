@@ -187,11 +187,13 @@ function latest(r){for(var i=0;i<r.length;i++){if(r[i].v!==null)return r[i];}ret
 function cmpHtml(){var a=rows().filter(function(x){return x.v!==null&&x.b>0;}).reverse();if(a.length<2)return '';var f=a[0],l=a[a.length-1],pr=l.ix/f.ix-1,br=l.b/f.b-1,d=(pr-br)*100;return '<div style="margin-top:8px;font-size:13px;border-top:1px solid rgba(255,255,255,.3);padding-top:8px">BIST 100’e göre ('+trDate(f.d)+' → '+trDate(l.d)+')<br>Portföy '+pc(pr)+' · BIST 100 '+pc(br)+' · Fark '+(d>0?'+':'')+d.toFixed(2).replace('.',',')+' puan</div>';}
 function pth(){return tks().map(function(t){return '<th>'+esc(t)+'</th>';}).join('');}
 function ptd(p){return tks().map(function(t){return '<td>'+(p&&p[t]>0?fmt(p[t]):'-')+'</td>';}).join('');}
+function firstBuy(){var d=null;S.t.forEach(function(x){if(x.y==='a'&&(!d||x.d<d))d=x.d;});return d;}
 function render(){
   var r=rows(),last=latest(r),s=document.getElementById("sum");
   if(!last){s.innerHTML='<div class="mut">Başlamak için aşağıya ilk gün sonu fiyatlarını gir.</div>';}
   else{s.innerHTML='<div class="mut">'+trDate(last.d)+' itibarıyla portföy değeri'+(last.est?' (tahmini)':'')+'</div><div class="big">'+fmt(last.v)+' TL</div>'+
     '<div class="'+cls(last.kz)+'" style="font-weight:600;margin-top:4px">Toplam: '+ar(last.kz)+sg(last.kz)+' TL ('+pc(last.kp)+')</div>'+
+    (firstBuy()?'<div style="margin-top:3px;font-size:12px;opacity:.85">İlk alış: '+trDate(firstBuy())+' · Güncel: '+trDate(last.d)+'</div>':'')+
     (last.dc===null?'':'<div class="'+cls(last.dc)+'" style="margin-top:2px">Günlük: '+ar(last.dc)+sg(last.dc)+' TL ('+pc(last.dp)+')</div>')+
     '<div class="mut" style="margin-top:6px">Kalan maliyet: '+fmt(last.cb)+' TL'+(last.r?' · Gerçekleşen K/Z: '+sg(last.r)+' TL':'')+(last.dv?' · Temettü: '+sg(last.dv)+' TL':'')+'</div>'+cmpHtml()+sumNote(last,r);}
   var h='<tr><th>Tarih</th>'+pth()+'<th>Değer</th><th>Toplam K/Z</th><th>%</th><th>Günlük</th><th>Gün %</th><th>BIST 100</th><th>BIST %</th><th></th></tr>';
