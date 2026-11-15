@@ -442,5 +442,198 @@
    "hatalar": [],
    "secim_kayitlari": []
   }
+ },
+ "kap_ve_bilanco": {
+  "updatedAt": "2026-11-15 21:45",
+  "hisseler": {
+   "AKBNK": {
+    "kap_kaynak": "borsapy",
+    "kap_adet": 20,
+    "kap_icerik": [
+     [
+      "2026-11-04 13:48",
+      "Temerrüt İşlemi",
+      "borsapy",
+      20000
+     ],
+     [
+      "2026-11-03 17:16",
+      "SPK İşlem Yasağı Nedeniyle Pay Duyurusu",
+      "borsapy",
+      20000
+     ],
+     [
+      "2026-10-27 19:04",
+      "SPK İşlem Yasağı Nedeniyle Pay Duyurusu",
+      "borsapy",
+      20000
+     ],
+     [
+      "2026-10-27 18:16",
+      "Sorumluluk Beyanı (Konsolide Olmayan)",
+      "borsapy",
+      20000
+     ],
+     [
+      "2026-10-27 18:15",
+      "Sorumluluk Beyanı (Konsolide)",
+      "borsapy",
+      20000
+     ],
+     [
+      "2026-10-27 18:15",
+      "Finansal Rapor",
+      "borsapy",
+      20000
+     ],
+     [
+      "2026-10-26 09:00",
+      "Özel Durum Açıklaması (Genel)",
+      "borsapy",
+      20000
+     ],
+     [
+      "2026-10-23 16:54",
+      "Borsada İşlem Gören Tipe Dönüşüm Duyurusu",
+      "borsapy",
+      20000
+     ],
+     [
+      "2026-10-23 14:58",
+      "Pay Bazında Devre Kesici Bildirimi",
+      "borsapy",
+      20000
+     ],
+     [
+      "2026-10-21 18:12",
+      "SPK İşlem Yasağı Nedeniyle Pay Duyurusu",
+      "borsapy",
+      20000
+     ]
+    ],
+    "bilanco_kontrol": {
+     "d": "2026/9",
+     "kaynak": [
+      "TradingView",
+      "Yahoo"
+     ],
+     "bizim": {
+      "kar": 64309061000.0,
+      "ozkaynak": 330258000000.0
+     },
+     "karsi": {
+      "tradingview": {
+       "kar": 64281516000.0,
+       "ozkaynak": 330260000000.0
+      },
+      "yahoo": {
+       "kar": [
+        "2026-09-30",
+        64281821000.0
+       ],
+       "ozkaynak": [
+        "2026-09-30",
+        330260000000.0
+       ]
+      }
+     }
+    }
+   },
+   "THYAO": {
+    "kap_kaynak": "borsapy",
+    "kap_adet": 20,
+    "kap_icerik": [
+     [
+      "2026-11-13 10:58",
+      "Şirket Genel Bilgi Formu",
+      "borsapy",
+      20000
+     ],
+     [
+      "2026-11-11 18:10",
+      "SPK İşlem Yasağı Nedeniyle Pay Duyurusu",
+      "borsapy",
+      20000
+     ],
+     [
+      "2026-11-09 17:43",
+      "Özel Durum Açıklaması (Genel)",
+      "borsapy",
+      20000
+     ],
+     [
+      "2026-11-09 16:27",
+      "Borsada İşlem Gören Tipe Dönüşüm Duyurusu",
+      "borsapy",
+      20000
+     ],
+     [
+      "2026-11-09 15:40",
+      "VİOP İşlem İptali Duyuruları",
+      "borsapy",
+      20000
+     ],
+     [
+      "2026-11-04 12:46",
+      "Temerrüt İşlemi",
+      "borsapy",
+      20000
+     ],
+     [
+      "2026-11-04 08:01",
+      "Özel Durum Açıklaması (Genel)",
+      "borsapy",
+      20000
+     ],
+     [
+      "2026-11-04 08:00",
+      "Sorumluluk Beyanı (Konsolide)",
+      "borsapy",
+      20000
+     ],
+     [
+      "2026-11-04 08:00",
+      "Faaliyet Raporu (Konsolide)",
+      "borsapy",
+      20000
+     ],
+     [
+      "2026-11-04 08:00",
+      "Finansal Rapor",
+      "borsapy",
+      20000
+     ]
+    ],
+    "bilanco_kontrol": {
+     "d": "2026/9",
+     "kaynak": [],
+     "tv_onceki": "2026/6",
+     "bizim": {
+      "kar": 146218895515.0,
+      "ozkaynak": 1135117000000.0
+     },
+     "karsi": {
+      "tradingview": {
+       "kar": 112059000000.0,
+       "ozkaynak": 1018453000000.0
+      },
+      "yahoo": {
+       "kar": [
+        "2026-09-30",
+        2598000000.0
+       ],
+       "ozkaynak": [
+        "2026-09-30",
+        23252000000.0
+       ]
+      },
+      "onceki_ceyrek_ozkaynak": [
+       "2026/6",
+       1018517000000.0
+      ]
+     }
+    }
+   }
+  }
  }
 }
