@@ -84,7 +84,7 @@ function render(d){
      +row("dy","Temettü",s.dy,s.dy!=null?"%"+f1(s.dy):"","veri yok")
      +'<div class="sum">'+summary(k,s)+'</div>'
      +'<div class="note" data-n="'+esc(k)+'"></div>'
-     +'<div class="src">F/K ve PD/DD: borsapy · Temettü verimi: Yahoo</div></div>';});
+     +'<div class="src">'+(s.carry&&s.carry.length?'Canlı kaynaklara şu an ulaşılamadı, son bilinen değerler gösteriliyor ('+esc(String(s.asof||"").split("-").reverse().join("."))+'). · ':'')+'F/K ve PD/DD: '+(s.chk?'şirket bilançosundan hesaplanır ('+esc(s.chk.d)+')':'borsapy')+' · Temettü verimi: Yahoo</div></div>';});
   document.getElementById("app").innerHTML=h;
   Array.prototype.forEach.call(document.querySelectorAll(".note"),function(el){paintNote(el);});
 }
