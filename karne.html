@@ -27,6 +27,25 @@ h1{font-size:23px;margin:6px 0 2px;background:linear-gradient(90deg,#8b7cf6,#f09
 textarea{width:100%;min-height:78px;background:#12131c;color:var(--tx);border:1.5px solid var(--p);border-radius:10px;padding:8px 10px;font:inherit;font-size:14px;margin-top:8px}
 .btn{background:var(--p);color:#fff;border:0;border-radius:10px;padding:8px 14px;font-size:13px;font-weight:600;margin-top:6px;margin-right:6px}
 .btn.g{background:var(--card2);color:var(--tx)}
+.tk{margin-top:12px;padding-top:10px;border-top:1px solid var(--ln)}
+.tkh{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.bd{font-size:12px;font-weight:700;padding:3px 9px;border-radius:8px;background:var(--card2)}
+.lvl{border-left:3px solid var(--ln);padding:5px 9px;margin:5px 0}
+.lvl .a{display:flex;justify-content:space-between;font-size:13.5px}.lvl .a b{white-space:nowrap}
+.lvl .s{font-size:11.5px;color:var(--mut)}
+.lvl.now{background:var(--card2);border-radius:0 8px 8px 0}
+.mal{font-size:12.5px;color:var(--mut);margin-top:8px;line-height:1.5}
+.uz{margin-top:12px;padding:10px 11px;border-radius:12px;background:var(--card2)}
+.uzh{display:flex;justify-content:space-between;align-items:center;font-size:13.5px;font-weight:700}
+.uzo{font-size:13.5px;line-height:1.5;margin:7px 0 4px}
+.uzr{display:flex;gap:8px;font-size:12.5px;margin-top:5px;line-height:1.4}.uzr i{font-style:normal;font-weight:700;width:14px;text-align:center;flex:none}
+.uzr span{color:var(--mut)}.uzr b{color:var(--tx);font-weight:600}
+.ac{background:none;padding:0;margin:12px 0 0;border-top:1px solid var(--ln);border-radius:0;color:var(--tx);font-size:inherit}
+.ac>summary{list-style:none;display:flex;align-items:center;gap:8px;padding:10px 0 2px;color:var(--tx);font-weight:400}
+.ac>summary::-webkit-details-marker{display:none}
+.ac>summary .gs{margin-left:auto;font-size:12.5px;font-weight:700;color:var(--p);white-space:nowrap}
+.ac>summary .gs::after{content:"Göster ▾"}.ac[open]>summary .gs::after{content:"Gizle ▴"}
+.ac .tk{border-top:0;margin-top:4px;padding-top:4px}
 .src{font-size:11px;color:var(--mut);margin-top:6px}
 .foot{font-size:11.5px;color:var(--mut);margin:6px 0 12px;line-height:1.55}
 details{background:var(--card);border-radius:14px;padding:11px 13px;margin-bottom:12px;font-size:13px;color:var(--mut)}
@@ -38,7 +57,7 @@ html{color-scheme:dark}@media (prefers-color-scheme: light){html{color-scheme:li
 <div class="sub" id="sub">Yükleniyor…</div>
 <div id="msg"></div>
 <div id="app"></div>
-<div class="foot">Eşikler genel kuraldır: F/K &lt;8 ucuz, 8–15 makul, &gt;15 pahalı. PD/DD &lt;1 ucuz, 1–2 makul, &gt;2 pahalı. Temettü verimi %5 ve üstü yüksek, %2–5 orta. Sektöre göre değişir: bankalarda PD/DD, havayolunda F/K daha anlamlıdır. Bu sayfa bir al/sat önerisi değildir; karar vermeden önce rakamları bankanın uygulaması ya da KAP ile teyit et.</div>
+<div class="foot">Eşikler genel kuraldır: F/K &lt;8 ucuz, 8–15 makul, &gt;15 pahalı. PD/DD &lt;1 ucuz, 1–2 makul, &gt;2 pahalı. Temettü verimi %5 ve üstü yüksek, %2–5 orta. Sektöre göre değişir: bankalarda PD/DD, havayolunda F/K daha anlamlıdır. Al-bekle-sat seviyeleri hareketli ortalama ve Fibonacci hesabıdır, geleceği garanti etmez. Uzun vade görünümü 4 ölçütten (değerleme, 200 günlük trend, kâr büyümesi, özkaynak kârlılığı) kurala göre çıkarılır; her ölçüt +1, 0 ya da −1 puan alır, toplam +2 ve üstü olumlu, −2 ve altı olumsuzdur. Bu sayfa bir al/sat önerisi değildir; karar vermeden önce rakamları bankanın uygulaması ya da KAP ile teyit et.</div>
 <details><summary>Notlarımı yedekle / geri yükle</summary>
 <div style="margin-top:8px;line-height:1.5">Notların bu telefonun tarayıcısında durur. Telefon değişirse ya da tarayıcı verisi silinirse kaybolur. Bu yüzden arada “Kopyala”ya basıp bir yere (Notlar, WhatsApp “Kendime mesaj”) yapıştır.</div>
 <textarea id="bk" placeholder="Yedek metni burada görünür. Geri yüklemek için buraya yapıştır."></textarea>
@@ -47,6 +66,17 @@ html{color-scheme:dark}@media (prefers-color-scheme: light){html{color-scheme:li
 <script>
 var DEFURL="https://raw.githubusercontent.com/saidgunbek-rgb/bist-fiyat/main/karne.json";
 var BANKS=["AKBNK","GARAN","ISCTR","YKBNK","HALKB","VAKBN","TSKB","ALBRK","SKBNK","QNBFB","ICBCT"];
+var ALIAS={"AKBANK":"AKBNK"};
+function maliyetler(){var m={};try{var o=JSON.parse(localStorage.getItem("bist-takip-v2")||"null");if(!o||!o.t)return m;
+  o.t.slice().sort(function(a,b){return a.d<b.d?-1:a.d>b.d?1:0;}).forEach(function(x){var t=String(x.t||"").toUpperCase();t=ALIAS[t]||t;
+    var z=m[t]||(m[t]={q:0,c:0}),k=x.k||0;if(x.y==="a"){z.c=(z.q*z.c+x.q*x.p+k)/(z.q+x.q);z.q+=x.q;}else{z.q-=x.q;if(z.q<1e-9)z.q=0;}});}catch(e){}return m;}
+var MAL=maliyetler();
+var ACIK={};try{ACIK=JSON.parse(localStorage.getItem("bist-karne-acik")||"{}")||{};}catch(e){ACIK={};}
+function acHtml(k,s){var ic=tekHtml(k,s.tek,s.price)+uzunHtml(s.uzun);if(!ic)return"";
+  var d=s.tek&&DUR[s.tek.durum],g=s.uzun&&GOR[s.uzun.gor],b="";
+  if(d)b+='<span class="bd" style="color:'+d[1]+'">'+d[0]+'</span>';
+  if(g)b+='<span class="bd" style="color:'+g[1]+'">Uzun vade: '+g[0]+'</span>';
+  return'<details class="ac" data-ac="'+esc(k)+'"'+(ACIK[k]?" open":"")+'><summary><span style="display:flex;gap:6px;flex-wrap:wrap">'+(b||"Seviyeler ve uzun vade")+'</span><span class="gs"></span></summary>'+ic+'</details>';}
 var NOTES={};try{NOTES=JSON.parse(localStorage.getItem("bist-karne-notlar")||"{}")||{};}catch(e){NOTES={};}
 function saveN(){try{localStorage.setItem("bist-karne-notlar",JSON.stringify(NOTES));}catch(e){}}
 function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
@@ -73,6 +103,30 @@ function summary(code,s){
   else t="Değerleme <b>makul / karma</b> bölgede.";
   if(bank)t+=" <span style='color:var(--mut)'>Banka: PD/DD ve F/K birlikte okunur.</span>";
   return t;}
+var DUR={alim:["Alım bölgesi","var(--g)"],bekle:["Bekle / tut","var(--y)"],kar_al:["Kâr al bölgesi","var(--r)"],dikkat:["Dikkat: derin geri çekilme","var(--y)"],risk:["Risk: risk çizgisinin altında","var(--r)"]};
+var TRN={yukari:["Trend: yukarı","var(--g)"],asagi:["Trend: aşağı","var(--r)"],yatay:["Trend: yatay","var(--y)"]};
+function lvl(ad,deger,alt,renk,simdi){return'<div class="lvl'+(simdi?' now':'')+'" style="border-left-color:'+renk+'"><div class="a"><span>'+ad+(simdi?' <span style="color:var(--mut);font-size:12px">· '+(simdi===2?'fiyat bunun altında':'fiyat burada')+'</span>':'')+'</span><b>'+deger+'</b></div><div class="s">'+alt+'</div></div>';}
+function tekHtml(k,t,fiyat){if(!t||!(t.son>0))return"";
+  var d=DUR[t.durum]||["",""],tr=TRN[t.trend]||["",""],p=t.son,h="";
+  h+='<div class="tk"><div class="tkh"><span class="bd" style="color:'+tr[1]+'">'+tr[0]+'</span></div>';
+  var L=[[t.h2,lvl("Satış hedefi 2",f2(t.h2)+" TL",esc(t.h2n),"var(--r)",false)],
+   [t.h1,lvl("Satış hedefi 1 (kâr al)",f2(t.h1)+" TL",esc(t.h1n),"var(--r)",t.durum=="kar_al")],
+   [t.h1-0.001,lvl("Bekleme bölgesi",f2(t.f382)+" – "+f2(t.h1)+" TL","Fibonacci %38,2 ile hedef 1 arası","var(--y)",t.durum=="bekle")],
+   [t.f382,lvl("Alım bölgesi",f2(t.f50)+" – "+f2(t.f382)+" TL","Fibonacci %50 – %38,2 geri çekilme","var(--g)",t.durum=="alim")],
+   [t.risk,lvl("Risk çizgisi (zarar kes)",f2(t.risk)+" TL",esc(t.riskn)+", altında kapanış riskli","var(--mut)",t.durum=="risk"?2:false)]];
+  if(t.durum=="dikkat")L.push([t.f50-0.001,lvl("Derin geri çekilme","%50 altı: "+f2(t.f50)+" TL altı","Alım bölgesinin altı, risk çizgisinin üstü","var(--y)",true)]);
+  L.sort(function(x,y){return y[0]-x[0];});L.forEach(function(x){h+=x[1];});
+  var ms="50 günlük ort. "+f2(t.ma50)+(t.ma200?" · 200 günlük ort. "+f2(t.ma200):"")+" · 1 yıl dip "+f2(t.dip)+" / zirve "+f2(t.zirve);
+  var m=MAL[k],cp=fiyat>0?fiyat:p;if(m&&m.q>0&&m.c>0){var kz=(cp/m.c-1)*100,uz=(t.h1/cp-1)*100;
+    ms+='<br>Senin maliyetin: '+f2(m.c)+' TL ('+(kz>=0?"+":"")+f1(kz).replace("-","−")+'%)'+(uz>0?' · Kâr al hedefi 1\'e uzaklık: %'+f1(uz):'');}
+  h+='<div class="mal">'+ms+'</div><div class="src">Seviyeler '+esc(trD(t.tarih))+' kapanışına göre, iki ya da daha fazla kaynakta doğrulanmış '+t.gun+' günlük fiyatla hesaplandı.</div></div>';
+  return h;}
+var GOR={olumlu:["Olumlu","var(--g)"],notr:["Nötr","var(--y)"],olumsuz:["Olumsuz","var(--r)"]};
+function uzunHtml(u){if(!u||!u.gor)return"";var g=GOR[u.gor]||["",""],h='<div class="uz"><div class="uzh"><span>Uzun vadeli yatırımcı için</span><span style="color:'+g[1]+'">'+g[0]+'</span></div>';
+  h+='<div class="uzo">'+esc(u.oneri)+'</div>';
+  (u.olcut||[]).forEach(function(o){var c=o.p>0?["✓","var(--g)"]:o.p<0?["✗","var(--r)"]:["–","var(--y)"];
+    h+='<div class="uzr"><i style="color:'+c[1]+'">'+c[0]+'</i><span><b>'+esc(o.ad)+':</b> '+esc(o.t)+'</span></div>';});
+  return h+'</div>';}
 function render(d){
   var st=d.stocks||{},keys=Object.keys(st),h="";
   if(!keys.length){document.getElementById("app").innerHTML='<div class="warn">Henüz hisse verisi yok.</div>';return;}
@@ -83,10 +137,12 @@ function render(d){
      +row("pb","PD/DD",s.pb,s.pb>0?f1(s.pb):"","yok")
      +row("dy","Temettü",s.dy,s.dy!=null?"%"+f1(s.dy):"","veri yok")
      +'<div class="sum">'+summary(k,s)+'</div>'
+     +acHtml(k,s)
      +'<div class="note" data-n="'+esc(k)+'"></div>'
      +'<div class="src">'+(s.carry&&s.carry.length?'Canlı kaynaklara şu an ulaşılamadı, son bilinen değerler gösteriliyor ('+esc(String(s.asof||"").split("-").reverse().join("."))+'). · ':'')+'F/K ve PD/DD: '+(s.chk?'şirket bilançosundan hesaplanır ('+esc(s.chk.d)+')':'borsapy')+' · Temettü verimi: Yahoo</div></div>';});
   document.getElementById("app").innerHTML=h;
   Array.prototype.forEach.call(document.querySelectorAll(".note"),function(el){paintNote(el);});
+  Array.prototype.forEach.call(document.querySelectorAll(".ac"),function(el){el.addEventListener("toggle",function(){var k=el.getAttribute("data-ac");if(el.open)ACIK[k]=1;else delete ACIK[k];try{localStorage.setItem("bist-karne-acik",JSON.stringify(ACIK));}catch(e){}});});
 }
 function paintNote(el){var k=el.getAttribute("data-n"),t=NOTES[k]||"";
   el.innerHTML=t?"<b>Notum:</b> "+esc(t):"<b>Notum:</b> henüz yazmadın. Neden alıyorsun, hangi seviyede satarsın? (dokunup yaz)";
