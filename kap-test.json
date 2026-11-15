@@ -1,0 +1,534 @@
+{
+ "tarih": "2026-11-15T18:04:11Z",
+ "kap_ana_sayfa": {
+  "durum": 200,
+  "uzunluk": 157643,
+  "sayfadaki_api": [
+   "/tr/api/about/content-file/402881cf91d6efd60191d6f04e530000",
+   "/tr/api/about/content-file/402881cf91d6efd60191d6f08e900001"
+  ],
+  "js_sayisi": 24,
+  "js_icindeki_api": [
+   "api/BildirimPdf",
+   "api/about/content-file",
+   "api/analysis/companies-by-sector",
+   "api/analysis/compare-items-by-sector",
+   "api/analysis/funds-by-sector",
+   "api/ca/allCa",
+   "api/ca/filteredCa",
+   "api/cgif/get-history",
+   "api/cgif/get-history/cgif-table",
+   "api/company-detail/disclosures",
+   "api/company-detail/sgbf-data",
+   "api/company/items",
+   "api/disclosure/filter/FILTERYFBF",
+   "api/disclosure/funds/byCriteria",
+   "api/disclosure/list/light",
+   "api/disclosure/list/main",
+   "api/disclosure/members/byCriteria",
+   "api/disclosure/subjects",
+   "api/expected-disclosure-inquiry/company",
+   "api/expected-disclosure-inquiry/fund",
+   "api/export/compareItems",
+   "api/file/download",
+   "api/financialTable/checkFileExist",
+   "api/financialTable/download",
+   "api/financialTable/listCompanyExcelMembers",
+   "api/fund/criteria",
+   "api/fund/founder",
+   "api/home-data/announcements",
+   "api/home-data/banners",
+   "api/home-data/guidelines",
+   "api/home-financial/download-file",
+   "api/member/filter",
+   "api/member/logo",
+   "api/menu/about-pdp",
+   "api/menu/footer",
+   "api/notification/attachment-detail",
+   "api/notification/export/excel",
+   "api/notification/export/word",
+   "api/params",
+   "api/search/combined",
+   "api/search/market",
+   "api/search/smart",
+   "api/sustainability/get-history",
+   "api/yfbf/get-old-history"
+  ]
+ },
+ "kap_bildirim_sorgu": "HATA: The read operation timed out",
+ "kap_diger_servisler": {
+  "https://www.kap.org.tr/tr/api/kapmembers/IGS/A": "HATA: HTTP Error 404: Not Found",
+  "https://www.kap.org.tr/tr/api/disclosure/list/main": "HATA: HTTP Error 405: Method Not Allowed",
+  "https://www.kap.org.tr/tr/api/company/generic/THYAO": "HATA: HTTP Error 404: Not Found",
+  "https://www.kap.org.tr/tr/bist-sirketler": {
+   "durum": 200,
+   "uzunluk": 1510991,
+   "bas": "<!DOCTYPE html><html lang=\"tr\" class=\"overflow-x-hidden scroll-smooth show:overflow-y-hidden show:pr-1.5\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/0enw6vkhn2ywg.css\" data-precedence=\"next\"/><li",
+   "THYAO_cevresi": "emberOid\\\":\\\"4028e4a140f2ed720140f376bebb01a7\\\",\\\"kapMemberTitle\\\":\\\"TÜRK HAVA YOLLARI A.O.\\\",\\\"relatedMemberTitle\\\":\\\"PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş\\\",\\\"stockCode\\\":\\\"THYAO\\\",\\\"cityName\\\":\\\"İSTANBUL\\\",\\\"relatedMemberOid\\\":\\\"33E5FED7242300EAE0530A4A622B2AEA\\\",\\\"kapMemberType\\\":\\\"IGS\\\"},{\\\"mkkMemberOid\\\":\\\"4028e4a240f2ef470141167b777b0437\\\",\\\"kapMemberTitle\\\":\\\"TÜRK PRYSMİAN KABLO VE SİSTEMLERİ A.Ş.\\\",\\\"relatedMemberTitle\\\":\\\"PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEB"
+  },
+  "https://www.kap.org.tr/tr/rss/disclosures": "HATA: HTTP Error 404: Not Found"
+ },
+ "borsapy_kap": {
+  "surum": "0.11.0",
+  "modul_icerigi": [
+   "APIError",
+   "AuthenticationError",
+   "Backtest",
+   "BacktestResult",
+   "Bond",
+   "BorsapyError",
+   "Crypto",
+   "DataNotAvailableError",
+   "EVDS",
+   "EVDSSeries",
+   "EconomicCalendar",
+   "Eurobond",
+   "FX",
+   "Fund",
+   "Index",
+   "Inflation",
+   "InvalidIntervalError",
+   "InvalidPeriodError",
+   "Portfolio",
+   "RateLimitError",
+   "ReplaySession",
+   "ScanResult",
+   "Screener",
+   "TCMB",
+   "TechnicalAnalyzer",
+   "TechnicalScanner",
+   "Ticker",
+   "TickerNotFoundError",
+   "Tickers",
+   "Trade",
+   "TradingViewStream",
+   "VIOP",
+   "add_indicators",
+   "all_indices",
+   "backtest",
+   "banks",
+   "bond",
+   "bonds",
+   "cache",
+   "calculate_adx",
+   "calculate_atr",
+   "calculate_bollinger_bands",
+   "calculate_dema",
+   "calculate_ema",
+   "calculate_heikin_ashi",
+   "calculate_hhv",
+   "calculate_llv",
+   "calculate_macd",
+   "calculate_mom",
+   "calculate_obv",
+   "calculate_roc",
+   "calculate_rsi",
+   "calculate_sma",
+   "calculate_stochastic",
+   "calculate_supertrend",
+   "calculate_tema",
+   "calculate_tilson_t3",
+   "calculate_vwap",
+   "calculate_wma",
+   "calendar",
+   "charts",
+   "clear_evds_key",
+   "clear_tradingview_auth",
+   "clear_twitter_auth",
+   "companies",
+   "compare_funds",
+   "create_replay",
+   "create_stream",
+   "crypto",
+   "crypto_pairs",
+   "download",
+   "economic_calendar",
+   "eurobond",
+   "eurobonds",
+   "evds",
+   "evds_categories",
+   "evds_download",
+   "evds_search",
+   "evds_series",
+   "exceptions"
+  ],
+  "ticker_ozellikleri": [
+   "actions",
+   "adx",
+   "analyst_price_targets",
+   "atr",
+   "balance_sheet",
+   "bollinger_bands",
+   "calendar",
+   "cashflow",
+   "dema",
+   "dividends",
+   "earnings_dates",
+   "ema",
+   "etf_holders",
+   "fast_info",
+   "get_balance_sheet",
+   "get_cashflow",
+   "get_income_stmt",
+   "get_news_content",
+   "get_ttm_cashflow",
+   "get_ttm_income_stmt",
+   "heikin_ashi",
+   "hhv",
+   "history",
+   "history_with_indicators",
+   "income_stmt",
+   "info",
+   "isin",
+   "llv",
+   "macd",
+   "major_holders",
+   "mom",
+   "news",
+   "obv",
+   "quarterly_balance_sheet",
+   "quarterly_cashflow",
+   "quarterly_income_stmt",
+   "recommendations",
+   "recommendations_summary",
+   "roc",
+   "rsi",
+   "sma",
+   "splits",
+   "stochastic",
+   "supertrend",
+   "symbol",
+   "ta_signals",
+   "ta_signals_all_timeframes",
+   "technicals",
+   "tema",
+   "tilson_t3",
+   "ttm_cashflow",
+   "ttm_income_stmt",
+   "tweets",
+   "vwap",
+   "wma"
+  ],
+  "ticker.news": [
+   {
+    "Date": "13.11.2026 10:58:00",
+    "Title": "Şirket Genel Bilgi Formu",
+    "URL": "https://www.kap.org.tr/tr/Bildirim/1697886"
+   },
+   {
+    "Date": "11.11.2026 18:10:44",
+    "Title": "SPK İşlem Yasağı Nedeniyle Pay Duyurusu",
+    "URL": "https://www.kap.org.tr/tr/Bildirim/1697234"
+   },
+   {
+    "Date": "09.11.2026 17:43:49",
+    "Title": "Özel Durum Açıklaması (Genel)",
+    "URL": "https://www.kap.org.tr/tr/Bildirim/1695191"
+   },
+   {
+    "Date": "09.11.2026 16:27:43",
+    "Title": "Borsada İşlem Gören Tipe Dönüşüm Duyurusu",
+    "URL": "https://www.kap.org.tr/tr/Bildirim/1695077"
+   },
+   {
+    "Date": "09.11.2026 15:40:52",
+    "Title": "VİOP İşlem İptali Duyuruları",
+    "URL": "https://www.kap.org.tr/tr/Bildirim/1694972"
+   },
+   {
+    "Date": "04.11.2026 12:46:41",
+    "Title": "Temerrüt İşlemi",
+    "URL": "https://www.kap.org.tr/tr/Bildirim/1692139"
+   },
+   {
+    "Date": "04.11.2026 10:39:16",
+    "Title": "Temerrüt İşlemi",
+    "URL": "https://www.kap.org.tr/tr/Bildirim/1692074"
+   },
+   {
+    "Date": "04.11.2026 08:01:00",
+    "Title": "Özel Durum Açıklaması (Genel)",
+    "URL": "https://www.kap.org.tr/tr/Bildirim/1691986"
+   }
+  ]
+ },
+ "google_haber_rss": {
+  "THYAO": [
+   {
+    "baslik": "KAP *** TÜRK HAVA YOLLARI A.O. *** THYAO *** Şirket Genel Bilgi Formu - Yeni Şafak",
+    "tarih": "Fri, 13 Nov 2026 07:58:00 GMT",
+    "kaynak": "Yeni Şafak"
+   },
+   {
+    "baslik": "Türk Hava Yolları (THYAO) Bilançosu Sonrası Kurumların Hedef Fiyat Öngörüleri - Borsa Gundem",
+    "tarih": "Thu, 05 Nov 2026 08:00:00 GMT",
+    "kaynak": "Borsa Gundem"
+   },
+   {
+    "baslik": "KAP *** İSTANBUL TAKAS VE SAKLAMA BANKASI A.Ş. *** THYAO *** Temerrüt İşlemi - Yeni Şafak",
+    "tarih": "Wed, 04 Nov 2026 08:00:00 GMT",
+    "kaynak": "Yeni Şafak"
+   },
+   {
+    "baslik": "THY'nin gelirleri uçuşa geçti, kârı neden çakıldı? THYAO 2026 bilançosu piyasayı şaşırttı! - MANŞETİZ",
+    "tarih": "Wed, 05 Aug 2026 07:00:00 GMT",
+    "kaynak": "MANŞETİZ"
+   },
+   {
+    "baslik": "KAP *** TÜRK HAVA YOLLARI A.O. *** THYAO *** Özel Durum Açıklaması (Genel) - GZT",
+    "tarih": "Thu, 08 Oct 2026 07:00:00 GMT",
+    "kaynak": "GZT"
+   },
+   {
+    "baslik": "ANALİZ- THYAO Temmuz 2026 Trafik Sonuçları (Ahlatcı Yatırım) [FNC-NEWS] - Uzmanpara",
+    "tarih": "Fri, 07 Aug 2026 07:00:00 GMT",
+    "kaynak": "Uzmanpara"
+   },
+   {
+    "baslik": "Türk Hava Yolları (THYAO) 2025 bilançosu açıklandı - Paratic Haber",
+    "tarih": "Wed, 04 Mar 2026 08:00:00 GMT",
+    "kaynak": "Paratic Haber"
+   },
+   {
+    "baslik": "THYAO 2025 Finansal Sonuçları Açıklandı – 118,2 Milyar TL Net Kâr - HavaSosyalMedya",
+    "tarih": "Wed, 04 Mar 2026 08:00:00 GMT",
+    "kaynak": "HavaSosyalMedya"
+   }
+  ],
+  "AKBNK": [
+   {
+    "baslik": "KAP *** İSTANBUL TAKAS VE SAKLAMA BANKASI A.Ş. *** AKBNK *** Temerrüt İşlemi - Yeni Şafak",
+    "tarih": "Wed, 04 Nov 2026 07:42:49 GMT",
+    "kaynak": "Yeni Şafak"
+   },
+   {
+    "baslik": "KAP *** AKBANK T.A.Ş. *** AKBNK *** İhraç Tavanına İlişkin Bildirim - GZT",
+    "tarih": "Thu, 08 Oct 2026 07:00:00 GMT",
+    "kaynak": "GZT"
+   },
+   {
+    "baslik": "Akbank’ın takipteki kredi portföyü 488 milyon TL’ye satıldı - Paratic Haber",
+    "tarih": "Mon, 28 Sep 2026 07:00:00 GMT",
+    "kaynak": "Paratic Haber"
+   },
+   {
+    "baslik": "Akbank'tan KAP'a 'Rekabet' açıklaması: 1,71 milyar TL’lik idari ceza ödenecek - CNBC-e",
+    "tarih": "Mon, 12 Oct 2026 07:00:00 GMT",
+    "kaynak": "CNBC-e"
+   },
+   {
+    "baslik": "Rekabet Kurulu'ndan Akbank'a 1,7 milyar lira para cezası - Bloomberght",
+    "tarih": "Mon, 12 Oct 2026 07:00:00 GMT",
+    "kaynak": "Bloomberght"
+   },
+   {
+    "baslik": "ANALİZ- Hisse Notu: AKBNK 2Ç26 Beklentisi (Deniz Yatırım) [FNC-NEWS] - Uzmanpara",
+    "tarih": "Mon, 13 Jul 2026 07:00:00 GMT",
+    "kaynak": "Uzmanpara"
+   },
+   {
+    "baslik": "KAP *** AKBANK T.A.Ş. *** AKBNK *** Özel Durum Açıklaması (Genel) - Yeni Şafak",
+    "tarih": "Mon, 12 Oct 2026 07:00:00 GMT",
+    "kaynak": "Yeni Şafak"
+   },
+   {
+    "baslik": "KAP *** AKBANK T.A.Ş. *** AKBNK *** Pay Dışında Sermaye Piyasası Aracı İşlemlerine İlişkin Bildirim (Faiz İçeren) - GZT",
+    "tarih": "Wed, 07 Oct 2026 07:00:00 GMT",
+    "kaynak": "GZT"
+   }
+  ]
+ },
+ "yahoo_bilanco": {
+  "THYAO": {
+   "quarterlyNetIncomeCommonStockholders": [
+    [
+     "2025-09-30",
+     1378000000.0
+    ],
+    [
+     "2025-12-31",
+     882000000.0
+    ],
+    [
+     "2026-03-31",
+     227000000.0
+    ],
+    [
+     "2026-06-30",
+     198000000.0
+    ],
+    [
+     "2026-09-30",
+     1291000000.0
+    ]
+   ],
+   "quarterlyStockholdersEquity": [
+    [
+     "2025-09-30",
+     20372000000.0
+    ],
+    [
+     "2025-12-31",
+     21312000000.0
+    ],
+    [
+     "2026-03-31",
+     21814000000.0
+    ],
+    [
+     "2026-06-30",
+     21919000000.0
+    ],
+    [
+     "2026-09-30",
+     23252000000.0
+    ]
+   ],
+   "annualNetIncomeCommonStockholders": [
+    [
+     "2023-12-31",
+     6021000000.0
+    ],
+    [
+     "2024-12-31",
+     3425000000.0
+    ],
+    [
+     "2025-12-31",
+     2910000000.0
+    ]
+   ],
+   "trailingNetIncomeCommonStockholders": [
+    [
+     "2026-09-30",
+     2598000000.0
+    ]
+   ]
+  },
+  "AKBNK": {
+   "quarterlyStockholdersEquity": [
+    [
+     "2025-06-30",
+     258931265000.0
+    ],
+    [
+     "2025-12-31",
+     310187272000.0
+    ],
+    [
+     "2026-03-31",
+     302601785000.0
+    ],
+    [
+     "2026-06-30",
+     324751000000.0
+    ],
+    [
+     "2026-09-30",
+     330260000000.0
+    ]
+   ],
+   "trailingNetIncomeCommonStockholders": [
+    [
+     "2025-06-30",
+     43120602000.0
+    ],
+    [
+     "2026-09-30",
+     64281821000.0
+    ]
+   ],
+   "annualNetIncomeCommonStockholders": [
+    [
+     "2023-12-31",
+     66496235000.0
+    ],
+    [
+     "2024-12-31",
+     42366116000.0
+    ],
+    [
+     "2025-12-31",
+     57254821000.0
+    ]
+   ],
+   "quarterlyNetIncomeCommonStockholders": [
+    [
+     "2025-09-30",
+     14064000000.0
+    ],
+    [
+     "2025-12-31",
+     18331805000.0
+    ],
+    [
+     "2026-03-31",
+     19151711000.0
+    ],
+    [
+     "2026-06-30",
+     15198000000.0
+    ],
+    [
+     "2026-09-30",
+     11600000000.0
+    ]
+   ]
+  }
+ },
+ "tradingview_bilanco": {
+  "BIST:THYAO": {
+   "close": 320.25,
+   "market_cap_basic": 441945000000,
+   "price_earnings_ttm": 3.926817126195212,
+   "price_book_fq": 0.43150798113928135,
+   "price_book_ratio": 0.48266356134269545,
+   "net_income": 118208000000,
+   "net_income_fq": 8949000000,
+   "net_income_ttm": 112059000000,
+   "total_equity": null,
+   "total_equity_fq": 1018453000000,
+   "return_on_equity": 12.6578146267628,
+   "return_on_equity_fq": 12.6578146267628,
+   "earnings_per_share_basic_ttm": 81.5546
+  },
+  "BIST:AKBNK": {
+   "close": 69.95,
+   "market_cap_basic": 363739984131,
+   "price_earnings_ttm": 5.658561050979631,
+   "price_book_fq": 1.101374647819908,
+   "price_book_ratio": 1.1726464089694457,
+   "net_income": 57254821000,
+   "net_income_fq": 11600000000,
+   "net_income_ttm": 64281516000,
+   "total_equity": null,
+   "total_equity_fq": 330260000000,
+   "return_on_equity": 21.1572952542071,
+   "return_on_equity_fq": 21.1572952542071,
+   "earnings_per_share_basic_ttm": 12.3618
+  }
+ },
+ "borsapy_bilanco": "HATA: No financial data available for AKBNK",
+ "karsilastirma": {
+  "THYAO": {
+   "bizim_FK": 3.02,
+   "tv_FK": 3.926817126195212,
+   "FK_fark_%": -23.1,
+   "bizim_PDDD": 0.39,
+   "tv_PDDD": 0.43150798113928135,
+   "PDDD_fark_%": -9.6,
+   "bizim_ozkaynak_karliligi": 12.9,
+   "tv_ozkaynak_karliligi": 12.6578146267628
+  },
+  "AKBNK": {
+   "bizim_FK": 5.66,
+   "tv_FK": 5.658561050979631,
+   "FK_fark_%": 0.0,
+   "bizim_PDDD": 1.1,
+   "tv_PDDD": 1.101374647819908,
+   "PDDD_fark_%": -0.1,
+   "bizim_ozkaynak_karliligi": 19.5,
+   "tv_ozkaynak_karliligi": 21.1572952542071
+  }
+ }
+}
