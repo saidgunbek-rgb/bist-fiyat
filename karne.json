@@ -4,7 +4,7 @@
   "t": "2026-11-15",
   "y": 29.77
  },
- "kapUpdatedAt": "2026-11-15 21:45",
+ "kapUpdatedAt": "2026-11-15 21:52",
  "stocks": {
   "AKBNK": {
    "bdog": {
@@ -137,7 +137,7 @@
      "u": "https://www.kap.org.tr/tr/Bildirim/1687058",
      "y": {
       "e": "izle",
-      "t": "Özel durum açıklaması. Konusu otomatik belirlenemedi; ayrıntı için bildirimi aç."
+      "t": "Özel durum açıklaması. Bildirimdeki en büyük tutar: 8,1 milyar TL. Bu tutar, son 12 aylık net kârın %12,6 büyüklüğünde. Ayrıntı için bildirimi aç."
      }
     },
     {
@@ -319,12 +319,12 @@
     {
      "d": "2026-11-09 17:43",
      "k": "KAP",
-     "o": true,
+     "o": false,
      "t": "Özel Durum Açıklaması (Genel)",
      "u": "https://www.kap.org.tr/tr/Bildirim/1695191",
      "y": {
-      "e": "izle",
-      "t": "Özel durum açıklaması. Konusu otomatik belirlenemedi; ayrıntı için bildirimi aç."
+      "e": "notr",
+      "t": "Aylık yolcu/trafik sonuçları açıklandı."
      }
     },
     {
