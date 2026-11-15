@@ -32,6 +32,7 @@ textarea{width:100%;min-height:78px;background:#12131c;color:var(--tx);border:1.
 details{background:var(--card);border-radius:14px;padding:11px 13px;margin-bottom:12px;font-size:13px;color:var(--mut)}
 summary{cursor:pointer;color:var(--p);font-weight:600}
 @media (prefers-color-scheme: light){:root{--bg:#f4f5fb;--card:#fff;--card2:#eef0f8;--mut:#666a80;--tx:#1d2030;--ln:#c9cde0}textarea{background:#fff}.warn{background:#fff3dc;color:#7a4b00}}
+html.fr body{padding:0;background:transparent;max-width:none}html.fr h1{display:none}
 </style></head><body>
 <h1>Hisse Karnesi</h1>
 <div class="sub" id="sub">Yükleniyor…</div>
@@ -108,4 +109,7 @@ function load(){
 load();
 document.getElementById("bkc").onclick=function(){var t=JSON.stringify(NOTES);var ta=document.getElementById("bk");ta.value=t;ta.select();var ok=false;try{ok=document.execCommand("copy");}catch(e){}try{if(navigator.clipboard)navigator.clipboard.writeText(t);ok=true;}catch(e){}document.getElementById("bkm").textContent=ok?" Kopyalandı.":" Metni elle kopyala.";};
 document.getElementById("bkr").onclick=function(){try{var o=JSON.parse(document.getElementById("bk").value);if(!o||typeof o!="object"||Array.isArray(o))throw 0;NOTES=o;saveN();document.getElementById("bkm").textContent=" Geri yüklendi.";Array.prototype.forEach.call(document.querySelectorAll(".note"),paintNote);}catch(e){document.getElementById("bkm").textContent=" Metin geçersiz.";}};
-</script></body></html>
+</script><script>(function(){if(window.self===window.top)return;document.documentElement.classList.add("fr");
+function send(){try{parent.postMessage({karneH:document.body.getBoundingClientRect().height+4},"*");}catch(e){}}
+window.addEventListener("load",send);try{new ResizeObserver(send).observe(document.body);}catch(e){setInterval(send,800);}})();</script>
+</body></html>
