@@ -3,6 +3,8 @@
   "2026-10-12": {
    "b": 12150.7,
    "p": {
+    "AKBANK": 68.35,
+    "AKBNK": 68.35,
     "PGSUS": 132.9,
     "THYAO": 285.75
    }
@@ -277,6 +279,116 @@
    "u": 50.28
   }
  },
+ "kontrol": {
+  "AKBANK": {
+   "2026-11-09": [
+    "borsapy",
+    "isyatirim",
+    "yahoo"
+   ],
+   "2026-11-10": [
+    "borsapy",
+    "isyatirim",
+    "yahoo"
+   ],
+   "2026-11-11": [
+    "borsapy",
+    "isyatirim",
+    "yahoo"
+   ],
+   "2026-11-12": [
+    "borsapy",
+    "isyatirim",
+    "yahoo"
+   ],
+   "2026-11-13": [
+    "borsapy",
+    "isyatirim",
+    "yahoo"
+   ]
+  },
+  "AKBNK": {
+   "2026-11-09": [
+    "borsapy",
+    "isyatirim",
+    "yahoo"
+   ],
+   "2026-11-10": [
+    "borsapy",
+    "isyatirim",
+    "yahoo"
+   ],
+   "2026-11-11": [
+    "borsapy",
+    "isyatirim",
+    "yahoo"
+   ],
+   "2026-11-12": [
+    "borsapy",
+    "isyatirim",
+    "yahoo"
+   ],
+   "2026-11-13": [
+    "borsapy",
+    "isyatirim",
+    "yahoo"
+   ]
+  },
+  "PGSUS": {
+   "2026-11-09": [
+    "borsapy",
+    "isyatirim",
+    "yahoo"
+   ],
+   "2026-11-10": [
+    "borsapy",
+    "isyatirim",
+    "yahoo"
+   ],
+   "2026-11-11": [
+    "borsapy",
+    "isyatirim",
+    "yahoo"
+   ],
+   "2026-11-12": [
+    "borsapy",
+    "isyatirim",
+    "yahoo"
+   ],
+   "2026-11-13": [
+    "borsapy",
+    "isyatirim",
+    "yahoo"
+   ]
+  },
+  "THYAO": {
+   "2026-11-09": [
+    "borsapy",
+    "isyatirim",
+    "yahoo"
+   ],
+   "2026-11-10": [
+    "borsapy",
+    "isyatirim",
+    "yahoo"
+   ],
+   "2026-11-11": [
+    "borsapy",
+    "isyatirim",
+    "yahoo"
+   ],
+   "2026-11-12": [
+    "borsapy",
+    "isyatirim",
+    "yahoo"
+   ],
+   "2026-11-13": [
+    "borsapy",
+    "isyatirim",
+    "yahoo"
+   ]
+  }
+ },
  "updated": "2026-11-15",
- "updatedAt": "2026-11-15T12:31:32Z"
+ "updatedAt": "2026-11-15T19:33:02Z"
 }
