@@ -1,0 +1,105 @@
+{
+ "tradingview": {
+  "totalCount": 2,
+  "data": [
+   {
+    "s": "BIST:THYAO",
+    "d": [
+     320.25,
+     441945000000,
+     3.926817126195212,
+     0.43150798113928135,
+     null,
+     null
+    ]
+   },
+   {
+    "s": "BIST:AKBNK",
+    "d": [
+     69.95,
+     363739984131,
+     5.658561050979631,
+     1.101374647819908,
+     3.1476769120800574,
+     null
+    ]
+   }
+  ]
+ },
+ "isyatirim_fiyat": [
+  {
+   "HGDG_HS_KODU": "THYAO",
+   "HGDG_TARIH": "12-11-2026",
+   "HGDG_KAPANIS": 319.0,
+   "HGDG_AOF": 320.373,
+   "HGDG_MIN": 315.5,
+   "HGDG_MAX": 325.75,
+   "HGDG_HACIM": 15636393483.0,
+   "END_ENDEKS_KODU": "01",
+   "END_TARIH": 1794430800000,
+   "END_SEANS": 2,
+   "END_DEGER": 11811.19,
+   "DD_DOVIZ_KODU": "USD",
+   "DD_DT_KODU": "01",
+   "DD_TARIH": 1794430800000,
+   "DD_DEGER": 50.2595,
+   "DOLAR_BAZLI_FIYAT": 6.3471,
+   "ENDEKS_BAZLI_FIYAT": 0.027,
+   "DOLAR_HACIM": 311113192.1925,
+   "SERMAYE": 1380000000.0,
+   "HG_KAPANIS": 319.0,
+   "HG_AOF": 320.373,
+   "HG_MIN": 315.5,
+   "HG_MAX": 325.75,
+   "PD": 440220000000.0,
+   "PD_USD": 8758941095.71325,
+   "HAO_PD": 215971932000.0,
+   "HAO_PD_USD": 4297136501.55692,
+   "HG_HACIM": 15636393483.0,
+   "DOLAR_BAZLI_MIN": 6.2774,
+   "DOLAR_BAZLI_MAX": 6.4814,
+   "DOLAR_BAZLI_AOF": 6.3744
+  },
+  {
+   "HGDG_HS_KODU": "THYAO",
+   "HGDG_TARIH": "13-11-2026",
+   "HGDG_KAPANIS": 320.25,
+   "HGDG_AOF": 320.986,
+   "HGDG_MIN": 315.0,
+   "HGDG_MAX": 323.5,
+   "HGDG_HACIM": 9504155460.0,
+   "END_ENDEKS_KODU": "01",
+   "END_TARIH": 1794517200000,
+   "END_SEANS": 2,
+   "END_DEGER": 11842.82,
+   "DD_DOVIZ_KODU": "USD",
+   "DD_DT_KODU": "01",
+   "DD_TARIH": 1794517200000,
+   "DD_DEGER": 50.283,
+   "DOLAR_BAZLI_FIYAT": 6.369,
+   "ENDEKS_BAZLI_FIYAT": 0.027,
+   "DOLAR_HACIM": 189013293.9562,
+   "SERMAYE": 1380000000.0,
+   "HG_KAPANIS": 320.25,
+   "HG_AOF": 320.986,
+   "HG_MIN": 315.0,
+   "HG_MAX": 323.5,
+   "PD": 441945000000.0,
+   "PD_USD": 8789153391.8024,
+   "HAO_PD": 216818217000.0,
+   "HAO_PD_USD": 4311958654.018257,
+   "HG_HACIM": 9504155460.0,
+   "DOLAR_BAZLI_MIN": 6.2645,
+   "DOLAR_BAZLI_MAX": 6.4336,
+   "DOLAR_BAZLI_AOF": 6.3836
+  }
+ ],
+ "google_finance": {
+  "uzunluk": 1336788,
+  "fiyat": null
+ },
+ "fkradar": {
+  "uzunluk": 18241,
+  "F/K cevresi": " THYAO Hisse: Türk Hava Yolları – Fiyat, F/K ve PD/DD | FKRadar :root { --zemin:#0e1520; --kart:#17202e; --cizgi:#24344a; --yazi:#dbe6f2; --soluk:#8fa3bb; --mavi:#4da3ff; --yesil:#35d17c; --sari:#ffb54"
+ }
+}
