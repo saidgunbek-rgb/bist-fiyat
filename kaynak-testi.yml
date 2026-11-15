@@ -1,0 +1,68 @@
+name: Kaynak testi
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Kaynaklari dene
+        run: |
+          python3 - <<'PY'
+          import json, re, time, urllib.request
+          UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36"}
+          out = {}
+          def al(url, data=None, h=None):
+              hd = dict(UA); hd.update(h or {})
+              r = urllib.request.urlopen(urllib.request.Request(url, data=data, headers=hd), timeout=30)
+              return r.read().decode("utf-8", "replace")
+
+          # 1) TradingView tarayici
+          try:
+              body = json.dumps({"symbols": {"tickers": ["BIST:THYAO", "BIST:AKBNK"]},
+                  "columns": ["close", "market_cap_basic", "price_earnings_ttm", "price_book_fq", "dividends_yield", "dividend_yield_recent"]}).encode()
+              out["tradingview"] = json.loads(al("https://scanner.tradingview.com/turkey/scan", body, {"Content-Type": "application/json"}))
+          except Exception as e:
+              out["tradingview"] = "HATA: %s" % e
+
+          # 2) Is Yatirim fiyat
+          try:
+              t = time.time()
+              d2 = time.strftime("%d-%m-%Y", time.gmtime(t)); d1 = time.strftime("%d-%m-%Y", time.gmtime(t - 7 * 86400))
+              u = "https://www.isyatirim.com.tr/_layouts/15/IsYatirim.Website/Common/Data.aspx/HisseTekil?hisse=THYAO&startdate=%s&enddate=%s" % (d1, d2)
+              j = json.loads(al(u))
+              v = j.get("value") or []
+              out["isyatirim_fiyat"] = v[-2:] if v else "bos: %s" % str(j)[:200]
+          except Exception as e:
+              out["isyatirim_fiyat"] = "HATA: %s" % e
+
+          # 3) Google Finance
+          try:
+              s = al("https://www.google.com/finance/quote/THYAO:IST?hl=en")
+              m = re.search(r'data-last-price="([\d.,]+)"', s)
+              out["google_finance"] = {"uzunluk": len(s), "fiyat": m.group(1) if m else None}
+          except Exception as e:
+              out["google_finance"] = "HATA: %s" % e
+
+          # 4) FKRadar
+          try:
+              s = al("https://fkradar.com/hisse/thyao")
+              txt = re.sub(r"<[^>]+>", " ", s)
+              txt = re.sub(r"\s+", " ", txt)
+              i = txt.find("F/K")
+              out["fkradar"] = {"uzunluk": len(s), "F/K cevresi": txt[max(0, i - 60):i + 160] if i >= 0 else None}
+          except Exception as e:
+              out["fkradar"] = "HATA: %s" % e
+
+          json.dump(out, open("kaynak-test.json", "w"), ensure_ascii=False, indent=1)
+          print(json.dumps(out, ensure_ascii=False)[:2500])
+          PY
+      - name: Kaydet
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add kaynak-test.json
+          git commit -m "kaynak test" || exit 0
+          for i in 1 2 3; do git pull --rebase origin main && git push && break; sleep 5; done
