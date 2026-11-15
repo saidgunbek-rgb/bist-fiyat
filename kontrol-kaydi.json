@@ -1,0 +1,446 @@
+{
+ "updatedAt": "2026-11-15T17:27:38Z",
+ "hisseler": {
+  "AKBNK": {
+   "ozet": {
+    "iki_kaynak": 159,
+    "ek_kaynak": 0,
+    "duzeltme": 130,
+    "cozulemedi": 0
+   },
+   "kaynak_gun_sayisi": {
+    "isyatirim": 289,
+    "yahoo": 289,
+    "borsapy": 289,
+    "kendi_kayit": 23
+   },
+   "bolunmeler": [
+    "2025-03-26",
+    "2026-03-26"
+   ],
+   "hatalar": [],
+   "secim_kayitlari": [
+    {
+     "tarih": "2026-01-28",
+     "degerler": {
+      "isyatirim": 82.215,
+      "yahoo": 84.85,
+      "borsapy": 84.85
+     },
+     "secilen": 82.215,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-01-29",
+     "degerler": {
+      "isyatirim": 86.2361,
+      "yahoo": 89.0,
+      "borsapy": 89.0
+     },
+     "secilen": 86.2361,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-01-30",
+     "degerler": {
+      "isyatirim": 90.0634,
+      "yahoo": 92.95,
+      "borsapy": 92.95
+     },
+     "secilen": 90.0634,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-02-02",
+     "degerler": {
+      "isyatirim": 88.1255,
+      "yahoo": 90.95,
+      "borsapy": 90.95
+     },
+     "secilen": 88.1255,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-02-03",
+     "degerler": {
+      "isyatirim": 85.2187,
+      "yahoo": 87.95,
+      "borsapy": 87.95
+     },
+     "secilen": 85.2187,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-02-04",
+     "degerler": {
+      "isyatirim": 82.9901,
+      "yahoo": 85.65,
+      "borsapy": 85.65
+     },
+     "secilen": 82.9901,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-02-05",
+     "degerler": {
+      "isyatirim": 81.779,
+      "yahoo": 84.4,
+      "borsapy": 84.4
+     },
+     "secilen": 81.779,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-02-06",
+     "degerler": {
+      "isyatirim": 81.246,
+      "yahoo": 83.85,
+      "borsapy": 83.85
+     },
+     "secilen": 81.246,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-02-09",
+     "degerler": {
+      "isyatirim": 82.7963,
+      "yahoo": 85.45,
+      "borsapy": 85.45
+     },
+     "secilen": 82.7963,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-02-10",
+     "degerler": {
+      "isyatirim": 80.9554,
+      "yahoo": 83.55,
+      "borsapy": 83.55
+     },
+     "secilen": 80.9554,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-02-11",
+     "degerler": {
+      "isyatirim": 81.3429,
+      "yahoo": 83.95,
+      "borsapy": 83.95
+     },
+     "secilen": 81.3429,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-02-12",
+     "degerler": {
+      "isyatirim": 88.3193,
+      "yahoo": 91.15,
+      "borsapy": 91.15
+     },
+     "secilen": 88.3193,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-02-13",
+     "degerler": {
+      "isyatirim": 85.9454,
+      "yahoo": 88.7,
+      "borsapy": 88.7
+     },
+     "secilen": 85.9454,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-02-16",
+     "degerler": {
+      "isyatirim": 86.7206,
+      "yahoo": 89.5,
+      "borsapy": 89.5
+     },
+     "secilen": 86.7206,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-02-17",
+     "degerler": {
+      "isyatirim": 86.1392,
+      "yahoo": 88.9,
+      "borsapy": 88.9
+     },
+     "secilen": 86.1392,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-02-18",
+     "degerler": {
+      "isyatirim": 87.6895,
+      "yahoo": 90.5,
+      "borsapy": 90.5
+     },
+     "secilen": 87.6895,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-02-19",
+     "degerler": {
+      "isyatirim": 84.2982,
+      "yahoo": 87.0,
+      "borsapy": 87.0
+     },
+     "secilen": 84.2982,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-02-20",
+     "degerler": {
+      "isyatirim": 85.6063,
+      "yahoo": 88.35,
+      "borsapy": 88.35
+     },
+     "secilen": 85.6063,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-02-23",
+     "degerler": {
+      "isyatirim": 87.5442,
+      "yahoo": 90.35,
+      "borsapy": 90.35
+     },
+     "secilen": 87.5442,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-02-24",
+     "degerler": {
+      "isyatirim": 88.7069,
+      "yahoo": 91.55,
+      "borsapy": 91.55
+     },
+     "secilen": 88.7069,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-02-25",
+     "degerler": {
+      "isyatirim": 88.174,
+      "yahoo": 91.0,
+      "borsapy": 91.0
+     },
+     "secilen": 88.174,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-02-26",
+     "degerler": {
+      "isyatirim": 88.8522,
+      "yahoo": 91.7,
+      "borsapy": 91.7
+     },
+     "secilen": 88.8522,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-02-27",
+     "degerler": {
+      "isyatirim": 87.3504,
+      "yahoo": 90.15,
+      "borsapy": 90.15
+     },
+     "secilen": 87.3504,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-03-02",
+     "degerler": {
+      "isyatirim": 80.1802,
+      "yahoo": 82.75,
+      "borsapy": 82.75
+     },
+     "secilen": 80.1802,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-03-03",
+     "degerler": {
+      "isyatirim": 76.4498,
+      "yahoo": 78.9,
+      "borsapy": 78.9
+     },
+     "secilen": 76.4498,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-03-04",
+     "degerler": {
+      "isyatirim": 76.0137,
+      "yahoo": 78.45,
+      "borsapy": 78.45
+     },
+     "secilen": 76.0137,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-03-05",
+     "degerler": {
+      "isyatirim": 77.128,
+      "yahoo": 79.6,
+      "borsapy": 79.6
+     },
+     "secilen": 77.128,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-03-06",
+     "degerler": {
+      "isyatirim": 71.7504,
+      "yahoo": 74.05,
+      "borsapy": 74.05
+     },
+     "secilen": 71.7504,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-03-09",
+     "degerler": {
+      "isyatirim": 71.3143,
+      "yahoo": 73.6,
+      "borsapy": 73.6
+     },
+     "secilen": 71.3143,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-03-10",
+     "degerler": {
+      "isyatirim": 74.7057,
+      "yahoo": 77.1,
+      "borsapy": 77.1
+     },
+     "secilen": 74.7057,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-03-11",
+     "degerler": {
+      "isyatirim": 75.1417,
+      "yahoo": 77.55,
+      "borsapy": 77.55
+     },
+     "secilen": 75.1417,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-03-12",
+     "degerler": {
+      "isyatirim": 73.3976,
+      "yahoo": 75.75,
+      "borsapy": 75.75
+     },
+     "secilen": 73.3976,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-03-13",
+     "degerler": {
+      "isyatirim": 70.297,
+      "yahoo": 72.55,
+      "borsapy": 72.55
+     },
+     "secilen": 70.297,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-03-16",
+     "degerler": {
+      "isyatirim": 70.4423,
+      "yahoo": 72.7,
+      "borsapy": 72.7
+     },
+     "secilen": 70.4423,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-03-17",
+     "degerler": {
+      "isyatirim": 73.446,
+      "yahoo": 75.8,
+      "borsapy": 75.8
+     },
+     "secilen": 73.446,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-03-18",
+     "degerler": {
+      "isyatirim": 73.3491,
+      "yahoo": 75.7,
+      "borsapy": 75.7
+     },
+     "secilen": 73.3491,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-03-19",
+     "degerler": {
+      "isyatirim": 71.3143,
+      "yahoo": 73.6,
+      "borsapy": 73.6
+     },
+     "secilen": 71.3143,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-03-23",
+     "degerler": {
+      "isyatirim": 70.8299,
+      "yahoo": 73.1,
+      "borsapy": 73.1
+     },
+     "secilen": 70.8299,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-03-24",
+     "degerler": {
+      "isyatirim": 68.1168,
+      "yahoo": 70.3,
+      "borsapy": 70.3
+     },
+     "secilen": 68.1168,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    },
+    {
+     "tarih": "2026-03-25",
+     "degerler": {
+      "isyatirim": 68.6982,
+      "yahoo": 70.9,
+      "borsapy": 70.9
+     },
+     "secilen": 68.6982,
+     "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-26), ham fiyat Yahoo+borsapy ile teyitli"
+    }
+   ]
+  },
+  "THYAO": {
+   "ozet": {
+    "iki_kaynak": 289,
+    "ek_kaynak": 0,
+    "duzeltme": 0,
+    "cozulemedi": 0
+   },
+   "kaynak_gun_sayisi": {
+    "isyatirim": 289,
+    "yahoo": 289,
+    "borsapy": 289,
+    "kendi_kayit": 24
+   },
+   "bolunmeler": [
+    "2025-06-16",
+    "2025-09-02"
+   ],
+   "hatalar": [],
+   "secim_kayitlari": []
+  }
+ }
+}
