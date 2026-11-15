@@ -110,6 +110,7 @@ button.rb.on{background:var(--bd);color:var(--tx)}
 
 <div class="card"><details class="cl" id="clg"><summary><h2>Grafikler</h2></summary><div class="mut">Toplam getiri: portföy, BIST 100, altın ve döviz (ilk kayıt gününe göre %)</div><div id="c2"></div><div style="border-top:1px dashed var(--mut);opacity:.9;margin:12px 0 8px"></div><div class="mut" style="margin:0 0 4px">Gelişim (günlük)</div><div id="c3"></div><div class="lg" id="lg2"><span><b style="background:var(--b1)"></b>Portföy</span><span><b style="background:var(--c1)"></b>BIST 100</span></div><details class="ac"><summary>🔗 Grafik neye bağlı?</summary>• Çubuklar ve çizgiler <b>Geçmiş</b> tablosundaki günlerden hesaplanır. Fiyat veya işlem değişince grafik de değişir.<br>• <b>Portföy</b> çubuğu getiri hesabıdır: hisse alıp satman getiriyi bozmaz, yalnızca fiyat hareketi ve temettü etkiler.<br>• <b>BIST 100</b> çubuğu “Gün sonu fiyatlarını gir”e yazdığın BIST kapanışlarından gelir. BIST girmediğin günlerde son değer eksik kalabilir.<br>• <b>Altın (gram), Dolar ve Euro</b> çubukları GitHub fiyat dosyasından otomatik gelir (BIST kapanış saatine yakın bir andaki değer). Gram altın = ons altın ÷ 31,1035 × dolar/TL; kuyumcu veya Kapalıçarşı fiyatından küçük farklı olabilir. Hepsi aynı başlangıç gününe göre yüzde değişimdir, portföy ve BIST 100 ile karşılaştırmak içindir.</details></details></div>
 
+<div class="card"><details class="cl" id="clk"><summary><h2>Hisse karnesi</h2></summary><div class="mut" style="margin-bottom:6px">Hisselerin değerleme durumu (F/K, PD/DD, temettü) ve kendi notların. Al/sat önerisi değildir.</div><iframe id="kfr" title="Hisse karnesi" style="width:100%;height:560px;border:0;display:block;border-radius:10px" loading="lazy"></iframe><div class="mut" style="margin-top:6px"><a href="karne.html" target="_blank" rel="noopener" style="color:inherit">Tam sayfada aç ↗</a></div></details></div>
 <div class="card"><details class="cl" id="clh">
 <summary><h2>Geçmiş</h2></summary>
 <div class="scroll"><table id="hist"></table></div>
@@ -460,5 +461,8 @@ loadUrl();
 try{if(typeof claude!=="undefined"&&claude.use){claude.use("db").then(function(db){if(!db){setAst("na","Otomatik güncelleme durumu alınamadı.");return;}DBR=db;pushT();db.doc("feed/closes").onSnapshot(function(sn){if(sn.exists)addFeed(sn.data());else if(!feedUrl()){FEED=null;renderAst(null);}},function(){setAst("na","Otomatik güncelleme durumu alınamadı.");});setTimeout(function(){if(FEED===undefined)setAst("na","Otomatik güncelleme durumu alınamadı (bağlantı yok olabilir).");},10000);}).catch(function(){});}}catch(e){}
 all();
 </script>
+<script>(function(){var d=document.getElementById("clk"),f=document.getElementById("kfr");if(!d||!f)return;
+d.addEventListener("toggle",function(){if(d.open&&!f.getAttribute("src"))f.setAttribute("src","karne.html?frame=1");});
+window.addEventListener("message",function(e){if(e.source===f.contentWindow&&e.data&&e.data.karneH)f.style.height=Math.max(300,Math.min(2400,+e.data.karneH))+"px";});})();</script>
 </body>
 </html>
