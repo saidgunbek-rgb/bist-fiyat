@@ -1,30 +1,41 @@
-# Her hafta içi akşamı BIST kapanış fiyatlarını alıp prices.json dosyasına yazar.
-# Yeni hisse alınca aşağıdaki HISSELER satırını değiştir (virgülle ayır, örn: "THYAO,PGSUS,ASELS").
-# Panelde yazdığın ad borsa kodundan farklıysa: PANELADI=BORSAKODU yaz, örn: ISIM=BORSAKODU
+# Her hafta ici aksami BIST kapanis fiyatlarini alip prices.json dosyasina yazar.
+# Hisse fiyatlari 3 kaynaktan (Yahoo, Is Yatirim, borsapy) alinir; en az 2 kaynakta ayni olan fiyat yazilir.
+# Dogrulanamayan gunde eski deger korunur, yanlis fiyat yazilmaz. Ayrintilar prices.json icindeki "kontrol" bolumunde.
+# Yeni hisse alinca asagidaki HISSELER satirini degistir (virgulle ayir, orn: "THYAO,PGSUS,ASELS").
+# Panelde yazdigin ad borsa kodundan farkliysa: PANELADI=BORSAKODU yaz, orn: AKBANK=AKBNK
 name: BIST kapanis fiyatlari
 
 on:
   schedule:
-    - cron: "23 15 * * 1-5"   # 18:23 Türkiye saati, hafta içi (yoğun olmayan dakika)
-  workflow_dispatch:           # elle çalıştırma düğmesi
+    - cron: "23 15 * * 1-5"   # 18:23 Turkiye saati, hafta ici
+  workflow_dispatch:           # elle calistirma dugmesi
 
 permissions:
   contents: write
   actions: write      # zamanlamanin kendiliginden kapanmasini onlemek icin
 
+concurrency:
+  group: karne-veri
+  cancel-in-progress: false
+
 jobs:
   guncelle:
     runs-on: ubuntu-latest
     env:
-      HISSELER: "THYAO,PGSUS,AKBNK"
+      HISSELER: "THYAO,AKBNK,AKBANK=AKBNK,PGSUS"
     steps:
       - uses: actions/checkout@v4
 
-      - name: Fiyatlari al
+      - name: borsapy kur
+        continue-on-error: true
+        run: pip install borsapy 2>&1 | tail -1
+
+      - name: Fiyatlari al ve dogrula
         run: |
           python3 - <<'PY'
-          import json, os, sys, datetime, urllib.request
+          import json, os, sys, time, datetime, urllib.request
 
+          UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36"}
           syms, kodlar = [], {}
           for oge in os.environ["HISSELER"].split(","):
               oge = oge.strip().upper()
@@ -39,41 +50,116 @@ jobs:
           bugun = ist.strftime("%Y-%m-%d")
           kapanis_oldu = (ist.hour, ist.minute) >= (18, 20)
 
-          def al(sym):
-              url = "https://query1.finance.yahoo.com/v8/finance/chart/%s?range=1mo&interval=1d" % sym
-              req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-              j = json.load(urllib.request.urlopen(req, timeout=30))
-              r = j["chart"]["result"][0]
+          def get(url):
+              return json.load(urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=30))
+
+          def sayi(x):
+              try:
+                  x = float(x)
+              except Exception:
+                  return None
+              return x if x == x and x > 0 else None
+
+          # ---- Kaynak 1: Yahoo (ham kapanis + gunun en dusuk/en yuksek fiyati)
+          def yahoo(sym):
+              r = get("https://query1.finance.yahoo.com/v8/finance/chart/%s?range=1mo&interval=1d" % sym)["chart"]["result"][0]
               off = r["meta"].get("gmtoffset", 10800)
+              q = r["indicators"]["quote"][0]
               out = {}
-              for t, c in zip(r["timestamp"], r["indicators"]["quote"][0]["close"]):
-                  if c and c > 0:
+              for i, t in enumerate(r.get("timestamp") or []):
+                  c = sayi(q["close"][i])
+                  if c:
                       d = datetime.datetime.utcfromtimestamp(t + off).strftime("%Y-%m-%d")
-                      out[d] = round(c, 2)
+                      out[d] = {"c": round(c, 2), "lo": sayi(q["low"][i]), "hi": sayi(q["high"][i])}
               return out
 
-          sonuc, hata = {}, []
-          for s in syms:
-              try:
-                  sonuc[s] = al(kodlar[s] + ".IS")
-              except Exception as e:
-                  hata.append(s)
-                  print("HATA", s, e)
-          try:
-              bist = al("XU100.IS")
-          except Exception as e:
-              bist = {}
-              hata.append("BIST100")
-              print("HATA BIST100", e)
+          # ---- Kaynak 2: Is Yatirim (Borsa Istanbul verisi)
+          def isyatirim(kod):
+              d2 = ist.strftime("%d-%m-%Y"); d1 = (ist - datetime.timedelta(days=35)).strftime("%d-%m-%Y")
+              u = ("https://www.isyatirim.com.tr/_layouts/15/IsYatirim.Website/Common/Data.aspx/HisseTekil"
+                   "?hisse=%s&startdate=%s&enddate=%s") % (kod, d1, d2)
+              out = {}
+              for x in (get(u).get("value") or []):
+                  try:
+                      d = datetime.datetime.strptime(x["HGDG_TARIH"], "%d-%m-%Y").strftime("%Y-%m-%d")
+                  except Exception:
+                      continue
+                  c = sayi(x.get("HGDG_KAPANIS"))
+                  if c:
+                      out[d] = {"c": round(c, 2), "lo": sayi(x.get("HGDG_MIN")), "hi": sayi(x.get("HGDG_MAX"))}
+              return out
 
-          ekstra = {}
-          for ad, sy in (("altin", "GC=F"), ("usd", "USDTRY=X"), ("eur", "EURTRY=X")):
+          # ---- Kaynak 3: borsapy
+          def borsapy_fiyat(kod):
+              import borsapy as bp
+              df = bp.Ticker(kod).history(period="1mo")
+              out = {}
+              for idx, row in df.iterrows():
+                  c = sayi(row.get("Close"))
+                  if c:
+                      out[str(idx)[:10]] = {"c": round(c, 2)}
+              return out
+
+          def esit(a, b):
+              return abs(a - b) <= max(0.011, 0.002 * max(a, b))
+
+          def dogrula(K):
+              """Her gun icin dogrulanmis kapanis (en az 2 kaynak ayni) ya da None."""
+              sonuc, kayit = {}, {}
+              for d in sorted(set().union(*[set(v) for v in K.values()])):
+                  deg = {s: K[s][d]["c"] for s in K if d in K[s]}
+                  def aralikta(s, v):
+                      ref = K[s].get(d) or {}
+                      lo, hi = ref.get("lo"), ref.get("hi")
+                      if not (lo and hi):
+                          ref = K["isyatirim"].get(d) or K["yahoo"].get(d) or {}
+                          lo, hi = ref.get("lo"), ref.get("hi")
+                      return not (lo and hi) or (lo - 0.011 <= v <= hi + 0.011)
+                  en, destek = None, []
+                  for s, v in deg.items():
+                      if not aralikta(s, v):
+                          continue
+                      uyan = [x for x, w in deg.items() if esit(v, w)]
+                      if len(uyan) > len(destek):
+                          en, destek = v, uyan
+                  if en is not None and len(destek) >= 2:
+                      # Is Yatirim temettu oncesi fiyatlari duzeltir; panelde gercek (ham) kapanis gosterilir
+                      secilen = deg["yahoo"] if "yahoo" in destek else en
+                      sonuc[d] = secilen
+                      kayit[d] = sorted(destek)
+                  else:
+                      kayit[d] = "dogrulanamadi: %s" % json.dumps(deg)
+              return sonuc, kayit
+
+          sonuc, hata, kontrol = {}, [], {}
+          for s in syms:
+              K = {}
+              for ad, fn in (("yahoo", lambda: yahoo(kodlar[s] + ".IS")), ("isyatirim", lambda: isyatirim(kodlar[s])),
+                             ("borsapy", lambda: borsapy_fiyat(kodlar[s]))):
+                  try:
+                      K[ad] = fn()
+                  except Exception as e:
+                      K[ad] = {}
+                      print("HATA", s, ad, e)
+              dog, kayit = dogrula(K)
+              if dog:
+                  sonuc[s] = dog
+              else:
+                  hata.append(s)
+              kontrol[s] = {d: kayit[d] for d in sorted(kayit)[-5:]}
+              print(s, "dogrulanan gun:", len(dog), "| son gunler:", kontrol[s])
+
+          def tek(sym):
               try:
-                  ekstra[ad] = al(sy)
+                  return {d: v["c"] for d, v in yahoo(sym).items()}
               except Exception as e:
-                  ekstra[ad] = {}
-                  hata.append(ad)
-                  print("HATA", ad, e)
+                  print("HATA", sym, e)
+                  hata.append(sym)
+                  return {}
+
+          # Endeks, doviz ve altin: panelde kar/zarar hesabina girmez, Yahoo'dan alinir
+          bist = tek("XU100.IS")
+          ekstra = {"altin": tek("GC=F"), "usd": tek("USDTRY=X"), "eur": tek("EURTRY=X")}
 
           try:
               veri = json.load(open("prices.json"))
@@ -91,15 +177,13 @@ jobs:
               g = gunler.setdefault(d, {"p": {}})
               g.setdefault("p", {})
               for s in sonuc:
-                  if d in sonuc[s]:
+                  if d in sonuc[s]:  # sadece dogrulanmis fiyat yazilir; dogrulanamayan gunde eski deger korunur
                       g["p"][s] = sonuc[s][d]
                       eklenen += 1
               if d in bist:
                   g["b"] = bist[d]
                   eklenen += 1
-              ons = ekstra["altin"].get(d)
-              usd = ekstra["usd"].get(d)
-              eur = ekstra["eur"].get(d)
+              ons, usd, eur = ekstra["altin"].get(d), ekstra["usd"].get(d), ekstra["eur"].get(d)
               if usd:
                   g["u"] = round(usd, 4)
               if eur:
@@ -112,8 +196,9 @@ jobs:
               sys.exit(1)
           veri["updated"] = bugun
           veri["updatedAt"] = now.strftime("%Y-%m-%dT%H:%M:%SZ")
+          veri["kontrol"] = kontrol
           json.dump(veri, open("prices.json", "w"), indent=1, sort_keys=True)
-          print("Tamam:", eklenen, "fiyat yazildi. Hata:", hata)
+          print("Tamam:", eklenen, "fiyat yazildi. Dogrulanamayan:", hata)
           PY
 
       - name: Kaydet
@@ -121,8 +206,13 @@ jobs:
           git config user.name "fiyat-bot"
           git config user.email "fiyat-bot@users.noreply.github.com"
           git add prices.json
-          git diff --cached --quiet || git commit -m "Kapanis fiyatlari"
-          git push
+          git diff --cached --quiet && exit 0
+          git commit -m "Kapanis fiyatlari"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push && exit 0
+            sleep 5
+          done
+          exit 1
 
       - name: Zamanlamayi canli tut
         continue-on-error: true
