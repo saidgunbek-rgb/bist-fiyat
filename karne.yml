@@ -1,0 +1,112 @@
+# Hisse Karnesi verisini hazirlar (karne.json). Fiyat sistemine (fiyat.yml) dokunmaz.
+# Takip edilecek hisseleri asagidaki KARNE satirindan degistir (virgulle ayir, borsa kodu: AKBNK, THYAO ...)
+name: Hisse karnesi
+
+on:
+  schedule:
+    - cron: "41 15 * * 1-5"   # hafta ici akşamı (GitHub bir miktar geciktirebilir)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  karne:
+    runs-on: ubuntu-latest
+    env:
+      KARNE: "AKBNK,THYAO"
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: borsapy kur
+        run: pip install borsapy 2>&1 | tail -1
+
+      - name: Karne verisini al
+        run: |
+          python3 - <<'PY'
+          import json, os, sys, datetime, urllib.request, urllib.error, http.cookiejar
+
+          kodlar = [k.strip().upper() for k in os.environ["KARNE"].split(",") if k.strip()]
+          UA = {"User-Agent": "Mozilla/5.0"}
+
+          # Yahoo (sadece temettu verimi icin)
+          cj = http.cookiejar.CookieJar()
+          op = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))
+          def ac(url):
+              return op.open(urllib.request.Request(url, headers=UA), timeout=30).read().decode()
+          crumb = ""
+          try:
+              try:
+                  ac("https://fc.yahoo.com")
+              except urllib.error.HTTPError:
+                  pass
+              crumb = ac("https://query1.finance.yahoo.com/v1/test/getcrumb")
+          except Exception as e:
+              print("Yahoo crumb HATA:", e)
+
+          def sayi(x):
+              if isinstance(x, dict):
+                  x = x.get("raw")
+              try:
+                  x = float(x)
+              except Exception:
+                  return None
+              return x if x == x else None
+
+          def temettu(kod):
+              try:
+                  u = ("https://query1.finance.yahoo.com/v10/finance/quoteSummary/%s.IS"
+                       "?modules=summaryDetail&crumb=%s") % (kod, crumb)
+                  sd = json.loads(ac(u))["quoteSummary"]["result"][0]["summaryDetail"]
+                  v = sayi(sd.get("dividendYield"))
+                  if v is None:
+                      v = sayi(sd.get("trailingAnnualDividendYield"))
+                  return None if v is None else round(v * 100, 2)
+              except Exception as e:
+                  print("Temettu HATA", kod, e)
+                  return None
+
+          import borsapy as bp
+          hisseler, hata = {}, []
+          for kod in kodlar:
+              h = {"pe": None, "pb": None, "dy": None, "price": None, "mc": None}
+              try:
+                  fi = bp.Ticker(kod).fast_info
+                  fi = dict(fi) if hasattr(fi, "keys") else {}
+                  h["price"] = sayi(fi.get("last_price"))
+                  h["mc"] = sayi(fi.get("market_cap"))
+                  pe = sayi(fi.get("pe_ratio"))
+                  pb = sayi(fi.get("pb_ratio"))
+                  h["pe"] = pe if pe and pe > 0 else None
+                  h["pb"] = pb if pb and pb > 0 else None
+              except Exception as e:
+                  hata.append(kod)
+                  print("borsapy HATA", kod, e)
+              h["dy"] = temettu(kod)
+              hisseler[kod] = h
+              print(kod, h)
+
+          if not any(v["price"] for v in hisseler.values()):
+              print("Hic veri alinamadi")
+              sys.exit(1)
+
+          now = datetime.datetime.now(datetime.timezone.utc)
+          veri = {"updated": (now + datetime.timedelta(hours=3)).strftime("%Y-%m-%d"),
+                  "updatedAt": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
+                  "stocks": hisseler}
+          json.dump(veri, open("karne.json", "w"), indent=1, sort_keys=True)
+          print("Tamam. Hata:", hata)
+          PY
+
+      - name: Kaydet
+        run: |
+          git config user.name "fiyat-bot"
+          git config user.email "fiyat-bot@users.noreply.github.com"
+          git add karne.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Karne verisi"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push && exit 0
+            sleep 5
+          done
+          exit 1
