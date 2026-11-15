@@ -4,7 +4,7 @@
   "t": "2026-11-15",
   "y": 29.77
  },
- "kapUpdatedAt": "2026-11-15 22:01",
+ "kapUpdatedAt": "2026-11-15 22:09",
  "stocks": {
   "AKBNK": {
    "bdog": {
@@ -132,12 +132,13 @@
     {
      "d": "2026-10-26 09:00",
      "k": "KAP",
-     "o": true,
+     "o": false,
      "t": "Özel Durum Açıklaması (Genel)",
      "u": "https://www.kap.org.tr/tr/Bildirim/1687058",
      "y": {
-      "e": "izle",
-      "t": "Özel durum açıklaması. Bildirimdeki en büyük tutar: 8,1 milyar TL. Bu tutar, son 12 aylık net kârın %12,6 büyüklüğünde. Ayrıntı için bildirimi aç."
+      "e": "notr",
+      "t": "Konu: Sendikasyon Kredisi Hakkında. Kredi/finansman ile ilgili bildirim. Bildirimdeki en büyük tutar: 8,1 milyar TL. Bu tutar, son 12 aylık net kârın %12,6 büyüklüğünde. Şirketin açıklaması: “Akbank, uluslararası piyasalardan 134,5 milyon ABD Doları ve 146,0 milyon Avro tutarında 367 gün vadeli; 132,0 milyon ABD Doları ve 5,0 milyon Avro tutarında 2 yıl 2 iş günü vadeli; 106,0 milyon ABD Doları tutarında 3…”",
+      "v": 2
      }
     },
     {
@@ -324,7 +325,8 @@
      "u": "https://www.kap.org.tr/tr/Bildirim/1695191",
      "y": {
       "e": "notr",
-      "t": "Aylık yolcu/trafik sonuçları açıklandı."
+      "t": "Konu: Ekim 2026 Trafik Sonuçları. Aylık yolcu/trafik sonuçları açıklandı. Şirketin açıklaması: “Ortaklığımızın 2026 Ekim ayı konsolide trafik sonuçları ektedir.”",
+      "v": 2
      }
     },
     {
@@ -363,12 +365,13 @@
     {
      "d": "2026-11-04 08:01",
      "k": "KAP",
-     "o": true,
+     "o": false,
      "t": "Özel Durum Açıklaması (Genel)",
      "u": "https://www.kap.org.tr/tr/Bildirim/1691986",
      "y": {
-      "e": "izle",
-      "t": "Özel durum açıklaması. Konusu otomatik belirlenemedi; ayrıntı için bildirimi aç."
+      "e": "notr",
+      "t": "Konu: 2026 3. Çeyrek Finansal Sonuçlar. Şirket dönem finansal sonuçlarını ve yatırımcı sunumunu yayımladı. Rakamların yorumu yukarıdaki bilanço yorumunda.",
+      "v": 2
      }
     },
     {
