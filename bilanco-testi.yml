@@ -1,0 +1,50 @@
+name: Bilanco testi
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Bilanco kalemlerini cek
+        run: |
+          python3 - <<'PY'
+          import json, urllib.request, time
+          UA = {"User-Agent": "Mozilla/5.0"}
+          donemler = [(2026,9),(2026,6),(2025,12),(2025,9)]
+          sonuc = {}
+          for kod in ("THYAO", "AKBNK"):
+              sonuc[kod] = {}
+              for grup in ("XI_29", "UFRS"):
+                  u = ("https://www.isyatirim.com.tr/_layouts/15/IsYatirim.Website/Common/Data.aspx/MaliTablo"
+                       "?companyCode=%s&exchange=TRY&financialGroup=%s"
+                       "&year1=%d&period1=%d&year2=%d&period2=%d&year3=%d&period3=%d&year4=%d&period4=%d&_=%d") % (
+                       (kod, grup) + tuple(x for d in donemler for x in d) + (int(time.time()*1000),))
+                  try:
+                      j = json.load(urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=40))
+                      v = j.get("value") or []
+                      if not v:
+                          sonuc[kod][grup] = "bos"; continue
+                      anahtar = ("ozkaynak","kar","zarar","ana ortak","satis","hasilat","donem")
+                      kalemler = []
+                      for x in v:
+                          ad = (x.get("itemDescTr") or "")
+                          adl = ad.lower().replace("ö","o").replace("ı","i").replace("ş","s").replace("ç","c").replace("ğ","g").replace("ü","u")
+                          if any(k in adl for k in anahtar):
+                              kalemler.append([x.get("itemCode"), ad.strip(), x.get("value1"), x.get("value2"), x.get("value3"), x.get("value4")])
+                      sonuc[kod][grup] = {"adet": len(v), "donemler": donemler, "kalemler": kalemler}
+                      break
+                  except Exception as e:
+                      sonuc[kod][grup] = "HATA: %s" % e
+          json.dump(sonuc, open("bilanco-test.json","w"), ensure_ascii=False, indent=1)
+          print(json.dumps(sonuc, ensure_ascii=False)[:3000])
+          PY
+      - name: Kaydet
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add bilanco-test.json
+          git commit -m "bilanco test" || exit 0
+          for i in 1 2 3; do git pull --rebase origin main && git push && break; sleep 5; done
