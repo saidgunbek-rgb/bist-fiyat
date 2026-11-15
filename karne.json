@@ -4,7 +4,7 @@
   "t": "2026-11-15",
   "y": 29.77
  },
- "kapUpdatedAt": "2026-11-15 21:52",
+ "kapUpdatedAt": "2026-11-15 22:01",
  "stocks": {
   "AKBNK": {
    "bdog": {
@@ -159,7 +159,7 @@
      "u": "https://www.kap.org.tr/tr/Bildirim/1686622",
      "y": {
       "e": "notr",
-      "t": "Bildirim türü: Pay Bazında Devre Kesici Bildirimi."
+      "t": "Hissede fiyat kısa sürede sert hareket ettiği için işlemler otomatik olarak kısa süre durduruldu (devre kesici). Kendisi bir haber değil; fiyat hareketinin sebebine bakmak gerekir."
      }
     },
     {
