@@ -191,7 +191,8 @@ function kaydirKur(keys){var app=document.getElementById("app");
   Array.prototype.forEach.call(ust.children,function(b){b.onclick=function(){git(+b.getAttribute("data-i"));};});
   var zm;app.onscroll=function(){clearTimeout(zm);zm=setTimeout(aktif,80);};
   window.__karneGit=function(k){var i=keys.indexOf(String(k).toUpperCase());if(i>=0)git(i);};
-  try{new ResizeObserver(aktif).observe(app);}catch(e){}
+  try{var ro=new ResizeObserver(function(){aktif();});ro.observe(app);Array.prototype.forEach.call(app.children,function(c){ro.observe(c);});}catch(e){setInterval(aktif,700);}
+  window.addEventListener("resize",aktif);window.addEventListener("load",aktif);setTimeout(aktif,400);setTimeout(aktif,1500);
   Array.prototype.forEach.call(app.querySelectorAll("details"),function(d){d.addEventListener("toggle",function(){setTimeout(aktif,30);});});
   aktif();if(PRM.kod)setTimeout(function(){window.__karneGit(PRM.kod);},50);}
 window.addEventListener("message",function(e){if(e.data&&e.data.karneGit&&window.__karneGit)window.__karneGit(e.data.karneGit);});
