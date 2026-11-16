@@ -29,8 +29,8 @@ textarea{width:100%;min-height:78px;background:#12131c;color:var(--tx);border:1.
 .btn.g{background:var(--card2);color:var(--tx)}
 .secw{background:var(--card);border-radius:16px;padding:12px 14px;margin-bottom:12px}
 .sech{font-size:13px;color:var(--mut);margin-bottom:8px;font-weight:600}
-.secs{display:flex;gap:8px;flex-wrap:wrap}
-.sc{flex:1;min-width:92px;background:var(--card2);border:1.5px solid transparent;border-radius:12px;padding:8px 10px;color:var(--tx);font:inherit;text-align:left;cursor:pointer}
+.secs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.sc{min-width:0;background:var(--card2);border:1.5px solid transparent;border-radius:12px;padding:8px 10px;color:var(--tx);font:inherit;text-align:left;cursor:pointer}
 .sc b{display:block;font-size:15px}.sc small{font-size:11.5px;color:var(--mut)}
 .sc.on{border-color:var(--p);background:rgba(139,124,246,.16)}
 .sc .v{font-size:10.5px;font-weight:700;margin-left:4px}
@@ -69,7 +69,7 @@ summary{cursor:pointer;color:var(--p);font-weight:600}
 @media (prefers-color-scheme: light){:root{--bg:#f4f5fb;--card:#fff;--card2:#eef0f8;--mut:#666a80;--tx:#1d2030;--ln:#c9cde0}textarea{background:#fff}.warn{background:#fff3dc;color:#7a4b00}}
 html{color-scheme:dark}@media (prefers-color-scheme: light){html{color-scheme:light}}html.fr body{padding:0;background:transparent;max-width:none}html.fr h1{display:none}html.fr,html.fr body{overflow:hidden}
 </style></head><body>
-<h1>Hisse Karnesi</h1>
+<h1 id="h1">Hisse Karnesi</h1>
 <div class="sub" id="sub">Yükleniyor…</div>
 <div id="msg"></div>
 <div id="app"></div>
@@ -80,7 +80,8 @@ html{color-scheme:dark}@media (prefers-color-scheme: light){html{color-scheme:li
 <button class="btn" id="bkc">Kopyala</button><button class="btn g" id="bkr">Geri yükle</button><span id="bkm" style="font-size:12px"></span>
 </details>
 <script>
-var DEFURL="https://raw.githubusercontent.com/saidgunbek-rgb/bist-fiyat/main/karne.json";
+var KUT=/[?&]k=kutuphane/.test(location.search),SECK=KUT?"bist-kutup-sec":"bist-karne-sec";
+var DEFURL="https://raw.githubusercontent.com/saidgunbek-rgb/bist-fiyat/main/"+(KUT?"kutuphane.json":"karne.json");
 var BANKS=["AKBNK","GARAN","ISCTR","YKBNK","HALKB","VAKBN","TSKB","ALBRK","SKBNK","QNBFB","ICBCT"];
 var ALIAS={"AKBANK":"AKBNK"};
 function maliyetler(){var m={};try{var o=JSON.parse(localStorage.getItem("bist-takip-v2")||"null");if(!o||!o.t)return m;
@@ -142,7 +143,7 @@ function grafikHtml(k,s){var t=s.tek||{},TUM=t.seri||[];if(TUM.length<2)return""
   g+='<text x="'+L0+'" y="'+(H-3)+'" font-size="10.5" fill="#9a9ab0">'+trD(S2[0][0])+'</text><text x="'+(L0+w)+'" y="'+(H-3)+'" font-size="10.5" fill="#9a9ab0" text-anchor="end">'+trD(son[0])+'</text></svg>';
   var lg='<div style="margin-top:4px;font-size:11.5px;display:flex;gap:10px;flex-wrap:wrap"><span style="color:#a594ff">━ Fiyat</span><span style="color:#4fc3f7">━ '+(KIS?"20":"50")+' günlük ort.</span><span style="color:#ff9f43">━ '+(KIS?"50":"200")+' günlük ort.</span><span style="color:#4ade80">▮ alım bölgesi</span></div>';
   var ml="";if(mal>0&&fy>0){var kz=(fy/mal-1)*100;ml='<div style="font-size:12.5px;margin-top:6px;color:var(--mut)">Senin maliyetin: <b style="color:var(--tx)">'+f2(mal)+' TL</b> ('+(kz>=0?"+":"−")+"%"+Math.abs(kz).toFixed(1).replace(".",",")+')'+(t.h1>fy?' · Hedef 1\'e uzaklık: %'+((t.h1/fy-1)*100).toFixed(1).replace(".",","):'')+(t.risk>0&&fy>t.risk?' · Risk çizgisine: %'+((1-t.risk/fy)*100).toFixed(1).replace(".",","):'')+'</div>';}
-  return'<div class="gr"><div class="grh"><span>Fiyat grafiği</span><span>'+ar+'</span></div>'+g+lg+ml+'</div>';}
+  return'<div class="gr"><div class="grh"><span>Fiyat grafiği</span><span>'+ar+'</span></div>'+g+lg+'</div>';}
 function acHtml(k,s){var ks=s.vade==="kisa",ic=tekHtml(k,s.tek,s.price)+uzunHtml(s.uzun)+(ks?frHtml(s.frapor,true):byHtml(s.byorum,s.kap)+kapHtml(s.kap));if(!ic)return"";
   var d=s.tek&&DUR[s.tek.durum],g=s.uzun&&GOR[s.uzun.gor],b="";
   if(d)b+='<span class="bd" style="color:'+d[1]+'">'+d[0]+'</span>';
@@ -206,13 +207,14 @@ function bdogTxt(b){if(!b)return"";if(b.kaynak&&b.kaynak.length)return' · Bilan
 function render(d){
   var st=d.stocks||{},keys=Object.keys(st),h="";
   if(!keys.length){document.getElementById("app").innerHTML='<div class="warn">Henüz hisse verisi yok.</div>';return;}
-  var SEC=null;try{SEC=localStorage.getItem("bist-karne-sec");}catch(e){}
+  var SEC=null;try{SEC=localStorage.getItem(SECK);}catch(e){}
   if(keys.indexOf(SEC)<0)SEC=keys[0];
-  h+='<div class="secw"><div class="sech">Hisse seç</div><div class="secs">'+keys.map(function(k){var s=st[k]||{},ks=s.vade==="kisa";
-    return'<button class="sc'+(k===SEC?' on':'')+'" data-sec="'+esc(k)+'"><b>'+esc(k)+'<span class="v" style="color:'+(ks?'#ff9f43':'var(--p)')+'">'+(ks?"KISA":"UZUN")+'</span></b><small>'+(s.price>0?f2(s.price)+" TL":"")+'</small></button>';}).join("")+'</div></div>';
+  h+='<div class="secw"><div class="sech">'+(KUT?'BIST30 kütüphanesi · bir hisse seç':'Hisse seç')+'</div><div class="secs">'+keys.map(function(k){var s=st[k]||{},ks=s.vade==="kisa";
+    return'<button class="sc'+(k===SEC?' on':'')+'" data-sec="'+esc(k)+'"><b>'+esc(k)+(KUT?'':'<span class="v" style="color:'+(ks?'#ff9f43':'var(--p)')+'">'+(ks?"KISA":"UZUN")+'</span>')+'</b><small>'+(KUT&&s.sektor?esc(s.sektor)+(s.price>0?" · ":""):"")+(s.price>0?f2(s.price)+" TL":"")+'</small></button>';}).join("")+'</div></div>';
   keys=[SEC];ACIK[SEC]=1;
   keys.forEach(function(k){var s=st[k]||{};
-    h+='<div class="card" data-k="'+esc(k)+'"><div class="hd"><div class="nm">'+esc(k)+(s.vade?' <span style="font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:8px;vertical-align:middle;background:'+(s.vade==="kisa"?'rgba(255,159,67,.18);color:#ff9f43':'rgba(124,92,255,.18);color:var(--p)')+'">'+(s.vade==="kisa"?"Kısa vade":"Uzun vade")+'</span>':'')+'</div><div class="pr">'+(s.price>0?f2(s.price)+" TL":"")+'</div></div>'
+    h+='<div class="card" data-k="'+esc(k)+'"><div class="hd"><div class="nm">'+esc(k)+(s.vade&&!KUT?' <span style="font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:8px;vertical-align:middle;background:'+(s.vade==="kisa"?'rgba(255,159,67,.18);color:#ff9f43':'rgba(124,92,255,.18);color:var(--p)')+'">'+(s.vade==="kisa"?"Kısa vade":"Uzun vade")+'</span>':'')+'</div><div class="pr">'+(s.price>0?f2(s.price)+" TL":"")+'</div></div>'
+     +(KUT&&s.ad?'<div class="mc" style="color:var(--tx)">'+esc(s.ad)+'</div>':'')
      +(s.mc>0?'<div class="mc">Piyasa değeri: '+mcs(s.mc)+'</div>':'')
      +row("pe","F/K",s.pe,s.pe>0?f1(s.pe):"","zarar/yok")
      +row("pb","PD/DD",s.pb,s.pb>0?f1(s.pb):"","yok")
@@ -224,7 +226,7 @@ function render(d){
      +'<div class="src">'+(s.carry&&s.carry.length?'Canlı kaynaklara şu an ulaşılamadı, son bilinen değerler gösteriliyor ('+esc(String(s.asof||"").split("-").reverse().join("."))+'). · ':'')+'F/K ve PD/DD: '+(s.chk?'şirket bilançosundan hesaplanır ('+esc(s.chk.d)+')':'borsapy ve TradingView aynı değeri verirse gösterilir')+bdogTxt(s.bdog)+' · Temettü verimi: Yahoo</div></div>';});
   document.getElementById("app").innerHTML=h;
   Array.prototype.forEach.call(document.querySelectorAll(".arb"),function(b){b.onclick=function(){ARL=+b.getAttribute("data-ar");try{localStorage.setItem("bist-karne-ar",ARL);}catch(e){}render(d);};});
-  Array.prototype.forEach.call(document.querySelectorAll(".sc"),function(b){b.onclick=function(){try{localStorage.setItem("bist-karne-sec",b.getAttribute("data-sec"));}catch(e){}render(d);var w=document.querySelector(".secw");if(w&&w.scrollIntoView)w.scrollIntoView({block:"start"});};});
+  Array.prototype.forEach.call(document.querySelectorAll(".sc"),function(b){b.onclick=function(){try{localStorage.setItem(SECK,b.getAttribute("data-sec"));}catch(e){}render(d);var w=document.querySelector(".secw");if(w&&w.scrollIntoView)w.scrollIntoView({block:"start"});};});
   Array.prototype.forEach.call(document.querySelectorAll(".note"),function(el){paintNote(el);});
   Array.prototype.forEach.call(document.querySelectorAll(".ac"),function(el){el.addEventListener("toggle",function(){var k=el.getAttribute("data-ac");if(el.open)ACIK[k]=1;else delete ACIK[k];try{localStorage.setItem("bist-karne-acik",JSON.stringify(ACIK));}catch(e){}});});
 }
@@ -245,7 +247,8 @@ function load(){
     document.getElementById("sub").innerHTML="Değerleme göstergeleri · Son güncelleme: "+esc(txt||trD(d.updated||""))+(d.kapUpdatedAt?" · KAP kontrolü: "+esc(trD(String(d.kapUpdatedAt).split(" ")[0])+" "+(String(d.kapUpdatedAt).split(" ")[1]||"")):"");
     if(u&&(Date.now()-u.getTime())>5*864e5)document.getElementById("msg").innerHTML='<div class="warn">Veri 5 günden eski. Otomatik güncelleme çalışmıyor olabilir.</div>';
     render(d);
-  }).catch(function(){document.getElementById("sub").textContent="";document.getElementById("msg").innerHTML='<div class="warn">Karne verisi okunamadı. İnternetini kontrol et ya da GitHub’daki “Hisse karnesi” çalışmasının en az bir kez yeşil tikle bittiğinden emin ol.</div>';});}
+  }).catch(function(){document.getElementById("sub").textContent="";document.getElementById("msg").innerHTML=KUT?'<div class="warn">Kütüphane verisi henüz hazır değil. GitHub’daki “Hisse kutuphanesi” çalışması ilk kez bittikten sonra burada görünecek.</div>':'<div class="warn">Karne verisi okunamadı. İnternetini kontrol et ya da GitHub’daki “Hisse karnesi” çalışmasının en az bir kez yeşil tikle bittiğinden emin ol.</div>';});}
+if(KUT){document.title="Hisse Kütüphanesi";document.getElementById("h1").textContent="Hisse Kütüphanesi";}
 load();
 document.getElementById("bkc").onclick=function(){var t=JSON.stringify(NOTES);var ta=document.getElementById("bk");ta.value=t;ta.select();var ok=false;try{ok=document.execCommand("copy");}catch(e){}try{if(navigator.clipboard)navigator.clipboard.writeText(t);ok=true;}catch(e){}document.getElementById("bkm").textContent=ok?" Kopyalandı.":" Metni elle kopyala.";};
 document.getElementById("bkr").onclick=function(){try{var o=JSON.parse(document.getElementById("bk").value);if(!o||typeof o!="object"||Array.isArray(o))throw 0;NOTES=o;saveN();document.getElementById("bkm").textContent=" Geri yüklendi.";Array.prototype.forEach.call(document.querySelectorAll(".note"),paintNote);}catch(e){document.getElementById("bkm").textContent=" Metin geçersiz.";}};
