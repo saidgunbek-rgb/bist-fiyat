@@ -57,6 +57,12 @@ details{background:var(--card);border-radius:14px;padding:11px 13px;margin-botto
 summary{cursor:pointer;color:var(--p);font-weight:600}
 @media (prefers-color-scheme: light){:root{--bg:#f4f5fb;--card:#fff;--card2:#eef0f8;--mut:#666a80;--tx:#1d2030;--ln:#c9cde0}textarea{background:#fff}.warn{background:#fff3dc;color:#7a4b00}}
 html{color-scheme:dark}@media (prefers-color-scheme: light){html{color-scheme:light}}html.fr body{padding:0;background:transparent;max-width:none}html.fr h1{display:none}html.fr,html.fr body{overflow:hidden}
+html.sd .sub,html.sd .foot,html.sd body>details,html.sd .card>.hd{display:none}html.sd .card{border:0;padding:4px 0;margin:0;background:transparent;box-shadow:none}
+.blm{font-size:13px;font-weight:700;color:var(--mut);margin:16px 0 6px;letter-spacing:.2px}
+html.kyd #app{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;align-items:flex-start;scrollbar-width:none;transition:height .2s}
+html.kyd #app::-webkit-scrollbar{display:none}html.kyd #app>.card{flex:0 0 92%;scroll-snap-align:start;margin:0}
+.kdt{display:flex;justify-content:center;gap:6px;margin:8px 0 2px}.kdt b{width:7px;height:7px;border-radius:50%;background:var(--ln)}.kdt b.on{background:var(--p)}
+.kys{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 10px}.kys button{border:1px solid var(--ln);background:var(--card);color:var(--tx);border-radius:999px;padding:6px 14px;font-weight:700;font-size:13.5px}.kys button.on{border-color:var(--p);color:var(--p)}
 </style></head><body>
 <h1>Hisse Karnesi</h1>
 <div class="sub" id="sub">Yükleniyor…</div>
@@ -139,7 +145,7 @@ function tekHtml(k,t,fiyat){if(!t||!(t.son>0))return"";
   L.sort(function(x,y){return y[0]-x[0];});L.forEach(function(x){h+=x[1];});
   var ms="50 günlük ort. "+f2(t.ma50)+(t.ma200?" · 200 günlük ort. "+f2(t.ma200):"")+" · 1 yıl dip "+f2(t.dip)+" / zirve "+f2(t.zirve);
   var m=MAL[k],cp=fiyat>0?fiyat:p;if(m&&m.q>0&&m.c>0){var kz=(cp/m.c-1)*100,uz=(t.h1/cp-1)*100;
-    ms+='<br>Senin maliyetin: '+f2(m.c)+' TL ('+(kz>=0?"+":"")+f1(kz).replace("-","−")+'%)'+(uz>0?' · Kâr al hedefi 1\'e uzaklık: %'+f1(uz):'');}
+    ms+='<br>Senin maliyetin: '+f2(m.c)+' TL ('+(kz>=0?"+":"")+f1(kz).replace("-","−")+'%)'+(uz>0?' · Kâr al hedefi 1\'e uzaklık: %'+f1(uz):'')+(t.risk>0&&cp>t.risk?' · Risk çizgisine uzaklık: %'+f1((1-t.risk/cp)*100):'');}
   h+='<div class="mal">'+ms+'</div><div class="src">Seviyeler '+esc(trD(t.tarih))+' kapanışına göre, iki ya da daha fazla kaynakta doğrulanmış '+t.gun+' günlük fiyatla hesaplandı.</div></div>';
   return h;}
 var GOR={olumlu:["Olumlu","var(--g)"],notr:["Nötr","var(--y)"],olumsuz:["Olumsuz","var(--r)"]};
@@ -150,23 +156,45 @@ function uzunHtml(u){if(!u||!u.gor)return"";var g=GOR[u.gor]||["",""],h='<div cl
   return h+'</div>';}
 function bdogTxt(b){if(!b)return"";if(b.kaynak&&b.kaynak.length)return' · Bilanço rakamları '+esc(b.kaynak.join(" ve "))+' ile doğrulandı ✓';
   if(b.tv_onceki)return' · TradingView henüz '+esc(b.tv_onceki)+' bilançosunu kullanıyor, buradaki hesap daha güncel ('+esc(b.d)+')';return"";}
+var PRM={};try{location.search.slice(1).split("&").forEach(function(p){var a=p.split("=");if(a[0])PRM[a[0]]=decodeURIComponent(a[1]||"");});}catch(e){}
+var SADE=PRM.sade==="1";if(SADE)document.documentElement.classList.add("sd");
+var KAY=PRM.kay==="1";if(KAY)document.documentElement.classList.add("kyd");
 function render(d){
   var st=d.stocks||{},keys=Object.keys(st),h="";
+  if(PRM.kod&&!KAY)keys=keys.filter(function(k){return k===PRM.kod.toUpperCase();});
   if(!keys.length){document.getElementById("app").innerHTML='<div class="warn">Henüz hisse verisi yok.</div>';return;}
   keys.forEach(function(k){var s=st[k]||{};
     h+='<div class="card" data-k="'+esc(k)+'"><div class="hd"><div class="nm">'+esc(k)+'</div><div class="pr">'+(s.price>0?f2(s.price)+" TL":"")+'</div></div>'
+     +(SADE?'<div class="blm">DEĞERLEME</div>':'')
      +(s.mc>0?'<div class="mc">Piyasa değeri: '+mcs(s.mc)+'</div>':'')
      +row("pe","F/K",s.pe,s.pe>0?f1(s.pe):"","zarar/yok")
      +row("pb","PD/DD",s.pb,s.pb>0?f1(s.pb):"","yok")
      +row("dy","Temettü",s.dy,s.dy!=null?"%"+f1(s.dy):"","veri yok")
      +'<div class="sum">'+summary(k,s)+'</div>'
-     +acHtml(k,s)
+     +(SADE?(s.uzun?'<div class="blm">UZUN VADE</div>'+uzunHtml(s.uzun):'')+(s.byorum?'<div class="blm">SON BİLANÇO</div>'+byHtml(s.byorum,s.kap):'')+(s.kap&&s.kap.length?kapHtml(s.kap):'')+'<div class="blm">NOTUM</div>':acHtml(k,s))
      +'<div class="note" data-n="'+esc(k)+'"></div>'
      +'<div class="src">'+(s.carry&&s.carry.length?'Canlı kaynaklara şu an ulaşılamadı, son bilinen değerler gösteriliyor ('+esc(String(s.asof||"").split("-").reverse().join("."))+'). · ':'')+'F/K ve PD/DD: '+(s.chk?'şirket bilançosundan hesaplanır ('+esc(s.chk.d)+')':'borsapy')+bdogTxt(s.bdog)+' · Temettü verimi: Yahoo</div></div>';});
   document.getElementById("app").innerHTML=h;
+  if(KAY)kaydirKur(keys);
   Array.prototype.forEach.call(document.querySelectorAll(".note"),function(el){paintNote(el);});
   Array.prototype.forEach.call(document.querySelectorAll(".ac"),function(el){el.addEventListener("toggle",function(){var k=el.getAttribute("data-ac");if(el.open)ACIK[k]=1;else delete ACIK[k];try{localStorage.setItem("bist-karne-acik",JSON.stringify(ACIK));}catch(e){}});});
 }
+function kaydirKur(keys){var app=document.getElementById("app");
+  var ust=document.getElementById("kys");if(!ust){ust=document.createElement("div");ust.id="kys";ust.className="kys";app.parentNode.insertBefore(ust,app);}
+  var alt=document.getElementById("kdt");if(!alt){alt=document.createElement("div");alt.id="kdt";alt.className="kdt";app.parentNode.insertBefore(alt,app.nextSibling);}
+  ust.innerHTML=keys.length>1?keys.map(function(k,i){return'<button data-i="'+i+'">'+esc(k)+'</button>';}).join(""):"";
+  alt.innerHTML=keys.length>1?keys.map(function(){return"<b></b>";}).join(""):"";
+  function aktif(){var c=app.children,w=c.length?c[0].offsetWidth+10:1,i=Math.max(0,Math.min(c.length-1,Math.round(app.scrollLeft/w)));
+    Array.prototype.forEach.call(ust.children,function(b,j){b.className=j===i?"on":"";});Array.prototype.forEach.call(alt.children,function(b,j){b.className=j===i?"on":"";});
+    if(c[i])app.style.height=c[i].offsetHeight+"px";return i;}
+  function git(i){var c=app.children;if(!c[i])return;app.scrollTo({left:c[i].offsetLeft-app.offsetLeft,behavior:"smooth"});}
+  Array.prototype.forEach.call(ust.children,function(b){b.onclick=function(){git(+b.getAttribute("data-i"));};});
+  var zm;app.onscroll=function(){clearTimeout(zm);zm=setTimeout(aktif,80);};
+  window.__karneGit=function(k){var i=keys.indexOf(String(k).toUpperCase());if(i>=0)git(i);};
+  try{new ResizeObserver(aktif).observe(app);}catch(e){}
+  Array.prototype.forEach.call(app.querySelectorAll("details"),function(d){d.addEventListener("toggle",function(){setTimeout(aktif,30);});});
+  aktif();if(PRM.kod)setTimeout(function(){window.__karneGit(PRM.kod);},50);}
+window.addEventListener("message",function(e){if(e.data&&e.data.karneGit&&window.__karneGit)window.__karneGit(e.data.karneGit);});
 function paintNote(el){var k=el.getAttribute("data-n"),t=NOTES[k]||"";
   el.innerHTML=t?"<b>Notum:</b> "+esc(t):"<b>Notum:</b> henüz yazmadın. Neden alıyorsun, hangi seviyede satarsın? (dokunup yaz)";
   el.onclick=function(){editNote(el,k);};}
