@@ -535,7 +535,7 @@ function grafik(){var el=document.getElementById("fgr");if(!el)return;var L=elde
   if(!SEC||!L.some(function(x){return x.k===SEC;}))SEC=L[0].k;
   var k=SEC,st=KR&&KR.stocks&&KR.stocks[kod(k)]||{},t=st.tek||{},TUM=seri(k),hs=L.filter(function(x){return x.k===k;})[0]||{},mal=hs.c,fy=hs.p||t.son;
   var btn=L.map(function(x){return'<button class="ghost" style="padding:5px 12px;'+(x.k===k?'border-color:var(--b1);color:var(--b1)':'')+'" onclick="window.__fgSec(\''+esc(x.k)+'\')">'+esc(x.k)+'</button>';}).join(" ");
-  var ar=[[63,"3 ay"],[125,"6 ay"],[250,"1 yıl"],[750,"3 yıl"],[1250,"5 yıl"]].map(function(a){return'<button class="ghost" style="padding:4px 10px;font-size:12.5px;'+(a[0]===ARL?'border-color:var(--b1);color:var(--b1)':'')+'" onclick="window.__fgAr('+a[0]+')">'+a[1]+'</button>';}).join(" ");
+  var ar=[[63,"3 ay"],[125,"6 ay"],[250,"1 yıl"]].map(function(a){return'<button class="ghost" style="padding:4px 10px;font-size:12.5px;'+(a[0]===ARL?'border-color:var(--b1);color:var(--b1)':'')+'" onclick="window.__fgAr('+a[0]+')">'+a[1]+'</button>';}).join(" ");
   if(TUM.length<2){el.innerHTML='<div class="btns">'+btn+'</div><div class="mut">Grafik için yeterli fiyat yok.</div>';return;}
   var ysT=TUM.map(function(p){return p[1];}),bas=Math.max(0,TUM.length-ARL),S2=TUM.slice(bas),ys=ysT.slice(bas);
   var m50=ys.map(function(_,i){return ort(ysT,50,bas+i);}),m200=ys.map(function(_,i){return ort(ysT,200,bas+i);});
