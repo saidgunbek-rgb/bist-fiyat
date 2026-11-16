@@ -40,7 +40,7 @@
   "t": "2026-11-16",
   "y": 29.77
  },
- "kapUpdatedAt": "2026-11-16 15:46",
+ "kapUpdatedAt": "2026-11-16 15:55",
  "stocks": {
   "KLSER": {
    "bdog": {
@@ -66,6 +66,7 @@
       "ad": "Satışlar",
       "deg": 4.7,
       "g": "13,0 milyar TL",
+      "n": null,
       "s": "13,6 milyar TL",
       "tur": "gelir"
      },
@@ -73,27 +74,31 @@
       "ad": "Brüt kâr",
       "deg": 62.0,
       "g": "1,4 milyar TL",
+      "n": null,
       "s": "2,2 milyar TL",
       "tur": "gelir"
      },
      {
       "ad": "Faaliyet kârı",
-      "deg": 57.1,
+      "deg": null,
       "g": "-1,7 milyar TL",
+      "n": "zarar azaldı",
       "s": "-711,5 milyon TL",
       "tur": "gelir"
      },
      {
       "ad": "Net kâr",
-      "deg": 74.7,
+      "deg": null,
       "g": "-2,6 milyar TL",
+      "n": "zarar azaldı",
       "s": "-653,6 milyon TL",
       "tur": "gelir"
      },
      {
       "ad": "Son çeyrek net kârı (Temmuz-Eylül)",
-      "deg": -3.8,
+      "deg": null,
       "g": "-719,6 milyon TL",
+      "n": "zarar arttı",
       "s": "-746,9 milyon TL",
       "tur": "gelir"
      },
@@ -101,6 +106,7 @@
       "ad": "Nakit ve benzerleri",
       "deg": -32.8,
       "g": "811,6 milyon TL",
+      "n": null,
       "s": "545,1 milyon TL",
       "tur": "bilanco"
      },
@@ -108,6 +114,7 @@
       "ad": "Finansal borçlar",
       "deg": 36.5,
       "g": "7,0 milyar TL",
+      "n": null,
       "s": "9,5 milyar TL",
       "tur": "bilanco"
      },
@@ -115,6 +122,7 @@
       "ad": "Özkaynaklar",
       "deg": -9.8,
       "g": "7,1 milyar TL",
+      "n": null,
       "s": "6,4 milyar TL",
       "tur": "bilanco"
      }

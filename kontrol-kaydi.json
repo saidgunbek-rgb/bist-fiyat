@@ -486,7 +486,7 @@
   }
  },
  "kap_ve_bilanco": {
-  "updatedAt": "2026-11-16 15:46",
+  "updatedAt": "2026-11-16 15:55",
   "hisseler": {
    "THYAO": {
     "kap_kaynak": "borsapy",
@@ -544,6 +544,7 @@
        "s": "13,6 milyar TL",
        "g": "13,0 milyar TL",
        "deg": 4.7,
+       "n": null,
        "tur": "gelir"
       },
       {
@@ -551,27 +552,31 @@
        "s": "2,2 milyar TL",
        "g": "1,4 milyar TL",
        "deg": 62.0,
+       "n": null,
        "tur": "gelir"
       },
       {
        "ad": "Faaliyet kârı",
        "s": "-711,5 milyon TL",
        "g": "-1,7 milyar TL",
-       "deg": 57.1,
+       "deg": null,
+       "n": "zarar azaldı",
        "tur": "gelir"
       },
       {
        "ad": "Net kâr",
        "s": "-653,6 milyon TL",
        "g": "-2,6 milyar TL",
-       "deg": 74.7,
+       "deg": null,
+       "n": "zarar azaldı",
        "tur": "gelir"
       },
       {
        "ad": "Son çeyrek net kârı (Temmuz-Eylül)",
        "s": "-746,9 milyon TL",
        "g": "-719,6 milyon TL",
-       "deg": -3.8,
+       "deg": null,
+       "n": "zarar arttı",
        "tur": "gelir"
       },
       {
@@ -579,6 +584,7 @@
        "s": "545,1 milyon TL",
        "g": "811,6 milyon TL",
        "deg": -32.8,
+       "n": null,
        "tur": "bilanco"
       },
       {
@@ -586,6 +592,7 @@
        "s": "9,5 milyar TL",
        "g": "7,0 milyar TL",
        "deg": 36.5,
+       "n": null,
        "tur": "bilanco"
       },
       {
@@ -593,6 +600,7 @@
        "s": "6,4 milyar TL",
        "g": "7,1 milyar TL",
        "deg": -9.8,
+       "n": null,
        "tur": "bilanco"
       }
      ],
