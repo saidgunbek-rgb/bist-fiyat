@@ -95,8 +95,8 @@ function frYeni(f){if(!f||!f.ilk)return false;var t=new Date(f.ilk+"T00:00:00+03
 function frHtml(f,kisa){if(!kisa)return"";var h='<div class="uz" style="margin-top:12px"><div class="uzh"><span>Finansal rapor'+(f?' ('+esc(f.donem||f.d)+')':'')+(frYeni(f)?'<span class="yn">YENİ</span>':'')+'</span></div>';
   if(!f||!f.s||!f.s.length)return h+'<div class="uzo" style="color:var(--mut)">Bu hissenin finansal raporu henüz alınamadı. Rapor yayımlanınca rakamlar otomatik gelecek.</div></div>';
   h+='<div class="kd" style="font-size:11.5px;color:var(--mut);margin:6px 0 2px">'+esc(f.donem||"")+' · karşılaştırma: '+esc(f.onceki||"geçen yıl")+'</div>';
-  f.s.forEach(function(x){h+='<div class="uzr" style="justify-content:space-between"><span><b>'+esc(x.ad)+'</b></span><span style="text-align:right"><b>'+esc(x.s)+'</b> <small>('+esc(x.g)+(x.deg!=null?', '+(x.deg>=0?"+":"−")+"%"+String(Math.abs(x.deg)).replace(".",","):"")+')</small></span></div>';});
-  return h+'<div class="kd" style="font-size:11px;color:var(--mut);margin-top:6px">Rakamlar şirketin KAP\'a gönderdiği mali tablodan alınır, yorum eklenmez. Parantez içi: geçen yılın aynı dönemi ve değişim.</div></div>';}
+  f.s.forEach(function(x){h+='<div class="uzr" style="justify-content:space-between"><span><b>'+esc(x.ad)+'</b></span><span style="text-align:right"><b>'+esc(x.s)+'</b> <small>('+esc(x.g)+(x.n?', '+esc(x.n):x.deg!=null?', '+(x.deg>=0?"+":"−")+"%"+String(Math.abs(x.deg)).replace(".",","):"")+')</small></span></div>';});
+  return h+'<div class="kd" style="font-size:11px;color:var(--mut);margin-top:6px">Rakamlar şirketin KAP\'a gönderdiği mali tablodan alınır, yorum eklenmez. Parantez içi: geçen yılın aynı dönemi ve değişim. Eksi tutar zarar demektir.</div></div>';}
 function acHtml(k,s){var ks=s.vade==="kisa",ic=tekHtml(k,s.tek,s.price)+uzunHtml(s.uzun)+(ks?frHtml(s.frapor,true):byHtml(s.byorum,s.kap)+kapHtml(s.kap));if(!ic)return"";
   var d=s.tek&&DUR[s.tek.durum],g=s.uzun&&GOR[s.uzun.gor],b="";
   if(d)b+='<span class="bd" style="color:'+d[1]+'">'+d[0]+'</span>';
