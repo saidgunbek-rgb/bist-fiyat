@@ -486,7 +486,7 @@
   }
  },
  "kap_ve_bilanco": {
-  "updatedAt": "2026-11-16 14:45",
+  "updatedAt": "2026-11-16 15:46",
   "hisseler": {
    "THYAO": {
     "kap_kaynak": "borsapy",
@@ -531,156 +531,101 @@
     }
    },
    "KTLEV": {
-    "kap_kaynak": "borsapy",
-    "kap_adet": 20,
-    "kap_icerik": [
-     [
-      "2026-11-11 18:10",
-      "SPK İşlem Yasağı Nedeniyle Pay Duyurusu",
-      "pdf",
-      13566,
-      ""
-     ],
-     [
-      "2026-11-11 09:03",
-      "Kamuyu Aydınlatma Platformu Duyurusu",
-      "pdf",
-      896,
-      ""
-     ],
-     [
-      "2026-11-10 12:27",
-      "Özel Durum Açıklaması (Genel)",
-      "pdf",
-      1731,
-      "Katılımevim Tasarruf Finansman A.Ş., Birevim Tasarruf Finansman A.Ş. ve İktisat Katılım Bankası A.Ş.'nin pay devir işlemleri TÜRKİYE EMLAK KATILIM BANKASI A.Ş. Özel Durum Açıklaması (Genel) KAMUYU AYDINLATMA PLATFORMU Özet Bilgi KAP'ta yayınlanma tarihi ve saati: 10.11.2026 12:27:33 https://www.kap.org.tr/tr/Bildirim/1696355 İlgili Şirketler [KTLEV] İlgili Fonlar [] Özel Durum Açıklaması (Genel) Yapılan Açıklama Güncelleme mi? Evet (Yes) Yapılan Açıklama Düzeltme mi? Hayır (No) Konuya İlişkin Daha Önce Yapılan Açıklamanın Tarihi 17.09.2026-25.09.2026-30.09.2026 Yapılan Açıklama Ertelenmiş Bir Açıklama mı? Hayır (No) Bildirim İçeriği Açıklamalar Bankamızın Kamuyu Aydınlatma Platformunda daha önce yayımlanan özel durum açıklamaları ile Katılımevim Tasarruf Finansman A.Ş., Birevim Tasarruf Finansman A.Ş. ve İktisat Katılım Bankası A.Ş. paylarının devralınmasına yönelik süreç hakkında kamuoyuna bilgi verilmiştir. Pay devir işlemlerine ilişkin olarak T.C. Hazine ve Maliye Bakanlığı Kamu Sermayeli Kuruluş ve İşletmeler Genel Müdürlüğü, Rekabet Kurumu, Sermaye Piyasası Kurulu, Bankacılık Düzenleme ve Denetleme Kurumu nezdinde yürütülen süreçler tamamlanmış ve ilgili mevzuat uyarınca gerekli izin ve onaylar alınmıştır. Kamuoyunun bilgisine sunulur. Özel Durum Açıklaması (Genel) Yukarıdaki açıklamalarımızın, Sermaye Piyasası Kurulu‘nun yürürlükteki Özel Durumlar Tebliğinde yer alan esaslara uygun olduğunu, bu konuda/konularda tarafımıza ulaşan bilgileri tam olarak yansıttığını, bilgilerin defter, kayıt ve belgelerimize uygun olduğunu, konuyla ilgili bilgileri tam ve doğru olarak elde etmek için gerekli tüm çabaları gösterdiğimizi ve yapılan bu açıklamalardan sorumlu olduğumuzu beyan ederiz."
-     ],
-     [
-      "2026-11-09 18:43",
-      "Finansal Rapor Ek Süre Taleplerine İlişkin SPK Değerlendirmesi",
-      "pdf",
-      2077,
-      ""
-     ],
-     [
-      "2026-11-06 10:00",
-      "Pay Bazında Devre Kesici Bildirimi",
-      "pdf",
-      523,
-      ""
-     ],
-     [
-      "2026-11-03 10:43",
-      "Endekslerde Kullanılan Fiili Dolaşımdaki Pay Oranı Değişiklikleri",
-      "pdf",
-      829,
-      ""
-     ],
-     [
-      "2026-11-02 10:09",
-      "Pay Bazında Devre Kesici Bildirimi",
-      "pdf",
-      523,
-      ""
-     ],
-     [
-      "2026-10-30 12:14",
-      "Pay Bazında Devre Kesici Bildirimi",
-      "pdf",
-      523,
-      ""
-     ],
-     [
-      "2026-10-28 08:54",
-      "Kamuyu Aydınlatma Platformu Duyurusu",
-      "pdf",
-      913,
-      ""
-     ],
-     [
-      "2026-10-27 19:04",
-      "SPK İşlem Yasağı Nedeniyle Pay Duyurusu",
-      "pdf",
-      11535,
-      ""
-     ]
-    ]
+    "finans_raporu": null
    },
    "KLSER": {
-    "kap_kaynak": "borsapy",
-    "kap_adet": 20,
-    "kap_icerik": [
-     [
-      "2026-11-16 10:06",
-      "Pay Bazında Devre Kesici Bildirimi",
-      "pdf",
-      523,
-      ""
+    "finans_raporu": {
+     "d": "2026/9",
+     "donem": "Ocak-Eylül 2026",
+     "onceki": "Ocak-Eylül 2025",
+     "s": [
+      {
+       "ad": "Satışlar",
+       "s": "13,6 milyar TL",
+       "g": "13,0 milyar TL",
+       "deg": 4.7,
+       "tur": "gelir"
+      },
+      {
+       "ad": "Brüt kâr",
+       "s": "2,2 milyar TL",
+       "g": "1,4 milyar TL",
+       "deg": 62.0,
+       "tur": "gelir"
+      },
+      {
+       "ad": "Faaliyet kârı",
+       "s": "-711,5 milyon TL",
+       "g": "-1,7 milyar TL",
+       "deg": 57.1,
+       "tur": "gelir"
+      },
+      {
+       "ad": "Net kâr",
+       "s": "-653,6 milyon TL",
+       "g": "-2,6 milyar TL",
+       "deg": 74.7,
+       "tur": "gelir"
+      },
+      {
+       "ad": "Son çeyrek net kârı (Temmuz-Eylül)",
+       "s": "-746,9 milyon TL",
+       "g": "-719,6 milyon TL",
+       "deg": -3.8,
+       "tur": "gelir"
+      },
+      {
+       "ad": "Nakit ve benzerleri",
+       "s": "545,1 milyon TL",
+       "g": "811,6 milyon TL",
+       "deg": -32.8,
+       "tur": "bilanco"
+      },
+      {
+       "ad": "Finansal borçlar",
+       "s": "9,5 milyar TL",
+       "g": "7,0 milyar TL",
+       "deg": 36.5,
+       "tur": "bilanco"
+      },
+      {
+       "ad": "Özkaynaklar",
+       "s": "6,4 milyar TL",
+       "g": "7,1 milyar TL",
+       "deg": -9.8,
+       "tur": "bilanco"
+      }
      ],
-     [
-      "2026-11-05 09:55",
-      "Geleceğe Dönük Değerlendirmeler",
-      "pdf",
-      1412,
-      ""
-     ],
-     [
-      "2026-11-04 10:15",
-      "Pay Bazında Devre Kesici Bildirimi",
-      "pdf",
-      523,
-      ""
-     ],
-     [
-      "2026-11-03 20:34",
-      "Sorumluluk Beyanı (Konsolide)",
-      "pdf",
-      2444,
-      ""
-     ],
-     [
-      "2026-11-03 20:33",
-      "Faaliyet Raporu (Konsolide)",
-      "pdf",
-      785,
-      ""
-     ],
-     [
-      "2026-11-03 20:32",
-      "Finansal Rapor",
-      "pdf",
-      14507,
-      ""
-     ],
-     [
-      "2026-11-02 10:01",
-      "Pay Bazında Devre Kesici Bildirimi",
-      "pdf",
-      523,
-      ""
-     ],
-     [
-      "2026-10-28 13:58",
-      "Kredi Derecelendirmesi",
-      "pdf",
-      1538,
-      ""
-     ],
-     [
-      "2026-10-28 10:13",
-      "Pay Bazında Devre Kesici Bildirimi",
-      "pdf",
-      523,
-      ""
-     ],
-     [
-      "2026-10-27 18:26",
-      "Özel Durum Açıklaması (Genel)",
-      "pdf",
-      1533,
-      "Finansal Yeniden Yapılandırma Başvurusu Hakkında KALESERAMİK ÇANAKKALE KALEBODUR SERAMİK SANAYİ A.Ş. Özel Durum Açıklaması (Genel) KAMUYU AYDINLATMA PLATFORMU Özet Bilgi KAP'ta yayınlanma tarihi ve saati: 27.10.2026 18:26:58 https://www.kap.org.tr/tr/Bildirim/1688409 İlgili Şirketler [] İlgili Fonlar [] Özel Durum Açıklaması (Genel) Yapılan Açıklama Güncelleme mi? Hayır (No) Yapılan Açıklama Düzeltme mi? Hayır (No) Konuya İlişkin Daha Önce Yapılan Açıklamanın Tarihi - Yapılan Açıklama Ertelenmiş Bir Açıklama mı? Hayır (No) Bildirim İçeriği Açıklamalar Şirketimizin bankalar nezdindeki kredilerinin geri ödeme vade yapısının faaliyetlerimizden sağlanan nakit akışıyla uyumlu hale getirilmesi amacıyla, ilgili mevzuat çerçevesinde 27.10.2026 tarihinde (bugün) finansal kuruluşlara Finansal Yeniden Yapılandırma başvurusu yapılmıştır. Kamuoyunun ve değerli yatırımcılarımızın bilgisine sunarız. İşbu açıklamamızın İngilizce çevirisi ekte yer almakta olup, açıklama metinlerinde herhangi bir farklılık olması durumunda, Türkçe açıklama esas kabul edilecektir. Özel Durum Açıklaması (Genel) Yukarıdaki açıklamalarımızın, Sermaye Piyasası Kurulu‘nun yürürlükteki Özel Durumlar Tebliğinde yer alan esaslara uygun olduğunu, bu konuda/konularda tarafımıza ulaşan bilgileri tam olarak yansıttığını, bilgilerin defter, kayıt ve belgelerimize uygun olduğunu, konuyla ilgili bilgileri tam ve doğru olarak elde etmek için gerekli tüm çabaları gösterdiğimizi ve yapılan bu açıklamalardan sorumlu olduğumuzu beyan ederiz."
-     ]
-    ]
+     "ilk": "2026-11-16"
+    },
+    "bilanco_kontrol": {
+     "d": "2026/9",
+     "kaynak": [],
+     "bizim": {
+      "kar": -2495710654.0,
+      "ozkaynak": 6395843304.0
+     },
+     "karsi": {
+      "tradingview": {
+       "kar": -1944804381.0,
+       "ozkaynak": 6691689306.0
+      },
+      "yahoo": {
+       "kar": [
+        "2026-06-30",
+        -1655370520.0
+       ],
+       "ozkaynak": [
+        "2026-06-30",
+        6820639111.0
+       ]
+      },
+      "onceki_ceyrek_ozkaynak": [
+       "2026/6",
+       6820639111.0
+      ]
+     }
+    }
    }
   }
  }
