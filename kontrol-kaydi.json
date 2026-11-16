@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-16T12:03:19Z",
+ "updatedAt": "2026-11-16T12:28:02Z",
  "hisseler": {
   "THYAO": {
    "ozet": {
@@ -23,10 +23,10 @@
     {
      "tarih": "2026-11-16",
      "degerler": {
-      "yahoo": 321.5,
-      "borsapy": 321.5
+      "yahoo": 322.75,
+      "borsapy": 322.75
      },
-     "secilen": 321.5,
+     "secilen": 322.75,
      "neden": "cogunluk: borsapy,yahoo"
     }
    ]
@@ -476,10 +476,10 @@
     {
      "tarih": "2026-11-16",
      "degerler": {
-      "yahoo": 16.72,
-      "borsapy": 16.72
+      "yahoo": 16.66,
+      "borsapy": 16.66
      },
-     "secilen": 16.72,
+     "secilen": 16.66,
      "neden": "cogunluk: borsapy,yahoo"
     }
    ]
