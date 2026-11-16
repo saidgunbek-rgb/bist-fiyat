@@ -1,19 +1,32 @@
 {
  "bildirim_durum": {
-  "AKBNK": {
+  "KLSER": {
    "bilanco": "2026/9",
-   "durum": "risk",
    "kap": [
-    "https://www.kap.org.tr/tr/Bildirim/1685308",
-    "https://www.kap.org.tr/tr/Bildirim/1686622",
-    "https://www.kap.org.tr/tr/Bildirim/1686803",
-    "https://www.kap.org.tr/tr/Bildirim/1687058",
-    "https://www.kap.org.tr/tr/Bildirim/1688326",
-    "https://www.kap.org.tr/tr/Bildirim/1688328",
-    "https://www.kap.org.tr/tr/Bildirim/1688332",
+    "https://www.kap.org.tr/tr/Bildirim/1688409",
+    "https://www.kap.org.tr/tr/Bildirim/1688712",
+    "https://www.kap.org.tr/tr/Bildirim/1689042",
+    "https://www.kap.org.tr/tr/Bildirim/1690434",
+    "https://www.kap.org.tr/tr/Bildirim/1691960",
+    "https://www.kap.org.tr/tr/Bildirim/1691961",
+    "https://www.kap.org.tr/tr/Bildirim/1691962",
+    "https://www.kap.org.tr/tr/Bildirim/1692045",
+    "https://www.kap.org.tr/tr/Bildirim/1692923",
+    "https://www.kap.org.tr/tr/Bildirim/1698285"
+   ]
+  },
+  "KTLEV": {
+   "kap": [
     "https://www.kap.org.tr/tr/Bildirim/1688483",
-    "https://www.kap.org.tr/tr/Bildirim/1691739",
-    "https://www.kap.org.tr/tr/Bildirim/1692162"
+    "https://www.kap.org.tr/tr/Bildirim/1688634",
+    "https://www.kap.org.tr/tr/Bildirim/1689365",
+    "https://www.kap.org.tr/tr/Bildirim/1690493",
+    "https://www.kap.org.tr/tr/Bildirim/1691369",
+    "https://www.kap.org.tr/tr/Bildirim/1693552",
+    "https://www.kap.org.tr/tr/Bildirim/1695620",
+    "https://www.kap.org.tr/tr/Bildirim/1696355",
+    "https://www.kap.org.tr/tr/Bildirim/1696786",
+    "https://www.kap.org.tr/tr/Bildirim/1697234"
    ]
   },
   "THYAO": {
@@ -35,6 +48,11 @@
  },
  "bildirimler": [
   {
+   "d": "2026-11-16 14:45",
+   "i": "➕",
+   "t": "Takibe alındı: KTLEV, KLSER"
+  },
+  {
    "d": "2026-11-16 08:53",
    "i": "✅",
    "t": "Panel bildirimleri açıldı"
@@ -45,7 +63,7 @@
   "t": "2026-11-16",
   "y": 29.77
  },
- "kapUpdatedAt": "2026-11-16 12:50",
+ "kapUpdatedAt": "2026-11-16 14:45",
  "stocks": {
   "AKBNK": {
    "bdog": {
@@ -1312,6 +1330,281 @@
     "oneri": "Uzun vade görünümü nötr ve fiyat risk çizgisinin altında: pozisyonu gözden geçir.",
     "puan": 0
    }
+  },
+  "KLSER": {
+   "byorum": {
+    "d": "2026/9",
+    "etki": "karisik",
+    "ilk": "2026-11-16",
+    "m": [
+     {
+      "k": "satışlar reel olarak %19,3 azaldı",
+      "p": -1,
+      "t": "Satışlar geçen yılın aynı dönemine göre %4,7 arttı (13,0 milyar TL → 13,6 milyar TL, enflasyondan arındırınca yaklaşık -%19,3)."
+     },
+     {
+      "k": "brüt kâr marjı yükseldi",
+      "p": 1,
+      "t": "Brüt kâr marjı: %10,4 → %16,1 (yükseldi)."
+     },
+     {
+      "k": "faaliyet kâr marjı yükseldi",
+      "p": 1,
+      "t": "Faaliyet kâr marjı: %12,7 → %5,2 (yükseldi)."
+     },
+     {
+      "k": "net kâr reel olarak %34,6 arttı",
+      "p": 1,
+      "t": "Net kâr geçen yılın aynı dönemine göre %74,7 arttı (-2,6 milyar TL → -653,6 milyon TL, enflasyondan arındırınca yaklaşık +%34,6)."
+     },
+     {
+      "k": "borçluluk yüksek",
+      "p": -1,
+      "t": "Net borç 9,0 milyar TL; özkaynağa oranı 1,40 (yüksek)."
+     },
+     {
+      "k": "son çeyrek kârı reel olarak %25,9 azaldı",
+      "p": -1,
+      "t": "Son çeyrekte (Temmuz-Eylül) net kâr -746,9 milyon TL; geçen yılın aynı çeyreğinde -719,6 milyon TL idi (-%3,8, enflasyondan arındırınca yaklaşık -%25,9)."
+     },
+     {
+      "k": "",
+      "p": 0,
+      "t": "Not: Geçen yılın rakamları o dönemin TL'siyle raporlandığı için büyümeler ayrıca yıllık enflasyona (%29,8) göre de değerlendirildi."
+     }
+    ],
+    "ozet": "Karışık bir tablo: brüt kâr marjı yükseldi ve faaliyet kâr marjı yükseldi; buna karşın satışlar reel olarak %19,3 azaldı ve borçluluk yüksek.",
+    "puan": 0
+   },
+   "kap": [
+    {
+     "d": "2026-11-16 10:06",
+     "k": "KAP",
+     "o": false,
+     "t": "Pay Bazında Devre Kesici Bildirimi",
+     "u": "https://www.kap.org.tr/tr/Bildirim/1698285",
+     "y": {
+      "e": "notr",
+      "t": "Hissede fiyat kısa sürede sert hareket ettiği için işlemler otomatik olarak kısa süre durduruldu (devre kesici). Kendisi bir haber değil; fiyat hareketinin sebebine bakmak gerekir."
+     }
+    },
+    {
+     "d": "2026-11-05 09:55",
+     "k": "KAP",
+     "o": false,
+     "t": "Geleceğe Dönük Değerlendirmeler",
+     "u": "https://www.kap.org.tr/tr/Bildirim/1692923",
+     "y": {
+      "e": "notr",
+      "t": "Şirket dönem finansal sonuçlarını ve yatırımcı sunumunu yayımladı. Rakamların yorumu yukarıdaki bilanço yorumunda.",
+      "v": 3
+     }
+    },
+    {
+     "d": "2026-11-04 10:15",
+     "k": "KAP",
+     "o": false,
+     "t": "Pay Bazında Devre Kesici Bildirimi",
+     "u": "https://www.kap.org.tr/tr/Bildirim/1692045",
+     "y": {
+      "e": "notr",
+      "t": "Hissede fiyat kısa sürede sert hareket ettiği için işlemler otomatik olarak kısa süre durduruldu (devre kesici). Kendisi bir haber değil; fiyat hareketinin sebebine bakmak gerekir."
+     }
+    },
+    {
+     "d": "2026-11-03 20:34",
+     "k": "KAP",
+     "o": false,
+     "t": "Sorumluluk Beyanı (Konsolide)",
+     "u": "https://www.kap.org.tr/tr/Bildirim/1691962",
+     "y": {
+      "e": "notr",
+      "t": "Finansal raporlara eşlik eden rutin yönetim beyanı."
+     }
+    },
+    {
+     "d": "2026-11-03 20:33",
+     "k": "KAP",
+     "o": false,
+     "t": "Faaliyet Raporu (Konsolide)",
+     "u": "https://www.kap.org.tr/tr/Bildirim/1691961",
+     "y": {
+      "e": "notr",
+      "t": "Faaliyet raporu yayımlandı. Rakamlar için bilanço yorumuna bak."
+     }
+    },
+    {
+     "d": "2026-11-03 20:32",
+     "k": "KAP",
+     "o": true,
+     "t": "Finansal Rapor",
+     "u": "https://www.kap.org.tr/tr/Bildirim/1691960",
+     "y": {
+      "e": "izle",
+      "t": "Yeni finansal rapor (bilanço) açıklandı. Karışık bir tablo: brüt kâr marjı yükseldi ve faaliyet kâr marjı yükseldi; buna karşın satışlar reel olarak %19,3 azaldı ve borçluluk yüksek."
+     }
+    },
+    {
+     "d": "2026-11-02 10:01",
+     "k": "KAP",
+     "o": false,
+     "t": "Pay Bazında Devre Kesici Bildirimi",
+     "u": "https://www.kap.org.tr/tr/Bildirim/1690434",
+     "y": {
+      "e": "notr",
+      "t": "Hissede fiyat kısa sürede sert hareket ettiği için işlemler otomatik olarak kısa süre durduruldu (devre kesici). Kendisi bir haber değil; fiyat hareketinin sebebine bakmak gerekir."
+     }
+    },
+    {
+     "d": "2026-10-28 13:58",
+     "k": "KAP",
+     "o": false,
+     "t": "Kredi Derecelendirmesi",
+     "u": "https://www.kap.org.tr/tr/Bildirim/1689042",
+     "y": {
+      "e": "notr",
+      "t": "Kredi derecelendirme notu açıklandı/teyit edildi."
+     }
+    },
+    {
+     "d": "2026-10-28 10:13",
+     "k": "KAP",
+     "o": false,
+     "t": "Pay Bazında Devre Kesici Bildirimi",
+     "u": "https://www.kap.org.tr/tr/Bildirim/1688712",
+     "y": {
+      "e": "notr",
+      "t": "Hissede fiyat kısa sürede sert hareket ettiği için işlemler otomatik olarak kısa süre durduruldu (devre kesici). Kendisi bir haber değil; fiyat hareketinin sebebine bakmak gerekir."
+     }
+    },
+    {
+     "d": "2026-10-27 18:26",
+     "k": "KAP",
+     "o": true,
+     "t": "Özel Durum Açıklaması (Genel)",
+     "u": "https://www.kap.org.tr/tr/Bildirim/1688409",
+     "y": {
+      "e": "izle",
+      "t": "Konu: Finansal Yeniden Yapılandırma Başvurusu Hakkında. Şirketin açıklaması: “Şirketimizin bankalar nezdindeki kredilerinin geri ödeme vade yapısının faaliyetlerimizden sağlanan nakit akışıyla uyumlu hale getirilmesi amacıyla, ilgili mevzuat çerçevesinde 27.10.2026 tarihinde (bugün) finansal…”",
+      "v": 3
+     }
+    }
+   ]
+  },
+  "KTLEV": {
+   "kap": [
+    {
+     "d": "2026-11-11 18:10",
+     "k": "KAP",
+     "o": false,
+     "t": "SPK İşlem Yasağı Nedeniyle Pay Duyurusu",
+     "u": "https://www.kap.org.tr/tr/Bildirim/1697234",
+     "y": {
+      "e": "notr",
+      "t": "SPK'nın, bu hissede işlem yapmış bazı kişilere getirdiği işlem yasağı. Şirketin kendisiyle değil, o kişilerle ilgili."
+     }
+    },
+    {
+     "d": "2026-11-11 09:03",
+     "k": "KAP",
+     "o": false,
+     "t": "Kamuyu Aydınlatma Platformu Duyurusu",
+     "u": "https://www.kap.org.tr/tr/Bildirim/1696786",
+     "y": {
+      "e": "notr",
+      "t": "Bildirim türü: Kamuyu Aydınlatma Platformu Duyurusu."
+     }
+    },
+    {
+     "d": "2026-11-10 12:27",
+     "k": "KAP",
+     "o": true,
+     "t": "Özel Durum Açıklaması (Genel)",
+     "u": "https://www.kap.org.tr/tr/Bildirim/1696355",
+     "y": {
+      "e": "izle",
+      "t": "Konu: Katılımevim Tasarruf Finansman A.Ş., Birevim Tasarruf Finansman A.Ş. ve İktisat Katılım Bankası A.Ş.'nin pay devir işlem. Satın alma/devralma ile ilgili bildirim. Şirketin açıklaması: “Bankamızın Kamuyu Aydınlatma Platformunda daha önce yayımlanan özel durum açıklamaları ile Katılımevim Tasarruf Finansman A.Ş., Birevim Tasarruf Finansman A.Ş. ve İktisat Katılım Bankası A.Ş. paylarının devralınmasına…”",
+      "v": 3
+     }
+    },
+    {
+     "d": "2026-11-09 18:43",
+     "k": "KAP",
+     "o": true,
+     "t": "Finansal Rapor Ek Süre Taleplerine İlişkin SPK Değerlendirmesi",
+     "u": "https://www.kap.org.tr/tr/Bildirim/1695620",
+     "y": {
+      "e": "izle",
+      "t": "Yeni finansal rapor (bilanço) açıklandı."
+     }
+    },
+    {
+     "d": "2026-11-06 10:00",
+     "k": "KAP",
+     "o": false,
+     "t": "Pay Bazında Devre Kesici Bildirimi",
+     "u": "https://www.kap.org.tr/tr/Bildirim/1693552",
+     "y": {
+      "e": "notr",
+      "t": "Hissede fiyat kısa sürede sert hareket ettiği için işlemler otomatik olarak kısa süre durduruldu (devre kesici). Kendisi bir haber değil; fiyat hareketinin sebebine bakmak gerekir."
+     }
+    },
+    {
+     "d": "2026-11-03 10:43",
+     "k": "KAP",
+     "o": false,
+     "t": "Endekslerde Kullanılan Fiili Dolaşımdaki Pay Oranı Değişiklikleri",
+     "u": "https://www.kap.org.tr/tr/Bildirim/1691369",
+     "y": {
+      "e": "notr",
+      "t": "Bildirim türü: Endekslerde Kullanılan Fiili Dolaşımdaki Pay Oranı Değişiklikleri."
+     }
+    },
+    {
+     "d": "2026-11-02 10:09",
+     "k": "KAP",
+     "o": false,
+     "t": "Pay Bazında Devre Kesici Bildirimi",
+     "u": "https://www.kap.org.tr/tr/Bildirim/1690493",
+     "y": {
+      "e": "notr",
+      "t": "Hissede fiyat kısa sürede sert hareket ettiği için işlemler otomatik olarak kısa süre durduruldu (devre kesici). Kendisi bir haber değil; fiyat hareketinin sebebine bakmak gerekir."
+     }
+    },
+    {
+     "d": "2026-10-30 12:14",
+     "k": "KAP",
+     "o": false,
+     "t": "Pay Bazında Devre Kesici Bildirimi",
+     "u": "https://www.kap.org.tr/tr/Bildirim/1689365",
+     "y": {
+      "e": "notr",
+      "t": "Hissede fiyat kısa sürede sert hareket ettiği için işlemler otomatik olarak kısa süre durduruldu (devre kesici). Kendisi bir haber değil; fiyat hareketinin sebebine bakmak gerekir."
+     }
+    },
+    {
+     "d": "2026-10-28 08:54",
+     "k": "KAP",
+     "o": false,
+     "t": "Kamuyu Aydınlatma Platformu Duyurusu",
+     "u": "https://www.kap.org.tr/tr/Bildirim/1688634",
+     "y": {
+      "e": "notr",
+      "t": "Bildirim türü: Kamuyu Aydınlatma Platformu Duyurusu."
+     }
+    },
+    {
+     "d": "2026-10-27 19:04",
+     "k": "KAP",
+     "o": false,
+     "t": "SPK İşlem Yasağı Nedeniyle Pay Duyurusu",
+     "u": "https://www.kap.org.tr/tr/Bildirim/1688483",
+     "y": {
+      "e": "notr",
+      "t": "SPK'nın, bu hissede işlem yapmış bazı kişilere getirdiği işlem yasağı. Şirketin kendisiyle değil, o kişilerle ilgili."
+     }
+    }
+   ]
   },
   "THYAO": {
    "bdog": {
