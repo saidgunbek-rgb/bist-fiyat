@@ -5,6 +5,8 @@
    "p": {
     "AKBANK": 68.35,
     "AKBNK": 68.35,
+    "KLSER": 18.81,
+    "KTLEV": 8.8,
     "PGSUS": 132.9,
     "THYAO": 285.75
    }
@@ -16,6 +18,8 @@
    "p": {
     "AKBANK": 68.75,
     "AKBNK": 68.75,
+    "KLSER": 18.83,
+    "KTLEV": 7.92,
     "PGSUS": 132.6,
     "THYAO": 286.25
    },
@@ -28,6 +32,8 @@
    "p": {
     "AKBANK": 67.1,
     "AKBNK": 67.1,
+    "KLSER": 18.44,
+    "KTLEV": 7.13,
     "PGSUS": 129.7,
     "THYAO": 279.25
    },
@@ -40,6 +46,8 @@
    "p": {
     "AKBANK": 68.0,
     "AKBNK": 68.0,
+    "KLSER": 18.13,
+    "KTLEV": 6.42,
     "PGSUS": 129.4,
     "THYAO": 276.75
    },
@@ -50,6 +58,8 @@
    "p": {
     "AKBANK": 66.85,
     "AKBNK": 66.85,
+    "KLSER": 17.61,
+    "KTLEV": 5.8,
     "PGSUS": 127.7,
     "THYAO": 273.5
    }
@@ -61,6 +71,8 @@
    "p": {
     "AKBANK": 67.15,
     "AKBNK": 67.15,
+    "KLSER": 16.72,
+    "KTLEV": 5.66,
     "PGSUS": 127.7,
     "THYAO": 266.0
    },
@@ -73,6 +85,8 @@
    "p": {
     "AKBANK": 68.3,
     "AKBNK": 68.3,
+    "KLSER": 17.02,
+    "KTLEV": 5.41,
     "PGSUS": 132.0,
     "THYAO": 273.5
    },
@@ -85,6 +99,8 @@
    "p": {
     "AKBANK": 67.2,
     "AKBNK": 67.2,
+    "KLSER": 16.7,
+    "KTLEV": 4.94,
     "PGSUS": 129.3,
     "THYAO": 265.0
    },
@@ -97,6 +113,8 @@
    "p": {
     "AKBANK": 64.6,
     "AKBNK": 64.6,
+    "KLSER": 16.0,
+    "KTLEV": 4.45,
     "PGSUS": 126.4,
     "THYAO": 259.0
    },
@@ -107,6 +125,8 @@
    "p": {
     "AKBANK": 63.35,
     "AKBNK": 63.35,
+    "KLSER": 15.36,
+    "KTLEV": 4.07,
     "PGSUS": 124.7,
     "THYAO": 258.0
    }
@@ -118,6 +138,8 @@
    "p": {
     "AKBANK": 65.0,
     "AKBNK": 65.0,
+    "KLSER": 15.41,
+    "KTLEV": 4.1,
     "PGSUS": 124.6,
     "THYAO": 258.25
    },
@@ -130,6 +152,8 @@
    "p": {
     "AKBANK": 64.3,
     "AKBNK": 64.3,
+    "KLSER": 14.88,
+    "KTLEV": 4.15,
     "PGSUS": 122.1,
     "THYAO": 253.0
    },
@@ -142,6 +166,8 @@
    "p": {
     "AKBANK": 63.0,
     "AKBNK": 63.0,
+    "KLSER": 13.4,
+    "KTLEV": 4.09,
     "PGSUS": 121.5,
     "THYAO": 252.5
    },
@@ -153,6 +179,8 @@
    "p": {
     "AKBANK": 60.9,
     "AKBNK": 60.9,
+    "KLSER": 12.06,
+    "KTLEV": 3.69,
     "PGSUS": 115.0,
     "THYAO": 242.2
    },
@@ -165,6 +193,8 @@
    "p": {
     "AKBANK": 63.3,
     "AKBNK": 63.3,
+    "KLSER": 12.14,
+    "KTLEV": 3.33,
     "PGSUS": 122.2,
     "THYAO": 261.0
    },
@@ -177,6 +207,8 @@
    "p": {
     "AKBANK": 62.25,
     "AKBNK": 62.25,
+    "KLSER": 13.35,
+    "KTLEV": 3.66,
     "PGSUS": 127.2,
     "THYAO": 265.0
    },
@@ -189,6 +221,8 @@
    "p": {
     "AKBANK": 66.2,
     "AKBNK": 66.2,
+    "KLSER": 13.86,
+    "KTLEV": 4.02,
     "PGSUS": 134.6,
     "THYAO": 291.25
    },
@@ -201,6 +235,8 @@
    "p": {
     "AKBANK": 67.2,
     "AKBNK": 67.2,
+    "KLSER": 13.91,
+    "KTLEV": 4.42,
     "PGSUS": 139.9,
     "THYAO": 297.0
    },
@@ -213,6 +249,8 @@
    "p": {
     "AKBANK": 68.65,
     "AKBNK": 68.65,
+    "KLSER": 14.53,
+    "KTLEV": 4.86,
     "PGSUS": 141.6,
     "THYAO": 299.25
    },
@@ -225,6 +263,8 @@
    "p": {
     "AKBANK": 70.95,
     "AKBNK": 70.95,
+    "KLSER": 14.41,
+    "KTLEV": 5.08,
     "PGSUS": 146.5,
     "THYAO": 310.0
    },
@@ -237,6 +277,8 @@
    "p": {
     "AKBANK": 70.7,
     "AKBNK": 70.7,
+    "KLSER": 14.5,
+    "KTLEV": 5.58,
     "PGSUS": 154.4,
     "THYAO": 313.75
    },
@@ -249,6 +291,8 @@
    "p": {
     "AKBANK": 70.8,
     "AKBNK": 70.8,
+    "KLSER": 14.25,
+    "KTLEV": 6.13,
     "PGSUS": 154.8,
     "THYAO": 314.75
    },
@@ -261,6 +305,8 @@
    "p": {
     "AKBANK": 70.1,
     "AKBNK": 70.1,
+    "KLSER": 14.69,
+    "KTLEV": 6.74,
     "PGSUS": 158.2,
     "THYAO": 319.0
    },
@@ -273,6 +319,8 @@
    "p": {
     "AKBANK": 69.95,
     "AKBNK": 69.95,
+    "KLSER": 15.8,
+    "KTLEV": 7.41,
     "PGSUS": 155.3,
     "THYAO": 320.25
    },
@@ -280,12 +328,7 @@
   }
  },
  "kontrol": {
-  "AKBANK": {
-   "2026-11-09": [
-    "borsapy",
-    "isyatirim",
-    "yahoo"
-   ],
+  "KLSER": {
    "2026-11-10": [
     "borsapy",
     "isyatirim",
@@ -304,15 +347,14 @@
    "2026-11-13": [
     "borsapy",
     "isyatirim",
+    "yahoo"
+   ],
+   "2026-11-16": [
+    "borsapy",
     "yahoo"
    ]
   },
-  "AKBNK": {
-   "2026-11-09": [
-    "borsapy",
-    "isyatirim",
-    "yahoo"
-   ],
+  "KTLEV": {
    "2026-11-10": [
     "borsapy",
     "isyatirim",
@@ -332,41 +374,13 @@
     "borsapy",
     "isyatirim",
     "yahoo"
-   ]
-  },
-  "PGSUS": {
-   "2026-11-09": [
-    "borsapy",
-    "isyatirim",
-    "yahoo"
    ],
-   "2026-11-10": [
+   "2026-11-16": [
     "borsapy",
-    "isyatirim",
-    "yahoo"
-   ],
-   "2026-11-11": [
-    "borsapy",
-    "isyatirim",
-    "yahoo"
-   ],
-   "2026-11-12": [
-    "borsapy",
-    "isyatirim",
-    "yahoo"
-   ],
-   "2026-11-13": [
-    "borsapy",
-    "isyatirim",
     "yahoo"
    ]
   },
   "THYAO": {
-   "2026-11-09": [
-    "borsapy",
-    "isyatirim",
-    "yahoo"
-   ],
    "2026-11-10": [
     "borsapy",
     "isyatirim",
@@ -386,9 +400,13 @@
     "borsapy",
     "isyatirim",
     "yahoo"
+   ],
+   "2026-11-16": [
+    "borsapy",
+    "yahoo"
    ]
   }
  },
- "updated": "2026-11-15",
- "updatedAt": "2026-11-15T19:33:02Z"
+ "updated": "2026-11-16",
+ "updatedAt": "2026-11-16T11:44:19Z"
 }
