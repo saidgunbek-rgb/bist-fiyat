@@ -5,13 +5,13 @@
   "y": 29.77
  },
  "guncellenen": [
-  "THYAO",
+  "THYAO"
+ ],
+ "korunan": [
   "AKBNK",
   "MGROS",
   "BIMAS",
-  "TCELL"
- ],
- "korunan": [
+  "TCELL",
   "YKBNK",
   "GARAN",
   "ASELS",
@@ -9331,8 +9331,7 @@
    "byorum": {
     "d": "2026/9",
     "etki": "olumsuz",
-    "ilk": "2026-11-16",
-    "kaynak": "İş Yatırım",
+    "ilk": "2026-11-15",
     "m": [
      {
       "k": "satışlar reel olarak %9,4 arttı",
@@ -9389,10 +9388,10 @@
    "dunden": [],
    "dy": 0.0,
    "kb": -0.9,
-   "mc": 443933687808.0,
+   "mc": 441945000000.0,
    "pb": 0.39,
-   "pe": 3.04,
-   "price": 323.5,
+   "pe": 3.02,
+   "price": 323.0,
    "roe": 12.9,
    "sektor": "Havayolu",
    "tek": {
@@ -9408,7 +9407,7 @@
     "h2n": "Fibonacci 1,272 uzantısı",
     "ma200": 304.53,
     "ma200_once": 305.18,
-    "ma50": 286.49,
+    "ma50": 286.48,
     "risk": 304.53,
     "riskn": "200 günlük ortalama",
     "seri": [
@@ -10450,10 +10449,10 @@
      ],
      [
       "2026-11-16",
-      323.5
+      322.75
      ]
     ],
-    "son": 323.5,
+    "son": 322.75,
     "tarih": "2026-11-16",
     "trend": "yatay",
     "vade": "uzun",
@@ -10465,7 +10464,7 @@
      {
       "ad": "Değerleme",
       "p": 1,
-      "t": "ucuz (F/K 3,04, PD/DD 0,39)"
+      "t": "ucuz (F/K 3,02, PD/DD 0,39)"
      },
      {
       "ad": "Uzun trend",
@@ -11651,5 +11650,5 @@
   }
  },
  "updated": "2026-11-16",
- "updatedAt": "2026-11-16T16:15:24Z"
+ "updatedAt": "2026-11-16T16:17:12Z"
 }
