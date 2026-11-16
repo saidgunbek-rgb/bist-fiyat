@@ -62,7 +62,7 @@ html{color-scheme:dark}@media (prefers-color-scheme: light){html{color-scheme:li
 <div class="sub" id="sub">Yükleniyor…</div>
 <div id="msg"></div>
 <div id="app"></div>
-<div class="foot">Eşikler genel kuraldır: F/K &lt;8 ucuz, 8–15 makul, &gt;15 pahalı. PD/DD &lt;1 ucuz, 1–2 makul, &gt;2 pahalı. Temettü verimi %5 ve üstü yüksek, %2–5 orta. Sektöre göre değişir: bankalarda PD/DD, havayolunda F/K daha anlamlıdır. Al-bekle-sat seviyeleri hareketli ortalama ve Fibonacci hesabıdır, geleceği garanti etmez. Kısa vadeli hisselerde seviyeler son 3 aya, risk çizgisi 20 günlük ortalamaya göre hesaplanır; kısa vade görünümü RSI, 20 günlük ortalamanın yönü, fiyatın ortalamaya göre yeri ve son 5 günlük değişimden çıkarılır. Uzun vade görünümü 4 ölçütten (değerleme, 200 günlük trend, kâr büyümesi, özkaynak kârlılığı) kurala göre çıkarılır; her ölçüt +1, 0 ya da −1 puan alır, toplam +2 ve üstü olumlu, −2 ve altı olumsuzdur. Bu sayfa bir al/sat önerisi değildir; karar vermeden önce rakamları bankanın uygulaması ya da KAP ile teyit et.</div>
+<div class="foot">Eşikler genel kuraldır: F/K &lt;8 ucuz, 8–15 makul, &gt;15 pahalı. PD/DD &lt;1 ucuz, 1–2 makul, &gt;2 pahalı. Temettü verimi %5 ve üstü yüksek, %2–5 orta. Sektöre göre değişir: bankalarda PD/DD, havayolunda F/K daha anlamlıdır. Al-bekle-sat seviyeleri hareketli ortalama ve Fibonacci hesabıdır, geleceği garanti etmez. Kısa vadeli hisselerde KAP ve bilanço yorumu yapılmaz, sadece finansal rapor rakamları gösterilir; seviyeler son 3 aya, risk çizgisi 20 günlük ortalamaya göre hesaplanır; kısa vade görünümü RSI, 20 günlük ortalamanın yönü, fiyatın ortalamaya göre yeri ve son 5 günlük değişimden çıkarılır. Uzun vade görünümü 4 ölçütten (değerleme, 200 günlük trend, kâr büyümesi, özkaynak kârlılığı) kurala göre çıkarılır; her ölçüt +1, 0 ya da −1 puan alır, toplam +2 ve üstü olumlu, −2 ve altı olumsuzdur. Bu sayfa bir al/sat önerisi değildir; karar vermeden önce rakamları bankanın uygulaması ya da KAP ile teyit et.</div>
 <details><summary>Notlarımı yedekle / geri yükle</summary>
 <div style="margin-top:8px;line-height:1.5">Notların bu telefonun tarayıcısında durur. Telefon değişirse ya da tarayıcı verisi silinirse kaybolur. Bu yüzden arada “Kopyala”ya basıp bir yere (Notlar, WhatsApp “Kendime mesaj”) yapıştır.</div>
 <textarea id="bk" placeholder="Yedek metni burada görünür. Geri yüklemek için buraya yapıştır."></textarea>
@@ -85,17 +85,24 @@ function kapHtml(L){if(!L||!L.length)return"";var h='<div class="kp"><div class=
       +'<div class="kd">'+esc(tr)+(x.s?' · '+esc(x.s):'')+(x.k&&x.k!="KAP"?' · '+esc(x.k):'')+'</div>'
       +(y.t?'<div class="ky" style="border-left-color:'+e[0]+'"><b style="color:'+e[0]+'">'+e[1]+':</b> '+esc(y.t)+'</div>':'')+'</a>';});
   return h+'<div class="kd" style="font-size:11px;color:var(--mut);margin-top:6px"><span style="color:var(--g)">●</span> olumlu <span style="color:var(--r)">●</span> olumsuz <span style="color:var(--y)">●</span> izlenmeli <span style="color:var(--mut)">●</span> rutin · Yorumlar kurala göre otomatik yazılır; ayrıntı için bildirime dokun.</div></div>';}
-function yeniBil(b,kap){if(!b)return false;var fr=(kap||[]).filter(function(x){return /Finansal Rapor/i.test(x.t||"");})[0];
+function yeniBil(b,kap){if(!b)return false;var fr=(kap||[]).filter(function(x){return /Finansal Rapor/i.test(x.t||"")&&!/ek s[üu]re|erteleme/i.test(x.t||"");})[0];
   var d=fr?String(fr.d).slice(0,10):b.ilk;if(!d)return false;var t=new Date(d+"T00:00:00+03:00").getTime();return isFinite(t)&&Date.now()-t<7*864e5;}
 function byHtml(b,kap){if(!b||!b.m)return"";var e=ETK[b.etki]||ETK.karisik,h='<div class="uz" style="margin-top:12px"><div class="uzh"><span>Son bilanço yorumu ('+esc(b.d)+')'+(yeniBil(b,kap)?'<span class="yn">YENİ</span>':'')+'</span><span style="color:'+e[0]+'">'+(b.etki=="olumlu"?"Olumlu":b.etki=="olumsuz"?"Zayıf":"Karışık")+'</span></div>';
   h+='<div class="uzo">'+esc(b.ozet)+'</div>';
   b.m.forEach(function(o){var c=o.p>0?["▲","var(--g)"]:o.p<0?["▼","var(--r)"]:["•","var(--mut)"];h+='<div class="uzr"><i style="color:'+c[1]+'">'+c[0]+'</i><span>'+esc(o.t)+'</span></div>';});
   return h+'</div>';}
-function acHtml(k,s){var ic=tekHtml(k,s.tek,s.price)+uzunHtml(s.uzun)+byHtml(s.byorum,s.kap)+kapHtml(s.kap);if(!ic)return"";
+function frYeni(f){if(!f||!f.ilk)return false;var t=new Date(f.ilk+"T00:00:00+03:00").getTime();return isFinite(t)&&Date.now()-t<7*864e5;}
+function frHtml(f,kisa){if(!kisa)return"";var h='<div class="uz" style="margin-top:12px"><div class="uzh"><span>Finansal rapor'+(f?' ('+esc(f.donem||f.d)+')':'')+(frYeni(f)?'<span class="yn">YENİ</span>':'')+'</span></div>';
+  if(!f||!f.s||!f.s.length)return h+'<div class="uzo" style="color:var(--mut)">Bu hissenin finansal raporu henüz alınamadı. Rapor yayımlanınca rakamlar otomatik gelecek.</div></div>';
+  h+='<div class="kd" style="font-size:11.5px;color:var(--mut);margin:6px 0 2px">'+esc(f.donem||"")+' · karşılaştırma: '+esc(f.onceki||"geçen yıl")+'</div>';
+  f.s.forEach(function(x){h+='<div class="uzr" style="justify-content:space-between"><span><b>'+esc(x.ad)+'</b></span><span style="text-align:right"><b>'+esc(x.s)+'</b> <small>('+esc(x.g)+(x.deg!=null?', '+(x.deg>=0?"+":"−")+"%"+String(Math.abs(x.deg)).replace(".",","):"")+')</small></span></div>';});
+  return h+'<div class="kd" style="font-size:11px;color:var(--mut);margin-top:6px">Rakamlar şirketin KAP\'a gönderdiği mali tablodan alınır, yorum eklenmez. Parantez içi: geçen yılın aynı dönemi ve değişim.</div></div>';}
+function acHtml(k,s){var ks=s.vade==="kisa",ic=tekHtml(k,s.tek,s.price)+uzunHtml(s.uzun)+(ks?frHtml(s.frapor,true):byHtml(s.byorum,s.kap)+kapHtml(s.kap));if(!ic)return"";
   var d=s.tek&&DUR[s.tek.durum],g=s.uzun&&GOR[s.uzun.gor],b="";
   if(d)b+='<span class="bd" style="color:'+d[1]+'">'+d[0]+'</span>';
   if(g)b+='<span class="bd" style="color:'+g[1]+'">'+((s.uzun&&s.uzun.tur==="kisa")?"Kısa vade: ":"Uzun vade: ")+g[0]+'</span>';
   var ny=(s.kap||[]).filter(function(x){return yeniMi(x.d)&&x.o;}).length;if(ny)b+='<span class="bd" style="color:var(--p)">KAP: '+ny+' önemli yeni</span>';
+  if(frYeni(s.frapor))b+='<span class="bd" style="color:var(--p)">Yeni finansal rapor</span>';
   if(yeniBil(s.byorum,s.kap))b+='<span class="bd" style="color:var(--p)">Yeni bilanço</span>';
   return'<details class="ac" data-ac="'+esc(k)+'"'+(ACIK[k]?" open":"")+'><summary><span style="display:flex;gap:6px;flex-wrap:wrap">'+(b||"Seviyeler ve uzun vade")+'</span><span class="gs"></span></summary>'+ic+'</details>';}
 var NOTES={};try{NOTES=JSON.parse(localStorage.getItem("bist-karne-notlar")||"{}")||{};}catch(e){NOTES={};}
@@ -162,7 +169,7 @@ function render(d){
      +'<div class="sum">'+summary(k,s)+'</div>'
      +acHtml(k,s)
      +'<div class="note" data-n="'+esc(k)+'"></div>'
-     +'<div class="src">'+(s.carry&&s.carry.length?'Canlı kaynaklara şu an ulaşılamadı, son bilinen değerler gösteriliyor ('+esc(String(s.asof||"").split("-").reverse().join("."))+'). · ':'')+'F/K ve PD/DD: '+(s.chk?'şirket bilançosundan hesaplanır ('+esc(s.chk.d)+')':'borsapy')+bdogTxt(s.bdog)+' · Temettü verimi: Yahoo</div></div>';});
+     +'<div class="src">'+(s.carry&&s.carry.length?'Canlı kaynaklara şu an ulaşılamadı, son bilinen değerler gösteriliyor ('+esc(String(s.asof||"").split("-").reverse().join("."))+'). · ':'')+'F/K ve PD/DD: '+(s.chk?'şirket bilançosundan hesaplanır ('+esc(s.chk.d)+')':'borsapy ve TradingView aynı değeri verirse gösterilir')+bdogTxt(s.bdog)+' · Temettü verimi: Yahoo</div></div>';});
   document.getElementById("app").innerHTML=h;
   Array.prototype.forEach.call(document.querySelectorAll(".note"),function(el){paintNote(el);});
   Array.prototype.forEach.call(document.querySelectorAll(".ac"),function(el){el.addEventListener("toggle",function(){var k=el.getAttribute("data-ac");if(el.open)ACIK[k]=1;else delete ACIK[k];try{localStorage.setItem("bist-karne-acik",JSON.stringify(ACIK));}catch(e){}});});

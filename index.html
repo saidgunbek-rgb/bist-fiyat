@@ -518,8 +518,9 @@ function dikkat(){var el=document.getElementById("dik");if(!el)return;var L=elde
     else if(t&&t.durum==="kar_al")A.push(["🎯",x.k+" kâr al bölgesinde","Fiyat "+fmt(x.p)+", hedef 1: "+fmt(t.h1),2]);
     else if(t&&t.durum==="alim")A.push(["🟢",x.k+" alım bölgesinde",fmt(t.f50)+" – "+fmt(t.f382)+" TL arası",3]);
     (st.kap||[]).forEach(function(b){if(b.o&&gun(b.d)<3)A.push(["📢",x.k+": yeni KAP bildirimi",b.t+(b.y&&b.y.t?" — "+b.y.t.slice(0,110)+(b.y.t.length>110?"…":""):""),2]);});
-    var fr=(st.kap||[]).filter(function(b){return /Finansal Rapor/i.test(b.t);})[0],bt=fr?fr.d:(st.byorum&&st.byorum.ilk);
-    if(st.byorum&&bt&&gun(bt)<7)A.push(["📊",x.k+": yeni bilanço ("+st.byorum.d+")",st.byorum.ozet,2]);});
+    var fr=(st.kap||[]).filter(function(b){return /Finansal Rapor/i.test(b.t)&&!/ek s[üu]re|erteleme/i.test(b.t);})[0],bt=fr?fr.d:(st.byorum&&st.byorum.ilk);
+    if(st.byorum&&bt&&gun(bt)<7)A.push(["📊",x.k+": yeni bilanço ("+st.byorum.d+")",st.byorum.ozet,2]);
+    if(st.frapor&&st.frapor.ilk&&gun(st.frapor.ilk)<7)A.push(["📊",x.k+": yeni finansal rapor ("+(st.frapor.donem||st.frapor.d)+")","Rakamlar karnede",2]);});
   var en=L[0];if(en&&L.length>1&&en.pay>0.5)A.push(["🥧","Portföyün %"+Math.round(en.pay*100)+"'i tek hissede ("+en.k+")","Tek hisseye yoğunlaşma riski artırır.",4]);
   if(KR&&KR.updated&&gun(KR.updated)>5)A.push(["⏳","Karne verisi "+trDate(KR.updated)+" tarihli","Otomatik güncelleme birkaç gündür çalışmamış olabilir.",1]);
   A.sort(function(a,b){return a[3]-b[3];});
