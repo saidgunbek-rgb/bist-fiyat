@@ -62,7 +62,7 @@ html{color-scheme:dark}@media (prefers-color-scheme: light){html{color-scheme:li
 <div class="sub" id="sub">Yükleniyor…</div>
 <div id="msg"></div>
 <div id="app"></div>
-<div class="foot">Eşikler genel kuraldır: F/K &lt;8 ucuz, 8–15 makul, &gt;15 pahalı. PD/DD &lt;1 ucuz, 1–2 makul, &gt;2 pahalı. Temettü verimi %5 ve üstü yüksek, %2–5 orta. Sektöre göre değişir: bankalarda PD/DD, havayolunda F/K daha anlamlıdır. Al-bekle-sat seviyeleri hareketli ortalama ve Fibonacci hesabıdır, geleceği garanti etmez. Uzun vade görünümü 4 ölçütten (değerleme, 200 günlük trend, kâr büyümesi, özkaynak kârlılığı) kurala göre çıkarılır; her ölçüt +1, 0 ya da −1 puan alır, toplam +2 ve üstü olumlu, −2 ve altı olumsuzdur. Bu sayfa bir al/sat önerisi değildir; karar vermeden önce rakamları bankanın uygulaması ya da KAP ile teyit et.</div>
+<div class="foot">Eşikler genel kuraldır: F/K &lt;8 ucuz, 8–15 makul, &gt;15 pahalı. PD/DD &lt;1 ucuz, 1–2 makul, &gt;2 pahalı. Temettü verimi %5 ve üstü yüksek, %2–5 orta. Sektöre göre değişir: bankalarda PD/DD, havayolunda F/K daha anlamlıdır. Al-bekle-sat seviyeleri hareketli ortalama ve Fibonacci hesabıdır, geleceği garanti etmez. Kısa vadeli hisselerde seviyeler son 3 aya, risk çizgisi 20 günlük ortalamaya göre hesaplanır; kısa vade görünümü RSI, 20 günlük ortalamanın yönü, fiyatın ortalamaya göre yeri ve son 5 günlük değişimden çıkarılır. Uzun vade görünümü 4 ölçütten (değerleme, 200 günlük trend, kâr büyümesi, özkaynak kârlılığı) kurala göre çıkarılır; her ölçüt +1, 0 ya da −1 puan alır, toplam +2 ve üstü olumlu, −2 ve altı olumsuzdur. Bu sayfa bir al/sat önerisi değildir; karar vermeden önce rakamları bankanın uygulaması ya da KAP ile teyit et.</div>
 <details><summary>Notlarımı yedekle / geri yükle</summary>
 <div style="margin-top:8px;line-height:1.5">Notların bu telefonun tarayıcısında durur. Telefon değişirse ya da tarayıcı verisi silinirse kaybolur. Bu yüzden arada “Kopyala”ya basıp bir yere (Notlar, WhatsApp “Kendime mesaj”) yapıştır.</div>
 <textarea id="bk" placeholder="Yedek metni burada görünür. Geri yüklemek için buraya yapıştır."></textarea>
@@ -94,7 +94,7 @@ function byHtml(b,kap){if(!b||!b.m)return"";var e=ETK[b.etki]||ETK.karisik,h='<d
 function acHtml(k,s){var ic=tekHtml(k,s.tek,s.price)+uzunHtml(s.uzun)+byHtml(s.byorum,s.kap)+kapHtml(s.kap);if(!ic)return"";
   var d=s.tek&&DUR[s.tek.durum],g=s.uzun&&GOR[s.uzun.gor],b="";
   if(d)b+='<span class="bd" style="color:'+d[1]+'">'+d[0]+'</span>';
-  if(g)b+='<span class="bd" style="color:'+g[1]+'">Uzun vade: '+g[0]+'</span>';
+  if(g)b+='<span class="bd" style="color:'+g[1]+'">'+((s.uzun&&s.uzun.tur==="kisa")?"Kısa vade: ":"Uzun vade: ")+g[0]+'</span>';
   var ny=(s.kap||[]).filter(function(x){return yeniMi(x.d)&&x.o;}).length;if(ny)b+='<span class="bd" style="color:var(--p)">KAP: '+ny+' önemli yeni</span>';
   if(yeniBil(s.byorum,s.kap))b+='<span class="bd" style="color:var(--p)">Yeni bilanço</span>';
   return'<details class="ac" data-ac="'+esc(k)+'"'+(ACIK[k]?" open":"")+'><summary><span style="display:flex;gap:6px;flex-wrap:wrap">'+(b||"Seviyeler ve uzun vade")+'</span><span class="gs"></span></summary>'+ic+'</details>';}
@@ -137,13 +137,13 @@ function tekHtml(k,t,fiyat){if(!t||!(t.son>0))return"";
    [t.risk,lvl("Risk çizgisi (zarar kes)",f2(t.risk)+" TL",esc(t.riskn)+", altında kapanış riskli","var(--mut)",t.durum=="risk"?2:false)]];
   if(t.durum=="dikkat")L.push([t.f50-0.001,lvl("Derin geri çekilme","%50 altı: "+f2(t.f50)+" TL altı","Alım bölgesinin altı, risk çizgisinin üstü","var(--y)",true)]);
   L.sort(function(x,y){return y[0]-x[0];});L.forEach(function(x){h+=x[1];});
-  var ms="50 günlük ort. "+f2(t.ma50)+(t.ma200?" · 200 günlük ort. "+f2(t.ma200):"")+" · 1 yıl dip "+f2(t.dip)+" / zirve "+f2(t.zirve);
+  var ms=t.vade==="kisa"?("20 günlük ort. "+f2(t.ma20)+" · 50 günlük ort. "+f2(t.ma50)+(t.rsi!=null?" · RSI "+f1(t.rsi):"")+" · 3 ay dip "+f2(t.dip)+" / zirve "+f2(t.zirve)):("50 günlük ort. "+f2(t.ma50)+(t.ma200?" · 200 günlük ort. "+f2(t.ma200):"")+" · 1 yıl dip "+f2(t.dip)+" / zirve "+f2(t.zirve));
   var m=MAL[k],cp=fiyat>0?fiyat:p;if(m&&m.q>0&&m.c>0){var kz=(cp/m.c-1)*100,uz=(t.h1/cp-1)*100;
     ms+='<br>Senin maliyetin: '+f2(m.c)+' TL ('+(kz>=0?"+":"")+f1(kz).replace("-","−")+'%)'+(uz>0?' · Kâr al hedefi 1\'e uzaklık: %'+f1(uz):'');}
   h+='<div class="mal">'+ms+'</div><div class="src">Seviyeler '+esc(trD(t.tarih))+' kapanışına göre, iki ya da daha fazla kaynakta doğrulanmış '+t.gun+' günlük fiyatla hesaplandı.</div></div>';
   return h;}
 var GOR={olumlu:["Olumlu","var(--g)"],notr:["Nötr","var(--y)"],olumsuz:["Olumsuz","var(--r)"]};
-function uzunHtml(u){if(!u||!u.gor)return"";var g=GOR[u.gor]||["",""],h='<div class="uz"><div class="uzh"><span>Uzun vadeli yatırımcı için</span><span style="color:'+g[1]+'">'+g[0]+'</span></div>';
+function uzunHtml(u){if(!u||!u.gor)return"";var g=GOR[u.gor]||["",""],h='<div class="uz"><div class="uzh"><span>'+(u.tur==="kisa"?"Kısa vadeli işlem için":"Uzun vadeli yatırımcı için")+'</span><span style="color:'+g[1]+'">'+g[0]+'</span></div>';
   h+='<div class="uzo">'+esc(u.oneri)+'</div>';
   (u.olcut||[]).forEach(function(o){var c=o.p>0?["✓","var(--g)"]:o.p<0?["✗","var(--r)"]:["–","var(--y)"];
     h+='<div class="uzr"><i style="color:'+c[1]+'">'+c[0]+'</i><span><b>'+esc(o.ad)+':</b> '+esc(o.t)+'</span></div>';});
@@ -154,7 +154,7 @@ function render(d){
   var st=d.stocks||{},keys=Object.keys(st),h="";
   if(!keys.length){document.getElementById("app").innerHTML='<div class="warn">Henüz hisse verisi yok.</div>';return;}
   keys.forEach(function(k){var s=st[k]||{};
-    h+='<div class="card" data-k="'+esc(k)+'"><div class="hd"><div class="nm">'+esc(k)+'</div><div class="pr">'+(s.price>0?f2(s.price)+" TL":"")+'</div></div>'
+    h+='<div class="card" data-k="'+esc(k)+'"><div class="hd"><div class="nm">'+esc(k)+(s.vade?' <span style="font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:8px;vertical-align:middle;background:'+(s.vade==="kisa"?'rgba(255,159,67,.18);color:#ff9f43':'rgba(124,92,255,.18);color:var(--p)')+'">'+(s.vade==="kisa"?"Kısa vade":"Uzun vade")+'</span>':'')+'</div><div class="pr">'+(s.price>0?f2(s.price)+" TL":"")+'</div></div>'
      +(s.mc>0?'<div class="mc">Piyasa değeri: '+mcs(s.mc)+'</div>':'')
      +row("pe","F/K",s.pe,s.pe>0?f1(s.pe):"","zarar/yok")
      +row("pb","PD/DD",s.pb,s.pb>0?f1(s.pb):"","yok")
