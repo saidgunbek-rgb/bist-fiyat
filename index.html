@@ -122,7 +122,7 @@ button.rb.on{background:var(--bd);color:var(--tx)}
 <div class="card"><h2>Hisselerim</h2><div id="byk"></div><details class="ac" style="margin:4px 0 6px"><summary>Tablo görünümü</summary><div class="scroll"><table id="bys"></table></div></details><div class="mut" id="bysd" style="margin-top:6px"></div><details class="ac"><summary>🔗 Bu tablo neye bağlı?</summary>• <b>Adet, ort. maliyet ve gerçekleşen K/Z</b> tüm alım/satım işlemlerinden hesaplanır. İşlem ekleyince tablo anında değişir.<br>• <b>Alım</b> adedi artırır ve ort. maliyeti günceller. <b>Satım</b> adedi azaltır, ort. maliyeti değiştirmez, kârı/zararı gerçekleşen K/Z’ye ekler. Tamamen satılan hissede adet 0 olur, yalnızca gerçekleşen K/Z kalır.<br>• <b>Fiyat</b> son kayıtlı kapanıştan gelir. Gün sonu fiyatını değiştirirsen Değer, K/Z, % ve Pay güncellenir. İşlem yaptığın gün kapanış girilmediyse * işaretli son işlem fiyatı kullanılır.<br>• <b>Temettü</b> girersen ilgili hissenin K/Z’sine eklenir. <b>Toplam</b> satırı yalnızca elindeki hisselerin toplamıdır. Satılan hisseler ve gerçekleşen kâr aşağıdaki “Satışlar ve gerçekleşen kâr” bölümündedir; Özet kartı ikisini birlikte gösterir.</details></div>
 <nav class="tb" id="tb"><button data-s="grafik">📈 Grafik</button><button data-s="karne">📋 Karne</button><button data-s="islem">💼 İşlemler</button><button data-s="gecmis">🗓 Geçmiş</button><button data-s="ayar">⚙️ Ayarlar</button></nav>
 <div id="sbos" class="mut" style="text-align:center;margin:2px 0 14px">Diğer bölümler için yukarıdaki sekmelerden birine dokun.</div>
-<div class="card"><details class="cl" id="clk"><summary><h2>Hisse karnesi</h2></summary><div class="mut" style="margin-bottom:6px">Hisselerin değerleme durumu (F/K, PD/DD, temettü) ve kendi notların. Al/sat önerisi değildir.</div><iframe id="kfr" scrolling="no" title="Hisse karnesi" style="width:100%;height:560px;border:0;display:block;border-radius:10px" loading="lazy"></iframe><div class="mut" style="margin-top:6px"><a href="karne.html" target="_blank" rel="noopener" style="color:inherit">Tam sayfada aç ↗</a></div></details></div>
+<div class="card" id="clk"><iframe id="kfr" scrolling="no" title="Karne" style="width:100%;height:560px;border:0;display:block;border-radius:10px"></iframe><div class="mut" style="margin-top:6px"><a href="karne.html" target="_blank" rel="noopener" style="color:inherit">Tam sayfada aç ↗</a></div></div>
 <div class="card"><details class="cl" id="clf" open><summary><h2>Fiyat grafiği ve seviyeler</h2></summary><div id="fgr"></div></details></div>
 <div class="card"><details class="cl" id="cln" open><summary><h2>Telefon bildirimleri</h2></summary><div id="bld"></div></details></div>
 <div class="card"><details class="cl" id="cls"><summary><h2>Satışlar ve gerçekleşen kâr</h2></summary><div class="scroll"><table id="sls"></table></div><div class="mut" id="slsd" style="margin-top:6px"></div><details class="ac"><summary>🔗 Bu tablo neye bağlı?</summary>• Her satır, tamamen veya kısmen sattığın bir hissedir. <b>Alım / satım işlemleri</b> bölümündeki satım kayıtlarından hesaplanır.<br>• <b>Satış tarihi</b> o hissenin son satışının tarihidir. <b>Ort. alış</b> satılan adetlerin ortalama maliyeti, <b>Satış fiyatı</b> ortalama satış fiyatıdır. <b>Satış tutarı</b> adet × satış fiyatıdır.<br>• <b>K/Z</b> komisyon düşülmüş gerçekleşen kârdır. Toplamı Özet kartındaki “Gerçekleşen K/Z” ile aynıdır.<br>• Satım eklersen, düzenlersen veya silersen tablo anında güncellenir.</details></details></div>
@@ -482,7 +482,7 @@ try{if(typeof claude!=="undefined"&&claude.use){claude.use("db").then(function(d
 all();
 </script>
 <script>(function(){var d=document.getElementById("clk"),f=document.getElementById("kfr");if(!d||!f)return;
-d.addEventListener("toggle",function(){if(d.open&&!f.getAttribute("src"))f.setAttribute("src","karne.html?frame=2");});
+window.__karneYukle=function(){if(!f.getAttribute("src"))f.setAttribute("src","karne.html?frame=2");};
 window.addEventListener("message",function(e){if(e.source===f.contentWindow&&e.data&&e.data.karneH)f.style.height=Math.max(300,Math.min(20000,+e.data.karneH))+"px";});})();</script>
 <script>
 /* ---- Panel ekleri: Bugun dikkat + hisse kartlari (karne.json'dan durum ve seviyeler) ---- */
@@ -596,7 +596,7 @@ fetch(karneUrl()+"?t="+Date.now()).then(function(r){if(!r.ok)throw 0;return r.js
 /* ---- Sekmeler: Ozet her zaman ana ekranda; diger bolumler sekmelerde ---- */
 (function(){
 var SK={grafik:["#clf","#clg"],karne:["#clk"],islem:["#clt","#clv","#cls","#clp"],gecmis:["#clw","#clh"],ayar:["#cln","#clb"]};
-var ACIK={grafik:["clf","clg"],karne:["clk"]},SEC=null;
+var ACIK={grafik:["clf","clg"]},SEC=null;
 var main=document.querySelector("main"),tb=document.getElementById("tb"),bos=document.getElementById("sbos");
 function kart(sel){var e=document.querySelector(sel);if(!e)return null;return e.closest(".card")||e;}
 Object.keys(SK).forEach(function(k){SK[k].forEach(function(sel){var c=kart(sel);if(c)c.setAttribute("data-sk",k);});});
@@ -608,6 +608,7 @@ function ac(k){if(k===SEC)k=null;SEC=k;
   Array.prototype.forEach.call(tb.querySelectorAll("button"),function(b){b.className=b.getAttribute("data-s")===k?"on":"";});
   if(bos)bos.style.display=k?"none":"";
   (ACIK[k]||[]).forEach(function(id){var d=document.getElementById(id);if(d&&!d.open)d.open=true;});
+  if(k==="karne"&&window.__karneYukle)window.__karneYukle();
   if(k)tb.scrollIntoView({behavior:"smooth",block:"start"});}
 Array.prototype.forEach.call(tb.querySelectorAll("button"),function(b){b.onclick=function(){ac(b.getAttribute("data-s"));};});
 window.__sekme=ac;
