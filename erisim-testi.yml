@@ -1,0 +1,109 @@
+# Fırsat bulucu icin erisim testi: TEFAS (fonlar) ve TradingView (tum BIST hisseleri) GitHub'dan okunabiliyor mu?
+# Sadece elle calisir. Panelin hicbir dosyasina dokunmaz, sonucu erisim-sonuc.json dosyasina yazar.
+name: Erisim testi
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Gerekli paketler
+        continue-on-error: true
+        run: pip install borsapy 2>&1 | tail -1
+
+      - name: Kaynaklari dene
+        run: |
+          python3 - <<'PY'
+          import json, time, datetime, urllib.request, urllib.parse, traceback
+          UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36",
+                "Accept": "application/json, text/javascript, */*; q=0.01", "X-Requested-With": "XMLHttpRequest"}
+          S = {"zaman": datetime.datetime.utcnow().isoformat() + "Z", "testler": {}}
+          def kaydet(ad, fn):
+              t0 = time.time()
+              try:
+                  r = fn()
+                  S["testler"][ad] = {"durum": "tamam", "sure": round(time.time() - t0, 1), "sonuc": r}
+              except Exception as e:
+                  S["testler"][ad] = {"durum": "HATA", "sure": round(time.time() - t0, 1), "hata": repr(e)[:300]}
+              print(ad, S["testler"][ad]["durum"], str(S["testler"][ad].get("sonuc") or S["testler"][ad].get("hata"))[:300])
+
+          def post(url, veri, ref):
+              h = dict(UA); h["Content-Type"] = "application/x-www-form-urlencoded; charset=UTF-8"; h["Referer"] = ref; h["Origin"] = ref.split("/", 3)[0] + "//" + ref.split("/")[2]
+              req = urllib.request.Request(url, urllib.parse.urlencode(veri).encode(), h)
+              return urllib.request.urlopen(req, timeout=40).read().decode("utf-8", "replace")
+
+          bit = datetime.date.today(); bas = bit - datetime.timedelta(days=10)
+          for site in ("www.tefas.gov.tr", "fundturkey.com.tr"):
+              ref = "https://%s/TarihselVeriler.aspx" % site
+              def sayfa(site=site):
+                  r = urllib.request.urlopen(urllib.request.Request("https://%s/FonKarsilastirma.aspx" % site, headers=UA), timeout=40)
+                  return {"http": r.status, "boyut": len(r.read())}
+              kaydet(site + " sayfa", sayfa)
+              def gecmis(site=site, ref=ref):
+                  t = post("https://%s/api/DB/BindHistoryInfo" % site,
+                           {"fontip": "YAT", "sfontur": "", "fonkod": "", "fongrup": "", "bastarih": bas.strftime("%d.%m.%Y"),
+                            "bittarih": bit.strftime("%d.%m.%Y"), "fonturkod": "", "fonunvantip": ""}, ref)
+                  j = json.loads(t); d = j.get("data") or []
+                  return {"kayit": len(d), "ornek": d[:2]}
+              kaydet(site + " fiyat gecmisi", gecmis)
+              def getiri(site=site):
+                  t = post("https://%s/api/DB/BindComparisonFundReturns" % site,
+                           {"calismatipi": "2", "fontip": "YAT", "sfontur": "", "kurucukod": "", "fongrup": "", "bastarih": "Başlangıç",
+                            "bittarih": "Bitiş", "fonturkod": "", "fonunvantip": "", "strperiod": "1,1,1,1,1,1,1", "islemdurum": "1"},
+                           "https://%s/FonKarsilastirma.aspx" % site)
+                  j = json.loads(t); d = j.get("data") or []
+                  return {"kayit": len(d), "ornek": d[:2]}
+              kaydet(site + " fon getirileri", getiri)
+
+          def borsapy_fon():
+              import borsapy as bp
+              adlar = [a for a in dir(bp) if "fund" in a.lower() or "fon" in a.lower() or "tefas" in a.lower()]
+              out = {"fon_ile_ilgili": adlar, "surum": getattr(bp, "__version__", "?")}
+              if hasattr(bp, "Fund"):
+                  f = bp.Fund("AFT")
+                  try:
+                      out["AFT_info"] = {k: str(v)[:60] for k, v in list(dict(f.info).items())[:15]}
+                  except Exception as e:
+                      out["AFT_info_hata"] = repr(e)[:200]
+              return out
+          kaydet("borsapy fon", borsapy_fon)
+
+          def tv_hepsi():
+              kol = ["name", "close", "price_earnings_ttm", "price_book_fq", "dividends_yield", "sector", "return_on_equity",
+                     "market_cap_basic", "Perf.Y", "RSI"]
+              body = json.dumps({"markets": ["turkey"], "symbols": {"query": {"types": []}, "tickers": []},
+                                 "filter": [{"left": "type", "operation": "equal", "right": "stock"}],
+                                 "columns": kol, "range": [0, 1000]}).encode()
+              req = urllib.request.Request("https://scanner.tradingview.com/turkey/scan", body, {"Content-Type": "application/json", "User-Agent": UA["User-Agent"]})
+              j = json.loads(urllib.request.urlopen(req, timeout=40).read())
+              d = j.get("data") or []
+              dolu = sum(1 for r in d if r["d"][2] is not None)
+              return {"hisse_sayisi": len(d), "fk_dolu": dolu, "ornek": [dict(zip(kol, r["d"])) for r in d[:3]]}
+          kaydet("TradingView tum BIST", tv_hepsi)
+
+          def isy():
+              u = "https://www.isyatirim.com.tr/_layouts/15/IsYatirim.Website/Common/Data.aspx/HisseTekil?hisse=AKBNK&startdate=01-11-2026&enddate=14-11-2026"
+              j = json.loads(urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=40).read())
+              return {"gun": len(j.get("value") or [])}
+          kaydet("Is Yatirim", isy)
+
+          json.dump(S, open("erisim-sonuc.json", "w"), indent=1, ensure_ascii=False, default=str)
+          PY
+
+      - name: Kaydet
+        run: |
+          git config user.name "fiyat-bot"
+          git config user.email "fiyat-bot@users.noreply.github.com"
+          git add erisim-sonuc.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Erisim testi sonucu"
+          for i in 1 2 3; do git pull --rebase origin main && git push && exit 0; sleep 5; done
+          exit 1
