@@ -1,0 +1,77 @@
+{
+ "updatedAt": "2026-11-17T06:49:50Z",
+ "updated": "2026-11-17",
+ "bist": {
+  "a1": 1.02,
+  "a3": -16.21,
+  "a6": -15.59,
+  "y1": 12.08
+ },
+ "fonlar": [
+  {
+   "k": "PTO",
+   "ad": "PARDUS PORTFÖY TEMETTÜ ÖDEYEN ŞİRKETLER HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "buyukluk": 175912344.81,
+   "yatirimci": 2743.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 1.973859,
+   "gecmis_hata": "RemoteProtocolError('Server disconnected without sending a response.')",
+   "g": {
+    "a1": 4.98,
+    "a3": 7.74,
+    "a6": 34.1,
+    "y1": 84.07
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1"
+   ],
+   "celiski": [],
+   "gun": 442,
+   "son_tarih": "2026-11-17",
+   "istikrar": [
+    4,
+    4
+   ]
+  },
+  {
+   "k": "BIH",
+   "ad": "PARDUS PORTFÖY BİRİNCİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "buyukluk": 884577866.11,
+   "yatirimci": 474.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 8.868931,
+   "g": {
+    "a1": 1.16,
+    "a3": 1.31,
+    "a6": 16.06,
+    "y1": 60.36
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1"
+   ],
+   "celiski": [],
+   "gun": 751,
+   "son_tarih": "2026-11-17",
+   "istikrar": [
+    4,
+    4
+   ]
+  }
+ ],
+ "atlanan_sayi": {
+  "hisse fonu değil": 59,
+  "serbest fon": 9
+ }
+}
