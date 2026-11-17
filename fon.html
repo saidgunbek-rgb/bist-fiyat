@@ -64,16 +64,16 @@ var SL=[["y1","1 yıl"],["a6","6 ay"],["a3","3 ay"],["a1","1 ay"],["y3","3 yıl"
 var DA={a1:"1 ay",a3:"3 ay",a6:"6 ay",y1:"1 yıl",y3:"3 yıl",y5:"5 yıl",reel:"reel 1 yıl",mdd:"en büyük düşüş",gr:"getiri/risk"};
 function deger(f,k){var R=f.rk||{};if(k==="reel")return f.g.reel_y1==null?-1e9:f.g.reel_y1;if(k==="mdd")return R.mdd==null?-1e9:R.mdd;if(k==="gr")return R.gr==null?-1e9:R.gr;if(k==="ist")return f.istikrar?f.istikrar[0]*1000+(f.g.y1||0):-1e9;if(k==="buy")return f.buyukluk||0;if(k==="ucr")return f.ucret!=null?-f.ucret:-1e9;var v=f.g[k];return v==null?-1e9:v;}
 var BANKA="Hepsi",GOR="banka",ACB={};try{BANKA=localStorage.getItem("fon-banka")||"Hepsi";GOR=localStorage.getItem("fon-gor")||"fav";}catch(e){}
-function met2(f,B){var R=f.rk||{},s="";
-  [["y3","3 yıl"],["y5","5 yıl"]].forEach(function(x){var v=f.g[x[0]],b=B[x[0]];s+='<div>'+x[1]+'<b class="'+(v==null?"":(v>=0?"up":"dn"))+'">'+y1(v)+'</b><i>'+(v==null?"veri yok":(b==null?"":(v>b?"endeksi geçti":"endeksin altında")))+'</i></div>';});
+function met2(f,B,kisa){var R=f.rk||{},s="";
+  if(!kisa)[["y3","3 yıl"],["y5","5 yıl"]].forEach(function(x){var v=f.g[x[0]],b=B[x[0]];s+='<div>'+x[1]+'<b class="'+(v==null?"":(v>=0?"up":"dn"))+'">'+y1(v)+'</b><i>'+(v==null?"veri yok":(b==null?"":(v>b?"endeksi geçti":"endeksin altında")))+'</i></div>';});
   var r=f.g.reel_y1;s+='<div>Reel 1 yıl<b class="'+(r==null?"":(r>=0?"up":"dn"))+'">'+y1(r)+'</b><i>'+(r==null?"":(r>=0?"enflasyonu yendi":"enflasyonun altında"))+'</i></div>';
   var m=R.mdd;s+='<div>En büyük düşüş<b class="dn">'+(m==null?"—":"−%"+Math.abs(m).toFixed(1).replace(".",","))+'</b><i>'+(m==null||B.mdd==null?"son 1 yıl":(m>B.mdd?"endeksten az düştü":"endeksten çok düştü"))+'</i></div>';
   var ek=R.vol!=null?'<div class="alt" style="margin:-2px 0 6px">Oynaklık (yıllık) %'+R.vol.toFixed(1).replace(".",",")+(B.vol!=null?' · BIST100 %'+B.vol.toFixed(1).replace(".",","):'')+(R.gr!=null?' · Getiri/risk <b style="color:var(--tx)">'+R.gr.toFixed(2).replace(".",",")+'</b>'+(B.y1!=null&&B.vol?' (BIST100 '+(B.y1/B.vol).toFixed(2).replace(".",",")+')':''):'')+'</div>':'';
-  return'<div class="met">'+s+'</div>'+ek;}
-function kart(f,i,B){var met="";["a1","a3","a6","y1"].forEach(function(k){var v=f.g[k],b=B[k];met+='<div>'+DA[k]+'<b class="'+(v==null?"":(v>=0?"up":"dn"))+'">'+y1(v)+'</b><i>'+(v==null||b==null?"":(v>b?"endeksi geçti":"endeksin altında"))+'</i></div>';});
+  return'<div class="met"'+(kisa?' style="grid-template-columns:1fr 1fr"':'')+'>'+s+'</div>'+ek;}
+function kart(f,i,B,kisa){var met="";["a1","a3","a6","y1"].forEach(function(k){var v=f.g[k],b=B[k];met+='<div>'+DA[k]+'<b class="'+(v==null?"":(v>=0?"up":"dn"))+'">'+y1(v)+'</b><i>'+(v==null||b==null?"":(v>b?"endeksi geçti":"endeksin altında"))+'</i></div>';});
   var ist=f.istikrar&&f.istikrar[1]?(f.istikrar[0]===0?'Son '+f.istikrar[1]+' dönemin hiçbirinde BIST100’ü geçemedi':'Son '+f.istikrar[1]+' dönemin <b>'+f.istikrar[0]+'</b>’'+({1:"inde",2:"sinde",3:"ünde",4:"ünde"}[f.istikrar[0]]||"inde")+' BIST100’ü geçti'):'';
-  return'<div class="it'+(f.her_yonu?' yildiz':'')+'"><div class="ust"><span><b>'+esc(f.k)+'</b> <span style="font-size:12px;color:var(--p);font-weight:700">'+esc(f.banka||"")+'</span><small>'+esc(f.ad)+'</small></span><span class="pn">'+(f.her_yonu?'⭐ ':'')+(f.puan!=null?f.puan+'/100':'#'+(i+1))+'</span></div><div class="met">'+met+'</div>'+
-    met2(f,B)+
+  return'<div class="it'+(f.her_yonu?' yildiz':'')+'"><div class="ust"><span><b>'+esc(f.k)+'</b> <span style="font-size:12px;color:var(--p);font-weight:700">'+esc(f.banka||"")+'</span><small>'+esc(f.ad)+'</small></span><span class="pn">'+(f.her_yonu?'⭐ ':'')+(f.puan!=null?f.puan+'/100':'#'+(i+1))+'</span></div>'+(kisa?'':'<div class="met">'+met+'</div>')+
+    met2(f,B,kisa)+
     '<div class="alt">Büyüklük <b style="color:var(--tx)">'+para(f.buyukluk)+'</b> · '+adet(f.yatirimci)+' yatırımcı'+(f.risk?' · Risk '+f.risk+'/7':'')+(f.ucret!=null?' · Yönetim ücreti %'+String(f.ucret).replace(".",","):'')+'<br>'+ist+
     '<br><span class="ok">✓</span> Getiriler fiyat geçmişiyle teyitli · <a href="https://www.tefas.gov.tr/FonAnaliz.aspx?FonKod='+encodeURIComponent(f.k)+'" target="_blank" rel="noopener">TEFAS’ta aç ›</a></div></div>';}
 
@@ -86,7 +86,7 @@ function satir(f,v,b,i,hl){hl=hl||"y1";var g='';
 
 function pencere(k){var f=D.fonlar.filter(function(x){return x.k===k;})[0];if(!f)return;
   var o=document.getElementById("pop");if(!o){o=document.createElement("div");o.id="pop";document.body.appendChild(o);}
-  o.innerHTML='<div class="pk"><button class="px" aria-label="Kapat">✕</button>'+kart(f,0,D.bist||{}).replace(/<span class="pn">[^]*?<\/span><\/div>/,'<span class="pn">'+(f.her_yonu?'⭐ ':'')+(f.puan!=null?f.puan+'/100':'')+'</span></div>')+'<button class="pkap">Kapat</button></div>';
+  o.innerHTML='<div class="pk"><button class="px" aria-label="Kapat">✕</button>'+kart(f,0,D.bist||{},true).replace(/<span class="pn">[^]*?<\/span><\/div>/,'<span class="pn">'+(f.her_yonu?'⭐ ':'')+(f.puan!=null?f.puan+'/100':'')+'</span></div>')+'<button class="pkap">Kapat</button></div>';
   o.className="on";document.body.style.overflow="hidden";
   function kapat(){o.className="";document.body.style.overflow="";}
   o.onclick=function(e){if(e.target===o)kapat();};
