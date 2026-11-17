@@ -34,6 +34,14 @@ h1{font-size:23px;margin:4px 0 2px;background:linear-gradient(90deg,#8b7cf6,#f09
 .px{position:absolute;top:8px;right:8px;width:32px;height:32px;border-radius:50%;border:0;background:var(--card2);color:var(--tx);font-size:15px;z-index:2}
 .pkap{display:block;width:100%;margin-top:10px;padding:10px;border-radius:12px;border:0;background:var(--p);color:#fff;font:inherit;font-weight:700}
 .daha{display:block;width:100%;font:inherit;font-weight:700;padding:10px;border-radius:12px;border:1px dashed var(--ln);background:none;color:var(--p);margin:4px 0 12px}
+
+/* Cerceve: her fon ayri kutuda, belirgin ama gozu yormayan kenar */
+.fs{border:1.5px solid #4a4e6b;margin-bottom:9px;padding:11px 12px;background:#1c1e2b;box-shadow:0 1px 0 rgba(0,0,0,.35)}
+.fs:active{border-color:var(--p)}
+.fs.yildiz{border-color:rgba(250,204,21,.6);box-shadow:inset 4px 0 0 rgba(250,204,21,.8),0 1px 0 rgba(0,0,0,.35)}
+.it{border:1.5px solid #4a4e6b;background:#1c1e2b;box-shadow:0 1px 0 rgba(0,0,0,.35)}
+.it.yildiz{border-color:rgba(250,204,21,.6);box-shadow:inset 4px 0 0 rgba(250,204,21,.8),0 1px 0 rgba(0,0,0,.35)}
+.bh{margin-top:22px}
 </style></head><body>
 <div><a href="index.html">‹ Panele dön</a></div>
 <h1>Fon bulucu</h1>
@@ -58,14 +66,14 @@ function met2(f,B){var R=f.rk||{},s="";
   return'<div class="met">'+s+'</div>'+ek;}
 function kart(f,i,B){var met="";["a1","a3","a6","y1"].forEach(function(k){var v=f.g[k],b=B[k];met+='<div>'+DA[k]+'<b class="'+(v==null?"":(v>=0?"up":"dn"))+'">'+y1(v)+'</b><i>'+(v==null||b==null?"":(v>b?"endeksi geçti":"endeksin altında"))+'</i></div>';});
   var ist=f.istikrar&&f.istikrar[1]?(f.istikrar[0]===0?'Son '+f.istikrar[1]+' dönemin hiçbirinde BIST100’ü geçemedi':'Son '+f.istikrar[1]+' dönemin <b>'+f.istikrar[0]+'</b>’'+({1:"inde",2:"sinde",3:"ünde",4:"ünde"}[f.istikrar[0]]||"inde")+' BIST100’ü geçti'):'';
-  return'<div class="it"><div class="ust"><span><b>'+esc(f.k)+'</b> <span style="font-size:12px;color:var(--p);font-weight:700">'+esc(f.banka||"")+'</span><small>'+esc(f.ad)+'</small></span><span class="pn">'+(f.her_yonu?'⭐ ':'')+(f.puan!=null?f.puan+'/100':'#'+(i+1))+'</span></div><div class="met">'+met+'</div>'+
+  return'<div class="it'+(f.her_yonu?' yildiz':'')+'"><div class="ust"><span><b>'+esc(f.k)+'</b> <span style="font-size:12px;color:var(--p);font-weight:700">'+esc(f.banka||"")+'</span><small>'+esc(f.ad)+'</small></span><span class="pn">'+(f.her_yonu?'⭐ ':'')+(f.puan!=null?f.puan+'/100':'#'+(i+1))+'</span></div><div class="met">'+met+'</div>'+
     met2(f,B)+
     '<div class="alt">Büyüklük <b style="color:var(--tx)">'+para(f.buyukluk)+'</b> · '+adet(f.yatirimci)+' yatırımcı'+(f.risk?' · Risk '+f.risk+'/7':'')+(f.ucret!=null?' · Yönetim ücreti %'+String(f.ucret).replace(".",","):'')+'<br>'+ist+
     '<br><span class="ok">✓</span> Getiriler fiyat geçmişiyle teyitli · <a href="https://www.tefas.gov.tr/FonAnaliz.aspx?FonKod='+encodeURIComponent(f.k)+'" target="_blank" rel="noopener">TEFAS’ta aç ›</a></div></div>';}
 
 var FAC={};
 function yz(x){return x==null?"—":(x>=0?"+":"−")+"%"+Math.abs(x).toFixed(x!==0&&Math.abs(x)<1?2:1).replace(".",",");}
-function satir(f,v,b,i){var ac=FAC[f.k];return'<div class="fs" data-ac="'+esc(f.k)+'"><span class="fn">'+(i+1)+'</span><span class="fk"><b>'+esc(f.k)+'</b>'+(f.her_yonu?' ⭐':'')+' <small>'+esc(f.banka||"")+'</small></span><span class="fv '+(v==null?"":(v>=0?"up":"dn"))+'">'+yz(v)+'</span><span class="fp">'+(f.puan!=null?f.puan:"—")+'</span></div>';}
+function satir(f,v,b,i){var ac=FAC[f.k];return'<div class="fs'+(f.her_yonu?' yildiz':'')+'" data-ac="'+esc(f.k)+'"><span class="fn">'+(i+1)+'</span><span class="fk"><b>'+esc(f.k)+'</b>'+(f.her_yonu?' ⭐':'')+' <small>'+esc(f.banka||"")+'</small></span><span class="fv '+(v==null?"":(v>=0?"up":"dn"))+'">'+yz(v)+'</span><span class="fp">'+(f.puan!=null?f.puan:"—")+'</span></div>';}
 
 function pencere(k){var f=D.fonlar.filter(function(x){return x.k===k;})[0];if(!f)return;
   var o=document.getElementById("pop");if(!o){o=document.createElement("div");o.id="pop";document.body.appendChild(o);}
