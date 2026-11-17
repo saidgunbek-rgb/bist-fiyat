@@ -493,7 +493,7 @@ var ALIAS={"AKBANK":"AKBNK"},KR=null,KZ=null;
 function kod(t){t=String(t||"").toUpperCase();return ALIAS[t]||t;}
 function karneUrl(){var u=(typeof feedUrl==="function"&&feedUrl())||"";return u&&/prices\.json/.test(u)?u.replace(/prices\.json.*$/,"karne.json"):"https://raw.githubusercontent.com/saidgunbek-rgb/bist-fiyat/main/karne.json";}
 function gun(d){var t=new Date(String(d).replace(" ","T")+(String(d).length>10?":00":"T00:00:00")+"+03:00").getTime();return isFinite(t)?(Date.now()-t)/864e5:1e9;}
-var DUR={alim:["Alım bölgesi","var(--pos)"],bekle:["Bekle / tut","#d9a400"],kar_al:["Kâr al bölgesi","var(--neg)"],dikkat:["Derin geri çekilme","#d9a400"],risk:["Risk","var(--neg)"]};
+var DUR={alim:["Alım bölgesi","var(--pos)"],alim2:["2. alım bölgesi","var(--pos)"],bekle:["Bekle / tut","#d9a400"],kar_al:["Kâr al bölgesi","var(--neg)"],dikkat:["Derin geri çekilme","#d9a400"],risk:["Risk","var(--neg)"]};
 var GOR={olumlu:["Uzun vade: olumlu","var(--pos)"],notr:["Uzun vade: nötr","#d9a400"],olumsuz:["Uzun vade: olumsuz","var(--neg)"]};
 function eldekiler(){var m=pos("9999-12-31"),L=[],tv=0;
   for(var k in m){var z=m[k];if(!(z.q>0))continue;var lp=lastPx(k);if(!lp)continue;var v=z.q*lp.p,g=v-z.q*z.c+z.r+(z.dv||0);tv+=v;L.push({k:k,q:z.q,c:z.c,p:lp.p,v:v,g:g,gp:z.q*z.c?g/(z.q*z.c):0});}
@@ -516,9 +516,11 @@ function kartlar(){var el=document.getElementById("byk");if(!el)return;var L=eld
   var sc=document.getElementById("hks");if(sc)sc.onscroll=function(){var w=sc.firstChild?sc.firstChild.offsetWidth+10:1,i=Math.round(sc.scrollLeft/w);Array.prototype.forEach.call(document.querySelectorAll("#hkn b"),function(b,j){b.className=j===i?"on":"";});};}
 function dikkat(){var el=document.getElementById("dik");if(!el)return;var L=eldekiler(),A=[];
   L.forEach(function(x){var st=KR&&KR.stocks&&KR.stocks[kod(x.k)]||{},t=st.tek;
-    if(t&&t.durum==="risk")A.push(["⚠️",x.k+" risk çizgisinin altında","Fiyat "+fmt(x.p)+", risk çizgisi "+fmt(t.risk)+" ("+(t.riskn||"")+")",1]);
+    if(t&&t.durum==="risk")A.push(["⚠️",x.k+" risk çizgisinin altında","Fiyat "+fmt(x.p)+", risk çizgisi "+fmt(t.risk)+" ("+(t.riskn||"")+")"+(t.bolge?" · fiyat aynı zamanda "+(t.bolge==="alim2"?"2. alım":"alım")+" bölgesinde":""),1]);
     else if(t&&t.durum==="kar_al")A.push(["🎯",x.k+" kâr al bölgesinde","Fiyat "+fmt(x.p)+", hedef 1: "+fmt(t.h1),2]);
     else if(t&&t.durum==="alim")A.push(["🟢",x.k+" alım bölgesinde",fmt(t.f50)+" – "+fmt(t.f382)+" TL arası",3]);
+    else if(t&&t.durum==="alim2")A.push(["🟢",x.k+" 2. alım bölgesinde",fmt(t.f786)+" – "+fmt(t.f618)+" TL arası",3]);
+    if(t&&t.kir&&t.vade!=="kisa"&&(t.kir.durum==="ilk"||t.kir.durum==="teyit"))A.push(["🔷",x.k+(t.kir.durum==="teyit"?": kırılım teyit edildi":": dirence üstünde kapanış (1. gün)"),fmt(t.kir.sev)+" TL direnci "+(t.kir.durum==="teyit"?"2 gün üst üste aşıldı, ekleme yapılabilir; geri test bölgesi "+fmt(t.kir.gt_alt)+" – "+fmt(t.kir.gt_ust)+" TL":"bugün aşıldı; yarın da üstünde kapanırsa kırılım teyit edilir ve ekleme yapılabilir"),3]);
     (st.kap||[]).forEach(function(b){if(b.o&&gun(b.d)<3)A.push(["📢",x.k+": yeni KAP bildirimi",b.t+(b.y&&b.y.t?" — "+b.y.t.slice(0,110)+(b.y.t.length>110?"…":""):""),2]);});
     var fr=(st.kap||[]).filter(function(b){return /Finansal Rapor/i.test(b.t)&&!/ek s[üu]re|erteleme/i.test(b.t);})[0],bt=fr?fr.d:(st.byorum&&st.byorum.ilk);
     if(st.byorum&&bt&&gun(bt)<7)A.push(["📊",x.k+": yeni bilanço ("+st.byorum.d+")",st.byorum.ozet,2]);

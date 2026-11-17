@@ -121,15 +121,15 @@ function grafikHtml(k,s){var t=s.tek||{},TUM=t.seri||[];if(TUM.length<2)return""
   var ar=[[63,"3 ay"],[125,"6 ay"],[250,"1 yıl"]].map(function(a){return'<button class="arb'+(a[0]===ARL?' on':'')+'" data-ar="'+a[0]+'">'+a[1]+'</button>';}).join("");
   var ysT=TUM.map(function(p){return p[1];}),bas=Math.max(0,TUM.length-ARL),S2=TUM.slice(bas),ys=ysT.slice(bas);
   var mA=ys.map(function(_,i){return ort(ysT,KIS?20:50,bas+i);}),mB=ys.map(function(_,i){return ort(ysT,KIS?50:200,bas+i);});
-  var lv=[t.risk,t.f50,t.f382,t.h1,mal].filter(function(v){return v>0;});if(t.h2>0&&t.h2<Math.max.apply(null,ys)*1.2)lv.push(t.h2);
+  var lv=[t.risk,t.f50,t.f382,t.h1,mal,KIS?null:t.f786].filter(function(v){return v>0;});if(t.h2>0&&t.h2<Math.max.apply(null,ys)*1.2)lv.push(t.h2);
   var lo=Math.min.apply(null,ys.concat(lv)),hi=Math.max.apply(null,ys.concat(lv)),pad=(hi-lo)*0.06;lo-=pad;hi+=pad;
   var W=360,H=240,L0=4,R0=56,T0=8,B0=18,w=W-L0-R0,h=H-T0-B0;
   function X(i){return L0+i/(S2.length-1)*w;}function Y(v){return T0+(hi-v)/(hi-lo)*h;}
   var g='<svg viewBox="0 0 '+W+' '+H+'" style="width:100%;height:auto;display:block">',et=[];
   function bant(a,b,renk,op){if(!(a>0&&b>0))return;var y1=Y(Math.max(a,b)),y2=Y(Math.min(a,b));g+='<rect x="'+L0+'" y="'+y1.toFixed(1)+'" width="'+w+'" height="'+(y2-y1).toFixed(1)+'" fill="'+renk+'" opacity="'+op+'"/>';}
-  bant(t.f382,t.h1,"#facc15",.10);bant(t.f50,t.f382,"#4ade80",.18);
+  bant(t.f382,t.h1,"#facc15",.10);bant(t.f50,t.f382,"#4ade80",.18);if(!KIS){bant(t.f786,t.f618,"#22c55e",.32);if(t.kir&&t.kir.durum==="teyit")bant(t.kir.gt_alt,t.kir.gt_ust,"#4fc3f7",.18);}
   function cz(v,renk,ad,dash,kalin){if(!(v>0)||v<lo||v>hi)return;g+='<line x1="'+L0+'" x2="'+(L0+w)+'" y1="'+Y(v).toFixed(1)+'" y2="'+Y(v).toFixed(1)+'" stroke="'+renk+'" stroke-width="'+(kalin||1.2)+'"'+(dash?' stroke-dasharray="5 4"':'')+'/>';et.push([Y(v)+4,renk,ad]);}
-  cz(t.h2,"#f87171","Hedef 2",true);cz(t.h1,"#f87171","Hedef 1",false,1.5);cz(t.risk,"#facc15","Risk",true,1.5);cz(mal,"#9a9ab0","Maliyet",true);
+  cz(t.h2,"#f87171","Hedef 2",true);cz(t.h1,"#f87171",(!KIS&&t.kir&&Math.abs(t.kir.sev-t.h1)/t.h1<=0.005)?"H1·Kırılım":"Hedef 1",false,1.5);cz(t.risk,"#facc15","Risk",true,1.5);if(!KIS&&t.kir&&t.kir.sev>0&&t.kir.durum!=="teyit"&&Math.abs(t.kir.sev-t.h1)/t.h1>0.005)cz(t.kir.sev,"#4fc3f7","Kırılım",true);cz(mal,"#9a9ab0","Maliyet",true);
   function egri(M,renk){var p=[];M.forEach(function(v,i){if(v!==null)p.push(X(i).toFixed(1)+","+Y(v).toFixed(1));});if(p.length>1)g+='<polyline fill="none" stroke="'+renk+'" stroke-width="1.2" opacity=".85" points="'+p.join(" ")+'"/>';}
   egri(mB,"#ff9f43");egri(mA,"#4fc3f7");
   g+='<polyline fill="none" stroke="#a594ff" stroke-width="2" points="'+S2.map(function(p,i){return X(i).toFixed(1)+","+Y(p[1]).toFixed(1);}).join(" ")+'"/>';
@@ -141,7 +141,7 @@ function grafikHtml(k,s){var t=s.tek||{},TUM=t.seri||[];if(TUM.length<2)return""
   et.sort(function(a,b){return a[0]-b[0];});for(var i=1;i<et.length;i++)if(et[i][0]-et[i-1][0]<11)et[i][0]=et[i-1][0]+11;
   et.forEach(function(e){g+='<text x="'+(L0+w+4)+'" y="'+e[0].toFixed(1)+'" font-size="10" fill="'+e[1]+'">'+e[2]+'</text>';});
   g+='<text x="'+L0+'" y="'+(H-3)+'" font-size="10.5" fill="#9a9ab0">'+trD(S2[0][0])+'</text><text x="'+(L0+w)+'" y="'+(H-3)+'" font-size="10.5" fill="#9a9ab0" text-anchor="end">'+trD(son[0])+'</text></svg>';
-  var lg='<div style="margin-top:4px;font-size:11.5px;display:flex;gap:10px;flex-wrap:wrap"><span style="color:#a594ff">━ Fiyat</span><span style="color:#4fc3f7">━ '+(KIS?"20":"50")+' günlük ort.</span><span style="color:#ff9f43">━ '+(KIS?"50":"200")+' günlük ort.</span><span style="color:#4ade80">▮ alım bölgesi</span></div>';
+  var lg='<div style="margin-top:4px;font-size:11.5px;display:flex;gap:10px;flex-wrap:wrap"><span style="color:#a594ff">━ Fiyat</span><span style="color:#4fc3f7">━ '+(KIS?"20":"50")+' günlük ort.</span><span style="color:#ff9f43">━ '+(KIS?"50":"200")+' günlük ort.</span><span style="color:#4ade80">▮ alım bölgesi</span>'+(KIS?'':'<span style="color:#22c55e">▮ 2. alım</span><span style="color:#4fc3f7">┅ kırılım</span>')+'</div><div style="display:none"></div>';
   var ml="";if(mal>0&&fy>0){var kz=(fy/mal-1)*100;ml='<div style="font-size:12.5px;margin-top:6px;color:var(--mut)">Senin maliyetin: <b style="color:var(--tx)">'+f2(mal)+' TL</b> ('+(kz>=0?"+":"−")+"%"+Math.abs(kz).toFixed(1).replace(".",",")+')'+(t.h1>fy?' · Hedef 1\'e uzaklık: %'+((t.h1/fy-1)*100).toFixed(1).replace(".",","):'')+(t.risk>0&&fy>t.risk?' · Risk çizgisine: %'+((1-t.risk/fy)*100).toFixed(1).replace(".",","):'')+'</div>';}
   return'<div class="gr"><div class="grh"><span>Fiyat grafiği</span><span>'+ar+'</span></div>'+g+lg+'</div>';}
 function acHtml(k,s){var ks=s.vade==="kisa",ic=tekHtml(k,s.tek,s.price)+uzunHtml(s.uzun)+(ks?frHtml(s.frapor,true):byHtml(s.byorum,s.kap)+kapHtml(s.kap));if(!ic)return"";
@@ -178,7 +178,7 @@ function summary(code,s){
   else t="Değerleme <b>makul / karma</b> bölgede.";
   if(bank)t+=" <span style='color:var(--mut)'>Banka: PD/DD ve F/K birlikte okunur.</span>";
   return t;}
-var DUR={alim:["Alım bölgesi","var(--g)"],bekle:["Bekle / tut","var(--y)"],kar_al:["Kâr al bölgesi","var(--r)"],dikkat:["Dikkat: derin geri çekilme","var(--y)"],risk:["Risk: risk çizgisinin altında","var(--r)"]};
+var DUR={alim:["Alım bölgesi","var(--g)"],alim2:["2. alım bölgesi","var(--g)"],bekle:["Bekle / tut","var(--y)"],kar_al:["Kâr al bölgesi","var(--r)"],dikkat:["Dikkat: derin geri çekilme","var(--y)"],risk:["Risk: risk çizgisinin altında","var(--r)"]};
 var TRN={yukari:["Trend: yukarı","var(--g)"],asagi:["Trend: aşağı","var(--r)"],yatay:["Trend: yatay","var(--y)"]};
 function lvl(ad,deger,alt,renk,simdi){return'<div class="lvl'+(simdi?' now':'')+'" style="border-left-color:'+renk+'"><div class="a"><span>'+ad+(simdi?' <span style="color:var(--mut);font-size:12px">· '+(simdi===2?'fiyat bunun altında':'fiyat burada')+'</span>':'')+'</span><b>'+deger+'</b></div><div class="s">'+alt+'</div></div>';}
 function tekHtml(k,t,fiyat){if(!t||!(t.son>0))return"";
@@ -187,10 +187,14 @@ function tekHtml(k,t,fiyat){if(!t||!(t.son>0))return"";
   var L=[[t.h2,lvl("Satış hedefi 2",f2(t.h2)+" TL",esc(t.h2n),"var(--r)",false)],
    [t.h1,lvl("Satış hedefi 1 (kâr al)",f2(t.h1)+" TL",esc(t.h1n),"var(--r)",t.durum=="kar_al")],
    [t.h1-0.001,lvl("Bekleme bölgesi",f2(t.f382)+" – "+f2(t.h1)+" TL","Fibonacci %38,2 ile hedef 1 arası","var(--y)",t.durum=="bekle")],
-   [t.f382,lvl("Alım bölgesi",f2(t.f50)+" – "+f2(t.f382)+" TL","Fibonacci %50 – %38,2 geri çekilme","var(--g)",t.durum=="alim")],
-   [t.risk,lvl("Risk çizgisi (zarar kes)",f2(t.risk)+" TL",esc(t.riskn)+", altında kapanış riskli","var(--mut)",t.durum=="risk"?2:false)]];
+   [t.f382,lvl("Alım bölgesi",f2(t.f50)+" – "+f2(t.f382)+" TL","Fibonacci %50 – %38,2 geri çekilme","var(--g)",t.durum=="alim"||t.bolge=="alim")],
+   [t.vade!=="kisa"&&t.f786>0?t.f618:-1,t.vade!=="kisa"&&t.f786>0?lvl("2. alım bölgesi",f2(t.f786)+" – "+f2(t.f618)+" TL","Fibonacci %78,6 – %61,8 · kademeli alım için daha derin seviye","#22c55e",t.durum=="alim2"||t.bolge=="alim2"):""],
+   [t.risk,lvl("Risk çizgisi (zarar kes)",f2(t.risk)+" TL",esc(t.riskn)+", altında kapanış riskli"+(t.durum=="risk"&&t.bolge?" · fiyat şu an risk çizgisinin altında ama "+(t.bolge=="alim2"?"2. alım":"alım")+" bölgesinde":""),"var(--mut)",t.durum=="risk"?2:false)]];
+  var K=t.kir;if(t.vade!=="kisa"&&K&&K.sev>0){var KD={bekleniyor:"Henüz kırılmadı · "+f2(K.sev)+" TL üstünde 2 gün üst üste kapanış yaparsa ekleme yapılabilir",ilk:"Bugün üstünde kapandı · yarın da üstünde kapanırsa kırılım teyit edilir ve ekleme yapılabilir",teyit:"Kırılım teyit edildi ✓ · ekleme yapılabilir; direnç artık destek",geri:"Kırılım oldu ama fiyat yeniden altına indi · teyit yok, ekleme için yeniden 2 gün üstünde kapanış beklenir"}[K.durum]||"";
+    L.push([K.sev+0.002,lvl("Yükselişte ekleme: kırılım",f2(K.sev)+" TL üstü",KD,"#4fc3f7",K.durum==="ilk"||K.durum==="teyit")]);
+    if(K.durum==="teyit")L.push([K.sev+0.001,lvl("Yükselişte ekleme: geri test",f2(K.gt_alt)+" – "+f2(K.gt_ust)+" TL","Fiyat kırılan dirence geri gelip tutunursa ekleme bölgesi","#4fc3f7",p>=K.gt_alt&&p<=K.gt_ust*1.01)]);}
   if(t.durum=="dikkat")L.push([t.f50-0.001,lvl("Derin geri çekilme","%50 altı: "+f2(t.f50)+" TL altı","Alım bölgesinin altı, risk çizgisinin üstü","var(--y)",true)]);
-  L.sort(function(x,y){return y[0]-x[0];});L.forEach(function(x){h+=x[1];});
+  L=L.filter(function(x){return x[1];});L.sort(function(x,y){return y[0]-x[0];});L.forEach(function(x){h+=x[1];});
   var ms=t.vade==="kisa"?("20 günlük ort. "+f2(t.ma20)+" · 50 günlük ort. "+f2(t.ma50)+(t.rsi!=null?" · RSI "+f1(t.rsi):"")+" · 3 ay dip "+f2(t.dip)+" / zirve "+f2(t.zirve)):("50 günlük ort. "+f2(t.ma50)+(t.ma200?" · 200 günlük ort. "+f2(t.ma200):"")+" · 1 yıl dip "+f2(t.dip)+" / zirve "+f2(t.zirve));
   var m=MAL[k],cp=fiyat>0?fiyat:p;if(m&&m.q>0&&m.c>0){var kz=(cp/m.c-1)*100,uz=(t.h1/cp-1)*100;
     ms+='<br>Senin maliyetin: '+f2(m.c)+' TL ('+(kz>=0?"+":"")+f1(kz).replace("-","−")+'%)'+(uz>0?' · Kâr al hedefi 1\'e uzaklık: %'+f1(uz):'');}
@@ -206,7 +210,10 @@ function bdogTxt(b){if(!b)return"";if(b.kaynak&&b.kaynak.length)return' · Bilan
   if(b.tv_onceki)return' · TradingView henüz '+esc(b.tv_onceki)+' bilançosunu kullanıyor, buradaki hesap daha güncel ('+esc(b.d)+')';return"";}
 function render(d){
   var st=d.stocks||{},keys=Object.keys(st),h="";
-  if(!keys.length){document.getElementById("app").innerHTML='<div class="warn">Henüz hisse verisi yok.</div>';return;}
+  // Portfoy karnesinde sadece elinde olan hisseler gosterilir: tamamen satilan hisse otomatik kalkar
+  // (hic islem girilmemisse, ornegin baska bir cihazda, hepsi gosterilir)
+  if(!KUT&&Object.keys(MAL).length){var eld=keys.filter(function(k){return MAL[k]&&MAL[k].q>0;});keys=eld;}
+  if(!keys.length){document.getElementById("app").innerHTML='<div class="warn">'+(!KUT&&Object.keys(MAL).length?'Şu an elinde hisse yok. Hisse alınca karnesi burada görünür.':'Henüz hisse verisi yok.')+'</div>';return;}
   var SEC=null;try{SEC=localStorage.getItem(SECK);}catch(e){}
   if(keys.indexOf(SEC)<0)SEC=keys[0];
   h+='<div class="secw"><div class="sech">'+(KUT?'BIST30 kütüphanesi · bir hisse seç':'Hisse seç')+'</div><div class="secs">'+keys.map(function(k){var s=st[k]||{},ks=s.vade==="kisa";
