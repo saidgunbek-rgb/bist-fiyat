@@ -489,17 +489,17 @@
   }
  },
  "kap_ve_bilanco": {
-  "updatedAt": "2026-11-17 09:13",
+  "updatedAt": "2026-11-17 11:27",
   "hisseler": {
    "THYAO": {
     "kap_kaynak": "borsapy",
     "kap_adet": 20,
     "kap_icerik": [
      [
-      "2026-11-04 08:00",
-      "Finansal Rapor",
+      "2026-11-17 09:14",
+      "Kamuyu Aydınlatma Platformu Duyurusu",
       "pdf",
-      12587,
+      941,
       ""
      ]
     ],
