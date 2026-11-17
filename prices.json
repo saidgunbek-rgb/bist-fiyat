@@ -327,51 +327,29 @@
    "u": 50.28
   },
   "2026-11-16": {
-   "b": 11841.81,
-   "e": 55.5,
-   "g": 6256.57,
+   "b": 11841.8,
+   "e": 55.54,
+   "g": 6235.95,
    "p": {
     "KLSER": 16.4,
     "KTLEV": 8.15,
     "THYAO": 323.5
    },
-   "u": 50.39
+   "u": 50.34
+  },
+  "2026-11-17": {
+   "b": 11661.0,
+   "e": 55.53,
+   "g": 6278.99,
+   "p": {
+    "KTLEV": 8.96,
+    "THYAO": 322.25
+   },
+   "u": 50.41
   }
  },
  "kontrol": {
-  "KLSER": {
-   "2026-11-10": [
-    "borsapy",
-    "isyatirim",
-    "yahoo"
-   ],
-   "2026-11-11": [
-    "borsapy",
-    "isyatirim",
-    "yahoo"
-   ],
-   "2026-11-12": [
-    "borsapy",
-    "isyatirim",
-    "yahoo"
-   ],
-   "2026-11-13": [
-    "borsapy",
-    "isyatirim",
-    "yahoo"
-   ],
-   "2026-11-16": [
-    "borsapy",
-    "isyatirim",
-    "yahoo"
-   ]
-  },
   "KTLEV": {
-   "2026-11-10": [
-    "borsapy",
-    "isyatirim",
-    "yahoo"
-   ],
    "2026-11-11": [
     "borsapy",
     "isyatirim",
@@ -389,15 +367,16 @@
    ],
    "2026-11-16": [
     "borsapy",
+    "isyatirim",
+    "yahoo"
+   ],
+   "2026-11-17": [
+    "borsapy",
+    "isyatirim",
     "yahoo"
    ]
   },
   "THYAO": {
-   "2026-11-10": [
-    "borsapy",
-    "isyatirim",
-    "yahoo"
-   ],
    "2026-11-11": [
     "borsapy",
     "isyatirim",
@@ -417,9 +396,14 @@
     "borsapy",
     "isyatirim",
     "yahoo"
+   ],
+   "2026-11-17": [
+    "borsapy",
+    "isyatirim",
+    "yahoo"
    ]
   }
  },
- "updated": "2026-11-16",
- "updatedAt": "2026-11-16T16:51:00Z"
+ "updated": "2026-11-17",
+ "updatedAt": "2026-11-17T16:20:48Z"
 }
