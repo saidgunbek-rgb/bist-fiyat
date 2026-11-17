@@ -1,17 +1,17 @@
 {
- "updatedAt": "2026-11-16T16:56:39Z",
+ "updatedAt": "2026-11-17T06:12:04Z",
  "hisseler": {
   "THYAO": {
    "ozet": {
-    "iki_kaynak": 289,
+    "iki_kaynak": 288,
     "ek_kaynak": 1,
     "duzeltme": 0,
     "cozulemedi": 0
    },
    "kaynak_gun_sayisi": {
     "isyatirim": 289,
-    "yahoo": 290,
-    "borsapy": 290,
+    "yahoo": 288,
+    "borsapy": 289,
     "kendi_kayit": 25
    },
    "bolunmeler": [
@@ -23,26 +23,26 @@
     {
      "tarih": "2026-11-16",
      "degerler": {
-      "yahoo": 323.5,
+      "isyatirim": 323.5,
       "borsapy": 323.5,
       "kendi_kayit": 323.5
      },
      "secilen": 323.5,
-     "neden": "cogunluk: borsapy,kendi_kayit,yahoo"
+     "neden": "cogunluk: borsapy,isyatirim,kendi_kayit"
     }
    ]
   },
   "KTLEV": {
    "ozet": {
-    "iki_kaynak": 162,
+    "iki_kaynak": 161,
     "ek_kaynak": 128,
     "duzeltme": 0,
     "cozulemedi": 0
    },
    "kaynak_gun_sayisi": {
-    "isyatirim": 290,
-    "yahoo": 290,
-    "borsapy": 290,
+    "isyatirim": 289,
+    "yahoo": 288,
+    "borsapy": 289,
     "kendi_kayit": 25
    },
    "bolunmeler": [
@@ -57,16 +57,6 @@
    ],
    "hatalar": [],
    "secim_kayitlari": [
-    {
-     "tarih": "2026-02-27",
-     "degerler": {
-      "isyatirim": 11.8553,
-      "yahoo": 11.89,
-      "borsapy": 11.89
-     },
-     "secilen": 11.89,
-     "neden": "cogunluk: borsapy,yahoo"
-    },
     {
      "tarih": "2026-03-02",
      "degerler": {
@@ -456,25 +446,46 @@
      },
      "secilen": 31.23,
      "neden": "cogunluk: borsapy,yahoo"
+    },
+    {
+     "tarih": "2026-11-16",
+     "degerler": {
+      "isyatirim": 8.15,
+      "borsapy": 8.15,
+      "kendi_kayit": 8.15
+     },
+     "secilen": 8.15,
+     "neden": "cogunluk: borsapy,isyatirim,kendi_kayit"
     }
    ]
   },
   "KLSER": {
    "ozet": {
-    "iki_kaynak": 290,
-    "ek_kaynak": 0,
+    "iki_kaynak": 288,
+    "ek_kaynak": 1,
     "duzeltme": 0,
     "cozulemedi": 0
    },
    "kaynak_gun_sayisi": {
-    "isyatirim": 290,
-    "yahoo": 290,
-    "borsapy": 290,
+    "isyatirim": 289,
+    "yahoo": 288,
+    "borsapy": 289,
     "kendi_kayit": 25
    },
    "bolunmeler": [],
    "hatalar": [],
-   "secim_kayitlari": []
+   "secim_kayitlari": [
+    {
+     "tarih": "2026-11-16",
+     "degerler": {
+      "isyatirim": 16.4,
+      "borsapy": 16.4,
+      "kendi_kayit": 16.4
+     },
+     "secilen": 16.4,
+     "neden": "cogunluk: borsapy,isyatirim,kendi_kayit"
+    }
+   ]
   }
  },
  "kap_ve_bilanco": {
