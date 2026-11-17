@@ -1,17 +1,17 @@
 {
- "updatedAt": "2026-11-17T06:12:04Z",
+ "updatedAt": "2026-11-17T09:24:09Z",
  "hisseler": {
   "THYAO": {
    "ozet": {
-    "iki_kaynak": 288,
+    "iki_kaynak": 289,
     "ek_kaynak": 1,
     "duzeltme": 0,
     "cozulemedi": 0
    },
    "kaynak_gun_sayisi": {
     "isyatirim": 289,
-    "yahoo": 288,
-    "borsapy": 289,
+    "yahoo": 290,
+    "borsapy": 290,
     "kendi_kayit": 25
    },
    "bolunmeler": [
@@ -21,28 +21,27 @@
    "hatalar": [],
    "secim_kayitlari": [
     {
-     "tarih": "2026-11-16",
+     "tarih": "2026-11-17",
      "degerler": {
-      "isyatirim": 323.5,
-      "borsapy": 323.5,
-      "kendi_kayit": 323.5
+      "yahoo": 326.5,
+      "borsapy": 326.75
      },
-     "secilen": 323.5,
-     "neden": "cogunluk: borsapy,isyatirim,kendi_kayit"
+     "secilen": 326.5,
+     "neden": "cogunluk: borsapy,yahoo"
     }
    ]
   },
   "KTLEV": {
    "ozet": {
-    "iki_kaynak": 161,
+    "iki_kaynak": 162,
     "ek_kaynak": 128,
     "duzeltme": 0,
     "cozulemedi": 0
    },
    "kaynak_gun_sayisi": {
     "isyatirim": 289,
-    "yahoo": 288,
-    "borsapy": 289,
+    "yahoo": 290,
+    "borsapy": 290,
     "kendi_kayit": 25
    },
    "bolunmeler": [
@@ -448,42 +447,13 @@
      "neden": "cogunluk: borsapy,yahoo"
     },
     {
-     "tarih": "2026-11-16",
+     "tarih": "2026-11-17",
      "degerler": {
-      "isyatirim": 8.15,
-      "borsapy": 8.15,
-      "kendi_kayit": 8.15
+      "yahoo": 8.96,
+      "borsapy": 8.96
      },
-     "secilen": 8.15,
-     "neden": "cogunluk: borsapy,isyatirim,kendi_kayit"
-    }
-   ]
-  },
-  "KLSER": {
-   "ozet": {
-    "iki_kaynak": 288,
-    "ek_kaynak": 1,
-    "duzeltme": 0,
-    "cozulemedi": 0
-   },
-   "kaynak_gun_sayisi": {
-    "isyatirim": 289,
-    "yahoo": 288,
-    "borsapy": 289,
-    "kendi_kayit": 25
-   },
-   "bolunmeler": [],
-   "hatalar": [],
-   "secim_kayitlari": [
-    {
-     "tarih": "2026-11-16",
-     "degerler": {
-      "isyatirim": 16.4,
-      "borsapy": 16.4,
-      "kendi_kayit": 16.4
-     },
-     "secilen": 16.4,
-     "neden": "cogunluk: borsapy,isyatirim,kendi_kayit"
+     "secilen": 8.96,
+     "neden": "cogunluk: borsapy,yahoo"
     }
    ]
   }
