@@ -839,12 +839,19 @@
   }
  },
  "kap_ve_bilanco": {
-  "updatedAt": "2026-11-17 17:29",
+  "updatedAt": "2026-11-17 21:13",
   "hisseler": {
    "THYAO": {
     "kap_kaynak": "borsapy",
     "kap_adet": 20,
     "kap_icerik": [
+     [
+      "2026-11-17 18:03",
+      "Pay Alım Satım Bildirimi",
+      "pdf",
+      671,
+      ""
+     ],
      [
       "2026-11-17 09:14",
       "Kamuyu Aydınlatma Platformu Duyurusu",
