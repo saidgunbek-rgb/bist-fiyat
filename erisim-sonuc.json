@@ -1,0 +1,125 @@
+{
+ "zaman": "2026-11-17T05:48:55.072610Z",
+ "testler": {
+  "www.tefas.gov.tr sayfa": {
+   "durum": "tamam",
+   "sure": 1.4,
+   "sonuc": {
+    "http": 200,
+    "boyut": 7410
+   }
+  },
+  "www.tefas.gov.tr fiyat gecmisi": {
+   "durum": "HATA",
+   "sure": 1.5,
+   "hata": "<HTTPError 404: 'Not Found'>"
+  },
+  "www.tefas.gov.tr fon getirileri": {
+   "durum": "HATA",
+   "sure": 1.4,
+   "hata": "<HTTPError 404: 'Not Found'>"
+  },
+  "fundturkey.com.tr sayfa": {
+   "durum": "tamam",
+   "sure": 1.3,
+   "sonuc": {
+    "http": 200,
+    "boyut": 7410
+   }
+  },
+  "fundturkey.com.tr fiyat gecmisi": {
+   "durum": "HATA",
+   "sure": 1.1,
+   "hata": "<HTTPError 404: 'Not Found'>"
+  },
+  "fundturkey.com.tr fon getirileri": {
+   "durum": "HATA",
+   "sure": 1.1,
+   "hata": "<HTTPError 404: 'Not Found'>"
+  },
+  "borsapy fon": {
+   "durum": "tamam",
+   "sure": 3.4,
+   "sonuc": {
+    "fon_ile_ilgili": [
+     "Fund",
+     "compare_funds",
+     "fund",
+     "screen_funds",
+     "search_funds"
+    ],
+    "surum": "0.11.0",
+    "AFT_info": {
+     "fund_code": "AFT",
+     "name": "AK PORTFÖY YENİ TEKNOLOJİLER YABANCI HİSSE SENEDİ FONU",
+     "date": "",
+     "price": "0.850007",
+     "fund_size": "13971154466.98",
+     "investor_count": "125010",
+     "founder": "",
+     "manager": "",
+     "fund_type": "Hisse Senedi Şemsiye Fonu",
+     "fund_class": "YAT",
+     "category": "Hisse Senedi Fonu",
+     "risk_value": "6",
+     "return_1m": "-12.2537",
+     "return_3m": "-16.1547",
+     "return_6m": "-14.0953"
+    }
+   }
+  },
+  "TradingView tum BIST": {
+   "durum": "tamam",
+   "sure": 0.2,
+   "sonuc": {
+    "hisse_sayisi": 625,
+    "fk_dolu": 297,
+    "ornek": [
+     {
+      "name": "ASTOR",
+      "close": 163.2,
+      "price_earnings_ttm": 16.010045518756865,
+      "price_book_fq": 3.718896116784276,
+      "dividends_yield": 1.3426164215686276,
+      "sector": "Producer Manufacturing",
+      "return_on_equity": 29.0855151100452,
+      "market_cap_basic": 163472403046,
+      "Perf.Y": 75.86206896551724,
+      "RSI": 44.787539718725874
+     },
+     {
+      "name": "ARDYZ",
+      "close": 52.7,
+      "price_earnings_ttm": 13.122836724022012,
+      "price_book_fq": 2.473187967447778,
+      "dividends_yield": 0.061571347248576845,
+      "sector": "Technology Services",
+      "return_on_equity": 24.268344789997,
+      "market_cap_basic": 16951617635.999998,
+      "Perf.Y": 90.39017341040464,
+      "RSI": 42.76527657779073
+     },
+     {
+      "name": "TTRAK",
+      "close": 366,
+      "price_earnings_ttm": null,
+      "price_book_fq": 1.8366141065512176,
+      "dividends_yield": null,
+      "sector": "Producer Manufacturing",
+      "return_on_equity": -6.16479491830471,
+      "market_cap_basic": 36499391432,
+      "Perf.Y": -30.15267175572519,
+      "RSI": 46.602364063555
+     }
+    ]
+   }
+  },
+  "Is Yatirim": {
+   "durum": "tamam",
+   "sure": 12.8,
+   "sonuc": {
+    "gun": 10
+   }
+  }
+ }
+}
