@@ -94,22 +94,26 @@ function grafikFon(f){
   if(!SERI)return bas+'<div class="alt" style="padding:30px 0;text-align:center">Grafik yükleniyor…</div></div>';
   var S=SERI.fon&&SERI.fon[f.k],BS=SERI.bist||[];
   if(!S||S.length<3)return bas+'<div class="alt" style="padding:20px 0;text-align:center">Bu fonun grafik verisi henüz yok.</div></div>';
-  var son=S[S.length-1][0],ls="";if(GAR){var lim=new Date(son);lim.setMonth(lim.getMonth()-GAR);ls=lim.toISOString().slice(0,10);}
-  var s=S.filter(function(p){return p[0]>=ls;}),genc=GAR&&(new Date(S[0][0])-new Date(ls))>14*864e5;
+  var son=S[S.length-1][0],ls="";if(GAR){var Y_=+son.slice(0,4),M_=+son.slice(5,7)-GAR,G_=+son.slice(8,10);while(M_<=0){M_+=12;Y_--;}
+    var gm=new Date(Date.UTC(Y_,M_,0)).getUTCDate();ls=Y_+"-"+("0"+M_).slice(-2)+"-"+("0"+Math.min(G_,gm)).slice(-2);}  // tablodaki getiriyle ayni tarih kurali
+  var bi=0;if(GAR){for(var q=0;q<S.length;q++){if(S[q][0]<=ls)bi=q;else break;}}
+  var s=S.slice(bi),genc=GAR&&(new Date(S[0][0])-new Date(ls))>14*864e5,bes=(new Date(son)-new Date(S[0][0]))>4.9*365*864e5;
   var bmap={};BS.forEach(function(p){bmap[p[0]]=p[1];});
-  var f0=s[0][1],b0=null,bs=[];s.forEach(function(p){var v=bmap[p[0]];if(v!=null&&b0==null)b0=v;bs.push(v!=null&&b0?v/b0*100:null);});
+  var f0=s[0][1],b0=null,bs=[];var bsr=BS.filter(function(p){return p[0]<=s[0][0];});if(bsr.length)b0=bsr[bsr.length-1][1];
+  var bj=0;s.forEach(function(p){while(bj<BS.length-1&&BS[bj+1][0]<=p[0])bj++;var v=BS.length&&BS[bj][0]<=p[0]?BS[bj][1]:null;if(v!=null&&b0==null)b0=v;bs.push(v!=null&&b0?v/b0*100:null);});
   var fs=s.map(function(p){return p[1]/f0*100;}),all=fs.concat(bs.filter(function(x){return x!=null;})),lo=Math.min.apply(null,all),hi=Math.max.apply(null,all),pd=(hi-lo)*.08;lo-=pd;hi+=pd;
-  var W=340,H=180,L=4,R=44,T=8,B=18,w=W-L-R,hh=H-T-B;function X(i){return L+i/(s.length-1)*w;}function Y(v){return T+(hi-v)/(hi-lo)*hh;}
+  var W=340,H=180,L=4,R=50,T=8,B=18,w=W-L-R,hh=H-T-B;function X(i){return L+i/(s.length-1)*w;}function Y(v){return T+(hi-v)/(hi-lo)*hh;}
   var g='<svg viewBox="0 0 '+W+' '+H+'" style="width:100%;height:auto;display:block">';
   g+='<line x1="'+L+'" x2="'+(L+w)+'" y1="'+Y(100).toFixed(1)+'" y2="'+Y(100).toFixed(1)+'" stroke="#3c3f58" stroke-dasharray="3 3"/>';
   var pb=[];bs.forEach(function(v,i){if(v!=null)pb.push(X(i).toFixed(1)+","+Y(v).toFixed(1));});
   g+='<polyline fill="none" stroke="#f0957a" stroke-width="1.5" opacity=".9" points="'+pb.join(" ")+'"/>';
   g+='<polyline fill="none" stroke="#a594ff" stroke-width="2.2" points="'+fs.map(function(v,i){return X(i).toFixed(1)+","+Y(v).toFixed(1);}).join(" ")+'"/>';
   var fe=fs[fs.length-1],be=bs[bs.length-1];
-  function et(v,c){var p=v-100;return'<text x="'+(L+w+4)+'" y="'+(Y(v)+4).toFixed(1)+'" font-size="10.5" fill="'+c+'">'+(p>=0?"+":"−")+Math.abs(p).toFixed(Math.abs(p)<10?1:0).replace(".",",")+'%</text>';}
-  g+=et(fe,"#a594ff");if(be!=null&&Math.abs(Y(be)-Y(fe))>11)g+=et(be,"#f0957a");
+  function et(v,c){var p=v-100;return'<text x="'+(L+w+3)+'" y="'+(Y(v)+4).toFixed(1)+'" font-size="10" fill="'+c+'">'+(p>=0?"+":"−")+"%"+Math.abs(p).toFixed(Math.abs(p)>=1000?0:1).replace(".",",")+'</text>';}
+  var GK={3:"a3",6:"a6",12:"y1",36:"y3",60:"y5"}[GAR],tey=!GK||genc||f.g[GK]!=null;
+  if(tey)g+=et(fe,"#a594ff");if(be!=null&&Math.abs(Y(be)-Y(fe))>11)g+=et(be,"#f0957a");
   g+='<text x="'+L+'" y="'+(H-3)+'" font-size="10" fill="#9a9ab0">'+trD(s[0][0])+'</text><text x="'+(L+w)+'" y="'+(H-3)+'" font-size="10" fill="#9a9ab0" text-anchor="end">'+trD(s[s.length-1][0])+'</text></svg>';
-  return bas+g+'<div class="alt" style="margin-top:4px"><span style="color:#a594ff">━ '+esc(f.k)+'</span> &nbsp; <span style="color:#f0957a">━ BIST100</span> &nbsp; · başlangıç = 100'+(genc?'<br>Fon '+esc(trD(S[0][0]))+' tarihinden beri var; grafik o tarihten başlıyor.':'')+(GAR===0?'<br>Tümü: fonun ilk fiyatından bugüne.':'')+'</div></div>';}
+  return bas+g+'<div class="alt" style="margin-top:4px"><span style="color:#a594ff">━ '+esc(f.k)+'</span> &nbsp; <span style="color:#f0957a">━ BIST100</span> &nbsp; · başlangıç = 100'+(genc?'<br>Fon '+esc(trD(S[0][0]))+' tarihinden beri var; grafik o tarihten başlıyor.':'')+(!tey?'<br>Bu dönemin getirisi TEFAS rakamıyla teyit edilemediği için yazılmadı; çizgi sadece gidişatı gösterir.':'')+(GAR===0?(bes?'<br>Tümü: veri kaynağı en fazla son 5 yılı veriyor; fon daha eski olabilir.':'<br>Tümü: fonun ilk fiyatından bugüne.'):'')+'</div></div>';}
 function pencere(k){var f=D.fonlar.filter(function(x){return x.k===k;})[0];if(!f)return;
   var o=document.getElementById("pop");if(!o){o=document.createElement("div");o.id="pop";document.body.appendChild(o);}
   o.innerHTML='<div class="pk"><button class="px" aria-label="Kapat">✕</button>'+grafikFon(f)+kart(f,0,D.bist||{},true).replace(/<span class="pn">[^]*?<\/span><\/div>/,'<span class="pn">'+(f.her_yonu?'⭐ ':'')+(f.puan!=null?f.puan+'/100':'')+'</span></div>')+'<button class="pkap">Kapat</button></div>';
