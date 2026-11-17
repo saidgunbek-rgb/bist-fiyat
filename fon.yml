@@ -1,0 +1,428 @@
+# Fon bulucu: bankalarin portfoy sirketlerine ait TEFAS Borsa Istanbul hisse senedi (yogun) fonlarini her aksam tarar, fonlar.json dosyasina yazar.
+# Getiriler fonun gunluk fiyatlarindan ayrica hesaplanip TEFAS'in bildirdigi getiriyle karsilastirilir; tutmayan fon listeye girmez.
+# Panelin diger dosyalarina dokunmaz, bildirim gondermez. Sayfa: fon.html
+name: Fon bulucu
+
+on:
+  schedule:
+    - cron: "37 17 * * 1-5"    # hafta ici 20:37 (Turkiye saati); TEFAS fiyatlari aksam aciklanir
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: fon
+  cancel-in-progress: false
+
+jobs:
+  tara:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Gerekli paketler
+        run: pip install borsapy 2>&1 | tail -1
+
+      - name: Fonlari tara
+        run: |
+          python3 - <<'PY'
+          import json, time, datetime, re, inspect, urllib.request, traceback
+          from concurrent.futures import ThreadPoolExecutor
+          import borsapy as bp
+
+          LOG = {"surum": getattr(bp, "__version__", "?"), "notlar": []}
+          def not_(x):
+              print(x); LOG["notlar"].append(str(x)[:300])
+          for ad in ("screen_funds", "search_funds", "compare_funds"):
+              try:
+                  not_("%s%s" % (ad, inspect.signature(getattr(bp, ad))))
+              except Exception as e:
+                  not_("%s imza yok: %s" % (ad, e))
+          try:
+              not_("Fund.history%s" % inspect.signature(bp.Fund.history))
+          except Exception as e:
+              not_("Fund.history imza yok: %s" % e)
+
+          def kayitlar(x):
+              if x is None:
+                  return []
+              if hasattr(x, "reset_index") and hasattr(x, "to_dict"):
+                  try:
+                      return x.reset_index().to_dict("records")
+                  except Exception:
+                      return x.to_dict("records")
+              if isinstance(x, dict):
+                  for k in ("data", "results", "funds", "items"):
+                      if isinstance(x.get(k), list):
+                          return x[k]
+                  return [x]
+              if isinstance(x, (list, tuple)):
+                  return [r if isinstance(r, dict) else getattr(r, "__dict__", {"value": r}) for r in x]
+              return []
+
+          def al(r, *adlar):
+              for a in adlar:
+                  for k in r:
+                      if str(k).lower() == a.lower() and r[k] not in (None, "", "nan"):
+                          return r[k]
+              return None
+
+          def sayi(x):
+              try:
+                  v = float(str(x).replace(",", ".")) if not isinstance(x, (int, float)) else float(x)
+                  return v if v == v else None
+              except Exception:
+                  return None
+
+          # ---- 1) Fon listesi (birden fazla yol denenir)
+          aday = {}
+          denemeler = [
+              ("screen_funds(YAT, tumu)", lambda: bp.screen_funds(fund_type="YAT", limit=5000)),
+              ("search_funds(hisse)", lambda: bp.search_funds("hisse", limit=1000)),
+              ("search_funds(HİSSE SENEDİ)", lambda: bp.search_funds("HİSSE SENEDİ", limit=1000)),
+              ("search_funds(HISSE)", lambda: bp.search_funds("HISSE", limit=1000)),
+          ]
+          for ad, fn in denemeler:
+              try:
+                  rs = kayitlar(fn())
+                  n0 = len(aday)
+                  for r in rs:
+                      k = al(r, "fund_code", "code", "fon_kodu", "fonkodu", "kod", "symbol")
+                      if k:
+                          aday.setdefault(str(k).upper().strip(), r)
+                  not_("%s: %d kayit, %d yeni fon" % (ad, len(rs), len(aday) - n0))
+                  if rs:
+                      not_("ornek alanlar: %s" % list(rs[0].keys())[:25])
+              except Exception as e:
+                  not_("%s HATA: %r" % (ad, e))
+          not_("Toplam aday fon: %d" % len(aday))
+
+          # ---- 2) BIST100 getirileri (Yahoo, yedek borsapy)
+          def bist_yahoo():
+              u = "https://query1.finance.yahoo.com/v8/finance/chart/XU100.IS?range=6y&interval=1d"
+              r = json.loads(urllib.request.urlopen(urllib.request.Request(u, headers={"User-Agent": "Mozilla/5.0"}), timeout=30).read())["chart"]["result"][0]
+              return sorted((datetime.date.fromtimestamp(t), c) for t, c in zip(r["timestamp"], r["indicators"]["quote"][0]["close"]) if c)
+
+          def bist_borsapy():
+              df = bp.Ticker("XU100").history(period="5y")
+              col = [c for c in df.columns if str(c).lower() == "close"][0]
+              return sorted((i.date() if hasattr(i, "date") else i, float(v)) for i, v in df[col].items() if v == v)
+
+          def ay_once(t, n):
+              y, m = t.year, t.month - n
+              while m <= 0:
+                  m += 12; y -= 1
+              import calendar
+              return datetime.date(y, m, min(t.day, calendar.monthrange(y, m)[1]))
+
+          def donem_getiri(seri, ay):
+              # Takvim olarak "ay" ay onceki gun (ya da oncesindeki son fiyat) ile son fiyat arasi % degisim
+              if len(seri) < 2:
+                  return None
+              son_t, son = seri[-1]
+              hedef = ay_once(son_t, ay)
+              onceki = [v for t, v in seri if t <= hedef]
+              if not onceki or not onceki[-1]:
+                  return None
+              return round((son / onceki[-1] - 1) * 100, 2)
+
+          def getiri_araligi(seri, ay):
+              # Fiyat tarihi farklarini (fonlarin fiyati 1-2 gun gecikmeli aciklanabilir) tolere etmek icin
+              # baslangic +-4 gun, bitis son 2 fiyat icin olasi getirilerin en kucugu ve en buyugu
+              if len(seri) < 30:
+                  return None
+              out = []
+              for son_t, son in seri[-2:]:
+                  h = ay_once(son_t, ay)
+                  for t, v in seri:
+                      if abs((t - h).days) <= 4 and v:
+                          out.append((son / v - 1) * 100)
+              return (min(out), max(out)) if out else None
+
+          DON = {"a1": 1, "a3": 3, "a6": 6, "y1": 12}          # liste ve istikrar icin ana donemler (teyit zorunlu)
+          UZUN = {"y3": 36, "y5": 60}                          # uzun donem: teyit edilirse gosterilir, edilemezse bos kalir
+          TUMD = dict(DON, **UZUN)
+
+          def risk_olc(seri):
+              # Son 1 yil: en buyuk dusus (zirveden dibe) ve yillik oynaklik (haftalik getirilerden; tatil/hafta sonu tekrarlarindan etkilenmez)
+              if len(seri) < 60:
+                  return None
+              son_t = seri[-1][0]
+              s1 = [(t, v) for t, v in seri if t >= ay_once(son_t, 12)]
+              if len(s1) < 40:
+                  return None
+              tepe, mdd = s1[0][1], 0.0
+              for t, v in s1:
+                  tepe = max(tepe, v); mdd = min(mdd, v / tepe - 1)
+              hf, i = [], 0
+              hedef = s1[0][0]
+              for t, v in s1:
+                  if t >= hedef:
+                      hf.append(v); hedef = t + datetime.timedelta(days=7)
+              r = [b / a - 1 for a, b in zip(hf, hf[1:]) if a]
+              if len(r) < 20:
+                  return None
+              ort = sum(r) / len(r)
+              vol = (sum((x - ort) ** 2 for x in r) / (len(r) - 1)) ** 0.5 * (52 ** 0.5)
+              return {"mdd": round(mdd * 100, 2), "vol": round(vol * 100, 2)}
+
+          # Enflasyon (yillik TUFE): panelin karne verisinden; yoksa reel getiri hesaplanmaz
+          ENF = None
+          try:
+              e = json.load(open("karne.json")).get("enf") or {}
+              ENF = {"y": sayi(e.get("y")), "t": e.get("t"), "k": e.get("k")}
+              if ENF["y"] is None:
+                  ENF = None
+          except Exception as e:
+              not_("Enflasyon okunamadi: %r" % e)
+          not_("Enflasyon: %s" % ENF)
+          def reel(g):
+              return None if (g is None or not ENF) else round(((1 + g / 100) / (1 + ENF["y"] / 100) - 1) * 100, 2)
+          # BIST100 getirisi iki kaynaktan (Yahoo, borsapy) hesaplanir; ikisi tutarsa kullanilir, tutmazsa o donem bos kalir
+          KAY = {}
+          for ad, fn in (("yahoo", bist_yahoo), ("borsapy", bist_borsapy)):
+              try:
+                  sr = fn()
+                  KAY[ad] = {k: donem_getiri(sr, g) for k, g in TUMD.items()}
+                  KAY[ad]["_risk"] = risk_olc(sr)
+                  if len(sr) >= 2 and sr[-2][1]:
+                      KAY[ad]["d1"] = round((sr[-1][1] / sr[-2][1] - 1) * 100, 2); KAY[ad]["_d1t"] = str(sr[-1][0])
+              except Exception as e:
+                  not_("BIST100 %s HATA %r" % (ad, e))
+          not_("BIST100 kaynaklar: %s" % KAY)
+          BIST = {}
+          for k in list(TUMD) + ["d1"]:
+              v = [x[k] for x in KAY.values() if x.get(k) is not None]
+              if len(v) >= 2 and abs(v[0] - v[1]) <= 1.0:
+                  BIST[k] = round((v[0] + v[1]) / 2, 2)
+              else:
+                  BIST[k] = None
+          # Risk olculeri: iki kaynagin sonucu birbirine yakinsa (1 puan) kullanilir
+          rk = [x.get("_risk") for x in KAY.values() if x.get("_risk")]
+          if len(rk) >= 2 and abs(rk[0]["mdd"] - rk[1]["mdd"]) <= 1.0 and abs(rk[0]["vol"] - rk[1]["vol"]) <= 1.5:
+              BIST["mdd"] = round((rk[0]["mdd"] + rk[1]["mdd"]) / 2, 2); BIST["vol"] = round((rk[0]["vol"] + rk[1]["vol"]) / 2, 2)
+          BIST["reel_y1"] = reel(BIST.get("y1"))
+          not_("BIST100 (teyitli): %s" % BIST)
+
+          # ---- 3) Her fonun bilgisi + fiyat gecmisi, getiri teyidi
+          def fon_isle(kod):
+              out = {"k": kod}
+              f = bp.Fund(kod)
+              info = dict(f.info)
+              ad = str(al(info, "name", "fund_name", "title") or al(aday.get(kod, {}), "name", "fund_name", "title") or "")
+              kat = " ".join(str(al(info, x) or "") for x in ("category", "fund_type", "fund_class"))
+              out.update(ad=ad, kat=kat.strip())
+              u = ad.upper()
+              if "HİSSE" not in kat.upper() and "HISSE" not in kat.upper() and "HİSSE" not in u:
+                  return dict(out, atla="hisse fonu değil")
+              if "YABANCI" in u or "YABANCI" in kat.upper():
+                  return dict(out, atla="yabancı hisse fonu")
+              bk, bg = banka_bul(ad)
+              if not bk:
+                  return dict(out, atla="banka fonu değil")
+              out.update(banka=bk, grup=bg)
+              if "SERBEST" in u:
+                  return dict(out, atla="serbest fon")
+              rap = {"a1": sayi(al(info, "return_1m")), "a3": sayi(al(info, "return_3m")),
+                     "a6": sayi(al(info, "return_6m")), "y1": sayi(al(info, "return_1y", "return_12m")),
+                     "y3": sayi(al(info, "return_3y")) if al(info, "return_3y") is not None else sayi(al(aday.get(kod, {}), "return_3y")),
+                     "y5": sayi(al(info, "return_5y")) if al(info, "return_5y") is not None else sayi(al(aday.get(kod, {}), "return_5y"))}
+              out.update(buyukluk=sayi(al(info, "fund_size", "size", "portfolio_size")),
+                         yatirimci=sayi(al(info, "investor_count", "investors")),
+                         risk=sayi(al(info, "risk_value", "risk")),
+                         ucret=sayi(al(info, "management_fee", "fee", "yonetim_ucreti", "annual_fee")),
+                         kurucu=str(al(info, "founder", "manager") or "").strip(),
+                         fiyat=sayi(al(info, "price")))
+              # Fiyat gecmisi
+              seri = []
+              bas5 = (datetime.date.today() - datetime.timedelta(days=5 * 366 + 20)).isoformat()
+              for donem in ("bas5", "5y", "max", "2y", "1y"):
+                  try:
+                      df = f.history(start=bas5) if donem == "bas5" else f.history(period=donem)
+                      if df is None or len(df) == 0:
+                          continue
+                      cols = [c for c in df.columns if str(c).lower() in ("price", "fiyat", "close")]
+                      col = cols[0] if cols else [c for c in df.columns if str(df[c].dtype).startswith("float")][0]
+                      for i, v in df[col].items():
+                          t = i.date() if hasattr(i, "date") else datetime.date.fromisoformat(str(i)[:10])
+                          if v and v == v:
+                              seri.append((t, float(v)))
+                      break
+                  except Exception as e:
+                      out["gecmis_hata"] = repr(e)[:150]
+              seri.sort()
+              # Pay bolunmesi / tasfiye gibi olagandisi fiyat sicramasi olan fon guvenilir karsilastirilamaz
+              for (t0, v0), (t1, v1) in zip(seri, seri[1:]):
+                  if v0 and (v1 / v0 < 0.6 or v1 / v0 > 1.6):
+                      return dict(out, atla="olağandışı fiyat sıçraması (bölünme/tasfiye)", detay=[str(t1), v0, v1])
+              if (out.get("buyukluk") or 0) < 10e6:
+                  return dict(out, atla="10 milyon TL altı küçük fon")
+              hes = {k: donem_getiri(seri, g) for k, g in TUMD.items()}
+              teyit, celiski, son = [], [], {}
+              for k, g in TUMD.items():
+                  a, ar = rap.get(k), getiri_araligi(seri, g)
+                  if a is not None and ar is not None:
+                      if ar[0] - 0.5 <= a <= ar[1] + 0.5:
+                          teyit.append(k); son[k] = round(a, 2)
+                      elif k in DON:
+                          celiski.append([k, a, round(ar[0], 2), round(ar[1], 2)])
+                      else:
+                          out.setdefault("uzun_tutmayan", []).append([k, a, round(ar[0], 2), round(ar[1], 2)])  # sadece o donem gosterilmez
+                  elif hes.get(k) is not None and a is None:
+                      son[k] = hes[k]   # TEFAS bu donemi bildirmediyse resmi fiyat gecmisinden hesaplanan
+              son["reel_y1"] = reel(son.get("y1"))
+              if len(seri) >= 2 and seri[-2][1]:
+                  son["d1"] = round((seri[-1][1] / seri[-2][1] - 1) * 100, 2)   # son fiyat gununun degisimi
+                  out["d1_tarih"] = str(seri[-1][0])
+              out["rk"] = risk_olc(seri)
+              if out["rk"] and son.get("y1") is not None and out["rk"]["vol"] > 0:
+                  out["rk"]["gr"] = round(son["y1"] / out["rk"]["vol"], 2)   # getiri / oynaklik
+              out.update(g=son, teyit=teyit, celiski=celiski, gun=len(seri),
+                         son_tarih=str(seri[-1][0]) if seri else None)
+              if celiski or not [k for k in teyit if k in DON]:
+                  out["atla"] = "getirisi fiyat geçmişiyle tutmayan" if celiski else "getirisi teyit edilemeyen"
+              return out
+
+          # Sadece banka portfoy sirketlerinin fonlari (kurucu adi fon unvaninin basinda yer alir)
+          BANKALAR = [
+              ("Ziraat Bankası", "Kamu", ["ZİRAAT PORTFÖY"]),
+              ("Garanti BBVA", "Özel", ["GARANTİ PORTFÖY", "GARANTI PORTFÖY"]),
+              ("İş Bankası", "Özel", ["İŞ PORTFÖY", "IS PORTFÖY"]),
+              ("Akbank", "Özel", ["AK PORTFÖY"]),
+              ("Yapı Kredi", "Özel", ["YAPI KREDİ PORTFÖY", "YAPI KREDI PORTFÖY"]),
+              ("DenizBank", "Özel", ["DENİZ PORTFÖY"]),
+          ]
+          def sade(x):
+              # Turkce harf ve buyuk/kucuk farklarini yok sayar (PORTFÖY = PORTFOY, İŞ = IS)
+              x = str(x or "").replace("i̇", "i").upper()
+              for a, b in (("İ", "I"), ("Ş", "S"), ("Ğ", "G"), ("Ü", "U"), ("Ö", "O"), ("Ç", "C"), ("Â", "A")):
+                  x = x.replace(a, b)
+              return " ".join(x.split())
+
+          def banka_bul(ad):
+              u = " " + sade(ad)
+              for b, g, desen in BANKALAR:
+                  if any((" " + sade(d)) in u for d in desen):
+                      return b, g
+              return None, None
+
+          sonuc, atlanan = [], {}
+          # Listede adi olan ve "hisse" gecmeyen fonlar hic sorgulanmadan elenir (zaman kazanmak icin)
+          kodlar = []
+          for k in sorted(aday):
+              ad0 = str(al(aday[k], "name", "fund_name", "title") or "").upper()
+              if ad0 and "HİSSE" not in ad0 and "HISSE" not in ad0:
+                  atlanan.setdefault("hisse fonu değil", []).append(k)
+              elif ad0 and not banka_bul(ad0)[0]:
+                  atlanan.setdefault("banka fonu değil", []).append(k)
+                  # hangi portfoy sirketlerinin disarida kaldigi kontrol icin kaydedilir
+                  ps = sade(ad0).split(" PORTFOY")[0] if " PORTFOY" in sade(ad0) else sade(ad0)[:30]
+                  LOG.setdefault("banka_disi_kurucular", {}).setdefault(ps, 0)
+                  LOG["banka_disi_kurucular"][ps] += 1
+              else:
+                  kodlar.append(k)
+          not_("Sorgulanacak fon: %d" % len(kodlar))
+          def guvenli(k):
+              for d in range(3):
+                  try:
+                      return fon_isle(k)
+                  except Exception as e:
+                      hata = e
+                      time.sleep(2 * (d + 1))
+              return {"k": k, "atla": "verisi alınamayan: %r" % hata}
+          with ThreadPoolExecutor(6) as ex:
+              for r in ex.map(guvenli, kodlar):
+                  if r.get("atla"):
+                      atlanan.setdefault(r["atla"].split(":")[0], []).append(
+                          [r["k"], r.get("celiski") or r.get("detay")] if (r.get("celiski") or r.get("detay")) else r["k"])
+                  else:
+                      sonuc.append(r)
+          # Istikrar: kac donemde BIST100'u gecti
+          for r in sonuc:
+              gec, top = 0, 0
+              for k in DON:
+                  if r["g"].get(k) is not None and BIST.get(k) is not None:
+                      top += 1; gec += r["g"][k] > BIST[k]
+              r["istikrar"] = [gec, top]
+          # ---- Genel puan (0-100): her olcutte fonun diger fonlar arasindaki sirasi (yuzdelik) ortalanir
+          OLC = [("a1", lambda r: r["g"].get("a1")), ("a3", lambda r: r["g"].get("a3")), ("a6", lambda r: r["g"].get("a6")),
+                 ("y1", lambda r: r["g"].get("y1")), ("y3", lambda r: r["g"].get("y3")),
+                 ("gr", lambda r: (r.get("rk") or {}).get("gr")), ("mdd", lambda r: (r.get("rk") or {}).get("mdd"))]
+          for ad, fn in OLC:
+              vals = sorted(v for v in (fn(r) for r in sonuc) if v is not None)
+              for r in sonuc:
+                  v = fn(r)
+                  if v is not None and len(vals) > 1:
+                      r.setdefault("_y", []).append(sum(1 for x in vals if x < v) / (len(vals) - 1))
+          for r in sonuc:
+              y = r.pop("_y", [])
+              r["puan"] = round(sum(y) / len(y) * 100) if len(y) >= 5 else None
+              rk = r.get("rk") or {}
+              # Her yonuyle iyi: 4 donemin hepsinde endeksi gecmis, enflasyonu yenmis, endeksten az dusmus,
+              # getiri/risk endeksten iyi ve (varsa) 3 yilda da endeksin onunde
+              kosul = [r["istikrar"][1] >= 4 and r["istikrar"][0] == r["istikrar"][1],
+                       (r["g"].get("reel_y1") or -1) > 0,
+                       rk.get("mdd") is not None and BIST.get("mdd") is not None and rk["mdd"] > BIST["mdd"],
+                       rk.get("gr") is not None and BIST.get("y1") is not None and BIST.get("vol") and rk["gr"] > BIST["y1"] / BIST["vol"],
+                       r["g"].get("y3") is None or BIST.get("y3") is None or r["g"]["y3"] > BIST["y3"]]
+              r["her_yonu"] = all(kosul)
+              r["kosul"] = sum(kosul)
+          sonuc.sort(key=lambda r: -(r["g"].get("y1") if r["g"].get("y1") is not None else -999))
+
+          # ---- Gecmis: her taramanin ilk 10'u (genel puana gore) saklanir; uzun suredir iyi kalanlar buradan cikar
+          try:
+              GEC = json.load(open("fon-gecmis.json"))
+          except Exception:
+              GEC = {}
+          bugun = (datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=3)).strftime("%Y-%m-%d")
+          sirali = sorted([r for r in sonuc if r.get("puan") is not None], key=lambda r: -r["puan"])
+          GEC[bugun] = {"ilk10": [r["k"] for r in sirali[:10]], "her_yonu": [r["k"] for r in sonuc if r["her_yonu"]]}
+          for t in sorted(GEC)[:-120]:
+              GEC.pop(t)
+          son30 = sorted(GEC)[-30:]
+          UZ = []
+          for r in sonuc:
+              kac = sum(1 for t in son30 if r["k"] in GEC[t]["ilk10"])
+              seri_ = 0
+              for t in reversed(son30):
+                  if r["k"] in GEC[t]["ilk10"]:
+                      seri_ += 1
+                  else:
+                      break
+              hy = sum(1 for t in son30 if r["k"] in GEC[t].get("her_yonu", []))
+              r["gecmis"] = {"kac": kac, "toplam": len(son30), "seri": seri_, "her_yonu_gun": hy}
+              if kac:
+                  UZ.append(r["k"])
+          json.dump(GEC, open("fon-gecmis.json", "w"), ensure_ascii=False)
+          not_("Listeye giren: %d | Atlanan: %s" % (len(sonuc), {k: len(v) for k, v in atlanan.items()}))
+
+          simdi = datetime.datetime.now(datetime.timezone.utc)
+          veri = {"updatedAt": simdi.strftime("%Y-%m-%dT%H:%M:%SZ"),
+                  "updated": (simdi + datetime.timedelta(hours=3)).strftime("%Y-%m-%d"),
+                  "bist": BIST, "enf": ENF, "fonlar": sonuc, "atlanan_sayi": {k: len(v) for k, v in atlanan.items()}}
+          if not sonuc:
+              json.dump({"log": LOG, "atlanan": atlanan}, open("fon-kontrol.json", "w"), indent=1, ensure_ascii=False, default=str)
+              raise SystemExit("Hic fon teyit edilemedi; onceki fonlar.json korunuyor.")
+          json.dump(veri, open("fonlar.json", "w"), indent=1, ensure_ascii=False, default=str)
+          json.dump({"log": LOG, "atlanan": atlanan}, open("fon-kontrol.json", "w"), indent=1, ensure_ascii=False, default=str)
+          PY
+
+      - name: Kaydet
+        if: always()
+        run: |
+          git config user.name "fiyat-bot"
+          git config user.email "fiyat-bot@users.noreply.github.com"
+          for f in fonlar.json fon-kontrol.json fon-gecmis.json; do [ -f "$f" ] && git add "$f"; done
+          git diff --cached --quiet && exit 0
+          git commit -m "Fon verisi"
+          for i in 1 2 3 4 5; do git pull --rebase origin main && git push && exit 0; sleep 10; done
+          exit 1
+
+      - name: Zamanlamayi canli tut
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow enable fon.yml --repo "$GITHUB_REPOSITORY"
