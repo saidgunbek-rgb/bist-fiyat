@@ -88,11 +88,11 @@ function favHtml(B){var F=D.fonlar,h='',EN=D.enf;
   var GP=F.filter(function(f){return f.puan!=null;}).sort(function(a,b){return b.puan-a.puan;}).slice(0,5);
   h+='<div class="bh"><span><b>🏆 Genel puanda ilk 5</b></span><span class="alt">1 yıl getiri · puan</span></div>';GP.forEach(function(f,i){h+=satir(f,f.g.y1,B.y1,i);});
   // 3) Donem favorileri
-  var DN=[["d1","Bugün"],["a1","Son 1 ay"],["a3","Son 3 ay"],["a6","Son 6 ay"],["y1","Son 1 yıl"]];
+  var DN=[["d1","Son gün"],["a1","Son 1 ay"],["a3","Son 3 ay"],["a6","Son 6 ay"],["y1","Son 1 yıl"]];
   h+='<div class="bh"><span><b>📅 Dönemin favorileri</b></span><span class="alt">getiri · puan</span></div>';
-  DN.forEach(function(d){var k=d[0],b=B[k],L=F.filter(function(f){return f.g[k]!=null&&(b==null||f.g[k]>b);}).sort(function(x,y){return y.g[k]-x.g[k];}).slice(0,3);
+  DN.forEach(function(d){var k=d[0],b=k==="d1"?null:B[k],L=F.filter(function(f){return f.g[k]!=null&&(b==null||f.g[k]>b);}).sort(function(x,y){return y.g[k]-x.g[k];}).slice(0,3);
     var tt=k==="d1"&&F[0]&&F[0].d1_tarih?' ('+esc(trD(F[0].d1_tarih))+')':'';
-    h+='<div class="dh">'+d[1]+tt+' <small>'+(b!=null?'BIST100 '+yz(b)+' · endeksi geçenler arasından':'')+'</small></div>';
+    h+='<div class="dh">'+d[1]+tt+' <small>'+(k==="d1"?'fonun son açıklanan fiyatındaki değişim · fon fiyatları bir önceki günün kapanışıyla oluştuğu için BIST100’ün bugünkü hareketiyle karşılaştırılmaz':(b!=null?'BIST100 '+yz(b)+' · endeksi geçenler arasından':''))+'</small></div>';
     if(!L.length)h+='<div class="alt" style="margin:0 2px 8px">Bu dönemde endeksi geçen fon yok.</div>';
     L.forEach(function(f,i){h+=satir(f,f.g[k],b,i);});});
   // 4) Uzun suredir iyi
