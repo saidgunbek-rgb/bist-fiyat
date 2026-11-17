@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-17T06:49:50Z",
+ "updatedAt": "2026-11-17T06:58:07Z",
  "updated": "2026-11-17",
  "bist": {
   "a1": 1.02,
@@ -18,7 +18,6 @@
    "ucret": null,
    "kurucu": "",
    "fiyat": 1.973859,
-   "gecmis_hata": "RemoteProtocolError('Server disconnected without sending a response.')",
    "g": {
     "a1": 4.98,
     "a3": 7.74,
@@ -68,10 +67,130 @@
     4,
     4
    ]
+  },
+  {
+   "k": "HFR",
+   "ad": "A1 CAPİTAL PORTFÖY HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Yoğun Hisse Senedi Şemsiye Fonu YAT",
+   "buyukluk": 129623851.95,
+   "yatirimci": 382.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 1.401188,
+   "g": {
+    "a1": 2.08,
+    "a3": -3.58,
+    "a6": -8.67,
+    "y1": 28.92
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1"
+   ],
+   "celiski": [],
+   "gun": 273,
+   "son_tarih": "2026-11-17",
+   "istikrar": [
+    4,
+    4
+   ]
+  },
+  {
+   "k": "KHA",
+   "ad": "PARDUS PORTFÖY İKİNCİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "buyukluk": 1188120.66,
+   "yatirimci": 25138.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 0.001961,
+   "g": {
+    "a1": 40.07,
+    "a3": -99.95,
+    "a6": -99.94,
+    "y1": -99.91
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1"
+   ],
+   "celiski": [],
+   "gun": 693,
+   "son_tarih": "2026-11-17",
+   "istikrar": [
+    1,
+    4
+   ]
+  },
+  {
+   "k": "BIY",
+   "ad": "AZİMUT PORTFÖY BIST 100 DIŞI ŞİRKETLER HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "buyukluk": 54035667.53,
+   "yatirimci": 170.0,
+   "risk": 0.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 0.728073,
+   "g": {
+    "a1": 0.9,
+    "a3": -47.87,
+    "a6": -44.5
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6"
+   ],
+   "celiski": [],
+   "gun": 241,
+   "son_tarih": "2026-11-17",
+   "istikrar": [
+    0,
+    3
+   ]
+  },
+  {
+   "k": "TNE",
+   "ad": "GARANTİ EMEKLİLİK VE HAYAT A.Ş. TEMİZ ENERJİ SEKTÖRÜ HİSSE SENEDİ EMEKLİLİK YATIRIM FONU",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Fonu EMK",
+   "buyukluk": 59987808.03,
+   "yatirimci": 1562.0,
+   "risk": 5.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 0.008767,
+   "g": {
+    "a1": -0.69,
+    "a3": -7.52,
+    "a6": -12.2
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6"
+   ],
+   "celiski": [],
+   "gun": 130,
+   "son_tarih": "2026-11-17",
+   "istikrar": [
+    2,
+    3
+   ]
   }
  ],
  "atlanan_sayi": {
-  "hisse fonu değil": 59,
-  "serbest fon": 9
+  "hisse fonu değil": 1855,
+  "getirisi fiyat geçmişiyle tutmayan": 184,
+  "serbest fon": 298,
+  "verisi alınamayan": 6,
+  "yabancı hisse fonu": 11,
+  "getirisi teyit edilemeyen": 15
  }
 }
