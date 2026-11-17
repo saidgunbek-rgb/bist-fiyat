@@ -1,11 +1,5 @@
 {
  "bildirim_durum": {
-  "KLSER": {
-   "bilanco": "2026/9",
-   "durum": "dikkat",
-   "hareket": "2026-11-16",
-   "kap": []
-  },
   "KTLEV": {
    "durum": "dikkat",
    "hareket": "2026-11-16",
@@ -41,7 +35,7 @@
   "t": "2026-11-17",
   "y": 29.77
  },
- "kapUpdatedAt": "2026-11-17 11:27",
+ "kapUpdatedAt": "2026-11-17 12:25",
  "stocks": {
   "KTLEV": {
    "dy": 1.4,
