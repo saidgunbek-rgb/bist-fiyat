@@ -23,6 +23,7 @@ h1{font-size:23px;margin:4px 0 2px;background:linear-gradient(90deg,#8b7cf6,#f09
 .up{color:var(--g)!important}.dn{color:var(--r)!important}
 .alt{font-size:12px;color:var(--mut);line-height:1.5}
 .ok{color:var(--g);font-weight:700}
+.bh{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin:16px 2px 8px;padding-bottom:6px;border-bottom:1px solid var(--ln)}.bh b{font-size:16px}.bh small{color:var(--mut);font-size:12px}
 .daha{display:block;width:100%;font:inherit;font-weight:700;padding:10px;border-radius:12px;border:1px dashed var(--ln);background:none;color:var(--p);margin:4px 0 12px}
 </style></head><body>
 <div><a href="index.html">‹ Panele dön</a></div>
@@ -39,23 +40,41 @@ var D=null,SIRA="y1",HEPSI=false,GRUP="Hepsi";try{GRUP=localStorage.getItem("fon
 var SL=[["y1","1 yıl"],["a6","6 ay"],["a3","3 ay"],["a1","1 ay"],["ist","İstikrar"],["buy","Büyüklük"],["ucr","Düşük ücret"]];
 var DA={a1:"1 ay",a3:"3 ay",a6:"6 ay",y1:"1 yıl"};
 function deger(f,k){if(k==="ist")return f.istikrar?f.istikrar[0]*1000+(f.g.y1||0):-1e9;if(k==="buy")return f.buyukluk||0;if(k==="ucr")return f.ucret!=null?-f.ucret:-1e9;var v=f.g[k];return v==null?-1e9:v;}
-function ciz(){var F=D.fonlar.filter(function(f){return GRUP==="Hepsi"||f.grup===GRUP;}),B=D.bist||{},var_ucret=F.some(function(f){return f.ucret!=null;});
+var BANKA="Hepsi",GOR="banka",ACB={};try{BANKA=localStorage.getItem("fon-banka")||"Hepsi";GOR=localStorage.getItem("fon-gor")||"banka";}catch(e){}
+function kart(f,i,B){var met="";["a1","a3","a6","y1"].forEach(function(k){var v=f.g[k],b=B[k];met+='<div>'+DA[k]+'<b class="'+(v==null?"":(v>=0?"up":"dn"))+'">'+y1(v)+'</b><i>'+(v==null||b==null?"":(v>b?"endeksi geçti":"endeksin altında"))+'</i></div>';});
+  var ist=f.istikrar&&f.istikrar[1]?(f.istikrar[0]===0?'Son '+f.istikrar[1]+' dönemin hiçbirinde BIST100’ü geçemedi':'Son '+f.istikrar[1]+' dönemin <b>'+f.istikrar[0]+'</b>’'+({1:"inde",2:"sinde",3:"ünde",4:"ünde"}[f.istikrar[0]]||"inde")+' BIST100’ü geçti'):'';
+  return'<div class="it"><div class="ust"><span><b>'+esc(f.k)+'</b> <span style="font-size:12px;color:var(--p);font-weight:700">'+esc(f.banka||"")+'</span><small>'+esc(f.ad)+'</small></span><span class="pn">#'+(i+1)+'</span></div><div class="met">'+met+'</div>'+
+    '<div class="alt">Büyüklük <b style="color:var(--tx)">'+para(f.buyukluk)+'</b> · '+adet(f.yatirimci)+' yatırımcı'+(f.risk?' · Risk '+f.risk+'/7':'')+(f.ucret!=null?' · Yönetim ücreti %'+String(f.ucret).replace(".",","):'')+'<br>'+ist+
+    '<br><span class="ok">✓</span> Getiriler fiyat geçmişiyle teyitli · <a href="https://www.tefas.gov.tr/FonAnaliz.aspx?FonKod='+encodeURIComponent(f.k)+'" target="_blank" rel="noopener">TEFAS’ta aç ›</a></div></div>';}
+function ciz(){var B=D.bist||{},TUM=D.fonlar;
+  var F=TUM.filter(function(f){return(GRUP==="Hepsi"||f.grup===GRUP)&&(BANKA==="Hepsi"||f.banka===BANKA);}),var_ucret=F.some(function(f){return f.ucret!=null;});
   F.sort(function(a,b){return deger(b,SIRA)-deger(a,SIRA);});
-  var h='<div class="flt">'+SL.filter(function(s){return s[0]!=="ucr"||var_ucret;}).map(function(s){return'<button data-s="'+s[0]+'"'+(s[0]===SIRA?' class="on"':'')+'>'+s[1]+'</button>';}).join("")+'</div>';
-  h+='<div class="flt" id="grp">'+["Hepsi","Kamu","Özel","Katılım"].map(function(g){var n=g==="Hepsi"?D.fonlar.length:D.fonlar.filter(function(f){return f.grup===g;}).length;return'<button data-g="'+g+'"'+(g===GRUP?' class="on"':'')+'>'+(g==="Hepsi"?"Tüm bankalar":g==="Kamu"?"Kamu bankaları":g==="Özel"?"Özel bankalar":"Katılım bankaları")+' ('+n+')</button>';}).join("")+'</div>';
+  var h='<div class="flt" id="gor"><button data-v="banka"'+(GOR==="banka"?' class="on"':'')+'>🏦 Bankalara göre</button><button data-v="liste"'+(GOR==="liste"?' class="on"':'')+'>📋 Tek liste</button></div>';
+  h+='<div class="flt" id="srt">'+SL.filter(function(s){return s[0]!=="ucr"||var_ucret;}).map(function(s){return'<button data-s="'+s[0]+'"'+(s[0]===SIRA?' class="on"':'')+'>'+s[1]+'</button>';}).join("")+'</div>';
+  h+='<div class="flt" id="grp">'+["Hepsi","Kamu","Özel","Katılım"].filter(function(g){return g==="Hepsi"||TUM.some(function(f){return f.grup===g;});}).map(function(g){var n=g==="Hepsi"?TUM.length:TUM.filter(function(f){return f.grup===g;}).length;return'<button data-g="'+g+'"'+(g===GRUP?' class="on"':'')+'>'+(g==="Hepsi"?"Tüm bankalar":g==="Kamu"?"Kamu":g==="Özel"?"Özel":"Katılım")+' ('+n+')</button>';}).join("")+'</div>';
+  var bs={};TUM.forEach(function(f){if(GRUP==="Hepsi"||f.grup===GRUP)bs[f.banka]=(bs[f.banka]||0)+1;});
+  var bl=Object.keys(bs).sort(function(a,b){return bs[b]-bs[a]||a.localeCompare(b,"tr");});
+  if(BANKA!=="Hepsi"&&!bs[BANKA]){BANKA="Hepsi";return ciz();}
+  h+='<select id="bnk" style="width:100%;margin:-2px 0 10px;padding:9px 10px;border-radius:12px;background:var(--card2);color:var(--tx);border:1px solid var(--ln);font:inherit;font-size:14px"><option value="Hepsi">Banka seç: hepsi ('+bl.length+' banka)</option>'+bl.map(function(b){return'<option value="'+esc(b)+'"'+(b===BANKA?' selected':'')+'>'+esc(b)+' ('+bs[b]+' fon)</option>';}).join("")+'</select>';
   h+='<div class="bx">Karşılaştırma · <b>BIST100</b>: 1 ay '+y1(B.a1)+' · 3 ay '+y1(B.a3)+' · 6 ay '+y1(B.a6)+' · 1 yıl '+y1(B.y1)+'</div>';
-  var G=HEPSI?F:F.slice(0,25);
-  G.forEach(function(f,i){var met="";["a1","a3","a6","y1"].forEach(function(k){var v=f.g[k],b=B[k];met+='<div>'+DA[k]+'<b class="'+(v==null?"":(v>=0?"up":"dn"))+'">'+y1(v)+'</b><i>'+(v==null||b==null?"":(v>b?"endeksi geçti":"endeksin altında"))+'</i></div>';});
-    var ist=f.istikrar&&f.istikrar[1]?(f.istikrar[0]===0?'Son '+f.istikrar[1]+' dönemin hiçbirinde BIST100’ü geçemedi':'Son '+f.istikrar[1]+' dönemin <b>'+f.istikrar[0]+'</b>’'+({1:"inde",2:"sinde",3:"ünde",4:"ünde"}[f.istikrar[0]]||"inde")+' BIST100’ü geçti'):'';
-    h+='<div class="it"><div class="ust"><span><b>'+esc(f.k)+'</b> <span style="font-size:12px;color:var(--p);font-weight:700">'+esc(f.banka||"")+'</span><small>'+esc(f.ad)+'</small></span><span class="pn">#'+(i+1)+'</span></div><div class="met">'+met+'</div>'+
-      '<div class="alt">Büyüklük <b style="color:var(--tx)">'+para(f.buyukluk)+'</b> · '+adet(f.yatirimci)+' yatırımcı'+(f.risk?' · Risk '+f.risk+'/7':'')+(f.ucret!=null?' · Yönetim ücreti %'+String(f.ucret).replace(".",","):'')+'<br>'+ist+
-      '<br><span class="ok">✓</span> Getiriler fiyat geçmişiyle teyitli · <a href="https://www.tefas.gov.tr/FonAnaliz.aspx?FonKod='+encodeURIComponent(f.k)+'" target="_blank" rel="noopener">TEFAS’ta aç ›</a></div></div>';});
-  if(!HEPSI&&F.length>25)h+='<button class="daha" id="daha">Tümünü göster ('+F.length+' fon)</button>';
+  if(GOR==="banka"&&BANKA==="Hepsi"){
+    var G={};F.forEach(function(f){(G[f.banka]=G[f.banka]||[]).push(f);});
+    Object.keys(G).sort(function(a,b){return deger(G[b][0],SIRA)-deger(G[a][0],SIRA);}).forEach(function(b){var L=G[b],ac=ACB[b],gr=L[0].grup;
+      h+='<div class="bh"><span><b>'+esc(b)+'</b> <small>'+esc(gr)+' · '+L.length+' fon</small></span><span class="alt">En iyi: '+esc(L[0].k)+' '+(SIRA in DA?DA[SIRA]+' '+y1(L[0].g[SIRA]):'')+'</span></div>';
+      (ac?L:L.slice(0,3)).forEach(function(f,i){h+=kart(f,i,B);});
+      if(L.length>3)h+='<button class="daha" data-b="'+esc(b)+'">'+(ac?esc(b)+' fonlarını daralt':esc(b)+'’nın tüm '+L.length+' fonunu göster')+'</button>';});
+  }else{
+    (HEPSI?F:F.slice(0,25)).forEach(function(f,i){h+=kart(f,i,B);});
+    if(!HEPSI&&F.length>25)h+='<button class="daha" id="daha">Tümünü göster ('+F.length+' fon)</button>';}
   var at=D.atlanan_sayi||{},atS=Object.keys(at).map(function(k){return at[k]+" "+k;}).join(", ");
-  h+='<div class="alt" style="margin-top:6px">Getiriler TEFAS verisidir ve fonun günlük fiyatlarından ayrıca hesaplanarak teyit edilir; tutmayan fon listeye alınmaz. Sadece banka portföy şirketlerinin (kamu, özel ve katılım bankaları) Borsa İstanbul hisse senedi yoğun fonları gösterilir; yabancı hisse fonları, serbest fonlar ve 10 milyon TL altı fonlar dahil değildir. Geçmiş getiri gelecek getirinin garantisi değildir; bu sayfa tarama aracıdır, al/sat önerisi değildir.'+(atS?'<br>Bu taramada dışarıda kalan: '+esc(atS)+'.':'')+'</div>';
+  h+='<div class="alt" style="margin-top:6px">Getiriler TEFAS verisidir ve fonun günlük fiyatlarından ayrıca hesaplanarak teyit edilir; tutmayan fon listeye alınmaz. Sadece seçili bankaların (Ziraat, Garanti BBVA, İş Bankası, Akbank, Yapı Kredi, DenizBank) portföy şirketlerinin Borsa İstanbul hisse senedi yoğun fonları gösterilir; yabancı hisse fonları, serbest fonlar ve 10 milyon TL altı fonlar dahil değildir. Geçmiş getiri gelecek getirinin garantisi değildir; bu sayfa tarama aracıdır, al/sat önerisi değildir.'+(atS?'<br>Bu taramada dışarıda kalan: '+esc(atS)+'.':'')+'</div>';
   document.getElementById("app").innerHTML=h;
-  Array.prototype.forEach.call(document.querySelectorAll("#grp button"),function(b){b.onclick=function(){GRUP=b.getAttribute("data-g");try{localStorage.setItem("fon-grup",GRUP);}catch(e){}HEPSI=false;ciz();};});
-  Array.prototype.forEach.call(document.querySelectorAll(".flt:not(#grp) button"),function(b){b.onclick=function(){SIRA=b.getAttribute("data-s");try{localStorage.setItem("fon-sira",SIRA);}catch(e){}ciz();};});
+  function kay(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+  Array.prototype.forEach.call(document.querySelectorAll("#gor button"),function(b){b.onclick=function(){GOR=b.getAttribute("data-v");kay("fon-gor",GOR);ciz();};});
+  Array.prototype.forEach.call(document.querySelectorAll("#grp button"),function(b){b.onclick=function(){GRUP=b.getAttribute("data-g");kay("fon-grup",GRUP);BANKA="Hepsi";kay("fon-banka",BANKA);HEPSI=false;ciz();};});
+  Array.prototype.forEach.call(document.querySelectorAll("#srt button"),function(b){b.onclick=function(){SIRA=b.getAttribute("data-s");kay("fon-sira",SIRA);ciz();};});
+  document.getElementById("bnk").onchange=function(){BANKA=this.value;kay("fon-banka",BANKA);HEPSI=true;ciz();};
+  Array.prototype.forEach.call(document.querySelectorAll(".daha[data-b]"),function(b){b.onclick=function(){var k=b.getAttribute("data-b");ACB[k]=!ACB[k];ciz();};});
   var dh=document.getElementById("daha");if(dh)dh.onclick=function(){HEPSI=true;ciz();};}
 fetch("fonlar.json?"+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(d){D=d;
   document.getElementById("sub").innerHTML="Bankaların hisse senedi yoğun fonları (TEFAS) · "+d.fonlar.length+" fon · son tarama "+trD(d.updated);ciz();})
