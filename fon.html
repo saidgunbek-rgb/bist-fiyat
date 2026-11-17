@@ -41,6 +41,7 @@ h1{font-size:23px;margin:4px 0 2px;background:linear-gradient(90deg,#8b7cf6,#f09
 .sc b{display:block;font-size:11.5px;font-weight:700;letter-spacing:-.2px}
 .sc.hl{background:rgba(139,124,246,.16)}
 .sc.hl i{color:var(--p);font-weight:700}
+.gfw{background:#1b1d29;border:1.5px solid #3c3f58;border-radius:14px;padding:10px 11px;margin-bottom:9px}.gfh{font-size:13px;font-weight:700;margin-bottom:6px;padding-right:34px}.gar{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:8px}.gab{background:var(--card2);color:var(--mut);border:1px solid transparent;border-radius:8px;padding:4px 8px;font:inherit;font-size:12px}.gab.on{border-color:var(--p);color:var(--p)}
 .daha{display:block;width:100%;font:inherit;font-weight:700;padding:10px;border-radius:12px;border:1px dashed var(--ln);background:none;color:var(--p);margin:4px 0 12px}
 
 /* Cerceve: butun fonlar ayni sade gri cerceve icinde */
@@ -84,13 +85,40 @@ function satir(f,v,b,i,hl){hl=hl||"y1";var g='';
   SUT.forEach(function(s){var x=f.g[s[0]];g+='<div class="sc'+(s[0]===hl?' hl':'')+'"><i>'+s[1]+'</i><b class="'+(x==null?"":(x>=0?"up":"dn"))+'">'+(x==null?"—":yz(x))+'</b></div>';});
   return'<div class="fs fs2" data-ac="'+esc(f.k)+'"><div class="fst"><span class="fn">'+(i+1)+'</span><span class="fk"><b>'+esc(f.k)+'</b>'+(f.her_yonu?' ⭐':'')+' <small>'+esc(f.banka||"")+'</small></span><span class="fp">'+(f.puan!=null?f.puan+' puan':"—")+'</span></div><div class="sg">'+g+'</div></div>';}
 
+
+var GAR=12,SERI=null;
+function seriYukle(cb){if(SERI)return cb();fetch("fon-seri.json?"+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(d){SERI=d;cb();}).catch(function(){SERI={hata:1};cb();});}
+function grafikFon(f){
+  var ar=[[3,"3 ay"],[6,"6 ay"],[12,"1 yıl"],[36,"3 yıl"],[60,"5 yıl"],[0,"Tümü"]].map(function(a){return'<button class="gab'+(a[0]===GAR?' on':'')+'" data-gar="'+a[0]+'" data-k="'+esc(f.k)+'">'+a[1]+'</button>';}).join("");
+  var bas='<div class="gfw"><div class="gfh"><span>'+esc(f.k)+' ve BIST100</span></div><div class="gar">'+ar+'</div>';
+  if(!SERI)return bas+'<div class="alt" style="padding:30px 0;text-align:center">Grafik yükleniyor…</div></div>';
+  var S=SERI.fon&&SERI.fon[f.k],BS=SERI.bist||[];
+  if(!S||S.length<3)return bas+'<div class="alt" style="padding:20px 0;text-align:center">Bu fonun grafik verisi henüz yok.</div></div>';
+  var son=S[S.length-1][0],ls="";if(GAR){var lim=new Date(son);lim.setMonth(lim.getMonth()-GAR);ls=lim.toISOString().slice(0,10);}
+  var s=S.filter(function(p){return p[0]>=ls;}),genc=GAR&&(new Date(S[0][0])-new Date(ls))>14*864e5;
+  var bmap={};BS.forEach(function(p){bmap[p[0]]=p[1];});
+  var f0=s[0][1],b0=null,bs=[];s.forEach(function(p){var v=bmap[p[0]];if(v!=null&&b0==null)b0=v;bs.push(v!=null&&b0?v/b0*100:null);});
+  var fs=s.map(function(p){return p[1]/f0*100;}),all=fs.concat(bs.filter(function(x){return x!=null;})),lo=Math.min.apply(null,all),hi=Math.max.apply(null,all),pd=(hi-lo)*.08;lo-=pd;hi+=pd;
+  var W=340,H=180,L=4,R=44,T=8,B=18,w=W-L-R,hh=H-T-B;function X(i){return L+i/(s.length-1)*w;}function Y(v){return T+(hi-v)/(hi-lo)*hh;}
+  var g='<svg viewBox="0 0 '+W+' '+H+'" style="width:100%;height:auto;display:block">';
+  g+='<line x1="'+L+'" x2="'+(L+w)+'" y1="'+Y(100).toFixed(1)+'" y2="'+Y(100).toFixed(1)+'" stroke="#3c3f58" stroke-dasharray="3 3"/>';
+  var pb=[];bs.forEach(function(v,i){if(v!=null)pb.push(X(i).toFixed(1)+","+Y(v).toFixed(1));});
+  g+='<polyline fill="none" stroke="#f0957a" stroke-width="1.5" opacity=".9" points="'+pb.join(" ")+'"/>';
+  g+='<polyline fill="none" stroke="#a594ff" stroke-width="2.2" points="'+fs.map(function(v,i){return X(i).toFixed(1)+","+Y(v).toFixed(1);}).join(" ")+'"/>';
+  var fe=fs[fs.length-1],be=bs[bs.length-1];
+  function et(v,c){var p=v-100;return'<text x="'+(L+w+4)+'" y="'+(Y(v)+4).toFixed(1)+'" font-size="10.5" fill="'+c+'">'+(p>=0?"+":"−")+Math.abs(p).toFixed(Math.abs(p)<10?1:0).replace(".",",")+'%</text>';}
+  g+=et(fe,"#a594ff");if(be!=null&&Math.abs(Y(be)-Y(fe))>11)g+=et(be,"#f0957a");
+  g+='<text x="'+L+'" y="'+(H-3)+'" font-size="10" fill="#9a9ab0">'+trD(s[0][0])+'</text><text x="'+(L+w)+'" y="'+(H-3)+'" font-size="10" fill="#9a9ab0" text-anchor="end">'+trD(s[s.length-1][0])+'</text></svg>';
+  return bas+g+'<div class="alt" style="margin-top:4px"><span style="color:#a594ff">━ '+esc(f.k)+'</span> &nbsp; <span style="color:#f0957a">━ BIST100</span> &nbsp; · başlangıç = 100'+(genc?'<br>Fon '+esc(trD(S[0][0]))+' tarihinden beri var; grafik o tarihten başlıyor.':'')+(GAR===0?'<br>Tümü: fonun ilk fiyatından bugüne.':'')+'</div></div>';}
 function pencere(k){var f=D.fonlar.filter(function(x){return x.k===k;})[0];if(!f)return;
   var o=document.getElementById("pop");if(!o){o=document.createElement("div");o.id="pop";document.body.appendChild(o);}
-  o.innerHTML='<div class="pk"><button class="px" aria-label="Kapat">✕</button>'+kart(f,0,D.bist||{},true).replace(/<span class="pn">[^]*?<\/span><\/div>/,'<span class="pn">'+(f.her_yonu?'⭐ ':'')+(f.puan!=null?f.puan+'/100':'')+'</span></div>')+'<button class="pkap">Kapat</button></div>';
+  o.innerHTML='<div class="pk"><button class="px" aria-label="Kapat">✕</button>'+grafikFon(f)+kart(f,0,D.bist||{},true).replace(/<span class="pn">[^]*?<\/span><\/div>/,'<span class="pn">'+(f.her_yonu?'⭐ ':'')+(f.puan!=null?f.puan+'/100':'')+'</span></div>')+'<button class="pkap">Kapat</button></div>';
   o.className="on";document.body.style.overflow="hidden";
   function kapat(){o.className="";document.body.style.overflow="";}
   o.onclick=function(e){if(e.target===o)kapat();};
-  o.querySelector(".px").onclick=kapat;o.querySelector(".pkap").onclick=kapat;}
+  o.querySelector(".px").onclick=kapat;o.querySelector(".pkap").onclick=kapat;
+  Array.prototype.forEach.call(o.querySelectorAll(".gab"),function(b){b.onclick=function(){GAR=+b.getAttribute("data-gar");var sc=o.querySelector(".pk").scrollTop;pencere(b.getAttribute("data-k"));o.querySelector(".pk").scrollTop=sc;};});
+  if(!SERI)seriYukle(function(){if(o.className==="on")pencere(k);});}
 document.addEventListener("keydown",function(e){if(e.key==="Escape"){var o=document.getElementById("pop");if(o){o.className="";document.body.style.overflow="";}}});
 function favHtml(B){var F=D.fonlar,h='',EN=D.enf;
   h+='<div class="bx">Bu bölüm her akşamki taramadan sonra kendiliğinden yenilenir. Bir fona dokununca bilgileri küçük bir pencerede açılır. <b>Puan</b> (0–100): fonun 1 ay, 3 ay, 6 ay, 1 yıl, 3 yıl getirisi, getiri/risk ve en büyük düşüşte diğer banka fonları arasındaki sırasının ortalamasıdır.</div>';
