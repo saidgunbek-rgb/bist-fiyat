@@ -22,9 +22,9 @@ jobs:
   yorum:
     runs-on: ubuntu-latest
     env:
-      KARNE: "THYAO,FROTO,KTLEV"
+      KARNE: "THYAO"
       # Kisa vadeli hisselerde KAP ve bilanco yorumu yapilmaz; sadece finansal rapor rakamlari gosterilir
-      VADE: "THYAO=uzun,FROTO=uzun,KTLEV=kisa"
+      VADE: "THYAO=uzun"
     steps:
       - uses: actions/checkout@v4
 

@@ -22,7 +22,7 @@ jobs:
   guncelle:
     runs-on: ubuntu-latest
     env:
-      HISSELER: "THYAO,FROTO,KTLEV"
+      HISSELER: "THYAO"
     steps:
       - uses: actions/checkout@v4
 

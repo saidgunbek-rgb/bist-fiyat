@@ -20,9 +20,9 @@ jobs:
   karne:
     runs-on: ubuntu-latest
     env:
-      KARNE: "THYAO,FROTO,KTLEV"
+      KARNE: "THYAO"
       # Her hissenin vadesi: uzun = yatirim (200 gunluk ort., 1 yillik seviyeler), kisa = kisa vadeli islem (20 gunluk ort., 3 aylik seviyeler)
-      VADE: "THYAO=uzun,FROTO=uzun,KTLEV=kisa"
+      VADE: "THYAO=uzun"
     steps:
       - uses: actions/checkout@v4
 
