@@ -1,9 +1,8 @@
 {
  "bist": {
-  "b": 11661.0,
-  "d": "2026-11-17",
+  "b": 11477.41,
+  "d": "2026-11-18",
   "gunler": {
-   "2026-11-04": true,
    "2026-11-05": true,
    "2026-11-06": true,
    "2026-11-09": true,
@@ -12,7 +11,8 @@
    "2026-11-12": true,
    "2026-11-13": true,
    "2026-11-16": true,
-   "2026-11-17": true
+   "2026-11-17": true,
+   "2026-11-18": true
   },
   "kaynaklar": [
    "yahoo",
@@ -32,6 +32,14 @@
   "karne|2026-11-17": {
    "n": 1,
    "son": "2026-11-18T16:57"
+  },
+  "karne|2026-11-18": {
+   "n": 1,
+   "son": "2026-11-18T19:26"
+  },
+  "kutuphane|2026-11-18": {
+   "n": 1,
+   "son": "2026-11-18T19:26"
   }
  },
  "enf": {
@@ -39,48 +47,48 @@
   "t": "2026-11-18",
   "y": 29.77
  },
- "islem_gunu": "2026-11-17",
+ "islem_gunu": "2026-11-18",
  "kaynaklar": {
   "fiyat": {
    "deneme": 0,
    "durum": "ok",
    "maks": 4,
    "not": "",
-   "saat": "2026-11-18T12:57:47Z",
-   "veri": "2026-11-17"
+   "saat": "2026-11-18T16:24:18Z",
+   "veri": "2026-11-18"
   },
   "fon": {
    "deneme": 0,
-   "durum": "ok",
+   "durum": "bekliyor",
    "maks": 4,
-   "not": "",
+   "not": "Bugünün fon taraması yok",
    "saat": "2026-11-17T18:28:04Z",
    "veri": "2026-11-17"
   },
   "kap": {
    "deneme": 0,
-   "durum": "deneniyor",
+   "durum": "ok",
    "maks": 4,
-   "not": "Son KAP taraması gecikti",
-   "saat": "2026-11-18 16:00",
-   "veri": "2026-11-18 16:00"
+   "not": "",
+   "saat": "2026-11-18 19:19",
+   "veri": "2026-11-18 19:19"
   },
   "karne": {
    "deneme": 1,
    "durum": "deneniyor",
    "maks": 4,
-   "not": "THYAO fiyatı uyuşmuyor, FROTO fiyatı uyuşmuyor, KTLEV fiyatı uyuşmuyor",
-   "saat": "2026-11-18T12:59:50Z",
+   "not": "bugünün hesabı yok, THYAO fiyatı uyuşmuyor",
+   "saat": "2026-11-18T13:58:13Z",
    "veri": "2026-11-18"
   },
   "kutuphane": {
-   "deneme": 0,
-   "durum": "ok",
+   "deneme": 1,
+   "durum": "deneniyor",
    "maks": 4,
-   "not": "",
+   "not": "bugünün verisi yok",
    "saat": "2026-11-17T18:57:13Z",
    "veri": "2026-11-17"
   }
  },
- "kontrolAt": "2026-11-18T13:57:04Z"
+ "kontrolAt": "2026-11-18T16:26:35Z"
 }
