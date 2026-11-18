@@ -231,6 +231,7 @@ function render(){
     '<div class="'+cls(last.kz)+'" style="font-weight:600;margin-top:4px">Toplam: '+ar(last.kz)+sg(last.kz)+' TL ('+pc(last.kp)+')</div>'+
     (firstBuy()?'<div style="margin-top:3px;font-size:12px;opacity:.85">İlk alış: '+trDate(firstBuy())+' · Güncel: '+trDate(last.d)+'</div>':'')+
     (last.dc===null?'':'<div class="'+cls(last.dc)+'" style="margin-top:2px">Günlük: '+ar(last.dc)+sg(last.dc)+' TL ('+pc(last.dp)+')</div>')+
+    (last.bp===null||last.bp===undefined?'':'<div style="margin-top:2px;font-size:12px"><span class="'+cls(last.bp)+'" style="padding:2px 8px;margin-top:5px">BIST 100 günlük: '+ar(last.bp)+pc(last.bp)+'</span></div><div style="margin-top:2px;font-size:11px;opacity:.8">BIST 100 kapanış: '+fmt(last.b)+(last.dp===null?'':' · Portföy bugün BIST\'in '+Math.abs((last.dp-last.bp)*100).toFixed(2).replace('.',',')+' puan '+((last.dp-last.bp)>=0?'önünde':'gerisinde'))+'</div>')+
     '<div class="mut" style="margin-top:6px">Kalan maliyet: '+fmt(last.cb)+' TL'+(last.r?' · Gerçekleşen K/Z: '+sg(last.r)+' TL':'')+(last.dv?' · Temettü: '+sg(last.dv)+' TL':'')+'</div>'+cmpHtml()+sumNote(last,r);}
   var h='<tr><th>Tarih</th>'+pth()+'<th>Değer</th><th>Toplam K/Z</th><th>%</th><th>Günlük</th><th>Gün %</th><th>BIST 100</th><th>BIST %</th><th></th></tr>';
   r.forEach(function(x){
