@@ -370,61 +370,18 @@
     "THYAO": 322.25
    },
    "u": 50.42
+  },
+  "2026-11-18": {
+   "b": 11477.41,
+   "e": 55.34,
+   "g": 6079.2,
+   "p": {
+    "THYAO": 323.75
+   },
+   "u": 50.44
   }
  },
  "kontrol": {
-  "FROTO": {
-   "2026-11-12": [
-    "borsapy",
-    "isyatirim",
-    "yahoo"
-   ],
-   "2026-11-13": [
-    "borsapy",
-    "isyatirim",
-    "yahoo"
-   ],
-   "2026-11-16": [
-    "borsapy",
-    "isyatirim",
-    "yahoo"
-   ],
-   "2026-11-17": [
-    "borsapy",
-    "isyatirim",
-    "yahoo"
-   ],
-   "2026-11-18": [
-    "borsapy",
-    "yahoo"
-   ]
-  },
-  "KTLEV": {
-   "2026-11-12": [
-    "borsapy",
-    "isyatirim",
-    "yahoo"
-   ],
-   "2026-11-13": [
-    "borsapy",
-    "isyatirim",
-    "yahoo"
-   ],
-   "2026-11-16": [
-    "borsapy",
-    "isyatirim",
-    "yahoo"
-   ],
-   "2026-11-17": [
-    "borsapy",
-    "isyatirim",
-    "yahoo"
-   ],
-   "2026-11-18": [
-    "borsapy",
-    "yahoo"
-   ]
-  },
   "THYAO": {
    "2026-11-12": [
     "borsapy",
@@ -448,10 +405,11 @@
    ],
    "2026-11-18": [
     "borsapy",
+    "isyatirim",
     "yahoo"
    ]
   }
  },
  "updated": "2026-11-18",
- "updatedAt": "2026-11-18T12:57:47Z"
+ "updatedAt": "2026-11-18T16:24:18Z"
 }
