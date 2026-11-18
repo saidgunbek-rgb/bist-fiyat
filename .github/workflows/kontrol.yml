@@ -1,0 +1,310 @@
+# Veri kontrol: diger otomatik islerin sonucunu duzenli olarak kontrol eder ve durum.json dosyasina yazar.
+# Bir veri zamaninda gelmediyse ya da teyit edilemediyse ilgili isi kendiliginden yeniden calistirir
+# (ilk 4 deneme 25 dk arayla, sonra 2 saat arayla 4 deneme daha). Panelin ustundeki "Veri durumu" satiri bu dosyadan gelir.
+# BIST 100 kapanisini ikinci bir kaynakla (borsapy) da teyit eder. Hisse listesi fiyat.yml'deki HISSELER satirindan okunur.
+name: Veri kontrol
+
+on:
+  schedule:
+    - cron: "7,27,47 15-20 * * 1-5"   # hafta ici 18:07 - 23:47 (Turkiye saati), 20 dakikada bir
+    - cron: "47 5-14 * * 1-5"         # hafta ici 08:47 - 17:47, saatte bir (sabah karnesi ve KAP)
+    - cron: "47 9 * * 0,6"            # hafta sonu 12:47 (KAP)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: kontrol
+  cancel-in-progress: false
+
+jobs:
+  kontrol:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: borsapy kur
+        continue-on-error: true
+        run: pip install borsapy 2>&1 | tail -1
+
+      - name: Kontrol et, gerekirse yeniden calistir
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import json, os, sys, time, datetime, subprocess, urllib.request
+
+          UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36"}
+          NOW = datetime.datetime.now(datetime.timezone.utc).replace(tzinfo=None)
+          if os.environ.get("TEST_NOW"):
+              NOW = datetime.datetime.fromisoformat(os.environ["TEST_NOW"])          # test icin (UTC)
+          TR = NOW + datetime.timedelta(hours=3)
+          BUGUN = TR.strftime("%Y-%m-%d")
+          import re
+          def hisseler():
+              # Hisse listesi fiyat.yml'deki HISSELER satirindan okunur (portfoy degisince burayi ayrica degistirmek gerekmez)
+              try:
+                  m = re.search(r'HISSELER:\s*"([^"]*)"', open(".github/workflows/fiyat.yml").read())
+                  return [x.split("=")[0].strip().upper() for x in m.group(1).split(",") if x.strip()]
+              except Exception:
+                  return []
+          HISSELER = hisseler()
+          MAKS_DENEME = 4          # ilk 4 deneme 25 dakika arayla (sonra "basarisiz" gosterilir ama denemeye devam edilir)
+          ARA_DK = 25
+          UZUN_DENEME, UZUN_ARA_DK = 8, 120   # 5.-8. denemeler 2 saat arayla
+          # Ayni sirada (concurrency) calisan isler: biri calisirken digerini baslatmak sirada bekleyeni iptal ettirebilir
+          GRUP = {"fiyat.yml": ["fiyat.yml", "karne.yml", "kap.yml"], "karne.yml": ["fiyat.yml", "karne.yml", "kap.yml"],
+                  "kap.yml": ["fiyat.yml", "karne.yml", "kap.yml"], "kutuphane.yml": ["kutuphane.yml"], "fon.yml": ["fon.yml"]}
+
+          def oku(f):
+              try:
+                  return json.load(open(f))
+              except Exception:
+                  return {}
+
+          def iso_tr(s):
+              """'2026-11-17T16:20:48Z' (UTC) ya da '2026-11-18 09:21' (TR) -> TR datetime"""
+              if not s:
+                  return None
+              try:
+                  if s.endswith("Z"):
+                      return datetime.datetime.strptime(s, "%Y-%m-%dT%H:%M:%SZ") + datetime.timedelta(hours=3)
+                  return datetime.datetime.strptime(s[:16], "%Y-%m-%d %H:%M")
+              except Exception:
+                  return None
+
+          def tr_saat(gun, hh, mm):
+              return datetime.datetime.strptime(gun, "%Y-%m-%d").replace(hour=hh, minute=mm)
+
+          def get(url):
+              for i in range(3):
+                  try:
+                      return json.load(urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=25))
+                  except Exception as e:
+                      hata = e
+                      time.sleep(3 * (i + 1))
+              raise hata
+
+          # ---------------- BIST 100: islem gunleri ve kapanis (Yahoo + borsapy) ----------------
+          def yahoo_bist():
+              if os.environ.get("TEST_YAHOO"):
+                  return json.loads(os.environ["TEST_YAHOO"])
+              r = get("https://query1.finance.yahoo.com/v8/finance/chart/XU100.IS?range=1mo&interval=1d")["chart"]["result"][0]
+              off = r["meta"].get("gmtoffset", 10800); q = r["indicators"]["quote"][0]; out = {}
+              for i, t in enumerate(r.get("timestamp") or []):
+                  c = q["close"][i]
+                  if c:
+                      out[datetime.datetime.utcfromtimestamp(t + off).strftime("%Y-%m-%d")] = round(float(c), 2)
+              return out
+
+          def borsapy_bist():
+              if os.environ.get("TEST_BORSAPY"):
+                  return json.loads(os.environ["TEST_BORSAPY"])
+              import borsapy as bp
+              df = bp.Ticker("XU100").history(period="1mo"); out = {}
+              for idx, row in df.iterrows():
+                  c = row.get("Close")
+                  if c == c and c:
+                      out[str(idx)[:10]] = round(float(c), 2)
+              return out
+
+          KAY = {}
+          for ad, f in (("yahoo", yahoo_bist), ("borsapy", borsapy_bist)):
+              try:
+                  KAY[ad] = f()
+              except Exception as e:
+                  print("BIST kaynagi alinamadi:", ad, e)
+                  KAY[ad] = {}
+
+          gunler = set()
+          for v in KAY.values():
+              gunler |= set(v)
+          p = oku("prices.json")
+          gunler |= {d for d, x in (p.get("days") or {}).items() if x.get("p")}
+          kapanis_vakti = (TR.hour, TR.minute) >= (18, 15)
+          hafta_ici = TR.weekday() < 5
+          bugun_islem = BUGUN in set().union(*[set(v) for v in KAY.values()]) if any(KAY.values()) else hafta_ici
+          if bugun_islem and kapanis_vakti:
+              E = BUGUN
+          else:
+              gecmis = sorted(d for d in gunler if d < BUGUN)
+              E = gecmis[-1] if gecmis else BUGUN
+          seans_acik = hafta_ici and (9, 30) <= (TR.hour, TR.minute) < (18, 15)
+          bugun_kapali = hafta_ici and kapanis_vakti and any(KAY.values()) and not bugun_islem
+          print("Saat (TR):", TR.strftime("%Y-%m-%d %H:%M"), "| beklenen kapanis gunu:", E, "| bugun piyasa kapali:", bugun_kapali)
+
+          # ---------------- Kontroller ----------------
+          eski = oku("durum.json")
+          deneme = eski.get("deneme") or {}
+          K = {}
+
+          def kayit(ad, ok, veri, saat, not_, due, wf):
+              K[ad] = {"ok": ok, "veri": veri, "saat": saat, "not": not_, "due": due, "wf": wf}
+
+          # BIST 100 kapanisi iki kaynakla teyit (panelde gosterilen deger prices.json'daki)
+          pd = (p.get("days") or {}).get(E) or {}
+          b = pd.get("b")
+          ky = {k: v.get(E) for k, v in KAY.items() if v.get(E)}
+          uyan = [k for k, v in ky.items() if b and abs(v / b - 1) <= 0.0005]
+          bist = {"d": E, "b": b, "teyit": bool(b) and len(uyan) >= 2, "kaynaklar": uyan, "gunler": {}}
+          # Son gunlerin BIST 100 kapanislari da teyit edilir (panelde gunluk degisim iki gunun kapanisindan hesaplanir)
+          for g in sorted(d for d, x in (p.get("days") or {}).items() if (x.get("b") or 0) > 0)[-10:]:
+              bg = p["days"][g]["b"]
+              bist["gunler"][g] = sum(1 for v in KAY.values() if v.get(g) and abs(v[g] / bg - 1) <= 0.0005) >= 2
+          if b and len(uyan) < 2:
+              print("BIST teyit edilemedi:", b, ky)
+
+          # 1) Fiyat: E gunu tum hisseler en az 2 kaynakla teyitli + BIST 100 var
+          pd = (p.get("days") or {}).get(E) or {}
+          kon = p.get("kontrol") or {}
+          eksik = [s for s in HISSELER if not (pd.get("p") or {}).get(s) or len(((kon.get(s) or {}).get(E)) or []) < 2]
+          f_ok = not eksik and bist["teyit"]
+          kayit("fiyat", f_ok, E if f_ok else (p.get("updated")), p.get("updatedAt"),
+                "" if f_ok else ("Teyit edilemeyen: " + ", ".join(eksik) if eksik else ("BIST 100 kapanışı iki kaynakla teyit edilemedi" if b else "BIST 100 kapanışı yok")),
+                tr_saat(E, 18, 35), "fiyat.yml")
+
+          # 2) Karne: E kapanisindan sonra hesaplanmis, fiyatlar prices.json ile ayni, eksik/yedek bolum yok
+          k = oku("karne.json")
+          k_t = iso_tr(k.get("updatedAt"))
+          st = k.get("stocks") or {}
+          k_sorun = []
+          if not k_t or k_t < tr_saat(E, 18, 10):
+              k_sorun.append("bugünün hesabı yok")
+          for s in HISSELER:
+              x = st.get(s) or {}
+              if f_ok and abs((x.get("price") or 0) - pd["p"][s]) > 0.005:
+                  k_sorun.append(s + " fiyatı uyuşmuyor")
+              if x.get("carry") or x.get("dunden"):
+                  k_sorun.append(s + " bazı bölümler önceki günden")
+          kayit("karne", not k_sorun, E if not k_sorun else (k.get("updated")), k.get("updatedAt"), ", ".join(k_sorun),
+                tr_saat(E, 19, 0), "karne.yml")
+
+          # 3) KAP: son planli taramadan sonra guncellenmis olmali
+          def son_kap_slotu():
+              t = TR - datetime.timedelta(minutes=25)
+              for _ in range(14 * 24):
+                  hi = t.weekday() < 5
+                  if (hi and t.hour in range(8, 21, 2) and t.minute >= 17) or (not hi and t.hour == 12 and t.minute >= 17):
+                      return t.replace(minute=17, second=0, microsecond=0)
+                  t = (t - datetime.timedelta(hours=1)).replace(minute=59)
+              return None
+          slot = son_kap_slotu()
+          kap_t = iso_tr(k.get("kapUpdatedAt"))
+          kap_ok = bool(kap_t) and (slot is None or kap_t >= slot - datetime.timedelta(minutes=5))
+          kayit("kap", kap_ok, k.get("kapUpdatedAt"), k.get("kapUpdatedAt"), "" if kap_ok else "Son KAP taraması gecikti",
+                (slot or TR) + datetime.timedelta(minutes=25), "kap.yml")
+
+          # 4) Kutuphane: E kapanisindan sonra, tum hisseler yeni, onceki gunden bolum yok
+          u = oku("kutuphane.json")
+          u_t = iso_tr(u.get("updatedAt"))
+          u_sorun = []
+          if not u_t or u_t < tr_saat(E, 18, 10):
+              u_sorun.append("bugünün verisi yok")
+          if u.get("korunan"):
+              u_sorun.append("alınamayan: " + ", ".join(u["korunan"]))
+          dd = [s for s, x in (u.get("stocks") or {}).items() if x.get("dunden")]
+          if dd:
+              u_sorun.append("bazı bölümler önceki günden: " + ", ".join(dd))
+          kayit("kutuphane", not u_sorun, u.get("updated"), u.get("updatedAt"), ", ".join(u_sorun), tr_saat(E, 19, 15), "kutuphane.yml")
+
+          # 5) Fon: E aksami taranmis
+          fo = oku("fonlar.json")
+          fo_t = iso_tr(fo.get("updatedAt"))
+          fo_ok = bool(fo_t) and fo_t >= tr_saat(E, 20, 0) and len(fo.get("fonlar") or []) > 0
+          kayit("fon", fo_ok, fo.get("updated"), fo.get("updatedAt"), "" if fo_ok else "Bugünün fon taraması yok", tr_saat(E, 21, 0), "fon.yml")
+
+          # ---------------- Gerekirse yeniden calistir ----------------
+          def calisiyor(wf):
+              return any(_calisiyor(w) for w in GRUP.get(wf, [wf]))
+
+          def _calisiyor(wf):
+              if os.environ.get("TEST_NOW"):
+                  return False
+              try:
+                  out = subprocess.check_output(["gh", "run", "list", "--workflow", wf, "--limit", "3", "--json", "status"], text=True)
+                  return any(r.get("status") in ("queued", "in_progress", "waiting", "pending", "requested") for r in json.loads(out))
+              except Exception as e:
+                  print("Calisma listesi alinamadi:", wf, e)
+                  return False
+
+          def calistir(wf):
+              if os.environ.get("TEST_NOW"):
+                  print("TEST: calistirilacakti", wf); return True
+              try:
+                  subprocess.check_call(["gh", "workflow", "run", wf]); return True
+              except Exception as e:
+                  print("Calistirilamadi:", wf, e); return False
+
+          out = {}
+          for ad, x in K.items():
+              anahtar = "%s|%s" % (ad, E if ad != "kap" else (x["due"].strftime("%Y-%m-%d %H")))
+              d = deneme.get(anahtar) or {"n": 0, "son": None}
+              if x["ok"]:
+                  durum = "ok"
+              elif TR < x["due"]:
+                  durum = "bekliyor"            # yeni veri henuz gelme saatinde degil; gosterilen onceki dogrulanmis veri
+              else:
+                  # Kutuphane/karne fiyat dosyasina bagli: once fiyat duzelsin
+                  bagli = ad == "karne" and not K["fiyat"]["ok"]      # karne fiyat dosyasina bagli: once fiyat duzelsin
+                  if bagli:
+                      durum = "basarisiz" if out["fiyat"]["durum"] == "basarisiz" else "deneniyor"
+                  elif ad in ("karne", "kutuphane") and seans_acik:
+                      # Seans acikken yeniden calistirilmaz: kaynaklar anlik (kapanis olmayan) fiyat verir.
+                      # Kapanistan sonra (18:15) normal denemeler surer; bu sirada onceki dogrulanmis veri gosterilir.
+                      durum = "deneniyor"
+                      x["not"] = (x["not"] + " · " if x["not"] else "") + "seans kapanınca (18:15 sonrası) yeniden hesaplanacak"
+                  elif calisiyor(x["wf"]):
+                      durum = "deneniyor" if d["n"] < MAKS_DENEME else "basarisiz"
+                  else:
+                      if d["n"] < UZUN_DENEME:
+                          son = datetime.datetime.fromisoformat(d["son"]) if d["son"] else None
+                          ara = ARA_DK if d["n"] < MAKS_DENEME else UZUN_ARA_DK
+                          if son is None or (TR - son).total_seconds() >= ara * 60:
+                              if calistir(x["wf"]):
+                                  d = {"n": d["n"] + 1, "son": TR.strftime("%Y-%m-%dT%H:%M")}
+                                  print("Yeniden calistirildi:", x["wf"], "deneme", d["n"])
+                      son = datetime.datetime.fromisoformat(d["son"]) if d["son"] else None
+                      bitti = d["n"] > MAKS_DENEME or (d["n"] == MAKS_DENEME and son and (TR - son).total_seconds() >= ARA_DK * 60)
+                      durum = "basarisiz" if bitti else "deneniyor"
+                  deneme[anahtar] = d
+              out[ad] = {"durum": durum, "veri": x["veri"], "saat": x["saat"], "not": "" if x["ok"] else x["not"],
+                         "deneme": (deneme.get(anahtar) or {}).get("n", 0), "maks": MAKS_DENEME}
+
+          # eski deneme kayitlarini temizle (3 gunden eski)
+          sinir = (TR - datetime.timedelta(days=3)).strftime("%Y-%m-%d")
+          deneme = {a: v for a, v in deneme.items() if a.split("|", 1)[1][:10] >= sinir}
+
+          yeni = {"islem_gunu": E, "kaynaklar": out, "bist": bist, "deneme": deneme, "enf": k.get("enf")}
+          degisti = {k: v for k, v in eski.items() if k != "kontrolAt"} != yeni
+          eski_t = iso_tr(eski.get("kontrolAt"))
+          if degisti or not eski_t or (TR - eski_t).total_seconds() > 3 * 3600:
+              yeni["kontrolAt"] = NOW.strftime("%Y-%m-%dT%H:%M:%SZ")
+              json.dump(yeni, open("durum.json", "w"), indent=1, ensure_ascii=False, sort_keys=True)
+              print("durum.json yazildi")
+          else:
+              print("Degisiklik yok")
+          for a, v in out.items():
+              print("%-10s %-10s %s %s" % (a, v["durum"], v["veri"], v["not"]))
+          PY
+
+      - name: Kaydet
+        run: |
+          git config user.name "kontrol-bot"
+          git config user.email "kontrol-bot@users.noreply.github.com"
+          git add durum.json 2>/dev/null || exit 0
+          git diff --cached --quiet && exit 0
+          git commit -m "Veri durumu"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push && exit 0
+            sleep 5
+          done
+          exit 1
+
+      - name: Zamanlamayi canli tut
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow enable kontrol.yml --repo "$GITHUB_REPOSITORY"
