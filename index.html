@@ -68,6 +68,12 @@ button.rb.on{background:var(--bd);color:var(--tx)}
 .cl>summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:10px}.cl>summary::-webkit-details-marker{display:none}.cl>summary h2{margin:0}.cl>summary::after{content:"Göster ▾";font-size:12.5px;font-weight:700;color:var(--b1);border:1px solid var(--bd);border-radius:8px;padding:4px 10px;white-space:nowrap}.cl[open]>summary::after{content:"Gizle ▴"}.cl[open]>summary{margin-bottom:10px}
 .ac{margin-top:12px;padding-top:10px;border-top:1px dashed var(--bd);font-size:12.5px;line-height:1.5;color:var(--mut)}.ac b{color:var(--tx)}
 .ac summary{cursor:pointer;font-weight:700;color:var(--b1);font-size:13px;padding:2px 0}.ac[open] summary{margin-bottom:6px}
+.vd{border-radius:10px;margin:-6px 0 12px;font-size:12.5px;line-height:1.5;padding:7px 12px;background:rgba(127,127,127,.12);color:var(--mut)}
+.vd summary{cursor:pointer;list-style:none;font-weight:600}.vd summary::-webkit-details-marker{display:none}.vd summary b{font-weight:600;margin-right:6px;white-space:nowrap}
+.vd.ok{background:var(--posbg);color:var(--pos)}.vd.bk{background:#fff4dc;color:#a15c00}.vd.no{background:#ffe8d6;color:#b54708}
+.vd .vs{color:var(--tx);font-weight:400;padding:6px 0;border-top:1px solid rgba(127,127,127,.25)}.vd .vs:first-of-type{margin-top:6px}.vd .vs small{display:block;color:var(--mut);font-size:11.5px}
+:root[data-theme="dark"] .vd.bk{background:#3a2a10;color:#ffcf70}:root[data-theme="dark"] .vd.no{background:#3d2312;color:#ffb27a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .vd.bk{background:#3a2a10;color:#ffcf70}:root:not([data-theme="light"]) .vd.no{background:#3d2312;color:#ffb27a}}
 .ast{padding:10px 12px;border-radius:10px;margin:0 0 12px;font-size:13.5px;font-weight:600;line-height:1.45}.ast.ok{background:var(--posbg);color:var(--pos)}.ast.no{background:var(--negbg);color:var(--neg)}.ast.na{background:rgba(127,127,127,.14);color:var(--mut)}
 .dk h2{margin:0 0 8px}
 #dik.uy{border-top-color:#f97316;background:#fff6ec;box-shadow:0 2px 12px rgba(249,115,22,.18)}#dik.uy h2{color:#e2580b;display:flex;align-items:center;gap:8px}
@@ -105,6 +111,7 @@ window.fetch=function(){return of.apply(this,arguments).then(function(r){try{var
 <h1>📈 Günlük Kâr/Zarar Takibi</h1>
 
 <div class="ast na" id="ast">Otomatik fiyat güncellemesi kontrol ediliyor…</div>
+<details class="vd" id="vd" style="display:none"></details>
 <div class="card" id="sum"></div>
 <details class="ac" style="margin:-4px 6px 14px;border-top:0;padding-top:0"><summary>🔗 Özet kartı neye bağlı?</summary>• <b>Değer</b> = eldeki adet × son fiyat. Adet ve maliyet “Alım / satım işlemleri”nden, fiyat “Gün sonu fiyatlarını gir”den gelir.<br>• <b>Toplam K/Z</b> = değer − kalan maliyet + gerçekleşen K/Z (satışlardan) + temettü.<br>• <b>Günlük</b> = toplam K/Z’nin bir önceki kayıtlı güne göre farkı.<br>• İşlem veya temettü eklersen, düzenlersen ya da silersen kart hemen değişir. Gün sonu fiyatı kaydedersen “(tahmini)” ibaresi kalkar ve rakam kesinleşir.</details>
 
@@ -223,6 +230,16 @@ function latest(r){for(var i=0;i<r.length;i++){if(r[i].v!==null)return r[i];}ret
 function cmpHtml(){var a=rows().filter(function(x){return x.v!==null&&x.b>0;}).reverse();if(a.length<2)return '';var f=a[0],l=a[a.length-1],pr=l.ix/f.ix-1,br=l.b/f.b-1,d=(pr-br)*100;return '<div style="margin-top:8px;font-size:13px;border-top:1px solid rgba(255,255,255,.3);padding-top:8px">BIST 100’e göre ('+trDate(f.d)+' → '+trDate(l.d)+')<br>Portföy '+pc(pr)+' · BIST 100 '+pc(br)+' · Fark '+(d>0?'+':'')+d.toFixed(2).replace('.',',')+' puan</div>';}
 function pth(){return tks().map(function(t){return '<th>'+esc(t)+'</th>';}).join('');}
 function ptd(p){return tks().map(function(t){return '<td>'+(p&&p[t]>0?fmt(p[t]):'-')+'</td>';}).join('');}
+var DURUM=null;
+function bistTeyit(r,last){var g=DURUM&&DURUM.bist&&DURUM.bist.gunler;if(!g||!g[last.d])return false;var i=r.indexOf(last),o=null;for(var j=i+1;j<r.length;j++){if(r[j].b>0){o=r[j];break;}}return !!(o&&g[o.d]);}
+function reelHtml(){var a=rows().filter(function(x){return x.v!==null&&x.v>0;}).reverse();if(a.length<2)return '';var f=a[0],l=a[a.length-1],pr=l.ix/f.ix-1;
+  var gun=(new Date(l.d)-new Date(f.d))/864e5,y=DURUM&&DURUM.enf&&DURUM.enf.y;if(!(gun>0))return '';
+  var inf=y>0?Math.pow(1+y/100,gun/365)-1:null,ilk=function(k){for(var i=0;i<a.length;i++){if(a[i][k]>0&&a[i].d>=f.d)return a[i];}return null;},son=function(k){for(var i=a.length-1;i>=0;i--){if(a[i][k]>0)return a[i];}return null;};
+  var g0=ilk("g"),g1=son("g"),u0=ilk("u"),u1=son("u"),ga=(g0&&g1&&g1.d>g0.d)?g1.g/g0.g-1:null,ua=(u0&&u1&&u1.d>u0.d)?u1.u/u0.u-1:null,re=inf!==null?(1+pr)/(1+inf)-1:null;
+  return '<div style="margin-top:8px;font-size:13px;border-top:1px solid rgba(255,255,255,.3);padding-top:8px">Reel getiri ('+trDate(f.d)+' → '+trDate(l.d)+')'+
+    (re!==null?'<div style="font-size:12px"><span class="'+cls(re)+'" style="padding:2px 8px;margin-top:5px">Enflasyondan arındırılmış: '+ar(re)+pc(re)+'</span></div>':'')+
+    '<div style="margin-top:4px">Portföy '+pc(pr)+(inf!==null?' · Enflasyon '+pc(inf):'')+(ga!==null?' · Gram altın '+pc(ga):'')+(ua!==null?' · Dolar '+pc(ua):'')+'</div>'+
+    (inf!==null?'<div style="margin-top:2px;font-size:11px;opacity:.8">Enflasyon: yıllık TÜFE %'+String(y).replace(".",",")+'’nin bu '+Math.round(gun)+' güne oranlanmış hali.</div>':'')+'</div>';}
 function firstBuy(){var d=null;S.t.forEach(function(x){if(x.y==='a'&&(!d||x.d<d))d=x.d;});return d;}
 function render(){
   var r=rows(),last=latest(r),s=document.getElementById("sum");
@@ -231,8 +248,8 @@ function render(){
     '<div class="'+cls(last.kz)+'" style="font-weight:600;margin-top:4px">Toplam: '+ar(last.kz)+sg(last.kz)+' TL ('+pc(last.kp)+')</div>'+
     (firstBuy()?'<div style="margin-top:3px;font-size:12px;opacity:.85">İlk alış: '+trDate(firstBuy())+' · Güncel: '+trDate(last.d)+'</div>':'')+
     (last.dc===null?'':'<div class="'+cls(last.dc)+'" style="margin-top:2px">Günlük: '+ar(last.dc)+sg(last.dc)+' TL ('+pc(last.dp)+')</div>')+
-    (last.bp===null||last.bp===undefined?'':'<div style="margin-top:2px;font-size:12px"><span class="'+cls(last.bp)+'" style="padding:2px 8px;margin-top:5px">BIST 100 günlük: '+ar(last.bp)+pc(last.bp)+'</span></div><div style="margin-top:2px;font-size:11px;opacity:.8">BIST 100 kapanış: '+fmt(last.b)+(last.dp===null?'':' · Portföy bugün BIST\'in '+Math.abs((last.dp-last.bp)*100).toFixed(2).replace('.',',')+' puan '+((last.dp-last.bp)>=0?'önünde':'gerisinde'))+'</div>')+
-    '<div class="mut" style="margin-top:6px">Kalan maliyet: '+fmt(last.cb)+' TL'+(last.r?' · Gerçekleşen K/Z: '+sg(last.r)+' TL':'')+(last.dv?' · Temettü: '+sg(last.dv)+' TL':'')+'</div>'+cmpHtml()+sumNote(last,r);}
+    (last.bp===null||last.bp===undefined?'':!bistTeyit(r,last)?'<div style="margin-top:4px;font-size:11.5px;opacity:.85">BIST 100 günlük: iki kaynakla teyit bekleniyor</div>':'<div style="margin-top:2px;font-size:12px"><span class="'+cls(last.bp)+'" style="padding:2px 8px;margin-top:5px">BIST 100 günlük: '+ar(last.bp)+pc(last.bp)+'</span></div><div style="margin-top:2px;font-size:11px;opacity:.8">BIST 100 kapanış: '+fmt(last.b)+(last.dp===null?'':' · Portföy bugün BIST\'in '+Math.abs((last.dp-last.bp)*100).toFixed(2).replace('.',',')+' puan '+((last.dp-last.bp)>=0?'önünde':'gerisinde'))+'</div>')+
+    '<div class="mut" style="margin-top:6px">Kalan maliyet: '+fmt(last.cb)+' TL'+(last.r?' · Gerçekleşen K/Z: '+sg(last.r)+' TL':'')+(last.dv?' · Temettü: '+sg(last.dv)+' TL':'')+'</div>'+cmpHtml()+reelHtml()+sumNote(last,r);}
   var h='<tr><th>Tarih</th>'+pth()+'<th>Değer</th><th>Toplam K/Z</th><th>%</th><th>Günlük</th><th>Gün %</th><th>BIST 100</th><th>BIST %</th><th></th></tr>';
   r.forEach(function(x){
     if(x.v===null){h+='<tr><td>'+trDate(x.d)+'</td>'+ptd(x.p)+'<td colspan="7">Fiyat eksik</td><td><button class="ghost" onclick="edd(\''+x.d+'\')">Düzenle</button> <button class="ghost" onclick="del(\''+x.d+'\')">Sil</button></td></tr>';return;}
@@ -634,6 +651,35 @@ function ac(k){if(k===SEC)k=null;SEC=k;
 Array.prototype.forEach.call(tb.querySelectorAll("button"),function(b){b.onclick=function(){ac(b.getAttribute("data-s"));};});
 window.__sekme=ac;
 ac(null);
+})();
+</script>
+<script>
+/* ---- Veri durumu: durum.json (kontrol.yml her 20 dakikada bir yazar) ---- */
+(function(){
+var AD={fiyat:"Fiyat",karne:"Karne",kap:"KAP",kutuphane:"Kütüphane",fon:"Fon"},SAAT={fiyat:"18:23",karne:"18:41",kutuphane:"18:53",fon:"20:37"};
+function tz(s){if(!s)return "";var d;if(/Z$/.test(s))d=new Date(s);else{var m=s.match(/(\d+)-(\d+)-(\d+)[ T](\d+):(\d+)/);if(!m)return s;return m[3]+"."+m[2]+" "+m[4]+":"+m[5];}
+  return ("0"+d.getDate()).slice(-2)+"."+("0"+(d.getMonth()+1)).slice(-2)+" "+("0"+d.getHours()).slice(-2)+":"+("0"+d.getMinutes()).slice(-2);}
+function kd(s){return s&&s.length>=10?s.slice(8,10)+"."+s.slice(5,7):"";}
+function acik(k,x){var v=kd(x.veri);
+  if(k==="fiyat")return v+" kapanışları · hisseler en az 2 kaynakla, BIST 100 iki kaynakla teyitli";
+  if(k==="karne")return v+" kapanışına göre hesaplandı";
+  if(k==="kap")return "son tarama "+tz(x.veri);
+  if(k==="kutuphane")return v+" kapanışına göre, tüm hisseler güncel";
+  return v+" TEFAS taraması";}
+function ciz(){var el=document.getElementById("vd"),D=window.DURUM;if(!el||!D||!D.kaynaklar)return;
+  var ks=["fiyat","karne","kap","kutuphane","fon"].filter(function(k){return D.kaynaklar[k];}),kot=0,bek=0;
+  var yas=(Date.now()-new Date(D.kontrolAt||0).getTime())/36e5,hi=new Date().getDay()%6!==0,eski=yas>(hi?6:30);
+  var sat=ks.map(function(k){var x=D.kaynaklar[k],ic,t;
+    if(x.durum==="ok"||x.durum==="bekliyor"){ic="✓";t=acik(k,x)+(x.saat?" · güncellendi "+tz(x.saat):"")+(x.durum==="bekliyor"&&SAAT[k]?" · bugünkü güncelleme "+SAAT[k]+" sonrası":"");}
+    else if(x.durum==="deneniyor"){ic="⟳";bek++;t=(x.not||"Teyit edilemedi")+" · otomatik yeniden deneniyor"+(x.deneme?" ("+x.deneme+"/"+(x.maks||4)+")":"")+". Bu sırada önceki doğrulanmış veri gösteriliyor.";}
+    else{ic="!";kot++;t=(x.not||"Teyit edilemedi")+" · "+(x.deneme||0)+" kez denendi, kaynaklara ulaşılamadı. Önceki doğrulanmış veri gösteriliyor; denemeye 2 saat arayla devam ediliyor.";}
+    return{k:k,ic:ic,t:t};});
+  el.className="vd "+(kot?"no":(bek||eski)?"bk":"ok");el.style.display="";
+  el.innerHTML='<summary><b>Veri durumu:</b> '+sat.map(function(s){return '<span style="white-space:nowrap;margin-right:6px">'+s.ic+" "+AD[s.k]+'</span>';}).join("")+'</summary>'+
+    sat.map(function(s){return '<div class="vs">'+s.ic+" <b>"+AD[s.k]+"</b><small>"+s.t.replace(/&/g,"&amp;").replace(/</g,"&lt;")+"</small></div>";}).join("")+
+    '<div class="vs"><small>'+(eski?"⚠️ Kontrol sistemi "+Math.round(yas)+" saattir çalışmadı. ":"")+"Son kontrol: "+tz(D.kontrolAt)+" · Sorun olursa ilgili güncelleme kendiliğinden yeniden çalıştırılır.</small></div>";}
+function url(){var u="";try{u=(typeof feedUrl==="function"&&feedUrl())||"";}catch(e){}return /prices\.json/.test(u)?u.replace(/prices\.json.*$/,"durum.json"):"https://raw.githubusercontent.com/saidgunbek-rgb/bist-fiyat/main/durum.json";}
+fetch(url()+"?t="+Date.now()).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(d){window.DURUM=d;DURUM=d;ciz();try{all();}catch(e){}}).catch(function(){});
 })();
 </script>
 </body>
