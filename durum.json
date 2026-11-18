@@ -24,6 +24,14 @@
   "kap|2026-11-18 10": {
    "n": 1,
    "son": "2026-11-18T10:44"
+  },
+  "kap|2026-11-18 16": {
+   "n": 0,
+   "son": null
+  },
+  "karne|2026-11-17": {
+   "n": 1,
+   "son": "2026-11-18T16:57"
   }
  },
  "enf": {
@@ -38,7 +46,7 @@
    "durum": "ok",
    "maks": 4,
    "not": "",
-   "saat": "2026-11-17T16:20:48Z",
+   "saat": "2026-11-18T12:57:47Z",
    "veri": "2026-11-17"
   },
   "fon": {
@@ -51,19 +59,19 @@
   },
   "kap": {
    "deneme": 0,
-   "durum": "ok",
+   "durum": "deneniyor",
    "maks": 4,
-   "not": "",
-   "saat": "2026-11-18 15:12",
-   "veri": "2026-11-18 15:12"
+   "not": "Son KAP taraması gecikti",
+   "saat": "2026-11-18 16:00",
+   "veri": "2026-11-18 16:00"
   },
   "karne": {
-   "deneme": 0,
-   "durum": "ok",
+   "deneme": 1,
+   "durum": "deneniyor",
    "maks": 4,
-   "not": "",
-   "saat": "2026-11-18T06:23:14Z",
-   "veri": "2026-11-17"
+   "not": "THYAO fiyatı uyuşmuyor, FROTO fiyatı uyuşmuyor, KTLEV fiyatı uyuşmuyor",
+   "saat": "2026-11-18T12:59:50Z",
+   "veri": "2026-11-18"
   },
   "kutuphane": {
    "deneme": 0,
@@ -74,5 +82,5 @@
    "veri": "2026-11-17"
   }
  },
- "kontrolAt": "2026-11-18T12:41:38Z"
+ "kontrolAt": "2026-11-18T13:57:04Z"
 }
