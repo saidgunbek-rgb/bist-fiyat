@@ -882,7 +882,7 @@
   }
  },
  "kap_ve_bilanco": {
-  "updatedAt": "2026-11-18 17:25",
+  "updatedAt": "2026-11-18 19:19",
   "hisseler": {
    "THYAO": {
     "kap_kaynak": "borsapy",
@@ -925,51 +925,6 @@
       ]
      }
     }
-   },
-   "FROTO": {
-    "kap_kaynak": "borsapy",
-    "kap_adet": 20,
-    "kap_icerik": [
-     [
-      "2026-11-05 18:34",
-      "Finansal Rapor",
-      "pdf",
-      15401,
-      ""
-     ]
-    ],
-    "bilanco_kontrol": {
-     "d": "2026/9",
-     "kaynak": [],
-     "tv_onceki": "2026/6",
-     "bizim": {
-      "kar": 32501719096.0,
-      "ozkaynak": 195987402000.0
-     },
-     "karsi": {
-      "tradingview": {
-       "kar": 29975014000.0,
-       "ozkaynak": 179191213000.0
-      },
-      "yahoo": {
-       "kar": [
-        "2026-09-30",
-        24237237000.0
-       ],
-       "ozkaynak": [
-        "2026-09-30",
-        195987402000.0
-       ]
-      },
-      "onceki_ceyrek_ozkaynak": [
-       "2026/6",
-       179191213000.0
-      ]
-     }
-    }
-   },
-   "KTLEV": {
-    "finans_raporu": null
    }
   }
  }

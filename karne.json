@@ -1,26 +1,5 @@
 {
  "bildirim_durum": {
-  "FROTO": {
-   "bilanco": "2026/9",
-   "durum": "risk",
-   "kap": [
-    "https://www.kap.org.tr/tr/Bildirim/1688368",
-    "https://www.kap.org.tr/tr/Bildirim/1688483",
-    "https://www.kap.org.tr/tr/Bildirim/1689785",
-    "https://www.kap.org.tr/tr/Bildirim/1693300",
-    "https://www.kap.org.tr/tr/Bildirim/1693370",
-    "https://www.kap.org.tr/tr/Bildirim/1693371",
-    "https://www.kap.org.tr/tr/Bildirim/1693372",
-    "https://www.kap.org.tr/tr/Bildirim/1693373",
-    "https://www.kap.org.tr/tr/Bildirim/1695077",
-    "https://www.kap.org.tr/tr/Bildirim/1697234"
-   ]
-  },
-  "KTLEV": {
-   "durum": "dikkat",
-   "hareket": "2026-11-17",
-   "kap": []
-  },
   "THYAO": {
    "bilanco": "2026/9",
    "durum": "bekle",
@@ -67,7 +46,7 @@
   "t": "2026-11-18",
   "y": 29.77
  },
- "kapUpdatedAt": "2026-11-18 17:25",
+ "kapUpdatedAt": "2026-11-18 19:19",
  "stocks": {
   "FROTO": {
    "bdog": {
