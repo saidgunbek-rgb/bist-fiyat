@@ -1,31 +1,421 @@
 {
  "hisseler": {
   "THYAO": {
-   "updatedAt": "2026-11-17T18:54:52Z",
+   "updatedAt": "2026-11-18T16:28:04Z",
    "hisseler": {
     "THYAO": {
      "ozet": {
-      "iki_kaynak": 290,
-      "ek_kaynak": 0,
+      "iki_kaynak": 0,
+      "ek_kaynak": 290,
       "duzeltme": 0,
       "cozulemedi": 0
      },
      "kaynak_gun_sayisi": {
-      "isyatirim": 290,
+      "isyatirim": 0,
       "yahoo": 290,
       "borsapy": 290,
-      "kendi_kayit": 26
+      "kendi_kayit": 27
      },
      "bolunmeler": [
       "2025-06-16",
       "2025-09-02"
      ],
-     "hatalar": [],
-     "secim_kayitlari": []
+     "hatalar": [
+      "isyatirim: [Errno 104] Connection reset by peer"
+     ],
+     "secim_kayitlari": [
+      {
+       "tarih": "2026-09-23",
+       "degerler": {
+        "yahoo": 298.5,
+        "borsapy": 298.5
+       },
+       "secilen": 298.5,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-09-24",
+       "degerler": {
+        "yahoo": 288.5,
+        "borsapy": 288.5
+       },
+       "secilen": 288.5,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-09-25",
+       "degerler": {
+        "yahoo": 290.75,
+        "borsapy": 290.75
+       },
+       "secilen": 290.75,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-09-28",
+       "degerler": {
+        "yahoo": 287.0,
+        "borsapy": 287.0
+       },
+       "secilen": 287.0,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-09-29",
+       "degerler": {
+        "yahoo": 291.5,
+        "borsapy": 291.5
+       },
+       "secilen": 291.5,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-09-30",
+       "degerler": {
+        "yahoo": 283.25,
+        "borsapy": 283.25
+       },
+       "secilen": 283.25,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-01",
+       "degerler": {
+        "yahoo": 286.5,
+        "borsapy": 286.5
+       },
+       "secilen": 286.5,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-02",
+       "degerler": {
+        "yahoo": 292.0,
+        "borsapy": 292.0
+       },
+       "secilen": 292.0,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-05",
+       "degerler": {
+        "yahoo": 292.25,
+        "borsapy": 292.25
+       },
+       "secilen": 292.25,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-06",
+       "degerler": {
+        "yahoo": 290.5,
+        "borsapy": 290.5
+       },
+       "secilen": 290.5,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-07",
+       "degerler": {
+        "yahoo": 286.25,
+        "borsapy": 286.25
+       },
+       "secilen": 286.25,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-08",
+       "degerler": {
+        "yahoo": 284.25,
+        "borsapy": 284.25
+       },
+       "secilen": 284.25,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-09",
+       "degerler": {
+        "yahoo": 287.5,
+        "borsapy": 287.5
+       },
+       "secilen": 287.5,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-12",
+       "degerler": {
+        "yahoo": 285.75,
+        "borsapy": 285.75,
+        "kendi_kayit": 285.75
+       },
+       "secilen": 285.75,
+       "neden": "cogunluk: borsapy,kendi_kayit,yahoo"
+      },
+      {
+       "tarih": "2026-10-13",
+       "degerler": {
+        "yahoo": 286.25,
+        "borsapy": 286.25,
+        "kendi_kayit": 286.25
+       },
+       "secilen": 286.25,
+       "neden": "cogunluk: borsapy,kendi_kayit,yahoo"
+      },
+      {
+       "tarih": "2026-10-14",
+       "degerler": {
+        "yahoo": 279.25,
+        "borsapy": 279.25,
+        "kendi_kayit": 279.25
+       },
+       "secilen": 279.25,
+       "neden": "cogunluk: borsapy,kendi_kayit,yahoo"
+      },
+      {
+       "tarih": "2026-10-15",
+       "degerler": {
+        "yahoo": 276.75,
+        "borsapy": 276.75,
+        "kendi_kayit": 276.75
+       },
+       "secilen": 276.75,
+       "neden": "cogunluk: borsapy,kendi_kayit,yahoo"
+      },
+      {
+       "tarih": "2026-10-16",
+       "degerler": {
+        "yahoo": 273.5,
+        "borsapy": 273.5,
+        "kendi_kayit": 273.5
+       },
+       "secilen": 273.5,
+       "neden": "cogunluk: borsapy,kendi_kayit,yahoo"
+      },
+      {
+       "tarih": "2026-10-19",
+       "degerler": {
+        "yahoo": 266.0,
+        "borsapy": 266.0,
+        "kendi_kayit": 266.0
+       },
+       "secilen": 266.0,
+       "neden": "cogunluk: borsapy,kendi_kayit,yahoo"
+      },
+      {
+       "tarih": "2026-10-20",
+       "degerler": {
+        "yahoo": 273.5,
+        "borsapy": 273.5,
+        "kendi_kayit": 273.5
+       },
+       "secilen": 273.5,
+       "neden": "cogunluk: borsapy,kendi_kayit,yahoo"
+      },
+      {
+       "tarih": "2026-10-21",
+       "degerler": {
+        "yahoo": 265.0,
+        "borsapy": 265.0,
+        "kendi_kayit": 265.0
+       },
+       "secilen": 265.0,
+       "neden": "cogunluk: borsapy,kendi_kayit,yahoo"
+      },
+      {
+       "tarih": "2026-10-22",
+       "degerler": {
+        "yahoo": 259.0,
+        "borsapy": 259.0,
+        "kendi_kayit": 259.0
+       },
+       "secilen": 259.0,
+       "neden": "cogunluk: borsapy,kendi_kayit,yahoo"
+      },
+      {
+       "tarih": "2026-10-23",
+       "degerler": {
+        "yahoo": 258.0,
+        "borsapy": 258.0,
+        "kendi_kayit": 258.0
+       },
+       "secilen": 258.0,
+       "neden": "cogunluk: borsapy,kendi_kayit,yahoo"
+      },
+      {
+       "tarih": "2026-10-26",
+       "degerler": {
+        "yahoo": 258.25,
+        "borsapy": 258.25,
+        "kendi_kayit": 258.25
+       },
+       "secilen": 258.25,
+       "neden": "cogunluk: borsapy,kendi_kayit,yahoo"
+      },
+      {
+       "tarih": "2026-10-27",
+       "degerler": {
+        "yahoo": 253.0,
+        "borsapy": 253.0,
+        "kendi_kayit": 253.0
+       },
+       "secilen": 253.0,
+       "neden": "cogunluk: borsapy,kendi_kayit,yahoo"
+      },
+      {
+       "tarih": "2026-10-28",
+       "degerler": {
+        "yahoo": 252.5,
+        "borsapy": 252.5,
+        "kendi_kayit": 252.5
+       },
+       "secilen": 252.5,
+       "neden": "cogunluk: borsapy,kendi_kayit,yahoo"
+      },
+      {
+       "tarih": "2026-10-30",
+       "degerler": {
+        "yahoo": 242.2,
+        "borsapy": 242.2,
+        "kendi_kayit": 242.2
+       },
+       "secilen": 242.2,
+       "neden": "cogunluk: borsapy,kendi_kayit,yahoo"
+      },
+      {
+       "tarih": "2026-11-02",
+       "degerler": {
+        "yahoo": 261.0,
+        "borsapy": 261.0,
+        "kendi_kayit": 261.0
+       },
+       "secilen": 261.0,
+       "neden": "cogunluk: borsapy,kendi_kayit,yahoo"
+      },
+      {
+       "tarih": "2026-11-03",
+       "degerler": {
+        "yahoo": 265.0,
+        "borsapy": 265.0,
+        "kendi_kayit": 265.0
+       },
+       "secilen": 265.0,
+       "neden": "cogunluk: borsapy,kendi_kayit,yahoo"
+      },
+      {
+       "tarih": "2026-11-04",
+       "degerler": {
+        "yahoo": 291.25,
+        "borsapy": 291.25,
+        "kendi_kayit": 291.25
+       },
+       "secilen": 291.25,
+       "neden": "cogunluk: borsapy,kendi_kayit,yahoo"
+      },
+      {
+       "tarih": "2026-11-05",
+       "degerler": {
+        "yahoo": 297.0,
+        "borsapy": 297.0,
+        "kendi_kayit": 297.0
+       },
+       "secilen": 297.0,
+       "neden": "cogunluk: borsapy,kendi_kayit,yahoo"
+      },
+      {
+       "tarih": "2026-11-06",
+       "degerler": {
+        "yahoo": 299.25,
+        "borsapy": 299.25,
+        "kendi_kayit": 299.25
+       },
+       "secilen": 299.25,
+       "neden": "cogunluk: borsapy,kendi_kayit,yahoo"
+      },
+      {
+       "tarih": "2026-11-09",
+       "degerler": {
+        "yahoo": 310.0,
+        "borsapy": 310.0,
+        "kendi_kayit": 310.0
+       },
+       "secilen": 310.0,
+       "neden": "cogunluk: borsapy,kendi_kayit,yahoo"
+      },
+      {
+       "tarih": "2026-11-10",
+       "degerler": {
+        "yahoo": 313.75,
+        "borsapy": 313.75,
+        "kendi_kayit": 313.75
+       },
+       "secilen": 313.75,
+       "neden": "cogunluk: borsapy,kendi_kayit,yahoo"
+      },
+      {
+       "tarih": "2026-11-11",
+       "degerler": {
+        "yahoo": 314.75,
+        "borsapy": 314.75,
+        "kendi_kayit": 314.75
+       },
+       "secilen": 314.75,
+       "neden": "cogunluk: borsapy,kendi_kayit,yahoo"
+      },
+      {
+       "tarih": "2026-11-12",
+       "degerler": {
+        "yahoo": 319.0,
+        "borsapy": 319.0,
+        "kendi_kayit": 319.0
+       },
+       "secilen": 319.0,
+       "neden": "cogunluk: borsapy,kendi_kayit,yahoo"
+      },
+      {
+       "tarih": "2026-11-13",
+       "degerler": {
+        "yahoo": 320.25,
+        "borsapy": 320.25,
+        "kendi_kayit": 320.25
+       },
+       "secilen": 320.25,
+       "neden": "cogunluk: borsapy,kendi_kayit,yahoo"
+      },
+      {
+       "tarih": "2026-11-16",
+       "degerler": {
+        "yahoo": 323.5,
+        "borsapy": 323.5,
+        "kendi_kayit": 323.5
+       },
+       "secilen": 323.5,
+       "neden": "cogunluk: borsapy,kendi_kayit,yahoo"
+      },
+      {
+       "tarih": "2026-11-17",
+       "degerler": {
+        "yahoo": 322.25,
+        "borsapy": 322.25,
+        "kendi_kayit": 322.25
+       },
+       "secilen": 322.25,
+       "neden": "cogunluk: borsapy,kendi_kayit,yahoo"
+      },
+      {
+       "tarih": "2026-11-18",
+       "degerler": {
+        "yahoo": 323.75,
+        "borsapy": 323.75,
+        "kendi_kayit": 323.75
+       },
+       "secilen": 323.75,
+       "neden": "cogunluk: borsapy,kendi_kayit,yahoo"
+      }
+     ]
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-17 21:55",
+    "updatedAt": "2026-11-18 19:28",
     "hisseler": {
      "THYAO": {
       "kap_icerik": [],
@@ -63,13 +453,13 @@
    }
   },
   "AKBNK": {
-   "updatedAt": "2026-11-17T18:54:57Z",
+   "updatedAt": "2026-11-18T16:28:27Z",
    "hisseler": {
     "AKBNK": {
      "ozet": {
-      "iki_kaynak": 161,
+      "iki_kaynak": 162,
       "ek_kaynak": 0,
-      "duzeltme": 129,
+      "duzeltme": 128,
       "cozulemedi": 0
      },
      "kaynak_gun_sayisi": {
@@ -488,7 +878,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-17 21:55",
+    "updatedAt": "2026-11-18 19:28",
     "hisseler": {
      "AKBNK": {
       "kap_icerik": [],
@@ -524,13 +914,13 @@
    }
   },
   "MGROS": {
-   "updatedAt": "2026-11-17T18:54:55Z",
+   "updatedAt": "2026-11-18T16:28:24Z",
    "hisseler": {
     "MGROS": {
      "ozet": {
-      "iki_kaynak": 5,
+      "iki_kaynak": 6,
       "ek_kaynak": 0,
-      "duzeltme": 285,
+      "duzeltme": 284,
       "cozulemedi": 0
      },
      "kaynak_gun_sayisi": {
@@ -951,7 +1341,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-17 21:55",
+    "updatedAt": "2026-11-18 19:28",
     "hisseler": {
      "MGROS": {
       "kap_icerik": [],
@@ -988,13 +1378,13 @@
    }
   },
   "BIMAS": {
-   "updatedAt": "2026-11-17T18:54:59Z",
+   "updatedAt": "2026-11-18T16:28:17Z",
    "hisseler": {
     "BIMAS": {
      "ozet": {
-      "iki_kaynak": 44,
+      "iki_kaynak": 45,
       "ek_kaynak": 0,
-      "duzeltme": 246,
+      "duzeltme": 245,
       "cozulemedi": 0
      },
      "kaynak_gun_sayisi": {
@@ -1418,7 +1808,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-17 21:55",
+    "updatedAt": "2026-11-18 19:28",
     "hisseler": {
      "BIMAS": {
       "kap_icerik": [],
@@ -1455,13 +1845,13 @@
    }
   },
   "TCELL": {
-   "updatedAt": "2026-11-17T18:54:55Z",
+   "updatedAt": "2026-11-18T16:28:14Z",
    "hisseler": {
     "TCELL": {
      "ozet": {
-      "iki_kaynak": 223,
+      "iki_kaynak": 224,
       "ek_kaynak": 0,
-      "duzeltme": 67,
+      "duzeltme": 66,
       "cozulemedi": 0
      },
      "kaynak_gun_sayisi": {
@@ -1881,7 +2271,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-17 21:55",
+    "updatedAt": "2026-11-18 19:28",
     "hisseler": {
      "TCELL": {
       "kap_icerik": [],
@@ -1918,28 +2308,391 @@
    }
   },
   "YKBNK": {
-   "updatedAt": "2026-11-17T18:56:22Z",
+   "updatedAt": "2026-11-18T16:29:58Z",
    "hisseler": {
     "YKBNK": {
      "ozet": {
-      "iki_kaynak": 290,
-      "ek_kaynak": 0,
+      "iki_kaynak": 0,
+      "ek_kaynak": 290,
       "duzeltme": 0,
       "cozulemedi": 0
      },
      "kaynak_gun_sayisi": {
-      "isyatirim": 290,
+      "isyatirim": 0,
       "yahoo": 290,
       "borsapy": 290,
       "kendi_kayit": 0
      },
      "bolunmeler": [],
-     "hatalar": [],
-     "secim_kayitlari": []
+     "hatalar": [
+      "isyatirim: [Errno 104] Connection reset by peer"
+     ],
+     "secim_kayitlari": [
+      {
+       "tarih": "2026-09-23",
+       "degerler": {
+        "yahoo": 36.88,
+        "borsapy": 36.88
+       },
+       "secilen": 36.88,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-09-24",
+       "degerler": {
+        "yahoo": 35.7,
+        "borsapy": 35.7
+       },
+       "secilen": 35.7,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-09-25",
+       "degerler": {
+        "yahoo": 35.78,
+        "borsapy": 35.78
+       },
+       "secilen": 35.78,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-09-28",
+       "degerler": {
+        "yahoo": 35.52,
+        "borsapy": 35.52
+       },
+       "secilen": 35.52,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-09-29",
+       "degerler": {
+        "yahoo": 36.0,
+        "borsapy": 36.0
+       },
+       "secilen": 36.0,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-09-30",
+       "degerler": {
+        "yahoo": 34.04,
+        "borsapy": 34.04
+       },
+       "secilen": 34.04,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-01",
+       "degerler": {
+        "yahoo": 34.82,
+        "borsapy": 34.82
+       },
+       "secilen": 34.82,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-02",
+       "degerler": {
+        "yahoo": 34.94,
+        "borsapy": 34.94
+       },
+       "secilen": 34.94,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-05",
+       "degerler": {
+        "yahoo": 35.9,
+        "borsapy": 35.9
+       },
+       "secilen": 35.9,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-06",
+       "degerler": {
+        "yahoo": 36.46,
+        "borsapy": 36.46
+       },
+       "secilen": 36.46,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-07",
+       "degerler": {
+        "yahoo": 36.6,
+        "borsapy": 36.6
+       },
+       "secilen": 36.6,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-08",
+       "degerler": {
+        "yahoo": 35.66,
+        "borsapy": 35.66
+       },
+       "secilen": 35.66,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-09",
+       "degerler": {
+        "yahoo": 35.44,
+        "borsapy": 35.44
+       },
+       "secilen": 35.44,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-12",
+       "degerler": {
+        "yahoo": 35.7,
+        "borsapy": 35.7
+       },
+       "secilen": 35.7,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-13",
+       "degerler": {
+        "yahoo": 36.42,
+        "borsapy": 36.42
+       },
+       "secilen": 36.42,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-14",
+       "degerler": {
+        "yahoo": 35.94,
+        "borsapy": 35.94
+       },
+       "secilen": 35.94,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-15",
+       "degerler": {
+        "yahoo": 36.3,
+        "borsapy": 36.3
+       },
+       "secilen": 36.3,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-16",
+       "degerler": {
+        "yahoo": 35.7,
+        "borsapy": 35.7
+       },
+       "secilen": 35.7,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-19",
+       "degerler": {
+        "yahoo": 36.1,
+        "borsapy": 36.1
+       },
+       "secilen": 36.1,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-20",
+       "degerler": {
+        "yahoo": 36.66,
+        "borsapy": 36.66
+       },
+       "secilen": 36.66,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-21",
+       "degerler": {
+        "yahoo": 36.42,
+        "borsapy": 36.42
+       },
+       "secilen": 36.42,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-22",
+       "degerler": {
+        "yahoo": 35.32,
+        "borsapy": 35.32
+       },
+       "secilen": 35.32,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-23",
+       "degerler": {
+        "yahoo": 34.68,
+        "borsapy": 34.68
+       },
+       "secilen": 34.68,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-26",
+       "degerler": {
+        "yahoo": 35.84,
+        "borsapy": 35.84
+       },
+       "secilen": 35.84,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-27",
+       "degerler": {
+        "yahoo": 35.38,
+        "borsapy": 35.38
+       },
+       "secilen": 35.38,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-28",
+       "degerler": {
+        "yahoo": 34.48,
+        "borsapy": 34.48
+       },
+       "secilen": 34.48,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-30",
+       "degerler": {
+        "yahoo": 33.96,
+        "borsapy": 33.96
+       },
+       "secilen": 33.96,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-11-02",
+       "degerler": {
+        "yahoo": 35.64,
+        "borsapy": 35.64
+       },
+       "secilen": 35.64,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-11-03",
+       "degerler": {
+        "yahoo": 34.7,
+        "borsapy": 34.7
+       },
+       "secilen": 34.7,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-11-04",
+       "degerler": {
+        "yahoo": 35.88,
+        "borsapy": 35.88
+       },
+       "secilen": 35.88,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-11-05",
+       "degerler": {
+        "yahoo": 36.52,
+        "borsapy": 36.52
+       },
+       "secilen": 36.52,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-11-06",
+       "degerler": {
+        "yahoo": 37.24,
+        "borsapy": 37.24
+       },
+       "secilen": 37.24,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-11-09",
+       "degerler": {
+        "yahoo": 38.74,
+        "borsapy": 38.74
+       },
+       "secilen": 38.74,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-11-10",
+       "degerler": {
+        "yahoo": 38.48,
+        "borsapy": 38.48
+       },
+       "secilen": 38.48,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-11-11",
+       "degerler": {
+        "yahoo": 38.44,
+        "borsapy": 38.44
+       },
+       "secilen": 38.44,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-11-12",
+       "degerler": {
+        "yahoo": 37.9,
+        "borsapy": 37.9
+       },
+       "secilen": 37.9,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-11-13",
+       "degerler": {
+        "yahoo": 37.78,
+        "borsapy": 37.78
+       },
+       "secilen": 37.78,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-11-16",
+       "degerler": {
+        "yahoo": 37.48,
+        "borsapy": 37.48
+       },
+       "secilen": 37.48,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-11-17",
+       "degerler": {
+        "yahoo": 37.36,
+        "borsapy": 37.36
+       },
+       "secilen": 37.36,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-11-18",
+       "degerler": {
+        "yahoo": 36.52,
+        "borsapy": 36.52
+       },
+       "secilen": 36.52,
+       "neden": "cogunluk: borsapy,yahoo"
+      }
+     ]
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-17 21:56",
+    "updatedAt": "2026-11-18 19:30",
     "hisseler": {
      "YKBNK": {
       "kap_icerik": [],
@@ -1975,17 +2728,17 @@
    }
   },
   "GARAN": {
-   "updatedAt": "2026-11-17T18:56:29Z",
+   "updatedAt": "2026-11-18T16:30:45Z",
    "hisseler": {
     "GARAN": {
      "ozet": {
-      "iki_kaynak": 153,
-      "ek_kaynak": 0,
-      "duzeltme": 137,
+      "iki_kaynak": 0,
+      "ek_kaynak": 290,
+      "duzeltme": 0,
       "cozulemedi": 0
      },
      "kaynak_gun_sayisi": {
-      "isyatirim": 290,
+      "isyatirim": 0,
       "yahoo": 290,
       "borsapy": 290,
       "kendi_kayit": 0
@@ -1994,413 +2747,375 @@
       "2025-03-28",
       "2026-04-07"
      ],
-     "hatalar": [],
+     "hatalar": [
+      "isyatirim: [Errno 104] Connection reset by peer"
+     ],
      "secim_kayitlari": [
       {
-       "tarih": "2026-02-09",
+       "tarih": "2026-09-23",
        "degerler": {
-        "isyatirim": 151.0941,
-        "yahoo": 157.2,
-        "borsapy": 157.2
+        "yahoo": 133.8,
+        "borsapy": 133.8
        },
-       "secilen": 151.0941,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 133.8,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-02-10",
+       "tarih": "2026-09-24",
        "degerler": {
-        "isyatirim": 149.1718,
-        "yahoo": 155.2,
-        "borsapy": 155.2
+        "yahoo": 129.4,
+        "borsapy": 129.4
        },
-       "secilen": 149.1718,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 129.4,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-02-11",
+       "tarih": "2026-09-25",
        "degerler": {
-        "isyatirim": 148.499,
-        "yahoo": 154.5,
-        "borsapy": 154.5
+        "yahoo": 129.8,
+        "borsapy": 129.8
        },
-       "secilen": 148.499,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 129.8,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-02-12",
+       "tarih": "2026-09-28",
        "degerler": {
-        "isyatirim": 156.9572,
-        "yahoo": 163.3,
-        "borsapy": 163.3
+        "yahoo": 129.4,
+        "borsapy": 129.4
        },
-       "secilen": 156.9572,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 129.4,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-02-13",
+       "tarih": "2026-09-29",
        "degerler": {
-        "isyatirim": 154.5543,
-        "yahoo": 160.8,
-        "borsapy": 160.8
+        "yahoo": 129.1,
+        "borsapy": 129.1
        },
-       "secilen": 154.5543,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 129.1,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-02-16",
+       "tarih": "2026-09-30",
        "degerler": {
-        "isyatirim": 155.0349,
-        "yahoo": 161.3,
-        "borsapy": 161.3
+        "yahoo": 122.9,
+        "borsapy": 122.9
        },
-       "secilen": 155.0349,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 122.9,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-02-17",
+       "tarih": "2026-10-01",
        "degerler": {
-        "isyatirim": 153.1126,
-        "yahoo": 159.3,
-        "borsapy": 159.3
+        "yahoo": 126.2,
+        "borsapy": 126.2
        },
-       "secilen": 153.1126,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 126.2,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-02-18",
+       "tarih": "2026-10-02",
        "degerler": {
-        "isyatirim": 154.8427,
-        "yahoo": 161.1,
-        "borsapy": 161.1
+        "yahoo": 125.9,
+        "borsapy": 125.9
        },
-       "secilen": 154.8427,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 125.9,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-02-19",
+       "tarih": "2026-10-05",
        "degerler": {
-        "isyatirim": 149.1718,
-        "yahoo": 155.2,
-        "borsapy": 155.2
-       },
-       "secilen": 149.1718,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
-      },
-      {
-       "tarih": "2026-02-20",
-       "degerler": {
-        "isyatirim": 151.5747,
-        "yahoo": 157.7,
-        "borsapy": 157.7
-       },
-       "secilen": 151.5747,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
-      },
-      {
-       "tarih": "2026-02-23",
-       "degerler": {
-        "isyatirim": 152.2475,
-        "yahoo": 158.4,
-        "borsapy": 158.4
-       },
-       "secilen": 152.2475,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
-      },
-      {
-       "tarih": "2026-02-24",
-       "degerler": {
-        "isyatirim": 153.3048,
-        "yahoo": 159.5,
-        "borsapy": 159.5
-       },
-       "secilen": 153.3048,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
-      },
-      {
-       "tarih": "2026-02-25",
-       "degerler": {
-        "isyatirim": 153.9776,
-        "yahoo": 160.2,
-        "borsapy": 160.2
-       },
-       "secilen": 153.9776,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
-      },
-      {
-       "tarih": "2026-02-26",
-       "degerler": {
-        "isyatirim": 157.5339,
-        "yahoo": 163.9,
-        "borsapy": 163.9
-       },
-       "secilen": 157.5339,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
-      },
-      {
-       "tarih": "2026-02-27",
-       "degerler": {
-        "isyatirim": 153.8815,
-        "yahoo": 160.1,
-        "borsapy": 160.1
-       },
-       "secilen": 153.8815,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
-      },
-      {
-       "tarih": "2026-03-02",
-       "degerler": {
-        "isyatirim": 140.6175,
-        "yahoo": 146.3,
-        "borsapy": 146.3
-       },
-       "secilen": 140.6175,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
-      },
-      {
-       "tarih": "2026-03-03",
-       "degerler": {
-        "isyatirim": 132.2554,
-        "yahoo": 137.6,
-        "borsapy": 137.6
-       },
-       "secilen": 132.2554,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
-      },
-      {
-       "tarih": "2026-03-04",
-       "degerler": {
-        "isyatirim": 133.2166,
-        "yahoo": 138.6,
-        "borsapy": 138.6
-       },
-       "secilen": 133.2166,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
-      },
-      {
-       "tarih": "2026-03-05",
-       "degerler": {
-        "isyatirim": 134.7544,
-        "yahoo": 140.2,
-        "borsapy": 140.2
-       },
-       "secilen": 134.7544,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
-      },
-      {
-       "tarih": "2026-03-06",
-       "degerler": {
-        "isyatirim": 130.237,
-        "yahoo": 135.5,
-        "borsapy": 135.5
-       },
-       "secilen": 130.237,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
-      },
-      {
-       "tarih": "2026-03-09",
-       "degerler": {
-        "isyatirim": 130.6215,
-        "yahoo": 135.9,
-        "borsapy": 135.9
-       },
-       "secilen": 130.6215,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
-      },
-      {
-       "tarih": "2026-03-10",
-       "degerler": {
-        "isyatirim": 135.6195,
-        "yahoo": 141.1,
-        "borsapy": 141.1
-       },
-       "secilen": 135.6195,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
-      },
-      {
-       "tarih": "2026-03-11",
-       "degerler": {
-        "isyatirim": 133.8894,
-        "yahoo": 139.3,
-        "borsapy": 139.3
-       },
-       "secilen": 133.8894,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
-      },
-      {
-       "tarih": "2026-03-12",
-       "degerler": {
-        "isyatirim": 132.5438,
-        "yahoo": 137.9,
-        "borsapy": 137.9
-       },
-       "secilen": 132.5438,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
-      },
-      {
-       "tarih": "2026-03-13",
-       "degerler": {
-        "isyatirim": 127.6419,
-        "yahoo": 132.8,
-        "borsapy": 132.8
-       },
-       "secilen": 127.6419,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
-      },
-      {
-       "tarih": "2026-03-16",
-       "degerler": {
-        "isyatirim": 128.8914,
-        "yahoo": 134.1,
-        "borsapy": 134.1
-       },
-       "secilen": 128.8914,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
-      },
-      {
-       "tarih": "2026-03-17",
-       "degerler": {
-        "isyatirim": 133.1205,
-        "yahoo": 138.5,
-        "borsapy": 138.5
-       },
-       "secilen": 133.1205,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
-      },
-      {
-       "tarih": "2026-03-18",
-       "degerler": {
-        "isyatirim": 130.5253,
-        "yahoo": 135.8,
-        "borsapy": 135.8
-       },
-       "secilen": 130.5253,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
-      },
-      {
-       "tarih": "2026-03-19",
-       "degerler": {
-        "isyatirim": 129.8525,
-        "yahoo": 135.1,
-        "borsapy": 135.1
-       },
-       "secilen": 129.8525,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
-      },
-      {
-       "tarih": "2026-03-23",
-       "degerler": {
-        "isyatirim": 129.0836,
-        "yahoo": 134.3,
-        "borsapy": 134.3
-       },
-       "secilen": 129.0836,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
-      },
-      {
-       "tarih": "2026-03-24",
-       "degerler": {
-        "isyatirim": 124.9506,
-        "yahoo": 130.0,
-        "borsapy": 130.0
-       },
-       "secilen": 124.9506,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
-      },
-      {
-       "tarih": "2026-03-25",
-       "degerler": {
-        "isyatirim": 125.3351,
         "yahoo": 130.4,
         "borsapy": 130.4
        },
-       "secilen": 125.3351,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 130.4,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-03-26",
+       "tarih": "2026-10-06",
        "degerler": {
-        "isyatirim": 121.7788,
-        "yahoo": 126.7,
-        "borsapy": 126.7
+        "yahoo": 131.2,
+        "borsapy": 131.2
        },
-       "secilen": 121.7788,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 131.2,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-03-27",
+       "tarih": "2026-10-07",
        "degerler": {
-        "isyatirim": 121.5866,
-        "yahoo": 126.5,
-        "borsapy": 126.5
+        "yahoo": 129.9,
+        "borsapy": 129.9
        },
-       "secilen": 121.5866,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 129.9,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-03-30",
+       "tarih": "2026-10-08",
        "degerler": {
-        "isyatirim": 120.6254,
-        "yahoo": 125.5,
-        "borsapy": 125.5
+        "yahoo": 128.5,
+        "borsapy": 128.5
        },
-       "secilen": 120.6254,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 128.5,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-03-31",
+       "tarih": "2026-10-09",
        "degerler": {
-        "isyatirim": 121.5866,
-        "yahoo": 126.5,
-        "borsapy": 126.5
+        "yahoo": 129.3,
+        "borsapy": 129.3
        },
-       "secilen": 121.5866,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 129.3,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-04-01",
+       "tarih": "2026-10-12",
        "degerler": {
-        "isyatirim": 123.7972,
-        "yahoo": 128.8,
-        "borsapy": 128.8
+        "yahoo": 129.8,
+        "borsapy": 129.8
        },
-       "secilen": 123.7972,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 129.8,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-04-02",
+       "tarih": "2026-10-13",
        "degerler": {
-        "isyatirim": 126.2001,
         "yahoo": 131.3,
         "borsapy": 131.3
        },
-       "secilen": 126.2001,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 131.3,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-04-03",
+       "tarih": "2026-10-14",
        "degerler": {
-        "isyatirim": 127.0652,
-        "yahoo": 132.2,
-        "borsapy": 132.2
+        "yahoo": 130.5,
+        "borsapy": 130.5
        },
-       "secilen": 127.0652,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 130.5,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-04-06",
+       "tarih": "2026-10-15",
        "degerler": {
-        "isyatirim": 130.3331,
-        "yahoo": 135.6,
-        "borsapy": 135.6
+        "yahoo": 133.9,
+        "borsapy": 133.9
        },
-       "secilen": 130.3331,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-04-07), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 133.9,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-16",
+       "degerler": {
+        "yahoo": 131.5,
+        "borsapy": 131.5
+       },
+       "secilen": 131.5,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-19",
+       "degerler": {
+        "yahoo": 132.5,
+        "borsapy": 132.5
+       },
+       "secilen": 132.5,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-20",
+       "degerler": {
+        "yahoo": 134.6,
+        "borsapy": 134.6
+       },
+       "secilen": 134.6,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-21",
+       "degerler": {
+        "yahoo": 132.6,
+        "borsapy": 132.6
+       },
+       "secilen": 132.6,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-22",
+       "degerler": {
+        "yahoo": 128.5,
+        "borsapy": 128.5
+       },
+       "secilen": 128.5,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-23",
+       "degerler": {
+        "yahoo": 126.5,
+        "borsapy": 126.5
+       },
+       "secilen": 126.5,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-26",
+       "degerler": {
+        "yahoo": 128.8,
+        "borsapy": 128.8
+       },
+       "secilen": 128.8,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-27",
+       "degerler": {
+        "yahoo": 127.3,
+        "borsapy": 127.3
+       },
+       "secilen": 127.3,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-28",
+       "degerler": {
+        "yahoo": 126.7,
+        "borsapy": 126.7
+       },
+       "secilen": 126.7,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-30",
+       "degerler": {
+        "yahoo": 125.2,
+        "borsapy": 125.2
+       },
+       "secilen": 125.2,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-11-02",
+       "degerler": {
+        "yahoo": 129.3,
+        "borsapy": 129.3
+       },
+       "secilen": 129.3,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-11-03",
+       "degerler": {
+        "yahoo": 128.8,
+        "borsapy": 128.8
+       },
+       "secilen": 128.8,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-11-04",
+       "degerler": {
+        "yahoo": 137.5,
+        "borsapy": 137.5
+       },
+       "secilen": 137.5,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-11-05",
+       "degerler": {
+        "yahoo": 142.0,
+        "borsapy": 142.0
+       },
+       "secilen": 142.0,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-11-06",
+       "degerler": {
+        "yahoo": 144.3,
+        "borsapy": 144.3
+       },
+       "secilen": 144.3,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-11-09",
+       "degerler": {
+        "yahoo": 153.1,
+        "borsapy": 153.1
+       },
+       "secilen": 153.1,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-11-10",
+       "degerler": {
+        "yahoo": 155.4,
+        "borsapy": 155.4
+       },
+       "secilen": 155.4,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-11-11",
+       "degerler": {
+        "yahoo": 154.8,
+        "borsapy": 154.8
+       },
+       "secilen": 154.8,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-11-12",
+       "degerler": {
+        "yahoo": 152.6,
+        "borsapy": 152.6
+       },
+       "secilen": 152.6,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-11-13",
+       "degerler": {
+        "yahoo": 150.3,
+        "borsapy": 150.3
+       },
+       "secilen": 150.3,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-11-16",
+       "degerler": {
+        "yahoo": 150.1,
+        "borsapy": 150.1
+       },
+       "secilen": 150.1,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-11-17",
+       "degerler": {
+        "yahoo": 148.7,
+        "borsapy": 148.7
+       },
+       "secilen": 148.7,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-11-18",
+       "degerler": {
+        "yahoo": 145.7,
+        "borsapy": 145.7
+       },
+       "secilen": 145.7,
+       "neden": "cogunluk: borsapy,yahoo"
       }
      ]
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-17 21:56",
+    "updatedAt": "2026-11-18 19:31",
     "hisseler": {
      "GARAN": {
       "kap_icerik": [],
@@ -2436,7 +3151,7 @@
    }
   },
   "ASELS": {
-   "updatedAt": "2026-11-17T18:56:09Z",
+   "updatedAt": "2026-11-18T16:30:57Z",
    "hisseler": {
     "ASELS": {
      "ozet": {
@@ -2460,7 +3175,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-17 21:56",
+    "updatedAt": "2026-11-18 19:31",
     "hisseler": {
      "ASELS": {
       "kap_icerik": [],
@@ -2497,20 +3212,20 @@
    }
   },
   "FROTO": {
-   "updatedAt": "2026-11-17T18:56:36Z",
+   "updatedAt": "2026-11-18T16:31:36Z",
    "hisseler": {
     "FROTO": {
      "ozet": {
       "iki_kaynak": 168,
-      "ek_kaynak": 0,
-      "duzeltme": 122,
+      "ek_kaynak": 1,
+      "duzeltme": 121,
       "cozulemedi": 0
      },
      "kaynak_gun_sayisi": {
-      "isyatirim": 290,
+      "isyatirim": 289,
       "yahoo": 290,
       "borsapy": 290,
-      "kendi_kayit": 0
+      "kendi_kayit": 24
      },
      "bolunmeler": [
       "2024-11-22",
@@ -2521,16 +3236,6 @@
      ],
      "hatalar": [],
      "secim_kayitlari": [
-      {
-       "tarih": "2026-01-19",
-       "degerler": {
-        "isyatirim": 100.2591,
-        "yahoo": 103.7,
-        "borsapy": 103.7
-       },
-       "secilen": 100.2591,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-16), ham fiyat Yahoo+borsapy ile teyitli"
-      },
       {
        "tarih": "2026-01-20",
        "degerler": {
@@ -2920,12 +3625,21 @@
        },
        "secilen": 106.06,
        "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-16), ham fiyat Yahoo+borsapy ile teyitli"
+      },
+      {
+       "tarih": "2026-11-18",
+       "degerler": {
+        "yahoo": 72.6,
+        "borsapy": 72.6
+       },
+       "secilen": 72.6,
+       "neden": "cogunluk: borsapy,yahoo"
       }
      ]
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-17 21:56",
+    "updatedAt": "2026-11-18 19:31",
     "hisseler": {
      "FROTO": {
       "kap_icerik": [],
@@ -2963,17 +3677,17 @@
    }
   },
   "KCHOL": {
-   "updatedAt": "2026-11-17T18:56:25Z",
+   "updatedAt": "2026-11-18T16:31:28Z",
    "hisseler": {
     "KCHOL": {
      "ozet": {
-      "iki_kaynak": 162,
-      "ek_kaynak": 0,
-      "duzeltme": 128,
+      "iki_kaynak": 0,
+      "ek_kaynak": 290,
+      "duzeltme": 0,
       "cozulemedi": 0
      },
      "kaynak_gun_sayisi": {
-      "isyatirim": 290,
+      "isyatirim": 0,
       "yahoo": 290,
       "borsapy": 290,
       "kendi_kayit": 0
@@ -2982,413 +3696,375 @@
       "2025-04-10",
       "2026-03-25"
      ],
-     "hatalar": [],
+     "hatalar": [
+      "isyatirim: [Errno 104] Connection reset by peer"
+     ],
      "secim_kayitlari": [
       {
-       "tarih": "2026-01-27",
+       "tarih": "2026-09-23",
        "degerler": {
-        "isyatirim": 190.8636,
-        "yahoo": 198.0,
-        "borsapy": 198.0
+        "yahoo": 221.1,
+        "borsapy": 221.1
        },
-       "secilen": 190.8636,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 221.1,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-01-28",
+       "tarih": "2026-09-24",
        "degerler": {
-        "isyatirim": 194.2375,
-        "yahoo": 201.5,
-        "borsapy": 201.5
+        "yahoo": 216.0,
+        "borsapy": 216.0
        },
-       "secilen": 194.2375,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 216.0,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-01-29",
+       "tarih": "2026-09-25",
        "degerler": {
-        "isyatirim": 199.1537,
-        "yahoo": 206.6,
-        "borsapy": 206.6
+        "yahoo": 216.5,
+        "borsapy": 216.5
        },
-       "secilen": 199.1537,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 216.5,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-01-30",
+       "tarih": "2026-09-28",
        "degerler": {
-        "isyatirim": 200.214,
-        "yahoo": 207.7,
-        "borsapy": 207.7
+        "yahoo": 214.0,
+        "borsapy": 214.0
        },
-       "secilen": 200.214,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 214.0,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-02-02",
+       "tarih": "2026-09-29",
        "degerler": {
-        "isyatirim": 197.3222,
-        "yahoo": 204.7,
-        "borsapy": 204.7
+        "yahoo": 214.1,
+        "borsapy": 214.1
        },
-       "secilen": 197.3222,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 214.1,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-02-03",
+       "tarih": "2026-09-30",
        "degerler": {
-        "isyatirim": 201.4672,
-        "yahoo": 209.0,
-        "borsapy": 209.0
+        "yahoo": 208.4,
+        "borsapy": 208.4
        },
-       "secilen": 201.4672,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 208.4,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-02-04",
+       "tarih": "2026-10-01",
        "degerler": {
-        "isyatirim": 200.5032,
+        "yahoo": 209.9,
+        "borsapy": 209.9
+       },
+       "secilen": 209.9,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-02",
+       "degerler": {
+        "yahoo": 206.8,
+        "borsapy": 206.8
+       },
+       "secilen": 206.8,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-05",
+       "degerler": {
+        "yahoo": 214.9,
+        "borsapy": 214.9
+       },
+       "secilen": 214.9,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-06",
+       "degerler": {
+        "yahoo": 213.6,
+        "borsapy": 213.6
+       },
+       "secilen": 213.6,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-07",
+       "degerler": {
+        "yahoo": 209.6,
+        "borsapy": 209.6
+       },
+       "secilen": 209.6,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-08",
+       "degerler": {
+        "yahoo": 212.4,
+        "borsapy": 212.4
+       },
+       "secilen": 212.4,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-10-09",
+       "degerler": {
         "yahoo": 208.0,
         "borsapy": 208.0
        },
-       "secilen": 200.5032,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 208.0,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-02-05",
+       "tarih": "2026-10-12",
        "degerler": {
-        "isyatirim": 197.1294,
-        "yahoo": 204.5,
-        "borsapy": 204.5
+        "yahoo": 206.9,
+        "borsapy": 206.9
        },
-       "secilen": 197.1294,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 206.9,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-02-06",
+       "tarih": "2026-10-13",
        "degerler": {
-        "isyatirim": 197.8041,
-        "yahoo": 205.2,
-        "borsapy": 205.2
+        "yahoo": 212.5,
+        "borsapy": 212.5
        },
-       "secilen": 197.8041,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 212.5,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-02-09",
+       "tarih": "2026-10-14",
        "degerler": {
-        "isyatirim": 202.7203,
-        "yahoo": 210.3,
-        "borsapy": 210.3
+        "yahoo": 211.2,
+        "borsapy": 211.2
        },
-       "secilen": 202.7203,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 211.2,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-02-10",
+       "tarih": "2026-10-15",
        "degerler": {
-        "isyatirim": 198.5753,
-        "yahoo": 206.0,
-        "borsapy": 206.0
+        "yahoo": 210.9,
+        "borsapy": 210.9
        },
-       "secilen": 198.5753,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 210.9,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-02-11",
+       "tarih": "2026-10-16",
        "degerler": {
-        "isyatirim": 199.9248,
-        "yahoo": 207.4,
-        "borsapy": 207.4
+        "yahoo": 204.0,
+        "borsapy": 204.0
        },
-       "secilen": 199.9248,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 204.0,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-02-12",
+       "tarih": "2026-10-19",
        "degerler": {
-        "isyatirim": 213.0347,
-        "yahoo": 221.0,
-        "borsapy": 221.0
+        "yahoo": 202.9,
+        "borsapy": 202.9
        },
-       "secilen": 213.0347,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 202.9,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-02-13",
+       "tarih": "2026-10-20",
        "degerler": {
-        "isyatirim": 215.4446,
-        "yahoo": 223.5,
-        "borsapy": 223.5
+        "yahoo": 208.4,
+        "borsapy": 208.4
        },
-       "secilen": 215.4446,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 208.4,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-02-16",
+       "tarih": "2026-10-21",
        "degerler": {
-        "isyatirim": 215.9265,
-        "yahoo": 224.0,
-        "borsapy": 224.0
+        "yahoo": 203.3,
+        "borsapy": 203.3
        },
-       "secilen": 215.9265,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 203.3,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-02-17",
+       "tarih": "2026-10-22",
        "degerler": {
-        "isyatirim": 212.8419,
-        "yahoo": 220.8,
-        "borsapy": 220.8
+        "yahoo": 196.1,
+        "borsapy": 196.1
        },
-       "secilen": 212.8419,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 196.1,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-02-18",
+       "tarih": "2026-10-23",
        "degerler": {
-        "isyatirim": 210.2392,
-        "yahoo": 218.1,
-        "borsapy": 218.1
+        "yahoo": 197.5,
+        "borsapy": 197.5
        },
-       "secilen": 210.2392,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 197.5,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-02-19",
+       "tarih": "2026-10-26",
        "degerler": {
-        "isyatirim": 206.4798,
-        "yahoo": 214.2,
-        "borsapy": 214.2
+        "yahoo": 200.6,
+        "borsapy": 200.6
        },
-       "secilen": 206.4798,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 200.6,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-02-20",
+       "tarih": "2026-10-27",
        "degerler": {
-        "isyatirim": 206.5762,
-        "yahoo": 214.3,
-        "borsapy": 214.3
+        "yahoo": 198.7,
+        "borsapy": 198.7
        },
-       "secilen": 206.5762,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 198.7,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-02-23",
+       "tarih": "2026-10-28",
        "degerler": {
-        "isyatirim": 208.6005,
-        "yahoo": 216.4,
-        "borsapy": 216.4
+        "yahoo": 199.8,
+        "borsapy": 199.8
        },
-       "secilen": 208.6005,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 199.8,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-02-24",
+       "tarih": "2026-10-30",
        "degerler": {
-        "isyatirim": 202.6239,
-        "yahoo": 210.2,
-        "borsapy": 210.2
+        "yahoo": 192.8,
+        "borsapy": 192.8
        },
-       "secilen": 202.6239,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 192.8,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-02-25",
+       "tarih": "2026-11-02",
        "degerler": {
-        "isyatirim": 197.2258,
-        "yahoo": 204.6,
-        "borsapy": 204.6
+        "yahoo": 195.7,
+        "borsapy": 195.7
        },
-       "secilen": 197.2258,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 195.7,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-02-26",
+       "tarih": "2026-11-03",
        "degerler": {
-        "isyatirim": 197.8041,
-        "yahoo": 205.2,
-        "borsapy": 205.2
-       },
-       "secilen": 197.8041,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
-      },
-      {
-       "tarih": "2026-02-27",
-       "degerler": {
-        "isyatirim": 192.406,
-        "yahoo": 199.6,
-        "borsapy": 199.6
-       },
-       "secilen": 192.406,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
-      },
-      {
-       "tarih": "2026-03-02",
-       "degerler": {
-        "isyatirim": 188.3573,
-        "yahoo": 195.4,
-        "borsapy": 195.4
-       },
-       "secilen": 188.3573,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
-      },
-      {
-       "tarih": "2026-03-03",
-       "degerler": {
-        "isyatirim": 182.2844,
-        "yahoo": 189.1,
-        "borsapy": 189.1
-       },
-       "secilen": 182.2844,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
-      },
-      {
-       "tarih": "2026-03-04",
-       "degerler": {
-        "isyatirim": 183.2484,
-        "yahoo": 190.1,
-        "borsapy": 190.1
-       },
-       "secilen": 183.2484,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
-      },
-      {
-       "tarih": "2026-03-05",
-       "degerler": {
-        "isyatirim": 185.5619,
-        "yahoo": 192.5,
-        "borsapy": 192.5
-       },
-       "secilen": 185.5619,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
-      },
-      {
-       "tarih": "2026-03-06",
-       "degerler": {
-        "isyatirim": 180.4529,
-        "yahoo": 187.2,
-        "borsapy": 187.2
-       },
-       "secilen": 180.4529,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
-      },
-      {
-       "tarih": "2026-03-09",
-       "degerler": {
-        "isyatirim": 181.0313,
-        "yahoo": 187.8,
-        "borsapy": 187.8
-       },
-       "secilen": 181.0313,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
-      },
-      {
-       "tarih": "2026-03-10",
-       "degerler": {
-        "isyatirim": 186.5258,
-        "yahoo": 193.5,
-        "borsapy": 193.5
-       },
-       "secilen": 186.5258,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
-      },
-      {
-       "tarih": "2026-03-11",
-       "degerler": {
-        "isyatirim": 185.3691,
-        "yahoo": 192.3,
-        "borsapy": 192.3
-       },
-       "secilen": 185.3691,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
-      },
-      {
-       "tarih": "2026-03-12",
-       "degerler": {
-        "isyatirim": 188.4538,
         "yahoo": 195.5,
         "borsapy": 195.5
        },
-       "secilen": 188.4538,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 195.5,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-03-13",
+       "tarih": "2026-11-04",
        "degerler": {
-        "isyatirim": 186.815,
-        "yahoo": 193.8,
-        "borsapy": 193.8
+        "yahoo": 203.0,
+        "borsapy": 203.0
        },
-       "secilen": 186.815,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 203.0,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-03-16",
+       "tarih": "2026-11-05",
        "degerler": {
-        "isyatirim": 186.2366,
-        "yahoo": 193.2,
-        "borsapy": 193.2
+        "yahoo": 202.3,
+        "borsapy": 202.3
        },
-       "secilen": 186.2366,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 202.3,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-03-17",
+       "tarih": "2026-11-06",
        "degerler": {
-        "isyatirim": 187.9718,
-        "yahoo": 195.0,
-        "borsapy": 195.0
+        "yahoo": 206.1,
+        "borsapy": 206.1
        },
-       "secilen": 187.9718,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 206.1,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-03-18",
+       "tarih": "2026-11-09",
        "degerler": {
-        "isyatirim": 182.8628,
-        "yahoo": 189.7,
-        "borsapy": 189.7
+        "yahoo": 212.4,
+        "borsapy": 212.4
        },
-       "secilen": 182.8628,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 212.4,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-03-19",
+       "tarih": "2026-11-10",
        "degerler": {
-        "isyatirim": 187.4898,
-        "yahoo": 194.5,
-        "borsapy": 194.5
+        "yahoo": 206.0,
+        "borsapy": 206.0
        },
-       "secilen": 187.4898,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 206.0,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-03-23",
+       "tarih": "2026-11-11",
        "degerler": {
-        "isyatirim": 188.1646,
-        "yahoo": 195.2,
-        "borsapy": 195.2
+        "yahoo": 204.0,
+        "borsapy": 204.0
        },
-       "secilen": 188.1646,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 204.0,
+       "neden": "cogunluk: borsapy,yahoo"
       },
       {
-       "tarih": "2026-03-24",
+       "tarih": "2026-11-12",
        "degerler": {
-        "isyatirim": 182.67,
-        "yahoo": 189.5,
-        "borsapy": 189.5
+        "yahoo": 208.2,
+        "borsapy": 208.2
        },
-       "secilen": 182.67,
-       "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-03-25), ham fiyat Yahoo+borsapy ile teyitli"
+       "secilen": 208.2,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-11-13",
+       "degerler": {
+        "yahoo": 207.5,
+        "borsapy": 207.5
+       },
+       "secilen": 207.5,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-11-16",
+       "degerler": {
+        "yahoo": 205.5,
+        "borsapy": 205.5
+       },
+       "secilen": 205.5,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-11-17",
+       "degerler": {
+        "yahoo": 202.0,
+        "borsapy": 202.0
+       },
+       "secilen": 202.0,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2026-11-18",
+       "degerler": {
+        "yahoo": 195.4,
+        "borsapy": 195.4
+       },
+       "secilen": 195.4,
+       "neden": "cogunluk: borsapy,yahoo"
       }
      ]
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-17 21:56",
+    "updatedAt": "2026-11-18 19:32",
     "hisseler": {
      "KCHOL": {
       "kap_icerik": [],
@@ -3425,5 +4101,5 @@
    }
   }
  },
- "updatedAt": "2026-11-17T18:57:13Z"
+ "updatedAt": "2026-11-18T16:32:29Z"
 }
