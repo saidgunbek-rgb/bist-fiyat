@@ -75,20 +75,20 @@
   },
   "karne": {
    "deneme": 1,
-   "durum": "deneniyor",
+   "durum": "ok",
    "maks": 4,
-   "not": "bugünün hesabı yok, THYAO fiyatı uyuşmuyor",
-   "saat": "2026-11-18T13:58:13Z",
+   "not": "",
+   "saat": "2026-11-18T16:41:14Z",
    "veri": "2026-11-18"
   },
   "kutuphane": {
    "deneme": 1,
-   "durum": "deneniyor",
+   "durum": "ok",
    "maks": 4,
-   "not": "bugünün verisi yok",
-   "saat": "2026-11-17T18:57:13Z",
-   "veri": "2026-11-17"
+   "not": "",
+   "saat": "2026-11-18T16:51:43Z",
+   "veri": "2026-11-18"
   }
  },
- "kontrolAt": "2026-11-18T16:26:35Z"
+ "kontrolAt": "2026-11-18T17:27:57Z"
 }
