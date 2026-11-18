@@ -92,7 +92,7 @@ var DEFURL="https://raw.githubusercontent.com/saidgunbek-rgb/bist-fiyat/main/"+(
 var BANKS=["AKBNK","GARAN","ISCTR","YKBNK","HALKB","VAKBN","TSKB","ALBRK","SKBNK","QNBFB","ICBCT"];
 var ALIAS={"AKBANK":"AKBNK"};
 // Satsan da karnede kalmasini istedigin hisseler (virgulle ayir, ornek: ["FROTO","KTLEV"]). Hisse karne.yml KARNE satirinda da olmali.
-var KARNEDE_TUT=["FROTO"];
+var KARNEDE_TUT=[];
 function satildi(k){return !KUT&&Object.keys(MAL).length&&!(MAL[k]&&MAL[k].q>0);}
 function maliyetler(){var m={};try{var o=JSON.parse(localStorage.getItem("bist-takip-v2")||"null");if(!o||!o.t)return m;
   o.t.slice().sort(function(a,b){return a.d<b.d?-1:a.d>b.d?1:0;}).forEach(function(x){var t=String(x.t||"").toUpperCase();t=ALIAS[t]||t;
@@ -227,7 +227,7 @@ function render(d){
   var SEC=null;try{SEC=localStorage.getItem(SECK);}catch(e){}
   if(keys.indexOf(SEC)<0)SEC=keys[0];
   h+='<div class="secw"><div class="sech">'+(KUT?'BIST30 kütüphanesi · bir hisse seç':'Hisse seç')+'</div><div class="secs">'+keys.map(function(k){var s=st[k]||{},ks=s.vade==="kisa";
-    return'<button class="sc'+(k===SEC?' on':'')+'" data-sec="'+esc(k)+'"><b>'+esc(k)+(KUT?'':'<span class="v" style="color:'+(ks?'#ff9f43':'var(--p)')+'">'+(ks?"KISA":"UZUN")+'</span>')+(satildi(k)?'<span class="v" style="color:var(--mut)">SATILDI</span>':'')+'</b><small>'+(KUT&&s.sektor?esc(s.sektor)+(s.price>0?" · ":""):"")+(s.price>0?f2(s.price)+" TL":"")+'</small></button>';}).join("")+'</div></div>';
+    return'<button class="sc'+(k===SEC?' on':'')+'" data-sec="'+esc(k)+'"><b>'+esc(k)+(KUT?'':'<span class="v" style="color:'+(ks?'#ff9f43':'var(--p)')+'">'+(ks?"KISA":"UZUN")+'</span>')+'</b><small>'+(KUT&&s.sektor?esc(s.sektor)+(s.price>0?" · ":""):"")+(s.price>0?f2(s.price)+" TL":"")+(satildi(k)?" · satıldı":"")+'</small></button>';}).join("")+'</div></div>';
   keys=[SEC];ACIK[SEC]=1;
   keys.forEach(function(k){var s=st[k]||{};
     h+='<div class="card" data-k="'+esc(k)+'"><div class="hd"><div class="nm">'+esc(k)+(s.vade&&!KUT?' <span style="font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:8px;vertical-align:middle;background:'+(s.vade==="kisa"?'rgba(255,159,67,.18);color:#ff9f43':'rgba(124,92,255,.18);color:var(--p)')+'">'+(s.vade==="kisa"?"Kısa vade":"Uzun vade")+'</span>':'')+(satildi(k)?' <span style="font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:8px;vertical-align:middle;background:rgba(150,150,150,.18);color:var(--mut)">Satıldı · izlemede</span>':'')+'</div><div class="pr">'+(s.price>0?f2(s.price)+" TL":"")+'</div></div>'
