@@ -22,23 +22,23 @@
  "bildirimler": [
   {
    "d": "2026-11-18 16:00",
-   "i": "\u2795",
-   "t": "Takibe al\u0131nd\u0131: FROTO"
+   "i": "➕",
+   "t": "Takibe alındı: FROTO"
   },
   {
    "d": "2026-11-17 21:13",
-   "i": "\ud83d\udce2",
-   "t": "THYAO KAP: Pay Al\u0131m Sat\u0131m Bildirimi (olumlu)"
+   "i": "📢",
+   "t": "THYAO KAP: Pay Alım Satım Bildirimi (olumlu)"
   },
   {
    "d": "2026-11-17 15:05",
-   "i": "\ud83d\udcc8",
-   "t": "KTLEV 2026-11-17 g\u00fcn\u00fc +%9,9 y\u00fckseldi: 8,96 TL"
+   "i": "📈",
+   "t": "KTLEV 2026-11-17 günü +%9,9 yükseldi: 8,96 TL"
   },
   {
    "d": "2026-11-16 15:46",
-   "i": "\u2705",
-   "t": "Panel bildirimleri a\u00e7\u0131ld\u0131"
+   "i": "✅",
+   "t": "Panel bildirimleri açıldı"
   }
  ],
  "enf": {
@@ -46,7 +46,7 @@
   "t": "2026-11-18",
   "y": 29.77
  },
- "kapUpdatedAt": "2026-11-18 19:19",
+ "kapUpdatedAt": "2026-11-18 21:06",
  "stocks": {
   "THYAO": {
    "bdog": {
@@ -60,47 +60,47 @@
     "ilk": "2026-11-15",
     "m": [
      {
-      "k": "sat\u0131\u015flar reel olarak %9,4 artt\u0131",
+      "k": "satışlar reel olarak %9,4 arttı",
       "p": 0,
-      "t": "Sat\u0131\u015flar ge\u00e7en y\u0131l\u0131n ayn\u0131 d\u00f6nemine g\u00f6re %42,0 artt\u0131 (690,8 milyar TL \u2192 981,0 milyar TL, enflasyondan ar\u0131nd\u0131r\u0131nca yakla\u015f\u0131k +%9,4)."
+      "t": "Satışlar geçen yılın aynı dönemine göre %42,0 arttı (690,8 milyar TL → 981,0 milyar TL, enflasyondan arındırınca yaklaşık +%9,4)."
      },
      {
-      "k": "br\u00fct k\u00e2r marj\u0131 geriledi",
+      "k": "brüt kâr marjı geriledi",
       "p": -1,
-      "t": "Br\u00fct k\u00e2r marj\u0131: %17,2 \u2192 %11,3 (geriledi)."
+      "t": "Brüt kâr marjı: %17,2 → %11,3 (geriledi)."
      },
      {
-      "k": "faaliyet k\u00e2r marj\u0131 geriledi",
+      "k": "faaliyet kâr marjı geriledi",
       "p": -1,
-      "t": "Faaliyet k\u00e2r marj\u0131: %9,8 \u2192 %4,0 (geriledi)."
+      "t": "Faaliyet kâr marjı: %9,8 → %4,0 (geriledi)."
      },
      {
-      "k": "net k\u00e2r reel olarak %23,6 azald\u0131",
+      "k": "net kâr reel olarak %23,6 azaldı",
       "p": -1,
-      "t": "Net k\u00e2r ge\u00e7en y\u0131l\u0131n ayn\u0131 d\u00f6nemine g\u00f6re %0,9 azald\u0131 (81,1 milyar TL \u2192 80,3 milyar TL, enflasyondan ar\u0131nd\u0131r\u0131nca yakla\u015f\u0131k -%23,6)."
+      "t": "Net kâr geçen yılın aynı dönemine göre %0,9 azaldı (81,1 milyar TL → 80,3 milyar TL, enflasyondan arındırınca yaklaşık -%23,6)."
      },
      {
-      "k": "bor\u00e7luluk orta",
+      "k": "borçluluk orta",
       "p": 0,
-      "t": "Net bor\u00e7 926,5 milyar TL; \u00f6zkayna\u011fa oran\u0131 0,82 (orta)."
+      "t": "Net borç 926,5 milyar TL; özkaynağa oranı 0,82 (orta)."
      },
      {
-      "k": "son \u00e7eyrek k\u00e2r\u0131 reel olarak %15,5 azald\u0131",
+      "k": "son çeyrek kârı reel olarak %15,5 azaldı",
       "p": -1,
-      "t": "Son \u00e7eyrekte (Temmuz-Eyl\u00fcl) net k\u00e2r 61,5 milyar TL; ge\u00e7en y\u0131l\u0131n ayn\u0131 \u00e7eyre\u011finde 56,1 milyar TL idi (+%9,7, enflasyondan ar\u0131nd\u0131r\u0131nca yakla\u015f\u0131k -%15,5)."
+      "t": "Son çeyrekte (Temmuz-Eylül) net kâr 61,5 milyar TL; geçen yılın aynı çeyreğinde 56,1 milyar TL idi (+%9,7, enflasyondan arındırınca yaklaşık -%15,5)."
      },
      {
-      "k": "\u00f6zkaynak k\u00e2rl\u0131l\u0131\u011f\u0131 zay\u0131f",
+      "k": "özkaynak kârlılığı zayıf",
       "p": 0,
-      "t": "\u00d6zkaynak k\u00e2rl\u0131l\u0131\u011f\u0131 y\u0131ll\u0131k %12,9."
+      "t": "Özkaynak kârlılığı yıllık %12,9."
      },
      {
       "k": "",
       "p": 0,
-      "t": "Not: Ge\u00e7en y\u0131l\u0131n rakamlar\u0131 o d\u00f6nemin TL'siyle raporland\u0131\u011f\u0131 i\u00e7in b\u00fcy\u00fcmeler ayr\u0131ca y\u0131ll\u0131k enflasyona (%29,8) g\u00f6re de de\u011ferlendirildi."
+      "t": "Not: Geçen yılın rakamları o dönemin TL'siyle raporlandığı için büyümeler ayrıca yıllık enflasyona (%29,8) göre de değerlendirildi."
      }
     ],
-    "ozet": "Genel tablo zay\u0131f: br\u00fct k\u00e2r marj\u0131 geriledi ve faaliyet k\u00e2r marj\u0131 geriledi.",
+    "ozet": "Genel tablo zayıf: brüt kâr marjı geriledi ve faaliyet kâr marjı geriledi.",
     "puan": -4
    },
    "chk": {
@@ -117,55 +117,55 @@
      "d": "2026-11-17 18:03",
      "k": "KAP",
      "o": true,
-     "t": "Pay Al\u0131m Sat\u0131m Bildirimi",
+     "t": "Pay Alım Satım Bildirimi",
      "u": "https://www.kap.org.tr/tr/Bildirim/1699178",
      "y": {
       "e": "olumlu",
-      "t": "Y\u00f6netici ya da b\u00fcy\u00fck ortak hisse ALIMI bildirdi. Genelde olumlu bir i\u015faret say\u0131l\u0131r."
+      "t": "Yönetici ya da büyük ortak hisse ALIMI bildirdi. Genelde olumlu bir işaret sayılır."
      }
     },
     {
      "d": "2026-11-17 09:14",
      "k": "KAP",
      "o": false,
-     "t": "Kamuyu Ayd\u0131nlatma Platformu Duyurusu",
+     "t": "Kamuyu Aydınlatma Platformu Duyurusu",
      "u": "https://www.kap.org.tr/tr/Bildirim/1698710",
      "y": {
       "e": "notr",
-      "t": "Bildirim t\u00fcr\u00fc: Kamuyu Ayd\u0131nlatma Platformu Duyurusu."
+      "t": "Bildirim türü: Kamuyu Aydınlatma Platformu Duyurusu."
      }
     },
     {
      "d": "2026-11-13 10:58",
      "k": "KAP",
      "o": false,
-     "t": "\u015eirket Genel Bilgi Formu",
+     "t": "Şirket Genel Bilgi Formu",
      "u": "https://www.kap.org.tr/tr/Bildirim/1697886",
      "y": {
       "e": "notr",
-      "t": "\u015eirket bilgilerinin (ortakl\u0131k yap\u0131s\u0131, y\u00f6netim vb.) g\u00fcncellenmesi. Rutin bildirim."
+      "t": "Şirket bilgilerinin (ortaklık yapısı, yönetim vb.) güncellenmesi. Rutin bildirim."
      }
     },
     {
      "d": "2026-11-11 18:10",
      "k": "KAP",
      "o": false,
-     "t": "SPK \u0130\u015flem Yasa\u011f\u0131 Nedeniyle Pay Duyurusu",
+     "t": "SPK İşlem Yasağı Nedeniyle Pay Duyurusu",
      "u": "https://www.kap.org.tr/tr/Bildirim/1697234",
      "y": {
       "e": "notr",
-      "t": "SPK'n\u0131n, bu hissede i\u015flem yapm\u0131\u015f baz\u0131 ki\u015filere getirdi\u011fi i\u015flem yasa\u011f\u0131. \u015eirketin kendisiyle de\u011fil, o ki\u015filerle ilgili."
+      "t": "SPK'nın, bu hissede işlem yapmış bazı kişilere getirdiği işlem yasağı. Şirketin kendisiyle değil, o kişilerle ilgili."
      }
     },
     {
      "d": "2026-11-09 17:43",
      "k": "KAP",
      "o": false,
-     "t": "\u00d6zel Durum A\u00e7\u0131klamas\u0131 (Genel)",
+     "t": "Özel Durum Açıklaması (Genel)",
      "u": "https://www.kap.org.tr/tr/Bildirim/1695191",
      "y": {
       "e": "notr",
-      "t": "Konu: Ekim 2026 Trafik Sonu\u00e7lar\u0131. Ayl\u0131k yolcu/trafik sonu\u00e7lar\u0131 a\u00e7\u0131kland\u0131. \u015eirketin a\u00e7\u0131klamas\u0131: \u201cOrtakl\u0131\u011f\u0131m\u0131z\u0131n 2026 Ekim ay\u0131 konsolide trafik sonu\u00e7lar\u0131 ektedir.\u201d",
+      "t": "Konu: Ekim 2026 Trafik Sonuçları. Aylık yolcu/trafik sonuçları açıklandı. Şirketin açıklaması: “Ortaklığımızın 2026 Ekim ayı konsolide trafik sonuçları ektedir.”",
       "v": 3
      }
     },
@@ -173,44 +173,44 @@
      "d": "2026-11-09 16:27",
      "k": "KAP",
      "o": false,
-     "t": "Borsada \u0130\u015flem G\u00f6ren Tipe D\u00f6n\u00fc\u015f\u00fcm Duyurusu",
+     "t": "Borsada İşlem Gören Tipe Dönüşüm Duyurusu",
      "u": "https://www.kap.org.tr/tr/Bildirim/1695077",
      "y": {
       "e": "notr",
-      "t": "Baz\u0131 ortaklar\u0131n paylar\u0131n\u0131n borsada sat\u0131labilir hale getirilmesi. Arz artabilece\u011fi i\u00e7in izlenebilir, genelde rutindir."
+      "t": "Bazı ortakların paylarının borsada satılabilir hale getirilmesi. Arz artabileceği için izlenebilir, genelde rutindir."
      }
     },
     {
      "d": "2026-11-09 15:40",
      "k": "KAP",
      "o": false,
-     "t": "V\u0130OP \u0130\u015flem \u0130ptali Duyurular\u0131",
+     "t": "VİOP İşlem İptali Duyuruları",
      "u": "https://www.kap.org.tr/tr/Bildirim/1694972",
      "y": {
       "e": "notr",
-      "t": "Vadeli i\u015flemler piyasas\u0131nda i\u015flem iptali duyurusu. \u015eirketin kendisiyle ilgili de\u011fil."
+      "t": "Vadeli işlemler piyasasında işlem iptali duyurusu. Şirketin kendisiyle ilgili değil."
      }
     },
     {
      "d": "2026-11-04 12:46",
      "k": "KAP",
      "o": false,
-     "t": "Temerr\u00fct \u0130\u015flemi",
+     "t": "Temerrüt İşlemi",
      "u": "https://www.kap.org.tr/tr/Bildirim/1692139",
      "y": {
       "e": "notr",
-      "t": "Takasbank'\u0131n, bir arac\u0131 kurumdaki i\u015flem temerr\u00fcd\u00fcne dair rutin bildirimi. \u015eirketin kendisiyle ilgili de\u011fil."
+      "t": "Takasbank'ın, bir aracı kurumdaki işlem temerrüdüne dair rutin bildirimi. Şirketin kendisiyle ilgili değil."
      }
     },
     {
      "d": "2026-11-04 08:01",
      "k": "KAP",
      "o": false,
-     "t": "\u00d6zel Durum A\u00e7\u0131klamas\u0131 (Genel)",
+     "t": "Özel Durum Açıklaması (Genel)",
      "u": "https://www.kap.org.tr/tr/Bildirim/1691986",
      "y": {
       "e": "notr",
-      "t": "Konu: 2026 3. \u00c7eyrek Finansal Sonu\u00e7lar. \u015eirket d\u00f6nem finansal sonu\u00e7lar\u0131n\u0131 ve yat\u0131r\u0131mc\u0131 sunumunu yay\u0131mlad\u0131. Rakamlar\u0131n yorumu yukar\u0131daki bilan\u00e7o yorumunda.",
+      "t": "Konu: 2026 3. Çeyrek Finansal Sonuçlar. Şirket dönem finansal sonuçlarını ve yatırımcı sunumunu yayımladı. Rakamların yorumu yukarıdaki bilanço yorumunda.",
       "v": 3
      }
     },
@@ -218,11 +218,11 @@
      "d": "2026-11-04 08:00",
      "k": "KAP",
      "o": false,
-     "t": "Sorumluluk Beyan\u0131 (Konsolide)",
+     "t": "Sorumluluk Beyanı (Konsolide)",
      "u": "https://www.kap.org.tr/tr/Bildirim/1691985",
      "y": {
       "e": "notr",
-      "t": "Finansal raporlara e\u015flik eden rutin y\u00f6netim beyan\u0131."
+      "t": "Finansal raporlara eşlik eden rutin yönetim beyanı."
      }
     }
    ],
@@ -242,9 +242,9 @@
     "f786": 264.89,
     "gun": 290,
     "h1": 348.25,
-    "h1n": "son 1 y\u0131l\u0131n zirvesi",
+    "h1n": "son 1 yılın zirvesi",
     "h2": 377.1,
-    "h2n": "Fibonacci 1,272 uzant\u0131s\u0131",
+    "h2n": "Fibonacci 1,272 uzantısı",
     "kir": {
      "durum": "bekleniyor",
      "gt_alt": 337.8,
@@ -255,7 +255,7 @@
     "ma200_once": 305.19,
     "ma50": 287.38,
     "risk": 304.76,
-    "riskn": "200 g\u00fcnl\u00fck ortalama",
+    "riskn": "200 günlük ortalama",
     "seri": [
      [
       "2025-11-06",
@@ -1308,27 +1308,27 @@
     "gor": "notr",
     "olcut": [
      {
-      "ad": "De\u011ferleme",
+      "ad": "Değerleme",
       "p": 1,
       "t": "ucuz (F/K 3,04, PD/DD 0,39)"
      },
      {
       "ad": "Uzun trend",
       "p": 0,
-      "t": "fiyat 200 g\u00fcnl\u00fck ortalaman\u0131n \u00fcst\u00fcnde, ortalama d\u00fc\u015f\u00fcyor"
+      "t": "fiyat 200 günlük ortalamanın üstünde, ortalama düşüyor"
      },
      {
-      "ad": "K\u00e2r b\u00fcy\u00fcmesi",
+      "ad": "Kâr büyümesi",
       "p": -1,
-      "t": "ge\u00e7en y\u0131l\u0131n ayn\u0131 d\u00f6nemine g\u00f6re %0,9 d\u00fc\u015f\u00fc\u015f (enflasyondan ar\u0131nd\u0131r\u0131nca yakla\u015f\u0131k -%23,6)"
+      "t": "geçen yılın aynı dönemine göre %0,9 düşüş (enflasyondan arındırınca yaklaşık -%23,6)"
      },
      {
-      "ad": "\u00d6zkaynak k\u00e2rl\u0131l\u0131\u011f\u0131",
+      "ad": "Özkaynak kârlılığı",
       "p": 0,
-      "t": "y\u0131ll\u0131k %12,9"
+      "t": "yıllık %12,9"
      }
     ],
-    "oneri": "Uzun vade g\u00f6r\u00fcn\u00fcm\u00fc n\u00f6tr: tut ve izle, yeni al\u0131m i\u00e7in acele etme.",
+    "oneri": "Uzun vade görünümü nötr: tut ve izle, yeni alım için acele etme.",
     "puan": 0
    },
    "vade": "uzun"
