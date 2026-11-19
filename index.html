@@ -551,7 +551,7 @@ function kartlar(){var el=document.getElementById("byk");if(!el)return;var L=eld
       '<div style="text-align:right;white-space:nowrap"><b style="font-size:16px">'+fmt(x.p)+'</b><div class="'+cls(x.g)+'" style="font-weight:700;font-size:13.5px">'+sg(x.g)+' TL</div><div style="font-size:12px"><span class="'+cls(x.g)+'" style="font-weight:700">'+pc(x.gp)+'</span><span class="mut"> · pay %'+Math.round(x.pay*100)+'</span></div></div></div>';}).join("")+
     (L.length>1?'<div style="display:flex;justify-content:flex-end;font-size:13px;margin:2px 2px 4px"><span class="mut">Toplam:&nbsp;</span><b class="'+cls(top)+'">'+sg(top)+' TL</b></div>':'');}
 function dikkat(){var el=document.getElementById("dik");if(!el)return;var L=eldekiler(),A=[];
-  L.forEach(function(x){var st=KR&&KR.stocks&&KR.stocks[kod(x.k)]||{},t=st.tek;
+  L.forEach(function(x){var st=KR&&KR.stocks&&KR.stocks[kod(x.k)]||{},t=NS(st.tek);
     if(t&&t.durum==="risk")A.push(["⚠️",x.k+" risk çizgisinin altında","Fiyat "+fmt(x.p)+", risk çizgisi "+fmt(t.risk)+" ("+(t.riskn||"")+")"+(t.bolge?" · fiyat aynı zamanda "+(t.bolge==="alim2"?"2. alım":"alım")+" bölgesinde":""),1,1,"Risk"]);
     else if(t&&t.durum==="kar_al")A.push(["🎯",x.k+" kâr al bölgesinde","Fiyat "+fmt(x.p)+", hedef 1: "+fmt(t.h1),2,2,"Kâr al"]);
     else if(t&&t.durum==="alim")A.push(["🟢",x.k+" alım bölgesinde",fmt(t.f50)+" – "+fmt(t.f382)+" TL arası",3,3,"Alım"]);
@@ -572,10 +572,14 @@ function seri(k){var st=KR&&KR.stocks&&KR.stocks[kod(k)]||{};
   if(st.tek&&st.tek.seri&&st.tek.seri.length>20)return st.tek.seri;
   var o=[],D=PX&&PX.days||{};Object.keys(D).sort().forEach(function(d){var v=D[d].p&&(D[d].p[k]||D[d].p[kod(k)]);if(v>0)o.push([d,v]);});return o;}
 var ARL=250;
+/* Seviyeler Analiz yontemiyle (seviye_ortak.py) hesaplandiysa eski alan adlarina eslenir; boylece grafik ve listeler
+   Analiz sayfasiyla ayni bantlari gosterir: f50-f382 = alim bolgesi, f786-f618 = 2. alim bolgesi. */
+function NS(t){if(!t||t.yontem!=="analiz"||t._ns)return t;t._ns=1;t.F382=t.f382;t.F50=t.f50;t.F618=t.f618;t.F786=t.f786;
+  t.f50=t.alim?t.alim[0]:null;t.f382=t.alim?t.alim[1]:null;t.f786=t.alim2?t.alim2[0]:null;t.f618=t.alim2?t.alim2[1]:null;return t;}
 function ort(ys,n,i){if(i<n-1)return null;var t=0;for(var j=i-n+1;j<=i;j++)t+=ys[j];return t/n;}
 function grafik(){var el=document.getElementById("fgr");if(!el)return;var L=eldekiler();if(!L.length){el.innerHTML="";return;}
   if(!SEC||!L.some(function(x){return x.k===SEC;}))SEC=L[0].k;
-  var k=SEC,st=KR&&KR.stocks&&KR.stocks[kod(k)]||{},t=st.tek||{},TUM=seri(k),hs=L.filter(function(x){return x.k===k;})[0]||{},mal=hs.c,fy=hs.p||t.son;
+  var k=SEC,st=KR&&KR.stocks&&KR.stocks[kod(k)]||{},t=NS(st.tek||{}),TUM=seri(k),hs=L.filter(function(x){return x.k===k;})[0]||{},mal=hs.c,fy=hs.p||t.son;
   var btn=L.map(function(x){return'<button class="ghost" style="padding:5px 12px;'+(x.k===k?'border-color:var(--b1);color:var(--b1)':'')+'" onclick="window.__fgSec(\''+esc(x.k)+'\')">'+esc(x.k)+'</button>';}).join(" ");
   var ar=[[63,"3 ay"],[125,"6 ay"],[250,"1 yıl"]].map(function(a){return'<button class="ghost" style="padding:4px 10px;font-size:12.5px;'+(a[0]===ARL?'border-color:var(--b1);color:var(--b1)':'')+'" onclick="window.__fgAr('+a[0]+')">'+a[1]+'</button>';}).join(" ");
   if(TUM.length<2){el.innerHTML='<div class="btns">'+btn+'</div><div class="mut">Grafik için yeterli fiyat yok.</div>';return;}
@@ -596,21 +600,21 @@ function grafik(){var el=document.getElementById("fgr");if(!el)return;var L=elde
   g+='<polyline fill="none" stroke="var(--b1)" stroke-width="2" points="'+S2.map(function(p,i){return X(i).toFixed(1)+","+Y(p[1]).toFixed(1);}).join(" ")+'"/>';
   var iz=ys.indexOf(Math.max.apply(null,ys)),id=ys.indexOf(Math.min.apply(null,ys));
   function an(x){return x<L0+40?"start":(x>L0+w-40?"end":"middle");}
-  g+='<text x="'+X(iz).toFixed(1)+'" y="'+(Y(ys[iz])-6).toFixed(1)+'" font-size="10" fill="var(--mut)" text-anchor="'+an(X(iz))+'">zirve '+fmt(ys[iz])+'</text>';
-  g+='<text x="'+X(id).toFixed(1)+'" y="'+Math.min(H-B0+2,Y(ys[id])+13).toFixed(1)+'" font-size="10" fill="var(--mut)" text-anchor="'+an(X(id))+'">dip '+fmt(ys[id])+'</text>';
+  g+='<text x="'+X(iz).toFixed(1)+'" y="'+(Y(ys[iz])-6).toFixed(1)+'" font-size="10" fill="var(--mut)" text-anchor="'+an(X(iz))+'">kapanış zirvesi '+fmt(ys[iz])+'</text>';
+  g+='<text x="'+X(id).toFixed(1)+'" y="'+Math.min(H-B0+2,Y(ys[id])+13).toFixed(1)+'" font-size="10" fill="var(--mut)" text-anchor="'+an(X(id))+'">kapanış dibi '+fmt(ys[id])+'</text>';
   var son=S2[S2.length-1];g+='<circle cx="'+X(S2.length-1).toFixed(1)+'" cy="'+Y(son[1]).toFixed(1)+'" r="4" fill="var(--b1)"/>';
   et.sort(function(a,b){return a[0]-b[0];});for(var i=1;i<et.length;i++)if(et[i][0]-et[i-1][0]<11)et[i][0]=et[i-1][0]+11;
   et.forEach(function(e){g+='<text x="'+(L0+w+4)+'" y="'+e[0].toFixed(1)+'" font-size="10" fill="'+e[1]+'">'+e[2]+'</text>';});
   g+='<text x="'+L0+'" y="'+(H-3)+'" font-size="10.5" fill="var(--mut)">'+trDate(S2[0][0])+'</text><text x="'+(L0+w)+'" y="'+(H-3)+'" font-size="10.5" fill="var(--mut)" text-anchor="end">'+trDate(son[0])+'</text></svg>';
   var eks=TUM.length<ARL*0.9&&ARL>250?'<div class="mut" style="font-size:12px;margin-top:4px">Bu hisse için şimdilik '+(TUM.length>=500?Math.floor(TUM.length/250)+' yıllık':TUM.length+' günlük')+' doğrulanmış fiyat var; eksik kısım bir sonraki otomatik güncellemede tamamlanır.</div>':'';
-  var lg=eks+'<div style="margin-top:6px;font-size:12px;display:flex;gap:12px;flex-wrap:wrap"><span style="color:var(--b1)">━ Fiyat</span><span style="color:#4fc3f7">━ '+(KIS?"20":"50")+' günlük ort.</span><span style="color:#ff9f43">━ '+(KIS?"50":"200")+' günlük ort.</span></div>';
+  var lg=eks+'<div style="margin-top:6px;font-size:12px;display:flex;gap:12px;flex-wrap:wrap"><span style="color:var(--b1)">━ Fiyat</span><span style="color:#4fc3f7">━ '+(KIS?"20":"50")+' g. basit ort.</span><span style="color:#ff9f43">━ '+(KIS?"50":"200")+' g. basit ort.</span></div>';
   /* seviye listesi (karnedeki gibi), fiyatin bulundugu bolge vurgulu */
   var R=[];if(t.h1>0){
     R.push([t.h2,"Satış hedefi 2",fmt(t.h2)+" TL",t.h2n||"","var(--neg)",false]);
     R.push([t.h1,"Satış hedefi 1 (kâr al)",fmt(t.h1)+" TL",t.h1n||"","var(--neg)",t.durum==="kar_al"]);
-    R.push([t.h1-1e-3,"Bekleme bölgesi",fmt(t.f382)+" – "+fmt(t.h1)+" TL","Fibonacci %38,2 ile hedef 1 arası","#d9a400",t.durum==="bekle"]);
-    R.push([t.f382,"Alım bölgesi",fmt(t.f50)+" – "+fmt(t.f382)+" TL","Fibonacci %50 – %38,2 geri çekilme","var(--pos)",t.durum==="alim"]);
-    R.push([t.risk,"Risk çizgisi (zarar kes)",fmt(t.risk)+" TL",(t.riskn||"")+", altında kapanış riskli","var(--mut)",t.durum==="risk"?2:false]);
+    if(t.f382>0)R.push([t.h1-1e-3,"Bekleme bölgesi",fmt(t.f382)+" – "+fmt(t.h1)+" TL",t._ns?"alım bölgesinin üstü":"Fibonacci %38,2 ile hedef 1 arası","#d9a400",t.durum==="bekle"]);
+    if(t.f382>0)R.push([t.f382,"Alım bölgesi",fmt(t.f50)+" – "+fmt(t.f382)+" TL",t._ns?"Fibonacci geri çekilme bandı"+(t.kes?" · güçlü kısım "+fmt(t.kes[0])+" – "+fmt(t.kes[1]):""):"Fibonacci %50 – %38,2 geri çekilme","var(--pos)",t.durum==="alim"]);
+    R.push([t.risk,t._ns?"Risk (elindeyse)":"Risk çizgisi (zarar kes)",fmt(t.risk)+" TL",(t.riskn||"")+", altında kapanış riskli","var(--mut)",t.durum==="risk"?2:false]);
     R.sort(function(a,b){return b[0]-a[0];});}
   var lst=R.map(function(r){return'<div style="border-left:3px solid '+r[4]+';padding:5px 9px;margin:5px 0;'+(r[5]?'background:rgba(127,127,127,.12);border-radius:0 8px 8px 0':'')+'"><div style="display:flex;justify-content:space-between;gap:8px;font-size:13.5px"><span>'+r[1]+(r[5]?' <span class="mut" style="font-size:12px">· '+(r[5]===2?'fiyat bunun altında':'fiyat burada')+'</span>':'')+'</span><b style="white-space:nowrap">'+r[2]+'</b></div><div class="mut" style="font-size:11.5px">'+esc(r[3])+'</div></div>';}).join("");
   var oz=[];if(KIS){if(t.ma20)oz.push("20 günlük ort. "+fmt(t.ma20));if(t.ma50)oz.push("50 günlük ort. "+fmt(t.ma50));if(t.rsi!=null)oz.push("RSI "+String(t.rsi).replace(".",","));if(t.dip)oz.push("3 ay dip "+fmt(t.dip)+" / zirve "+fmt(t.zirve));}else{if(t.ma50)oz.push("50 günlük ort. "+fmt(t.ma50));if(t.ma200)oz.push("200 günlük ort. "+fmt(t.ma200));if(t.dip)oz.push("1 yıl dip "+fmt(t.dip)+" / zirve "+fmt(t.zirve));}
