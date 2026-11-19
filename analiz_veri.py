@@ -112,48 +112,102 @@ def mum_tamam(m):
 
 
 def birlestir(K):
-    """K: {kaynak: {tarih: mum}} -> (seri, sayac, kayitlar). Seri: [[tarih, a, y, d, k, hacim], ...]"""
-    seri, kayit = [], []
-    say = {"iki_kaynak": 0, "atlanan": 0, "hl_farkli": 0}
+    """K: {kaynak: {tarih: mum}} -> (seri, sayac, kayitlar). Seri: [[tarih, a, y, d, k, hacim], ...]
+
+    1. adim: kapanisi en az iki kaynakta ayni olan gunler dogrudan alinir.
+    2. adim (cozumleme): kaynaklarin tutmadigi gunlerde dogru deger analizle bulunur.
+       Is Yatirim fiyatlari temettu/bedelsiz icin duzeltilmistir; duzeltme carpani iki duzeltme arasinda sabittir.
+       Carpan, o gunun cevresindeki dogrulanmis gunlerden (Is Yatirim / dogrulanmis kapanis) hesaplanir ve Is Yatirim
+       kapanisi bu carpanla gercek (duzeltilmemis) fiyata cevrilir. Yahoo ya da borsapy'den hangisi bu degerle
+       %0,4 icinde tutuyorsa o gunun mumu ondan alinir. Boylece gun atlanmaz, uydurma deger de yazilmaz.
+       Sadece tek kaynakta gorunen gun (ornegin borsanin kapali oldugu gun: 8 Subat 2023) islem gormemis sayilir."""
+    kayit = []
+    say = {"iki_kaynak": 0, "cozulen": 0, "islem_yok": 0, "atlanan": 0, "hl_farkli": 0}
     tarihler = sorted(set(K.get("yahoo", {})) | set(K.get("borsapy", {})) | set(K.get("isyatirim", {})))
-    for d in tarihler:
-        m = {s: K[s][d] for s in K if d in K[s]}
-        kap = {s: v["c"] for s, v in m.items()}
-        # kapanisi en az iki kaynakta tutan kaynaklar
-        destek = []
-        for s, v in kap.items():
-            uyan = [x for x, w in kap.items() if esit(v, w)]
-            if len(uyan) > len(destek):
-                destek = uyan
-        if len(destek) < 2:
-            say["atlanan"] += 1
-            kayit.append({"tarih": d, "kapanislar": kap, "neden": "kapanis iki kaynakta tutmadi, alinmadi"})
-            continue
-        # mum: dogrulanan kaynaklardan acilis/yuksek/dusuk degeri tam ve tutarli olan (once Yahoo, sonra borsapy)
-        mum = None
+    kabul, bekleyen = {}, []
+
+    def mum_al(d, m, kaynaklar):
         for s in ("yahoo", "borsapy"):
-            if s in destek and mum_tamam(m.get(s)):
-                mum = dict(m[s]); mum["kaynak"] = s
-                break
-        if not mum:
-            say["atlanan"] += 1
-            kayit.append({"tarih": d, "kapanislar": kap, "neden": "dogrulanan kaynakta mum (acilis/yuksek/dusuk) eksik, alinmadi"})
-            continue
-        # en yuksek / en dusuk ikinci kaynakla karsilastirma (sadece kayit; kapanis zaten dogrulandi)
+            if s in kaynaklar and mum_tamam(m.get(s)):
+                x = dict(m[s]); x["kaynak"] = s
+                return x
+        return None
+
+    def kaydet(d, mum, kap, destek):
         for s in destek:
             if s == mum["kaynak"]:
                 continue
-            o = m[s]
+            o = m_[d][s]
             if o.get("h") and o.get("l") and not (esit(o["h"], mum["h"], 0.005) and esit(o["l"], mum["l"], 0.005)):
                 say["hl_farkli"] += 1
                 kayit.append({"tarih": d, "neden": "en yuksek/en dusuk %s ile farkli" % s,
                               mum["kaynak"]: [mum["h"], mum["l"]], s: [o["h"], o["l"]]})
             break
-        c = kap[mum["kaynak"]]
+        c = mum["c"]
         v = mum.get("v")
-        seri.append([d, round(mum["o"], 2), round(max(mum["h"], mum["o"], c), 2), round(min(mum["l"], mum["o"], c), 2),
-                     c, int(v) if v else 0])
-        say["iki_kaynak"] += 1
+        kabul[d] = [d, round(mum["o"], 2), round(max(mum["h"], mum["o"], c), 2), round(min(mum["l"], mum["o"], c), 2),
+                    c, int(v) if v else 0]
+
+    m_ = {}
+    for d in tarihler:
+        m = {s: K[s][d] for s in K if d in K[s]}
+        m_[d] = m
+        kap = {s: v["c"] for s, v in m.items()}
+        destek = []
+        for s, v in kap.items():
+            uyan = [x for x, w in kap.items() if esit(v, w)]
+            if len(uyan) > len(destek):
+                destek = uyan
+        mum = mum_al(d, m, destek) if len(destek) >= 2 else None
+        if mum:
+            kaydet(d, mum, kap, destek)
+            say["iki_kaynak"] += 1
+        else:
+            bekleyen.append(d)
+
+    # 2. adim: cozumleme
+    sira = {d: i for i, d in enumerate(tarihler)}
+    oran = [(sira[d], K["isyatirim"][d]["c"] / kabul[d][4]) for d in kabul if d in K.get("isyatirim", {})]
+    for d in bekleyen:
+        m = m_[d]
+        kap = {s: v["c"] for s, v in m.items()}
+        hamlar = [s for s in ("yahoo", "borsapy") if s in m]
+        if len(m) == 1:
+            say["islem_yok"] += 1
+            kayit.append({"tarih": d, "kapanislar": kap, "neden": "sadece tek kaynakta var; o gun islem gormemis sayildi"})
+            continue
+        cozum = None
+        isy = (m.get("isyatirim") or {}).get("c")
+        if isy and hamlar:
+            i0 = sira[d]
+            yakin = sorted(oran, key=lambda x: abs(x[0] - i0))[:10]
+            # carpan bir temettu gunu araya girdiyse degisir: sadece ayni taraftaki en yakin gunlerin carpanina guven
+            once = [r for i, r in yakin if i < i0][:5]
+            sonra = [r for i, r in yakin if i > i0][:5]
+            adaylar_f = []
+            for grup in (once, sonra):
+                if grup:
+                    g = sorted(grup)
+                    adaylar_f.append(g[len(g) // 2])
+            en_iyi = None
+            for f in adaylar_f:
+                hedef = isy / f
+                for s in hamlar:
+                    fark = abs(m[s]["c"] - hedef) / hedef
+                    if fark <= 0.004 and mum_tamam(m[s]) and (en_iyi is None or fark < en_iyi[0]):
+                        en_iyi = (fark, s, round(hedef, 2))
+            if en_iyi:
+                cozum = en_iyi
+        if cozum:
+            mum = dict(m[cozum[1]]); mum["kaynak"] = cozum[1]
+            kaydet(d, mum, kap, [cozum[1]])
+            say["cozulen"] += 1
+            kayit.append({"tarih": d, "kapanislar": kap, "secilen": cozum[1], "is_yatirim_gercek_karsiligi": cozum[2],
+                          "neden": "kaynaklar tutmadi; Is Yatirim duzeltme carpaniyla dogru deger bulundu"})
+        else:
+            say["atlanan"] += 1
+            kayit.append({"tarih": d, "kapanislar": kap, "neden": "dogru deger kesinlestirilemedi, alinmadi"})
+    seri = [kabul[d] for d in sorted(kabul)]
     return seri, say, kayit
 
 
@@ -184,9 +238,8 @@ def main():
                 hatalar.append("%s: %s" % (ad, e))
                 print("HATA", kod, ad, e)
         # Is Yatirim sadece iki kaynak bazi gunlerde tutmadiginda ya da biri hic gelmediginde sorulur
-        ortak = set(K.get("yahoo", {})) & set(K.get("borsapy", {}))
-        tutmayan = [d for d in ortak if not esit(K["yahoo"][d]["c"], K["borsapy"][d]["c"])]
-        if tutmayan or len(ortak) < 600:
+        # Is Yatirim her zaman sorulur: ucuncu kaynak olarak tutmayan gunlerin dogru degerini bulmaya yarar
+        if True:
             try:
                 K["isyatirim"] = isyatirim(kod)
             except Exception as e:
@@ -198,7 +251,7 @@ def main():
         elif (eski.get(kod) or {}).get("d"):
             stocks[kod] = eski[kod]  # bugun dogrulanamadi: son dogrulanmis veri kalir
             korunan.append(kod)
-        log[kod] = {"ozet": say, "kaynak_gun": {s: len(v) for s, v in K.items()}, "hatalar": hatalar, "kayit": kayit[-30:]}
+        log[kod] = {"ozet": say, "kaynak_gun": {s: len(v) for s, v in K.items()}, "hatalar": hatalar, "kayit": kayit[-40:]}
         print(kod, say, "gun:", len(seri), hatalar)
 
     if not stocks:

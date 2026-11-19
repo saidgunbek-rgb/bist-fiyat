@@ -326,7 +326,7 @@ function baslat(j){H=j;var ks=Object.keys(j.stocks||{}).filter(function(k){retur
   if(!ks.length){document.getElementById("uyari").innerHTML='<div class="warn">Henüz analiz verisi yok. İlk otomatik güncelleme hafta içi 19:07\'de çalışır.</div>';return;}
   if(j.taslak)document.getElementById("uyari").innerHTML='<div class="warn">'+esc(j.taslak)+'</div>';
   else if(j.updated){var gun=(Date.now()-new Date(j.updated+"T19:00:00+03:00").getTime())/864e5;if(gun>4)document.getElementById("uyari").innerHTML='<div class="warn">Analiz verisi '+trD(j.updated)+' tarihli. Otomatik güncelleme birkaç gündür çalışmamış olabilir.</div>';}
-  document.getElementById("kaynak").innerHTML=j.taslak?"":"Veri: "+trD(j.updated)+" kapanışı · Her günün kapanışı en az iki kaynakta (Yahoo, borsapy, İş Yatırım) aynı çıkarsa grafiğe alınır; tutmayan gün grafikte yer almaz. Göstergeler TradingView'deki formüllerle bu sayfada hesaplanır.";
+  document.getElementById("kaynak").innerHTML=j.taslak?"":"Veri: "+trD(j.updated)+" kapanışı · Her günün kapanışı üç kaynakla (Yahoo, borsapy, İş Yatırım) karşılaştırılır. Kaynaklar tutmadığında doğru değer, İş Yatırım'ın temettü düzeltme çarpanı çevredeki doğrulanmış günlerden hesaplanarak bulunur; uydurma değer yazılmaz. Sadece borsanın kapalı olduğu günler grafikte yoktur. Göstergeler TradingView'deki formüllerle bu sayfada hesaplanır.";
   sec(SEC&&j.stocks[SEC]?SEC:ks[0]);}
 if(window.VERI)baslat(window.VERI);
 else fetch(VERI_URL+"?t="+Date.now()).then(function(r){if(!r.ok)throw 0;return r.json();}).catch(function(){return fetch("analiz.json?t="+Date.now()).then(function(r){if(!r.ok)throw 0;return r.json();});})
