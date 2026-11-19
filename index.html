@@ -113,11 +113,12 @@ window.fetch=function(){return of.apply(this,arguments).then(function(r){try{var
 <div class="ast na" id="ast">Otomatik fiyat güncellemesi kontrol ediliyor…</div>
 <details class="vd" id="vd" style="display:none"></details>
 <div class="card" id="sum"></div>
-<details class="ac" style="margin:-4px 6px 14px;border-top:0;padding-top:0"><summary>🔗 Özet kartı neye bağlı?</summary>• <b>Değer</b> = eldeki adet × son fiyat. Adet ve maliyet “Alım / satım işlemleri”nden, fiyat “Gün sonu fiyatlarını gir”den gelir.<br>• <b>Toplam K/Z</b> = değer − kalan maliyet + gerçekleşen K/Z (satışlardan) + temettü.<br>• <b>Günlük</b> = toplam K/Z’nin bir önceki kayıtlı güne göre farkı.<br>• İşlem veya temettü eklersen, düzenlersen ya da silersen kart hemen değişir. Gün sonu fiyatı kaydedersen “(tahmini)” ibaresi kalkar ve rakam kesinleşir.</details>
+<details class="ac" style="margin:-4px 6px 14px;border-top:0;padding-top:0"><summary>🔗 Özet kartı neye bağlı?</summary>• <b>Değer</b> = eldeki adet × son fiyat. Adet ve maliyet “Alım / satım işlemleri”nden, fiyat her akşam otomatik gelen kapanış fiyatıdır.<br>• <b>Toplam K/Z</b> = değer − kalan maliyet + gerçekleşen K/Z (satışlardan) + temettü.<br>• <b>Günlük</b> = toplam K/Z’nin bir önceki kayıtlı güne göre farkı.<br>• İşlem veya temettü eklersen, düzenlersen ya da silersen kart hemen değişir. Gün sonu fiyatı kaydedersen “(tahmini)” ibaresi kalkar ve rakam kesinleşir.</details>
 
 <div class="card dk" id="dik" style="display:none"></div>
 
-<div class="card"><details class="cl" id="clp"><summary><h2>Fiyatı elle gir / düzelt</h2></summary>
+<!-- Fiyati elle gir / duzelt bolumu kullanici istegiyle gizlendi (19.11.2026); fiyatlar otomatik geliyor. Kod calismaya devam etsin diye silinmedi. -->
+<div class="card" style="display:none!important"><details class="cl" id="clp"><summary><h2>Fiyatı elle gir / düzelt</h2></summary>
 <div class="mut" style="margin-bottom:8px">Fiyatlar her akşam otomatik geliyor. Bu bölümü yalnızca bir fiyatı düzeltmek istersen kullan.</div>
 <div class="btns"><button id="kb">Kapanış fiyatlarını göster</button></div>
 <div id="kp" style="display:none"></div>
@@ -151,7 +152,7 @@ window.fetch=function(){return of.apply(this,arguments).then(function(r){try{var
 
 <div class="card"><details class="cl" id="clw"><summary><h2>Haftalık ve aylık özet</h2></summary><div class="mut" style="margin-bottom:4px">Haftalık (pazartesi–pazar)</div><div class="scroll" style="max-height:280px;overflow-y:auto"><table id="per"></table></div><div class="mut" style="margin:12px 0 4px">Aylık</div><div class="scroll" style="max-height:280px;overflow-y:auto"><table id="perm"></table></div><div class="mut" id="perd" style="margin-top:6px"></div><details class="ac"><summary>🔗 Bu özet neye bağlı?</summary>• Haftalık/aylık K/Z, <b>Geçmiş</b> tablosundaki günlük toplam K/Z farklarından; yüzde getiri ise işlemlerden etkilenmeyen getiri hesabından gelir.<br>• Gün sonu fiyatı kaydedersen / düzenlersen / silersen, işlem veya temettü eklersen ilgili hafta ve ay anında yeniden hesaplanır. Yeni hafta ve ay otomatik eklenir.<br>• * işareti: dönem ilk kayıt gününden başlıyor, öncesi kayıtlı değil.</details></details></div>
 
-<div class="card"><details class="cl" id="clg"><summary><h2>Grafikler</h2></summary><div class="mut">Toplam getiri: portföy, BIST 100, altın ve döviz (ilk kayıt gününe göre %)</div><div id="c2"></div><div style="border-top:1px dashed var(--mut);opacity:.9;margin:12px 0 8px"></div><div class="mut" style="margin:0 0 4px">Gelişim (günlük)</div><div id="c3"></div><div class="lg" id="lg2"><span><b style="background:var(--b1)"></b>Portföy</span><span><b style="background:var(--c1)"></b>BIST 100</span></div><details class="ac"><summary>🔗 Grafik neye bağlı?</summary>• Çubuklar ve çizgiler <b>Geçmiş</b> tablosundaki günlerden hesaplanır. Fiyat veya işlem değişince grafik de değişir.<br>• <b>Portföy</b> çubuğu getiri hesabıdır: hisse alıp satman getiriyi bozmaz, yalnızca fiyat hareketi ve temettü etkiler.<br>• <b>BIST 100</b> çubuğu “Gün sonu fiyatlarını gir”e yazdığın BIST kapanışlarından gelir. BIST girmediğin günlerde son değer eksik kalabilir.<br>• <b>Altın (gram), Dolar ve Euro</b> çubukları GitHub fiyat dosyasından otomatik gelir (BIST kapanış saatine yakın bir andaki değer). Gram altın = ons altın ÷ 31,1035 × dolar/TL; kuyumcu veya Kapalıçarşı fiyatından küçük farklı olabilir. Hepsi aynı başlangıç gününe göre yüzde değişimdir, portföy ve BIST 100 ile karşılaştırmak içindir.</details></details></div>
+<div class="card"><details class="cl" id="clg"><summary><h2>Grafikler</h2></summary><div class="mut">Toplam getiri: portföy, BIST 100, altın ve döviz (ilk kayıt gününe göre %)</div><div id="c2"></div><div style="border-top:1px dashed var(--mut);opacity:.9;margin:12px 0 8px"></div><div class="mut" style="margin:0 0 4px">Gelişim (günlük)</div><div id="c3"></div><div class="lg" id="lg2"><span><b style="background:var(--b1)"></b>Portföy</span><span><b style="background:var(--c1)"></b>BIST 100</span></div><details class="ac"><summary>🔗 Grafik neye bağlı?</summary>• Çubuklar ve çizgiler <b>Geçmiş</b> tablosundaki günlerden hesaplanır. Fiyat veya işlem değişince grafik de değişir.<br>• <b>Portföy</b> çubuğu getiri hesabıdır: hisse alıp satman getiriyi bozmaz, yalnızca fiyat hareketi ve temettü etkiler.<br>• <b>BIST 100</b> çubuğu her akşam otomatik gelen BIST kapanışlarından gelir. BIST girmediğin günlerde son değer eksik kalabilir.<br>• <b>Altın (gram), Dolar ve Euro</b> çubukları GitHub fiyat dosyasından otomatik gelir (BIST kapanış saatine yakın bir andaki değer). Gram altın = ons altın ÷ 31,1035 × dolar/TL; kuyumcu veya Kapalıçarşı fiyatından küçük farklı olabilir. Hepsi aynı başlangıç gününe göre yüzde değişimdir, portföy ve BIST 100 ile karşılaştırmak içindir.</details></details></div>
 
 <div class="card"><details class="cl" id="clh">
 <summary><h2>Geçmiş</h2></summary>
@@ -172,7 +173,7 @@ window.fetch=function(){return of.apply(this,arguments).then(function(r){try{var
 <div class="err" id="terr"></div>
 <div class="scroll"><table id="tl"></table></div>
 <p class="mut">Alımlarda ortalama maliyet güncellenir. Satımlarda gerçekleşen kâr/zarar ayrıca hesaplanır ve toplam kâr/zarara eklenir. “Hisse bazında durum” işlemi hemen gösterir. Üstteki toplam ve geçmiş ise işlem gününün kapanış fiyatı girilince güncellenir. Yüzde oranları kalan maliyete göre hesaplanır. Veriler yalnızca bu cihazdaki tarayıcıda saklanır.</p>
-<details class="ac"><summary>🔗 Neyi değiştirir?</summary>• İşlem ekleme, düzenleme veya silme <b>tüm bölümleri</b> günceller: Özet kartı, Hisse bazında durum, Geçmiş, Haftalık/aylık özet ve Grafikler.<br>• Elindeki adetten fazlasını satamazsın. Bir alımı silmek sonraki satımları geçersiz kılacaksa program engeller.<br>• Komisyon, alımda maliyete eklenir, satışta gerçekleşen K/Z’den düşülür.<br>• Yeni hisse alınca “Gün sonu fiyatlarını gir” bölümünde o hisse için fiyat kutusu otomatik açılır.</details></details></div>
+<details class="ac"><summary>🔗 Neyi değiştirir?</summary>• İşlem ekleme, düzenleme veya silme <b>tüm bölümleri</b> günceller: Özet kartı, Hisse bazında durum, Geçmiş, Haftalık/aylık özet ve Grafikler.<br>• Elindeki adetten fazlasını satamazsın. Bir alımı silmek sonraki satımları geçersiz kılacaksa program engeller.<br>• Komisyon, alımda maliyete eklenir, satışta gerçekleşen K/Z’den düşülür.<br>• Yeni hisse alınca o hissenin kapanış fiyatı akşam otomatik gelir (kodu fiyat.yml’deki HISSELER satırında olmalı).</details></details></div>
 
 <div class="card"><details class="cl" id="clv">
 <summary><h2>Temettü kayıtları</h2></summary>
@@ -294,7 +295,7 @@ function renderBys(){
   n+='K/Z, gerçekleşen kısmı ve temettüyü de içerir.';
   if(S.t.some(function(x){return x.y!=='a';}))n+=' Satılan hisseler ve gerçekleşen kâr “Satışlar ve gerçekleşen kâr” bölümünde.';
   if(ep.length)n+=' *'+ep.map(esc).join(', ')+' için kapanış girilmedi, kapanış yerine son işlem fiyatı kullanıldı (tahmini).';
-  if(np.length)n+=' '+np.map(esc).join(', ')+' için kapanış fiyatı girilmediği için toplama dahil değil; “Gün sonu fiyatlarını gir” bölümünden ekle.';
+  if(np.length)n+=' '+np.map(esc).join(', ')+' için kapanış fiyatı henüz gelmediği için toplama dahil değil; akşamki otomatik güncellemeyle eklenir.';
   dd.innerHTML=n;}
 function sumNote(last,r){var pn=0,ms=[],o=[];
   S.t.forEach(function(x){if(!x.o&&x.d>last.d)pn++;});(S.v||[]).forEach(function(x){if(x.d>last.d)pn++;});
@@ -441,7 +442,7 @@ document.getElementById("tadd").onclick=function(){
   var x={d:d,t:t,y:y,q:q,p:p,k:k};if(ET!==null&&S.t[ET].o)x.o=1;var L=S.t.slice();if(ET!==null)L[ET]=x;else L.push(x);if(!okq(L)){e.textContent=ET!==null?"Bu değişiklikle elindeki adetten fazlası satılmış olur.":"Elindeki adetten fazlasını satamazsın.";return;}
   S.t=L;persist();tcancel();all();
   var rc=S.d.filter(function(z){return z.d===d;})[0],mp=pos(d)[t];
-  if(mp&&mp.q>0&&!(rc&&rc.p&&rc.p[t]>0)){document.getElementById("dt").value=d;renderPrices();note("terr","İşlem eklendi. Toplama yansıması için “Gün sonu fiyatlarını gir” bölümünde "+trDate(d)+" kapanış fiyatlarını da kaydet (tarih bu güne ayarlandı).");}
+  if(mp&&mp.q>0&&!(rc&&rc.p&&rc.p[t]>0)){document.getElementById("dt").value=d;renderPrices();note("terr","İşlem eklendi. "+trDate(d)+" kapanış fiyatı akşamki otomatik güncellemeyle gelir; o zamana kadar işlem fiyatı kullanılır.");}
 };
 document.getElementById("save").onclick=function(){
   var d=document.getElementById("dt").value,e=document.getElementById("err");e.style.color="";
@@ -632,7 +633,7 @@ fetch(karneUrl()+"?t="+Date.now()).then(function(r){if(!r.ok)throw 0;return r.js
 <script>
 /* ---- Sekmeler: Ozet her zaman ana ekranda; diger bolumler sekmelerde ---- */
 (function(){
-var SK={grafik:["#clg"],karne:["#clk"],kut:["#clu"],islem:["#clt","#clv","#cls","#clp"],gecmis:["#clw","#clh"],ayar:["#cln","#clb"]};
+var SK={grafik:["#clg"],karne:["#clk"],kut:["#clu"],islem:["#clt","#clv","#cls"],gecmis:["#clw","#clh"],ayar:["#cln","#clb"]};
 var ACIK={grafik:["clg"]},SEC=null;
 var main=document.querySelector("main"),tb=document.getElementById("tb"),bos=document.getElementById("sbos");
 function kart(sel){var e=document.querySelector(sel);if(!e)return null;return e.closest(".card")||e;}
