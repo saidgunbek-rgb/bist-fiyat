@@ -19,7 +19,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  KUTUPHANE: "THYAO=Türk Hava Yolları=Havayolu,AKBNK=Akbank=Banka,MGROS=Migros=Perakende,BIMAS=BİM Birleşik Mağazalar=Perakende,TCELL=Turkcell=İletişim,YKBNK=Yapı ve Kredi Bankası=Banka,GARAN=Garanti BBVA=Banka,ASELS=Aselsan=Savunma,FROTO=Ford Otosan=Otomotiv,KCHOL=Koç Holding=Holding"
+  KUTUPHANE: "THYAO=Türk Hava Yolları=Havayolu,AKBNK=Akbank=Banka,MGROS=Migros=Perakende,BIMAS=BİM Birleşik Mağazalar=Perakende,TCELL=Turkcell=İletişim,YKBNK=Yapı ve Kredi Bankası=Banka,GARAN=Garanti BBVA=Banka,ASELS=Aselsan=Savunma,FROTO=Ford Otosan=Otomotiv,KCHOL=Koç Holding=Holding,ISCTR=Türkiye İş Bankası=Banka,PGSUS=Pegasus Hava Taşımacılığı=Havayolu"
 
 jobs:
   hisse:
@@ -29,7 +29,7 @@ jobs:
       fail-fast: false        # bir hisse hata verirse digerleri devam eder
       max-parallel: 5         # kaynaklari bogmamak icin ayni anda en fazla 5 hisse
       matrix:
-        kod: [THYAO, AKBNK, MGROS, BIMAS, TCELL, YKBNK, GARAN, ASELS, FROTO, KCHOL]
+        kod: [THYAO, AKBNK, MGROS, BIMAS, TCELL, YKBNK, GARAN, ASELS, FROTO, KCHOL, ISCTR, PGSUS]
     env:
       KARNE: ${{ matrix.kod }}
       VADE: ${{ matrix.kod }}=uzun
