@@ -124,6 +124,10 @@ def birlestir(K):
     kayit = []
     say = {"iki_kaynak": 0, "cozulen": 0, "islem_yok": 0, "atlanan": 0, "hl_farkli": 0}
     tarihler = sorted(set(K.get("yahoo", {})) | set(K.get("borsapy", {})) | set(K.get("isyatirim", {})))
+    # 5 yillik pencere, kaynaklarin hepsinin veri verdigi ilk gunden baslar (pencere basinda tek kaynakli gun kalmasin)
+    ilkler = [min(K[s]) for s in ("yahoo", "borsapy") if K.get(s)]
+    if len(ilkler) == 2:
+        tarihler = [d for d in tarihler if d >= max(ilkler)]
     kabul, bekleyen = {}, []
 
     def mum_al(d, m, kaynaklar):
