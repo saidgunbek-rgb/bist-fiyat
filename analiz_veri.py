@@ -10,6 +10,7 @@ BUGUN = (SIMDI + datetime.timedelta(hours=3)).date()
 BAS = BUGUN - datetime.timedelta(days=3660)  # 10 yil
 BAS_S = BAS.isoformat()
 EN_AZ_GUN = 120
+HATALI_PARCA = []
 _TR = SIMDI + datetime.timedelta(hours=3)
 # Seans acikken (ya da kapanis kesinlesmeden) bugunun yarim mumu alinmaz
 SON_GUN = BUGUN.isoformat() if (_TR.hour, _TR.minute) >= (18, 15) or _TR.weekday() >= 5 else (BUGUN - datetime.timedelta(days=1)).isoformat()
@@ -50,7 +51,14 @@ def sayi(x):
 
 
 def get(url):
-    return json.load(urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=40))
+    # baglanti okuma sirasinda koparsa (ornek: "Connection reset by peer") 5 kez, artan beklemeyle yeniden dener
+    for i in range(5):
+        try:
+            return json.load(urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=40))
+        except Exception:
+            if i == 4:
+                raise
+            time.sleep(4 * (i + 1))
 
 
 def yahoo(kod):
@@ -92,7 +100,13 @@ def isyatirim(kod):
         e = min(d + datetime.timedelta(days=90), BUGUN)
         u = ("https://www.isyatirim.com.tr/_layouts/15/IsYatirim.Website/Common/Data.aspx/HisseTekil"
              "?hisse=%s&startdate=%s&enddate=%s") % (kod, d.strftime("%d-%m-%Y"), e.strftime("%d-%m-%Y"))
-        for x in (get(u).get("value") or []):
+        try:
+            parca = get(u).get("value") or []
+        except Exception as e:
+            print("Is Yatirim parcasi alinamadi", kod, d, e)
+            parca = []
+            HATALI_PARCA.append("%s %s" % (kod, d))
+        for x in parca:
             try:
                 t = datetime.datetime.strptime(x["HGDG_TARIH"], "%d-%m-%Y").strftime("%Y-%m-%d")
             except Exception:
@@ -253,6 +267,14 @@ def main():
                 hatalar.append("isyatirim: %s" % e)
                 print("HATA", kod, "isyatirim", e)
         seri, say, kayit = birlestir(K)
+        # Bu calismada kesinlestirilemeyen gun, daha once dogrulanip kaydedilmisse o deger korunur (bosluk kalmaz)
+        eskiler = {r[0]: r for r in (eski.get(kod) or {}).get("d", [])}
+        mevcut = {r[0] for r in seri}
+        korunan_gun = [x["tarih"] for x in kayit if "alinmadi" in x.get("neden", "") and x["tarih"] in eskiler and x["tarih"] not in mevcut]
+        if korunan_gun:
+            seri = sorted(seri + [eskiler[t] for t in korunan_gun])
+            say["onceki_dogrulanmis"] = len(korunan_gun)
+            say["atlanan"] -= len(korunan_gun)
         if len(seri) >= EN_AZ_GUN:
             stocks[kod] = {"ad": adlar.get(kod, ""), "d": seri, "son": seri[-1][0]}
         elif (eski.get(kod) or {}).get("d"):
