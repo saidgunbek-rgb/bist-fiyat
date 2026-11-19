@@ -7,7 +7,7 @@ import json, os, re, sys, time, datetime, urllib.request
 UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36"}
 SIMDI = datetime.datetime.now(datetime.timezone.utc)
 BUGUN = (SIMDI + datetime.timedelta(hours=3)).date()
-BAS = BUGUN - datetime.timedelta(days=1830)  # 5 yil
+BAS = BUGUN - datetime.timedelta(days=3660)  # 10 yil
 BAS_S = BAS.isoformat()
 EN_AZ_GUN = 120
 _TR = SIMDI + datetime.timedelta(hours=3)
@@ -54,7 +54,7 @@ def get(url):
 
 
 def yahoo(kod):
-    u = "https://query1.finance.yahoo.com/v8/finance/chart/%s.IS?range=5y&interval=1d" % kod
+    u = "https://query1.finance.yahoo.com/v8/finance/chart/%s.IS?range=10y&interval=1d" % kod
     r = get(u)["chart"]["result"][0]
     off = r["meta"].get("gmtoffset", 10800)
     q = r["indicators"]["quote"][0]
@@ -72,7 +72,10 @@ def yahoo(kod):
 
 def borsapy_gecmis(kod):
     import borsapy as bp
-    df = bp.Ticker(kod).history(period="5y")
+    try:
+        df = bp.Ticker(kod).history(period="10y")
+    except Exception:
+        df = bp.Ticker(kod).history(period="max")
     out = {}
     for idx, row in df.iterrows():
         c = sayi(row.get("Close"))

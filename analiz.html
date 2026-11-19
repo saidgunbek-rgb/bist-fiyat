@@ -46,6 +46,28 @@ canvas{display:block;width:100%;touch-action:pan-y;-webkit-user-select:none;user
 .yl .yi{font-size:15px;line-height:1.3}.yl li b{font-size:12.5px}.yl li div b{color:inherit}
 .gs{font-size:11.5px;color:var(--mut);margin-top:4px;line-height:1.45}.gs .up{color:var(--g)}.gs .dn{color:var(--r)}
 .tz{font-size:12.5px;line-height:1.55;margin-top:10px;padding:9px 11px;border-radius:10px;background:rgba(245,185,66,.09);border:1px solid rgba(245,185,66,.35);color:#f3dfb0}
+.sec{border-radius:14px;padding:10px 12px 6px;margin-bottom:10px}
+.sec .sh{font-size:14.5px;font-weight:700;margin-bottom:4px;color:#f1f1f7}.sec .sh span{font-weight:400;font-size:12px;color:#b8bad0;margin-left:4px}
+.s0{background:linear-gradient(180deg,#2e2850,#231f3d);border:1px solid #5b4fa8}
+.kd{display:inline-block;font-weight:800;font-size:15px;letter-spacing:.3px;padding:5px 12px;border-radius:10px;border:1.5px solid;margin:4px 0 6px}
+.ka{font-size:12.5px;color:#f4f4fa;margin-bottom:8px;line-height:1.45}
+.kr{font-size:13px;line-height:1.5;color:#ecebf7;padding:7px 0;border-top:1px solid rgba(255,255,255,.08)}.kr b{display:block;font-size:12px;color:#fff;opacity:.85;margin-bottom:1px}
+.kg{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:8px 0;border-top:1px solid rgba(255,255,255,.08);font-size:13px;line-height:1.55}
+.kg span{display:block;font-size:12px;color:#fff;opacity:.85;margin-bottom:2px}.kg b{color:#fff}.kg i{font-style:normal;font-size:11px;color:#fff;opacity:.7}
+.kx{font-size:12px;color:#ecebf7;line-height:1.5;padding:8px 10px;border-radius:10px;background:rgba(0,0,0,.18)}.kx b{color:#f1f1f7;font-size:13px}
+.s1{background:linear-gradient(180deg,#1d3550,#182a40);border:1px solid #2d5a85}
+.s2{background:linear-gradient(180deg,#1a3d36,#16302b);border:1px solid #2b6e5f}
+.s3{background:linear-gradient(180deg,#3d321d,#2f2717);border:1px solid #7a6431}
+.rw{border-top:1px solid rgba(255,255,255,.08)}.rw:first-of-type{border-top:0}
+.rw summary{list-style:none;display:flex;align-items:center;gap:8px;padding:8px 0;cursor:pointer;font-size:13.5px}.rw summary::-webkit-details-marker{display:none}
+.rw .ik{width:20px;text-align:center}.rw .lb{flex:1;color:#e8e8f2}.rw .vl{font-weight:700;text-align:right}
+.rw .dt{width:9px;height:9px;border-radius:50%;flex:0 0 9px}
+.rw .ds{font-size:12.5px;color:#d4d5e4;padding:0 0 9px 28px;line-height:1.5}.rw[open] summary .lb{font-weight:700}
+.rw .gs{color:#b8bad0}
+.tzk{font-size:12.5px;color:#f3e3bd;line-height:1.5;margin:2px 0 6px}
+.lj{display:flex;gap:12px;flex-wrap:wrap;font-size:11.5px;color:#e5d8b5}.lj i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px}
+.lj2{font-size:11px;color:#bfb08a;margin:4px 0 4px}
+.tum{background:var(--card);border-radius:12px;padding:10px 12px;margin-bottom:10px}.tum summary{font-size:13.5px;font-weight:700;cursor:pointer}.tum .bx{padding:0}
 .src{font-size:11.5px;color:var(--mut);line-height:1.5}
 </style></head><body>
 <a href="./" style="font-size:13.5px">‹ Panele dön</a>
@@ -68,15 +90,16 @@ canvas{display:block;width:100%;touch-action:pan-y;-webkit-user-select:none;user
   <div class="wtt" id="rsit"></div>
   <canvas id="rsi" height="110"></canvas>
 </div>
-<div class="bx" id="oneri"></div>
+<div id="karar"></div>
+<div id="oneri"></div>
 <div class="bx" id="yorum"></div>
-<div class="bx" id="ozet"></div>
+<details class="tum"><summary>📋 Tüm gösterge değerleri</summary><div id="ozet"></div></details>
 <div class="src" id="kaynak"></div>
 <script>
 (function(){
 "use strict";
 var VERI_URL="https://raw.githubusercontent.com/saidgunbek-rgb/bist-fiyat/main/analiz.json";
-var DONEM=[["3A",63],["6A",126],["1Y",250],["2Y",500],["5Y",9999]];
+var DONEM=[["3A",63],["6A",126],["1Y",250],["2Y",500],["5Y",1250],["10Y",9999]];
 var GOST=[["fib","Fibonacci",1],["vp","Hacim profili",0],["ema","EMA 20/50/100/200",0],["e13","EMA 13",0],["e39","EMA 39",0],["st","Supertrend",0],["hac","Hacim",0],["wt","WaveTrend",1],["rsi","RSI",0]];
 var EMA_RENK={20:"#f0b429",50:"#4fc3f7",100:"#ab47bc",200:"#ff7043",13:"#e0e0e0",39:"#66bb6a"};
 var FIB=[[0,"#ef5350"],[0.236,"#ef5350"],[0.382,"#ffa726"],[0.5,"#66bb6a"],[0.618,"#26a69a"],[0.786,"#4fc3f7"],[1,"#9a9ab0"]];
@@ -268,13 +291,13 @@ function maliyet(k){var z={q:0,c:0};try{var o=JSON.parse(localStorage.getItem("b
    tum hisselerde (sadece o gune kadarki veriyle) gorulmesinden sonra fiyatin ne yaptigi eklenir.
    Boylece hangi sinyalin gecmiste ise yaradigi, hangisinin yaramadigi rakamla gorulur. */
 var TEST=null;
-function durumlar(d,I,n){var c=d[n][4],E=I.ema,o={},i,e2=E[200][n],e5=E[50][n];
+function durumlar(d,I,n,vp){var c=d[n][4],E=I.ema,o={},i,e2=E[200][n],e5=E[50][n];
   if(e2!=null&&e5!=null)o[c>=e2?(e5>=e2?"tr_yuk":"tr_top"):(e5>=e2?"tr_zay":"tr_dus")]=1;
   if(I.styon[n]!=null)o[I.styon[n]===1?"st_yuk":"st_dus"]=1;
   var rs=I.rsi[n];if(rs!=null)o[rs>=70?"rsi70":rs<=30?"rsi30":"rsi_n"]=1;
   for(i=n;i>Math.max(0,n-10);i--)if(I.kes[i]){var w=I.wt2[i];o[I.kes[i]>0?(w<=-53?"wt_dipyuk":"wt_yuk"):(w>=53?"wt_tepeas":"wt_as")]=1;break;}
   var U=uyumsuzluk(d,I.rsi,n);if(U)o[U.tip>0?"uy_poz":"uy_neg"]=1;
-  var a=Math.max(0,n-249),VP=hacimProfili(d,a,n,40);if(VP)o[c>=VP.poc?"poc_ust":"poc_alt"]=1;
+  var a=Math.max(0,n-249),VP=vp||hacimProfili(d,a,n,40);if(VP)o[c>=VP.poc?"poc_ust":"poc_alt"]=1;
   return o;}
 function seviyeler(d,I,n){var c=d[n][4],E=I.ema,a=Math.max(0,n-249),hi=-1e9,lo=1e9,i;for(i=a;i<=n;i++){hi=Math.max(hi,d[i][2]);lo=Math.min(lo,d[i][3]);}
   var F=function(r){return hi-(hi-lo)*r;},atr=I.atr14[n]||0;
@@ -285,64 +308,127 @@ function seviyeler(d,I,n){var c=d[n][4],E=I.ema,a=Math.max(0,n-249),hi=-1e9,lo=1
   if(VP&&alim){if(VP.poc>=alim[0]&&VP.poc<=alim[1])kes=[Math.max(alim[0],VP.poc-atr*0.5),Math.min(alim[1],VP.poc+atr*0.5)];
     else{var k1=Math.max(alim[0],VP.val),k2=Math.min(alim[1],VP.vah);if(k2-k1>0.002*c)kes=[k1,k2];}}
   return{c:c,hi:hi,lo:lo,F:F,atr:atr,alim:alim,kes:kes,risk:risk,stopA:stopA,h1:h1,VP:VP};}
-function gecmisTest(){var R={taban:[],d:{},bolge:{b:0,f:0,s:0},rast:{b:0,f:0,s:0},risk:[],riskDus:[]},k;
-  function ekle(ad,v){(R.d[ad]=R.d[ad]||[]).push(v);}
-  function bolge(d,n,z,st,h,kv){var son=Math.min(d.length-1,n+63);for(var j=n;j<=son;j++){if(d[j][3]<=st){kv.f++;return;}if(j>n&&d[j][2]>=h){kv.b++;return;}}kv.s++;}
-  for(k in H.stocks){var d=H.stocks[k].d;if(d.length<330)continue;var I=hesapla(d),onc=null,bB=-99,bR=-99,bS=-99;
-    for(var n=260;n+63<d.length;n++){var f=d[n+63][4]/d[n][4]-1,o=durumlar(d,I,n),sv=seviyeler(d,I,n);R.taban.push(f);for(var a in o)ekle(a,f);
-      if(onc){if(onc.alim&&n-bB>20&&d[n-1][3]>onc.alim[1]&&d[n][3]<=onc.alim[1]){bB=n;bolge(d,n,onc.alim,onc.stopA,onc.h1,R.bolge);}
-        if(onc.alim&&n-bR>20){bR=n;var c0=d[n][1],m=(onc.alim[0]+onc.alim[1])/2;bolge(d,n,[c0,c0],c0-(m-onc.stopA),c0+(onc.h1-m),R.rast);}
-        if(n-bS>20&&d[n-1][4]>=onc.risk&&d[n][4]<onc.risk){bS=n;R.risk.push(f);var mn=1e9;for(var j=n;j<=n+63;j++)mn=Math.min(mn,d[j][3]);R.riskDus.push(mn/d[n][4]-1);}}
-      onc=sv;}}
-  function oz(a){if(!a||a.length<15)return null;return{n:a.length,ort:a.reduce(function(x,y){return x+y;},0)/a.length,yuk:a.filter(function(x){return x>0;}).length/a.length};}
-  var T={taban:oz(R.taban),d:{},bolge:R.bolge,rast:R.rast,risk:oz(R.risk),riskDus:R.riskDus.length?R.riskDus.reduce(function(x,y){return x+y;},0)/R.riskDus.length:null,hisse:0};
-  for(k in R.d)T.d[k]=oz(R.d[k]);for(k in H.stocks)T.hisse++;return T;}
-/* gecmis satiri: yukselme orani tabandan 5 puan farkliysa "ise yaramis/ters", degilse "belirgin fark yok" */
-function gecmisSatir(ad){if(!TEST)return"";var s=TEST.d[ad],t=TEST.taban;if(!s||!t)return'<div class="gs mt">Geçmişte bu durum yeterince görülmemiş, ölçülemedi.</div>';
-  var fark=(s.yuk-t.yuk)*100,cls=fark>=5?"up":fark<=-5?"dn":"mt",et=fark>=5?"geçmişte olumlu çalışmış":fark<=-5?"geçmişte olumsuz çalışmış":"geçmişte belirgin fark yok";
-  return'<div class="gs"><span class="'+cls+'">● '+et+'</span> · bu durumdan 3 ay sonra fiyat %'+f1(s.yuk*100)+' oranında yükselmiş (ort. %'+f1(s.ort*100)+'); tüm günlerde %'+f1(t.yuk*100)+' (ort. %'+f1(t.ort*100)+') · '+s.n.toLocaleString("tr-TR")+' gün</div>';}
+/* Gecmis test HISSE BAZINDA yapilir: secili hissenin kendi gecmisinde ayni durumdan sonra ne oldugu.
+   Ornek az ise (5 olaydan az) sonuc "ornek az" diye isaretlenir ve yon rengi verilmez; boylece az ornekten
+   cikan tesaduf bir yuzde seni yaniltmaz. Karsilastirma icin tum hisselerin sonucu da ayrintida yazilir. */
+var ESIK_OLAY=5,ESIK_GUN=30;
+function gecmisTest(){var T={h:{},genel:null},G={taban:[],d:{},run:{},bolge:{b:0,f:0,s:0},rast:{b:0,f:0,s:0},risk:[],riskDus:[]},k;
+  function oz(a){if(!a||!a.length)return null;return{n:a.length,ort:a.reduce(function(x,y){return x+y;},0)/a.length,yuk:a.filter(function(x){return x>0;}).length/a.length};}
+  function bolge(d,n,st,h,kv){var son=Math.min(d.length-1,n+63);for(var j=n;j<=son;j++){if(d[j][3]<=st){kv.f++;return;}if(j>n&&d[j][2]>=h){kv.b++;return;}}kv.s++;}
+  function bitir(R){var o={taban:oz(R.taban),d:{},bolge:R.bolge,rast:R.rast,risk:oz(R.risk),riskDus:R.riskDus.length?R.riskDus.reduce(function(x,y){return x+y;},0)/R.riskDus.length:null};
+    for(var a in R.d){o.d[a]=oz(R.d[a]);o.d[a].olay=R.run[a]||0;}return o;}
+  for(k in H.stocks){var d=H.stocks[k].d;if(d.length<330)continue;var I=hesapla(d),onc=null,oncD={},bB=-99,bR=-99,bS=-99;
+    var R={taban:[],d:{},run:{},bolge:{b:0,f:0,s:0},rast:{b:0,f:0,s:0},risk:[],riskDus:[]};
+    for(var n=260;n+63<d.length;n++){var f=d[n+63][4]/d[n][4]-1,sv=seviyeler(d,I,n),o=durumlar(d,I,n,sv.VP);R.taban.push(f);G.taban.push(f);
+      for(var a in o){(R.d[a]=R.d[a]||[]).push(f);(G.d[a]=G.d[a]||[]).push(f);if(!oncD[a]){R.run[a]=(R.run[a]||0)+1;G.run[a]=(G.run[a]||0)+1;}}
+      if(onc){if(onc.alim&&n-bB>20&&d[n-1][3]>onc.alim[1]&&d[n][3]<=onc.alim[1]){bB=n;bolge(d,n,onc.stopA,onc.h1,R.bolge);bolge(d,n,onc.stopA,onc.h1,G.bolge);}
+        if(onc.alim&&n-bR>20){bR=n;var c0=d[n][1],m=(onc.alim[0]+onc.alim[1])/2;bolge(d,n,c0-(m-onc.stopA),c0+(onc.h1-m),R.rast);bolge(d,n,c0-(m-onc.stopA),c0+(onc.h1-m),G.rast);}
+        if(n-bS>20&&d[n-1][4]>=onc.risk&&d[n][4]<onc.risk){bS=n;R.risk.push(f);G.risk.push(f);var mn=1e9;for(var j=n;j<=n+63;j++)mn=Math.min(mn,d[j][3]);R.riskDus.push(mn/d[n][4]-1);G.riskDus.push(mn/d[n][4]-1);}}
+      onc=sv;oncD=o;}
+    T.h[k]=bitir(R);T.h[k].yil=((d.length-260)/250);}
+  T.genel=bitir(G);T.hisse=Object.keys(T.h).length;return T;}
+function yeterli(s){return s&&s.olay>=ESIK_OLAY&&s.n>=ESIK_GUN;}
+/* hisse sonucu: tabandan (ayni hissenin tum gunleri) 5 puan farkliysa olumlu/olumsuz */
+function sonuc(ad){if(!TEST||!ad)return null;var H_=TEST.h[SEC];if(!H_)return null;var s=H_.d[ad],t=H_.taban;
+  if(!s||!t)return{renk:"#6b6e86",bos:true,et:"bu hissede hiç görülmemiş"};
+  if(!yeterli(s))return{renk:"#6b6e86",bos:true,et:"bu hissede örnek az ("+s.olay+" olay)"};
+  var f=(s.yuk-t.yuk)*100;return{renk:f>=5?"#34d399":f<=-5?"#f87171":"#9a9cb4",bos:false,et:f>=5?"bu hissede geçmişte olumlu çalışmış":f<=-5?"bu hissede geçmişte olumsuz çalışmış":"bu hissede belirgin fark yok"};}
+function gecmisRenk(ad){var r=sonuc(ad);return r?r:null;}
+function gecmisSatir(ad){if(!TEST)return"";var H_=TEST.h[SEC],s=H_&&H_.d[ad],t=H_&&H_.taban,r=sonuc(ad),g=TEST.genel.d[ad],gt=TEST.genel.taban,x="";
+  if(r)x+='<div class="gs"><span style="color:'+(r.bos?"#b8bad0":r.renk)+'">● '+r.et+'</span>'+(s?' · bu hissede bu durumdan 3 ay sonra fiyat %'+f1(s.yuk*100)+' oranında yükselmiş (ort. %'+f1(s.ort*100)+'); bu hissenin tüm günlerinde %'+f1(t.yuk*100)+' (ort. %'+f1(t.ort*100)+') · '+s.olay+' olay, '+s.n+' gün':'')+'</div>';
+  if(g&&gt)x+='<div class="gs" style="opacity:.8">Karşılaştırma, '+TEST.hisse+' hissenin tümünde: %'+f1(g.yuk*100)+' (tüm günler %'+f1(gt.yuk*100)+') · '+g.olay+' olay</div>';
+  return x;}
 function bolgeOran(kv){var t=kv.b+kv.f+kv.s;return t?{t:t,b:kv.b/t,f:kv.f/t}:null;}
+/* Karar ozeti: fiyatin plan seviyelerine gore NEREDE oldugu (yon tahmini degil).
+   Alim bolgesi / risk / direnc hisseye ozel seviyelerdir; "1 aylik olasi aralik" bu hissenin kendi gecmisindeki
+   son 2 yilindaki 21 gunluk fiyat degisimlerinin %10 ve %90 dilimlerinden hesaplanir (gecmis oynakliga gore 10 aydan 8'inde bu aralikta kalmis). */
+function kararOzet(z,o){var n=D.length-1,c=z.c,E=IND.ema,i,HT=TEST?TEST.h[SEC]:null;
+  var ust=[0.236,0.382,0.5,0.618,0.786,0].map(function(r){return{p:z.F(r),ad:r===0?"1 yıllık zirve":"Fib "+String(r).replace(".",",")};}).filter(function(x){return x.p>c*1.003;}).sort(function(a,b){return a.p-b.p;});
+  var alt=[0.236,0.382,0.5,0.618,0.786,1].map(function(r){return{p:z.F(r),ad:r===1?"1 yıllık dip":"Fib "+String(r).replace(".",",")};});
+  if(z.VP){alt.push({p:z.VP.poc,ad:"hacim yoğunluğu (POC)"});}
+  if(E[200][n]!=null)alt.push({p:E[200][n],ad:"200 günlük ortalama"});
+  alt=alt.filter(function(x){return x.p<c*0.997;}).sort(function(a,b){return b.p-a.p;});
+  var alt2=[];alt.forEach(function(x){if(!alt2.length||Math.abs(alt2[alt2.length-1].p-x.p)/x.p>0.01)alt2.push(x);});alt2=alt2.slice(0,3);
+  var g=[];for(i=Math.max(0,n-500);i+21<=n;i++)g.push(D[i+21][4]/D[i][4]-1);g.sort(function(a,b){return a-b;});
+  var q=function(p){return g.length?g[Math.floor(p*(g.length-1))]:null;},p10=q(0.1),p90=q(0.9);
+  var dirYakin=ust.length&&ust[0].p/c-1<0.02,riskAlti=c<z.risk,durum,renk,ac;
+  if(z.alim&&c>=z.alim[0]&&c<=z.alim[1]){durum="ALIM BÖLGESİNDE";renk="#34d399";ac="Fiyat alım bölgesinin içinde"+(z.kes&&c>=z.kes[0]&&c<=z.kes[1]?", hatta güçlü kısımda":"")+".";}
+  else if(z.alim&&c>z.alim[1]){durum=dirYakin?"BEKLE · DİRENCE YAKIN":"BEKLE";renk="#fbbf24";ac="Alım bölgesinin %"+f1((c/z.alim[1]-1)*100)+" üstünde."+(dirYakin?" İlk direnç "+f2(ust[0].p)+" çok yakın.":"");}
+  else if(c>z.lo*1.003){durum="DİBE YAKIN · DİKKAT";renk="#fb923c";ac="Fiyat son 1 yılın en alt bölgesinde (Fib 0,786 altı). 1 yıllık dip "+f2(z.lo)+", %"+f1((1-z.lo/c)*100)+" aşağıda.";}
+  else{durum="ZAYIF · YENİ DİP";renk="#f87171";ac="Fiyat son 1 yılın dibinde ya da altında; yeni dip arayışı sürebilir.";}
+  if(riskAlti&&durum.indexOf("ZAYIF")<0){ac+=" Risk seviyesi ("+f2(z.risk)+") altında kapandı.";}
+  var yok,var_;
+  if(durum==="ALIM BÖLGESİNDE"){yok="Planına göre alınabilir bölge. Zarar kes "+f2(z.stopA)+" altı kapanış, ilk hedef "+(ust[0]?f2(ust[0].p):f2(z.h1))+".";}
+  else if(durum.indexOf("BEKLE")===0){yok="Alım için "+f2(z.alim[1])+" ve altına gelmesi beklenebilir"+(z.kes?" (en güçlü kısım "+f2(z.kes[0])+" – "+f2(z.kes[1])+")":"")+". Şimdi alınırsa risk/getiri daha zayıf.";}
+  else if(durum.indexOf("DİBE")===0){yok="Erken alım riskli. Dibin ("+f2(z.lo)+") tutunup fiyatın "+f2(z.F(0.786))+" üstüne çıkması beklenebilir; bu bölgeden alınırsa zarar kes "+f2(z.lo-z.atr)+" altı kapanış.";}
+  else{yok="Acele etme; fiyatın önce son 1 yılın dibi ("+f2(z.lo)+") üstüne çıkıp orada tutunması beklenebilir.";}
+  if(riskAlti)var_="Risk seviyesi kırıldı: pozisyonunu gözden geçir. Geçmişte bu hissede kırılmalar "+(HT&&HT.risk&&HT.risk.n>=ESIK_OLAY?"sonrası 3 ayda %"+f1(HT.risk.yuk*100)+" oranında toparlanmış.":"için yeterli örnek yok.");
+  else if(dirYakin)var_="Tut; dirence ("+f2(ust[0].p)+") çok yakın, kısmi kâr almak düşünülebilir. "+f2(z.risk)+" altı kapanış risk.";
+  else var_="Tut. "+f2(z.risk)+" altı kapanış risk seviyesi"+(ust[0]?"; ilk direnç "+f2(ust[0].p):"")+".";
+  var BG={"#34d399":["#145240","#0f3a2e","#2fae85"],"#fbbf24":["#5a4614","#3f3110","#c9962a"],"#fb923c":["#5c3415","#41250f","#d9782f"],"#f87171":["#5c1f24","#41161a","#d0545b"]}[renk]||["#2e2850","#231f3d","#5b4fa8"];
+  var m=maliyet(SEC),h='<div class="sec s0" style="background:linear-gradient(180deg,'+BG[0]+','+BG[1]+');border-color:'+BG[2]+'"><div class="sh">🧭 Karar özeti <span>'+esc(SEC)+' · '+f2(c)+' TL</span></div>';
+  h+='<div class="kd" style="color:#fff;border-color:'+renk+';background:'+renk+'55">'+durum+'</div><div class="ka">'+esc(ac)+'</div>';
+  h+='<div class="kr"><b>Elinde yoksa</b>'+esc(yok)+'</div><div class="kr"><b>Elindeyse'+(m.q>0?' ('+m.q.toLocaleString("tr-TR")+' adet)':'')+'</b>'+esc(var_)+'</div>';
+  h+='<div class="kg"><div><span>⬆️ Yukarıda</span>'+(ust.length?ust.slice(0,2).map(function(x){return'<b>'+f2(x.p)+'</b> <i>'+x.ad+'</i>';}).join("<br>"):'<b>zirve üstünde</b>')+'</div>'
+    +'<div><span>⬇️ İnebileceği destekler</span>'+(alt2.length?alt2.map(function(x){return'<b>'+f2(x.p)+'</b> <i>'+x.ad+'</i>';}).join("<br>"):'<b>1 yıllık dibin altında</b>')+'</div></div>';
+  if(p10!=null)h+='<div class="kx">📏 <b>1 aylık olası aralık: '+f2(c*(1+p10))+' – '+f2(c*(1+p90))+'</b><br>Bu hissenin son 2 yılında 1 aylık fiyat değişimleri 10 seferden 8\'inde %'+f1(p10*100).replace("-","−")+' ile %+'+f1(p90*100)+' arasında kalmış. Tahmin değil, geçmiş oynaklığın bugünkü fiyata uygulanmışı.</div>';
+  h+='<div class="lj2" style="margin-top:6px">Bu özet fiyatın plan seviyelerine göre yerini gösterir, yükselecek ya da düşecek demez. Karar senin.</div></div>';
+  document.getElementById("karar").innerHTML=h;}
 
-function degerlendir(){var n=D.length-1,o=durumlar(D,IND,n),z=seviyeler(D,IND,n),c=z.c,E=IND.ema,t=[],K=SEC;
-  function md(ik,et,ton,metin,ad,html){t.push([ik,et,ton,metin,ad,!!html]);}
+function degerlendir(){var n=D.length-1,o=durumlar(D,IND,n),z=seviyeler(D,IND,n),c=z.c,E=IND.ema,K=SEC,R1=[],R2=[];
   function yz(v){return "%"+f1(Math.abs(v)*100);}
+  function sat(L,ik,lb,vl,ton,ds,ad,gec,dot){L.push({ik:ik,lb:lb,vl:vl,ton:ton,ds:ds,ad:ad,gec:gec,dot:dot});}
   var e2=E[200][n],u=e2?c/e2-1:0;
-  if(o.tr_yuk)md("📈","Trend: yükseliş","up","Fiyat 200 günlük ortalamanın "+yz(u)+" üstünde, EMA 50 de EMA 200'ün üstünde.","tr_yuk");
-  if(o.tr_top)md("📈","Trend: toparlanma","nt","Fiyat 200 günlük ortalamanın "+yz(u)+" üstüne çıktı ama EMA 50 hâlâ EMA 200'ün altında.","tr_top");
-  if(o.tr_zay)md("📉","Trend: zayıflama","nt","Fiyat 200 günlük ortalamanın "+yz(u)+" altına indi, EMA 50 hâlâ EMA 200'ün üstünde.","tr_zay");
-  if(o.tr_dus)md("📉","Trend: düşüş","dn","Fiyat 200 günlük ortalamanın "+yz(u)+" altında, EMA 50 de EMA 200'ün altında.","tr_dus");
-  if(n>=63){var l3=1e9,h3=-1e9,i;for(i=n-62;i<=n;i++){l3=Math.min(l3,D[i][3]);h3=Math.max(h3,D[i][2]);}var a1=c/D[n-21][4]-1,cum=yz(a1)+(a1>=0?" yükseldi":" geriledi");
-    if(c/l3-1>=0.15)cum+="; 3 aylık dibi "+f2(l3)+"'den bu yana "+yz(c/l3-1)+" toparlandı";else if(1-c/h3>=0.15)cum+="; 3 aylık tepesi "+f2(h3)+"'ten bu yana "+yz(1-c/h3)+" geri çekildi";
-    md("⏱️","Son 1 ay",a1>=0?"up":"dn",cum+".",null);}
-  if(o.st_yuk)md("🔺","Supertrend: yükseliş","up","Supertrend "+f2(IND.st[n])+" ile fiyatın altında.","st_yuk");
-  if(o.st_dus)md("🔻","Supertrend: düşüş","dn","Supertrend "+f2(IND.st[n])+" ile fiyatın üstünde.","st_dus");
+  if(o.tr_yuk)sat(R1,"📈","Trend","Yükseliş","up","Fiyat 200 günlük ortalamanın "+yz(u)+" üstünde, EMA 50 de EMA 200'ün üstünde.","tr_yuk");
+  if(o.tr_top)sat(R1,"📈","Trend","Toparlanma","nt","Fiyat 200 günlük ortalamanın "+yz(u)+" üstüne çıktı ama EMA 50 hâlâ EMA 200'ün altında.","tr_top");
+  if(o.tr_zay)sat(R1,"📉","Trend","Zayıflama","nt","Fiyat 200 günlük ortalamanın "+yz(u)+" altına indi, EMA 50 hâlâ EMA 200'ün üstünde.","tr_zay");
+  if(o.tr_dus)sat(R1,"📉","Trend","Düşüş","dn","Fiyat 200 günlük ortalamanın "+yz(u)+" altında, EMA 50 de EMA 200'ün altında.","tr_dus");
+  if(n>=21){var a1=c/D[n-21][4]-1,ex="";if(n>=63){var l3=1e9,h3=-1e9,i;for(i=n-62;i<=n;i++){l3=Math.min(l3,D[i][3]);h3=Math.max(h3,D[i][2]);}
+      if(c/l3-1>=0.15)ex="3 aylık dibi "+f2(l3)+"'den bu yana "+yz(c/l3-1)+" toparlandı.";else if(1-c/h3>=0.15)ex="3 aylık tepesi "+f2(h3)+"'ten bu yana "+yz(1-c/h3)+" geri çekildi.";}
+    sat(R1,"⏱️","Son 1 ay",(a1>=0?"+":"−")+yz(a1).slice(1)+"%",a1>=0?"up":"dn",ex||"Son 21 işlem gününün değişimi.",null);}
+  if(o.st_yuk)sat(R1,"🔺","Supertrend","Yükseliş","up","Supertrend "+f2(IND.st[n])+" ile fiyatın altında.","st_yuk");
+  if(o.st_dus)sat(R1,"🔻","Supertrend","Düşüş","dn","Supertrend "+f2(IND.st[n])+" ile fiyatın üstünde.","st_dus");
   var rs=IND.rsi[n];
-  if(o.rsi70)md("⚡","RSI "+f1(rs)+": aşırı alım","uy","70 üstünde.","rsi70");
-  else if(o.rsi30)md("⚡","RSI "+f1(rs)+": aşırı satım","uy","30 altında.","rsi30");
-  else if(rs!=null)md("⚡","RSI "+f1(rs)+": nötr","nt","30 – 70 arasında.","rsi_n");
-  var WT={wt_dipyuk:["Aşırı satımdan yukarı kesişim","up"],wt_yuk:["Yukarı kesişim","up"],wt_tepeas:["Aşırı alımdan aşağı kesişim","dn"],wt_as:["Aşağı kesişim","dn"]};
-  for(var w in WT)if(o[w])md("〰️","WaveTrend: "+WT[w][0].toLowerCase(),WT[w][1],"Son 10 gün içinde.",w);
-  if(o.uy_poz)md("🔀","Pozitif RSI uyumsuzluğu","up","Fiyat daha düşük dip yaptı, RSI yapmadı.","uy_poz");
-  if(o.uy_neg)md("🔀","Negatif RSI uyumsuzluğu","dn","Fiyat daha yüksek tepe yaptı, RSI yapmadı.","uy_neg");
-  if(z.VP)md("📊","Hacim yoğunluğu",o.poc_ust?"up":"dn","Son 1 yılda en çok işlem "+f2(z.VP.poc)+" civarında (işlemlerin %70'i "+f2(z.VP.val)+" – "+f2(z.VP.vah)+"). Fiyat bunun "+(o.poc_ust?"üstünde.":"altında."),o.poc_ust?"poc_ust":"poc_alt");
-  var h='<h3>Teknik durum · '+esc(K)+' <span class="mt" style="font-weight:400;font-size:12px">('+trD(D[n][0])+' kapanışı)</span></h3>';
-  if(!TEST)h+='<div class="gs mt">Geçmiş test hesaplanıyor…</div>';
-  h+='<ul class="yl">'+t.map(function(m){var r=RN_[m[2]];return'<li style="border-left-color:'+r+';background:'+r+'14"><span class="yi">'+m[0]+'</span><div><b style="color:'+r+'">'+esc(m[1])+'</b><br>'+(m[5]?m[3]:esc(m[3]))+(m[4]?gecmisSatir(m[4]):"")+'</div></li>';}).join("")+'</ul>';
-  /* plan seviyeleri */
+  if(o.rsi70)sat(R1,"⚡","RSI",f1(rs)+" · aşırı alım","uy","70 üstü aşırı alım sayılır.","rsi70");
+  else if(o.rsi30)sat(R1,"⚡","RSI",f1(rs)+" · aşırı satım","uy","30 altı aşırı satım sayılır.","rsi30");
+  else if(rs!=null)sat(R1,"⚡","RSI",f1(rs)+" · nötr","nt","30 – 70 arası nötr bölge.","rsi_n");
+  var WT={wt_dipyuk:["Dipten yukarı kesişim","up"],wt_yuk:["Yukarı kesişim","up"],wt_tepeas:["Tepeden aşağı kesişim","dn"],wt_as:["Aşağı kesişim","dn"]};
+  for(var w in WT)if(o[w])sat(R1,"〰️","WaveTrend",WT[w][0],WT[w][1],"Son 10 gün içinde kesişim oldu.",w);
+  if(o.uy_poz)sat(R1,"🔀","Uyumsuzluk","Pozitif","up","Fiyat daha düşük dip yaptı, RSI yapmadı.","uy_poz");
+  if(o.uy_neg)sat(R1,"🔀","Uyumsuzluk","Negatif","dn","Fiyat daha yüksek tepe yaptı, RSI yapmadı.","uy_neg");
+  if(z.VP)sat(R1,"📊","Hacim yoğunluğu",(o.poc_ust?"Üstünde · ":"Altında · ")+f2(z.VP.poc),o.poc_ust?"up":"dn","Son 1 yılda en çok işlem "+f2(z.VP.poc)+" civarında yapıldı; işlemlerin %70'i "+f2(z.VP.val)+" – "+f2(z.VP.vah)+" arasında.",o.poc_ust?"poc_ust":"poc_alt");
+  /* seviyeler */
+  var HT=TEST?TEST.h[SEC]:null,B=HT?bolgeOran(HT.bolge):null,Rr=HT?bolgeOran(HT.rast):null,GB=TEST?bolgeOran(TEST.genel.bolge):null,GR=TEST?bolgeOran(TEST.genel.rast):null;
+  var bYet=B&&B.t>=ESIK_OLAY,bIyi=bYet&&Rr&&Rr.f-B.f>=0.05,bKotu=bYet&&Rr&&B.f-Rr.f>=0.05;
+  if(z.alim){var bg=(B&&Rr?'<div class="gs"><span style="color:'+(!bYet?"#b8bad0":bIyi?"#34d399":bKotu?"#f87171":"#9a9cb4")+'">● '+(!bYet?"bu hissede örnek az ("+B.t+" olay)":bIyi?"bu hissede rastgele alımdan daha iyi":bKotu?"bu hissede rastgele alımdan daha kötü":"bu hissede belirgin fark yok")+'</span> · bölgeden alımda 3 ay içinde zarar kes %'+f1(B.f*100)+', hedef %'+f1(B.b*100)+'; rastgele günde zarar kes %'+f1(Rr.f*100)+', hedef %'+f1(Rr.b*100)+' · '+B.t+' olay</div>':(HT?'<div class="gs">● bu hissede bölgeye iniş hiç olmamış</div>':''))
+      +(GB&&GR?'<div class="gs" style="opacity:.8">Karşılaştırma, tüm hisselerde: zarar kes %'+f1(GB.f*100)+' (rastgele %'+f1(GR.f*100)+') · '+GB.t+' olay</div>':'');
+    sat(R2,"🎯","Alım bölgesi",f2(z.alim[0])+" – "+f2(z.alim[1]),"up","Son 1 yılın zirve ("+f2(z.hi)+") ve dibine ("+f2(z.lo)+") göre Fibonacci "+(Math.abs(z.alim[1]-z.F(0.5))<1e-9?"0,5 – 0,618":Math.abs(z.alim[1]-z.F(0.618))<1e-9?"0,618 – 0,786":"0,786 – 1")+" aralığı.",null,bg,HT?{renk:!bYet?"#6b6e86":bIyi?"#34d399":bKotu?"#f87171":"#9a9cb4",bos:!bYet}:null);
+    if(z.kes)sat(R2,"💎","Güçlü kısım",f2(z.kes[0])+" – "+f2(z.kes[1]),"up","Alım bölgesinin hacim yoğunluğuyla çakışan kısmı.",null);
+    sat(R2,"✂️","Alımda zarar kes",f2(z.stopA)+" altı","dn","Bölgeden alınırsa, bölgenin 1 ATR altında kapanış.",null);}
+  var HR=HT&&HT.risk,rYet=HR&&HR.n>=ESIK_OLAY,rIyi=rYet&&HR.yuk<=HT.taban.yuk-0.05;
+  var rg=(HR?'<div class="gs"><span style="color:'+(!rYet?"#b8bad0":rIyi?"#34d399":"#9a9cb4")+'">● '+(!rYet?"bu hissede örnek az ("+HR.n+" olay)":rIyi?"bu hissede geçmişte düşüş öncesi uyarı olmuş":"bu hissede çoğu zaman erken uyarı olmuş")+'</span> · kırıldıktan 3 ay sonra fiyat %'+f1(HR.yuk*100)+' oranında yükselmiş (hissenin tüm günlerinde %'+f1(HT.taban.yuk*100)+'), arada ortalama %'+f1(Math.abs(HT.riskDus)*100)+' düşüş · '+HR.n+' olay</div>':(HT?'<div class="gs">● bu hissede risk seviyesi hiç kırılmamış</div>':''))
+    +(TEST&&TEST.genel.risk?'<div class="gs" style="opacity:.8">Karşılaştırma, tüm hisselerde: kırıldıktan sonra %'+f1(TEST.genel.risk.yuk*100)+' yükselmiş · '+TEST.genel.risk.n+' olay</div>':'');
+  sat(R2,"🛑","Risk (elindeyse)",f2(z.risk)+" altı","dn",(IND.styon[n]===1?"Supertrend'in":"200 günlük ortalamanın ya da 1 yıllık dibin")+" kırılması demek.",null,rg,HT?{renk:!rYet?"#6b6e86":rIyi?"#34d399":"#9a9cb4",bos:!rYet}:null);
+  sat(R2,"🏁","Hedef",f2(z.h1),"nt",(c<z.F(0)*0.99?"Son 1 yılın zirvesi.":"Fiyat zirveye yakın; Fibonacci 1,272 uzantısı.")+" Bölgeden alım için risk/getiri: "+(z.alim&&((z.alim[0]+z.alim[1])/2-z.stopA)>0?"1 : "+f1((z.h1-(z.alim[0]+z.alim[1])/2)/((z.alim[0]+z.alim[1])/2-z.stopA)):"–")+".",null);
   var ust=[0.236,0.382,0.5,0.618,0.786,0].map(function(r){return[r,z.F(r)];}).filter(function(x){return x[1]>c*1.003;}).sort(function(a,b){return a[1]-b[1];}).slice(0,2);
-  function ad(x){return f2(x[1])+(x[0]===0?" (1 yıllık zirve)":" (Fib "+String(x[0]).replace(".",",")+")");}
-  var B=TEST?bolgeOran(TEST.bolge):null,Rr=TEST?bolgeOran(TEST.rast):null;
-  h+='<h3 style="margin-top:12px">Plan seviyeleri</h3><ul class="yl">';
-  if(z.alim)h+='<li style="border-left-color:#26a69a;background:#26a69a14"><span class="yi">🎯</span><div><b style="color:#26a69a">Alım bölgesi (Fibonacci)</b><br>'+f2(z.alim[0])+' – '+f2(z.alim[1])+(z.kes?' · hacim yoğunluğuyla çakışan kısım '+f2(z.kes[0])+' – '+f2(z.kes[1]):'')+'. Bu bölgeden alımda zarar kes <b>'+f2(z.stopA)+'</b> altı kapanış, hedef '+f2(z.h1)+'.'
-    +(B&&Rr?'<div class="gs"><span class="'+(Rr.f-B.f>=0.05?"up":"mt")+'">● '+(Rr.f-B.f>=0.05?"geçmişte rastgele alımdan biraz daha iyi":"geçmişte belirgin fark yok")+'</span> · bölgeye inişte alınınca 3 ay içinde zarar kes %'+f1(B.f*100)+', hedef %'+f1(B.b*100)+' oranında gelmiş; rastgele günde alımda zarar kes %'+f1(Rr.f*100)+', hedef %'+f1(Rr.b*100)+' · '+B.t+' örnek</div>':'')+'</div></li>';
-  h+='<li style="border-left-color:#ef5350;background:#ef535014"><span class="yi">🛑</span><div><b style="color:#ef5350">Risk seviyesi (elindeyse)</b><br><b>'+f2(z.risk)+'</b> altı kapanış '+(IND.styon[n]===1?"Supertrend'in kırılması":"200 günlük ortalamanın ya da 1 yıllık dibin kırılması")+' demek.'
-    +(TEST&&TEST.risk?'<div class="gs"><span class="'+(TEST.risk.yuk<TEST.taban.yuk-0.05?"dn":"mt")+'">● '+(TEST.risk.yuk<TEST.taban.yuk-0.05?"geçmişte düşüş öncesi uyarı olmuş":"geçmişte çoğu zaman erken uyarı olmuş")+'</span> · kırıldıktan 3 ay sonra fiyat %'+f1(TEST.risk.yuk*100)+' oranında yükselmiş (ort. %'+f1(TEST.risk.ort*100)+'), ama arada ortalama %'+f1(Math.abs(TEST.riskDus)*100)+' düşüş görülmüş · '+TEST.risk.n+' örnek</div>':'')+'</div></li>';
-  h+='<li style="border-left-color:#8b7cf6;background:#8b7cf614"><span class="yi">🚧</span><div><b style="color:#8b7cf6">Dirençler</b><br>'+(ust.length?ad(ust[0])+(ust[1]?", ardından "+ad(ust[1]):"")+".":"Fiyat 1 yıllık zirveye çok yakın ya da üstünde.")+'</div></li>';
-  var m=maliyet(SEC);if(m.q>0){var kz=(c/m.c-1)*100;h+='<li style="border-left-color:#8b7cf6;background:#8b7cf614"><span class="yi">💼</span><div><b style="color:#8b7cf6">Elindeki</b><br>'+m.q.toLocaleString("tr-TR")+' adet · maliyet '+f2(m.c)+' (<span class="'+(kz>=0?"up":"dn")+'">'+(kz>=0?"+":"")+f1(kz)+'%</span>)</div></li>';}
-  h+='</ul>';
-  if(TEST&&TEST.taban)h+='<div class="tz"><b>Geçmiş test özeti</b><br>Sayfadaki '+TEST.hisse+' hissenin son 5 yılında, her gün sadece o güne kadarki veriyle bakıldı. Bu dönemde (yüksek enflasyon, genel yükseliş) herhangi bir günden 3 ay sonra fiyat %'+f1(TEST.taban.yuk*100)+' oranında yükselmiş. Teknik sinyallerin çoğu bu oranı belirgin şekilde değiştirmemiş; yani tek başına al/sat zamanlaması için güvenilir değiller. Seviyeleri plan yaparken, değerlemeyi (karnedeki F/K, PD/DD) ise kararın temeli olarak kullanmak daha sağlıklı.</div>';
-  h+='<div class="src" style="margin-top:8px">Yön tahmini yapılmaz; her madde bugünkü durumu ve aynı durumun geçmişteki sonucunu gösterir. Geçmiş sonuçlar geleceği garanti etmez. Yatırım tavsiyesi değildir; karar senin.</div>';
-  document.getElementById("oneri").innerHTML=h;document.getElementById("yorum").style.display="none";}
+  sat(R2,"🚧","Direnç",ust.length?ust.map(function(x){return f2(x[1]);}).join(" · "):"Zirveye yakın","nt",ust.length?ust.map(function(x){return f2(x[1])+(x[0]===0?" = 1 yıllık zirve":" = Fib "+String(x[0]).replace(".",","));}).join("; ")+".":"Fiyat 1 yıllık zirveye çok yakın ya da üstünde.",null);
+  var m=maliyet(SEC);if(m.q>0){var kz=(c/m.c-1)*100;sat(R2,"💼","Elindeki",m.q.toLocaleString("tr-TR")+" adet · "+(kz>=0?"+":"")+f1(kz)+"%",kz>=0?"up":"dn","Ortalama maliyet "+f2(m.c)+".",null);}
+  var TON={up:"#34d399",dn:"#f87171",uy:"#fbbf24",nt:"#c4b5fd"};
+  function satirlar(L){return L.map(function(r){var so=r.dot||(r.ad?sonuc(r.ad):null),dot=so?so.renk:null,bos=so&&so.bos;
+    return'<details class="rw"><summary><span class="ik">'+r.ik+'</span><span class="lb">'+esc(r.lb)+'</span><span class="vl" style="color:'+TON[r.ton]+'">'+esc(r.vl)+'</span>'+(dot?'<span class="dt" style="'+(bos?'background:transparent;border:1.5px solid '+dot:'background:'+dot)+'"></span>':'<span class="dt" style="background:transparent"></span>')+'</summary><div class="ds">'+esc(r.ds)+(r.ad?gecmisSatir(r.ad):"")+(r.gec||"")+'</div></details>';}).join("");}
+  var h='<div class="sec s1"><div class="sh">📍 Durum <span>'+esc(K)+' · '+trD(D[n][0])+'</span></div>'+satirlar(R1)+'</div>';
+  h+='<div class="sec s2"><div class="sh">🎯 Seviyeler</div>'+satirlar(R2)+'</div>';
+  var oz3="Hesaplanıyor…";
+  if(HT&&HT.taban){var iy=[],ko=[],AD={tr_yuk:"Trend yükseliş",tr_top:"Trend toparlanma",tr_zay:"Trend zayıflama",tr_dus:"Trend düşüş",st_yuk:"Supertrend yükseliş",st_dus:"Supertrend düşüş",rsi70:"RSI aşırı alım",rsi30:"RSI aşırı satım",rsi_n:"RSI nötr",wt_dipyuk:"WaveTrend dipten yukarı",wt_yuk:"WaveTrend yukarı",wt_tepeas:"WaveTrend tepeden aşağı",wt_as:"WaveTrend aşağı",uy_poz:"Pozitif uyumsuzluk",uy_neg:"Negatif uyumsuzluk",poc_ust:"Hacim yoğunluğu üstü",poc_alt:"Hacim yoğunluğu altı"};
+    for(var a in HT.d){var x=HT.d[a];if(!yeterli(x)||!AD[a])continue;var df=(x.yuk-HT.taban.yuk)*100;if(df>=5)iy.push(AD[a]);else if(df<=-5)ko.push(AD[a]);}
+    oz3="Son "+f1(HT.yil)+" yılda bu hissede herhangi bir günden 3 ay sonra fiyat %"+f1(HT.taban.yuk*100)+" oranında yükselmiş (ort. %"+f1(HT.taban.ort*100)+")."
+      +(iy.length?" <b style='color:#34d399'>Bu hissede olumlu çalışanlar:</b> "+iy.join(", ")+".":"")
+      +(ko.length?" <b style='color:#f87171'>Ters çalışanlar:</b> "+ko.join(", ")+".":"")
+      +(!iy.length&&!ko.length?" Bu hissede hiçbir sinyal bu oranı belirgin şekilde değiştirmemiş.":"")
+      +" Kararın temeli değerleme (karne) olsun, seviyeler plan için.";}
+  h+='<div class="sec s3"><div class="sh">🧪 Geçmiş test <span>'+esc(SEC)+'</span></div><div class="tzk">'+oz3+'</div>'
+    +'<div class="lj"><span><i style="background:#34d399"></i>olumlu çalışmış</span><span><i style="background:#9a9cb4"></i>fark yok</span><span><i style="background:#f87171"></i>olumsuz çalışmış</span><span><i style="border:1.5px solid #9a9cb4;background:transparent;box-sizing:border-box"></i>örnek az</span></div><div class="lj2">Sonuçlar bu hissenin kendi geçmişinden. Ayrıntı için satıra dokun.</div></div>';
+  document.getElementById("oneri").innerHTML=h;document.getElementById("yorum").style.display="none";kararOzet(z,o);}
 var RN_={up:"#26a69a",dn:"#ef5350",uy:"#f5b942",nt:"#8b7cf6"};
 
 /* ---------- Arayuz ---------- */
