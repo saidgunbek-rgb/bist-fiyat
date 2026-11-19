@@ -79,11 +79,11 @@
   },
   "kap": {
    "deneme": 1,
-   "durum": "deneniyor",
+   "durum": "ok",
    "maks": 4,
-   "not": "Son KAP taraması gecikti",
-   "saat": "2026-11-19 11:34",
-   "veri": "2026-11-19 11:34"
+   "not": "",
+   "saat": "2026-11-19 13:24",
+   "veri": "2026-11-19 13:24"
   },
   "karne": {
    "deneme": 1,
@@ -102,5 +102,5 @@
    "veri": "2026-11-18"
   }
  },
- "kontrolAt": "2026-11-19T09:42:08Z"
+ "kontrolAt": "2026-11-19T10:39:38Z"
 }
