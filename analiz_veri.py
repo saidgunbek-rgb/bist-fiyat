@@ -7,7 +7,7 @@ import json, os, re, sys, time, datetime, urllib.request
 UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36"}
 SIMDI = datetime.datetime.now(datetime.timezone.utc)
 BUGUN = (SIMDI + datetime.timedelta(hours=3)).date()
-BAS = BUGUN - datetime.timedelta(days=730)
+BAS = BUGUN - datetime.timedelta(days=1830)  # 5 yil
 BAS_S = BAS.isoformat()
 EN_AZ_GUN = 120
 _TR = SIMDI + datetime.timedelta(hours=3)
@@ -54,7 +54,7 @@ def get(url):
 
 
 def yahoo(kod):
-    u = "https://query1.finance.yahoo.com/v8/finance/chart/%s.IS?range=2y&interval=1d" % kod
+    u = "https://query1.finance.yahoo.com/v8/finance/chart/%s.IS?range=5y&interval=1d" % kod
     r = get(u)["chart"]["result"][0]
     off = r["meta"].get("gmtoffset", 10800)
     q = r["indicators"]["quote"][0]
@@ -72,7 +72,7 @@ def yahoo(kod):
 
 def borsapy_gecmis(kod):
     import borsapy as bp
-    df = bp.Ticker(kod).history(period="2y")
+    df = bp.Ticker(kod).history(period="5y")
     out = {}
     for idx, row in df.iterrows():
         c = sayi(row.get("Close"))
@@ -186,7 +186,7 @@ def main():
         # Is Yatirim sadece iki kaynak bazi gunlerde tutmadiginda ya da biri hic gelmediginde sorulur
         ortak = set(K.get("yahoo", {})) & set(K.get("borsapy", {}))
         tutmayan = [d for d in ortak if not esit(K["yahoo"][d]["c"], K["borsapy"][d]["c"])]
-        if tutmayan or len(ortak) < 200:
+        if tutmayan or len(ortak) < 600:
             try:
                 K["isyatirim"] = isyatirim(kod)
             except Exception as e:
