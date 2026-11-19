@@ -215,16 +215,20 @@ def birlestir(K):
                 hedef = isy / f
                 for s in hamlar:
                     fark = abs(m[s]["c"] - hedef) / hedef
-                    if fark <= 0.004 and mum_tamam(m[s]) and (en_iyi is None or fark < en_iyi[0]):
+                    if fark <= 0.015 and mum_tamam(m[s]) and (en_iyi is None or fark < en_iyi[0]):
                         en_iyi = (fark, s, round(hedef, 2))
+            # %0,4 icinde: kesin cozum. %0,4 - %1,5: Is Yatirim'a en yakin GERCEK kaynak degeri secilir ve ayrica isaretlenir
             if en_iyi:
                 cozum = en_iyi
         if cozum:
             mum = dict(m[cozum[1]]); mum["kaynak"] = cozum[1]
             kaydet(d, mum, kap, [cozum[1]])
-            say["cozulen"] += 1
+            yakin_mi = cozum[0] > 0.004
+            say["yakin_cozum" if yakin_mi else "cozulen"] = say.get("yakin_cozum" if yakin_mi else "cozulen", 0) + 1
             kayit.append({"tarih": d, "kapanislar": kap, "secilen": cozum[1], "is_yatirim_gercek_karsiligi": cozum[2],
-                          "neden": "kaynaklar tutmadi; Is Yatirim duzeltme carpaniyla dogru deger bulundu"})
+                          "fark_yuzde": round(cozum[0] * 100, 2),
+                          "neden": ("kaynaklar tutmadi; Is Yatirim'a en yakin kaynak secildi (fark %" + str(round(cozum[0] * 100, 2)) + ")")
+                          if yakin_mi else "kaynaklar tutmadi; Is Yatirim duzeltme carpaniyla dogru deger bulundu"})
         else:
             say["atlanan"] += 1
             kayit.append({"tarih": d, "kapanislar": kap, "neden": "dogru deger kesinlestirilemedi, alinmadi"})
@@ -280,7 +284,9 @@ def main():
         elif (eski.get(kod) or {}).get("d"):
             stocks[kod] = eski[kod]  # bugun dogrulanamadi: son dogrulanmis veri kalir
             korunan.append(kod)
-        log[kod] = {"ozet": say, "kaynak_gun": {s: len(v) for s, v in K.items()}, "hatalar": hatalar, "kayit": kayit[-40:]}
+        log[kod] = {"ozet": say, "kaynak_gun": {s: len(v) for s, v in K.items()}, "hatalar": hatalar,
+                     # alinamayan ve yakin cozulen gunlerin hepsi, digerlerinin son 20'si saklanir (kontrol icin)
+                     "kayit": [x for x in kayit if "alinmadi" in x["neden"] or "en yakin" in x["neden"]] + [x for x in kayit if "alinmadi" not in x["neden"] and "en yakin" not in x["neden"]][-20:]}
         print(kod, say, "gun:", len(seri), hatalar)
 
     if not stocks:
