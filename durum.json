@@ -78,7 +78,7 @@
    "durum": "ok",
    "maks": 4,
    "not": "",
-   "saat": "2026-11-19T15:41:22Z",
+   "saat": "2026-11-19T16:25:20Z",
    "veri": "2026-11-19"
   },
   "fon": {
@@ -91,28 +91,28 @@
   },
   "kap": {
    "deneme": 1,
-   "durum": "deneniyor",
+   "durum": "ok",
    "maks": 4,
-   "not": "Son KAP taraması gecikti",
-   "saat": "2026-11-19 17:28",
-   "veri": "2026-11-19 17:28"
+   "not": "",
+   "saat": "2026-11-19 19:20",
+   "veri": "2026-11-19 19:20"
   },
   "karne": {
    "deneme": 0,
-   "durum": "bekliyor",
+   "durum": "ok",
    "maks": 4,
-   "not": "bugünün hesabı yok, THYAO fiyatı uyuşmuyor",
-   "saat": "2026-11-19T06:13:21Z",
+   "not": "",
+   "saat": "2026-11-19T16:41:02Z",
    "veri": "2026-11-19"
   },
   "kutuphane": {
    "deneme": 0,
-   "durum": "bekliyor",
+   "durum": "ok",
    "maks": 4,
-   "not": "bugünün verisi yok",
-   "saat": "2026-11-18T18:52:50Z",
-   "veri": "2026-11-18"
+   "not": "",
+   "saat": "2026-11-19T16:53:57Z",
+   "veri": "2026-11-19"
   }
  },
- "kontrolAt": "2026-11-19T15:59:24Z"
+ "kontrolAt": "2026-11-19T17:06:35Z"
 }
