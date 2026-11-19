@@ -87,19 +87,19 @@
   },
   "fon": {
    "deneme": 0,
-   "durum": "bekliyor",
+   "durum": "ok",
    "maks": 4,
-   "not": "Bugünün fon taraması yok",
-   "saat": "2026-11-18T18:27:08Z",
-   "veri": "2026-11-18"
+   "not": "",
+   "saat": "2026-11-19T18:46:11Z",
+   "veri": "2026-11-19"
   },
   "kap": {
    "deneme": 1,
-   "durum": "deneniyor",
+   "durum": "ok",
    "maks": 4,
-   "not": "Son KAP taraması gecikti",
-   "saat": "2026-11-19 19:20",
-   "veri": "2026-11-19 19:20"
+   "not": "",
+   "saat": "2026-11-19 21:08",
+   "veri": "2026-11-19 21:08"
   },
   "karne": {
    "deneme": 0,
@@ -114,9 +114,9 @@
    "durum": "ok",
    "maks": 4,
    "not": "",
-   "saat": "2026-11-19T16:53:57Z",
+   "saat": "2026-11-19T18:57:35Z",
    "veri": "2026-11-19"
   }
  },
- "kontrolAt": "2026-11-19T17:58:53Z"
+ "kontrolAt": "2026-11-19T18:59:26Z"
 }
