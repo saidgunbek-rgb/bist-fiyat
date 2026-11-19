@@ -1,9 +1,8 @@
 {
  "bist": {
-  "b": null,
+  "b": 11400.09,
   "d": "2026-11-19",
   "gunler": {
-   "2026-11-05": true,
    "2026-11-06": true,
    "2026-11-09": true,
    "2026-11-10": true,
@@ -12,10 +11,14 @@
    "2026-11-13": true,
    "2026-11-16": true,
    "2026-11-17": true,
-   "2026-11-18": true
+   "2026-11-18": true,
+   "2026-11-19": true
   },
-  "kaynaklar": [],
-  "teyit": false
+  "kaynaklar": [
+   "yahoo",
+   "borsapy"
+  ],
+  "teyit": true
  },
  "deneme": {
   "fiyat|2026-11-18": {
@@ -46,6 +49,10 @@
    "n": 1,
    "son": "2026-11-19T17:02"
   },
+  "kap|2026-11-19 18": {
+   "n": 1,
+   "son": "2026-11-19T18:59"
+  },
   "karne|2026-11-17": {
    "n": 1,
    "son": "2026-11-18T16:57"
@@ -68,10 +75,10 @@
  "kaynaklar": {
   "fiyat": {
    "deneme": 1,
-   "durum": "deneniyor",
+   "durum": "ok",
    "maks": 4,
-   "not": "Teyit edilemeyen: THYAO",
-   "saat": "2026-11-18T21:38:37Z",
+   "not": "",
+   "saat": "2026-11-19T15:41:22Z",
    "veri": "2026-11-19"
   },
   "fon": {
@@ -84,9 +91,9 @@
   },
   "kap": {
    "deneme": 1,
-   "durum": "ok",
+   "durum": "deneniyor",
    "maks": 4,
-   "not": "",
+   "not": "Son KAP taraması gecikti",
    "saat": "2026-11-19 17:28",
    "veri": "2026-11-19 17:28"
   },
@@ -94,7 +101,7 @@
    "deneme": 0,
    "durum": "bekliyor",
    "maks": 4,
-   "not": "bugünün hesabı yok",
+   "not": "bugünün hesabı yok, THYAO fiyatı uyuşmuyor",
    "saat": "2026-11-19T06:13:21Z",
    "veri": "2026-11-19"
   },
@@ -107,5 +114,5 @@
    "veri": "2026-11-18"
   }
  },
- "kontrolAt": "2026-11-19T15:40:52Z"
+ "kontrolAt": "2026-11-19T15:59:24Z"
 }
