@@ -1,17 +1,17 @@
 {
- "updatedAt": "2026-11-18T16:41:14Z",
+ "updatedAt": "2026-11-19T06:13:21Z",
  "hisseler": {
   "THYAO": {
    "ozet": {
-    "iki_kaynak": 289,
+    "iki_kaynak": 288,
     "ek_kaynak": 1,
     "duzeltme": 0,
     "cozulemedi": 0
    },
    "kaynak_gun_sayisi": {
     "isyatirim": 289,
-    "yahoo": 290,
-    "borsapy": 290,
+    "yahoo": 288,
+    "borsapy": 289,
     "kendi_kayit": 27
    },
    "bolunmeler": [
@@ -23,12 +23,12 @@
     {
      "tarih": "2026-11-18",
      "degerler": {
-      "yahoo": 323.75,
+      "isyatirim": 323.75,
       "borsapy": 323.75,
       "kendi_kayit": 323.75
      },
      "secilen": 323.75,
-     "neden": "cogunluk: borsapy,kendi_kayit,yahoo"
+     "neden": "cogunluk: borsapy,isyatirim,kendi_kayit"
     }
    ]
   }
