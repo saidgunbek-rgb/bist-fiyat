@@ -783,7 +783,23 @@ jobs:
                       print("HATA", kod, ad, e)
               ser, say, kayit = dogrula(K, bol)
               vade = VADE.get(kod, "uzun")
-              tek = seviyeler_kisa(ser) if vade == "kisa" else seviyeler(ser)
+              if vade == "kisa":
+                  tek = seviyeler_kisa(ser)
+              else:
+                  # Uzun vade seviyeleri Analiz sayfasiyla AYNI hesaptan (seviye_ortak.py): panelin her yerinde ayni rakam
+                  tek = None
+                  try:
+                      import seviye_ortak
+                      tek = seviye_ortak.tek_hesapla(kod, ser)
+                  except Exception as e:
+                      print("Ortak seviye hatasi", kod, e)
+                  eski_tek = (eski.get(kod) or {}).get("tek") or {}
+                  if not tek and eski_tek.get("yontem") == "analiz":
+                      tek = None  # bugun hesaplanamadi: asagida son dogrulanmis (ayni yontemli) hesap korunur
+                  elif not tek:
+                      tek = seviyeler(ser)
+                      if tek:
+                          tek["yontem"] = "gecici"  # analiz.json'da bu hissenin mum verisi henuz yok (yeni eklenen hisse)
               st = karne.setdefault("stocks", {}).setdefault(kod, {})
               st["vade"] = vade
               if tek:

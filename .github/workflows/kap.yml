@@ -803,7 +803,8 @@ jobs:
                       elif dur == "kar_al":
                           t = m % (kod, tl(tek.get("son")), tl(tek.get("h1")))
                       else:
-                          t = m % (kod, tl(tek.get("son")), tl(tek.get("f50")), tl(tek.get("f382")))
+                          ab = tek.get("alim") or [tek.get("f50"), tek.get("f382")]
+                          t = m % (kod, tl(tek.get("son")), tl(ab[0]), tl(ab[1]))
                       gonder.append({"i": i, "t": t, "g": "Seviyeler %s kapanışına göre hesaplandı." % tek.get("tarih", "")})
                   b["durum"] = dur
               # Kisa vadeli hisselerde gunluk sert hareket (%5 ve ustu) bildirimi
