@@ -34,12 +34,19 @@
   }
  },
  "kap_ve_bilanco": {
-  "updatedAt": "2026-11-18 21:06",
+  "updatedAt": "2026-11-19 09:18",
   "hisseler": {
    "THYAO": {
     "kap_kaynak": "borsapy",
     "kap_adet": 20,
     "kap_icerik": [
+     [
+      "2026-11-18 21:30",
+      "SPK İşlem Yasağı Nedeniyle Pay Duyurusu",
+      "pdf",
+      14299,
+      ""
+     ],
      [
       "2026-11-17 09:14",
       "Kamuyu Aydınlatma Platformu Duyurusu",
