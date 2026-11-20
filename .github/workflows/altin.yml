@@ -1,0 +1,61 @@
+# Analiz sayfasi icin altin ve gumus (gram, ons) gunluk mum verisini hazirlar: altin.json
+# Kaynaklar Yahoo + Stooq (dogrulama). Diger dosyalara dokunmaz.
+name: Altin verisi
+
+on:
+  schedule:
+    - cron: "37 21 * * 1-5"   # hafta ici gece 00:37 (Turkiye saati), gunluk mum kapandiktan sonra
+    - cron: "17 14 * * 1-5"   # hafta ici 17:17: gun ici yedek
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: altin
+  cancel-in-progress: false
+
+jobs:
+  altin:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Baglanti kopmalarina karsi tekrar deneme
+        run: |
+          mkdir -p /tmp/ag
+          cat > /tmp/ag/sitecustomize.py <<'PY'
+          import time, socket, http.client, urllib.request, urllib.error
+          _asil = urllib.request.urlopen
+          def _tekrarli(*a, **k):
+              for i in range(4):
+                  try:
+                      return _asil(*a, **k)
+                  except urllib.error.HTTPError as e:
+                      if e.code in (429, 500, 502, 503, 504) and i < 3:
+                          time.sleep(5 * (i + 1)); continue
+                      raise
+                  except (urllib.error.URLError, ConnectionError, http.client.HTTPException, socket.timeout, TimeoutError, OSError):
+                      if i == 3:
+                          raise
+                      time.sleep(3 * (i + 1))
+          urllib.request.urlopen = _tekrarli
+          PY
+          echo "PYTHONPATH=/tmp/ag" >> "$GITHUB_ENV"
+
+      - name: Mum verisini al ve dogrula
+        run: python3 altin_veri.py
+
+      - name: Kaydet
+        run: |
+          git config user.name "fiyat-bot"
+          git config user.email "fiyat-bot@users.noreply.github.com"
+          git add altin.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Altin verisi"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push && exit 0
+            sleep 5
+          done
+          exit 1
