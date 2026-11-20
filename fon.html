@@ -232,7 +232,29 @@ function analizHtml(f,B){var g=f.g||{},h='<div class="fa"><div class="fah">📊 
       +'<div class="far"><span>Fiyat / 40 haftalık ortalama</span><b>'+String(son).replace(".",",")+' / '+m.toFixed(4).replace(".",",")+' <i class="'+(fark>=0?'up':'dn')+'">('+(fark>=0?'+':'−')+Math.abs(fark).toFixed(1).replace(".",",")+'%)</i></b></div>'
       +'<div class="far"><span>Zirveden uzaklık</span><b class="'+(son>=pk?'up':'dn')+'">'+(son>=pk?'zirvede':'−%'+((1-son/pk)*100).toFixed(1).replace(".",","))+'</b></div>'
       +'<div class="fan">Bu bölüm fonun nerede durduğunu gösterir; yükselecek ya da düşecek demez. Karar senin.</div></div>';}
+  h+=(fv.length>=70?kademeFon(fv):'');
   return h+'</div>';}
+/* Kademeli toplama (fon penceresi): fiyat son 52 haftanin en alt %21'lik bolgesindeyse, bu fon gecmiste oraya inince
+   sonraki 13 haftada (yaklasik 3 ay) en cok ne kadar daha dusmus ve 13 hafta sonu nerede olmus. Haftalik kapanislardan; ornekler en az 4 hafta arayla;
+   ornek 10'dan azsa sayi yazilmaz. Tahmin degil, gecmisin ozeti. */
+function kademeFon(fv){var N=fv.length,c=fv[N-1],i,j,hi,lo;if(N<70)return'';
+  hi=-1e9;lo=1e9;for(j=N-52;j<N;j++){if(fv[j]>hi)hi=fv[j];if(fv[j]<lo)lo=fv[j];}
+  if(!(hi>lo)||(c-lo)/(hi-lo)>0.214)return'';
+  var ev=[],last=-99;for(i=52;i<N-13;i++){hi=-1e9;lo=1e9;for(j=i-51;j<=i;j++){if(fv[j]>hi)hi=fv[j];if(fv[j]<lo)lo=fv[j];}
+    if(hi>lo&&(fv[i]-lo)/(hi-lo)<=0.214&&i-last>=4){last=i;var mn=1e9;for(j=i+1;j<=i+13;j++)if(fv[j]<mn)mn=fv[j];ev.push([mn/fv[i]-1,fv[i+13]/fv[i]-1]);}}
+  var m=ev.length,pc=function(x){return(x<0?"−":"+")+"%"+Math.abs(x*100).toFixed(1).replace(".",",");},cl=function(x){return x<0?"dn":"up";},fp=function(x){return(x<1?x.toFixed(4):x.toFixed(3)).replace(".",",");},
+      h='<div class="fak k4"><div class="fat">🪜 Kademeli toplama <small>fiyat 52 haftanın en alt bölgesinde</small></div>';
+  lo=1e9;for(j=N-52;j<N;j++)if(fv[j]<lo)lo=fv[j];
+  if(m>=10){var dd=ev.map(function(e){return e[0];}).sort(function(a,b){return a-b;}),rt=ev.map(function(e){return e[1];}).sort(function(a,b){return a-b;}),pos=0;rt.forEach(function(x){if(x>0)pos++;});
+    h+='<div class="far"><span>Geçmişte bu bölgeye inme sayısı</span><b>'+m+' kez</b></div>'
+      +'<div class="far"><span>Sonraki 3 ayda en çok ek düşüş (ortanca)</span><b class="'+cl(dd[Math.floor(m/2)])+'">'+pc(dd[Math.floor(m/2)])+'</b></div>'
+      +'<div class="far"><span>En kötü durumda</span><b class="dn">'+pc(dd[0])+'</b></div>'
+      +'<div class="far"><span>3 ay sonunda artıda olma</span><b>'+pos+' / '+m+'</b></div>'
+      +'<div class="far"><span>3 ay sonu ortanca getiri</span><b class="'+cl(rt[Math.floor(m/2)])+'">'+pc(rt[Math.floor(m/2)])+'</b></div>';}
+  else h+='<div class="fan">Bu fon geçmişte bu bölgeye yeterince inmemiş ('+m+' kez); geçmiş davranış rakamı yazılmıyor. Aşağıdakiler yalnızca seviyelerdir.</div>';
+  h+='<div class="far"><span>1. parça: şimdi</span><b>'+fp(c)+'</b></div><div class="far"><span>2. parça: 52 haftalık dip</span><b>'+fp(lo)+' <i class="dn">('+pc(lo/c-1)+')</i></b></div>'
+    +'<div class="fan">Kaç parça ve ne kadar alacağın sende. Dibin altına inerse planı gözden geçir. Bu tahmin değil, fonun kendi geçmişinin özeti; örnekler aynı dönemlere yığılmış olabilir. Karar senin.</div></div>';
+  return h;}
 function pencere(k){var f=D.fonlar.filter(function(x){return x.k===k;})[0];if(!f)return;
   var o=document.getElementById("pop");if(!o){o=document.createElement("div");o.id="pop";document.body.appendChild(o);}
   o.innerHTML='<div class="pk"><button class="px" aria-label="Kapat">✕</button>'+grafikFon(f)+kart(f,0,D.bist||{},true).replace(/<span class="pn">[^]*?<\/span><\/div>/,'<span class="pn">'+(f.her_yonu?'⭐ ':'')+(f.puan!=null?f.puan+'/100':'')+'</span></div>')+(SERI?analizHtml(f,D.bist||{}):'')+'<button class="pkap">Kapat</button></div>';
