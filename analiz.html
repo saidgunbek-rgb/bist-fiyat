@@ -518,7 +518,7 @@ function ALTN(k){return !!(H&&H.stocks[k]&&H.stocks[k].grup==="altin");}
 /* Altin/gumus: hacim verisi guvenilir degil (vadeli kontrat), bu yuzden hacim profili fiyatta gecirilen gun sayisina gore (her gun 1) hesaplanir */
 function sec(k){SEC=k;ls(SECK,k);var s=H.stocks[k];ALT=ALTN(k);D=ALT?s.d.map(function(r){return[r[0],r[1],r[2],r[3],r[4],1];}):s.d;IND=hesapla(D);grafikVeri();
   document.getElementById("ad").textContent=ALT?s.ad:k+(s.ad?" · "+s.ad:"");document.getElementById("fiyat").textContent=(s.birim==="$"?"$":"")+f2(D[D.length-1][4])+(s.birim==="$"?"":" TL");
-  var kn=document.getElementById("kaynak");if(kn){if(!KAYNAK_BIST)KAYNAK_BIST=kn.innerHTML;kn.innerHTML=ALT?"Veri: "+trD(s.son)+" · Ons fiyatları Yahoo'nun sürekli vadeli kontratından (altın GC=F, gümüş SI=F); gram = ons × dolar/TL ÷ 31,1035. Son gün, piyasa açıkken gün içi değerdir. Hacim verisi kullanılmaz; hacim profili fiyatta geçen gün sayısıyla hesaplanır.":KAYNAK_BIST;}
+  var kn=document.getElementById("kaynak");if(kn){if(!KAYNAK_BIST)KAYNAK_BIST=kn.innerHTML;kn.innerHTML=ALT?"Veri: "+trD(s.son)+" · Ons fiyatları Yahoo'nun sürekli vadeli kontratından (altın GC=F, gümüş SI=F); gram = ons × dolar/TL ÷ 31,1035. Veriler ikinci bir kaynakla karşılaştırılır (altın: PAXG, gümüş: SLV, dolar/TL: Avrupa Merkez Bankası kuru). Son gün, piyasa açıkken gün içi değerdir. Hacim verisi kullanılmaz; hacim profili fiyatta geçen gün sayısıyla hesaplanır.":KAYNAK_BIST;}
   butonlar();ciz();ozet();degerlendir();}
 document.addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;
   if(b.id==="yatay"){yatayAc();return;}if(b.id==="kapat"){yatayKapat();return;}

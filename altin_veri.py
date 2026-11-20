@@ -1,5 +1,6 @@
 # Analiz sayfasi icin altin ve gumus (ons, gram) gunluk mum verisi: altin.json
-# Kaynaklar: Yahoo (ana) + Stooq (dogrulama). Iki kaynak kapanista tutmazsa o gun "uyusmadi" diye kayda gecer.
+# Kaynaklar: Yahoo (ana) + bagimsiz yedek: altin icin PAXG (Kraken, Coinbase), gumus icin SLV ETF (Yahoo), dolar/TL icin Avrupa Merkez Bankasi kuru (Frankfurter).
+# Iki kaynak kapanista tutmazsa o gun "uyusmadi" diye kayda gecer. Anlik spot (gold-api) son gunle karsilastirilir. Yahoo hic gelmezse onceki veri korunur, yeni gunler yedekten eklenir.
 # Gram altin / gram gumus = ons fiyati (USD) x dolar/TL / 31,1035 (1 ons = 31,1035 gram). Kuyumcu fiyati degil, piyasa (spot) fiyatidir.
 # Diger dosyalara dokunmaz. Bir kaynak hic gelmezse onceki dogrulanmis veri korunur, dosya bos kalmaz.
 import json, sys, time, datetime, urllib.request, urllib.error, csv, io
@@ -9,12 +10,14 @@ SIMDI = datetime.datetime.utcnow()
 BAS_S = (SIMDI - datetime.timedelta(days=3660)).strftime("%Y-%m-%d")
 GRAM = 31.1034768
 
-# kod: (ad, grup, birim, yahoo sembolleri (ilk calisan), stooq sembolu)
+# kod: (ad, grup, birim, yahoo sembolleri (ilk calisan), yedek kaynak adi)
 LISTE = {
-    "ONS":   ("Ons altın", "altin", "$", ["XAUUSD=X", "GC=F"], "xauusd"),
-    "XAG":   ("Ons gümüş", "altin", "$", ["XAGUSD=X", "SI=F"], "xagusd"),
+    "ONS":   ("Ons altın", "altin", "$", ["XAUUSD=X", "GC=F"], "paxg"),
+    "XAG":   ("Ons gümüş", "altin", "$", ["XAGUSD=X", "SI=F"], "slv"),
 }
-KUR = (["TRY=X", "USDTRY=X"], "usdtry")
+KUR = (["TRY=X", "USDTRY=X"], "ecb")
+SPOT = {"ONS": "XAU", "XAG": "XAG"}
+TOL = {"ONS": 0.02, "XAG": 0.03, "USDTRY": 0.01}  # farkli arac/saat oldugu icin altinda %2, gumusde %3, kurda %1
 
 
 def sayi(x):
@@ -56,18 +59,60 @@ def yahoo(sembol):
     return out
 
 
-def stooq(sembol):
-    t = oku("https://stooq.com/q/d/l/?s=%s&i=d" % sembol, js=False, deneme=1)
+def mum(d, o, h, l, c):
+    c, o, h, l = sayi(c), sayi(o), sayi(h), sayi(l)
+    return [d, o or c, h or c, l or c, c] if c else None
+
+
+def paxg():
+    # 1 ons altina bagli token: Kraken (~2 yil gunluk), olmazsa Coinbase (~300 gun). Seviye olarak ons altinla kiyaslanir.
     out = {}
-    for s in csv.DictReader(io.StringIO(t)):
-        d = s.get("Date") or s.get("Data")
-        c = sayi(s.get("Close") or s.get("Zamkniecie"))
-        if d and c and d >= BAS_S:
-            out[d] = [sayi(s.get("Open")) or c, sayi(s.get("High")) or c, sayi(s.get("Low")) or c, c, int(float(s.get("Volume") or 0))]
+    try:
+        r = oku("https://api.kraken.com/0/public/OHLC?pair=PAXGUSD&interval=1440", deneme=2)["result"]
+        for row in r[[k for k in r if k != "last"][0]]:
+            d = datetime.datetime.utcfromtimestamp(row[0]).strftime("%Y-%m-%d")
+            m = mum(d, row[1], row[2], row[3], row[4])
+            if m:
+                out[d] = m[1:] + [0]
+    except Exception:
+        out = {}
+    if len(out) < 100:
+        r = oku("https://api.exchange.coinbase.com/products/PAXG-USD/candles?granularity=86400", deneme=2)
+        for row in r:  # [zaman, dusuk, yuksek, acilis, kapanis, hacim]
+            d = datetime.datetime.utcfromtimestamp(row[0]).strftime("%Y-%m-%d")
+            m = mum(d, row[3], row[2], row[1], row[4])
+            if m:
+                out[d] = m[1:] + [0]
     return out
 
 
-def al(yahoolar, stq, log):
+def slv(ana):
+    # Gumus ETF'i: seviyesi ons gumusten farkli oldugu icin son 90 ortak gunun ortanca orani ile olceklenir.
+    E = yahoo("SLV")
+    ort = sorted(ana[d][3] / E[d][3] for d in sorted(set(ana) & set(E))[-90:])
+    if len(ort) < 30:
+        raise Exception("SLV ile ortak gun az")
+    k = ort[len(ort) // 2]
+    return {d: [round(x * k, 4) for x in E[d][:4]] + [0] for d in E}
+
+
+def ecb():
+    # Avrupa Merkez Bankasi referans kuru (Frankfurter): gunde tek deger.
+    for u in ("https://api.frankfurter.dev/v1/%s..?base=USD&symbols=TRY", "https://api.frankfurter.app/%s..?from=USD&to=TRY"):
+        try:
+            r = oku(u % BAS_S, deneme=2)["rates"]
+            return {d: [v["TRY"]] * 4 + [0] for d, v in r.items() if v.get("TRY")}
+        except Exception:
+            continue
+    raise Exception("frankfurter ulasilamadi")
+
+
+def spot(kod):
+    # Anlik altin/gumus fiyati (gold-api); yalniz son gunun makul olup olmadigina bakmak icin.
+    return sayi(oku("https://api.gold-api.com/price/%s" % kod, deneme=2).get("price"))
+
+
+def al(yahoolar, yedek, log):
     Y, yk = {}, None
     for s in yahoolar:
         try:
@@ -78,16 +123,16 @@ def al(yahoolar, stq, log):
         except Exception as e:
             log["hatalar"].append("yahoo %s: %s" % (s, e))
     try:
-        S = stooq(stq)
+        S = {"paxg": paxg, "ecb": ecb}[yedek]() if yedek in ("paxg", "ecb") else slv(Y)
     except Exception as e:
         S = {}
-        log["hatalar"].append("stooq %s: %s" % (stq, e))
-    log["kaynak"] = {"yahoo": yk, "yahoo_gun": len(Y), "stooq_gun": len(S)}
+        log["hatalar"].append("yedek %s: %s" % (yedek, e))
+    log["kaynak"] = {"yahoo": yk, "yahoo_gun": len(Y), "yedek": yedek, "yedek_gun": len(S)}
     return Y, S
 
 
 def birlestir(Y, S, log, tol):
-    # Ana seri Yahoo; Stooq ile son 1 yilda kapanis karsilastirilir. Yahoo hic yoksa Stooq kullanilir.
+    # Ana seri Yahoo; yedek kaynakla son 1 yilda kapanis karsilastirilir (tutmayan gunler kayda gecer, veriyi degistirmez). Yahoo hic yoksa yedek kullanilir.
     ana, yedek = (Y, S) if Y else (S, {})
     seri, ayni, fark, yok = [], 0, [], 0
     sinir = (SIMDI - datetime.timedelta(days=370)).strftime("%Y-%m-%d")
@@ -102,7 +147,7 @@ def birlestir(Y, S, log, tol):
             else:
                 yok += 1
         seri.append([d] + [round(x, 4) for x in r[:4]] + [int(r[4] or 0)])
-    log["dogrulama"] = {"son1yil_tutan": ayni, "tutmayan": len(fark), "stooqta_olmayan": yok, "ornek_tutmayan": fark[-10:]}
+    log["dogrulama"] = {"son1yil_tutan": ayni, "tutmayan": len(fark), "yedekte_olmayan": yok, "ornek_tutmayan": fark[-10:]}
     return seri
 
 
@@ -115,8 +160,24 @@ def main():
     for kod, (ad, grup, birim, ys, sq) in LISTE.items():
         log = {"hatalar": []}
         Y, S = al(ys, sq, log)
-        # spot ile vadeli arasinda fark olabilir: altinda %1, gumuste %1,5
-        seri = birlestir(Y, S, log, {"ONS": 0.01, "XAG": 0.015}.get(kod, 0.005))
+        if not Y and kod in onceki and S:
+            # Yahoo yok: onceki dogrulanmis seri korunur, yalniz ondan yeni gunler yedekten eklenir
+            seri = list(onceki[kod]["d"])
+            son = seri[-1][0]
+            yeni_g = [[d] + [round(x, 4) for x in S[d][:4]] + [0] for d in sorted(S) if d > son]
+            seri += yeni_g
+            log["hatalar"].append("yahoo yok: onceki veri korundu, %d yeni gun yedekten eklendi" % len(yeni_g))
+        else:
+            seri = birlestir(Y, S, log, TOL[kod])
+        # anlik spot ile son gunun uyumu
+        try:
+            sp = spot(SPOT[kod])
+            if sp and seri:
+                log["anlik_spot"] = {"spot": round(sp, 3), "son_kapanis": seri[-1][4], "fark_yuzde": round((seri[-1][4] / sp - 1) * 100, 2)}
+                if abs(seri[-1][4] / sp - 1) > 0.03:
+                    log["hatalar"].append("son gun anlik spot ile %%3'ten fazla ayrisiyor: %s" % log["anlik_spot"])
+        except Exception as e:
+            log["hatalar"].append("anlik spot alinamadi: %s" % e)
         kontrol[kod] = log
         if len(seri) >= 250:
             stocks[kod] = {"ad": ad, "grup": grup, "birim": birim, "d": seri, "son": seri[-1][0]}
@@ -127,7 +188,7 @@ def main():
     # gram altin: ayni gunun ons ve dolar/TL degerleriyle
     log = {"hatalar": []}
     KY, KS = al(KUR[0], KUR[1], log)
-    kur = birlestir(KY, KS, log, 0.005)
+    kur = birlestir(KY, KS, log, TOL["USDTRY"])
     kontrol["USDTRY"] = log
     K = {r[0]: r for r in kur} if len(kur) > 250 else {}
     for ons, gk, gad in (("ONS", "GRAM", "Gram altın"), ("XAG", "GGUM", "Gram gümüş")):
