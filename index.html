@@ -668,15 +668,16 @@ function ac(k,geriden){if(k===SEC)k=null;var once=SEC;
   if(k==="karne"&&window.__karneYukle)window.__karneYukle();
   if(k==="kut"&&window.__kutYukle)window.__kutYukle();
   /* telefonun geri tusu / geri hareketi de bolumu kapatsin */
-  if(k&&!once&&!geriden){try{history.pushState({sk:k},"");}catch(e){}}
+  if(k&&!once&&!geriden){try{history.pushState({sk:k},"","?s="+k);}catch(e){}}
   if(k)window.scrollTo(0,0);else if(once)window.scrollTo(0,YER);}
-function kapat(){if(!SEC)return;if(history.state&&history.state.sk){history.back();}else ac(null,true);}
+function kapat(){if(!SEC)return;if(history.state&&history.state.sk){history.back();}else{ac(null,true);try{history.replaceState(null,"",location.pathname);}catch(e){}}}
 document.getElementById("sgeri").onclick=kapat;
 window.addEventListener("popstate",function(e){if(SEC&&!(e.state&&e.state.sk))ac(null,true);else if(!SEC&&e.state&&e.state.sk)ac(e.state.sk,true);});
 Array.prototype.forEach.call(tb.querySelectorAll("button"),function(b){b.onclick=function(){ac(b.getAttribute("data-s"));};});
 window.__sekme=function(k){ac(k);};
 if(history.state&&history.state.sk){try{history.replaceState(null,"");}catch(e){}}
 ac(null);
+(function(){var m=/[?&]s=([a-z]+)/.exec(location.search);if(m&&SK[m[1]]){ac(m[1],true);try{history.replaceState(null,"","?s="+m[1]);}catch(e){}}})();
 })();
 </script>
 <script>
