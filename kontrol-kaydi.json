@@ -415,9 +415,10 @@
   }
  },
  "kap_ve_bilanco": {
-  "updatedAt": "2026-11-20 20:58",
+  "updatedAt": "2026-11-20 21:13",
   "hisseler": {
    "THYAO": {
+    "bilanco_yorum_hata": "<urlopen error timed out>",
     "kap_kaynak": "borsapy",
     "kap_adet": 20,
     "kap_icerik": [
@@ -432,7 +433,6 @@
     "bilanco_kontrol": {
      "d": "2026/9",
      "kaynak": [],
-     "tv_onceki": "2026/6",
      "bizim": {
       "kar": 146218895515.0,
       "ozkaynak": 1135117000000.0
@@ -452,10 +452,7 @@
         23252000000.0
        ]
       },
-      "onceki_ceyrek_ozkaynak": [
-       "2026/6",
-       1018517000000.0
-      ]
+      "onceki_ceyrek_hata": "<urlopen error timed out>"
      }
     }
    }
