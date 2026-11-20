@@ -49,6 +49,17 @@ h1{font-size:23px;margin:4px 0 2px;background:linear-gradient(90deg,#8b7cf6,#f09
 .fs:active{border-color:var(--p)}
 .it{border:1.5px solid #3c3f58;background:#1b1d29}
 .bh{margin-top:22px}
+.bz{margin-top:12px;padding-top:10px;border-top:1px solid var(--ln)}.bzh{font-size:14.5px;font-weight:700;margin:0 2px 6px}.bzh small{color:var(--mut);font-weight:400;font-size:11.5px}
+.bzs{display:grid;grid-template-columns:1.35fr .9fr .9fr 1.1fr .6fr;gap:4px;align-items:center;width:100%;font:inherit;font-size:12.5px;text-align:right;padding:7px 4px;background:transparent;color:var(--tx);border:0;border-bottom:1px solid var(--ln)}
+.bzs>span:first-child{text-align:left;display:flex;flex-direction:column}.bzs small{color:var(--mut);font-size:10.5px}.bzt{color:var(--mut);font-size:11px}
+.ftb{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:4px 0 10px}
+.ftb button{font:inherit;text-align:left;padding:11px 12px;border-radius:14px;background:var(--card);color:var(--tx);border:1px solid var(--ln);display:flex;flex-direction:column;gap:3px}
+.ftb button b{font-size:14px}.ftb button small{color:var(--mut);font-size:11.5px}
+.fsek,.fbar{display:none}
+#app.facik>*{display:none}#app.facik>.fsek.ac{display:block}
+#app.facik>.fbar{display:flex;position:sticky;top:0;z-index:30;justify-content:space-between;align-items:center;gap:10px;padding:10px 2px;margin:0 0 6px;background:var(--bg);border-bottom:1px solid var(--ln)}
+.fbar b{font-size:17px}.fbar button{font:inherit;font-size:14px;font-weight:700;padding:7px 14px;border-radius:999px;background:transparent;color:var(--r,#ef5350);border:1px solid var(--r,#ef5350)}
+.fsek>.bh:first-child{margin-top:4px}
 </style><script>/* Cevrimdisi destek (sw.js): internet yokken en son kaydedilen veriler, kayit zamaniyla birlikte gosterilir */
 (function(){if("serviceWorker"in navigator){try{navigator.serviceWorker.register("sw.js").catch(function(){});}catch(e){}}
 var of=window.fetch;if(!of)return;var gos=0;
@@ -121,18 +132,34 @@ function grafikFon(f){
   if(tey)g+=et(fe,"#a594ff");if(be!=null&&Math.abs(Y(be)-Y(fe))>11)g+=et(be,"#f0957a");
   g+='<text x="'+L+'" y="'+(H-3)+'" font-size="10" fill="#9a9ab0">'+trD(s[0][0])+'</text><text x="'+(L+w)+'" y="'+(H-3)+'" font-size="10" fill="#9a9ab0" text-anchor="end">'+trD(s[s.length-1][0])+'</text></svg>';
   return bas+g+'<div class="alt" style="margin-top:4px"><span style="color:#a594ff">━ '+esc(f.k)+'</span> &nbsp; <span style="color:#f0957a">━ BIST100</span> &nbsp; · başlangıç = 100'+(genc?'<br>Fon '+esc(trD(S[0][0]))+' tarihinden beri var; grafik o tarihten başlıyor.':'')+(!tey?'<br>Bu dönemin getirisi TEFAS rakamıyla teyit edilemediği için yazılmadı; çizgi sadece gidişatı gösterir.':'')+(GAR===0?(bes?'<br>Tümü: veri kaynağı en fazla son 5 yılı veriyor; fon daha eski olabilir.':'<br>Tümü: fonun ilk fiyatından bugüne.'):'')+'</div></div>';}
+/* Benzer fonlar: son 2 yilin haftalik getirileri en cok birlikte hareket eden (korelasyonu en yuksek) 5 fon.
+   Ayni endeksi ya da benzer hisseleri tasiyan fonlar ust siralara cikar; isimden tahmin edilmez, fiyat hareketinden olculur. */
+function benzerHtml(f){if(!SERI||!SERI.fon||!SERI.fon[f.k])return SERI?'':'<div class="bz"><div class="bzh">🔗 Benzer fonlar</div><div class="alt">Yükleniyor…</div></div>';
+  function getiri(k){var a=(SERI.fon[k]||[]).slice(-105),m={};for(var i=1;i<a.length;i++)if(a[i-1][1]>0)m[a[i][0]]=a[i][1]/a[i-1][1]-1;return m;}
+  var A=getiri(f.k),L=[];
+  D.fonlar.forEach(function(g){if(g.k===f.k||!SERI.fon[g.k])return;var B=getiri(g.k),x=[],y=[];for(var t in A)if(t in B){x.push(A[t]);y.push(B[t]);}
+    if(x.length<40)return;var n=x.length,mx=0,my=0,i;for(i=0;i<n;i++){mx+=x[i];my+=y[i];}mx/=n;my/=n;var sxy=0,sx=0,sy=0;
+    for(i=0;i<n;i++){sxy+=(x[i]-mx)*(y[i]-my);sx+=(x[i]-mx)*(x[i]-mx);sy+=(y[i]-my)*(y[i]-my);}if(!(sx>0&&sy>0))return;L.push({f:g,r:sxy/Math.sqrt(sx*sy),n:n});});
+  L.sort(function(a,b){return b.r-a.r;});L=L.slice(0,5);if(!L.length)return'';
+  var h='<div class="bz"><div class="bzh">🔗 Benzer fonlar <small>birlikte en çok hareket edenler</small></div>'
+    +'<div class="bzs bzt"><span>Fon</span><span>Benzerlik</span><span>1 yıl</span><span>En büyük düşüş</span><span>Puan</span></div>';
+  L.forEach(function(o){var g=o.f,R=g.rk||{},iyi=g.puan!=null&&f.puan!=null&&g.puan>f.puan;
+    h+='<button class="bzs" data-bz="'+esc(g.k)+'"><span><b>'+esc(g.k)+'</b><small>'+esc(g.banka||"")+'</small></span><span>%'+Math.round(o.r*100)+'</span><span class="'+(g.g.y1==null?'':g.g.y1>=0?'up':'dn')+'">'+y1(g.g.y1)+'</span><span class="dn">'+(R.mdd==null?'—':y1(R.mdd))+'</span><span'+(iyi?' class="up"':'')+'>'+(g.puan!=null?g.puan:'—')+'</span></button>';});
+  return h+'<div class="alt" style="margin-top:6px">Benzerlik: son 2 yılın haftalık fiyat hareketlerinin ne kadar birlikte gittiği (%100 = aynı). Bu fondan yüksek puanı yeşil. Fona dokununca onun penceresi açılır.</div></div>';}
 function pencere(k){var f=D.fonlar.filter(function(x){return x.k===k;})[0];if(!f)return;
   var o=document.getElementById("pop");if(!o){o=document.createElement("div");o.id="pop";document.body.appendChild(o);}
-  o.innerHTML='<div class="pk"><button class="px" aria-label="Kapat">✕</button>'+grafikFon(f)+kart(f,0,D.bist||{},true).replace(/<span class="pn">[^]*?<\/span><\/div>/,'<span class="pn">'+(f.her_yonu?'⭐ ':'')+(f.puan!=null?f.puan+'/100':'')+'</span></div>')+'<button class="pkap">Kapat</button></div>';
+  o.innerHTML='<div class="pk"><button class="px" aria-label="Kapat">✕</button>'+grafikFon(f)+kart(f,0,D.bist||{},true).replace(/<span class="pn">[^]*?<\/span><\/div>/,'<span class="pn">'+(f.her_yonu?'⭐ ':'')+(f.puan!=null?f.puan+'/100':'')+'</span></div>')+benzerHtml(f)+'<button class="pkap">Kapat</button></div>';
   o.className="on";document.body.style.overflow="hidden";
   function kapat(){o.className="";document.body.style.overflow="";}
   o.onclick=function(e){if(e.target===o)kapat();};
   o.querySelector(".px").onclick=kapat;o.querySelector(".pkap").onclick=kapat;
   Array.prototype.forEach.call(o.querySelectorAll(".gab"),function(b){b.onclick=function(){GAR=+b.getAttribute("data-gar");var sc=o.querySelector(".pk").scrollTop;pencere(b.getAttribute("data-k"));o.querySelector(".pk").scrollTop=sc;};});
+  Array.prototype.forEach.call(o.querySelectorAll("[data-bz]"),function(b){b.onclick=function(){pencere(b.getAttribute("data-bz"));o.querySelector(".pk").scrollTop=0;};});
   if(!SERI)seriYukle(function(){if(o.className==="on")pencere(k);});}
 document.addEventListener("keydown",function(e){if(e.key==="Escape"){var o=document.getElementById("pop");if(o){o.className="";document.body.style.overflow="";}}});
 function favHtml(B){var F=D.fonlar,h='',EN=D.enf;
   h+='<div class="bx">Bu bölüm her akşamki taramadan sonra kendiliğinden yenilenir. Bir fona dokununca bilgileri küçük bir pencerede açılır. <b>Puan</b> (0–100): fonun 1 ay, 3 ay, 6 ay, 1 yıl, 3 yıl getirisi, getiri/risk ve en büyük düşüşte diğer banka fonları arasındaki sırasının ortalamasıdır.</div>';
+  h+='%%SEKME%%<div class="fsek" data-f="hy">';
   // 1) Her yonuyle iyi
   var HY=F.filter(function(f){return f.her_yonu;}).sort(function(a,b){return(b.puan||0)-(a.puan||0);});
   h+='<div class="bh"><span><b>⭐ Her yönüyle iyi</b> <small>'+HY.length+' fon</small></span></div>';
@@ -140,9 +167,11 @@ function favHtml(B){var F=D.fonlar,h='',EN=D.enf;
   if(HY.length)HY.forEach(function(f,i){h+=satir(f,f.g.y1,B.y1,i);});
   else{var Y=F.slice().sort(function(a,b){return(b.kosul||0)-(a.kosul||0)||(b.puan||0)-(a.puan||0);}).slice(0,3);
     h+='<div class="alt" style="margin:0 2px 6px">Bugün 5 şartın hepsini sağlayan fon yok. En yakın olanlar:</div>';Y.forEach(function(f,i){h+=satir(f,f.g.y1,B.y1,i).replace('<span class="fp">','<span class="fp" title="sağlanan şart">'+f.kosul+'/5 · ');});}
+  h+='</div><div class="fsek" data-f="gp">';
   // 2) Genel puanda ilk 5
   var GP=F.filter(function(f){return f.puan!=null;}).sort(function(a,b){return b.puan-a.puan;}).slice(0,5);
   h+='<div class="bh"><span><b>🏆 Genel puanda ilk 5</b></span><span class="alt">puan</span></div>';GP.forEach(function(f,i){h+=satir(f,f.g.y1,B.y1,i);});
+  h+='</div><div class="fsek" data-f="dn">';
   // 3) Donem favorileri
   var DN=[["d1","Son gün"],["a1","Son 1 ay"],["a3","Son 3 ay"],["a6","Son 6 ay"],["y1","Son 1 yıl"]];
   h+='<div class="bh"><span><b>📅 Dönemin favorileri</b></span><span class="alt">vurgulu sütun: o dönem</span></div>';
@@ -151,21 +180,39 @@ function favHtml(B){var F=D.fonlar,h='',EN=D.enf;
     h+='<div class="dh">'+d[1]+tt+' <small>'+(k==="d1"?'fonun son açıklanan fiyatındaki değişim · fon fiyatları bir önceki günün kapanışıyla oluştuğu için BIST100’ün bugünkü hareketiyle karşılaştırılmaz':(b!=null?'BIST100 '+yz(b)+' · endeksi geçenler arasından':''))+'</small></div>';
     if(!L.length)h+='<div class="alt" style="margin:0 2px 8px">Bu dönemde endeksi geçen fon yok.</div>';
     L.forEach(function(f,i){h+=satir(f,f.g[k],b,i,k);});});
+  h+='</div><div class="fsek" data-f="uz">';
   // 4) Uzun suredir iyi
   var UZ=F.filter(function(f){return f.gecmis&&f.gecmis.kac>0;}).sort(function(a,b){return b.gecmis.kac-a.gecmis.kac||b.gecmis.seri-a.gecmis.seri||(b.puan||0)-(a.puan||0);}).slice(0,10);
   var top=UZ.length?UZ[0].gecmis.toplam:0;
   h+='<div class="bh"><span><b>📈 Uzun süredir iyi</b></span><span class="alt">son '+top+' tarama</span></div>';
   h+='<div class="alt" style="margin:-2px 2px 8px">Genel puanda ilk 10’da kaldığı gün sayısı (son 30 tarama). '+(top<10?'Geçmiş her akşam birikiyor; şu an '+top+' günlük kayıt var, liste günler geçtikçe anlamlı hale gelir.':'')+'</div>';
   UZ.forEach(function(f,i){var g=f.gecmis;h+=satir(f,f.g.y1,B.y1,i).replace('<span class="fp">','<span class="fp" style="width:auto">'+g.kac+'/'+g.toplam+' gün'+(g.seri>1?' · '+g.seri+' gün üst üste':'')+(g.her_yonu_gun?' · ⭐'+g.her_yonu_gun:'')+' · ');});
-  h+='<div class="alt" style="margin-top:10px">Bu liste kurallara göre otomatik seçilir; al/sat önerisi değildir. Geçmiş getiri gelecek getirinin garantisi değildir.</div>';
-  return h;}
+  h+='</div><div class="alt" style="margin-top:10px">Bu liste kurallara göre otomatik seçilir; al/sat önerisi değildir. Geçmiş getiri gelecek getirinin garantisi değildir.</div>';
+  /* Favoriler dort sekme: dokununca o bolum tek basina acilir, ustteki Kapat (ya da telefonun geri tusu) ile sekmelere geri donulur */
+  var SK=[["hy","⭐ Her yönüyle iyi",HY.length?HY.length+" fon":"en yakın 3"],["gp","🏆 Genel puanda ilk 5",GP.length+" fon"],["dn","📅 Dönemin favorileri","5 dönem"],["uz","📈 Uzun süredir iyi",UZ.length+" fon"]];
+  var tb='<div class="ftb">'+SK.map(function(k){return'<button data-fs="'+k[0]+'"><b>'+k[1]+'</b><small>'+k[2]+'</small></button>';}).join("")+'</div>'
+    +'<div class="fbar"><b id="fbad"></b><button id="fkapat">✕ Kapat</button></div>';
+  return h.replace("%%SEKME%%",tb);}
+var FAC=null,FYER=0;
+function favAc(k,geriden){var app=document.getElementById("app");if(!app)return;
+  if(k&&!FAC)FYER=window.pageYOffset;FAC=k;
+  app.classList.toggle("facik",!!k);
+  Array.prototype.forEach.call(app.querySelectorAll(".fsek"),function(e){e.classList.toggle("ac",e.getAttribute("data-f")===k);});
+  var b=k&&app.querySelector('[data-fs="'+k+'"] b');document.getElementById("fbad").textContent=b?b.textContent:"";
+  if(k&&!geriden){try{history.pushState({fs:k},"");}catch(e){}}
+  if(k)app.scrollIntoView({block:"start"});else window.scrollTo(0,FYER);}
+function favKapat(){if(!FAC)return;if(history.state&&history.state.fs)history.back();else favAc(null,true);}
+window.addEventListener("popstate",function(e){if(FAC&&!(e.state&&e.state.fs))favAc(null,true);});
 function ciz(){var B=D.bist||{},TUM=D.fonlar;
   var F=TUM.filter(function(f){return(GRUP==="Hepsi"||f.grup===GRUP)&&(BANKA==="Hepsi"||f.banka===BANKA);}),var_ucret=F.some(function(f){return f.ucret!=null;});
   F.sort(function(a,b){return deger(b,SIRA)-deger(a,SIRA);});
   var h='<div class="flt" id="gor"><button data-v="fav"'+(GOR==="fav"?' class="on"':'')+'>⭐ Favoriler</button><button data-v="banka"'+(GOR==="banka"?' class="on"':'')+'>🏦 Bankalara göre</button><button data-v="liste"'+(GOR==="liste"?' class="on"':'')+'>📋 Tek liste</button></div>';
   if(GOR==="fav"){h+=favHtml(B);document.getElementById("app").innerHTML=h;
     Array.prototype.forEach.call(document.querySelectorAll("#gor button"),function(b){b.onclick=function(){GOR=b.getAttribute("data-v");try{localStorage.setItem("fon-gor",GOR);}catch(e){}ciz();};});
-    Array.prototype.forEach.call(document.querySelectorAll("[data-ac]"),function(b){b.onclick=function(){pencere(b.getAttribute("data-ac"));};});return;}
+    Array.prototype.forEach.call(document.querySelectorAll("[data-ac]"),function(b){b.onclick=function(){pencere(b.getAttribute("data-ac"));};});
+    Array.prototype.forEach.call(document.querySelectorAll("[data-fs]"),function(b){b.onclick=function(){favAc(b.getAttribute("data-fs"));};});
+    document.getElementById("fkapat").onclick=favKapat;if(FAC)favAc(FAC,true);return;}
+  if(FAC){FAC=null;document.getElementById("app").classList.remove("facik");}
   h+='<div class="flt" id="srt">'+SL.filter(function(s){return s[0]!=="ucr"||var_ucret;}).map(function(s){return'<button data-s="'+s[0]+'"'+(s[0]===SIRA?' class="on"':'')+'>'+s[1]+'</button>';}).join("")+'</div>';
   h+='<div class="flt" id="grp">'+["Hepsi","Kamu","Özel","Katılım"].filter(function(g){return g==="Hepsi"||TUM.some(function(f){return f.grup===g;});}).map(function(g){var n=g==="Hepsi"?TUM.length:TUM.filter(function(f){return f.grup===g;}).length;return'<button data-g="'+g+'"'+(g===GRUP?' class="on"':'')+'>'+(g==="Hepsi"?"Tüm bankalar":g==="Kamu"?"Kamu":g==="Özel"?"Özel":"Katılım")+' ('+n+')</button>';}).join("")+'</div>';
   var bs={};TUM.forEach(function(f){if(GRUP==="Hepsi"||f.grup===GRUP)bs[f.banka]=(bs[f.banka]||0)+1;});
