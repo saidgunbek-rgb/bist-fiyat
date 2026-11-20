@@ -186,7 +186,7 @@ var EKS=58; /* sag fiyat ekseni genisligi */
 function gorunen(){if(VIEW)return{a:Math.max(0,VIEW.e-VIEW.n+1),b:VIEW.e};var n=CD.length,k=MUM==="h"?Math.ceil(DON/5):DON,a=Math.max(0,n-k);return{a:a,b:n-1};}
 function ciz(){
   if(!CD)return;var g=gorunen(),a=g.a,b=g.b,N=b-a+1;
-  var C=hazirla(document.getElementById("cv"),TAM?Math.max(150,alanY()-document.getElementById("cv").offsetTop-(ACIK.wt?96+30:0)-(ACIK.rsi?80+30:0)-12):400),x=C.x,W=C.w-EKS,HH=C.h-22,bw=W/(N+2);
+  var C=hazirla(document.getElementById("cv"),TAM?Math.max(150,alanY()-document.getElementById("cv").offsetTop-(ACIK.wt?96+30:0)-(ACIK.rsi?80+30:0)-12):400),x=C.x,W=C.w-EKS,HH=C.h-22;x.font="bold 9.5px Roboto,Arial";var mxH=0;for(var q=0;q<CD.length;q++)if(CD[q][2]>mxH)mxH=CD[q][2];SAGW=Math.ceil(x.measureText("0,786 "+f2(mxH)).width)+3;var bw=(W-SAG())/(N+2);
   /* fiyat araligi */
   var hi=-1e9,lo=1e9,hiI=a,loI=a;for(var i=a;i<=b;i++){if(CD[i][2]>hi){hi=CD[i][2];hiI=i;}if(CD[i][3]<lo){lo=CD[i][3];loI=i;}}
   var pmx=hi,pmn=lo;
@@ -211,13 +211,13 @@ function ciz(){
     for(var k=0;k<FIB.length-1;k++){x.fillStyle=FIB_DOLGU[k];x.fillRect(0,Y(fp[k]),W,Y(fp[k+1])-Y(fp[k]));}
     x.textBaseline="bottom";x.font="10.5px Roboto,Arial";
     FIB.forEach(function(f,k){var y=Y(fp[k]);x.strokeStyle=f[1];x.globalAlpha=.85;x.lineWidth=1;x.beginPath();x.moveTo(0,y);x.lineTo(W,y);x.stroke();x.globalAlpha=1;
-      FL.push([String(f[0]).replace(".",",")+" ("+f2(fp[k])+")",y,f[1]]);});
+      FL.push([String(f[0]).replace(".",","),y,f[1],f2(fp[k])]);});
     x.setLineDash([4,4]);x.strokeStyle="rgba(200,200,220,.35)";x.beginPath();x.moveTo(X(hiI),Y(hi));x.lineTo(X(loI),Y(lo));x.stroke();x.setLineDash([]);}
   /* hacim profili (gorunen aralik) */
   if(ACIK.vp){var VP=hacimProfili(CD,a,b,40);if(VP){var vmx=Math.max.apply(null,VP.v);
     for(var q=0;q<VP.v.length;q++){var y1=Y(VP.lo+(q+1)*VP.st),y2=Y(VP.lo+q*VP.st),ww=VP.v[q]/vmx*W*0.28;x.fillStyle=q>=VP.al&&q<=VP.ust?"rgba(139,124,246,.30)":"rgba(139,124,246,.13)";x.fillRect(W-ww,y1+0.5,ww,Math.max(1,y2-y1-1));}
     x.setLineDash([5,3]);x.strokeStyle="#f59e0b";x.lineWidth=1.2;x.beginPath();x.moveTo(0,Y(VP.poc));x.lineTo(W,Y(VP.poc));x.stroke();x.setLineDash([]);
-    FL.push(["POC "+f2(VP.poc),Y(VP.poc)+13,"#f59e0b"]);}}
+    FL.push(["POC",Y(VP.poc),"#f59e0b",f2(VP.poc)]);}}
   /* hacim */
   if(ACIK.hac){var vm=0;for(i=a;i<=b;i++)vm=Math.max(vm,CD[i][5]||0);
     if(vm>0)for(i=a;i<=b;i++){var vh=(CD[i][5]||0)/vm*HH*0.16;x.fillStyle=CD[i][4]>=CD[i][1]?"rgba(38,166,154,.35)":"rgba(239,83,80,.35)";x.fillRect(X(i)-bw*0.35,HH-vh,Math.max(1,bw*0.7),vh);}}
@@ -230,7 +230,15 @@ function ciz(){
   for(i=a;i<=b;i++){var r=CD[i],up=r[4]>=r[1],cx=X(i);x.strokeStyle=x.fillStyle=up?"#26a69a":"#ef5350";x.lineWidth=1;
     x.beginPath();x.moveTo(cx,Y(r[2]));x.lineTo(cx,Y(r[3]));x.stroke();var y1=Y(Math.max(r[1],r[4])),y2=Y(Math.min(r[1],r[4]));x.fillRect(cx-bw*0.35,y1,Math.max(1,bw*0.7),Math.max(1,y2-y1));}
   /* Fibonacci etiketleri mumlarin ustune, okunur zeminle */
-  x.font="10.5px Roboto,Arial";x.textBaseline="bottom";FL.forEach(function(l){var tw=x.measureText(l[0]).width;x.fillStyle="rgba(18,19,28,.82)";x.fillRect(W-tw-6,l[1]-14,tw+5,13);x.fillStyle=l[2];x.fillText(l[0],W-tw-3,l[1]-1);});
+  /* Fibonacci / POC etiketleri: oran sagdaki bos seritte, fiyat sagdaki eksende renkli kutuda (TradingView gibi).
+     Kutular birbirine ve son fiyat kutusuna binmesin diye 16 px aralikla kaydirilir; cizgiler gercek yerinde kalir. */
+  var sY=Y(CD[CD.length-1][4]),sV=CD[CD.length-1][4]>=pmn&&CD[CD.length-1][4]<=pmx,TG=FL.filter(function(l){return l[1]>=2&&l[1]<=HH;}).map(function(l){return{t:l[0],y:l[1],r:l[2],v:l[3],ky:l[1]};}).sort(function(p,q){return p.y-q.y;});
+  TG.forEach(function(g,i){if(i>0&&g.ky-TG[i-1].ky<14)g.ky=TG[i-1].ky+14;});
+  var SZ=SAG();x.textBaseline="middle";
+  if(SZ)TG.forEach(function(g){x.fillStyle="#12131c";x.fillRect(W-SZ,g.ky-7,SZ+2,14);
+    x.font="9.5px Roboto,Arial";x.fillStyle=g.r;x.textAlign="left";x.fillText(g.t,W-SZ+1,g.ky);
+    x.font="bold 9.5px Roboto,Arial";x.textAlign="right";x.fillText(g.v,W+1,g.ky);x.textAlign="left";x.font="10.5px Roboto,Arial";
+    if(Math.abs(g.ky-g.y)>1){x.strokeStyle=g.r;x.lineWidth=1;x.beginPath();x.moveTo(W-SZ-3,g.y);x.lineTo(W-SZ,g.ky);x.stroke();}});
   /* son fiyat etiketi */
   var son_=CD[CD.length-1],sc=son_[4],ys=Y(sc);if(sc>=pmn&&sc<=pmx){x.setLineDash([2,3]);x.strokeStyle=son_[4]>=son_[1]?"#26a69a":"#ef5350";x.beginPath();x.moveTo(0,ys);x.lineTo(W,ys);x.stroke();x.setLineDash([]);
   x.fillStyle=x.strokeStyle;x.fillRect(W,ys-9,EKS,18);x.fillStyle="#fff";x.textBaseline="middle";x.font="bold 11px Roboto,Arial";x.fillText(f2(sc),W+4,ys);}
@@ -463,7 +471,8 @@ var DK=null,SONTAP=0;
 function konumY(cv,t){var r=cv.getBoundingClientRect();return DONDUR?r.right-t.clientX:t.clientY-r.top;}
 function hedef(e){var c=e.currentTarget;return c.id==="eks"?document.getElementById("cv"):c;}
 function konum(cv,t){var r=cv.getBoundingClientRect();return DONDUR?t.clientY-r.top:t.clientX-r.left;}
-function genislik(cv){var r=cv.getBoundingClientRect();return (DONDUR?r.height:r.width)-EKS;}
+var SAGW=0;function SAG(){return ACIK.fib||ACIK.vp?SAGW:0;}
+function genislik(cv){var r=cv.getBoundingClientRect();return (DONDUR?r.height:r.width)-EKS-SAG();}
 function gorunum(){var g=gorunen();return{n:g.b-g.a+1,e:g.b};}
 function sinirla(n,e){var L=CD.length;n=Math.max(15,Math.min(L,Math.round(n)));e=Math.max(n-1,Math.min(L-1,Math.round(e)));VIEW={n:n,e:e};}
 function cubuk(cv,px){var g=gorunen(),bw=genislik(cv)/(g.b-g.a+1+2);return g.a+Math.floor(px/bw);}
