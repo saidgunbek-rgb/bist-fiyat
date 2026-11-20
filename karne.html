@@ -62,6 +62,15 @@ textarea{width:100%;min-height:78px;background:#12131c;color:var(--tx);border:1.
 .kpi:last-child{border-bottom:0}.kpi .kd{font-size:11.5px;color:var(--mut)}.kpi.o .kt{font-weight:700}
 .ky{margin-top:4px;padding:3px 0 1px 8px;border-left:2px solid var(--ln);font-size:12.5px;color:var(--mut);font-weight:400}.ky b{font-weight:700}
 .yn{font-size:10.5px;font-weight:700;color:#fff;background:var(--p);border-radius:6px;padding:1px 5px;margin-left:6px}
+.kc{border-radius:12px;padding:10px 11px;margin-top:10px;border:1px solid}.kc .kt2{font-weight:700;font-size:14px;margin-bottom:6px}
+.kc .kr2{display:flex;justify-content:space-between;gap:10px;padding:5px 0;border-top:1px solid rgba(255,255,255,.07);font-size:13px}.kc .kr2:first-of-type{border-top:0}.kc .kr2>span{color:var(--mut)}.kc .kr2>b{text-align:right}
+.kc .kn{font-size:11.5px;color:var(--mut);line-height:1.45;margin-top:6px}.kc small{color:var(--mut);font-weight:400}
+.kc1{background:rgba(245,185,66,.07);border-color:rgba(245,185,66,.35)}.kc1 .kt2{color:#fcd34d}
+.kc2{background:rgba(79,195,247,.07);border-color:rgba(79,195,247,.3)}.kc2 .kt2{color:#7dd3fc}
+.kc3{background:rgba(38,166,154,.07);border-color:rgba(38,166,154,.3)}.kc3 .kt2{color:#5eead4}
+.kc4{background:rgba(139,124,246,.07);border-color:rgba(139,124,246,.3)}.kc4 .kt2{color:#b4a9fb}.kc4 .kp{margin-top:0}
+.kut{display:block;text-align:center;text-decoration:none;background:var(--card2);border:1px solid var(--p);color:#b4a9fb;border-radius:12px;padding:11px;font-size:13px;font-weight:700;margin-top:10px}
+.dgs{font-size:12.5px;font-weight:400}.dgs.u{color:var(--g)}.dgs.d{color:var(--r)}
 .src{font-size:11px;color:var(--mut);margin-top:6px}
 .foot{font-size:11.5px;color:var(--mut);margin:6px 0 12px;line-height:1.55}
 details{background:var(--card);border-radius:14px;padding:11px 13px;margin-bottom:12px;font-size:13px;color:var(--mut)}
@@ -224,6 +233,60 @@ function uzunHtml(u){if(!u||!u.gor)return"";var g=GOR[u.gor]||["",""],h='<div cl
   return h+'</div>';}
 function bdogTxt(b){if(!b)return"";if(b.kaynak&&b.kaynak.length)return' · Bilanço rakamları '+esc(b.kaynak.join(" ve "))+' ile doğrulandı ✓';
   if(b.tv_onceki)return' · TradingView henüz '+esc(b.tv_onceki)+' bilançosunu kullanıyor, buradaki hesap daha güncel ('+esc(b.d)+')';return"";}
+/* ---- Sade karne (Kutuphane'de de bulunan hisseler): degerleme/grafik/seviye ayrintilari Kutuphane'de; burada pozisyon, maliyete gore seviyeler, endekse gore performans, KAP ve not. */
+var EKS={fon:null,kut:null};
+function ekler(){
+  var base="https://raw.githubusercontent.com/saidgunbek-rgb/bist-fiyat/main/";
+  function al(f){return fetch(base+f+"?t="+Date.now()).then(function(r){if(!r.ok)throw 0;return r.json();}).catch(function(){return fetch(f+"?t="+Date.now()).then(function(r){if(!r.ok)throw 0;return r.json();});}).catch(function(){return null;});}
+  var zam=new Promise(function(ok){setTimeout(ok,6000);});
+  return Promise.race([Promise.all([al("fonlar.json"),al("kutuphane.json")]),zam.then(function(){return[null,null];})]).then(function(a){EKS.fon=a[0];EKS.kut=a[1]&&a[1].stocks?Object.keys(a[1].stocks):null;});}
+function yz(x,d){return(x>=0?"+":"−")+"%"+f1(Math.abs(x)).replace(".",d===0?"":",");}
+function ycl(x){return x>=0?"var(--g)":"var(--r)";}
+function getiriler(seri){ // [tarih, kapanis] dizisinden takvim ayi kuraliyla getiriler (fon sayfasiyla ayni kural)
+  var out={},N=seri.length;if(N<20)return out;var son=seri[N-1][0];
+  [["a1",1],["a3",3],["a6",6],["y1",12]].forEach(function(p){var Y=+son.slice(0,4),M=+son.slice(5,7)-p[1],G=+son.slice(8,10);while(M<=0){M+=12;Y--;}
+    var gm=new Date(Date.UTC(Y,M,0)).getUTCDate(),ls=Y+"-"+("0"+M).slice(-2)+"-"+("0"+Math.min(G,gm)).slice(-2),bi=-1;
+    for(var q=0;q<N;q++){if(seri[q][0]<=ls)bi=q;else break;}
+    if(bi<0||(new Date(seri[0][0])-new Date(ls))>14*864e5)return;out[p[0]]=(seri[N-1][1]/seri[bi][1]-1)*100;});
+  return out;}
+function sadeKart(k,s,m){
+  var t=NS(s.tek||{}),seri=(t&&t.seri)||[],cp=s.price>0?s.price:(t&&t.son>0?t.son:0),N=seri.length,prev=null;
+  if(N>1)prev=Math.abs(seri[N-1][1]-cp)<0.005?seri[N-2][1]:seri[N-1][1];
+  var dg=prev>0&&cp>0?(cp/prev-1)*100:null,have=m&&m.q>0&&m.c>0,h="";
+  h+='<div class="card" data-k="'+esc(k)+'"><div class="hd"><div class="nm">'+esc(k)+(s.vade?' <span style="font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:8px;vertical-align:middle;background:'+(s.vade==="kisa"?'rgba(255,159,67,.18);color:#ff9f43':'rgba(124,92,255,.18);color:var(--p)')+'">'+(s.vade==="kisa"?"Kısa vade":"Uzun vade")+'</span>':'')+(satildi(k)?' <span style="font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:8px;vertical-align:middle;background:rgba(150,150,150,.18);color:var(--mut)">Satıldı · izlemede</span>':'')+'</div>'
+    +'<div class="pr">'+(cp>0?f2(cp)+" TL":"")+(dg!=null?'<br><span class="dgs '+(dg>=0?"u":"d")+'">'+(dg>=0?"▲ ":"▼ ")+'%'+f1(Math.abs(dg))+' son kapanışa göre</span>':"")+'</div></div>';
+  // 1) Pozisyon
+  if(have){var deg=m.q*cp,kz=m.q*(cp-m.c),kzp=(cp/m.c-1)*100,bug=prev>0?m.q*(cp-prev):null;
+    h+='<div class="kc kc1"><div class="kt2">💼 Pozisyonum</div>'
+      +'<div class="kr2"><span>Adet · ortalama maliyet</span><b>'+m.q.toLocaleString("tr-TR")+' · '+f2(m.c)+' TL</b></div>'
+      +'<div class="kr2"><span>Güncel değer</span><b>'+f2(deg)+' TL</b></div>'
+      +'<div class="kr2"><span>Toplam kâr / zarar</span><b style="color:'+ycl(kz)+'">'+(kz>=0?"+":"−")+f2(Math.abs(kz))+' TL ('+yz(kzp)+')</b></div>'
+      +(bug!=null?'<div class="kr2"><span>Son kapanışa göre değişim</span><b style="color:'+ycl(bug)+'">'+(bug>=0?"+":"−")+f2(Math.abs(bug))+' TL</b></div>':'')
+      +'<div class="kr2"><span>Maliyete uzaklık</span><b>fiyat maliyetin %'+f1(Math.abs(kzp))+(kzp>=0?' üstünde':' altında')+'</b></div>'
+      +'<div class="kn">Adet ve maliyet, panelde kayıtlı alım-satımlarından hesaplanır (komisyon dahil); Özet bölümüyle aynıdır.</div></div>';}
+  else h+='<div class="kc kc1"><div class="kt2">💼 Pozisyonum</div><div class="kn" style="margin-top:0">Bu cihazda bu hisse için alım kaydın görünmüyor. Panelin Özet bölümünden alımını girince adet, maliyet ve kâr/zarar burada çıkar.</div></div>';
+  // 2) Seviyeler, maliyete gore
+  if(t&&t.son>0){var L=[["Satış hedefi 1 (kâr al)",t.h1],["Satış hedefi 2",t.h2],[t._ns?"Risk seviyesi":"Risk çizgisi",t.risk]].filter(function(x){return x[1]>0;});
+    if(L.length){h+='<div class="kc kc2"><div class="kt2">🎯 Seviyeler'+(have?', maliyetime göre':'')+'</div>';
+      L.forEach(function(x){var sd=(x[1]/cp-1)*100,mc=have?(x[1]/m.c-1)*100:null;
+        h+='<div class="kr2"><span>'+x[0]+' · '+f2(x[1])+'</span><b style="color:'+ycl(have?mc:sd)+'">'+(have?yz(mc)+' <small>(şimdiden '+yz(sd)+')</small>':yz(sd)+' <small>şimdiden</small>')+'</b></div>';});
+      if(have&&t.risk>0)h+='<div class="kn">'+(t.risk>=m.c?'Risk seviyesinin altında kapansa bile hâlâ maliyetin '+(t.risk>m.c?'üstünde kalırsın':'hizasındasın')+'.':'Risk seviyesi maliyetinin altında; altında kapanırsa zarara geçersin (maliyetin %'+f1(Math.abs((t.risk/m.c-1)*100))+' altı).')+' Alım bölgeleri ve diğer seviyeler Kütüphane\'de.</div>';
+      else h+='<div class="kn">Alım bölgeleri ve diğer seviyeler Kütüphane\'de.</div>';
+      h+='</div>';}}
+  // 3) Endekse gore
+  var G=getiriler(seri),B=EKS.fon&&EKS.fon.bist,bt=EKS.fon&&EKS.fon.updated;
+  if(B&&seri.length>20&&bt&&Math.abs(new Date(bt)-new Date(seri[N-1][0]))<=4*864e5){
+    var P=[["1 ay","a1"],["3 ay","a3"],["6 ay","a6"],["1 yıl","y1"]].filter(function(p){return G[p[1]]!=null&&B[p[1]]!=null;});
+    if(P.length){h+='<div class="kc kc3"><div class="kt2">📊 Endekse göre</div><div class="kr2"><span></span><b style="font-weight:400;color:var(--mut)">'+esc(k)+' · BIST100</b></div>';
+      P.forEach(function(p){h+='<div class="kr2"><span>'+p[0]+'</span><b><span style="color:'+ycl(G[p[1]])+'">'+yz(G[p[1]])+'</span> · <span style="color:'+ycl(B[p[1]])+'">'+yz(B[p[1]])+'</span></b></div>';});
+      h+='<div class="kn">Hissenin endeksin önünde mi gerisinde mi olduğunu gösterir; al/sat sinyali değildir. BIST100: '+esc(trD(bt))+' kapanışı.</div></div>';}}
+  // 4) KAP
+  var kp=kapHtml(s.kap),yb=yeniBil(s.byorum,s.kap),fy=frYeni(s.frapor);
+  if(kp||yb||fy)h+='<div class="kc kc4"><div class="kt2">📰 KAP ve bildirimler</div>'+(yb?'<div class="kn" style="margin:0 0 6px;color:var(--p)">Yeni bilanço yayımlandı · yorumu Kütüphane\'de.</div>':'')+(fy?'<div class="kn" style="margin:0 0 6px;color:var(--p)">Yeni finansal rapor yayımlandı.</div>':'')+(kp?kp.replace('<div class="kph">Son KAP bildirimleri ve yorumları</div>',''):'')+'</div>';
+  h+='<div class="note" data-n="'+esc(k)+'"></div>'
+    +'<a class="kut" data-kut="'+esc(k)+'" href="karne.html?k=kutuphane">📚 Değerleme, grafik ve bilanço yorumu → Kütüphane\'de aç ›</a>'
+    +'<div class="src">'+(s.dunden&&s.dunden.length?'Bugün tüm kaynaklara ulaşılamayan bölümler için bir önceki günün doğrulanmış verisi gösteriliyor. · ':'')+(s.carry&&s.carry.length?'Canlı kaynaklara şu an ulaşılamadı, son bilinen değerler gösteriliyor ('+esc(String(s.asof||"").split("-").reverse().join("."))+'). · ':'')+'Seviyeler Analiz ve Kütüphane sayfasıyla aynı hesaptır. Bu sayfa bir al/sat önerisi değildir; karar vermeden önce rakamları bankanın uygulaması ya da KAP ile teyit et.</div></div>';
+  return h;}
 function render(d){
   var st=d.stocks||{},keys=Object.keys(st),h="";
   // Portfoy karnesinde sadece elinde olan hisseler gosterilir: tamamen satilan hisse otomatik kalkar
@@ -235,7 +298,9 @@ function render(d){
   h+='<div class="secw"><div class="sech">'+(KUT?'BIST30 kütüphanesi · bir hisse seç':'Hisse seç')+'</div><div class="secs">'+keys.map(function(k){var s=st[k]||{},ks=s.vade==="kisa";
     return'<button class="sc'+(k===SEC?' on':'')+'" data-sec="'+esc(k)+'"><b>'+esc(k)+(KUT?'':'<span class="v" style="color:'+(ks?'#ff9f43':'var(--p)')+'">'+(ks?"KISA":"UZUN")+'</span>')+'</b><small>'+(KUT&&s.sektor?esc(s.sektor)+(s.price>0?" · ":""):"")+(s.price>0?f2(s.price)+" TL":"")+(satildi(k)?" · satıldı":"")+'</small></button>';}).join("")+'</div></div>';
   keys=[SEC];ACIK[SEC]=1;
+  var ft=document.querySelector(".foot");if(ft)ft.style.display=(!KUT&&EKS.kut&&EKS.kut.indexOf(SEC)>=0)?"none":"";
   keys.forEach(function(k){var s=st[k]||{};
+    if(!KUT&&EKS.kut&&EKS.kut.indexOf(k)>=0){h+=sadeKart(k,s,MAL[k]);return;}
     h+='<div class="card" data-k="'+esc(k)+'"><div class="hd"><div class="nm">'+esc(k)+(s.vade&&!KUT?' <span style="font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:8px;vertical-align:middle;background:'+(s.vade==="kisa"?'rgba(255,159,67,.18);color:#ff9f43':'rgba(124,92,255,.18);color:var(--p)')+'">'+(s.vade==="kisa"?"Kısa vade":"Uzun vade")+'</span>':'')+(satildi(k)?' <span style="font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:8px;vertical-align:middle;background:rgba(150,150,150,.18);color:var(--mut)">Satıldı · izlemede</span>':'')+'</div><div class="pr">'+(s.price>0?f2(s.price)+" TL":"")+'</div></div>'
      +(KUT&&s.ad?'<div class="mc" style="color:var(--tx)">'+esc(s.ad)+'</div>':'')
      +(s.mc>0?'<div class="mc">Piyasa değeri: '+mcs(s.mc)+'</div>':'')
@@ -250,6 +315,7 @@ function render(d){
   document.getElementById("app").innerHTML=h;
   Array.prototype.forEach.call(document.querySelectorAll(".arb"),function(b){b.onclick=function(){ARL=+b.getAttribute("data-ar");try{localStorage.setItem("bist-karne-ar",ARL);}catch(e){}render(d);};});
   Array.prototype.forEach.call(document.querySelectorAll(".sc"),function(b){b.onclick=function(){try{localStorage.setItem(SECK,b.getAttribute("data-sec"));}catch(e){}render(d);var w=document.querySelector(".secw");if(w&&w.scrollIntoView)w.scrollIntoView({block:"start"});};});
+  Array.prototype.forEach.call(document.querySelectorAll(".kut"),function(a){a.onclick=function(){try{localStorage.setItem("bist-kutup-sec",a.getAttribute("data-kut"));}catch(e){}};});
   Array.prototype.forEach.call(document.querySelectorAll(".note"),function(el){paintNote(el);});
   Array.prototype.forEach.call(document.querySelectorAll(".ac"),function(el){el.addEventListener("toggle",function(){var k=el.getAttribute("data-ac");if(el.open)ACIK[k]=1;else delete ACIK[k];try{localStorage.setItem("bist-karne-acik",JSON.stringify(ACIK));}catch(e){}});});
 }
@@ -269,7 +335,7 @@ function load(){
     try{if(u)txt=u.toLocaleString("tr-TR",{timeZone:"Europe/Istanbul",day:"2-digit",month:"2-digit",year:"numeric",hour:"2-digit",minute:"2-digit"});}catch(e){}
     document.getElementById("sub").innerHTML="Değerleme göstergeleri · Son güncelleme: "+esc(txt||trD(d.updated||""))+(d.kapUpdatedAt?" · KAP kontrolü: "+esc(trD(String(d.kapUpdatedAt).split(" ")[0])+" "+(String(d.kapUpdatedAt).split(" ")[1]||"")):"");
     if(u&&(Date.now()-u.getTime())>5*864e5)document.getElementById("msg").innerHTML='<div class="warn">Veri 5 günden eski. Otomatik güncelleme çalışmıyor olabilir.</div>';
-    render(d);
+    (KUT?Promise.resolve():ekler()).then(function(){render(d);});
   }).catch(function(){document.getElementById("sub").textContent="";document.getElementById("msg").innerHTML=KUT?'<div class="warn">Kütüphane verisi henüz hazır değil. GitHub’daki “Hisse kutuphanesi” çalışması ilk kez bittikten sonra burada görünecek.</div>':'<div class="warn">Karne verisi okunamadı. İnternetini kontrol et ya da GitHub’daki “Hisse karnesi” çalışmasının en az bir kez yeşil tikle bittiğinden emin ol.</div>';});}
 if(KUT){document.title="Hisse Kütüphanesi";document.getElementById("h1").textContent="Hisse Kütüphanesi";}
 load();
