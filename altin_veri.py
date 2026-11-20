@@ -2,7 +2,7 @@
 # Kaynaklar: Yahoo (ana) + Stooq (dogrulama). Iki kaynak kapanista tutmazsa o gun "uyusmadi" diye kayda gecer.
 # Gram altin / gram gumus = ons fiyati (USD) x dolar/TL / 31,1035 (1 ons = 31,1035 gram). Kuyumcu fiyati degil, piyasa (spot) fiyatidir.
 # Diger dosyalara dokunmaz. Bir kaynak hic gelmezse onceki dogrulanmis veri korunur, dosya bos kalmaz.
-import json, sys, time, datetime, urllib.request, csv, io
+import json, sys, time, datetime, urllib.request, urllib.error, csv, io
 
 UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36"}
 SIMDI = datetime.datetime.utcnow()
@@ -25,15 +25,20 @@ def sayi(x):
     return x if x == x and x > 0 else None
 
 
-def oku(url, js=True):
-    for i in range(5):
+def oku(url, js=True, deneme=3):
+    # Hizli vazgecer: 404 gibi kalici hatada tekrar denemez; baglanti sorununda en fazla 3 kez, 15 sn zaman asimiyla dener.
+    for i in range(deneme):
         try:
-            r = urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=40).read()
+            r = urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=15).read()
             return json.loads(r) if js else r.decode("utf-8", "replace")
-        except Exception:
-            if i == 4:
+        except urllib.error.HTTPError as e:
+            if e.code in (400, 401, 403, 404) or i == deneme - 1:
                 raise
-            time.sleep(4 * (i + 1))
+            time.sleep(3)
+        except Exception:
+            if i == deneme - 1:
+                raise
+            time.sleep(3)
 
 
 def yahoo(sembol):
@@ -52,7 +57,7 @@ def yahoo(sembol):
 
 
 def stooq(sembol):
-    t = oku("https://stooq.com/q/d/l/?s=%s&i=d" % sembol, js=False)
+    t = oku("https://stooq.com/q/d/l/?s=%s&i=d" % sembol, js=False, deneme=1)
     out = {}
     for s in csv.DictReader(io.StringIO(t)):
         d = s.get("Date") or s.get("Data")
