@@ -18,31 +18,9 @@ concurrency:
 jobs:
   altin:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
-
-      - name: Baglanti kopmalarina karsi tekrar deneme
-        run: |
-          mkdir -p /tmp/ag
-          cat > /tmp/ag/sitecustomize.py <<'PY'
-          import time, socket, http.client, urllib.request, urllib.error
-          _asil = urllib.request.urlopen
-          def _tekrarli(*a, **k):
-              for i in range(4):
-                  try:
-                      return _asil(*a, **k)
-                  except urllib.error.HTTPError as e:
-                      if e.code in (429, 500, 502, 503, 504) and i < 3:
-                          time.sleep(5 * (i + 1)); continue
-                      raise
-                  except (urllib.error.URLError, ConnectionError, http.client.HTTPException, socket.timeout, TimeoutError, OSError):
-                      if i == 3:
-                          raise
-                      time.sleep(3 * (i + 1))
-          urllib.request.urlopen = _tekrarli
-          PY
-          echo "PYTHONPATH=/tmp/ag" >> "$GITHUB_ENV"
 
       - name: Mum verisini al ve dogrula
         run: python3 altin_veri.py
