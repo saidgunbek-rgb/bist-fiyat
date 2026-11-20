@@ -67,7 +67,7 @@ textarea{width:100%;min-height:78px;background:#12131c;color:var(--tx);border:1.
 details{background:var(--card);border-radius:14px;padding:11px 13px;margin-bottom:12px;font-size:13px;color:var(--mut)}
 summary{cursor:pointer;color:var(--p);font-weight:600}
 @media (prefers-color-scheme: light){:root{--bg:#f4f5fb;--card:#fff;--card2:#eef0f8;--mut:#666a80;--tx:#1d2030;--ln:#c9cde0}textarea{background:#fff}.warn{background:#fff3dc;color:#7a4b00}}
-html{color-scheme:dark}@media (prefers-color-scheme: light){html{color-scheme:light}}html.fr body{padding:0;background:transparent;max-width:none}html.fr h1{display:none}html.fr,html.fr body{overflow:hidden}
+html{color-scheme:dark}@media (prefers-color-scheme: light){html{color-scheme:light}}html.fr body{padding:0;background:transparent;max-width:none}html.fr h1{display:none}html.fr #geri{display:none}html.fr,html.fr body{overflow:hidden}
 </style><script>/* Cevrimdisi destek (sw.js): internet yokken en son kaydedilen veriler, kayit zamaniyla birlikte gosterilir */
 (function(){if("serviceWorker"in navigator){try{navigator.serviceWorker.register("sw.js").catch(function(){});}catch(e){}}
 var of=window.fetch;if(!of)return;var gos=0;
@@ -76,6 +76,7 @@ function bant(t){if(gos||window.top!==window)return;gos=1;var z=t&&t.length>15?n
  if(document.body)ek();else document.addEventListener("DOMContentLoaded",ek);}
 window.fetch=function(){return of.apply(this,arguments).then(function(r){try{var k=r.headers.get("x-onbellek");if(k)bant(k);}catch(e){}return r;});};})();</script>
 </head><body>
+<a id="geri" href="./" style="font-size:13.5px;color:#8b7cf6;text-decoration:none">‹ Panele dön</a>
 <h1 id="h1">Hisse Karnesi</h1>
 <div class="sub" id="sub">Yükleniyor…</div>
 <div id="msg"></div>

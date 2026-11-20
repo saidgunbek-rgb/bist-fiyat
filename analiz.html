@@ -14,6 +14,18 @@ h1{font-size:23px;margin:4px 0 2px;background:linear-gradient(90deg,#8b7cf6,#f09
 .row button.on{background:rgba(139,124,246,.2);color:var(--p);border-color:var(--p);font-weight:700}
 .gh{font-size:12px;color:var(--tx);font-weight:700;margin:2px 2px 5px}.gh span{color:var(--mut);font-weight:400}
 .row.sm button{font-size:11.5px;padding:5px 9px}
+/* bolge bolge renklendirme: hisse mavi, donem/mum yesil-turkuaz, gostergeler mor, yardim gri */
+.grp{border-radius:12px;padding:8px 9px 2px;margin:0 0 8px;border:1px solid}
+.grp .gl{font-size:12px;font-weight:700;margin:0 1px 7px}.grp .gl span{color:var(--mut);font-weight:400}
+.grp .row{margin-bottom:6px}
+.g-h{background:rgba(79,195,247,.07);border-color:rgba(79,195,247,.28)}.g-h .gl{color:#7dd3fc}
+.g-h .row button.on{background:rgba(79,195,247,.18);color:#7dd3fc;border-color:#4fc3f7}
+.g-z{background:rgba(38,166,154,.07);border-color:rgba(38,166,154,.30)}.g-z .gl{color:#5eead4}
+.g-z .row button.on{background:rgba(38,166,154,.18);color:#5eead4;border-color:#26a69a}
+.g-g{background:rgba(139,124,246,.07);border-color:rgba(139,124,246,.30)}.g-g .gl{color:#b4a9fb}
+.g-g button i{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:5px;vertical-align:1px;opacity:.45}.g-g button.on i{opacity:1}
+.g-y{background:rgba(154,154,176,.06);border-color:rgba(154,154,176,.22);padding-bottom:8px}.g-y summary{cursor:pointer;color:var(--mut);margin-bottom:0}.g-y[open] summary{margin-bottom:6px}
+.g-y .yk{font-size:12px;color:var(--mut);line-height:1.5}
 .card{background:var(--card);border-radius:14px;padding:10px 8px 6px;margin-bottom:10px}
 .hd{display:flex;justify-content:space-between;align-items:baseline;padding:0 4px 2px}
 .hd b{font-size:17px}.hd .pr{font-size:17px;font-weight:700}
@@ -40,7 +52,8 @@ canvas{display:block;width:100%;touch-action:pan-y;-webkit-user-select:none;user
 .card.tam .ta{display:flex}
 .ta button,.ta select{font:inherit;font-size:11.5px;padding:4px 9px;border-radius:14px;background:var(--card2);color:var(--mut);border:1px solid transparent;flex:0 0 auto}
 .ta button.on{background:rgba(139,124,246,.2);color:var(--p);border-color:var(--p);font-weight:700}
-.ta select{color:var(--tx);border-color:var(--ln);font-weight:700}
+.ta button[data-d].on,.ta button[data-m].on{background:rgba(38,166,154,.18);color:#5eead4;border-color:#26a69a}
+.ta select{color:#7dd3fc;border-color:#4fc3f7;background:rgba(79,195,247,.12);font-weight:700}
 .ta i{flex:0 0 1px;height:18px;background:var(--ln);margin:0 2px}
 .yl{list-style:none;padding:0;margin:6px 0 0}.yl li{display:flex;gap:9px;align-items:flex-start;padding:8px 10px;margin:6px 0;border-radius:10px;border-left:3px solid;font-size:13px;line-height:1.5}
 .yl .yi{font-size:15px;line-height:1.3}.yl li b{font-size:12.5px}.yl li div b{color:inherit}
@@ -74,12 +87,10 @@ canvas{display:block;width:100%;touch-action:pan-y;-webkit-user-select:none;user
 <h1>📈 Analiz</h1>
 <div class="sub" id="sub">Günlük mum grafiği · Fibonacci · EMA · Supertrend · WaveTrend</div>
 <div id="uyari"></div>
-<div class="row" id="hisseler"></div>
-<div class="row sm" id="donem"></div>
-<div class="row sm" id="mum"></div>
-<div class="gh">Göstergeler <span>· açmak / kapatmak için dokun</span></div>
-<div class="row sm" id="gost"></div>
-<div class="gh" style="font-weight:400;color:var(--mut)">Grafikte: dokun = o noktanın fiyatı ve günün değerleri · basılı tut ve gezdir = artı imleci (yatay çizgi fiyatı gösterir) · sağa/sola kaydır = geçmişe git · iki parmak = yakınlaş/uzaklaş · sağdaki fiyat ekseninde yukarı/aşağı kaydır = mumları uzat/kısalt (yatayda grafiğin her yerinde) · çift dokun = sıfırla</div>
+<div class="grp g-h"><div class="gl">🏷️ Hisse</div><div class="row" id="hisseler"></div></div>
+<div class="grp g-z"><div class="gl">🗓️ Dönem ve mum</div><div class="row sm" id="donem"></div><div class="row sm" id="mum"></div></div>
+<div class="grp g-g"><div class="gl">🧰 Göstergeler <span>· dokun: aç / kapat</span></div><div class="row sm" id="gost"></div></div>
+<details class="grp g-y"><summary class="gl">👆 Grafiği kullanma</summary><div class="yk">Grafikte: dokun = o noktanın fiyatı ve günün değerleri · basılı tut ve gezdir = artı imleci (yatay çizgi fiyatı gösterir) · sağa/sola kaydır = geçmişe git · iki parmak = yakınlaş/uzaklaş · sağdaki fiyat ekseninde yukarı/aşağı kaydır = mumları uzat/kısalt (yatayda grafiğin her yerinde) · çift dokun = sıfırla</div></details>
 <div class="card" id="kart">
   <div class="hd"><b id="ad"></b><span><span class="pr" id="fiyat"></span> <button class="yb" id="yatay" title="Yatay tam ekran">⤢ Yatay</button><button class="yb" id="kapat">✕ Kapat</button></span></div>
   <div class="ta" id="ta"></div>
@@ -460,7 +471,8 @@ function butonlar(){
     +DONEM.map(function(d){return'<button data-d="'+d[1]+'" class="'+(d[1]===DON?"on":"")+'">'+d[0]+"</button>";}).join("")+"<i></i>"
     +[["g","Gün"],["h","Hafta"]].map(function(m){return'<button data-m="'+m[0]+'" class="'+(MUM===m[0]?"on":"")+'">'+m[1]+"</button>";}).join("")+"<i></i>"
     +GOST.map(function(g){return'<button data-g="'+g[0]+'" class="'+(ACIK[g[0]]?"on":"")+'">'+KIS[g[0]]+"</button>";}).join("");
-  document.getElementById("gost").innerHTML=GOST.map(function(g){return'<button data-g="'+g[0]+'" class="'+(ACIK[g[0]]?"on":"")+'">'+g[1]+"</button>";}).join("");}
+  var NOK={fib:"#f59e0b",vp:"#8b7cf6",ema:"conic-gradient(#f0b429 0 25%,#4fc3f7 0 50%,#ab47bc 0 75%,#ff7043 0)",e13:"#26a69a",e39:"#ef5350",st:"linear-gradient(90deg,#26a69a 50%,#ef5350 50%)",hac:"#9a9ab0",wt:"linear-gradient(90deg,#26a69a 50%,#ef5350 50%)",rsi:"#b39ddb"};
+  document.getElementById("gost").innerHTML=GOST.map(function(g){return'<button data-g="'+g[0]+'" class="'+(ACIK[g[0]]?"on":"")+'"><i style="background:'+NOK[g[0]]+'"></i>'+g[1]+"</button>";}).join("");}
 function sec(k){SEC=k;ls("analiz-sec",k);var s=H.stocks[k];D=s.d;IND=hesapla(D);grafikVeri();
   document.getElementById("ad").textContent=k+(s.ad?" · "+s.ad:"");document.getElementById("fiyat").textContent=f2(D[D.length-1][4])+" TL";
   butonlar();ciz();ozet();degerlendir();}

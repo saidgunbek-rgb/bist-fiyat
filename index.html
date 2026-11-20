@@ -94,6 +94,11 @@ button.rb.on{background:var(--bd);color:var(--tx)}
 .tb{position:sticky;top:0;z-index:20;display:flex;flex-wrap:wrap;gap:6px;padding:8px 2px 10px;margin:0 -2px 10px;background:var(--bg);scrollbar-width:none}
 .tb::-webkit-scrollbar{display:none}.tb button{flex:1 1 auto;border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:999px;padding:8px 15px;font-size:14px;font-weight:700;box-shadow:none}
 .tb button.on{background:var(--b1);border-color:var(--b1);color:#fff}
+/* sekme sayfa gibi acilir: ustte Geri cubugu, ana ekrandaki diger her sey gizli */
+.sbar{position:sticky;top:0;z-index:25;display:none;align-items:center;gap:12px;padding:10px 2px;margin:0 -2px 12px;background:var(--bg);border-bottom:1px solid var(--bd)}
+.sbar button{flex:0 0 auto;border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:999px;padding:7px 15px;font-size:14px;font-weight:700;box-shadow:none}
+.sbar b{font-size:18px}
+.sgiz{display:none!important}
 .hks{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;margin:0 -4px;scrollbar-width:none}.hks::-webkit-scrollbar{display:none}
 .hks .hk{flex:0 0 86%;scroll-snap-align:start;margin:0 0 0 4px}
 .hkn{display:flex;justify-content:center;gap:6px;margin:4px 0 2px}.hkn b{width:7px;height:7px;border-radius:50%;background:var(--bd)}.hkn b.on{background:var(--b1)}
@@ -108,6 +113,7 @@ window.fetch=function(){return of.apply(this,arguments).then(function(r){try{var
 </head>
 <body>
 <main>
+<div class="sbar" id="sbar"><button id="sgeri">‹ Geri</button><b id="sbad"></b></div>
 <h1>📈 Günlük Kâr/Zarar Takibi</h1>
 
 <div class="ast na" id="ast">Otomatik fiyat güncellemesi kontrol ediliyor…</div>
@@ -143,9 +149,8 @@ window.fetch=function(){return of.apply(this,arguments).then(function(r){try{var
 </details></div>
 
 <div class="card"><h2>Hisselerim</h2><div id="byk"></div><details class="ac" style="margin:4px 0 6px"><summary>Tablo görünümü</summary><div class="scroll"><table id="bys"></table></div></details><div class="mut" id="bysd" style="margin-top:6px;display:none"></div><details class="ac" style="display:none"><summary>🔗 Bu tablo neye bağlı?</summary>• <b>Adet, ort. maliyet ve gerçekleşen K/Z</b> tüm alım/satım işlemlerinden hesaplanır. İşlem ekleyince tablo anında değişir.<br>• <b>Alım</b> adedi artırır ve ort. maliyeti günceller. <b>Satım</b> adedi azaltır, ort. maliyeti değiştirmez, kârı/zararı gerçekleşen K/Z’ye ekler. Tamamen satılan hissede adet 0 olur, yalnızca gerçekleşen K/Z kalır.<br>• <b>Fiyat</b> son kayıtlı kapanıştan gelir. Gün sonu fiyatını değiştirirsen Değer, K/Z, % ve Pay güncellenir. İşlem yaptığın gün kapanış girilmediyse * işaretli son işlem fiyatı kullanılır.<br>• <b>Temettü</b> girersen ilgili hissenin K/Z’sine eklenir. <b>Toplam</b> satırı yalnızca elindeki hisselerin toplamıdır. Satılan hisseler ve gerçekleşen kâr aşağıdaki “Satışlar ve gerçekleşen kâr” bölümündedir; Özet kartı ikisini birlikte gösterir.</details></div>
-<nav class="tb" id="tb"><button data-s="grafik">📈 Grafik</button><button data-s="karne">📋 Karne</button><button data-s="kut">📚 Kütüphane</button><button data-s="islem">💼 İşlemler</button><button data-s="gecmis">🗓 Geçmiş</button><button data-s="ayar">⚙️ Ayarlar</button></nav><div style="display:flex;justify-content:center;gap:22px;margin:-2px 0 12px"><a href="analiz.html" style="font-size:14px;font-weight:700;color:#8b7cf6;text-decoration:none">📈 Analiz ›</a><a href="fon.html" style="font-size:14px;font-weight:700;color:#8b7cf6;text-decoration:none">🔍 Fon bulucu ›</a></div>
+<nav class="tb" id="tb"><button data-s="grafik">📈 Grafik</button><button data-s="karne">📋 Karne</button><button data-s="islem">💼 İşlemler</button><button data-s="gecmis">🗓 Geçmiş</button><button data-s="ayar">⚙️ Ayarlar</button></nav><div style="display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin:-2px 0 12px"><a href="analiz.html" style="font-size:14px;font-weight:700;color:#8b7cf6;text-decoration:none">📈 Analiz ›</a><a href="karne.html?k=kutuphane" style="font-size:14px;font-weight:700;color:#8b7cf6;text-decoration:none">📚 Kütüphane ›</a><a href="fon.html" style="font-size:14px;font-weight:700;color:#8b7cf6;text-decoration:none">🔍 Fon bulucu ›</a></div>
 <div id="sbos" class="mut" style="text-align:center;margin:2px 0 14px">Diğer bölümler için yukarıdaki sekmelerden birine dokun.</div>
-<div class="card" id="clu"><iframe id="kfu" scrolling="no" title="Kütüphane" style="width:100%;height:560px;border:0;display:block;border-radius:10px"></iframe><div class="mut" style="margin-top:6px">BIST30'dan seçtiğin hisseler · her akşam otomatik güncellenir · bildirim gönderilmez</div></div>
 <div class="card" id="clk"><iframe id="kfr" scrolling="no" title="Karne" style="width:100%;height:560px;border:0;display:block;border-radius:10px"></iframe><div class="mut" style="margin-top:6px"><a href="karne.html" target="_blank" rel="noopener" style="color:inherit">Tam sayfada aç ↗</a></div></div>
 <div class="card"><details class="cl" id="cln" open><summary><h2>Telefon bildirimleri</h2></summary><div id="bld"></div></details></div>
 <div class="card"><details class="cl" id="cls"><summary><h2>Satışlar ve gerçekleşen kâr</h2></summary><div class="scroll"><table id="sls"></table></div><div class="mut" id="slsd" style="margin-top:6px"></div><details class="ac"><summary>🔗 Bu tablo neye bağlı?</summary>• Her satır, tamamen veya kısmen sattığın bir hissedir. <b>Alım / satım işlemleri</b> bölümündeki satım kayıtlarından hesaplanır.<br>• <b>Satış tarihi</b> o hissenin son satışının tarihidir. <b>Ort. alış</b> satılan adetlerin ortalama maliyeti, <b>Satış fiyatı</b> ortalama satış fiyatıdır. <b>Satış tutarı</b> adet × satış fiyatıdır.<br>• <b>K/Z</b> komisyon düşülmüş gerçekleşen kârdır. Toplamı Özet kartındaki “Gerçekleşen K/Z” ile aynıdır.<br>• Satım eklersen, düzenlersen veya silersen tablo anında güncellenir.</details></details></div>
@@ -639,7 +644,7 @@ fetch(karneUrl()+"?t="+Date.now()).then(function(r){if(!r.ok)throw 0;return r.js
 <script>
 /* ---- Sekmeler: Ozet her zaman ana ekranda; diger bolumler sekmelerde ---- */
 (function(){
-var SK={grafik:["#clg"],karne:["#clk"],kut:["#clu"],islem:["#clt","#clv","#cls"],gecmis:["#clw","#clh"],ayar:["#cln","#clb"]};
+var SK={grafik:["#clg"],karne:["#clk"],islem:["#clt","#clv","#cls"],gecmis:["#clw","#clh"],ayar:["#cln","#clb"]};
 var ACIK={grafik:["clg"]},SEC=null;
 var main=document.querySelector("main"),tb=document.getElementById("tb"),bos=document.getElementById("sbos");
 function kart(sel){var e=document.querySelector(sel);if(!e)return null;return e.closest(".card")||e;}
@@ -647,16 +652,28 @@ Object.keys(SK).forEach(function(k){SK[k].forEach(function(sel){var c=kart(sel);
 /* sekme cubugundan sonra gelip bir sekmeye atanmamis kucuk parcalar, onceki bolume baglanir */
 var sonra=false;Array.prototype.forEach.call(main.children,function(c){if(c===tb){sonra=true;return;}if(!sonra||c===bos||c.tagName==="SCRIPT")return;
   if(!c.hasAttribute("data-sk")){var p=c.previousElementSibling;if(p&&p.getAttribute("data-sk"))c.setAttribute("data-sk",p.getAttribute("data-sk"));}});
-function ac(k){if(k===SEC)k=null;SEC=k;
-  Array.prototype.forEach.call(main.querySelectorAll("[data-sk]"),function(c){c.style.display=c.getAttribute("data-sk")===k?"":"none";});
+var sbar=document.getElementById("sbar"),YER=0;
+function ac(k,geriden){if(k===SEC)k=null;var once=SEC;
+  if(k&&!once)YER=window.pageYOffset;SEC=k;
+  Array.prototype.forEach.call(main.children,function(c){if(c===sbar)return;
+    if(c.hasAttribute("data-sk")){c.style.display=c.getAttribute("data-sk")===k?"":"none";c.classList.remove("sgiz");}
+    else if(k)c.classList.add("sgiz");else c.classList.remove("sgiz");});
   Array.prototype.forEach.call(tb.querySelectorAll("button"),function(b){b.className=b.getAttribute("data-s")===k?"on":"";});
   if(bos)bos.style.display=k?"none":"";
+  sbar.style.display=k?"flex":"none";
+  if(k){var tbb=tb.querySelector('button[data-s="'+k+'"]');document.getElementById("sbad").textContent=tbb?tbb.textContent:"";}
   (ACIK[k]||[]).forEach(function(id){var d=document.getElementById(id);if(d&&!d.open)d.open=true;});
   if(k==="karne"&&window.__karneYukle)window.__karneYukle();
   if(k==="kut"&&window.__kutYukle)window.__kutYukle();
-  if(k)tb.scrollIntoView({behavior:"smooth",block:"start"});}
+  /* telefonun geri tusu / geri hareketi de bolumu kapatsin */
+  if(k&&!once&&!geriden){try{history.pushState({sk:k},"");}catch(e){}}
+  if(k)window.scrollTo(0,0);else if(once)window.scrollTo(0,YER);}
+function kapat(){if(!SEC)return;if(history.state&&history.state.sk){history.back();}else ac(null,true);}
+document.getElementById("sgeri").onclick=kapat;
+window.addEventListener("popstate",function(e){if(SEC&&!(e.state&&e.state.sk))ac(null,true);else if(!SEC&&e.state&&e.state.sk)ac(e.state.sk,true);});
 Array.prototype.forEach.call(tb.querySelectorAll("button"),function(b){b.onclick=function(){ac(b.getAttribute("data-s"));};});
-window.__sekme=ac;
+window.__sekme=function(k){ac(k);};
+if(history.state&&history.state.sk){try{history.replaceState(null,"");}catch(e){}}
 ac(null);
 })();
 </script>
