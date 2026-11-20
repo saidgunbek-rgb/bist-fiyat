@@ -1,1 +1,68 @@
-
+name: Altin kaynak testi
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Yedek kaynaklari dene
+        run: |
+          python3 - <<'PY'
+          import json, time, urllib.request, urllib.error
+          UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36"}
+          out = {}
+          def al(url, h=None):
+              hd = dict(UA); hd.update(h or {})
+              return urllib.request.urlopen(urllib.request.Request(url, headers=hd), timeout=15).read().decode("utf-8", "replace")
+          def dene(ad, url, ozet):
+              t = time.time()
+              try:
+                  s = al(url)
+                  out[ad] = {"tamam": True, "sn": round(time.time() - t, 1), "ozet": ozet(s)}
+              except urllib.error.HTTPError as e:
+                  out[ad] = {"tamam": False, "hata": "HTTP %s" % e.code}
+              except Exception as e:
+                  out[ad] = {"tamam": False, "hata": str(e)[:120]}
+          def yh(s):
+              r = json.loads(s)["chart"]["result"][0]; q = r["indicators"]["quote"][0]; c = [x for x in q["close"] if x]
+              return {"gun": len(c), "son": c[-3:]}
+          def satir(s):
+              l = s.strip().splitlines(); return {"satir": len(l), "son": l[-2:]}
+          def kes(s):
+              return s[:300]
+          for k in ("GLD", "IAU", "SLV", "SIVR"):
+              dene("yahoo_" + k, "https://query2.finance.yahoo.com/v8/finance/chart/%s?range=10y&interval=1d" % k, yh)
+          for k in ("XAUUSD%3DX", "XAGUSD%3DX", "XAU%3DX", "XAG%3DX"):
+              dene("yahoo_" + k, "https://query1.finance.yahoo.com/v8/finance/chart/%s?range=1mo&interval=1d" % k, yh)
+          for h in ("stooq.com", "stooq.pl"):
+              for s in ("xauusd", "xagusd", "usdtry"):
+                  dene("%s_%s" % (h, s), "https://%s/q/d/l/?s=%s&i=d" % (h, s), satir)
+          dene("binance_PAXG", "https://api.binance.com/api/v3/klines?symbol=PAXGUSDT&interval=1d&limit=5", kes)
+          dene("binance_us_PAXG", "https://api.binance.us/api/v3/klines?symbol=PAXGUSD&interval=1d&limit=5", kes)
+          dene("coinbase_PAXG", "https://api.exchange.coinbase.com/products/PAXG-USD/candles?granularity=86400", kes)
+          dene("kraken_PAXG", "https://api.kraken.com/0/public/OHLC?pair=PAXGUSD&interval=1440", kes)
+          dene("goldapi_XAU", "https://api.gold-api.com/price/XAU", kes)
+          dene("goldapi_XAG", "https://api.gold-api.com/price/XAG", kes)
+          dene("frankfurter_USDTRY", "https://api.frankfurter.app/2026-10-20..?from=USD&to=TRY", lambda s: {"uzunluk": len(s), "son": s[-200:]})
+          dene("frankfurter_dev_USDTRY", "https://api.frankfurter.dev/v1/2026-10-20..?base=USD&symbols=TRY", lambda s: {"uzunluk": len(s), "son": s[-200:]})
+          dene("er_api_USD", "https://open.er-api.com/v6/latest/USD", lambda s: {"TRY": json.loads(s)["rates"].get("TRY")})
+          out["zaman"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+          json.dump(out, open("altin-kaynak-test.json", "w"), ensure_ascii=False, indent=1)
+          print(json.dumps({k: (v.get("tamam") if isinstance(v, dict) else v) for k, v in out.items()}, ensure_ascii=False))
+          PY
+      - name: Kaydet
+        run: |
+          git config user.name "fiyat-bot"
+          git config user.email "fiyat-bot@users.noreply.github.com"
+          git add altin-kaynak-test.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Altin kaynak testi"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push && exit 0
+            sleep 5
+          done
+          exit 1
