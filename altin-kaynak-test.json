@@ -1,0 +1,185 @@
+{
+ "yahoo_GLD": {
+  "tamam": true,
+  "sn": 0.1,
+  "ozet": {
+   "gun": 2513,
+   "son": [
+    352.4800109863281,
+    341.19000244140625,
+    335.17999267578125
+   ]
+  }
+ },
+ "yahoo_IAU": {
+  "tamam": true,
+  "sn": 0.1,
+  "ozet": {
+   "gun": 2513,
+   "son": [
+    72.2699966430664,
+    69.95999908447266,
+    68.72000122070312
+   ]
+  }
+ },
+ "yahoo_SLV": {
+  "tamam": true,
+  "sn": 0.2,
+  "ozet": {
+   "gun": 2513,
+   "son": [
+    42.63999938964844,
+    40.70000076293945,
+    39.63999938964844
+   ]
+  }
+ },
+ "yahoo_SIVR": {
+  "tamam": true,
+  "sn": 0.3,
+  "ozet": {
+   "gun": 2513,
+   "son": [
+    44.869998931884766,
+    42.779998779296875,
+    41.66999816894531
+   ]
+  }
+ },
+ "yahoo_XAUUSD%3DX": {
+  "tamam": false,
+  "hata": "HTTP 404"
+ },
+ "yahoo_XAGUSD%3DX": {
+  "tamam": false,
+  "hata": "HTTP 404"
+ },
+ "yahoo_XAU%3DX": {
+  "tamam": false,
+  "hata": "HTTP 404"
+ },
+ "yahoo_XAG%3DX": {
+  "tamam": false,
+  "hata": "HTTP 404"
+ },
+ "stooq.com_xauusd": {
+  "tamam": true,
+  "sn": 0.4,
+  "ozet": {
+   "satir": 3,
+   "son": [
+    "(async()=>{const c=\"AAAAAGsAJA8LBqCfSJlUvEPT9SxqQPhrFFD_EDVlg2OMN7KNRJiO7pZ_4M4\",d=4,t=\"0\".repeat(d),e=new TextEncoder;let n=0;while(1){const h=await crypto.subtle.digest(\"SHA-256\",e.encode(c+n)),x=Array.from(new Uint8Array(h)).map(b=>b.toString(16).padStart(2,\"0\")).join(\"\");if(x.startsWith(t))break;n++}const r=await fetch(\"/__verify\",{method:\"POST\",headers:{\"Content-Type\":\"application/x-www-form-urlencoded\"},body:\"c=\"+encodeURIComponent(c)+\"&n=\"+n,credentials:\"same-origin\"});if(r.ok)location.reload()})();",
+    "</script></body></html>"
+   ]
+  }
+ },
+ "stooq.com_xagusd": {
+  "tamam": true,
+  "sn": 0.4,
+  "ozet": {
+   "satir": 3,
+   "son": [
+    "(async()=>{const c=\"AAAAAGsAJA-VVfQgCDrjil80NpuwPfyAFFD_ENB14XYDMc8_yuWaIj3XG7g\",d=4,t=\"0\".repeat(d),e=new TextEncoder;let n=0;while(1){const h=await crypto.subtle.digest(\"SHA-256\",e.encode(c+n)),x=Array.from(new Uint8Array(h)).map(b=>b.toString(16).padStart(2,\"0\")).join(\"\");if(x.startsWith(t))break;n++}const r=await fetch(\"/__verify\",{method:\"POST\",headers:{\"Content-Type\":\"application/x-www-form-urlencoded\"},body:\"c=\"+encodeURIComponent(c)+\"&n=\"+n,credentials:\"same-origin\"});if(r.ok)location.reload()})();",
+    "</script></body></html>"
+   ]
+  }
+ },
+ "stooq.com_usdtry": {
+  "tamam": true,
+  "sn": 0.5,
+  "ozet": {
+   "satir": 3,
+   "son": [
+    "(async()=>{const c=\"AAAAAGsAJBBXuaAztUAMmUEz6GM-LCbDFFD_ECxx-1ezLKMH9SQ23LWUo4g\",d=4,t=\"0\".repeat(d),e=new TextEncoder;let n=0;while(1){const h=await crypto.subtle.digest(\"SHA-256\",e.encode(c+n)),x=Array.from(new Uint8Array(h)).map(b=>b.toString(16).padStart(2,\"0\")).join(\"\");if(x.startsWith(t))break;n++}const r=await fetch(\"/__verify\",{method:\"POST\",headers:{\"Content-Type\":\"application/x-www-form-urlencoded\"},body:\"c=\"+encodeURIComponent(c)+\"&n=\"+n,credentials:\"same-origin\"});if(r.ok)location.reload()})();",
+    "</script></body></html>"
+   ]
+  }
+ },
+ "stooq.pl_xauusd": {
+  "tamam": true,
+  "sn": 0.7,
+  "ozet": {
+   "satir": 3,
+   "son": [
+    "(async()=>{const c=\"AAAAAGsAJBAmmWXzdr5uvKffCD5nPscGFFD_EFOv8_PRV-IJJMYbRXr0tC4\",d=4,t=\"0\".repeat(d),e=new TextEncoder;let n=0;while(1){const h=await crypto.subtle.digest(\"SHA-256\",e.encode(c+n)),x=Array.from(new Uint8Array(h)).map(b=>b.toString(16).padStart(2,\"0\")).join(\"\");if(x.startsWith(t))break;n++}const r=await fetch(\"/__verify\",{method:\"POST\",headers:{\"Content-Type\":\"application/x-www-form-urlencoded\"},body:\"c=\"+encodeURIComponent(c)+\"&n=\"+n,credentials:\"same-origin\"});if(r.ok)location.reload()})();",
+    "</script></body></html>"
+   ]
+  }
+ },
+ "stooq.pl_xagusd": {
+  "tamam": true,
+  "sn": 0.4,
+  "ozet": {
+   "satir": 3,
+   "son": [
+    "(async()=>{const c=\"AAAAAGsAJBEqlnwUVQ4OUap8G4lYOPf4FFD_EDZLJG-idYs7LInYxNV1j7I\",d=4,t=\"0\".repeat(d),e=new TextEncoder;let n=0;while(1){const h=await crypto.subtle.digest(\"SHA-256\",e.encode(c+n)),x=Array.from(new Uint8Array(h)).map(b=>b.toString(16).padStart(2,\"0\")).join(\"\");if(x.startsWith(t))break;n++}const r=await fetch(\"/__verify\",{method:\"POST\",headers:{\"Content-Type\":\"application/x-www-form-urlencoded\"},body:\"c=\"+encodeURIComponent(c)+\"&n=\"+n,credentials:\"same-origin\"});if(r.ok)location.reload()})();",
+    "</script></body></html>"
+   ]
+  }
+ },
+ "stooq.pl_usdtry": {
+  "tamam": true,
+  "sn": 0.6,
+  "ozet": {
+   "satir": 3,
+   "son": [
+    "(async()=>{const c=\"AAAAAGsAJBGSoqw9FG80ycz6pUx29oaJFFD_EBX9SY7HDm0Jqz-JGm6Vhc8\",d=4,t=\"0\".repeat(d),e=new TextEncoder;let n=0;while(1){const h=await crypto.subtle.digest(\"SHA-256\",e.encode(c+n)),x=Array.from(new Uint8Array(h)).map(b=>b.toString(16).padStart(2,\"0\")).join(\"\");if(x.startsWith(t))break;n++}const r=await fetch(\"/__verify\",{method:\"POST\",headers:{\"Content-Type\":\"application/x-www-form-urlencoded\"},body:\"c=\"+encodeURIComponent(c)+\"&n=\"+n,credentials:\"same-origin\"});if(r.ok)location.reload()})();",
+    "</script></body></html>"
+   ]
+  }
+ },
+ "binance_PAXG": {
+  "tamam": false,
+  "hata": "HTTP 451"
+ },
+ "binance_us_PAXG": {
+  "tamam": true,
+  "sn": 0.6,
+  "ozet": "[[1687478400000,\"1840.00000000\",\"1864.00000000\",\"1823.00000000\",\"1852.00000000\",\"0.77440000\",1687564799999,\"1424.74110000\",46,\"0.19220000\",\"354.83150000\",\"0\"],[1687564800000,\"1858.00000000\",\"1858.00000000\",\"1835.00000000\",\"1843.00000000\",\"0.65220000\",1687651199999,\"1203.35060000\",22,\"0.52220000\",\"96"
+ },
+ "coinbase_PAXG": {
+  "tamam": true,
+  "sn": 0.1,
+  "ozet": "[[1795132800,3510.83,3614.93,3597.21,3585.52,366.33623],[1795046400,3582,3747.72,3731.87,3595.93,548.99621],[1794960000,3711.09,3837.71,3837.71,3731.22,345.57906],[1794873600,3825.57,3876.27,3845.87,3840.86,287.22727],[1794787200,3820.07,3884.57,3884.57,3847.07,437.25036],[1794700800,3784.1,3885.78,"
+ },
+ "kraken_PAXG": {
+  "tamam": true,
+  "sn": 0.1,
+  "ozet": "{\"error\":[],\"result\":{\"PAXGUSD\":[[1732924800,\"2637.21\",\"2651.96\",\"2633.21\",\"2635.20\",\"2639.07\",\"44.17392445\",3185],[1733011200,\"2635.21\",\"2659.85\",\"2635.20\",\"2652.64\",\"2651.97\",\"67.90662630\",1731],[1733097600,\"2652.38\",\"2654.63\",\"2619.27\",\"2640.73\",\"2633.31\",\"169.86880041\",1789],[1733184000,\"2639.90"
+ },
+ "goldapi_XAU": {
+  "tamam": true,
+  "sn": 0.3,
+  "ozet": "{\"currency\":\"USD\",\"currencySymbol\":\"$\",\"exchangeRate\":1.0,\"name\":\"Gold\",\"price\":3590.919922,\"symbol\":\"XAU\",\"updatedAt\":\"2026-11-20T10:42:05Z\",\"updatedAtReadable\":\"a few seconds ago\"}"
+ },
+ "goldapi_XAG": {
+  "tamam": true,
+  "sn": 0.2,
+  "ozet": "{\"currency\":\"USD\",\"currencySymbol\":\"$\",\"exchangeRate\":1.0,\"name\":\"Silver\",\"price\":42.654999,\"symbol\":\"XAG\",\"updatedAt\":\"2026-11-20T10:42:04Z\",\"updatedAtReadable\":\"a few seconds ago\"}"
+ },
+ "frankfurter_USDTRY": {
+  "tamam": true,
+  "sn": 0.3,
+  "ozet": {
+   "uzunluk": 731,
+   "son": "4},\"2026-11-11\":{\"TRY\":50.229},\"2026-11-12\":{\"TRY\":50.258},\"2026-11-13\":{\"TRY\":50.368},\"2026-11-16\":{\"TRY\":50.392},\"2026-11-17\":{\"TRY\":50.413},\"2026-11-18\":{\"TRY\":50.438},\"2026-11-19\":{\"TRY\":50.468}}}"
+  }
+ },
+ "frankfurter_dev_USDTRY": {
+  "tamam": true,
+  "sn": 0.3,
+  "ozet": {
+   "uzunluk": 731,
+   "son": "4},\"2026-11-11\":{\"TRY\":50.229},\"2026-11-12\":{\"TRY\":50.258},\"2026-11-13\":{\"TRY\":50.368},\"2026-11-16\":{\"TRY\":50.392},\"2026-11-17\":{\"TRY\":50.413},\"2026-11-18\":{\"TRY\":50.438},\"2026-11-19\":{\"TRY\":50.468}}}"
+  }
+ },
+ "er_api_USD": {
+  "tamam": true,
+  "sn": 0.1,
+  "ozet": {
+   "TRY": 50.534266
+  }
+ },
+ "zaman": "2026-11-20T10:42:28Z"
+}
