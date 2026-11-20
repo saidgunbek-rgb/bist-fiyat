@@ -268,6 +268,14 @@ function pencere(k){var f=D.fonlar.filter(function(x){return x.k===k;})[0];if(!f
 document.addEventListener("keydown",function(e){if(e.key==="Escape"){var o=document.getElementById("pop");if(o){o.className="";document.body.style.overflow="";}}});
 function favHtml(B){var F=D.fonlar,h='',EN=D.enf;
   h+='<div class="bx">Bu bölüm her akşamki taramadan sonra kendiliğinden yenilenir. Bir fona dokununca bilgileri küçük bir pencerede açılır. <b>Puan</b> (0–100): fonun 1 ay, 3 ay, 6 ay, 1 yıl, 3 yıl getirisi, getiri/risk ve en büyük düşüşte diğer banka fonları arasındaki sırasının ortalamasıdır.</div>';
+  // Her sekmenin altinda: Ziraat ve Vakif'in o olcute gore en iyi fonu (zaten listedeyse tekrar gosterilmez)
+  function kbBlok(liste,anahtar,hl,sessiz){var kod=liste.map(function(f){return f.k;}),o='';
+    ["Ziraat Bankası","Vakıf Bankası"].forEach(function(bn){var ad=bn.split(" ")[0];
+      var A=F.filter(function(f){return f.banka===bn&&anahtar(f)!=null;}).sort(function(a,b){return anahtar(b)-anahtar(a);}),f=A[0];
+      if(!f){if(!sessiz)o+='<div class="alt" style="margin:2px 2px 6px">'+ad+': bu ölçüt için yeterli veri yok (yeni kurulmuş fon)</div>';return;}
+      if(kod.indexOf(f.k)>=0){if(!sessiz)o+='<div class="alt" style="margin:2px 2px 6px">'+ad+': en iyisi '+esc(f.k)+', yukarıdaki listede</div>';return;}
+      o+=satir(f,f.g[hl],null,0,hl).replace('<span class="fn">1</span>','<span class="fn">·</span>');});
+    return o?'<div class="dh">🏛️ Ziraat ve Vakıf’tan en iyisi</div>'+o:'';}
   h+='%%SEKME%%<div class="fsek" data-f="hy">';
   // 1) Her yonuyle iyi
   var HY=F.filter(function(f){return f.her_yonu;}).sort(function(a,b){return(b.puan||0)-(a.puan||0);});
@@ -276,10 +284,12 @@ function favHtml(B){var F=D.fonlar,h='',EN=D.enf;
   if(HY.length)HY.forEach(function(f,i){h+=satir(f,f.g.y1,B.y1,i);});
   else{var Y=F.slice().sort(function(a,b){return(b.kosul||0)-(a.kosul||0)||(b.puan||0)-(a.puan||0);}).slice(0,3);
     h+='<div class="alt" style="margin:0 2px 6px">Bugün 5 şartın hepsini sağlayan fon yok. En yakın olanlar:</div>';Y.forEach(function(f,i){h+=satir(f,f.g.y1,B.y1,i).replace('<span class="fp">','<span class="fp" title="sağlanan şart">'+f.kosul+'/5 · ');});}
+  h+=kbBlok(HY.length?HY:(typeof Y!=="undefined"&&Y?Y:[]),function(f){return(f.kosul||0)*1000+(f.puan||0);},"y1");
   h+='</div><div class="fsek" data-f="gp">';
   // 2) Genel puanda ilk 5
   var GP=F.filter(function(f){return f.puan!=null;}).sort(function(a,b){return b.puan-a.puan;}).slice(0,5);
   h+='<div class="bh"><span><b>🏆 Genel puanda ilk 5</b></span><span class="alt">puan</span></div>';GP.forEach(function(f,i){h+=satir(f,f.g.y1,B.y1,i);});
+  h+=kbBlok(GP,function(f){return f.puan;},"y1");
   h+='</div><div class="fsek" data-f="dn">';
   // 3) Donem favorileri
   var DN=[["d1","Son gün"],["a1","Son 1 ay"],["a3","Son 3 ay"],["a6","Son 6 ay"],["y1","Son 1 yıl"]];
@@ -288,7 +298,8 @@ function favHtml(B){var F=D.fonlar,h='',EN=D.enf;
     var tt=k==="d1"&&F[0]&&F[0].d1_tarih?' ('+esc(trD(F[0].d1_tarih))+')':'';
     h+='<div class="dh">'+d[1]+tt+' <small>'+(k==="d1"?'fonun son açıklanan fiyatındaki değişim · fon fiyatları bir önceki günün kapanışıyla oluştuğu için BIST100’ün bugünkü hareketiyle karşılaştırılmaz':(b!=null?'BIST100 '+yz(b)+' · endeksi geçenler arasından':''))+'</small></div>';
     if(!L.length)h+='<div class="alt" style="margin:0 2px 8px">Bu dönemde endeksi geçen fon yok.</div>';
-    L.forEach(function(f,i){h+=satir(f,f.g[k],b,i,k);});});
+    L.forEach(function(f,i){h+=satir(f,f.g[k],b,i,k);});
+    h+=kbBlok(L,function(f){return f.g[k];},k,true);});
   h+='</div><div class="fsek" data-f="uz">';
   // 4) Uzun suredir iyi
   var UZ=F.filter(function(f){return f.gecmis&&f.gecmis.kac>0;}).sort(function(a,b){return b.gecmis.kac-a.gecmis.kac||b.gecmis.seri-a.gecmis.seri||(b.puan||0)-(a.puan||0);}).slice(0,10);
@@ -296,6 +307,7 @@ function favHtml(B){var F=D.fonlar,h='',EN=D.enf;
   h+='<div class="bh"><span><b>📈 Uzun süredir iyi</b></span><span class="alt">son '+top+' tarama</span></div>';
   h+='<div class="alt" style="margin:-2px 2px 8px">Genel puanda ilk 10’da kaldığı gün sayısı (son 30 tarama). '+(top<10?'Geçmiş her akşam birikiyor; şu an '+top+' günlük kayıt var, liste günler geçtikçe anlamlı hale gelir.':'')+'</div>';
   UZ.forEach(function(f,i){var g=f.gecmis;h+=satir(f,f.g.y1,B.y1,i).replace('<span class="fp">','<span class="fp" style="width:auto">'+g.kac+'/'+g.toplam+' gün'+(g.seri>1?' · '+g.seri+' gün üst üste':'')+(g.her_yonu_gun?' · ⭐'+g.her_yonu_gun:'')+' · ');});
+  h+=kbBlok(UZ,function(f){return f.gecmis&&f.gecmis.kac>0?f.gecmis.kac*1000+(f.puan||0):null;},"y1");
   h+='</div><div class="alt" style="margin-top:10px">Bu liste kurallara göre otomatik seçilir; al/sat önerisi değildir. Geçmiş getiri gelecek getirinin garantisi değildir.</div>';
   /* Favoriler dort sekme: dokununca o bolum tek basina acilir, ustteki Kapat (ya da telefonun geri tusu) ile sekmelere geri donulur */
   var SK=[["hy","⭐ Her yönüyle iyi",HY.length?HY.length+" fon":"en yakın 3"],["gp","🏆 Genel puanda ilk 5",GP.length+" fon"],["dn","📅 Dönemin favorileri","5 dönem"],["uz","📈 Uzun süredir iyi",UZ.length+" fon"]];
