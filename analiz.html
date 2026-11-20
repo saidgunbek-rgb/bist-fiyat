@@ -101,7 +101,7 @@ canvas{display:block;width:100%;touch-action:pan-y;-webkit-user-select:none;user
 var VERI_URL="https://raw.githubusercontent.com/saidgunbek-rgb/bist-fiyat/main/analiz.json";
 var DONEM=[["3A",63],["6A",126],["1Y",250],["2Y",500],["5Y",1250],["10Y",9999]];
 var GOST=[["fib","Fibonacci",1],["vp","Hacim profili",0],["ema","EMA 20/50/100/200",0],["e13","EMA 13",0],["e39","EMA 39",0],["st","Supertrend",0],["hac","Hacim",0],["wt","WaveTrend",1],["rsi","RSI",0]];
-var EMA_RENK={20:"#f0b429",50:"#4fc3f7",100:"#ab47bc",200:"#ff7043",13:"#e0e0e0",39:"#66bb6a"};
+var EMA_RENK={20:"#f0b429",50:"#4fc3f7",100:"#ab47bc",200:"#ff7043",13:"#26a69a",39:"#ef5350"};
 var FIB=[[0,"#ef5350"],[0.236,"#ef5350"],[0.382,"#ffa726"],[0.5,"#66bb6a"],[0.618,"#26a69a"],[0.786,"#4fc3f7"],[1,"#9a9ab0"]];
 var FIB_DOLGU=["rgba(239,83,80,.13)","rgba(255,167,38,.12)","rgba(102,187,106,.12)","rgba(38,166,154,.12)","rgba(79,195,247,.11)","rgba(154,154,176,.08)"];
 function ls(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v);}catch(e){return null;}}
@@ -224,7 +224,13 @@ function ciz(){
   /* cizgi gostergeler */
   function cizgi(arr,renk,gen){x.strokeStyle=renk;x.lineWidth=gen||1.3;x.beginPath();var bas=false;for(var i=a;i<=b;i++){var v=arr[i];if(v==null){bas=false;continue;}if(!bas){x.moveTo(X(i),Y(v));bas=true;}else x.lineTo(X(i),Y(v));}x.stroke();}
   if(ACIK.ema)[200,100,50,20].forEach(function(n){cizgi(CI.ema[n],EMA_RENK[n]);});
-  if(ACIK.e13)cizgi(CI.ema[13],EMA_RENK[13],1);if(ACIK.e39)cizgi(CI.ema[39],EMA_RENK[39],1);
+  if(ACIK.e13)cizgi(CI.ema[13],EMA_RENK[13],1.4);if(ACIK.e39)cizgi(CI.ema[39],EMA_RENK[39],1.4);
+  /* EMA13 / EMA39 kesisimi: 13, 39'u yukari keserse AL (yesil ucgen mumun altinda), asagi keserse SAT (kirmizi ucgen mumun ustunde) */
+  if(ACIK.e13&&ACIK.e39){var E1=CI.ema[13],E3=CI.ema[39];x.font="bold 9.5px Roboto,Arial";x.textAlign="center";
+    for(var k=Math.max(a,1);k<=b;k++){if(E1[k]==null||E3[k]==null||E1[k-1]==null||E3[k-1]==null)continue;var d0=E1[k-1]-E3[k-1],d1=E1[k]-E3[k],kx=X(k);
+      if(d0<=0&&d1>0){var ky=Y(CD[k][3])+6;x.fillStyle="#26a69a";x.beginPath();x.moveTo(kx,ky);x.lineTo(kx-5,ky+8);x.lineTo(kx+5,ky+8);x.fill();x.textBaseline="top";x.strokeStyle="#12131c";x.lineWidth=3;x.strokeText("AL",kx,ky+9);x.fillText("AL",kx,ky+9);}
+      else if(d0>=0&&d1<0){var ky=Y(CD[k][2])-6;x.fillStyle="#ef5350";x.beginPath();x.moveTo(kx,ky);x.lineTo(kx-5,ky-8);x.lineTo(kx+5,ky-8);x.fill();x.textBaseline="bottom";x.strokeStyle="#12131c";x.lineWidth=3;x.strokeText("SAT",kx,ky-9);x.fillText("SAT",kx,ky-9);}}
+    x.textAlign="left";}
   if(ACIK.st){x.lineWidth=1.6;for(i=Math.max(a+1,1);i<=b;i++){if(CI.st[i]==null||CI.st[i-1]==null||CI.styon[i]!==CI.styon[i-1])continue;x.strokeStyle=CI.styon[i]===1?"#26a69a":"#ef5350";x.beginPath();x.moveTo(X(i-1),Y(CI.st[i-1]));x.lineTo(X(i),Y(CI.st[i]));x.stroke();}}
   /* mumlar */
   for(i=a;i<=b;i++){var r=CD[i],up=r[4]>=r[1],cx=X(i);x.strokeStyle=x.fillStyle=up?"#26a69a":"#ef5350";x.lineWidth=1;
