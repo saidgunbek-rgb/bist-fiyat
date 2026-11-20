@@ -73,6 +73,10 @@
    "n": 1,
    "son": "2026-11-20T18:57"
   },
+  "kap|2026-11-20 20": {
+   "n": 1,
+   "son": "2026-11-20T20:57"
+  },
   "karne|2026-11-17": {
    "n": 1,
    "son": "2026-11-18T16:57"
@@ -107,17 +111,17 @@
   },
   "fon": {
    "deneme": 0,
-   "durum": "bekliyor",
-   "maks": 4,
-   "not": "Bugünün fon taraması yok",
-   "saat": "2026-11-19T18:46:11Z",
-   "veri": "2026-11-19"
-  },
-  "kap": {
-   "deneme": 1,
    "durum": "ok",
    "maks": 4,
    "not": "",
+   "saat": "2026-11-20T17:52:14Z",
+   "veri": "2026-11-20"
+  },
+  "kap": {
+   "deneme": 1,
+   "durum": "deneniyor",
+   "maks": 4,
+   "not": "Son KAP taraması gecikti",
    "saat": "2026-11-20 19:14",
    "veri": "2026-11-20 19:14"
   },
@@ -131,12 +135,12 @@
   },
   "kutuphane": {
    "deneme": 0,
-   "durum": "deneniyor",
+   "durum": "ok",
    "maks": 4,
-   "not": "bugünün verisi yok",
-   "saat": "2026-11-20T13:55:59Z",
+   "not": "",
+   "saat": "2026-11-20T17:18:44Z",
    "veri": "2026-11-20"
   }
  },
- "kontrolAt": "2026-11-20T16:58:46Z"
+ "kontrolAt": "2026-11-20T17:57:56Z"
 }
