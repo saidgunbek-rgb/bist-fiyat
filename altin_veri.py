@@ -53,7 +53,9 @@ def yahoo(sembol):
         c = sayi(q["close"][i])
         if not c:
             continue
-        d = datetime.datetime.utcfromtimestamp(t + off).strftime("%Y-%m-%d")
+        # Gun etiketi: Yahoo mevcut (kis) saat farkini tum gecmise uyguladigi icin yaz saati doneminde vadeli mumlar bir gun geriye (pazar/persembe) etiketleniyordu.
+        # 6 saat eklemek, gece yarisi ile ertesi gunun ilk saatleri arasindaki tum damga saatlerini dogru gune oturtur.
+        d = datetime.datetime.utcfromtimestamp(t + off + 6 * 3600).strftime("%Y-%m-%d")
         if d >= BAS_S:
             out[d] = [sayi(q["open"][i]) or c, sayi(q["high"][i]) or c, sayi(q["low"][i]) or c, c, (q.get("volume") or [0] * (i + 1))[i] or 0]
     return out
