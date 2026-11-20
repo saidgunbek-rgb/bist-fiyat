@@ -44,11 +44,11 @@
   }
  ],
  "enf": {
-  "k": "borsapy:tufe",
+  "k": "borsapy:latest",
   "t": "2026-11-20",
   "y": 29.77
  },
- "kapUpdatedAt": "2026-11-20 11:30",
+ "kapUpdatedAt": "2026-11-20 13:23",
  "stocks": {
   "THYAO": {
    "bdog": {
