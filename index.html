@@ -100,6 +100,7 @@ button.rb.on{background:var(--bd);color:var(--tx)}
 .sbar button{flex:0 0 auto;border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:999px;padding:7px 15px;font-size:14px;font-weight:700;box-shadow:none}
 .sbar b{font-size:18px}
 .sgiz{display:none!important}
+main.sekacik>*:not([data-sk]):not(#sbar){display:none!important}
 .hks{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;margin:0 -4px;scrollbar-width:none}.hks::-webkit-scrollbar{display:none}
 .hks .hk{flex:0 0 86%;scroll-snap-align:start;margin:0 0 0 4px}
 .hkn{display:flex;justify-content:center;gap:6px;margin:4px 0 2px}.hkn b{width:7px;height:7px;border-radius:50%;background:var(--bd)}.hkn b.on{background:var(--b1)}
@@ -661,6 +662,7 @@ function ac(k,geriden){if(k===SEC)k=null;var once=SEC;
     if(c.hasAttribute("data-sk")){c.style.display=c.getAttribute("data-sk")===k?"":"none";c.classList.remove("sgiz");}
     else if(k)c.classList.add("sgiz");else c.classList.remove("sgiz");});
   Array.prototype.forEach.call(tb.querySelectorAll("button"),function(b){b.className=b.getAttribute("data-s")===k?"on":"";});
+  main.classList.toggle("sekacik",!!k);
   if(bos)bos.style.display=k?"none":"";
   sbar.style.display=k?"flex":"none";
   if(k){var tbb=tb.querySelector('button[data-s="'+k+'"]');document.getElementById("sbad").textContent=tbb?tbb.textContent:"";}
