@@ -2,7 +2,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#12131c">
 <title>Analiz</title>
+<script>if(/[?&]k=altin/.test(location.search)){document.documentElement.className+=" altmod";document.title="Altın · Gümüş";}</script>
 <style>
+html.altmod #hissekutu,html:not(.altmod) #altinkutu,html.altmod .t-bist,html:not(.altmod) .t-alt{display:none!important}
 :root{--bg:#12131c;--card:#1b1d2a;--card2:#242739;--mut:#9a9ab0;--tx:#e6e6ee;--g:#26a69a;--r:#ef5350;--p:#8b7cf6;--ln:#2c2f44}
 *{box-sizing:border-box}body{margin:0 auto;max-width:560px;background:var(--bg);color:var(--tx);font-family:Roboto,Arial,sans-serif;padding:14px 12px 30px}
 a{color:var(--p);text-decoration:none}
@@ -87,11 +89,11 @@ canvas{display:block;width:100%;touch-action:pan-y;-webkit-user-select:none;user
 .src{font-size:11.5px;color:var(--mut);line-height:1.5}
 </style></head><body>
 <a href="./" style="font-size:13.5px">‹ Panele dön</a>
-<h1 id="baslik">📈 Analiz</h1>
-<div class="sub" id="sub">Günlük mum grafiği · Fibonacci · EMA · Supertrend · WaveTrend</div>
+<h1 id="baslik"><span class="t-bist">📈 Analiz</span><span class="t-alt">🥇 Altın · Gümüş</span></h1>
+<div class="sub" id="sub"><span class="t-bist">Günlük mum grafiği · Fibonacci · EMA · Supertrend · WaveTrend</span><span class="t-alt">Gram ve ons altın, gram ve ons gümüş · günlük mum grafiği · Fibonacci · EMA · Supertrend · WaveTrend</span></div>
 <div id="uyari"></div>
 <div class="grp g-h" id="hissekutu"><div class="gl">🏷️ Hisse</div><div class="row" id="hisseler"></div></div>
-<div class="grp g-a" id="altinkutu" style="display:none"><div class="gl">🥇 Altın · Gümüş <span>· uluslararası piyasa fiyatı, kuyumcu fiyatı değil</span></div><div class="row" id="altinlar"></div></div>
+<div class="grp g-a" id="altinkutu"><div class="gl">🥇 Altın · Gümüş <span>· uluslararası piyasa fiyatı, kuyumcu fiyatı değil</span></div><div class="row" id="altinlar"></div></div>
 <div class="grp g-z"><div class="gl">🗓️ Dönem ve mum</div><div class="row sm" id="donem"></div><div class="row sm" id="mum"></div></div>
 <div class="grp g-g"><div class="gl">🧰 Göstergeler <span>· dokun: aç / kapat</span></div><div class="row sm" id="gost"></div></div>
 <details class="grp g-y"><summary class="gl">👆 Grafiği kullanma</summary><div class="yk">Grafikte: dokun = o noktanın fiyatı ve günün değerleri · basılı tut ve gezdir = artı imleci (yatay çizgi fiyatı gösterir) · sağa/sola kaydır = geçmişe git · iki parmak = yakınlaş/uzaklaş · sağdaki fiyat ekseninde yukarı/aşağı kaydır = mumları uzat/kısalt (yatayda grafiğin her yerinde) · çift dokun = sıfırla</div></details>
@@ -116,7 +118,7 @@ canvas{display:block;width:100%;touch-action:pan-y;-webkit-user-select:none;user
 var ALT=false,KAYNAK_BIST="",ALTIN_URL="https://raw.githubusercontent.com/saidgunbek-rgb/bist-fiyat/main/altin.json";
 var VERI_URL="https://raw.githubusercontent.com/saidgunbek-rgb/bist-fiyat/main/analiz.json";
 var DONEM=[["3A",63],["6A",126],["1Y",250],["2Y",500],["5Y",1250],["10Y",9999]];
-var GOST=[["fib","Fibonacci",1],["vp","Hacim profili",0],["ema","EMA 20/50/100/200",0],["e13","EMA 13",0],["e39","EMA 39",0],["st","Supertrend",0],["hac","Hacim",0],["wt","WaveTrend",1],["rsi","RSI",0]];
+var GOST=[["fib","Fibonacci (1 yıl)",1],["vp","Hacim profili",0],["ema","EMA 20/50/100/200",0],["e13","EMA 13",0],["e39","EMA 39",0],["st","Supertrend",0],["hac","Hacim",0],["wt","WaveTrend",1],["rsi","RSI",0]];
 var EMA_RENK={20:"#f0b429",50:"#4fc3f7",100:"#ab47bc",200:"#ff7043",13:"#26a69a",39:"#ef5350"};
 var FIB=[[0,"#ef5350"],[0.236,"#ef5350"],[0.382,"#ffa726"],[0.5,"#66bb6a"],[0.618,"#26a69a"],[0.786,"#4fc3f7"],[1,"#9a9ab0"]];
 var FIB_DOLGU=["rgba(239,83,80,.13)","rgba(255,167,38,.12)","rgba(102,187,106,.12)","rgba(38,166,154,.12)","rgba(79,195,247,.11)","rgba(154,154,176,.08)"];
@@ -231,12 +233,16 @@ function ciz(){
   for(i=a;i<=b;i++){var ay=CD[i][0].slice(0,7);if(ay!==son){if(son){var xx=X(i);x.strokeStyle="#1e2133";x.beginPath();x.moveTo(xx,8);x.lineTo(xx,HH);x.stroke();
       var etk=["Oca","Şub","Mar","Nis","May","Haz","Tem","Ağu","Eyl","Eki","Kas","Ara"][+ay.slice(5)-1]+(ay.slice(5)==="01"?" "+ay.slice(0,4):""),ew=x.measureText(etk).width;if(xx+2>sonX+8&&xx+2+ew<W){sonX=xx+2+ew;x.fillText(etk,xx+2,C.h-6);}}son=ay;}}
   /* Fibonacci: gorunen donemin en yuksek ve en dusuk degeri */
-  var FL=[];if(ACIK.fib){var fp=FIB.map(function(f){return hi-(hi-lo)*f[0];});
+  /* Fibonacci SABIT araliktan cizilir: son 1 yilin (250 gun) en yuksek ve en dusuk fiyati. Ekrani kaydirmak / yakinlastirmak
+     seviyeleri degistirmez ve degerler asagidaki "Seviyeler" bolumuyle birebir aynidir. (Eskiden gorunen araliga gore cizildigi icin kayiyordu.) */
+  var FL=[];if(ACIK.fib){var fN=D.length-1,fH=-1e9,fLo=1e9,fHd="",fLd="";for(var q=Math.max(0,fN-249);q<=fN;q++){if(D[q][2]>fH){fH=D[q][2];fHd=D[q][0];}if(D[q][3]<fLo){fLo=D[q][3];fLd=D[q][0];}}
+    var cdI=function(t){var l_=0,h_=CD.length-1,r_=0;while(l_<=h_){var m_=(l_+h_)>>1;if(CD[m_][0]<=t){r_=m_;l_=m_+1;}else h_=m_-1;}return r_;};
+    var fp=FIB.map(function(f){return fH-(fH-fLo)*f[0];});
     for(var k=0;k<FIB.length-1;k++){x.fillStyle=FIB_DOLGU[k];x.fillRect(0,Y(fp[k]),W,Y(fp[k+1])-Y(fp[k]));}
     x.textBaseline="bottom";x.font="10.5px Roboto,Arial";
     FIB.forEach(function(f,k){var y=Y(fp[k]);x.strokeStyle=f[1];x.globalAlpha=.85;x.lineWidth=1;x.beginPath();x.moveTo(0,y);x.lineTo(W,y);x.stroke();x.globalAlpha=1;
       FL.push([String(f[0]).replace(".",","),y,f[1],f2(fp[k])]);});
-    x.setLineDash([4,4]);x.strokeStyle="rgba(200,200,220,.35)";x.beginPath();x.moveTo(X(hiI),Y(hi));x.lineTo(X(loI),Y(lo));x.stroke();x.setLineDash([]);}
+    x.setLineDash([4,4]);x.strokeStyle="rgba(200,200,220,.35)";x.beginPath();x.moveTo(X(cdI(fHd)),Y(fH));x.lineTo(X(cdI(fLd)),Y(fLo));x.stroke();x.setLineDash([]);}
   /* hacim profili (gorunen aralik) */
   if(ACIK.vp){var VP=hacimProfili(CD,a,b,40);if(VP){var vmx=Math.max.apply(null,VP.v);
     for(var q=0;q<VP.v.length;q++){var y1=Y(VP.lo+(q+1)*VP.st),y2=Y(VP.lo+q*VP.st),ww=VP.v[q]/vmx*W*0.28;x.fillStyle=q>=VP.al&&q<=VP.ust?"rgba(139,124,246,.30)":"rgba(139,124,246,.13)";x.fillRect(W-ww,y1+0.5,ww,Math.max(1,y2-y1-1));}
@@ -480,7 +486,7 @@ function butonlar(){
   var ks=Object.keys(H.stocks);if(ks.indexOf(SEC)<0)SEC=ks[0];
   var bist=ks.filter(function(k){return !ALTN(k);}),alt=ks.filter(ALTN);
   document.getElementById("hisseler").innerHTML=bist.map(function(k){return'<button data-k="'+esc(k)+'" class="'+(k===SEC?"on":"")+'">'+esc(k)+"</button>";}).join("");
-  document.getElementById("altinkutu").style.display=alt.length?"":"none";document.getElementById("hissekutu").style.display=bist.length?"":"none";
+
   document.getElementById("altinlar").innerHTML=alt.map(function(k){return'<button data-k="'+esc(k)+'" class="'+(k===SEC?"on":"")+'">'+esc(H.stocks[k].ad||k)+"</button>";}).join("");
   document.getElementById("donem").innerHTML=DONEM.map(function(d){return'<button data-d="'+d[1]+'" class="'+(d[1]===DON?"on":"")+'">'+d[0]+"</button>";}).join("");
   document.getElementById("mum").innerHTML=[["g","Günlük mum"],["h","Haftalık mum"]].map(function(m){return'<button data-m="'+m[0]+'" class="'+(MUM===m[0]?"on":"")+'">'+m[1]+"</button>";}).join("");
@@ -552,8 +558,6 @@ function baslat(j){H=j;var ks=Object.keys(j.stocks||{}).filter(function(k){retur
   document.getElementById("kaynak").innerHTML=j.taslak?"":"Veri: "+trD(j.updated)+" kapanışı · Her günün kapanışı üç kaynakla (Yahoo, borsapy, İş Yatırım) karşılaştırılır. Kaynaklar tutmadığında doğru değer, İş Yatırım'ın temettü düzeltme çarpanı çevredeki doğrulanmış günlerden hesaplanarak bulunur; uydurma değer yazılmaz. Sadece borsanın kapalı olduğu günler grafikte yoktur. Göstergeler TradingView'deki formüllerle bu sayfada hesaplanır.";
   sec(SEC&&j.stocks[SEC]?SEC:ks[0]);
   setTimeout(function(){try{TEST=gecmisTest();}catch(e){TEST=null;}degerlendir();},60);}
-if(ALTMOD){document.title="Altın · Gümüş";document.getElementById("baslik").textContent="🥇 Altın · Gümüş";
-  document.getElementById("sub").textContent="Gram ve ons altın, gram ve ons gümüş · günlük mum grafiği · Fibonacci · EMA · Supertrend · WaveTrend";}
 function yukle(u,yerel){return fetch(u+"?t="+Date.now()).then(function(r){if(!r.ok)throw 0;return r.json();}).catch(function(){return fetch(yerel+"?t="+Date.now()).then(function(r){if(!r.ok)throw 0;return r.json();});});}
 var ilk=ALTMOD?(window.ALTIN?Promise.resolve(window.ALTIN):yukle(ALTIN_URL,"altin.json")):(window.VERI?Promise.resolve(window.VERI):yukle(VERI_URL,"analiz.json"));
 ilk.then(baslat).catch(function(){document.getElementById("uyari").innerHTML='<div class="warn">'+(ALTMOD?"Altın verisine":"Analiz verisine")+' şu an ulaşılamadı. İnternet bağlantını kontrol edip sayfayı yenile.</div>';});
