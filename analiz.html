@@ -73,6 +73,7 @@ canvas{display:block;width:100%;touch-action:pan-y;-webkit-user-select:none;user
 .kg{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:8px 0;border-top:1px solid rgba(255,255,255,.08);font-size:13px;line-height:1.55}
 .kg span{display:block;font-size:12px;color:#fff;opacity:.85;margin-bottom:2px}.kg b{color:#fff}.kg i{font-style:normal;font-size:11px;color:#fff;opacity:.7}
 .kdm{background:rgba(245,185,66,.08);border:1px solid rgba(245,185,66,.35);border-radius:14px;padding:10px 12px;margin-top:10px}.kdt{font-weight:700;font-size:14px;color:#fcd34d;margin-bottom:6px}.kdh{background:#1b1d2a;border-radius:10px;padding:8px 10px;margin:6px 0;font-size:12.5px;line-height:1.55}.kds{display:flex;gap:9px;align-items:flex-start;margin:7px 0;font-size:12.5px;line-height:1.45}.kds i{font-style:normal;color:#9a9ab0}.kdn{flex:0 0 22px;height:22px;border-radius:50%;background:#f5b94233;border:1px solid #f5b942;color:#fcd34d;text-align:center;line-height:22px;font-weight:700;font-size:12px}.kdn.x{background:#ef535033;border-color:#ef5350;color:#ff8a87}
+.kdb summary{cursor:pointer;font-weight:700;font-size:13px;color:#fcd34d;list-style:none}.kdb summary span{font-weight:400;font-size:11.5px;color:#9a9ab0}.kdb[open] summary{margin-bottom:6px}.kdb{opacity:.92}
 .kx{font-size:12px;color:#ecebf7;line-height:1.5;padding:8px 10px;border-radius:10px;background:rgba(0,0,0,.18)}.kx b{color:#f1f1f7;font-size:13px}
 .s1{background:linear-gradient(180deg,#1d3550,#182a40);border:1px solid #2d5a85}
 .s2{background:linear-gradient(180deg,#1a3d36,#16302b);border:1px solid #2b6e5f}
@@ -417,7 +418,7 @@ function kararOzet(z,o){var n=D.length-1,c=z.c,E=IND.ema,i,HT=TEST?TEST.h[SEC]:n
     +'<div><span>⬇️ İnebileceği destekler</span>'+(alt2.length?alt2.map(function(x){return'<b>'+f2(x.p)+'</b> <i>'+x.ad+'</i>';}).join("<br>"):'<b>1 yıllık dibin altında</b>')+'</div></div>';
   if(p10!=null)h+='<div class="kx">📏 <b>1 aylık olası aralık: '+f2(c*(1+p10))+' – '+f2(c*(1+p90))+'</b><br>Bu hissenin son 2 yılında 1 aylık fiyat değişimleri 10 seferden 8\'inde %'+f1(p10*100).replace("-","−")+' ile %+'+f1(p90*100)+' arasında kalmış. Tahmin değil, geçmiş oynaklığın bugünkü fiyata uygulanmışı.</div>';
   h+='<div class="lj2" style="margin-top:6px">Bu özet fiyatın plan seviyelerine göre yerini gösterir, yükselecek ya da düşecek demez. Karar senin.</div></div>';
-  document.getElementById("karar").innerHTML=h+(durum.indexOf("DİBE")===0?kademeli(z):"");}
+  document.getElementById("karar").innerHTML=h+kademeli(z);}
 
 /* Kademeli toplama (yalniz "DIBE YAKIN" durumunda): bu urun gecmiste 1 yillik araligin en alt %21'lik bolgesine indiginde
    sonraki 63 islem gununde (yaklasik 3 ay) en cok ne kadar daha dusmus ve 3 ay sonu nerede olmus. Ayni bolgede en az 20 gun arayla ornekler.
@@ -425,15 +426,20 @@ function kararOzet(z,o){var n=D.length-1,c=z.c,E=IND.ema,i,HT=TEST?TEST.h[SEC]:n
 function kademeli(z){var n=D.length-1,c=z.c,ev=[],last=-99,i,j,k;
   for(i=250;i<n-63;i++){var hi=-1e9,lo=1e9;for(j=i-249;j<=i;j++){if(D[j][2]>hi)hi=D[j][2];if(D[j][3]<lo)lo=D[j][3];}
     if(hi>lo&&(D[i][4]-lo)/(hi-lo)<=0.214&&i-last>=20){last=i;var mn=1e9;for(k=i+1;k<=i+63;k++)if(D[k][3]<mn)mn=D[k][3];ev.push([mn/D[i][4]-1,D[i+63][4]/D[i][4]-1]);}}
-  var m=ev.length,pc=function(x){return(x<0?"−":"+")+"%"+f1(Math.abs(x)*100);},cl=function(x){return x<0?"dn":"up";},h='<div class="kdm"><div class="kdt">🪜 Kademeli toplama</div>';
-  if(m>=10){var dd=ev.map(function(e){return e[0];}).sort(function(a,b){return a-b;}),rt=ev.map(function(e){return e[1];}).sort(function(a,b){return a-b;}),pos=0;rt.forEach(function(x){if(x>0)pos++;});
-    h+='<div class="kdh"><b>Geçmişte bu bölgeye inince ne olmuş?</b><br>Bu '+(ALT?"ürün":"hisse")+' geçmişte <b>'+m+' kez</b> 1 yıllık aralığın en alt %21\'lik bölgesine inmiş.<br>Sonraki 3 ayda <b>en çok ek düşüş</b>: ortanca <span class="'+cl(dd[Math.floor(m/2)])+'">'+pc(dd[Math.floor(m/2)])+'</span>, en kötü <span class="dn">'+pc(dd[0])+'</span><br>3 ay sonunda <b>'+pos+' / '+m+'</b> artıda; ortanca getiri <span class="'+cl(rt[Math.floor(m/2)])+'">'+pc(rt[Math.floor(m/2)])+'</span></div>';}
-  else h+='<div class="kdh">Bu '+(ALT?"üründe":"hissede")+' geçmişte bu bölgeye inen yeterli örnek yok ('+m+' kez), bu yüzden geçmiş davranış rakamı yazılmıyor. Aşağıdakiler yalnızca seviyelerdir.</div>';
-  h+='<div class="kds"><span class="kdn">1</span><div><b>Şimdi · '+f2(c)+'</b><br><i>küçük ilk parça</i></div></div>'
-   +'<div class="kds"><span class="kdn">2</span><div><b>1 yıllık dip · '+f2(z.lo)+'</b> <i>('+pc(z.lo/c-1)+')</i><br><i>ikinci parça'+(m>=10?"; ortanca ek düşüşe denk fiyat "+f2(c*(1+[].concat(ev.map(function(e){return e[0];})).sort(function(a,b){return a-b;})[Math.floor(m/2)])):"")+'</i></div></div>'
-   +'<div class="kds"><span class="kdn x">!</span><div><b>'+f2(z.lo-z.atr)+' altı kapanış</b><br><i>dip − 1 ATR; plan bozulur, yeni parça alma</i></div></div>'
-   +'<div class="lj2" style="margin-top:6px">Kaç parça ve ne kadar alacağın sende. Bu tahmin değil, '+(ALT?"ürünün":"hissenin")+' kendi geçmişinin özeti; örnekler aynı dönemlere yığılmış olabilir. Karar senin.</div></div>';
-  return h;}
+  var m=ev.length,pc=function(x){return(x<0?"−":"+")+"%"+f1(Math.abs(x)*100);},cl=function(x){return x<0?"dn":"up";},
+      aktif=c<=z.F(0.786),yeniDip=c<=z.lo*1.003,giris=z.F(0.786),ur=ALT?"ürün":"hisse",h="";
+  if(m>=10){var dd=ev.map(function(e){return e[0];}).sort(function(a,b){return a-b;}),rt=ev.map(function(e){return e[1];}).sort(function(a,b){return a-b;}),pos=0,md=dd[Math.floor(m/2)];rt.forEach(function(x){if(x>0)pos++;});
+    h+='<div class="kdh"><b>Geçmişte bu bölgeye inince ne olmuş?</b><br>Bu '+ur+' geçmişte <b>'+m+' kez</b> 1 yıllık aralığın en alt %21\'lik bölgesine inmiş.<br>Sonraki 3 ayda <b>en çok ek düşüş</b>: ortanca <span class="'+cl(md)+'">'+pc(md)+'</span>, en kötü <span class="dn">'+pc(dd[0])+'</span><br>3 ay sonunda <b>'+pos+' / '+m+'</b> artıda; ortanca getiri <span class="'+cl(rt[Math.floor(m/2)])+'">'+pc(rt[Math.floor(m/2)])+'</span></div>';}
+  else h+='<div class="kdh">Bu '+(ALT?"üründe":"hissede")+' geçmişte bu bölgeye inen yeterli örnek yok ('+m+' kez), bu yüzden geçmiş davranış rakamı yazılmıyor.'+(aktif?' Aşağıdakiler yalnızca seviyelerdir.':'')+'</div>';
+  if(aktif&&!yeniDip){
+    h+='<div class="kds"><span class="kdn">1</span><div><b>Şimdi · '+f2(c)+'</b><br><i>küçük ilk parça</i></div></div>'
+     +'<div class="kds"><span class="kdn">2</span><div><b>1 yıllık dip · '+f2(z.lo)+'</b> <i>('+pc(z.lo/c-1)+')</i><br><i>ikinci parça'+(m>=10?"; ortanca ek düşüşe denk fiyat "+f2(c*(1+dd[Math.floor(m/2)])):"")+'</i></div></div>'
+     +'<div class="kds"><span class="kdn x">!</span><div><b>'+f2(z.lo-z.atr)+' altı kapanış</b><br><i>dip − 1 ATR; plan bozulur, yeni parça alma</i></div></div>';}
+  else if(aktif){h+='<div class="kdh">Fiyat 1 yıllık dibin ya da altında; dayanak olacak bir dip seviyesi yok. Seviye vermiyorum, yeni dip arayışı sürüyor olabilir.</div>';}
+  else{h+='<div class="kdh"><b>Bölgeye inerse seviyeler</b> <i style="color:#9a9ab0;font-style:normal">(şimdi geçerli değil)</i><br>Bölge girişi (Fib 0,786): <b>'+f2(giris)+'</b> <i style="color:#9a9ab0;font-style:normal">(şimdikinin '+pc(giris/c-1)+')</i><br>1 yıllık dip: <b>'+f2(z.lo)+'</b> <i style="color:#9a9ab0;font-style:normal">('+pc(z.lo/c-1)+')</i><br>Zarar kes: <b>'+f2(z.lo-z.atr)+'</b> altı kapanış</div>';}
+  var not='<div class="lj2" style="margin-top:6px">Kaç parça ve ne kadar alacağın sende. Bu tahmin değil, '+(ALT?"ürünün":"hissenin")+' kendi geçmişinin özeti; örnekler aynı dönemlere yığılmış olabilir. Karar senin.</div>';
+  if(aktif)return'<div class="kdm"><div class="kdt">🪜 Kademeli toplama</div>'+h+not+'</div>';
+  return'<details class="kdm kdb"><summary>🪜 Kademeli toplama <span>· bilgi: şu an dibe yakın değil, dibe inince kendiliğinden açılır</span></summary>'+h+not+'</details>';}
 
 /* Altin/gumus seciliyken metinlerdeki "hisse" ifadeleri "urun" olur; BIST hisseleriyle yapilan karsilastirma satirlari gizlenir (altinla hisse ortalamasi karsilastirilmaz) */
 function urunle(){if(!ALT)return;["oneri","karar"].forEach(function(id){var el=document.getElementById(id);if(!el)return;
