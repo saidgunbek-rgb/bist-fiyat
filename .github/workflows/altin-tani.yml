@@ -1,0 +1,67 @@
+name: Altin tani
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  tani:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Kaynaklari karsilastir
+        run: |
+          python3 - <<'PY'
+          import json, datetime, statistics
+          import altin_veri as av
+          def gun(d, k):
+              return (datetime.date.fromisoformat(d) + datetime.timedelta(days=k)).isoformat()
+          def tani(ad, Y, S, tol):
+              sinir = (av.SIMDI - datetime.timedelta(days=370)).strftime("%Y-%m-%d")
+              gunler = [d for d in sorted(Y) if d >= sinir]
+              sonuc = {"gun": len(gunler)}
+              for k in (-1, 0, 1):
+                  t = 0
+                  for d in gunler:
+                      r = S.get(gun(d, k))
+                      if r and min(r[:4]) * (1 - tol) <= Y[d][3] <= max(r[:4]) * (1 + tol):
+                          t += 1
+                  sonuc["kayma_%+d" % k] = t
+              aylar = {}
+              for d in gunler:
+                  if d in S:
+                      aylar.setdefault(d[:7], []).append(Y[d][3] / S[d][3])
+              sonuc["aylik_ortanca_oran"] = {m: round(statistics.median(v), 4) for m, v in sorted(aylar.items())}
+              sonuc["gunluk_hareket_ortalama_yuzde"] = round(statistics.mean(abs(Y[d][3] / Y[gun(d, -1)][3] - 1) * 100 for d in gunler if gun(d, -1) in Y), 2)
+              ornek = []
+              for d in gunler[-90:]:
+                  if d in S:
+                      ornek.append([d, round(Y[d][3], 2), [round(x, 2) for x in S[d][:4]], round(Y[d][3] / S[d][3] - 1, 4)])
+              sonuc["son90_ornek"] = ornek
+              return sonuc
+          out = {}
+          try:
+              Y = av.yahoo("GC=F"); S = av.paxg()
+              out["altin"] = tani("ons", Y, S, 0.01)
+          except Exception as e:
+              out["altin"] = "HATA %s" % e
+          try:
+              Y = av.yahoo("SI=F"); S = av.slv(Y)
+              out["gumus"] = tani("xag", Y, S, 0.015)
+          except Exception as e:
+              out["gumus"] = "HATA %s" % e
+          json.dump(out, open("altin-tani.json", "w"), ensure_ascii=False)
+          print({k: (v if isinstance(v, str) else {x: v[x] for x in v if x not in ("son90_ornek", "aylik_ortanca_oran")}) for k, v in out.items()})
+          PY
+      - name: Kaydet
+        run: |
+          git config user.name "fiyat-bot"
+          git config user.email "fiyat-bot@users.noreply.github.com"
+          git add altin-tani.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Altin tani"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push && exit 0
+            sleep 5
+          done
+          exit 1
