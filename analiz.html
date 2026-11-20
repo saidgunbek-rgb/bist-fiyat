@@ -20,6 +20,8 @@ h1{font-size:23px;margin:4px 0 2px;background:linear-gradient(90deg,#8b7cf6,#f09
 .grp .row{margin-bottom:6px}
 .g-h{background:rgba(79,195,247,.07);border-color:rgba(79,195,247,.28)}.g-h .gl{color:#7dd3fc}
 .g-h .row button.on{background:rgba(79,195,247,.18);color:#7dd3fc;border-color:#4fc3f7}
+.g-a{background:rgba(245,185,66,.07);border-color:rgba(245,185,66,.32)}.g-a .gl{color:#fcd34d}
+.g-a .row button.on{background:rgba(245,185,66,.18);color:#fcd34d;border-color:#f5b942}
 .g-z{background:rgba(38,166,154,.07);border-color:rgba(38,166,154,.30)}.g-z .gl{color:#5eead4}
 .g-z .row button.on{background:rgba(38,166,154,.18);color:#5eead4;border-color:#26a69a}
 .g-g{background:rgba(139,124,246,.07);border-color:rgba(139,124,246,.30)}.g-g .gl{color:#b4a9fb}
@@ -53,6 +55,7 @@ canvas{display:block;width:100%;touch-action:pan-y;-webkit-user-select:none;user
 .ta button,.ta select{font:inherit;font-size:11.5px;padding:4px 9px;border-radius:14px;background:var(--card2);color:var(--mut);border:1px solid transparent;flex:0 0 auto}
 .ta button.on{background:rgba(139,124,246,.2);color:var(--p);border-color:var(--p);font-weight:700}
 .ta button[data-d].on,.ta button[data-m].on{background:rgba(38,166,154,.18);color:#5eead4;border-color:#26a69a}
+.ta select.alt{color:#fcd34d;border-color:#f5b942;background:rgba(245,185,66,.12)}
 .ta select{color:#7dd3fc;border-color:#4fc3f7;background:rgba(79,195,247,.12);font-weight:700}
 .ta i{flex:0 0 1px;height:18px;background:var(--ln);margin:0 2px}
 .yl{list-style:none;padding:0;margin:6px 0 0}.yl li{display:flex;gap:9px;align-items:flex-start;padding:8px 10px;margin:6px 0;border-radius:10px;border-left:3px solid;font-size:13px;line-height:1.5}
@@ -84,10 +87,11 @@ canvas{display:block;width:100%;touch-action:pan-y;-webkit-user-select:none;user
 .src{font-size:11.5px;color:var(--mut);line-height:1.5}
 </style></head><body>
 <a href="./" style="font-size:13.5px">‹ Panele dön</a>
-<h1>📈 Analiz</h1>
+<h1 id="baslik">📈 Analiz</h1>
 <div class="sub" id="sub">Günlük mum grafiği · Fibonacci · EMA · Supertrend · WaveTrend</div>
 <div id="uyari"></div>
-<div class="grp g-h"><div class="gl">🏷️ Hisse</div><div class="row" id="hisseler"></div></div>
+<div class="grp g-h" id="hissekutu"><div class="gl">🏷️ Hisse</div><div class="row" id="hisseler"></div></div>
+<div class="grp g-a" id="altinkutu" style="display:none"><div class="gl">🥇 Altın · Gümüş <span>· uluslararası piyasa fiyatı, kuyumcu fiyatı değil</span></div><div class="row" id="altinlar"></div></div>
 <div class="grp g-z"><div class="gl">🗓️ Dönem ve mum</div><div class="row sm" id="donem"></div><div class="row sm" id="mum"></div></div>
 <div class="grp g-g"><div class="gl">🧰 Göstergeler <span>· dokun: aç / kapat</span></div><div class="row sm" id="gost"></div></div>
 <details class="grp g-y"><summary class="gl">👆 Grafiği kullanma</summary><div class="yk">Grafikte: dokun = o noktanın fiyatı ve günün değerleri · basılı tut ve gezdir = artı imleci (yatay çizgi fiyatı gösterir) · sağa/sola kaydır = geçmişe git · iki parmak = yakınlaş/uzaklaş · sağdaki fiyat ekseninde yukarı/aşağı kaydır = mumları uzat/kısalt (yatayda grafiğin her yerinde) · çift dokun = sıfırla</div></details>
@@ -109,6 +113,7 @@ canvas{display:block;width:100%;touch-action:pan-y;-webkit-user-select:none;user
 <script>
 (function(){
 "use strict";
+var ALT=false,KAYNAK_BIST="",ALTIN_URL="https://raw.githubusercontent.com/saidgunbek-rgb/bist-fiyat/main/altin.json";
 var VERI_URL="https://raw.githubusercontent.com/saidgunbek-rgb/bist-fiyat/main/analiz.json";
 var DONEM=[["3A",63],["6A",126],["1Y",250],["2Y",500],["5Y",1250],["10Y",9999]];
 var GOST=[["fib","Fibonacci",1],["vp","Hacim profili",0],["ema","EMA 20/50/100/200",0],["e13","EMA 13",0],["e39","EMA 39",0],["st","Supertrend",0],["hac","Hacim",0],["wt","WaveTrend",1],["rsi","RSI",0]];
@@ -117,7 +122,9 @@ var FIB=[[0,"#ef5350"],[0.236,"#ef5350"],[0.382,"#ffa726"],[0.5,"#66bb6a"],[0.61
 var FIB_DOLGU=["rgba(239,83,80,.13)","rgba(255,167,38,.12)","rgba(102,187,106,.12)","rgba(38,166,154,.12)","rgba(79,195,247,.11)","rgba(154,154,176,.08)"];
 function ls(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v);}catch(e){return null;}}
 var ACIK={};GOST.forEach(function(g){var s=ls("analiz-g-"+g[0]);ACIK[g[0]]=s==null?!!g[2]:s==="1";});
-var DON=+(ls("analiz-donem")||250)||250,SEC=ls("analiz-sec");
+/* Ayni sayfa iki sekilde acilir: analiz.html = BIST hisseleri, analiz.html?k=altin = altin ve gumus (panelde ayri baglanti) */
+var ALTMOD=/[?&]k=altin/.test(location.search),SECK=ALTMOD?"altin-sec":"analiz-sec";
+var DON=+(ls("analiz-donem")||250)||250,SEC=ls(SECK);
 var D=null,H=null,IND=null,CD=null,CI=null,CROSS=-1,MUM=ls("analiz-mum")||"g";
 function haftalik(d){var o=[],k=null;d.forEach(function(r){var t=new Date(r[0]+"T12:00:00Z"),gn=(t.getUTCDay()+6)%7,pz=new Date(t.getTime()-gn*864e5).toISOString().slice(0,10);
   if(pz!==k){o.push([r[0],r[1],r[2],r[3],r[4],r[5]||0]);k=pz;}else{var w=o[o.length-1];w[2]=Math.max(w[2],r[2]);w[3]=Math.min(w[3],r[3]);w[4]=r[4];w[5]+=r[5]||0;}});return o;}
@@ -236,7 +243,7 @@ function ciz(){
     x.setLineDash([5,3]);x.strokeStyle="#f59e0b";x.lineWidth=1.2;x.beginPath();x.moveTo(0,Y(VP.poc));x.lineTo(W,Y(VP.poc));x.stroke();x.setLineDash([]);
     FL.push(["POC",Y(VP.poc),"#f59e0b",f2(VP.poc)]);}}
   /* hacim */
-  if(ACIK.hac){var vm=0;for(i=a;i<=b;i++)vm=Math.max(vm,CD[i][5]||0);
+  if(ACIK.hac&&!ALT){var vm=0;for(i=a;i<=b;i++)vm=Math.max(vm,CD[i][5]||0);
     if(vm>0)for(i=a;i<=b;i++){var vh=(CD[i][5]||0)/vm*HH*0.16;x.fillStyle=CD[i][4]>=CD[i][1]?"rgba(38,166,154,.35)":"rgba(239,83,80,.35)";x.fillRect(X(i)-bw*0.35,HH-vh,Math.max(1,bw*0.7),vh);}}
   /* cizgi gostergeler */
   function cizgi(arr,renk,gen){x.strokeStyle=renk;x.lineWidth=gen||1.3;x.beginPath();var bas=false;for(var i=a;i<=b;i++){var v=arr[i];if(v==null){bas=false;continue;}if(!bas){x.moveTo(X(i),Y(v));bas=true;}else x.lineTo(X(i),Y(v));}x.stroke();}
@@ -346,7 +353,8 @@ function gecmisTest(){var T={h:{},genel:null},G={taban:[],d:{},run:{},bolge:{b:0
   function bolge(d,n,st,h,kv){var son=Math.min(d.length-1,n+63);for(var j=n;j<=son;j++){if(d[j][3]<=st){kv.f++;return;}if(j>n&&d[j][2]>=h){kv.b++;return;}}kv.s++;}
   function bitir(R){var o={taban:oz(R.taban),d:{},bolge:R.bolge,rast:R.rast,risk:oz(R.risk),riskDus:R.riskDus.length?R.riskDus.reduce(function(x,y){return x+y;},0)/R.riskDus.length:null};
     for(var a in R.d){o.d[a]=oz(R.d[a]);o.d[a].olay=R.run[a]||0;}return o;}
-  for(k in H.stocks){var d=H.stocks[k].d;if(d.length<330)continue;var I=hesapla(d),onc=null,oncD={},bB=-99,bR=-99,bS=-99;
+  for(k in H.stocks){var G0=G;if(ALTN(k))G={taban:[],d:{},run:{},bolge:{b:0,f:0,s:0},rast:{b:0,f:0,s:0},risk:[],riskDus:[]};
+    var d=ALTN(k)?H.stocks[k].d.map(function(r){return[r[0],r[1],r[2],r[3],r[4],1];}):H.stocks[k].d;if(d.length<330){G=G0;continue;}var I=hesapla(d),onc=null,oncD={},bB=-99,bR=-99,bS=-99;
     var R={taban:[],d:{},run:{},bolge:{b:0,f:0,s:0},rast:{b:0,f:0,s:0},risk:[],riskDus:[]};
     for(var n=260;n+63<d.length;n++){var f=d[n+63][4]/d[n][4]-1,sv=seviyeler(d,I,n),o=durumlar(d,I,n,sv.VP);R.taban.push(f);G.taban.push(f);
       for(var a in o){(R.d[a]=R.d[a]||[]).push(f);(G.d[a]=G.d[a]||[]).push(f);if(!oncD[a]){R.run[a]=(R.run[a]||0)+1;G.run[a]=(G.run[a]||0)+1;}}
@@ -354,8 +362,8 @@ function gecmisTest(){var T={h:{},genel:null},G={taban:[],d:{},run:{},bolge:{b:0
         if(onc.alim&&n-bR>20){bR=n;var c0=d[n][1],m=(onc.alim[0]+onc.alim[1])/2;bolge(d,n,c0-(m-onc.stopA),c0+(onc.h1-m),R.rast);bolge(d,n,c0-(m-onc.stopA),c0+(onc.h1-m),G.rast);}
         if(n-bS>20&&d[n-1][4]>=onc.risk&&d[n][4]<onc.risk){bS=n;R.risk.push(f);G.risk.push(f);var mn=1e9;for(var j=n;j<=n+63;j++)mn=Math.min(mn,d[j][3]);R.riskDus.push(mn/d[n][4]-1);G.riskDus.push(mn/d[n][4]-1);}}
       onc=sv;oncD=o;}
-    T.h[k]=bitir(R);T.h[k].yil=((d.length-260)/250);}
-  T.genel=bitir(G);T.hisse=Object.keys(T.h).length;return T;}
+    T.h[k]=bitir(R);T.h[k].yil=((d.length-260)/250);G=G0;}
+  T.genel=bitir(G);T.hisse=Object.keys(T.h).filter(function(k){return !ALTN(k);}).length;return T;}
 function yeterli(s){return s&&s.olay>=ESIK_OLAY&&s.n>=ESIK_GUN;}
 /* hisse sonucu: tabandan (ayni hissenin tum gunleri) 5 puan farkliysa olumlu/olumsuz */
 function sonuc(ad){if(!TEST||!ad)return null;var H_=TEST.h[SEC];if(!H_)return null;var s=H_.d[ad],t=H_.taban;
@@ -404,7 +412,14 @@ function kararOzet(z,o){var n=D.length-1,c=z.c,E=IND.ema,i,HT=TEST?TEST.h[SEC]:n
   h+='<div class="lj2" style="margin-top:6px">Bu özet fiyatın plan seviyelerine göre yerini gösterir, yükselecek ya da düşecek demez. Karar senin.</div></div>';
   document.getElementById("karar").innerHTML=h;}
 
-function degerlendir(){var n=D.length-1,o=durumlar(D,IND,n),z=seviyeler(D,IND,n),c=z.c,E=IND.ema,K=SEC,R1=[],R2=[];
+/* Altin/gumus seciliyken metinlerdeki "hisse" ifadeleri "urun" olur; BIST hisseleriyle yapilan karsilastirma satirlari gizlenir (altinla hisse ortalamasi karsilastirilmaz) */
+function urunle(){if(!ALT)return;["oneri","karar"].forEach(function(id){var el=document.getElementById(id);if(!el)return;
+  Array.prototype.forEach.call(el.querySelectorAll(".gs"),function(g){if(/Karşılaştırma/.test(g.textContent))g.style.display="none";});
+  var w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT),t;while((t=w.nextNode()))t.nodeValue=t.nodeValue.replace(/Bu hissede/g,"Bu üründe").replace(/bu hissede/g,"bu üründe").replace(/Bu hissenin/g,"Bu ürünün").replace(/bu hissenin/g,"bu ürünün").replace(/hissenin/g,"ürünün")
+    .replace(/Kararın temeli değerleme \(karne\) olsun, seviyeler plan için\./g,"Seviyeler plan içindir.").replace(/Hacim yoğunluğu/g,"Fiyat yoğunluğu").replace(/hacim yoğunluğu/g,"fiyat yoğunluğu")
+    .replace(new RegExp("^"+SEC+"(?= ·)"),H.stocks[SEC].ad).replace(/(\d) TL\b/g,H.stocks[SEC].birim==="$"?"$1 $":"$1 TL");});}
+function degerlendir(){try{degerlendir0();}finally{urunle();}}
+function degerlendir0(){var n=D.length-1,o=durumlar(D,IND,n),z=seviyeler(D,IND,n),c=z.c,E=IND.ema,K=SEC,R1=[],R2=[];
   function yz(v){return "%"+f1(Math.abs(v)*100);}
   function sat(L,ik,lb,vl,ton,ds,ad,gec,dot){L.push({ik:ik,lb:lb,vl:vl,ton:ton,ds:ds,ad:ad,gec:gec,dot:dot});}
   var e2=E[200][n],u=e2?c/e2-1:0;
@@ -463,18 +478,24 @@ var RN_={up:"#26a69a",dn:"#ef5350",uy:"#f5b942",nt:"#8b7cf6"};
 /* ---------- Arayuz ---------- */
 function butonlar(){
   var ks=Object.keys(H.stocks);if(ks.indexOf(SEC)<0)SEC=ks[0];
-  document.getElementById("hisseler").innerHTML=ks.map(function(k){return'<button data-k="'+esc(k)+'" class="'+(k===SEC?"on":"")+'">'+esc(k)+"</button>";}).join("");
+  var bist=ks.filter(function(k){return !ALTN(k);}),alt=ks.filter(ALTN);
+  document.getElementById("hisseler").innerHTML=bist.map(function(k){return'<button data-k="'+esc(k)+'" class="'+(k===SEC?"on":"")+'">'+esc(k)+"</button>";}).join("");
+  document.getElementById("altinkutu").style.display=alt.length?"":"none";document.getElementById("hissekutu").style.display=bist.length?"":"none";
+  document.getElementById("altinlar").innerHTML=alt.map(function(k){return'<button data-k="'+esc(k)+'" class="'+(k===SEC?"on":"")+'">'+esc(H.stocks[k].ad||k)+"</button>";}).join("");
   document.getElementById("donem").innerHTML=DONEM.map(function(d){return'<button data-d="'+d[1]+'" class="'+(d[1]===DON?"on":"")+'">'+d[0]+"</button>";}).join("");
   document.getElementById("mum").innerHTML=[["g","Günlük mum"],["h","Haftalık mum"]].map(function(m){return'<button data-m="'+m[0]+'" class="'+(MUM===m[0]?"on":"")+'">'+m[1]+"</button>";}).join("");
   var KIS={fib:"Fib",vp:"Profil",ema:"EMA",e13:"E13",e39:"E39",st:"ST",hac:"Hacim",wt:"WT",rsi:"RSI"};
-  document.getElementById("ta").innerHTML='<select id="tsec">'+ks.map(function(k){return'<option'+(k===SEC?" selected":"")+'>'+esc(k)+"</option>";}).join("")+"</select><i></i>"
+  document.getElementById("ta").innerHTML='<select id="tsec"'+(ALTN(SEC)?' class="alt"':'')+'>'+ks.map(function(k){return'<option value="'+esc(k)+'"'+(k===SEC?" selected":"")+'>'+esc(ALTN(k)?H.stocks[k].ad:k)+"</option>";}).join("")+"</select><i></i>"
     +DONEM.map(function(d){return'<button data-d="'+d[1]+'" class="'+(d[1]===DON?"on":"")+'">'+d[0]+"</button>";}).join("")+"<i></i>"
     +[["g","Gün"],["h","Hafta"]].map(function(m){return'<button data-m="'+m[0]+'" class="'+(MUM===m[0]?"on":"")+'">'+m[1]+"</button>";}).join("")+"<i></i>"
     +GOST.map(function(g){return'<button data-g="'+g[0]+'" class="'+(ACIK[g[0]]?"on":"")+'">'+KIS[g[0]]+"</button>";}).join("");
   var NOK={fib:"#f59e0b",vp:"#8b7cf6",ema:"conic-gradient(#f0b429 0 25%,#4fc3f7 0 50%,#ab47bc 0 75%,#ff7043 0)",e13:"#26a69a",e39:"#ef5350",st:"linear-gradient(90deg,#26a69a 50%,#ef5350 50%)",hac:"#9a9ab0",wt:"linear-gradient(90deg,#26a69a 50%,#ef5350 50%)",rsi:"#b39ddb"};
   document.getElementById("gost").innerHTML=GOST.map(function(g){return'<button data-g="'+g[0]+'" class="'+(ACIK[g[0]]?"on":"")+'"><i style="background:'+NOK[g[0]]+'"></i>'+g[1]+"</button>";}).join("");}
-function sec(k){SEC=k;ls("analiz-sec",k);var s=H.stocks[k];D=s.d;IND=hesapla(D);grafikVeri();
-  document.getElementById("ad").textContent=k+(s.ad?" · "+s.ad:"");document.getElementById("fiyat").textContent=f2(D[D.length-1][4])+" TL";
+function ALTN(k){return !!(H&&H.stocks[k]&&H.stocks[k].grup==="altin");}
+/* Altin/gumus: hacim verisi guvenilir degil (vadeli kontrat), bu yuzden hacim profili fiyatta gecirilen gun sayisina gore (her gun 1) hesaplanir */
+function sec(k){SEC=k;ls(SECK,k);var s=H.stocks[k];ALT=ALTN(k);D=ALT?s.d.map(function(r){return[r[0],r[1],r[2],r[3],r[4],1];}):s.d;IND=hesapla(D);grafikVeri();
+  document.getElementById("ad").textContent=ALT?s.ad:k+(s.ad?" · "+s.ad:"");document.getElementById("fiyat").textContent=(s.birim==="$"?"$":"")+f2(D[D.length-1][4])+(s.birim==="$"?"":" TL");
+  var kn=document.getElementById("kaynak");if(kn){if(!KAYNAK_BIST)KAYNAK_BIST=kn.innerHTML;kn.innerHTML=ALT?"Veri: "+trD(s.son)+" · Ons fiyatları Yahoo'nun sürekli vadeli kontratından (altın GC=F, gümüş SI=F); gram = ons × dolar/TL ÷ 31,1035. Son gün, piyasa açıkken gün içi değerdir. Hacim verisi kullanılmaz; hacim profili fiyatta geçen gün sayısıyla hesaplanır.":KAYNAK_BIST;}
   butonlar();ciz();ozet();degerlendir();}
 document.addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;
   if(b.id==="yatay"){yatayAc();return;}if(b.id==="kapat"){yatayKapat();return;}
@@ -525,14 +546,16 @@ document.addEventListener("touchstart",function(e){if((CROSS>=0||CPY!=null)&&!e.
 window.addEventListener("resize",function(){if(TAM){var k=document.getElementById("kart");DONDUR=DONDUR&&window.innerHeight>window.innerWidth;k.classList.toggle("dondur",DONDUR);}ciz();});
 
 function baslat(j){H=j;var ks=Object.keys(j.stocks||{}).filter(function(k){return (j.stocks[k].d||[]).length>30;});
-  if(!ks.length){document.getElementById("uyari").innerHTML='<div class="warn">Henüz analiz verisi yok. İlk otomatik güncelleme hafta içi 19:07\'de çalışır.</div>';return;}
+  if(!ks.length){document.getElementById("uyari").innerHTML='<div class="warn">'+(ALTMOD?"Henüz altın verisi yok. Otomatik güncelleme hafta içi gece 00:37'de çalışır.":"Henüz analiz verisi yok. İlk otomatik güncelleme hafta içi 19:07\'de çalışır.")+'</div>';return;}
   if(j.taslak)document.getElementById("uyari").innerHTML='<div class="warn">'+esc(j.taslak)+'</div>';
   else if(j.updated){var gun=(Date.now()-new Date(j.updated+"T19:00:00+03:00").getTime())/864e5;if(gun>4)document.getElementById("uyari").innerHTML='<div class="warn">Analiz verisi '+trD(j.updated)+' tarihli. Otomatik güncelleme birkaç gündür çalışmamış olabilir.</div>';}
   document.getElementById("kaynak").innerHTML=j.taslak?"":"Veri: "+trD(j.updated)+" kapanışı · Her günün kapanışı üç kaynakla (Yahoo, borsapy, İş Yatırım) karşılaştırılır. Kaynaklar tutmadığında doğru değer, İş Yatırım'ın temettü düzeltme çarpanı çevredeki doğrulanmış günlerden hesaplanarak bulunur; uydurma değer yazılmaz. Sadece borsanın kapalı olduğu günler grafikte yoktur. Göstergeler TradingView'deki formüllerle bu sayfada hesaplanır.";
   sec(SEC&&j.stocks[SEC]?SEC:ks[0]);
   setTimeout(function(){try{TEST=gecmisTest();}catch(e){TEST=null;}degerlendir();},60);}
-if(window.VERI)baslat(window.VERI);
-else fetch(VERI_URL+"?t="+Date.now()).then(function(r){if(!r.ok)throw 0;return r.json();}).catch(function(){return fetch("analiz.json?t="+Date.now()).then(function(r){if(!r.ok)throw 0;return r.json();});})
-  .then(baslat).catch(function(){document.getElementById("uyari").innerHTML='<div class="warn">Analiz verisine şu an ulaşılamadı. İnternet bağlantını kontrol edip sayfayı yenile.</div>';});
+if(ALTMOD){document.title="Altın · Gümüş";document.getElementById("baslik").textContent="🥇 Altın · Gümüş";
+  document.getElementById("sub").textContent="Gram ve ons altın, gram ve ons gümüş · günlük mum grafiği · Fibonacci · EMA · Supertrend · WaveTrend";}
+function yukle(u,yerel){return fetch(u+"?t="+Date.now()).then(function(r){if(!r.ok)throw 0;return r.json();}).catch(function(){return fetch(yerel+"?t="+Date.now()).then(function(r){if(!r.ok)throw 0;return r.json();});});}
+var ilk=ALTMOD?(window.ALTIN?Promise.resolve(window.ALTIN):yukle(ALTIN_URL,"altin.json")):(window.VERI?Promise.resolve(window.VERI):yukle(VERI_URL,"analiz.json"));
+ilk.then(baslat).catch(function(){document.getElementById("uyari").innerHTML='<div class="warn">'+(ALTMOD?"Altın verisine":"Analiz verisine")+' şu an ulaşılamadı. İnternet bağlantını kontrol edip sayfayı yenile.</div>';});
 })();
 </script></body></html>
