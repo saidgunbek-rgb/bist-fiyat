@@ -517,9 +517,9 @@ function butonlar(){
   document.getElementById("ta").innerHTML='<select id="tsec"'+(ALTN(SEC)?' class="alt"':'')+'>'+ks.map(function(k){return'<option value="'+esc(k)+'"'+(k===SEC?" selected":"")+'>'+esc(ALTN(k)?H.stocks[k].ad:k)+"</option>";}).join("")+"</select><i></i>"
     +DONEM.map(function(d){return'<button data-d="'+d[1]+'" class="'+(d[1]===DON?"on":"")+'">'+d[0]+"</button>";}).join("")+"<i></i>"
     +[["g","Gün"],["h","Hafta"]].map(function(m){return'<button data-m="'+m[0]+'" class="'+(MUM===m[0]?"on":"")+'">'+m[1]+"</button>";}).join("")+"<i></i>"
-    +GOST.map(function(g){return'<button data-g="'+g[0]+'" class="'+(ACIK[g[0]]?"on":"")+'">'+KIS[g[0]]+"</button>";}).join("");
+    +GOST.filter(function(g){return !(ALT&&g[0]==="hac");}).map(function(g){return'<button data-g="'+g[0]+'" class="'+(ACIK[g[0]]?"on":"")+'">'+KIS[g[0]]+"</button>";}).join("");
   var NOK={fib:"#f59e0b",vp:"#8b7cf6",ema:"conic-gradient(#f0b429 0 25%,#4fc3f7 0 50%,#ab47bc 0 75%,#ff7043 0)",e13:"#26a69a",e39:"#ef5350",st:"linear-gradient(90deg,#26a69a 50%,#ef5350 50%)",hac:"#9a9ab0",wt:"linear-gradient(90deg,#26a69a 50%,#ef5350 50%)",rsi:"#b39ddb"};
-  document.getElementById("gost").innerHTML=GOST.map(function(g){return'<button data-g="'+g[0]+'" class="'+(ACIK[g[0]]?"on":"")+'"><i style="background:'+NOK[g[0]]+'"></i>'+g[1]+"</button>";}).join("");}
+  document.getElementById("gost").innerHTML=GOST.filter(function(g){return !(ALT&&g[0]==="hac");}).map(function(g){return'<button data-g="'+g[0]+'" class="'+(ACIK[g[0]]?"on":"")+'"><i style="background:'+NOK[g[0]]+'"></i>'+g[1]+"</button>";}).join("");}
 function ALTN(k){return !!(H&&H.stocks[k]&&H.stocks[k].grup==="altin");}
 /* Altin/gumus: hacim verisi guvenilir degil (vadeli kontrat), bu yuzden hacim profili fiyatta gecirilen gun sayisina gore (her gun 1) hesaplanir */
 function sec(k){SEC=k;ls(SECK,k);var s=H.stocks[k];ALT=ALTN(k);D=ALT?s.d.map(function(r){return[r[0],r[1],r[2],r[3],r[4],1];}):s.d;IND=hesapla(D);grafikVeri();
