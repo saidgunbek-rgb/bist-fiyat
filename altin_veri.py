@@ -137,7 +137,10 @@ def main():
                 k = K.get(r[0])
                 if not k:
                     continue  # o gun kur yoksa gram uydurulmaz
-                g.append([r[0]] + [round(r[i] * k[i] / GRAM, 3 if ons == "XAG" else 2) for i in (1, 2, 3, 4)] + [0])
+                o_, h_, l_, c_ = [r[i] * k[i] / GRAM for i in (1, 2, 3, 4)]
+                # ons ve kur mumlari ayni anda tepe/dip yapmaz; carpimdan cikan yuksek/dusuk, acilis ve kapanisin disina tasmasin
+                h_, l_ = max(o_, h_, l_, c_), min(o_, h_, l_, c_)
+                g.append([r[0]] + [round(x, 3 if ons == "XAG" else 2) for x in (o_, h_, l_, c_)] + [0])
             if len(g) >= 250:
                 stocks[gk] = {"ad": gad, "grup": "altin", "birim": "TL", "d": g, "son": g[-1][0]}
                 stocks[ons]["kur_son"] = kur[-1][4]
