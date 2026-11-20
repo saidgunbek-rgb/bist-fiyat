@@ -19,7 +19,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  KUTUPHANE: [THYAO, AKBNK, MGROS, BIMAS, TCELL, YKBNK, GARAN, ASELS, FROTO, KCHOL, ISCTR, PGSUS, TUPRS]
+  KUTUPHANE: "THYAO=Türk Hava Yolları=Havayolu,AKBNK=Akbank=Banka,MGROS=Migros=Perakende,BIMAS=BİM Birleşik Mağazalar=Perakende,TCELL=Turkcell=İletişim,YKBNK=Yapı ve Kredi Bankası=Banka,GARAN=Garanti BBVA=Banka,ASELS=Aselsan=Savunma,FROTO=Ford Otosan=Otomotiv,KCHOL=Koç Holding=Holding,ISCTR=Türkiye İş Bankası=Banka,PGSUS=Pegasus Hava Taşımacılığı=Havayolu,TUPRS=Tüpraş=Enerji"
 
 jobs:
   hisse:
