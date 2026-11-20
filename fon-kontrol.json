@@ -15,12 +15,12 @@
    "search_funds(HISSE): 1000 kayit, 0 yeni fon",
    "ornek alanlar: ['fund_code', 'name', 'fund_type', 'return_1y']",
    "Toplam aday fon: 2374",
-   "Enflasyon: {'y': 29.77, 't': '2026-11-19', 'k': 'borsapy:latest'}",
-   "BIST100 kaynaklar: {'yahoo': {'a1': -0.26, 'a3': -21.16, 'a6': -18.74, 'y1': 4.55, 'y3': 45.16, 'y5': 556.2, '_risk': {'mdd': -28.9, 'vol': 23.22}, 'd1': -0.67, '_d1t': '2026-11-19'}, 'borsapy': {'a1': -0.26, 'a3': -21.16, 'a6': -18.74, 'y1': 4.55, 'y3': 45.16, 'y5': 556.18, '_risk': {'mdd': -28.9, ",
-   "BIST100 (teyitli): {'a1': -0.26, 'a3': -21.16, 'a6': -18.74, 'y1': 4.55, 'y3': 45.16, 'y5': 556.18, 'd1': -0.67, 'mdd': -28.9, 'vol': 23.22, 'reel_y1': -19.43}",
-   "Sorgulanacak fon: 133",
-   "Listeye giren: 41 | Atlanan: {'hisse fonu değil': 1854, 'banka fonu değil': 387, 'yabancı hisse fonu': 6, 'serbest fon': 30, 'getirisi teyit edilemeyen': 3, '10 milyon TL altı küçük fon': 1, 'verisi alınamayan': 52}",
-   "Grafik verisi: 41 fon, BIST100 1261 gun"
+   "Enflasyon: {'y': 29.77, 't': '2026-11-20', 'k': 'borsapy:latest'}",
+   "BIST100 kaynaklar: {'yahoo': {'a1': -5.65, 'a3': -22.68, 'a6': -20.56, 'y1': 1.38, 'y3': 40.08, 'y5': 540.73, '_risk': {'mdd': -28.9, 'vol': 25.56}, 'd1': -2.36, '_d1t': '2026-11-20'}, 'borsapy': {'a1': -5.65, 'a3': -22.68, 'a6': -20.56, 'y1': 1.38, 'y3': 40.08, 'y5': 540.71, '_risk': {'mdd': -28.9,",
+   "BIST100 (teyitli): {'a1': -5.65, 'a3': -22.68, 'a6': -20.56, 'y1': 1.38, 'y3': 40.08, 'y5': 540.71, 'd1': -2.36, 'mdd': -28.9, 'vol': 25.55, 'reel_y1': -21.88}",
+   "Sorgulanacak fon: 135",
+   "Listeye giren: 72 | Atlanan: {'hisse fonu değil': 1854, 'banka fonu değil': 385, 'yabancı hisse fonu': 9, 'serbest fon': 49, 'getirisi teyit edilemeyen': 4, 'işleme kapalı (fiyatı güncel değil)': 1}",
+   "Grafik verisi: 72 fon, BIST100 1259 gun"
   ],
   "banka_disi_kurucular": {
    "ATA": 5,
@@ -84,7 +84,6 @@
    "SPARTA": 5,
    "TACIRLER": 2,
    "AURA": 1,
-   "V": 2,
    "VAKIF KATILIM": 1,
    "VEGA": 1
   }
@@ -2325,9 +2324,7 @@
    "TYH",
    "UHS",
    "UPH",
-   "VHK",
    "VHS",
-   "VPH",
    "VPS",
    "YHY",
    "YLZ",
@@ -2341,7 +2338,10 @@
    "AFT",
    "AFV",
    "AOY",
-   "GUH"
+   "GUH",
+   "TMG",
+   "YAY",
+   "ZSF"
   ],
   "serbest fon": [
    "AIH",
@@ -2372,70 +2372,36 @@
    "IAI",
    "IGZ",
    "IPA",
-   "LTC",
-   "MGD"
-  ],
-  "getirisi teyit edilemeyen": [
-   "BLH",
-   "BND",
-   "BOE"
-  ],
-  "10 milyon TL altı küçük fon": [
-   "KHO"
-  ],
-  "verisi alınamayan": [
    "LFD",
-   "MDL",
+   "LTC",
    "MGB",
+   "MGD",
    "MLT",
    "MTG",
    "MU1",
    "MUT",
-   "NST",
    "PKH",
-   "PMG",
-   "PSH",
-   "SAS",
-   "SSS",
    "SVY",
-   "TAU",
    "THH",
-   "TI2",
-   "TI3",
-   "TIE",
-   "TIL",
-   "TMG",
-   "TPR",
-   "TTE",
    "TTZ",
-   "TZD",
    "UCN",
-   "VAY",
-   "YAS",
-   "YAY",
    "YCP",
-   "YDI",
-   "YEF",
-   "YHB",
    "YHI",
-   "YHK",
-   "YHS",
-   "YHZ",
-   "YLE",
-   "YLY",
    "YMH",
    "YUB",
    "ZBN",
    "ZBO",
-   "ZHH",
-   "ZJL",
    "ZJR",
-   "ZJV",
-   "ZLH",
-   "ZPE",
-   "ZPJ",
-   "ZSF",
-   "ZTV"
+   "ZPJ"
+  ],
+  "getirisi teyit edilemeyen": [
+   "BLH",
+   "BND",
+   "BOE",
+   "MDL"
+  ],
+  "işleme kapalı (fiyatı güncel değil)": [
+   "KHO"
   ]
  }
 }
