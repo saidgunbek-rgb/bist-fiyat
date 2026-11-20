@@ -124,7 +124,13 @@ function yatayKapat(){var k=document.getElementById("kart");TAM=false;DONDUR=fal
   CROSS=-1;setTimeout(ciz,60);}
 document.addEventListener("fullscreenchange",function(){if(!document.fullscreenElement&&TAM)yatayKapat();else ciz();});
 var VIEW=null,PS={k:1},CPY=null,CPF=null,BASILI=null;
-function grafikVeri(){CD=MUM==="h"?haftalik(D):D;CI=MUM==="h"?hesapla(CD):IND;CROSS=-1;CPY=null;VIEW=null;PS.k=1;}
+/* Grafigin son hali (kaydirma, yakinlastirma, dikey olcek) her hisse ve mum tipi icin ayri saklanir; sayfa tekrar acilinca ayni yerden devam eder.
+   Sag kenar "sondan kac mum" olarak saklanir: en sondaysan yeni gun eklenince de en son mum sagda kalir. Donem dugmesi ya da cift dokunus sifirlar. */
+function GK(){return "analiz-gor-"+SEC+"-"+MUM;}
+function grafikVeri(sifirla){CD=MUM==="h"?haftalik(D):D;CI=MUM==="h"?hesapla(CD):IND;CROSS=-1;CPY=null;VIEW=null;PS.k=1;
+  if(sifirla){ls(GK(),"");return;}
+  try{var o=JSON.parse(ls(GK())||"null");if(o&&o.n){var L=CD.length;sinirla(Math.min(o.n,L),L-1-Math.max(0,o.s||0));}if(o&&o.k>0)PS.k=Math.max(0.15,Math.min(6,o.k));}catch(e){}}
+function gorKaydet(){var v=VIEW||PS.k!==1?JSON.stringify(VIEW?{n:VIEW.n,s:CD.length-1-VIEW.e,k:PS.k}:{k:PS.k}):"";if(ls(GK())!==v&&!(v===""&&!ls(GK())))ls(GK(),v);}
 function f2(x){return x==null||!isFinite(x)?"–":x.toLocaleString("tr-TR",{minimumFractionDigits:2,maximumFractionDigits:2});}
 function f1(x){return x==null||!isFinite(x)?"–":x.toLocaleString("tr-TR",{minimumFractionDigits:1,maximumFractionDigits:1});}
 function trD(d){return d?d.split("-").reverse().join("."):"";}
@@ -225,11 +231,11 @@ function ciz(){
   function cizgi(arr,renk,gen){x.strokeStyle=renk;x.lineWidth=gen||1.3;x.beginPath();var bas=false;for(var i=a;i<=b;i++){var v=arr[i];if(v==null){bas=false;continue;}if(!bas){x.moveTo(X(i),Y(v));bas=true;}else x.lineTo(X(i),Y(v));}x.stroke();}
   if(ACIK.ema)[200,100,50,20].forEach(function(n){cizgi(CI.ema[n],EMA_RENK[n]);});
   if(ACIK.e13)cizgi(CI.ema[13],EMA_RENK[13],1.4);if(ACIK.e39)cizgi(CI.ema[39],EMA_RENK[39],1.4);
-  /* EMA13 / EMA39 kesisimi: 13, 39'u yukari keserse AL (yesil ucgen mumun altinda), asagi keserse SAT (kirmizi ucgen mumun ustunde) */
+  /* EMA13 / EMA39 kesisimi: 13, 39'u yukari keserse yesil ucgen (mumun altinda), asagi keserse kirmizi ucgen (mumun ustunde); yazi yok */
   if(ACIK.e13&&ACIK.e39){var E1=CI.ema[13],E3=CI.ema[39];x.font="bold 9.5px Roboto,Arial";x.textAlign="center";
     for(var k=Math.max(a,1);k<=b;k++){if(E1[k]==null||E3[k]==null||E1[k-1]==null||E3[k-1]==null)continue;var d0=E1[k-1]-E3[k-1],d1=E1[k]-E3[k],kx=X(k);
-      if(d0<=0&&d1>0){var ky=Y(CD[k][3])+6;x.fillStyle="#26a69a";x.beginPath();x.moveTo(kx,ky);x.lineTo(kx-5,ky+8);x.lineTo(kx+5,ky+8);x.fill();x.textBaseline="top";x.strokeStyle="#12131c";x.lineWidth=3;x.strokeText("AL",kx,ky+9);x.fillText("AL",kx,ky+9);}
-      else if(d0>=0&&d1<0){var ky=Y(CD[k][2])-6;x.fillStyle="#ef5350";x.beginPath();x.moveTo(kx,ky);x.lineTo(kx-5,ky-8);x.lineTo(kx+5,ky-8);x.fill();x.textBaseline="bottom";x.strokeStyle="#12131c";x.lineWidth=3;x.strokeText("SAT",kx,ky-9);x.fillText("SAT",kx,ky-9);}}
+      if(d0<=0&&d1>0){var ky=Y(CD[k][3])+6;x.fillStyle="#26a69a";x.beginPath();x.moveTo(kx,ky);x.lineTo(kx-5,ky+8);x.lineTo(kx+5,ky+8);x.fill();x.textBaseline="top";}
+      else if(d0>=0&&d1<0){var ky=Y(CD[k][2])-6;x.fillStyle="#ef5350";x.beginPath();x.moveTo(kx,ky);x.lineTo(kx-5,ky-8);x.lineTo(kx+5,ky-8);x.fill();x.textBaseline="bottom";}}
     x.textAlign="left";}
   if(ACIK.st){x.lineWidth=1.6;for(i=Math.max(a+1,1);i<=b;i++){if(CI.st[i]==null||CI.st[i-1]==null||CI.styon[i]!==CI.styon[i-1])continue;x.strokeStyle=CI.styon[i]===1?"#26a69a":"#ef5350";x.beginPath();x.moveTo(X(i-1),Y(CI.st[i-1]));x.lineTo(X(i),Y(CI.st[i]));x.stroke();}}
   /* mumlar */
@@ -256,7 +262,7 @@ function ciz(){
     x.fillStyle="#e6e6ee";x.fillRect(W,CPY-10,EKS,20);x.fillStyle="#12131c";x.font="bold 11px Roboto,Arial";x.textBaseline="middle";x.fillText(f2(fy),W+4,CPY);
     var son_c=CD[CD.length-1][4],fk=(fy/son_c-1)*100;x.font="10px Roboto,Arial";var tt=(fk>=0?"+":"")+f1(fk)+"% son fiyata göre",tw=x.measureText(tt).width;x.fillStyle="rgba(18,19,28,.85)";x.fillRect(W-tw-8,CPY-17,tw+6,14);x.fillStyle=fk>=0?"#34d399":"#f87171";x.textBaseline="bottom";x.fillText(tt,W-tw-5,CPY-4);}
   else CPF=null;
-  cizWT(a,b,bw);cizRSI(a,b,bw);legend();}
+  cizWT(a,b,bw);cizRSI(a,b,bw);legend();gorKaydet();}
 function cizWT(a,b,bw){var cv=document.getElementById("wt");cv.style.display=ACIK.wt?"block":"none";document.getElementById("wtt").style.display=ACIK.wt?"block":"none";if(!ACIK.wt)return;
   var C=hazirla(cv,TAM?96:150),x=C.x,W=C.w-EKS,HH=C.h-4,mx=70,mn=-70,i;
   for(i=a;i<=b;i++){[CI.wt1[i],CI.wt2[i]].forEach(function(v){if(v!=null){mx=Math.max(mx,v+5);mn=Math.min(mn,v-5);}});}
@@ -467,7 +473,7 @@ function sec(k){SEC=k;ls("analiz-sec",k);var s=H.stocks[k];D=s.d;IND=hesapla(D);
 document.addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;
   if(b.id==="yatay"){yatayAc();return;}if(b.id==="kapat"){yatayKapat();return;}
   if(b.dataset.k){sec(b.dataset.k);}
-  else if(b.dataset.d){DON=+b.dataset.d;ls("analiz-donem",DON);if(DON>=500)MUM="h";else if(DON<=126)MUM="g";ls("analiz-mum",MUM);grafikVeri();butonlar();ciz();}
+  else if(b.dataset.d){DON=+b.dataset.d;ls("analiz-donem",DON);if(DON>=500)MUM="h";else if(DON<=126)MUM="g";ls("analiz-mum",MUM);grafikVeri(true);butonlar();ciz();}
   else if(b.dataset.m){MUM=b.dataset.m;ls("analiz-mum",MUM);grafikVeri();butonlar();ciz();}
   else if(b.dataset.g){var g=b.dataset.g;ACIK[g]=!ACIK[g];ls("analiz-g-"+g,ACIK[g]?"1":"0");butonlar();ciz();}});
 document.addEventListener("change",function(e){if(e.target&&e.target.id==="tsec")sec(e.target.value);});
