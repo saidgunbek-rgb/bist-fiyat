@@ -17,7 +17,7 @@ LISTE = {
 }
 KUR = (["TRY=X", "USDTRY=X"], "ecb")
 SPOT = {"ONS": "XAU", "XAG": "XAG"}
-TOL = {"ONS": 0.02, "XAG": 0.03, "USDTRY": 0.01}  # farkli arac/saat oldugu icin altinda %2, gumusde %3, kurda %1
+TOL = {"ONS": 0.01, "XAG": 0.015, "USDTRY": 0.01}  # gunluk aralik disinda kalma payi: altinda %1, gumusde %1,5, kurda %1
 
 
 def sayi(x):
@@ -140,10 +140,13 @@ def birlestir(Y, S, log, tol):
         r = ana[d]
         if yedek and d >= sinir:
             if d in yedek:
-                if abs(yedek[d][3] / r[3] - 1) <= tol:
+                # Iki kaynagin kapanis saati farkli (vadeli ~19:30 TR, token gunu 03:00 TR'de kapanir, ETF 18:00 TR'de):
+                # Yahoo kapanisi, yedegin O GUNKU dusuk-yuksek araliginin (tolerans payiyla) icinde mi diye bakilir.
+                alt, ust = min(yedek[d][:4]), max(yedek[d][:4])
+                if alt * (1 - tol) <= r[3] <= ust * (1 + tol):
                     ayni += 1
                 else:
-                    fark.append([d, round(r[3], 4), round(yedek[d][3], 4)])
+                    fark.append([d, round(r[3], 4), round(alt, 4), round(ust, 4)])
             else:
                 yok += 1
         seri.append([d] + [round(x, 4) for x in r[:4]] + [int(r[4] or 0)])
