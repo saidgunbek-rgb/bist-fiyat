@@ -89,6 +89,8 @@ canvas{display:block;width:100%;touch-action:pan-y;-webkit-user-select:none;user
 .lj2{font-size:11px;color:#bfb08a;margin:4px 0 4px}
 .tum{background:var(--card);border-radius:12px;padding:10px 12px;margin-bottom:10px}.tum summary{font-size:13.5px;font-weight:700;cursor:pointer}.tum .bx{padding:0}
 .src{font-size:11.5px;color:var(--mut);line-height:1.5}
+.onb{margin-top:6px}.onl{display:flex;gap:10px;padding:9px 0 9px 8px;margin-top:7px;border-left:3px solid;background:#111;border-radius:0 10px 10px 0;font-size:13px;color:#fff}.onn{flex:0 0 22px;height:22px;border-radius:50%;color:#000;font-weight:800;text-align:center;line-height:22px;font-size:12px}.onv{flex:1}.onv>b{font-size:15px}.onv div{font-size:12px;margin-top:2px}.onp{font-size:12px;font-weight:400;color:#fff}.onr{color:#f87171}.ong{color:#4ade80}
+.ong2{background:#111;border:1px solid #333;border-radius:12px;padding:9px 10px;margin-top:10px;color:#fff}.ongt{font-weight:800;font-size:13px;color:#c4b5fd;margin-bottom:4px}.onsr{display:flex;justify-content:space-between;gap:8px;font-size:12px;padding:3px 0;border-top:1px solid #222}.onsr span:first-child{color:#c4b5fd;white-space:nowrap}.onsr span:last-child{text-align:right}
 </style></head><body>
 <a href="./" style="font-size:13.5px">‹ Panele dön</a>
 <h1 id="baslik"><span class="t-bist">📈 Analiz</span><span class="t-alt">🥇 Altın · Gümüş</span></h1>
@@ -402,18 +404,33 @@ function kararOzet(z,o){var n=D.length-1,c=z.c,E=IND.ema,i,HT=TEST?TEST.h[SEC]:n
   else if(c>z.lo*1.003){durum="DİBE YAKIN · DİKKAT";renk="#fb923c";ac="Fiyat son 1 yılın en alt bölgesinde (Fib 0,786 altı). 1 yıllık dip "+f2(z.lo)+", %"+f1((1-z.lo/c)*100)+" aşağıda.";}
   else{durum="ZAYIF · YENİ DİP";renk="#f87171";ac="Fiyat son 1 yılın dibinde ya da altında; yeni dip arayışı sürebilir.";}
   if(riskAlti&&durum.indexOf("ZAYIF")<0){ac+=" Risk seviyesi ("+f2(z.risk)+") altında kapandı.";}
-  var yok,var_;
+  var yok,var_,onayH='';
   if(durum==="ALIM BÖLGESİNDE"){yok="Planına göre alınabilir bölge. Zarar kes "+f2(z.stopA)+" altı kapanış, ilk hedef "+(ust[0]?f2(ust[0].p):f2(z.h1))+".";}
   else if(durum.indexOf("BEKLE")===0){yok="Alım için "+f2(z.alim[1])+" ve altına gelmesi beklenebilir"+(z.kes?" (en güçlü kısım "+f2(z.kes[0])+" – "+f2(z.kes[1])+")":"")+". Şimdi alınırsa risk/getiri daha zayıf.";}
-  else if(durum.indexOf("DİBE")===0){yok="Erken alım riskli. Dibin ("+f2(z.lo)+") tutunup fiyatın "+f2(z.F(0.786))+" üstüne çıkması beklenebilir; bu bölgeden alınırsa zarar kes "+f2(z.lo-z.atr)+" altı kapanış.";}
+  else if(durum.indexOf("DİBE")===0){yok="Erken. Dip ("+f2(z.lo)+") henüz tutunmadı; kademeli onay bekle:";
+    var stp=z.lo-z.atr,y3=Math.max(D[n][4],D[n-1][4],D[n-2][4]),pcs=function(x){return(x<0?"−":"+")+"%"+f1(Math.abs(x)*100);},
+    LV=[{p:z.F(0.786),a:"Fib 0,786"},{p:y3,a:"son 3 gün tepesi"},{p:z.F(0.618),a:"Fib 0,618"}].filter(function(x){return x.p>c*1.003;}).sort(function(a,b){return a.p-b.p;}),
+    RL=[["İlk işaret","#fbbf24"],["Onay","#4ade80"],["Güçlü onay","#22d3ee"]],cs=function(col,no,bas,alt,kay){return'<div class="onl" style="border-left-color:'+col+'"><span class="onn" style="background:'+col+'">'+no+'</span><div class="onv"><b style="color:'+col+'">'+bas+'</b><div>'+alt+'</div>'+(kay!=null?'<div>Zarar kesten çıkarsan kayıp <b class="onr">−%'+f1(kay*100)+'</b></div>':'')+'</div></div>';};
+    onayH='<div class="onb">';
+    LV.forEach(function(x,i){var r=RL[i];onayH+=cs(r[1],String(i+1),f2(x.p)+" üstü kapanış <span class=\"onp\">("+pcs(x.p/c-1)+")</span>",'<span style="color:'+r[1]+';font-weight:700">'+r[0]+'</span> · '+x.a,stp<x.p?1-stp/x.p:null);});
+    onayH+=cs("#f87171","✖",f2(stp)+" altı kapanış","Plan bozulur"+(stp<c?" · şu anki fiyattan kayıp <b class=\"onr\">−%"+f1((1-stp/c)*100)+"</b>":""),null);
+    var r10=n>=10?D[n][4]/D[n-10][4]-1:0;
+    if(r10<=-0.05){var th=-Math.max(5,Math.floor(Math.abs(r10)*65))/100,ev=[],lastI=-99,i,k2;
+      for(i=10;i<n-63;i++){if(D[i][4]/D[i-10][4]-1<=th&&i-lastI>=10){lastI=i;var mn=1e9;for(k2=i+1;k2<=i+63;k2++)if(D[k2][3]<mn)mn=D[k2][3];ev.push([D[i+21][4]/D[i][4]-1,D[i+63][4]/D[i][4]-1,mn/D[i][4]-1]);}}
+      var m=ev.length;
+      if(m>=5){var o21=ev.map(function(x){return x[0];}).sort(function(a,b){return a-b;}),o63=ev.map(function(x){return x[1];}).sort(function(a,b){return a-b;}),od=ev.map(function(x){return x[2];}).sort(function(a,b){return a-b;}),md=function(a){var h=a.length>>1;return a.length%2?a[h]:(a[h-1]+a[h])/2;},ps=function(a){var t=0;a.forEach(function(x){if(x>0)t++;});return t;},cl=function(x){return x>=0?"ong":"onr";},rz=function(x){return'<b class="'+cl(x)+'">'+pcs(x)+'</b>';},
+          sat=function(ad,a){var q=ps(a);return'<div class="onsr"><span>'+ad+'</span><span><b class="'+(q*2>=m?"ong":"onr")+'">'+q+' / '+m+'</b> artıda, ortanca '+rz(md(a))+'</span></div>';};
+        onayH+='<div class="ong2"><div class="ongt">📜 Geçmişte böyle düşüşlerde ne olmuş?</div><div style="font-size:12px;margin-bottom:4px">10 günde en az %'+f1(-th*100).replace(/,0$/,"")+' düşen <b>'+m+'</b> durumda (şimdi %'+f1(-r10*100)+'):</div>'+sat("1 ay sonra",o21)+sat("3 ay sonra",o63)
+          +'<div class="onsr"><span>Yolda ek düşüş</span><span>ortanca '+rz(md(od))+', en kötü '+rz(od[0])+'</span></div><div style="font-size:11px;margin-top:6px;opacity:.9;line-height:1.45">Toparlanma sık olmuş ama yolda yeni düşüş de sık olmuş; bu yüzden tek seferde değil, parçalı düşünülebilir. Örnek az ve aynı dönemlere yığılmış olabilir; tahmin değil.</div></div>';}}
+    onayH+='<div style="font-size:10.5px;margin-top:8px;opacity:.85;line-height:1.45">Renkler: sarı ilk işaret · yeşil onay · mavi güçlü onay · kırmızı risk. Seviyeler fiyat hareketinden hesaplanır, yön tahmini değildir. Karar senin.</div></div>';}
   else{yok="Acele etme; fiyatın önce son 1 yılın dibi ("+f2(z.lo)+") üstüne çıkıp orada tutunması beklenebilir.";}
   if(riskAlti)var_="Risk seviyesi kırıldı: pozisyonunu gözden geçir. Geçmişte bu hissede kırılmalar "+(HT&&HT.risk&&HT.risk.n>=ESIK_OLAY?"sonrası 3 ayda %"+f1(HT.risk.yuk*100)+" oranında toparlanmış.":"için yeterli örnek yok.");
   else if(dirYakin)var_="Tut; dirence ("+f2(ust[0].p)+") çok yakın, kısmi kâr almak düşünülebilir. "+f2(z.risk)+" altı kapanış risk.";
   else var_="Tut. "+f2(z.risk)+" altı kapanış risk seviyesi"+(ust[0]?"; ilk direnç "+f2(ust[0].p):"")+".";
   var BG={"#34d399":["#145240","#0f3a2e","#2fae85"],"#fbbf24":["#5a4614","#3f3110","#c9962a"],"#fb923c":["#5c3415","#41250f","#d9782f"],"#f87171":["#5c1f24","#41161a","#d0545b"]}[renk]||["#2e2850","#231f3d","#5b4fa8"];
-  var m=maliyet(SEC),h='<div class="sec s0" style="background:linear-gradient(180deg,'+BG[0]+','+BG[1]+');border-color:'+BG[2]+'"><div class="sh">🧭 Karar özeti <span>'+esc(SEC)+' · '+f2(c)+' TL</span></div>';
+  var m=maliyet(SEC),h='<div class="sec s0" style="background:#000;border-color:'+BG[2]+'"><div class="sh">🧭 Karar özeti <span>'+esc(SEC)+' · '+f2(c)+' TL</span></div>';
   h+='<div class="kd" style="color:#fff;border-color:'+renk+';background:'+renk+'55">'+durum+'</div><div class="ka">'+esc(ac)+'</div>';
-  h+='<div class="kr"><b>Elinde yoksa</b>'+esc(yok)+'</div><div class="kr"><b>Elindeyse'+(m.q>0?' ('+m.q.toLocaleString("tr-TR")+' adet)':'')+'</b>'+esc(var_)+'</div>';
+  h+='<div class="kr"><b>Elinde yoksa</b>'+esc(yok)+'</div>';h+=onayH;h+='<div class="kr"><b>Elindeyse'+(m.q>0?' ('+m.q.toLocaleString("tr-TR")+' adet)':'')+'</b>'+esc(var_)+'</div>';
   h+='<div class="kg"><div><span>⬆️ Yukarıda</span>'+(ust.length?ust.slice(0,2).map(function(x){return'<b>'+f2(x.p)+'</b> <i>'+x.ad+'</i>';}).join("<br>"):'<b>zirve üstünde</b>')+'</div>'
     +'<div><span>⬇️ İnebileceği destekler</span>'+(alt2.length?alt2.map(function(x){return'<b>'+f2(x.p)+'</b> <i>'+x.ad+'</i>';}).join("<br>"):'<b>1 yıllık dibin altında</b>')+'</div></div>';
   if(p10!=null)h+='<div class="kx">📏 <b>1 aylık olası aralık: '+f2(c*(1+p10))+' – '+f2(c*(1+p90))+'</b><br>Bu hissenin son 2 yılında 1 aylık fiyat değişimleri 10 seferden 8\'inde %'+f1(p10*100).replace("-","−")+' ile %+'+f1(p90*100)+' arasında kalmış. Tahmin değil, geçmiş oynaklığın bugünkü fiyata uygulanmışı.</div>';
