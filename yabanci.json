@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-21T08:56:33Z",
+ "updatedAt": "2026-11-21T09:43:16Z",
  "updated": "2026-11-21",
  "olcut": {
   "ndx": {
@@ -27,27 +27,129 @@
  },
  "fonlar": [
   {
-   "k": "ZSF",
-   "ad": "ZİRAAT PORTFÖY S&P/OIC COMCEC (İSEDAK) 50 SHARİAH ŞİRKETLERİ YABANCI HİSSE SENEDİ FONU",
+   "k": "YIT",
+   "ad": "GARANTİ PORTFÖY YARI İLETKEN TEKNOLOJİLERİ DEĞİŞKEN FON",
    "tur": "YAT",
-   "et": "S&P 500",
-   "buyukluk": 42317757.23,
-   "yatirimci": 1522.0,
+   "et": "Tematik",
+   "buyukluk": 1455220983.53,
+   "yatirimci": 12689.0,
    "risk": 6.0,
    "ucret": null,
    "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Yarı iletken",
+   "kor": {
+    "ndx": 0.687,
+    "spx": 0.571
+   },
    "d1_tarih": "2026-11-20",
    "rk": {
-    "mdd": -13.01,
-    "vol": 13.32
+    "mdd": -27.18,
+    "vol": 34.12
    },
    "g": {
-    "a1": 5.69,
-    "a3": 4.11,
-    "a6": 8.85,
-    "y1": 11.21,
-    "y3": 91.29,
-    "d1": 0.1
+    "a1": -7.89,
+    "a3": -13.07,
+    "a6": -8.44,
+    "y1": 61.78,
+    "d1": 1.93
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1"
+   ],
+   "celiski": [],
+   "gun": 432,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2025-02-28",
+   "fark": {
+    "a1": 5.56,
+    "a3": -3.24,
+    "a6": -3.18,
+    "y1": 37.53
+   }
+  },
+  {
+   "k": "SGT",
+   "ad": "GARANTİ PORTFÖY SİBER GÜVENLİK TEKNOLOJİLERİ DEĞİŞKEN FON",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 314444155.12,
+   "yatirimci": 3248.0,
+   "risk": 5.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Siber güvenlik",
+   "kor": {
+    "ndx": 0.568,
+    "spx": 0.525
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -12.15,
+    "vol": 24.02
+   },
+   "g": {
+    "a1": 1.97,
+    "a3": 4.5,
+    "a6": 25.12,
+    "y1": 55.42,
+    "d1": 6.24
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1"
+   ],
+   "celiski": [],
+   "gun": 437,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2025-02-21",
+   "fark": {
+    "a1": 15.42,
+    "a3": 14.33,
+    "a6": 30.38,
+    "y1": 31.17
+   }
+  },
+  {
+   "k": "IJZ",
+   "ad": "İŞ PORTFÖY SİBER GÜVENLİK TEKNOLOJİLERİ DEĞİŞKEN FON",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 811069161.05,
+   "yatirimci": 13341.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Siber güvenlik",
+   "kor": {
+    "ndx": 0.602,
+    "spx": 0.562
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -11.68,
+    "vol": 22.94
+   },
+   "g": {
+    "a1": -0.25,
+    "a3": -4.16,
+    "a6": 13.36,
+    "y1": 47.52,
+    "y3": 197.71,
+    "d1": 3.98
    },
    "teyit": [
     "a1",
@@ -61,10 +163,587 @@
    "son_tarih": "2026-11-20",
    "ilk_tarih": "2021-11-22",
    "fark": {
-    "a1": 14.32,
-    "a3": 8.93,
-    "a6": 5.74,
-    "y1": -14.99
+    "a1": 13.2,
+    "a3": 5.67,
+    "a6": 18.62,
+    "y1": 23.27
+   }
+  },
+  {
+   "k": "IJC",
+   "ad": "İŞ PORTFÖY YARI İLETKEN TEKNOLOJİLERİ DEĞİŞKEN FON",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 3236144436.75,
+   "yatirimci": 34892.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Yarı iletken",
+   "kor": {
+    "ndx": 0.696,
+    "spx": 0.608
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -31.23,
+    "vol": 33.49
+   },
+   "g": {
+    "a1": -6.87,
+    "a3": -19.55,
+    "a6": -19.37,
+    "y1": 43.37,
+    "y3": 180.83,
+    "d1": 0.25
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2021-11-22",
+   "fark": {
+    "a1": 6.58,
+    "a3": -9.72,
+    "a6": -14.11,
+    "y1": 19.12
+   }
+  },
+  {
+   "k": "YJK",
+   "ad": "YAPI KREDİ PORTFÖY ROBOTİK VE YARI İLETKEN TEKNOLOJİLERİ FON SEPETİ FONU",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 780059485.53,
+   "yatirimci": 11892.0,
+   "risk": 5.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Robotik",
+   "kor": {
+    "ndx": 0.746,
+    "spx": 0.674
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -18.76,
+    "vol": 26.48
+   },
+   "g": {
+    "a1": -8.24,
+    "a3": -14.05,
+    "a6": -7.95,
+    "y1": 37.67,
+    "y3": 168.73,
+    "d1": 1.16
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2021-11-22",
+   "fark": {
+    "a1": 5.21,
+    "a3": -4.22,
+    "a6": -2.69,
+    "y1": 13.42
+   }
+  },
+  {
+   "k": "BTE",
+   "ad": "BV PORTFÖY OYUN VE TEKNOLOJİ DEĞİŞKEN FON",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 95677952.98,
+   "yatirimci": 765.0,
+   "risk": 5.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Oyun",
+   "kor": {
+    "ndx": 0.642,
+    "spx": 0.604
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -13.24,
+    "vol": 21.48
+   },
+   "g": {
+    "a1": -1.73,
+    "a3": -5.48,
+    "a6": 12.31,
+    "y1": 33.76,
+    "y3": 209.48,
+    "d1": 0.66
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 954,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2023-02-01",
+   "fark": {
+    "a1": 11.72,
+    "a3": 4.35,
+    "a6": 17.57,
+    "y1": 9.51
+   }
+  },
+  {
+   "k": "RTG",
+   "ad": "ATA PORTFÖY ROBOTİK TEKNOLOJİLERİ DEĞİŞKEN FON",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 165544686.65,
+   "yatirimci": 3715.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Robotik",
+   "kor": {
+    "ndx": 0.735,
+    "spx": 0.648
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -22.06,
+    "vol": 28.46
+   },
+   "g": {
+    "a1": -8.87,
+    "a3": -13.33,
+    "a6": -6.04,
+    "y1": 28.82,
+    "y3": 155.84,
+    "d1": 3.25
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1019,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2022-11-02",
+   "fark": {
+    "a1": 4.58,
+    "a3": -3.5,
+    "a6": -0.78,
+    "y1": 4.57
+   }
+  },
+  {
+   "k": "RUT",
+   "ad": "BV PORTFÖY ROBOTİK VE UZAY TEKNOLOJİLERİ DEĞİŞKEN FON",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 81599438.59,
+   "yatirimci": 3403.0,
+   "risk": 5.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Robotik",
+   "kor": {
+    "ndx": 0.762,
+    "spx": 0.687
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -15.27,
+    "vol": 23.52
+   },
+   "g": {
+    "a1": -6.7,
+    "a3": -12.8,
+    "a6": -4.15,
+    "y1": 26.01,
+    "d1": 0.51
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1"
+   ],
+   "celiski": [],
+   "gun": 601,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2024-07-02",
+   "fark": {
+    "a1": 6.75,
+    "a3": -2.97,
+    "a6": 1.11,
+    "y1": 1.76
+   }
+  },
+  {
+   "k": "GPT",
+   "ad": "AKTİF PORTFÖY ROBOTİK TEKNOLOJİLERİ DEĞİŞKEN FON",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 68912387.9,
+   "yatirimci": 2434.0,
+   "risk": 5.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Robotik",
+   "kor": {
+    "ndx": 0.662,
+    "spx": 0.567
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -20.09,
+    "vol": 23.18
+   },
+   "g": {
+    "a1": -9.23,
+    "a3": -15.02,
+    "a6": -10.04,
+    "y1": 25.66,
+    "d1": 0.31
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1"
+   ],
+   "celiski": [],
+   "gun": 705,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2024-01-26",
+   "fark": {
+    "a1": 4.22,
+    "a3": -5.19,
+    "a6": -4.78,
+    "y1": 1.41
+   }
+  },
+  {
+   "k": "PIL",
+   "ad": "ROTA PORTFÖY PİL TEKNOLOJİLERİ VE ENERJİ FON SEPETİ FONU",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 228065150.98,
+   "yatirimci": 5242.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Enerji",
+   "kor": {
+    "ndx": 0.618,
+    "spx": 0.592
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -24.21,
+    "vol": 22.91
+   },
+   "g": {
+    "a1": -8.6,
+    "a3": -16.04,
+    "a6": -19.34,
+    "y1": 19.69,
+    "y3": 154.8,
+    "d1": 0.09
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 883,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2023-05-15",
+   "fark": {
+    "a1": 4.85,
+    "a3": -6.21,
+    "a6": -14.08,
+    "y1": -4.56
+   }
+  },
+  {
+   "k": "DTZ",
+   "ad": "AK PORTFÖY ROBOTİK TEKNOLOJİLER DEĞİŞKEN FON",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 449570233.98,
+   "yatirimci": 7113.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Robotik",
+   "kor": {
+    "ndx": 0.667,
+    "spx": 0.65
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -18.77,
+    "vol": 23.84
+   },
+   "g": {
+    "a1": -5.53,
+    "a3": -13.52,
+    "a6": -6.43,
+    "y1": 18.19,
+    "y3": 136.6,
+    "d1": 1.36
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2021-11-22",
+   "fark": {
+    "a1": 7.92,
+    "a3": -3.69,
+    "a6": -1.17,
+    "y1": -6.06
+   }
+  },
+  {
+   "k": "ZFB",
+   "ad": "AK PORTFÖY FİNTEK VE BLOKZİNCİRİ TEKNOLOJİLERİ DEĞİŞKEN FON",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 734948151.71,
+   "yatirimci": 13206.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Blokzincir",
+   "kor": {
+    "ndx": 0.69,
+    "spx": 0.619
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -19.91,
+    "vol": 24.31
+   },
+   "g": {
+    "a1": -6.92,
+    "a3": -16.14,
+    "a6": -15.32,
+    "y1": 16.92,
+    "y3": 225.99,
+    "d1": 0.99
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2021-11-22",
+   "fark": {
+    "a1": 6.53,
+    "a3": -6.31,
+    "a6": -10.06,
+    "y1": -7.33
+   }
+  },
+  {
+   "k": "OLD",
+   "ad": "QNB PORTFÖY TEMİZ ENERJİ VE SU FON SEPETİ FONU",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 108475388.09,
+   "yatirimci": 4523.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Enerji",
+   "kor": {
+    "ndx": 0.467,
+    "spx": 0.527
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -13.85,
+    "vol": 13.53
+   },
+   "g": {
+    "a1": 2.45,
+    "a3": -6.64,
+    "a6": -5.05,
+    "y1": 11.58,
+    "y3": 70.51,
+    "d1": 0.8
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1249,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2021-12-03",
+   "fark": {
+    "a1": 15.9,
+    "a3": 3.19,
+    "a6": 0.21,
+    "y1": -12.67
+   }
+  },
+  {
+   "k": "URA",
+   "ad": "ATA PORTFÖY ENERJİ DEĞİŞKEN FON",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 326237410.53,
+   "yatirimci": 6326.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Enerji",
+   "kor": {
+    "ndx": 0.567,
+    "spx": 0.552
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -32.23,
+    "vol": 30.51
+   },
+   "g": {
+    "a1": -10.24,
+    "a3": -24.38,
+    "a6": -25.77,
+    "y1": -5.29,
+    "d1": -0.11
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1"
+   ],
+   "celiski": [],
+   "gun": 488,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2024-12-11",
+   "fark": {
+    "a1": 3.21,
+    "a3": -14.55,
+    "a6": -20.51,
+    "y1": -29.54
+   }
+  },
+  {
+   "k": "DRT",
+   "ad": "DENİZ PORTFÖY ROBOTİK TEKNOLOJİLERİ DEĞİŞKEN FON",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 18251826.74,
+   "yatirimci": 406.0,
+   "risk": 5.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Robotik",
+   "kor": {
+    "ndx": 0.737,
+    "spx": 0.715
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -16.12,
+    "vol": 18.79
+   },
+   "g": {
+    "a1": -6.48,
+    "a3": -13.22,
+    "a6": -8.7,
+    "d1": 1.49
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6"
+   ],
+   "celiski": [],
+   "gun": 188,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2026-02-19",
+   "fark": {
+    "a1": 6.97,
+    "a3": -3.39,
+    "a6": -3.44
    }
   }
  ]

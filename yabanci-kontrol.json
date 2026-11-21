@@ -9,11 +9,263 @@
    "screen_funds(YAT): 2135 kayit, 2135 yeni fon",
    "screen_funds(BYF): 38 kayit, 38 yeni fon",
    "Toplam aday: 2173",
-   "Nasdaq/S&P adli aday: 1 | olasi (secilmeyen Amerika/ABD adli): 23",
-   "Listeye giren: 1 | Atlanan: {}"
+   "Nasdaq/S&P adli aday: 46 | olasi (secilmeyen Amerika/ABD adli): 23",
+   "Listeye giren: 15 | Atlanan: {'Nasdaq/S&P ile uyumsuz (getiri korelasyonu düşük)': 25, '10 milyon TL altı küçük fon': 2, 'işleme kapalı (fiyatı güncel değil)': 3, \"TEFAS'ta alınamıyor (özel fon / TEFAS'a kapalı)\": 1}"
   ]
  },
- "atlanan": {},
+ "atlanan": {
+  "Nasdaq/S&P ile uyumsuz (getiri korelasyonu düşük)": [
+   [
+    "AFS",
+    "AK PORTFÖY SAĞLIK SEKTÖRÜ YABANCI HİSSE SENEDİ FONU",
+    {
+     "ndx": -0.043,
+     "spx": 0.199
+    },
+    1194780948.82
+   ],
+   [
+    "AOY",
+    "AK PORTFÖY ALTERNATİF ENERJİ YABANCI HİSSE SENEDİ FONU",
+    {
+     "ndx": 0.156,
+     "spx": 0.154
+    },
+    777937642.54
+   ],
+   [
+    "DFC",
+    "DENİZ PORTFÖY TARIM VE GIDA DEĞİŞKEN FON",
+    {
+     "ndx": -0.013,
+     "spx": 0.081
+    },
+    96714775.0
+   ],
+   [
+    "DJA",
+    "QNB PORTFÖY QNB TEMİZ ENERJİ ENDEKSİ HİSSE SENEDİ YOĞUN BORSA YATIRIM ",
+    {
+     "ndx": 0.071,
+     "spx": 0.121
+    },
+    22668575.71
+   ],
+   [
+    "ENJ",
+    "AKTİF PORTFÖY ENERJİ ŞİRKETLERİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ Y",
+    {
+     "ndx": 0.191,
+     "spx": 0.188
+    },
+    47650729.08
+   ],
+   [
+    "EVM",
+    "DENİZ PORTFÖY ENERJİ VE MADENCİLİK SEKTÖRÜ DEĞİŞKEN FON",
+    {
+     "ndx": 0.393,
+     "spx": 0.432
+    },
+    47424340.32
+   ],
+   [
+    "GNS",
+    "GARANTİ PORTFÖY ENERJİ ŞİRKETLERİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ",
+    {
+     "ndx": 0.255,
+     "spx": 0.252
+    },
+    69442730.35
+   ],
+   [
+    "GZG",
+    "GARANTİ PORTFÖY SAĞLIK VE GENETİK TEKNOLOJİLERİ DEĞİŞKEN FON",
+    {
+     "ndx": 0.164,
+     "spx": 0.285
+    },
+    375637868.26
+   ],
+   [
+    "GZH",
+    "GARANTİ PORTFÖY TEMİZ ENERJİ DEĞİŞKEN FON",
+    {
+     "ndx": 0.472,
+     "spx": 0.441
+    },
+    281273920.61
+   ],
+   [
+    "GZL",
+    "GARANTİ PORTFÖY TARIM VE GIDA SEKTÖRÜ DEĞİŞKEN FON",
+    {
+     "ndx": 0.027,
+     "spx": 0.147
+    },
+    363344612.4
+   ],
+   [
+    "KVT",
+    "AK PORTFÖY ENERJİ ŞİRKETLERİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞU",
+    {
+     "ndx": 0.275,
+     "spx": 0.262
+    },
+    67718647.12
+   ],
+   [
+    "MTS",
+    "AKTİF PORTFÖY TARIM VE SÜRDÜRÜLEBİLİRLİK FON SEPETİ FONU",
+    {
+     "ndx": 0.326,
+     "spx": 0.374
+    },
+    24125102.71
+   ],
+   [
+    "NEE",
+    "NEO PORTFÖY ENERJİ VE EMTİA ŞİRKETLERİ DEĞİŞKEN FON",
+    null,
+    29162638.62
+   ],
+   [
+    "RFM",
+    "ROTA PORTFÖY ENERJİ VE METAL FON SEPETİ FONU",
+    null,
+    57876552.93
+   ],
+   [
+    "SGK",
+    "EMAA BLUE PORTFÖY BİYOTEKNOLOJİ VE SAĞLIK SEKTÖRÜ DEĞİŞKEN FON",
+    null,
+    215007672.4
+   ],
+   [
+    "SSK",
+    "DENİZ PORTFÖY SAĞLIK SEKTÖRÜ DEĞİŞKEN FON",
+    {
+     "ndx": 0.166,
+     "spx": 0.359
+    },
+    48646271.05
+   ],
+   [
+    "TAR",
+    "AK PORTFÖY TARIM VE GIDA TEKNOLOJİLERİ DEĞİŞKEN FON",
+    {
+     "ndx": 0.089,
+     "spx": 0.228
+    },
+    116213044.68
+   ],
+   [
+    "TMZ",
+    "İŞ PORTFÖY SÜRDÜRÜLEBİLİRLİK VE TARIM FON SEPETİ FONU",
+    {
+     "ndx": 0.484,
+     "spx": 0.447
+    },
+    39966690.05
+   ],
+   [
+    "YJH",
+    "YAPI KREDİ PORTFÖY TEMİZ ENERJİ DEĞİŞKEN FONU",
+    {
+     "ndx": 0.339,
+     "spx": 0.337
+    },
+    143993374.3
+   ],
+   [
+    "YLC",
+    "ATA PORTFÖY TARIM VE GIDA DEĞİŞKEN FON",
+    {
+     "ndx": 0.14,
+     "spx": 0.209
+    },
+    62994443.81
+   ],
+   [
+    "YTV",
+    "YAPI KREDİ PORTFÖY TARIM DEĞİŞKEN FON",
+    {
+     "ndx": -0.119,
+     "spx": 0.029
+    },
+    184805412.46
+   ],
+   [
+    "YZE",
+    "BTCTURK PORTFÖY YAPAY ZEKA TEKNOLOJİLERİ ŞİRKETLERİ DEĞİŞKEN FON",
+    null,
+    10652391.34
+   ],
+   [
+    "YZT",
+    "AK PORTFÖY YAPAY ZEKA TEKNOLOJİLERİ ŞİRKETLERİ DEĞİŞKEN FON",
+    null,
+    655437518.43
+   ],
+   [
+    "ZTG",
+    "ZİRAAT PORTFÖY TARIM VE GIDA FON SEPETİ FONU",
+    {
+     "ndx": 0.113,
+     "spx": 0.192
+    },
+    28856473.88
+   ],
+   [
+    "ZTS",
+    "İŞ PORTFÖY YAPAY ZEKA TEKNOLOJİLERİ ŞİRKETLERİ DEĞİŞKEN FON",
+    null,
+    50371649.21
+   ]
+  ],
+  "10 milyon TL altı küçük fon": [
+   [
+    "GIH",
+    "ALLBATROSS PORTFÖY GIDA VE İÇECEK SEKTÖRÜ HİSSE SENEDİ FONU (HİSSE SEN",
+    null,
+    4596742.25
+   ],
+   [
+    "KIB",
+    "TRIVE PORTFÖY ROBOTİK TEKNOLOJİLERİ DEĞİŞKEN FON",
+    null,
+    7378520.15
+   ]
+  ],
+  "işleme kapalı (fiyatı güncel değil)": [
+   [
+    "HRT",
+    "HEDEF PORTFÖY ROBOTİK TEKNOLOJİLER DEĞİŞKEN FON",
+    null,
+    0.0
+   ],
+   [
+    "HTE",
+    "HEDEF PORTFÖY TEMİZ ENERJİ DEĞİŞKEN FON",
+    null,
+    0.0
+   ],
+   [
+    "HTR",
+    "HEDEF PORTFÖY TARIM VE GIDA DEĞİŞKEN FON",
+    null,
+    0.0
+   ]
+  ],
+  "TEFAS'ta alınamıyor (özel fon / TEFAS'a kapalı)": [
+   [
+    "SOS",
+    "HEDEF PORTFÖY SAĞLIK SEKTÖRÜ DEĞİŞKEN FON",
+    null,
+    23249381.9
+   ]
+  ]
+ },
  "olasi": {
   "AFA": "AK PORTFÖY AMERİKA YABANCI HİSSE SENEDİ FONU",
   "AKE": "AK PORTFÖY EUROBOND (AMERİKAN DOLARI) BORÇLANMA ARAÇLARI FONU",
@@ -40,6 +292,51 @@
   "ZUS": "ZİRAAT PORTFÖY BAŞAK SERBEST (DÖVİZ-AMERİKAN DOLARI) FON"
  },
  "adaylar": {
-  "ZSF": "ZİRAAT PORTFÖY S&P/OIC COMCEC (İSEDAK) 50 SHARİAH ŞİRKETLERİ YABANCI HİSSE SENEDİ FONU"
+  "AFS": "AK PORTFÖY SAĞLIK SEKTÖRÜ YABANCI HİSSE SENEDİ FONU",
+  "AOY": "AK PORTFÖY ALTERNATİF ENERJİ YABANCI HİSSE SENEDİ FONU",
+  "BTE": "BV PORTFÖY OYUN VE TEKNOLOJİ DEĞİŞKEN FON",
+  "DFC": "DENİZ PORTFÖY TARIM VE GIDA DEĞİŞKEN FON",
+  "DJA": "QNB PORTFÖY QNB TEMİZ ENERJİ ENDEKSİ HİSSE SENEDİ YOĞUN BORSA YATIRIM FONU",
+  "DRT": "DENİZ PORTFÖY ROBOTİK TEKNOLOJİLERİ DEĞİŞKEN FON",
+  "DTZ": "AK PORTFÖY ROBOTİK TEKNOLOJİLER DEĞİŞKEN FON",
+  "ENJ": "AKTİF PORTFÖY ENERJİ ŞİRKETLERİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
+  "EVM": "DENİZ PORTFÖY ENERJİ VE MADENCİLİK SEKTÖRÜ DEĞİŞKEN FON",
+  "GIH": "ALLBATROSS PORTFÖY GIDA VE İÇECEK SEKTÖRÜ HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)",
+  "GNS": "GARANTİ PORTFÖY ENERJİ ŞİRKETLERİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
+  "GPT": "AKTİF PORTFÖY ROBOTİK TEKNOLOJİLERİ DEĞİŞKEN FON",
+  "GZG": "GARANTİ PORTFÖY SAĞLIK VE GENETİK TEKNOLOJİLERİ DEĞİŞKEN FON",
+  "GZH": "GARANTİ PORTFÖY TEMİZ ENERJİ DEĞİŞKEN FON",
+  "GZL": "GARANTİ PORTFÖY TARIM VE GIDA SEKTÖRÜ DEĞİŞKEN FON",
+  "HRT": "HEDEF PORTFÖY ROBOTİK TEKNOLOJİLER DEĞİŞKEN FON",
+  "HTE": "HEDEF PORTFÖY TEMİZ ENERJİ DEĞİŞKEN FON",
+  "HTR": "HEDEF PORTFÖY TARIM VE GIDA DEĞİŞKEN FON",
+  "IJC": "İŞ PORTFÖY YARI İLETKEN TEKNOLOJİLERİ DEĞİŞKEN FON",
+  "IJZ": "İŞ PORTFÖY SİBER GÜVENLİK TEKNOLOJİLERİ DEĞİŞKEN FON",
+  "KIB": "TRIVE PORTFÖY ROBOTİK TEKNOLOJİLERİ DEĞİŞKEN FON",
+  "KVT": "AK PORTFÖY ENERJİ ŞİRKETLERİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
+  "MTS": "AKTİF PORTFÖY TARIM VE SÜRDÜRÜLEBİLİRLİK FON SEPETİ FONU",
+  "NEE": "NEO PORTFÖY ENERJİ VE EMTİA ŞİRKETLERİ DEĞİŞKEN FON",
+  "OLD": "QNB PORTFÖY TEMİZ ENERJİ VE SU FON SEPETİ FONU",
+  "PIL": "ROTA PORTFÖY PİL TEKNOLOJİLERİ VE ENERJİ FON SEPETİ FONU",
+  "RFM": "ROTA PORTFÖY ENERJİ VE METAL FON SEPETİ FONU",
+  "RTG": "ATA PORTFÖY ROBOTİK TEKNOLOJİLERİ DEĞİŞKEN FON",
+  "RUT": "BV PORTFÖY ROBOTİK VE UZAY TEKNOLOJİLERİ DEĞİŞKEN FON",
+  "SGK": "EMAA BLUE PORTFÖY BİYOTEKNOLOJİ VE SAĞLIK SEKTÖRÜ DEĞİŞKEN FON",
+  "SGT": "GARANTİ PORTFÖY SİBER GÜVENLİK TEKNOLOJİLERİ DEĞİŞKEN FON",
+  "SOS": "HEDEF PORTFÖY SAĞLIK SEKTÖRÜ DEĞİŞKEN FON",
+  "SSK": "DENİZ PORTFÖY SAĞLIK SEKTÖRÜ DEĞİŞKEN FON",
+  "TAR": "AK PORTFÖY TARIM VE GIDA TEKNOLOJİLERİ DEĞİŞKEN FON",
+  "TMZ": "İŞ PORTFÖY SÜRDÜRÜLEBİLİRLİK VE TARIM FON SEPETİ FONU",
+  "URA": "ATA PORTFÖY ENERJİ DEĞİŞKEN FON",
+  "YIT": "GARANTİ PORTFÖY YARI İLETKEN TEKNOLOJİLERİ DEĞİŞKEN FON",
+  "YJH": "YAPI KREDİ PORTFÖY TEMİZ ENERJİ DEĞİŞKEN FONU",
+  "YJK": "YAPI KREDİ PORTFÖY ROBOTİK VE YARI İLETKEN TEKNOLOJİLERİ FON SEPETİ FONU",
+  "YLC": "ATA PORTFÖY TARIM VE GIDA DEĞİŞKEN FON",
+  "YTV": "YAPI KREDİ PORTFÖY TARIM DEĞİŞKEN FON",
+  "YZE": "BTCTURK PORTFÖY YAPAY ZEKA TEKNOLOJİLERİ ŞİRKETLERİ DEĞİŞKEN FON",
+  "YZT": "AK PORTFÖY YAPAY ZEKA TEKNOLOJİLERİ ŞİRKETLERİ DEĞİŞKEN FON",
+  "ZFB": "AK PORTFÖY FİNTEK VE BLOKZİNCİRİ TEKNOLOJİLERİ DEĞİŞKEN FON",
+  "ZTG": "ZİRAAT PORTFÖY TARIM VE GIDA FON SEPETİ FONU",
+  "ZTS": "İŞ PORTFÖY YAPAY ZEKA TEKNOLOJİLERİ ŞİRKETLERİ DEĞİŞKEN FON"
  }
 }
