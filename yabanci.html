@@ -111,6 +111,16 @@ details.dt{margin-top:4px!important}details.dt summary{font-size:11.5px!importan
 .hb .ht{display:flex;align-items:center;gap:6px}.hb .ht b{font-size:14px;color:#fff}.hb .tg2{font-size:10px;font-weight:700;padding:1px 7px;border-radius:999px;border:1px solid var(--c);color:var(--c)}
 .hb .tx{font-size:12px;margin:4px 0 2px;line-height:1.4}.hb .nm{font-size:9.5px;color:#98a2c9}.hb .ms{display:flex;gap:10px;margin-top:5px;font-size:10.5px;color:#98a2c9;flex-wrap:wrap}.hb .ms b{color:#e8eaf6}
 .win .nt{font-size:10px;color:#98a2c9;margin-top:8px;line-height:1.5;border-top:1px solid #2c3050;padding-top:6px}
+.tr1{display:flex;gap:14px;overflow-x:auto;border-bottom:1px solid #2c3050;margin:2px 0 8px}.tr1 button{font:inherit;font-size:12.5px;font-weight:700;color:#98a2c9;background:none;border:0;border-bottom:2px solid transparent;padding:6px 0;white-space:nowrap}.tr1 button.on{color:#fff;border-bottom-color:#6366f1}
+.scw{overflow-x:auto;background:#1d2033;border:1px solid #2c3050;border-radius:14px}.sct{border-collapse:separate;border-spacing:0;font-size:12px;min-width:100%}
+.sct th{font-size:10.5px;color:#98a2c9;font-weight:600;text-align:right;padding:8px;border-bottom:1px solid #2c3050;white-space:nowrap;background:#1d2033;cursor:pointer}.sct th.on{color:#c7d2fe}
+.sct td{padding:7px 8px;text-align:right;border-bottom:1px solid #262a45;white-space:nowrap;font-weight:600}.sct .l{text-align:left}
+.sct .c1{position:sticky;left:0;background:#1d2033;width:28px;min-width:28px;text-align:center;color:#98a2c9;font-weight:400;z-index:2}
+.sct .c2{position:sticky;left:28px;background:#1d2033;min-width:92px;z-index:2;text-align:left;box-shadow:2px 0 4px rgba(0,0,0,.25)}
+.sct td.c2 b{display:block;font-size:13px;color:#fff;border-left:3px solid var(--c);padding-left:6px}.sct td.c2 i{font-style:normal;font-size:9px;color:#98a2c9;padding-left:9px;font-weight:400}
+.sct .tg3{font-size:9.5px;padding:1px 7px;border-radius:999px;border:1px solid var(--c);color:var(--c)}.sct .ok{color:#4ade80;text-align:center}.sct .mu{color:#98a2c9;font-weight:400}
+.sct tr.dr td{padding:6px 4px;background:#12131c;white-space:normal;text-align:left}.sct tr.rw{cursor:pointer}
+.pb{display:inline-block;min-width:34px;text-align:center;font-weight:800;font-size:11px;border-radius:999px;padding:1px 6px;color:#12131c}
 </style><script>/* Cevrimdisi destek (sw.js): internet yokken en son kaydedilen veriler, kayit zamaniyla birlikte gosterilir */
 (function(){if("serviceWorker"in navigator){try{navigator.serviceWorker.register("sw.js").catch(function(){});}catch(e){}}
 var of=window.fetch;if(!of)return;var gos=0;
@@ -204,28 +214,60 @@ function iyiler(F){
   h+=blok("🚀 Getirisi daha yüksek",G,1)+blok("🛡️ İstikrarı daha yüksek",I,1)+blok("⚡ Güncel en iyiler (son 3 ay)",C,0)+'</div>';
   h+='<div class="alt" style="margin-top:8px">Puan geçmiş veriye dayanır: getiri, istikrar (en büyük düşüş ve dalgalanma), tutarlılık, güvenilirlik ve ölçüte göre performans. Düşüş sütunu 1 yıllık en büyük düşüştür. Geçmiş getiri gelecek getirinin garantisi değildir; bu sayfa al/sat önerisi değildir, karar sana aittir.</div>';
   return h;}
+
+var TSEK=sg("yab-alt","getiri"),TSRT=sg("yab-tsrt","y1"),TDIR=sg("yab-tdir","d");
+var AYAD=["Oca","Şub","Mar","Nis","May","Haz","Tem","Ağu","Eyl","Eki","Kas","Ara"];
+function ayEt(k){var p=k.split("-");return AYAD[+p[1]-1]+" "+p[0].slice(2);}
+function puanlar(F){
+  var Y=[],M=[],V=[];F.forEach(function(f){if(f.g&&f.g.y1!=null)Y.push(f.g.y1);if(f.rk){M.push(f.rk.mdd);V.push(f.rk.vol);}});
+  F.forEach(function(f){var g=f.g||{},p={};
+    p.get=g.y1!=null?Math.round(100*pct(Y,g.y1)):null;
+    p.ist=f.rk?Math.round(100*(pct(M,f.rk.mdd)+pct(V,f.rk.vol,true))/2):null;
+    p.guv=f.gun?Math.round(100*(Math.min(f.gun/1260,1)+Math.min((f.buyukluk||0)/1e9,1)+Math.min((f.yatirimci||0)/1e4,1))/3):null;
+    var a=[p.get,p.ist,p.guv].filter(function(x){return x!=null;});p.gen=a.length===3?Math.round((a[0]+a[1]+a[2])/3):null;f._pp=p;});}
+function pCol(x){return x>=70?"#4ade80":(x>=40?"#fbbf24":"#f87171");}
+function pb(x){return x==null?'<span class="mu">—</span>':'<span class="pb" style="background:'+pCol(x)+'">'+x+'</span>';}
+function pv(x){return x==null?'<span class="mu">—</span>':'<span class="'+(x>=0?"up":"dn")+'">'+yz(x)+'</span>';}
+function nk(v){if(v==null)return'<span class="mu">—</span>';var a=Math.abs(v),t=a>=1e9?(a/1e9).toFixed(2).replace(".",",")+" mlr":(a>=1e6?(a/1e6).toFixed(1).replace(".",",")+" mn":Math.round(a/1e3)+" bin");return'<span class="'+(v>=0?"up":"dn")+'">'+(v>=0?"+":"−")+t+'</span>';}
+function kolonlar(F){
+  var K=[];
+  if(TSEK==="getiri"){[["d1","Günlük"],["w1","1 Hafta"],["a1","1 Ay"],["a3","3 Ay"],["a6","6 Ay"],["ytd","YBB"],["y1","1 Yıl"],["y3","3 Yıl"],["y5","5 Yıl"]].forEach(function(c){K.push({id:c[0],ad:c[1],g:function(f){return f.g?f.g[c[0]]:null;},h:pv});});}
+  if(TSEK==="puan"){[["get","Getiri"],["ist","İstikrar"],["guv","Güvenlik"],["gen","Genel"]].forEach(function(c){K.push({id:"p"+c[0],ad:c[1]+" puanı",g:function(f){return f._pp?f._pp[c[0]]:null;},h:pb});});K.push({id:"y1",ad:"1 Yıl",g:function(f){return f.g?f.g.y1:null;},h:pv});K.push({id:"mdd",ad:"Düşüş",g:function(f){return f.rk?f.rk.mdd:null;},h:pv});}
+  if(TSEK==="buyuk"){K.push({id:"fiyat",ad:"Fiyat",g:function(f){return f.fiyat;},h:function(v){return v==null?'<span class="mu">—</span>':"₺"+v.toFixed(v<10?4:2).replace(".",",");}});K.push({id:"buy",ad:"Büyüklük",g:function(f){return f.buyukluk;},h:function(v){return v==null?'<span class="mu">—</span>':para(v);}});K.push({id:"yat",ad:"Yatırımcı",g:function(f){return f.yatirimci;},h:function(v){return v==null?'<span class="mu">—</span>':adet(v);}});K.push({id:"risk",ad:"Risk",g:function(f){return f.risk;},h:function(v){return v==null?'<span class="mu">—</span>':v+"/7";}});}
+  if(TSEK==="risk"){K.push({id:"mdd",ad:"1 yıl en büyük düşüş",g:function(f){return f.rk?f.rk.mdd:null;},h:pv});K.push({id:"vol",ad:"Dalgalanma",g:function(f){return f.rk?f.rk.vol:null;},h:function(v){return v==null?'<span class="mu">—</span>':"%"+String(v).replace(".",",");}});K.push({id:"gun",ad:"Geçmiş (gün)",g:function(f){return f.gun;},h:function(v){return v==null?'<span class="mu">—</span>':v;}});K.push({id:"kap",ad:"Portföy yapısı",g:function(f){return f.kap;},h:function(v,f){var e=kapEt(f);return'<span style="color:'+e[1]+'">'+esc(e[0])+'</span>';}});}
+  if(TSEK==="aylik"||TSEK==="nakit"){var key=TSEK==="aylik"?"aylik":"nakit",ay={};F.forEach(function(f){for(var k in (f[key]||{}))ay[k]=1;});Object.keys(ay).sort().slice(-12).forEach(function(k){K.push({id:"m"+k,ad:ayEt(k),g:function(f){return f[key]?f[key][k]:null;},h:key==="aylik"?pv:nk});});}
+  return K;}
+function tara(F){
+  puanlar(F);
+  var KAPL=[];F.forEach(function(f){var k=f.kap||'Dağılım alınamadı';if(KAPL.indexOf(k)<0)KAPL.push(k);});KAPL.sort();
+  var nakVar=F.some(function(f){return f.nakit&&Object.keys(f.nakit).length;}),ayVar=F.some(function(f){return f.aylik&&Object.keys(f.aylik).length;});
+  if(TSEK==="nakit"&&!nakVar)TSEK="getiri";if(TSEK==="aylik"&&!ayVar)TSEK="getiri";
+  var T=[["getiri","📈 Getiri"],["puan","🏅 Puanlar"],["buyuk","💰 Büyüklük"],["risk","🛡️ Risk"]];if(ayVar)T.push(["aylik","📅 Aylık"]);if(nakVar)T.push(["nakit","💵 Nakit akışı"]);
+  var h='<div class="tr1">'+T.map(function(t){return'<button data-ta="'+t[0]+'"'+(TSEK===t[0]?' class="on"':'')+'>'+t[1]+'</button>';}).join("")+'</div>';
+  h+='<div class="flt" id="grp" style="flex-wrap:nowrap;overflow-x:auto">'+["Hepsi"].concat(TEMALAR()).map(function(g){return'<button style="white-space:nowrap" data-g="'+esc(g)+'"'+(GRP===g?' class="on"':'')+'>'+esc(g)+'</button>';}).join("")+'</div>';
+  h+='<div class="flt" id="grp2" style="flex-wrap:nowrap;overflow-x:auto">'+["Hepsi"].concat(KAPL).map(function(g){return'<button style="white-space:nowrap" data-g2="'+esc(g)+'"'+(GRP2===g?' class="on"':'')+'>'+esc(g)+'</button>';}).join("")+'</div>';
+  var K=kolonlar(F).filter(function(c){return F.some(function(f){return c.g(f)!=null;});}),sk=null;K.forEach(function(c){if(c.id===TSRT)sk=c;});if(!sk){sk=K[0];TSRT=sk.id;}
+  var L=F.filter(function(f){return (GRP==="Hepsi"||f.tema===GRP)&&(GRP2==="Hepsi"||(f.kap||"Dağılım alınamadı")===GRP2);});
+  L.sort(function(a,b){var x=sk.g(a),y=sk.g(b);if(x==null&&y==null)return 0;if(x==null)return 1;if(y==null)return -1;if(typeof x==="string")return TDIR==="d"?y.localeCompare(x):x.localeCompare(y);return TDIR==="d"?y-x:x-y;});
+  h+='<div class="ss">'+L.length+' fon · sütun başlığına dokununca o sütuna göre sıralanır (tekrar dokununca ters) · satıra dokununca fon kartı açılır · tabloyu sağa kaydır →</div>';
+  h+='<div class="scw"><table class="sct"><tr><th class="c1">#</th><th class="c2 l">Fon</th>'+K.map(function(c){return'<th data-sr="'+c.id+'"'+(c.id===TSRT?' class="on"':'')+'>'+esc(c.ad)+(c.id===TSRT?(TDIR==="d"?" ▼":" ▲"):"")+'</th>';}).join("")+'</tr>';
+  L.forEach(function(f,i){var c=TCOL[f.tema]||"#a78bfa",ok=!f.tefas||JSON.stringify(f.tefas).toLocaleLowerCase("tr").indexOf("işlem görüyor")>=0||JSON.stringify(f.tefas).toLowerCase().indexOf("trad")>=0;
+    h+='<tr class="rw" data-r="'+i+'"><td class="c1">'+(i+1)+'</td><td class="c2" style="--c:'+c+'"><b>'+esc(f.k)+(ok?' <span class="ok" title="TEFAS\'ta işlem görüyor">✓</span>':' <span class="mu">?</span>')+'</b><i style="color:'+c+'">'+esc(f.tema||f.et)+'</i></td>'+K.map(function(k){return'<td>'+k.h(k.g(f),f)+'</td>';}).join("")+'</tr><tr class="dr" id="dr'+i+'" style="display:none"><td colspan="'+(K.length+2)+'">'+kart(f,null,false)+'</td></tr>';});
+  h+='</table></div>';
+  h+='<div class="alt" style="margin-top:8px">Günlük, 1 hafta, yılbaşından beri (YBB) ve aylık getiriler fonun TEFAS fiyat geçmişinden hesaplanır. 1 ay–5 yıl getiriler ayrıca TEFAS’ın bildirdiği değerle teyit edilir. Puanlar (0–100) bu listedeki fonlara göredir: getiri = 1 yıl getiri sırası; istikrar = en büyük düşüş ve dalgalanma; güvenlik = geçmiş uzunluğu, büyüklük ve yatırımcı sayısı. “—” = veri yok ya da henüz hesaplanmadı. Geçmiş getiri gelecek getirinin garantisi değildir; bu sayfa al/sat önerisi değildir, karar sana aittir.</div>';
+  return h;}
+function tbag(){
+  Array.prototype.forEach.call(document.querySelectorAll(".stabs button"),function(b){b.onclick=function(){SEK=b.getAttribute("data-sk");ss("yab-sek",SEK);ciz();};});
+  Array.prototype.forEach.call(document.querySelectorAll(".tr1 button"),function(b){b.onclick=function(){TSEK=b.getAttribute("data-ta");ss("yab-alt",TSEK);ciz();};});
+  Array.prototype.forEach.call(document.querySelectorAll("#grp button"),function(b){b.onclick=function(){GRP=b.getAttribute("data-g");ss("yab-grp",GRP);ciz();};});
+  Array.prototype.forEach.call(document.querySelectorAll("#grp2 button"),function(b){b.onclick=function(){GRP2=b.getAttribute("data-g2");ss("yab-grp2",GRP2);ciz();};});
+  Array.prototype.forEach.call(document.querySelectorAll(".sct th[data-sr]"),function(th){th.onclick=function(){var k=th.getAttribute("data-sr");if(k===TSRT)TDIR=TDIR==="d"?"a":"d";else{TSRT=k;TDIR="d";}ss("yab-tsrt",TSRT);ss("yab-tdir",TDIR);ciz();};});
+  Array.prototype.forEach.call(document.querySelectorAll(".sct tr.rw"),function(r){r.onclick=function(){var d=document.getElementById("dr"+r.getAttribute("data-r"));if(d)d.style.display=d.style.display==="none"?"table-row":"none";};});}
 function ciz(){
   var F=D.fonlar.filter(function(f){return f.et==="Tematik";}),h='';
   h+='<div class="stabs"><button data-sk="iyi"'+(SEK==="iyi"?' class="on"':'')+'>⭐ En iyiler</button><button data-sk="tum"'+(SEK==="tum"?' class="on"':'')+'>Tüm fonlar</button></div>';
   if(SEK==="iyi"){h+=iyiler(F);document.getElementById("app").innerHTML=h;Array.prototype.forEach.call(document.querySelectorAll(".cat .r[data-rw]"),function(r){r.onclick=function(){var d=document.getElementById("rd"+r.getAttribute("data-rw"));if(d)d.classList.toggle("ac");};});Array.prototype.forEach.call(document.querySelectorAll(".stabs button"),function(b){b.onclick=function(){SEK=b.getAttribute("data-sk");ss("yab-sek",SEK);ciz();};});return;}
-  var KAPL=[];F.forEach(function(f){var k=f.kap||'Dağılım alınamadı';if(KAPL.indexOf(k)<0)KAPL.push(k);});KAPL.sort();
-  h+='<div class="sum">';["ndx","spx"].forEach(function(k){var o=D.olcut[k];if(o)h+='<div class="sm"><small>'+esc(o.ad)+' · 1 yıl (TL)</small><b class="'+(o.y1>=0?"up":"dn")+'">'+yz(o.y1)+'</b></div>';});h+='</div>';
-  h+='<div class="bh"><span><b>⭐ Öne çıkanlar</b></span></div>';
-  h+='<div class="alt" style="margin:-2px 2px 4px">Kriter: en az 1 yıllık geçmiş · 50 milyon TL ve üzeri büyüklük · 1 yıllık getirisi fiyat geçmişiyle teyitli. Sıralama yalnızca geçmiş 1 yıl getirisine göredir.</div>';
-  h+=oneCik(F);
-  h+='<div class="bh"><span><b>🌎 Bütün fonlar</b> <small>'+F.length+' fon</small></span></div>';
-  h+='<div class="flt" id="grp">'+["Hepsi"].concat(TEMALAR()).map(function(g){return'<button data-g="'+esc(g)+'"'+(GRP===g?' class="on"':'')+'>'+esc(g)+'</button>';}).join("")+'</div>';
-  h+='<div class="dh" style="margin-top:6px">Portföy yapısı <small>(TEFAS varlık dağılımı)</small></div><div class="flt" id="grp2">'+["Hepsi"].concat(KAPL).map(function(g){return'<button data-g2="'+esc(g)+'"'+(GRP2===g?' class="on"':'')+'>'+esc(g)+'</button>';}).join("")+'</div>';
-  h+='<div class="flt" id="srt">'+SRT.map(function(s){return'<button data-s="'+s[0]+'"'+(SIRA===s[0]?' class="on"':'')+'>'+s[1]+'</button>';}).join("")+'</div>';
-  var L=F.filter(function(f){return (GRP==="Hepsi"||f.tema===GRP)&&(GRP2==="Hepsi"||(f.kap||"Dağılım alınamadı")===GRP2);}).sort(function(a,b){return deger(b,SIRA)-deger(a,SIRA);});
-  L.forEach(function(f,i){h+=kart(f,i,false);});
-  var at=D.atlanan_sayi||{};
-  h+='<div class="alt" style="margin-top:8px">Fonlar TEFAS’taki bütün fonlar arasından, fiyat hareketi Nasdaq-100 ya da S&amp;P 500 ile örtüşenlerdir. Bazı tematik fonlar yurt içi şirketlere de yatırım yapabilir; portföy dağılımını TEFAS/KAP’tan kontrol et. Tematik sekmesindeki fonlar tek bir sektöre (örneğin yarı iletken) yatırım yapar, endeks fonu değildir; Nasdaq-100 yalnızca referans olarak gösterilir ve bu fonların riski daha yüksek olabilir. getiriler TEFAS verisidir ve fonun günlük fiyatlarından ayrıca hesaplanarak teyit edilir. 10 milyon TL altı, işleme kapalı ve getirisi teyit edilemeyen fonlar dahil değildir. Fon getirisi ile ölçüt arasındaki fark yönetim ücreti, kur ve fiyat gecikmesinden de kaynaklanır. Geçmiş getiri gelecek getirinin garantisi değildir; bu sayfa al/sat önerisi değildir, karar sana aittir.</div>';
-  document.getElementById("app").innerHTML=h;
-  Array.prototype.forEach.call(document.querySelectorAll(".stabs button"),function(b){b.onclick=function(){SEK=b.getAttribute("data-sk");ss("yab-sek",SEK);ciz();};});
-  Array.prototype.forEach.call(document.querySelectorAll("#grp2 button"),function(b){b.onclick=function(){GRP2=b.getAttribute("data-g2");ss("yab-grp2",GRP2);ciz();};});
-  Array.prototype.forEach.call(document.querySelectorAll("#grp button"),function(b){b.onclick=function(){GRP=b.getAttribute("data-g");ss("yab-grp",GRP);ciz();};});
-  Array.prototype.forEach.call(document.querySelectorAll("#srt button"),function(b){b.onclick=function(){SIRA=b.getAttribute("data-s");ss("yab-sira",SIRA);ciz();};});}
+  h+=tara(F);document.getElementById("app").innerHTML=h;tbag();}
 fetch("yabanci.json?"+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(d){D=d;
   document.getElementById("sub").innerHTML="Sektör / tema odaklı TEFAS fonları · "+d.fonlar.filter(function(f){return f.et==="Tematik";}).length+" fon · son tarama "+trD(d.updated);ciz();})
  .catch(function(){document.getElementById("msg").innerHTML='<div class="warn">Veri henüz hazır değil. GitHub’daki “Yabanci fonlar” çalışması ilk kez bittikten sonra burada görünecek.</div>';});
