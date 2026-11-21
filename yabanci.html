@@ -99,6 +99,18 @@ details.dt{margin-top:4px!important}details.dt summary{font-size:11.5px!importan
 .dh{font-size:12px!important;margin:8px 2px 4px!important}
 .stabs{display:flex;gap:6px;margin:4px 0 10px}.stabs button{flex:1;font:inherit;font-size:13px;font-weight:700;padding:9px;border-radius:12px;background:#1d2033;color:#c7d2fe;border:1px solid #34385a}.stabs button.on{background:#6366f1;color:#fff;border-color:#6366f1}
 .ss{font-size:10.5px;color:#98a2c9;margin:0 2px 6px;line-height:1.45}
+.cat{background:#1d2033;border-radius:16px;padding:6px 8px 8px;border:1px solid #2c3050}
+.cat .sh{font-size:12.5px;font-weight:800;color:#c7d2fe;margin:10px 4px 3px;padding-top:6px;border-top:1px solid #2c3050}.cat .sh:first-of-type{border-top:0;margin-top:4px}
+.cat .r{display:grid;grid-template-columns:16px 1fr 50px 50px 50px 50px 34px;align-items:center;gap:2px;padding:6px 4px;border-bottom:1px solid #262a45;font-size:12px;cursor:pointer}
+.cat .r.h{font-size:10px;color:#98a2c9;font-weight:600;padding-bottom:4px;cursor:default}
+.cat .n{color:#98a2c9;font-size:10px}.cat .k b{font-size:13px;color:#fff;display:block;border-left:3px solid var(--c);padding-left:5px}.cat .k small{font-size:9.5px;color:var(--c);padding-left:8px;white-space:nowrap}
+.cat .v{text-align:right;font-weight:700}.cat .pu{text-align:center;font-weight:800;font-size:11px;background:#4ade80;color:#12131c;border-radius:999px;padding:1px 0}.cat .pu.pm,.cat .h .pu{background:none;color:#98a2c9}
+.cat .rd{display:none;padding:4px 0 8px}.cat .rd.ac{display:block}
+.win{background:#1d2033;border:1px solid #fbbf24;border-radius:16px;padding:10px;margin-bottom:10px}.wh{font-size:15px;font-weight:800;color:#fbbf24}.ws{font-size:10.5px;color:#98a2c9;margin:2px 0 6px;line-height:1.45}
+.win .sec{font-size:12px;font-weight:800;color:#c7d2fe;margin:10px 2px 5px}.hb{background:#12131c;border-left:4px solid var(--c);border-radius:10px;padding:8px 10px;margin-bottom:6px}
+.hb .ht{display:flex;align-items:center;gap:6px}.hb .ht b{font-size:14px;color:#fff}.hb .tg2{font-size:10px;font-weight:700;padding:1px 7px;border-radius:999px;border:1px solid var(--c);color:var(--c)}
+.hb .tx{font-size:12px;margin:4px 0 2px;line-height:1.4}.hb .nm{font-size:9.5px;color:#98a2c9}.hb .ms{display:flex;gap:10px;margin-top:5px;font-size:10.5px;color:#98a2c9;flex-wrap:wrap}.hb .ms b{color:#e8eaf6}
+.win .nt{font-size:10px;color:#98a2c9;margin-top:8px;line-height:1.5;border-top:1px solid #2c3050;padding-top:6px}
 </style><script>/* Cevrimdisi destek (sw.js): internet yokken en son kaydedilen veriler, kayit zamaniyla birlikte gosterilir */
 (function(){if("serviceWorker"in navigator){try{navigator.serviceWorker.register("sw.js").catch(function(){});}catch(e){}}
 var of=window.fetch;if(!of)return;var gos=0;
@@ -161,26 +173,41 @@ function oneCik(F){
 var SEK=sg("yab-sek","iyi");
 function emtia(f){var u=String(f.ad||"").toLocaleUpperCase("tr");return /PETROL|EMT[İI]A|ALTIN|G[ÜU]M[ÜU]Ş|MADEN/.test(u);}
 function pct(a,v,rev){var s=a.slice().sort(function(x,y){return x-y;}),n=s.length,c=0;s.forEach(function(x){if(x<v)c++;});var r=n>1?c/(n-1):.5;return rev?1-r:r;}
+function dikkat(F){
+  var B=F.filter(function(f){var g=f.g||{};return !emtia(f)&&(f.gun||0)>=250&&(f.buyukluk||0)>=50e6&&g.y1!=null&&g.a1!=null;});
+  var D1=B.filter(function(f){return f.g.y1>0&&f.g.a1<0;}).sort(function(a,b){return a.g.a1-b.g.a1;}).slice(0,3);
+  var S1=B.filter(function(f){return f.rk&&f.g.y1>0&&f.g.a1<0&&f.rk.vol<=16;}).sort(function(a,b){return b.rk.mdd-a.rk.mdd;}).slice(0,2);
+  function cl(x){return x==null?"":(x>=0?"up":"dn");}
+  function hb(f,tip){var g=f.g,c=TCOL[f.tema]||"#a78bfa",t=tip?esc(f.k)+" geriledi ama sakin: 1 ayda "+yz(g.a1)+", yıllık dalgalanma %"+String(f.rk.vol).replace(".",",")+", 1 yıllık en büyük düşüş "+yz(f.rk.mdd):esc(f.k)+" son 1 ayda "+yz(g.a1)+" geriledi; 1 yıllık getirisi hâlâ "+yz(g.y1);
+    return'<div class="hb" style="--c:'+c+'"><div class="ht"><b>'+esc(f.k)+'</b><span class="tg2">'+esc(f.tema||f.et)+'</span></div><div class="tx">'+t+'.</div><div class="nm">'+esc(f.ad)+'</div><div class="ms"><span>1 gün <b class="'+cl(g.d1)+'">'+yz(g.d1)+'</b></span><span>1 ay <b class="'+cl(g.a1)+'">'+yz(g.a1)+'</b></span><span>3 ay <b class="'+cl(g.a3)+'">'+yz(g.a3)+'</b></span><span>1 yıl <b class="'+cl(g.y1)+'">'+yz(g.y1)+'</b></span></div></div>';}
+  if(!D1.length&&!S1.length)return"";
+  var h='<div class="win"><div class="wh">⚠️ Bugün dikkat</div><div class="ws">Fiyat verisinden otomatik üretilen notlar; her tarama sonrası kendiliğinden değişir. Alım/satım önerisi değildir.</div>';
+  if(D1.length)h+='<div class="sec">📉 Son 1 ayda en çok düşenler (1 yıl hâlâ pozitif)</div>'+D1.map(function(f){return hb(f,0);}).join("");
+  if(S1.length)h+='<div class="sec">🧘 Düşüşte sakin kalanlar</div>'+S1.map(function(f){return hb(f,1);}).join("");
+  return h+'<div class="nt">Bu pencere sadece fiyat hareketine bakar; haber ya da yorum içermez. Fonun alınıp alınmayacağı kararı sana aittir.</div></div>';}
 function iyiler(F){
   var E=F.filter(function(f){var g=f.g||{};return !emtia(f)&&(f.gun||0)>=500&&(f.buyukluk||0)>=100e6&&g.y1!=null&&f.rk;});
   var Y=E.map(function(f){return f.g.y1;}),M=E.map(function(f){return f.rk.mdd;}),V=E.map(function(f){return f.rk.vol;}),RA=E.map(function(f){return f.g.y1/f.rk.vol;});
   E.forEach(function(f){var g=f.g,fr=f.fark||{},pos=0;["a1","a3","a6","y1"].forEach(function(k){if(g[k]!=null&&g[k]>0)pos++;});
     f._s={getiri:pct(Y,g.y1),ist:(pct(M,f.rk.mdd)+pct(V,f.rk.vol,true))/2,pos:pos/4,guv:(Math.min(f.gun/1260,1)+Math.min(f.buyukluk/1e9,1)+Math.min((f.yatirimci||0)/1e4,1))/3,ol:.5*(fr.y1!=null&&fr.y1>0?1:0)+.5*pct(RA,g.y1/f.rk.vol)};});
   function sira(W,mn){return E.filter(function(f){return f.g.y1>=mn;}).map(function(f){var p=0;for(var k in W)p+=W[k]*f._s[k];return{f:f,p:Math.round(100*p)};}).sort(function(a,b){return b.p-a.p;});}
-  function liste(L,n){var h='';L.slice(0,n).forEach(function(x,i){x.f._p=x.p;h+=kart(x.f,i,false);x.f._p=null;});return h||'<div class="alt">Şartları sağlayan fon yok.</div>';}
-  var G=sira({getiri:.55,ol:.15,pos:.10,ist:.15,guv:.05},20),I=sira({ist:.55,pos:.15,getiri:.15,guv:.10,ol:.05},10);
-  var C=F.filter(function(f){var g=f.g||{};return !emtia(f)&&(f.gun||0)>=250&&(f.buyukluk||0)>=50e6&&g.a3!=null&&g.y1!=null&&g.y1>0;}).sort(function(a,b){return b.g.a3-a.g.a3;});
-  var h='<div class="ss">'+E.length+' fon değerlendirildi (en az 2 yıllık geçmiş, 100 milyon TL büyüklük, getirisi teyitli; petrol/emtia fonları hariç). Veri her iş günü akşamı güncellenir, sıralama kendiliğinden değişir.</div>';
-  h+='<div class="dh">🚀 Getirisi daha yüksek olanlar <small>getiri %55 ağırlıklı · 1 yıl en az %20</small></div>'+liste(G,5);
-  h+='<div class="dh">🛡️ İstikrarı daha yüksek olanlar <small>istikrar %55 ağırlıklı · 1 yıl en az %10</small></div>'+liste(I,5);
-  h+='<div class="dh">⚡ Güncel en iyiler <small>son 3 ay getirisi · 1 yıl pozitif · en az 1 yıl geçmiş, 50 milyon TL</small></div>';
-  C.slice(0,5).forEach(function(f,i){h+=kart(f,i,false);});
-  h+='<div class="alt" style="margin-top:8px">Puan geçmiş veriye dayanır: getiri, istikrar (en büyük düşüş ve dalgalanma), tutarlılık, güvenilirlik ve ölçüte göre performans. Geçmiş getiri gelecek getirinin garantisi değildir; bu sayfa al/sat önerisi değildir, karar sana aittir.</div>';
+  var RW=0;
+  function satirK(f,i,p){var g=f.g,c=TCOL[f.tema]||"#a78bfa";RW++;
+    function v(x){return'<span class="v '+(x==null?"":(x>=0?"up":"dn"))+'">'+(x==null?"—":yz(x).replace("%","").replace("+","+"))+'</span>';}
+    return'<div class="r" data-rw="'+RW+'" style="--c:'+c+'"><span class="n">'+(i+1)+'</span><span class="k"><b>'+esc(f.k)+'</b><small>'+esc(f.tema||f.et)+'</small></span>'+v(g.y1)+v(g.a6)+v(g.a3)+v(f.rk?f.rk.mdd:null)+'<span class="pu'+(p==null?' pm':'')+'">'+(p==null?"·":p)+'</span></div><div class="rd" id="rd'+RW+'">'+kart(f,null,false)+'</div>';}
+  function blok(bas,L,pf){return'<div class="sh">'+bas+'</div>'+(L.length?L.map(function(x,i){return satirK(pf?x.f:x,i,pf?x.p:null);}).join(""):'<div class="alt" style="padding:6px 4px">Şartları sağlayan fon yok.</div>');}
+  var G=sira({getiri:.55,ol:.15,pos:.10,ist:.15,guv:.05},20).slice(0,5),I=sira({ist:.55,pos:.15,getiri:.15,guv:.10,ol:.05},10).slice(0,5);
+  var C=F.filter(function(f){var g=f.g||{};return !emtia(f)&&(f.gun||0)>=250&&(f.buyukluk||0)>=50e6&&g.a3!=null&&g.y1!=null&&g.y1>0;}).sort(function(a,b){return b.g.a3-a.g.a3;}).slice(0,5);
+  var h=dikkat(F);
+  h+='<div class="ss">'+E.length+' fon değerlendirildi (en az 2 yıllık geçmiş, 100 milyon TL büyüklük, getirisi teyitli; petrol/emtia fonları hariç). Veri her iş günü akşamı güncellenir, sıralama kendiliğinden değişir. Satıra dokununca fon kartı açılır.</div>';
+  h+='<div class="cat"><div class="r h"><span class="n">#</span><span class="k">Fon</span><span class="v">1 yıl %</span><span class="v">6 ay %</span><span class="v">3 ay %</span><span class="v">Düşüş %</span><span class="pu">Puan</span></div>';
+  h+=blok("🚀 Getirisi daha yüksek",G,1)+blok("🛡️ İstikrarı daha yüksek",I,1)+blok("⚡ Güncel en iyiler (son 3 ay)",C,0)+'</div>';
+  h+='<div class="alt" style="margin-top:8px">Puan geçmiş veriye dayanır: getiri, istikrar (en büyük düşüş ve dalgalanma), tutarlılık, güvenilirlik ve ölçüte göre performans. Düşüş sütunu 1 yıllık en büyük düşüştür. Geçmiş getiri gelecek getirinin garantisi değildir; bu sayfa al/sat önerisi değildir, karar sana aittir.</div>';
   return h;}
 function ciz(){
   var F=D.fonlar.filter(function(f){return f.et==="Tematik";}),h='';
   h+='<div class="stabs"><button data-sk="iyi"'+(SEK==="iyi"?' class="on"':'')+'>⭐ En iyiler</button><button data-sk="tum"'+(SEK==="tum"?' class="on"':'')+'>Tüm fonlar</button></div>';
-  if(SEK==="iyi"){h+=iyiler(F);document.getElementById("app").innerHTML=h;Array.prototype.forEach.call(document.querySelectorAll(".stabs button"),function(b){b.onclick=function(){SEK=b.getAttribute("data-sk");ss("yab-sek",SEK);ciz();};});return;}
+  if(SEK==="iyi"){h+=iyiler(F);document.getElementById("app").innerHTML=h;Array.prototype.forEach.call(document.querySelectorAll(".cat .r[data-rw]"),function(r){r.onclick=function(){var d=document.getElementById("rd"+r.getAttribute("data-rw"));if(d)d.classList.toggle("ac");};});Array.prototype.forEach.call(document.querySelectorAll(".stabs button"),function(b){b.onclick=function(){SEK=b.getAttribute("data-sk");ss("yab-sek",SEK);ciz();};});return;}
   var KAPL=[];F.forEach(function(f){var k=f.kap||'Dağılım alınamadı';if(KAPL.indexOf(k)<0)KAPL.push(k);});KAPL.sort();
   h+='<div class="sum">';["ndx","spx"].forEach(function(k){var o=D.olcut[k];if(o)h+='<div class="sm"><small>'+esc(o.ad)+' · 1 yıl (TL)</small><b class="'+(o.y1>=0?"up":"dn")+'">'+yz(o.y1)+'</b></div>';});h+='</div>';
   h+='<div class="bh"><span><b>⭐ Öne çıkanlar</b></span></div>';
