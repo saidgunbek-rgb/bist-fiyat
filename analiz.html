@@ -435,7 +435,7 @@ function kararOzet(z,o){var n=D.length-1,c=z.c,E=IND.ema,i,HT=TEST?TEST.h[SEC]:n
     +'<div><span>⬇️ İnebileceği destekler</span>'+(alt2.length?alt2.map(function(x){return'<b>'+f2(x.p)+'</b> <i>'+x.ad+'</i>';}).join("<br>"):'<b>1 yıllık dibin altında</b>')+'</div></div>';
   if(p10!=null)h+='<div class="kx">📏 <b>1 aylık olası aralık: '+f2(c*(1+p10))+' – '+f2(c*(1+p90))+'</b><br>Bu hissenin son 2 yılında 1 aylık fiyat değişimleri 10 seferden 8\'inde %'+f1(p10*100).replace("-","−")+' ile %+'+f1(p90*100)+' arasında kalmış. Tahmin değil, geçmiş oynaklığın bugünkü fiyata uygulanmışı.</div>';
   h+='<div class="lj2" style="margin-top:6px">Bu özet fiyatın plan seviyelerine göre yerini gösterir, yükselecek ya da düşecek demez. Karar senin.</div></div>';
-  document.getElementById("karar").innerHTML=h+kademeli(z);}
+  document.getElementById("karar").innerHTML=h+(durum.indexOf("DİBE")===0?"":kademeli(z));}
 
 /* Kademeli toplama (yalniz "DIBE YAKIN" durumunda): bu urun gecmiste 1 yillik araligin en alt %21'lik bolgesine indiginde
    sonraki 63 islem gununde (yaklasik 3 ay) en cok ne kadar daha dusmus ve 3 ay sonu nerede olmus. Ayni bolgede en az 20 gun arayla ornekler.
