@@ -1,7 +1,7 @@
 <!doctype html><html lang="tr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#12131c">
-<title>Nasdaq / S&amp;P fonları</title>
+<title>Tematik fonlar</title>
 <style>
 :root{--bg:#12131c;--card:#1b1d2a;--card2:#242739;--mut:#9a9ab0;--tx:#e6e6ee;--g:#4ade80;--y:#facc15;--r:#f87171;--p:#8b7cf6;--ln:#3a3d55}
 *{box-sizing:border-box}body{margin:0 auto;max-width:560px;background:var(--bg);color:var(--tx);font-family:Roboto,Arial,sans-serif;padding:16px}
@@ -73,8 +73,8 @@ function bant(t){if(gos||window.top!==window)return;gos=1;var z=t&&t.length>15?n
 window.fetch=function(){return of.apply(this,arguments).then(function(r){try{var k=r.headers.get("x-onbellek");if(k)bant(k);}catch(e){}return r;});};})();</script>
 </head><body>
 <div><a href="index.html">‹ Panele dön</a></div>
-<h1>Nasdaq / S&amp;P fonları</h1>
-<div class="sub" id="sub">Nasdaq ve S&amp;P 500 içerikli TEFAS fonları</div>
+<h1>Tematik fonlar</h1>
+<div class="sub" id="sub">Sektör / tema odaklı TEFAS fonları</div>
 <div id="msg"></div><div id="app"></div>
 <script>
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
@@ -88,8 +88,9 @@ function sg(k,v){try{return localStorage.getItem(k)||v;}catch(e){return v;}}
 function ss(k,v){try{localStorage.setItem(k,v);}catch(e){}}
 var SUT=[["d1","1 gün"],["a1","1 ay"],["a3","3 ay"],["a6","6 ay"],["y1","1 yıl"],["y3","3 yıl"],["y5","5 yıl"]];
 var SRT=[["y1","1 yıl"],["a6","6 ay"],["a3","3 ay"],["yakin","Ölçüte yakın"],["ucret","Düşük ücret"],["buyuk","Büyüklük"]];
-var KARSI={"Nasdaq-100":"ndx","Nasdaq-100 Teknoloji":"ndx","S&P 500":"spx"};
-function grup(f){return f.et==="S&P 500"?"S&P 500":(f.et==="Karma"?"Diğer":"Nasdaq");}
+var KARSI={"Nasdaq-100":"ndx","Nasdaq-100 Teknoloji":"ndx","S&P 500":"spx","Tematik":"ndx"};
+function TEMALAR(){var s={};D.fonlar.forEach(function(f){if(f.et==="Tematik"&&f.tema)s[f.tema]=1;});return Object.keys(s).sort();}
+function grup(f){return f.et==="S&P 500"?"S&P 500":(f.et==="Tematik"?"Tematik":(f.et==="Karma"?"Diğer":"Nasdaq"));}
 function deger(f,s){var g=f.g||{};
   if(s==="yakin"){var x=f.fark&&f.fark.y1!=null?f.fark.y1:(f.fark&&f.fark.a6);return x==null?-1e9:-Math.abs(x);}
   if(s==="ucret")return f.ucret==null?-1e9:-f.ucret;
@@ -99,22 +100,22 @@ function satir(f,hl){var g='';SUT.forEach(function(s){var x=f.g[s[0]];g+='<div c
 function kart(f,i,kisa){
   var fr=f.fark||{},ol=D.olcut[KARSI[f.et]],fk="";
   if(ol){var p=fr.y1!=null?["1 yıl",fr.y1]:(fr.a6!=null?["6 ay",fr.a6]:(fr.a3!=null?["3 ay",fr.a3]:null));
-    if(p)fk='<div class="alt" style="margin-top:6px">'+p[0]+': '+esc(ol.ad)+' ölçütünün <b class="'+(p[1]>=0?"up":"dn")+'">'+puan(Math.abs(p[1]))+'</b> '+(p[1]>=0?"önünde":"gerisinde")+' <small>(dolar/TL dahil)</small></div>';}
+    if(p)fk='<div class="alt" style="margin-top:6px">'+p[0]+': '+esc(ol.ad)+(f.et==='Tematik'?' (referans)':'')+' ölçütünün <b class="'+(p[1]>=0?"up":"dn")+'">'+puan(Math.abs(p[1]))+'</b> '+(p[1]>=0?"önünde":"gerisinde")+' <small>(dolar/TL dahil)</small></div>';}
   else if(f.et==="Karma"||f.et==="Nasdaq-100 Teknoloji")fk='';
-  return'<div class="it"><div class="ust"><span><b>'+esc(f.k)+'</b> <span style="font-size:12px;color:var(--p);font-weight:700">'+esc(f.et)+'</span><small>'+esc(f.ad)+'</small></span><span class="pn">'+(i!=null?"#"+(i+1):"")+'</span></div>'
+  return'<div class="it"><div class="ust"><span><b>'+esc(f.k)+'</b> <span style="font-size:12px;color:var(--p);font-weight:700">'+esc(f.et==='Tematik'&&f.tema?'Tematik · '+f.tema:f.et)+'</span><small>'+esc(f.ad)+'</small></span><span class="pn">'+(i!=null?"#"+(i+1):"")+'</span></div>'
    +'<div class="sg" style="grid-template-columns:repeat(7,1fr)">'+satir(f,SIRA==="a6"?"a6":SIRA==="a3"?"a3":"y1")+'</div>'+fk
    +(kisa?'':'<div class="alt" style="margin-top:6px">Büyüklük <b style="color:var(--tx)">'+para(f.buyukluk)+'</b> · '+adet(f.yatirimci)+' yatırımcı'+(f.risk?' · Risk '+f.risk+'/7':'')+(f.ucret!=null?' · Yönetim ücreti %'+String(f.ucret).replace(".",","):'')+(f.kurucu?'<br>'+esc(f.kurucu):'')+'</div>')+'</div>';}
 function oneCik(F){
   // Olcut: en az 1 yillik gecmis, 50 milyon TL ve uzeri buyukluk, 1 yillik getirisi teyitli; grup icinde 1 yil getiriye gore ilk 3
   var el=F.filter(function(f){return f.gun>=250&&(f.buyukluk||0)>=50e6&&f.g.y1!=null;}),h='';
-  [["Nasdaq","Nasdaq"],["S&P 500","S&P 500"]].forEach(function(G){
+  [["Tematik","Tematik (sektör/tema)"]].forEach(function(G){
     var L=el.filter(function(f){return grup(f)===G[0];}).sort(function(a,b){return b.g.y1-a.g.y1;}).slice(0,3);
     h+='<div class="dh">'+G[1]+' içerikli fonlar · en iyi '+Math.max(L.length,0)+' <small>1 yıl TL getirisine göre</small></div>';
     if(!L.length)h+='<div class="alt" style="margin:0 2px 8px">Ölçütleri sağlayan fon yok.</div>';
     L.forEach(function(f,i){h+=kart(f,i,false);});});
   return h;}
 function ciz(){
-  var F=D.fonlar.slice(),h='';
+  var F=D.fonlar.filter(function(f){return f.et==="Tematik";}),h='';
   h+='<div class="bx"><b>Ölçüt (TL’ye çevrilmiş)</b>';
   ["ndx","spx"].forEach(function(k){var o=D.olcut[k];if(o)h+='<br>'+esc(o.ad)+' · 1 ay <b>'+yz(o.a1)+'</b> · 3 ay <b>'+yz(o.a3)+'</b> · 6 ay <b>'+yz(o.a6)+'</b> · 1 yıl <b>'+yz(o.y1)+'</b>'+(o.y3!=null?' · 3 yıl <b>'+yz(o.y3)+'</b>':'');});
   h+='<br><span style="font-size:11.5px">Endeks getirisi dolar/TL ile çarpılarak TL’ye çevrilir; iki bağımsız kaynaktan teyit edilir, tutmayan dönem boş kalır. Fiyat endeksidir (temettü dahil değil). Fonlar kendi fiyatlarını bir gün geriden açıklayabilir.</span></div>';
@@ -122,17 +123,17 @@ function ciz(){
   h+='<div class="alt" style="margin:-2px 2px 4px">Kriter: en az 1 yıllık geçmiş · 50 milyon TL ve üzeri büyüklük · 1 yıllık getirisi fiyat geçmişiyle teyitli. Sıralama yalnızca geçmiş 1 yıl getirisine göredir.</div>';
   h+=oneCik(F);
   h+='<div class="bh"><span><b>🌎 Bütün fonlar</b> <small>'+F.length+' fon</small></span></div>';
-  h+='<div class="flt" id="grp">'+["Hepsi","Nasdaq","S&P 500","Diğer"].map(function(g){return'<button data-g="'+esc(g)+'"'+(GRP===g?' class="on"':'')+'>'+esc(g)+'</button>';}).join("")+'</div>';
+  h+='<div class="flt" id="grp">'+["Hepsi"].concat(TEMALAR()).map(function(g){return'<button data-g="'+esc(g)+'"'+(GRP===g?' class="on"':'')+'>'+esc(g)+'</button>';}).join("")+'</div>';
   h+='<div class="flt" id="srt">'+SRT.map(function(s){return'<button data-s="'+s[0]+'"'+(SIRA===s[0]?' class="on"':'')+'>'+s[1]+'</button>';}).join("")+'</div>';
-  var L=F.filter(function(f){return GRP==="Hepsi"||grup(f)===GRP;}).sort(function(a,b){return deger(b,SIRA)-deger(a,SIRA);});
+  var L=F.filter(function(f){return GRP==="Hepsi"||f.tema===GRP;}).sort(function(a,b){return deger(b,SIRA)-deger(a,SIRA);});
   L.forEach(function(f,i){h+=kart(f,i,false);});
   var at=D.atlanan_sayi||{};
-  h+='<div class="alt" style="margin-top:8px">Fonlar TEFAS’taki bütün fonlar arasından adında Nasdaq ya da S&amp;P geçenlerdir; getiriler TEFAS verisidir ve fonun günlük fiyatlarından ayrıca hesaplanarak teyit edilir. 10 milyon TL altı, işleme kapalı ve getirisi teyit edilemeyen fonlar dahil değildir. Fon getirisi ile ölçüt arasındaki fark yönetim ücreti, kur ve fiyat gecikmesinden de kaynaklanır. Geçmiş getiri gelecek getirinin garantisi değildir; bu sayfa al/sat önerisi değildir, karar sana aittir.</div>';
+  h+='<div class="alt" style="margin-top:8px">Fonlar TEFAS’taki bütün fonlar arasından, fiyat hareketi Nasdaq-100 ya da S&amp;P 500 ile örtüşenlerdir. Tematik sekmesindeki fonlar tek bir sektöre (örneğin yarı iletken) yatırım yapar, endeks fonu değildir; Nasdaq-100 yalnızca referans olarak gösterilir ve bu fonların riski daha yüksek olabilir. getiriler TEFAS verisidir ve fonun günlük fiyatlarından ayrıca hesaplanarak teyit edilir. 10 milyon TL altı, işleme kapalı ve getirisi teyit edilemeyen fonlar dahil değildir. Fon getirisi ile ölçüt arasındaki fark yönetim ücreti, kur ve fiyat gecikmesinden de kaynaklanır. Geçmiş getiri gelecek getirinin garantisi değildir; bu sayfa al/sat önerisi değildir, karar sana aittir.</div>';
   document.getElementById("app").innerHTML=h;
   Array.prototype.forEach.call(document.querySelectorAll("#grp button"),function(b){b.onclick=function(){GRP=b.getAttribute("data-g");ss("yab-grp",GRP);ciz();};});
   Array.prototype.forEach.call(document.querySelectorAll("#srt button"),function(b){b.onclick=function(){SIRA=b.getAttribute("data-s");ss("yab-sira",SIRA);ciz();};});}
 fetch("yabanci.json?"+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(d){D=d;
-  document.getElementById("sub").innerHTML="Nasdaq ve S&amp;P 500 içerikli TEFAS fonları · "+d.fonlar.length+" fon · son tarama "+trD(d.updated);ciz();})
+  document.getElementById("sub").innerHTML="Sektör / tema odaklı TEFAS fonları · "+d.fonlar.filter(function(f){return f.et==="Tematik";}).length+" fon · son tarama "+trD(d.updated);ciz();})
  .catch(function(){document.getElementById("msg").innerHTML='<div class="warn">Veri henüz hazır değil. GitHub’daki “Yabanci fonlar” çalışması ilk kez bittikten sonra burada görünecek.</div>';});
 </script>
 </body></html>
