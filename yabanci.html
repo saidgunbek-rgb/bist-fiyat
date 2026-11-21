@@ -83,7 +83,7 @@ function puan(x){return x==null?"—":(x>=0?"+":"−")+Math.abs(x).toFixed(1).re
 function para(v){if(!(v>0))return"—";if(v>=1e9)return(v/1e9).toFixed(1).replace(".",",")+" milyar TL";if(v>=1e6)return Math.round(v/1e6)+" milyon TL";return Math.round(v).toLocaleString("tr-TR")+" TL";}
 function adet(v){if(!(v>0))return"—";if(v>=1e3)return(v/1e3).toFixed(v>=1e4?0:1).replace(".",",")+" bin";return String(Math.round(v));}
 function trD(s){var p=String(s||"").slice(0,10).split("-");return p.length===3?p[2]+"."+p[1]+"."+p[0]:s;}
-var D=null,GRP=sg("yab-grp","Hepsi"),SIRA=sg("yab-sira","y1");
+var D=null,GRP2=sg("yab-grp2","Hepsi"),GRP=sg("yab-grp","Hepsi"),SIRA=sg("yab-sira","y1");
 function sg(k,v){try{return localStorage.getItem(k)||v;}catch(e){return v;}}
 function ss(k,v){try{localStorage.setItem(k,v);}catch(e){}}
 var SUT=[["d1","1 gün"],["a1","1 ay"],["a3","3 ay"],["a6","6 ay"],["y1","1 yıl"],["y3","3 yıl"],["y5","5 yıl"]];
@@ -104,7 +104,7 @@ function kart(f,i,kisa){
   else if(f.et==="Karma"||f.et==="Nasdaq-100 Teknoloji")fk='';
   return'<div class="it"><div class="ust"><span><b>'+esc(f.k)+'</b> <span style="font-size:12px;color:var(--p);font-weight:700">'+esc(f.et==='Tematik'&&f.tema?'Tematik · '+f.tema:f.et)+'</span><small>'+esc(f.ad)+'</small></span><span class="pn">'+(i!=null?"#"+(i+1):"")+'</span></div>'
    +'<div class="sg" style="grid-template-columns:repeat(7,1fr)">'+satir(f,SIRA==="a6"?"a6":SIRA==="a3"?"a3":"y1")+'</div>'+fk
-   +(kisa?'':'<div class="alt" style="margin-top:6px">Büyüklük <b style="color:var(--tx)">'+para(f.buyukluk)+'</b> · '+adet(f.yatirimci)+' yatırımcı'+(f.risk?' · Risk '+f.risk+'/7':'')+(f.ucret!=null?' · Yönetim ücreti %'+String(f.ucret).replace(".",","):'')+(f.kurucu?'<br>'+esc(f.kurucu):'')+'</div>')+'</div>';}
+   +(kisa?'':'<div class="alt" style="margin-top:6px">Büyüklük <b style="color:var(--tx)">'+para(f.buyukluk)+'</b> · '+adet(f.yatirimci)+' yatırımcı'+(f.risk?' · Risk '+f.risk+'/7':'')+(f.ucret!=null?' · Yönetim ücreti %'+String(f.ucret).replace(".",","):'')+(f.kap?'<br>Portföy: <b style="color:var(--tx)">'+esc(f.kap)+'</b>'+(f.yab!=null&&f.dagilim&&f.dagilim.length?' · yabancı hisse %'+String(f.yab).replace('.',',')+' · yurt içi hisse %'+String(f.yur).replace('.',','):''):'')+(f.kor&&f.kor.bist!=null?'<br>Getiri benzerliği: BIST 100 <b style="color:var(--tx)">'+String(f.kor.bist).replace('.',',')+'</b>'+(f.kor.spx!=null?' · S&amp;P 500 <b style="color:var(--tx)">'+String(f.kor.spx).replace('.',',')+'</b>':''):'')+(f.kor&&f.kor.ndx!=null?'<br>Nasdaq-100 ile benzerlik (korelasyon): <b style="color:var(--tx)">'+String(f.kor.ndx).replace('.',',')+'</b>'+(f.kor.ndx<0.5?' · düşük, yurt içi ağırlıklı olabilir':''):(f.et==='Tematik'?'<br>Fiyat geçmişi kısa, Nasdaq ile benzerlik hesaplanamadı':''))+(f.kurucu?'<br>'+esc(f.kurucu):'')+'</div>')+'</div>';}
 function oneCik(F){
   // Olcut: en az 1 yillik gecmis, 50 milyon TL ve uzeri buyukluk, 1 yillik getirisi teyitli; grup icinde 1 yil getiriye gore ilk 3
   var el=F.filter(function(f){return f.gun>=250&&(f.buyukluk||0)>=50e6&&f.g.y1!=null;}),h='';
@@ -116,6 +116,7 @@ function oneCik(F){
   return h;}
 function ciz(){
   var F=D.fonlar.filter(function(f){return f.et==="Tematik";}),h='';
+  var KAPL=[];F.forEach(function(f){var k=f.kap||'Dağılım alınamadı';if(KAPL.indexOf(k)<0)KAPL.push(k);});KAPL.sort();
   h+='<div class="bx"><b>Ölçüt (TL’ye çevrilmiş)</b>';
   ["ndx","spx"].forEach(function(k){var o=D.olcut[k];if(o)h+='<br>'+esc(o.ad)+' · 1 ay <b>'+yz(o.a1)+'</b> · 3 ay <b>'+yz(o.a3)+'</b> · 6 ay <b>'+yz(o.a6)+'</b> · 1 yıl <b>'+yz(o.y1)+'</b>'+(o.y3!=null?' · 3 yıl <b>'+yz(o.y3)+'</b>':'');});
   h+='<br><span style="font-size:11.5px">Endeks getirisi dolar/TL ile çarpılarak TL’ye çevrilir; iki bağımsız kaynaktan teyit edilir, tutmayan dönem boş kalır. Fiyat endeksidir (temettü dahil değil). Fonlar kendi fiyatlarını bir gün geriden açıklayabilir.</span></div>';
@@ -124,12 +125,14 @@ function ciz(){
   h+=oneCik(F);
   h+='<div class="bh"><span><b>🌎 Bütün fonlar</b> <small>'+F.length+' fon</small></span></div>';
   h+='<div class="flt" id="grp">'+["Hepsi"].concat(TEMALAR()).map(function(g){return'<button data-g="'+esc(g)+'"'+(GRP===g?' class="on"':'')+'>'+esc(g)+'</button>';}).join("")+'</div>';
+  h+='<div class="dh" style="margin-top:6px">Portföy yapısı <small>(TEFAS varlık dağılımı)</small></div><div class="flt" id="grp2">'+["Hepsi"].concat(KAPL).map(function(g){return'<button data-g2="'+esc(g)+'"'+(GRP2===g?' class="on"':'')+'>'+esc(g)+'</button>';}).join("")+'</div>';
   h+='<div class="flt" id="srt">'+SRT.map(function(s){return'<button data-s="'+s[0]+'"'+(SIRA===s[0]?' class="on"':'')+'>'+s[1]+'</button>';}).join("")+'</div>';
-  var L=F.filter(function(f){return GRP==="Hepsi"||f.tema===GRP;}).sort(function(a,b){return deger(b,SIRA)-deger(a,SIRA);});
+  var L=F.filter(function(f){return (GRP==="Hepsi"||f.tema===GRP)&&(GRP2==="Hepsi"||(f.kap||"Dağılım alınamadı")===GRP2);}).sort(function(a,b){return deger(b,SIRA)-deger(a,SIRA);});
   L.forEach(function(f,i){h+=kart(f,i,false);});
   var at=D.atlanan_sayi||{};
-  h+='<div class="alt" style="margin-top:8px">Fonlar TEFAS’taki bütün fonlar arasından, fiyat hareketi Nasdaq-100 ya da S&amp;P 500 ile örtüşenlerdir. Tematik sekmesindeki fonlar tek bir sektöre (örneğin yarı iletken) yatırım yapar, endeks fonu değildir; Nasdaq-100 yalnızca referans olarak gösterilir ve bu fonların riski daha yüksek olabilir. getiriler TEFAS verisidir ve fonun günlük fiyatlarından ayrıca hesaplanarak teyit edilir. 10 milyon TL altı, işleme kapalı ve getirisi teyit edilemeyen fonlar dahil değildir. Fon getirisi ile ölçüt arasındaki fark yönetim ücreti, kur ve fiyat gecikmesinden de kaynaklanır. Geçmiş getiri gelecek getirinin garantisi değildir; bu sayfa al/sat önerisi değildir, karar sana aittir.</div>';
+  h+='<div class="alt" style="margin-top:8px">Fonlar TEFAS’taki bütün fonlar arasından, fiyat hareketi Nasdaq-100 ya da S&amp;P 500 ile örtüşenlerdir. Bazı tematik fonlar yurt içi şirketlere de yatırım yapabilir; portföy dağılımını TEFAS/KAP’tan kontrol et. Tematik sekmesindeki fonlar tek bir sektöre (örneğin yarı iletken) yatırım yapar, endeks fonu değildir; Nasdaq-100 yalnızca referans olarak gösterilir ve bu fonların riski daha yüksek olabilir. getiriler TEFAS verisidir ve fonun günlük fiyatlarından ayrıca hesaplanarak teyit edilir. 10 milyon TL altı, işleme kapalı ve getirisi teyit edilemeyen fonlar dahil değildir. Fon getirisi ile ölçüt arasındaki fark yönetim ücreti, kur ve fiyat gecikmesinden de kaynaklanır. Geçmiş getiri gelecek getirinin garantisi değildir; bu sayfa al/sat önerisi değildir, karar sana aittir.</div>';
   document.getElementById("app").innerHTML=h;
+  Array.prototype.forEach.call(document.querySelectorAll("#grp2 button"),function(b){b.onclick=function(){GRP2=b.getAttribute("data-g2");ss("yab-grp2",GRP2);ciz();};});
   Array.prototype.forEach.call(document.querySelectorAll("#grp button"),function(b){b.onclick=function(){GRP=b.getAttribute("data-g");ss("yab-grp",GRP);ciz();};});
   Array.prototype.forEach.call(document.querySelectorAll("#srt button"),function(b){b.onclick=function(){SIRA=b.getAttribute("data-s");ss("yab-sira",SIRA);ciz();};});}
 fetch("yabanci.json?"+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(d){D=d;
