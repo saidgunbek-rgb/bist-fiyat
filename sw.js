@@ -2,7 +2,7 @@
    Her zaman once internetten en guncel hali alinir; internet yoksa (ya da 8 sn icinde cevap gelmezse)
    en son kaydedilen hali gosterilir ve sayfaya "x-onbellek" basligiyla kayit zamani bildirilir. */
 var KAP = "bist-panel-v1";
-var SAYFALAR = ["./", "index.html", "karne.html", "fon.html"];
+var SAYFALAR = ["./", "index.html", "karne.html", "fon.html", "yabanci.html"];
 self.addEventListener("install", function (e) {
   e.waitUntil(caches.open(KAP).then(function (c) { return Promise.all(SAYFALAR.map(function (u) { return c.add(u).catch(function () {}); })); }));
   self.skipWaiting();
