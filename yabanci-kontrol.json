@@ -10,44 +10,18 @@
    "screen_funds(BYF): 38 kayit, 38 yeni fon",
    "Toplam aday: 2173",
    "Nasdaq/S&P adli aday: 46 | olasi (secilmeyen Amerika/ABD adli): 23",
-   "Listeye giren: 15 | Atlanan: {'Nasdaq/S&P ile uyumsuz (getiri korelasyonu düşük)': 25, '10 milyon TL altı küçük fon': 2, 'işleme kapalı (fiyatı güncel değil)': 3, \"TEFAS'ta alınamıyor (özel fon / TEFAS'a kapalı)\": 1}"
+   "Listeye giren: 34 | Atlanan: {'yerli hisse/endeks fonu (tematik yabancı fon değil)': 4, '10 milyon TL altı küçük fon': 2, 'işleme kapalı (fiyatı güncel değil)': 3, 'getirisi teyit edilemeyen': 2, \"TEFAS'ta alınamıyor (özel fon / TEFAS'a kapalı)\": 1}"
   ]
  },
  "atlanan": {
-  "Nasdaq/S&P ile uyumsuz (getiri korelasyonu düşük)": [
-   [
-    "AFS",
-    "AK PORTFÖY SAĞLIK SEKTÖRÜ YABANCI HİSSE SENEDİ FONU",
-    {
-     "ndx": -0.043,
-     "spx": 0.199
-    },
-    1194780948.82
-   ],
-   [
-    "AOY",
-    "AK PORTFÖY ALTERNATİF ENERJİ YABANCI HİSSE SENEDİ FONU",
-    {
-     "ndx": 0.156,
-     "spx": 0.154
-    },
-    777937642.54
-   ],
-   [
-    "DFC",
-    "DENİZ PORTFÖY TARIM VE GIDA DEĞİŞKEN FON",
-    {
-     "ndx": -0.013,
-     "spx": 0.081
-    },
-    96714775.0
-   ],
+  "yerli hisse/endeks fonu (tematik yabancı fon değil)": [
    [
     "DJA",
     "QNB PORTFÖY QNB TEMİZ ENERJİ ENDEKSİ HİSSE SENEDİ YOĞUN BORSA YATIRIM ",
     {
      "ndx": 0.071,
-     "spx": 0.121
+     "spx": 0.121,
+     "bist": 0.72
     },
     22668575.71
    ],
@@ -56,171 +30,30 @@
     "AKTİF PORTFÖY ENERJİ ŞİRKETLERİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ Y",
     {
      "ndx": 0.191,
-     "spx": 0.188
+     "spx": 0.188,
+     "bist": 0.778
     },
     47650729.08
-   ],
-   [
-    "EVM",
-    "DENİZ PORTFÖY ENERJİ VE MADENCİLİK SEKTÖRÜ DEĞİŞKEN FON",
-    {
-     "ndx": 0.393,
-     "spx": 0.432
-    },
-    47424340.32
    ],
    [
     "GNS",
     "GARANTİ PORTFÖY ENERJİ ŞİRKETLERİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ",
     {
      "ndx": 0.255,
-     "spx": 0.252
+     "spx": 0.252,
+     "bist": 0.794
     },
     69442730.35
-   ],
-   [
-    "GZG",
-    "GARANTİ PORTFÖY SAĞLIK VE GENETİK TEKNOLOJİLERİ DEĞİŞKEN FON",
-    {
-     "ndx": 0.164,
-     "spx": 0.285
-    },
-    375637868.26
-   ],
-   [
-    "GZH",
-    "GARANTİ PORTFÖY TEMİZ ENERJİ DEĞİŞKEN FON",
-    {
-     "ndx": 0.472,
-     "spx": 0.441
-    },
-    281273920.61
-   ],
-   [
-    "GZL",
-    "GARANTİ PORTFÖY TARIM VE GIDA SEKTÖRÜ DEĞİŞKEN FON",
-    {
-     "ndx": 0.027,
-     "spx": 0.147
-    },
-    363344612.4
    ],
    [
     "KVT",
     "AK PORTFÖY ENERJİ ŞİRKETLERİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞU",
     {
      "ndx": 0.275,
-     "spx": 0.262
+     "spx": 0.262,
+     "bist": 0.77
     },
     67718647.12
-   ],
-   [
-    "MTS",
-    "AKTİF PORTFÖY TARIM VE SÜRDÜRÜLEBİLİRLİK FON SEPETİ FONU",
-    {
-     "ndx": 0.326,
-     "spx": 0.374
-    },
-    24125102.71
-   ],
-   [
-    "NEE",
-    "NEO PORTFÖY ENERJİ VE EMTİA ŞİRKETLERİ DEĞİŞKEN FON",
-    null,
-    29162638.62
-   ],
-   [
-    "RFM",
-    "ROTA PORTFÖY ENERJİ VE METAL FON SEPETİ FONU",
-    null,
-    57876552.93
-   ],
-   [
-    "SGK",
-    "EMAA BLUE PORTFÖY BİYOTEKNOLOJİ VE SAĞLIK SEKTÖRÜ DEĞİŞKEN FON",
-    null,
-    215007672.4
-   ],
-   [
-    "SSK",
-    "DENİZ PORTFÖY SAĞLIK SEKTÖRÜ DEĞİŞKEN FON",
-    {
-     "ndx": 0.166,
-     "spx": 0.359
-    },
-    48646271.05
-   ],
-   [
-    "TAR",
-    "AK PORTFÖY TARIM VE GIDA TEKNOLOJİLERİ DEĞİŞKEN FON",
-    {
-     "ndx": 0.089,
-     "spx": 0.228
-    },
-    116213044.68
-   ],
-   [
-    "TMZ",
-    "İŞ PORTFÖY SÜRDÜRÜLEBİLİRLİK VE TARIM FON SEPETİ FONU",
-    {
-     "ndx": 0.484,
-     "spx": 0.447
-    },
-    39966690.05
-   ],
-   [
-    "YJH",
-    "YAPI KREDİ PORTFÖY TEMİZ ENERJİ DEĞİŞKEN FONU",
-    {
-     "ndx": 0.339,
-     "spx": 0.337
-    },
-    143993374.3
-   ],
-   [
-    "YLC",
-    "ATA PORTFÖY TARIM VE GIDA DEĞİŞKEN FON",
-    {
-     "ndx": 0.14,
-     "spx": 0.209
-    },
-    62994443.81
-   ],
-   [
-    "YTV",
-    "YAPI KREDİ PORTFÖY TARIM DEĞİŞKEN FON",
-    {
-     "ndx": -0.119,
-     "spx": 0.029
-    },
-    184805412.46
-   ],
-   [
-    "YZE",
-    "BTCTURK PORTFÖY YAPAY ZEKA TEKNOLOJİLERİ ŞİRKETLERİ DEĞİŞKEN FON",
-    null,
-    10652391.34
-   ],
-   [
-    "YZT",
-    "AK PORTFÖY YAPAY ZEKA TEKNOLOJİLERİ ŞİRKETLERİ DEĞİŞKEN FON",
-    null,
-    655437518.43
-   ],
-   [
-    "ZTG",
-    "ZİRAAT PORTFÖY TARIM VE GIDA FON SEPETİ FONU",
-    {
-     "ndx": 0.113,
-     "spx": 0.192
-    },
-    28856473.88
-   ],
-   [
-    "ZTS",
-    "İŞ PORTFÖY YAPAY ZEKA TEKNOLOJİLERİ ŞİRKETLERİ DEĞİŞKEN FON",
-    null,
-    50371649.21
    ]
   ],
   "10 milyon TL altı küçük fon": [
@@ -255,6 +88,20 @@
     "HEDEF PORTFÖY TARIM VE GIDA DEĞİŞKEN FON",
     null,
     0.0
+   ]
+  ],
+  "getirisi teyit edilemeyen": [
+   [
+    "NEE",
+    "NEO PORTFÖY ENERJİ VE EMTİA ŞİRKETLERİ DEĞİŞKEN FON",
+    null,
+    29162638.62
+   ],
+   [
+    "YZE",
+    "BTCTURK PORTFÖY YAPAY ZEKA TEKNOLOJİLERİ ŞİRKETLERİ DEĞİŞKEN FON",
+    null,
+    10652391.34
    ]
   ],
   "TEFAS'ta alınamıyor (özel fon / TEFAS'a kapalı)": [
