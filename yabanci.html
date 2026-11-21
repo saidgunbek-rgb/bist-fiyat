@@ -114,7 +114,7 @@ function deger(f,s){var g=f.g||{};
   if(s==="buyuk")return f.buyukluk||-1;
   return g[s]==null?-1e9:g[s];}
 function satir(f,hl){var g='';SUT.forEach(function(s){var x=f.g[s[0]];g+='<div class="sc'+(s[0]===hl?' hl':'')+'"><i>'+s[1]+'</i><b class="'+(x==null?"":(x>=0?"up":"dn"))+'">'+yz(x)+'</b></div>';});return g;}
-var TCOL={"Yarı iletken":"#38bdf8","Siber güvenlik":"#f472b6","Sağlık":"#34d399","Robotik":"#fbbf24","Enerji":"#fb923c","Tarım":"#a3e635","Oyun":"#c084fc","Blokzincir":"#2dd4bf","Yapay zekâ":"#818cf8"};
+var TCOL={"Yarı iletken":"#38bdf8","Siber güvenlik":"#f472b6","Sağlık":"#34d399","Robotik":"#fbbf24","Enerji":"#fb923c","Tarım":"#a3e635","Oyun":"#c084fc","Blokzincir":"#2dd4bf","Yapay zekâ":"#818cf8","Teknoloji":"#60a5fa","Amerika":"#f87171","Nasdaq / S&P":"#e879f9","Avrupa":"#facc15","Gelişen / Asya":"#f97316","Küresel":"#22d3ee","Genel yabancı hisse":"#94a3b8"};
 function kapEt(f){var k=f.kap||"";if(k.indexOf("Yalnızca")===0)return['Yalnızca yabancı','#4ade80'];if(k.indexOf("Karışık")===0)return['Türk hisseli','#fbbf24'];if(k.indexOf("Fon sepeti")===0)return['Fon sepeti','#60a5fa'];return[k||'Dağılım yok','#98a2c9'];}
 function kart(f,i,kisa){
   var g=f.g||{},fr=f.fark||{},ol=D.olcut[KARSI[f.et]],fk="",c=TCOL[f.tema]||"#a78bfa",ke=kapEt(f);
