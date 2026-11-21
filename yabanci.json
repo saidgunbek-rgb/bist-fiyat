@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-21T10:07:57Z",
+ "updatedAt": "2026-11-21T10:21:06Z",
  "updated": "2026-11-21",
  "olcut": {
   "ndx": {
@@ -50,6 +50,29 @@
     "mdd": -27.18,
     "vol": 34.12
    },
+   "g": {
+    "a1": -7.89,
+    "a3": -13.07,
+    "a6": -8.44,
+    "y1": 61.78,
+    "d1": 1.93
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1"
+   ],
+   "celiski": [],
+   "gun": 432,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2025-02-28",
+   "fark": {
+    "a1": 5.56,
+    "a3": -3.24,
+    "a6": -3.18,
+    "y1": 37.53
+   },
    "dagilim": [
     [
      "Foreign Stocks",
@@ -80,33 +103,10 @@
      0.04
     ]
    ],
-   "yab": 0,
-   "yur": 0,
-   "fkb": 0,
-   "kap": "Diğer / karma dağılım",
-   "g": {
-    "a1": -7.89,
-    "a3": -13.07,
-    "a6": -8.44,
-    "y1": 61.78,
-    "d1": 1.93
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1"
-   ],
-   "celiski": [],
-   "gun": 432,
-   "son_tarih": "2026-11-20",
-   "ilk_tarih": "2025-02-28",
-   "fark": {
-    "a1": 5.56,
-    "a3": -3.24,
-    "a6": -3.18,
-    "y1": 37.53
-   }
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 67.6,
+   "yur": 25.3,
+   "fkb": 0
   },
   {
    "k": "SGT",
@@ -131,6 +131,29 @@
    "rk": {
     "mdd": -12.15,
     "vol": 24.02
+   },
+   "g": {
+    "a1": 1.97,
+    "a3": 4.5,
+    "a6": 25.12,
+    "y1": 55.42,
+    "d1": 6.24
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1"
+   ],
+   "celiski": [],
+   "gun": 437,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2025-02-21",
+   "fark": {
+    "a1": 15.42,
+    "a3": 14.33,
+    "a6": 30.38,
+    "y1": 31.17
    },
    "dagilim": [
     [
@@ -158,33 +181,10 @@
      1.07
     ]
    ],
-   "yab": 0,
-   "yur": 0,
-   "fkb": 0,
-   "kap": "Diğer / karma dağılım",
-   "g": {
-    "a1": 1.97,
-    "a3": 4.5,
-    "a6": 25.12,
-    "y1": 55.42,
-    "d1": 6.24
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1"
-   ],
-   "celiski": [],
-   "gun": 437,
-   "son_tarih": "2026-11-20",
-   "ilk_tarih": "2025-02-21",
-   "fark": {
-    "a1": 15.42,
-    "a3": 14.33,
-    "a6": 30.38,
-    "y1": 31.17
-   }
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 69.3,
+   "yur": 14.4,
+   "fkb": 0
   },
   {
    "k": "IJZ",
@@ -210,8 +210,6 @@
     "mdd": -11.68,
     "vol": 22.94
    },
-   "kap": "Dağılım alınamadı",
-   "dagilim_hata": "APIError('API Error: TEFAS dagilimSiraliGetirT rate limited (HTTP 429). The block clears in about 45 seconds.')",
    "g": {
     "a1": -0.25,
     "a3": -4.16,
@@ -236,7 +234,37 @@
     "a3": 5.67,
     "a6": 18.62,
     "y1": 23.27
-   }
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     72.01
+    ],
+    [
+     "Stocks",
+     21.81
+    ],
+    [
+     "Reverse Repo",
+     4.42
+    ],
+    [
+     "Futures Margin",
+     1.49
+    ],
+    [
+     "Fund Shares",
+     0.26
+    ],
+    [
+     "Foreign ETFs",
+     0.01
+    ]
+   ],
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 72.0,
+   "yur": 21.8,
+   "fkb": 0.3
   },
   {
    "k": "IJC",
@@ -261,6 +289,31 @@
    "rk": {
     "mdd": -31.23,
     "vol": 33.49
+   },
+   "g": {
+    "a1": -6.87,
+    "a3": -19.55,
+    "a6": -19.37,
+    "y1": 43.37,
+    "y3": 180.83,
+    "d1": 0.25
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2021-11-22",
+   "fark": {
+    "a1": 6.58,
+    "a3": -9.72,
+    "a6": -14.11,
+    "y1": 19.12
    },
    "dagilim": [
     [
@@ -288,35 +341,10 @@
      0.22
     ]
    ],
-   "yab": 0,
-   "yur": 0,
-   "fkb": 0,
-   "kap": "Diğer / karma dağılım",
-   "g": {
-    "a1": -6.87,
-    "a3": -19.55,
-    "a6": -19.37,
-    "y1": 43.37,
-    "y3": 180.83,
-    "d1": 0.25
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-20",
-   "ilk_tarih": "2021-11-22",
-   "fark": {
-    "a1": 6.58,
-    "a3": -9.72,
-    "a6": -14.11,
-    "y1": 19.12
-   }
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 68.1,
+   "yur": 26.5,
+   "fkb": 1.0
   },
   {
    "k": "GZG",
@@ -341,6 +369,31 @@
    "rk": {
     "mdd": -8.18,
     "vol": 14.5
+   },
+   "g": {
+    "a1": 6.51,
+    "a3": -0.34,
+    "a6": 25.23,
+    "y1": 42.89,
+    "y3": 138.96,
+    "d1": -0.36
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2021-11-22",
+   "fark": {
+    "a1": 19.96,
+    "a3": 9.49,
+    "a6": 30.49,
+    "y1": 18.64
    },
    "dagilim": [
     [
@@ -372,35 +425,10 @@
      0.08
     ]
    ],
-   "yab": 0,
-   "yur": 0,
-   "fkb": 0,
-   "kap": "Diğer / karma dağılım",
-   "g": {
-    "a1": 6.51,
-    "a3": -0.34,
-    "a6": 25.23,
-    "y1": 42.89,
-    "y3": 138.96,
-    "d1": -0.36
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-20",
-   "ilk_tarih": "2021-11-22",
-   "fark": {
-    "a1": 19.96,
-    "a3": 9.49,
-    "a6": 30.49,
-    "y1": 18.64
-   }
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 64.8,
+   "yur": 18.8,
+   "fkb": 0
   },
   {
    "k": "YJK",
@@ -426,24 +454,6 @@
     "mdd": -18.76,
     "vol": 26.48
    },
-   "dagilim": [
-    [
-     "Foreign ETFs",
-     68.81
-    ],
-    [
-     "Fund Shares",
-     31.13
-    ],
-    [
-     "Futures Margin",
-     0.06
-    ]
-   ],
-   "yab": 0,
-   "yur": 0,
-   "fkb": 0,
-   "kap": "Diğer / karma dağılım",
    "g": {
     "a1": -8.24,
     "a3": -14.05,
@@ -468,7 +478,25 @@
     "a3": -4.22,
     "a6": -2.69,
     "y1": 13.42
-   }
+   },
+   "dagilim": [
+    [
+     "Foreign ETFs",
+     68.81
+    ],
+    [
+     "Fund Shares",
+     31.13
+    ],
+    [
+     "Futures Margin",
+     0.06
+    ]
+   ],
+   "kap": "Yalnızca yabancı hisse",
+   "yab": 68.8,
+   "yur": 0,
+   "fkb": 31.1
   },
   {
    "k": "SSK",
@@ -494,8 +522,6 @@
     "mdd": -7.31,
     "vol": 10.12
    },
-   "kap": "Dağılım alınamadı",
-   "dagilim_hata": "APIError('API Error: TEFAS dagilimSiraliGetirT rate limited (HTTP 429). The block clears in about 45 seconds.')",
    "g": {
     "a1": 2.3,
     "a3": 3.35,
@@ -518,7 +544,49 @@
     "a3": 13.18,
     "a6": 28.46,
     "y1": 12.89
-   }
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     35.94
+    ],
+    [
+     "Foreign ETFs",
+     24.61
+    ],
+    [
+     "Reverse Repo",
+     14.4
+    ],
+    [
+     "Fund Shares",
+     9.81
+    ],
+    [
+     "Stocks",
+     9.26
+    ],
+    [
+     "Futures Margin",
+     3.06
+    ],
+    [
+     "Takasbank Money Market",
+     1.85
+    ],
+    [
+     "Corporate Bonds",
+     0.88
+    ],
+    [
+     "TL Deposits",
+     0.19
+    ]
+   ],
+   "kap": "Yalnızca yabancı hisse",
+   "yab": 60.5,
+   "yur": 9.3,
+   "fkb": 9.8
   },
   {
    "k": "GZL",
@@ -543,6 +611,31 @@
    "rk": {
     "mdd": -10.88,
     "vol": 14.29
+   },
+   "g": {
+    "a1": -1.15,
+    "a3": -6.32,
+    "a6": -1.19,
+    "y1": 34.73,
+    "y3": 75.96,
+    "d1": -1.18
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2021-11-22",
+   "fark": {
+    "a1": 12.3,
+    "a3": 3.51,
+    "a6": 4.07,
+    "y1": 10.48
    },
    "dagilim": [
     [
@@ -574,35 +667,10 @@
      0.22
     ]
    ],
-   "yab": 0,
-   "yur": 0,
-   "fkb": 0,
-   "kap": "Diğer / karma dağılım",
-   "g": {
-    "a1": -1.15,
-    "a3": -6.32,
-    "a6": -1.19,
-    "y1": 34.73,
-    "y3": 75.96,
-    "d1": -1.18
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-20",
-   "ilk_tarih": "2021-11-22",
-   "fark": {
-    "a1": 12.3,
-    "a3": 3.51,
-    "a6": 4.07,
-    "y1": 10.48
-   }
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 60.5,
+   "yur": 20.5,
+   "fkb": 0
   },
   {
    "k": "BTE",
@@ -628,32 +696,6 @@
     "mdd": -13.24,
     "vol": 21.48
    },
-   "dagilim": [
-    [
-     "Foreign Stocks",
-     62.75
-    ],
-    [
-     "Stocks",
-     12.41
-    ],
-    [
-     "Fund Shares",
-     12.41
-    ],
-    [
-     "VC Fund Shares",
-     8.56
-    ],
-    [
-     "Commercial Paper",
-     3.87
-    ]
-   ],
-   "yab": 0,
-   "yur": 0,
-   "fkb": 0,
-   "kap": "Diğer / karma dağılım",
    "g": {
     "a1": -1.73,
     "a3": -5.48,
@@ -678,7 +720,33 @@
     "a3": 4.35,
     "a6": 17.57,
     "y1": 9.51
-   }
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     62.75
+    ],
+    [
+     "Stocks",
+     12.41
+    ],
+    [
+     "Fund Shares",
+     12.41
+    ],
+    [
+     "VC Fund Shares",
+     8.56
+    ],
+    [
+     "Commercial Paper",
+     3.87
+    ]
+   ],
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 62.8,
+   "yur": 12.4,
+   "fkb": 21.0
   },
   {
    "k": "AFS",
@@ -704,24 +772,6 @@
     "mdd": -7.35,
     "vol": 13.7
    },
-   "dagilim": [
-    [
-     "Foreign Stocks",
-     90.85
-    ],
-    [
-     "Reverse Repo",
-     7.99
-    ],
-    [
-     "Fund Shares",
-     1.16
-    ]
-   ],
-   "yab": 0,
-   "yur": 0,
-   "fkb": 0,
-   "kap": "Diğer / karma dağılım",
    "g": {
     "a1": 3.29,
     "a3": 8.45,
@@ -746,7 +796,25 @@
     "a3": 18.28,
     "a6": 35.15,
     "y1": 8.97
-   }
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     90.85
+    ],
+    [
+     "Reverse Repo",
+     7.99
+    ],
+    [
+     "Fund Shares",
+     1.16
+    ]
+   ],
+   "kap": "Yalnızca yabancı hisse",
+   "yab": 90.8,
+   "yur": 0,
+   "fkb": 1.2
   },
   {
    "k": "YTV",
@@ -772,8 +840,6 @@
     "mdd": -11.33,
     "vol": 14.07
    },
-   "kap": "Dağılım alınamadı",
-   "dagilim_hata": "APIError('API Error: TEFAS dagilimSiraliGetirT rate limited (HTTP 429). The block clears in about 45 seconds.')",
    "g": {
     "a1": 1.39,
     "a3": -4.38,
@@ -798,7 +864,45 @@
     "a3": 5.45,
     "a6": 8.4,
     "y1": 6.6
-   }
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     54.38
+    ],
+    [
+     "Stocks",
+     16.87
+    ],
+    [
+     "Foreign ETFs",
+     9.29
+    ],
+    [
+     "Reverse Repo",
+     8.1
+    ],
+    [
+     "Fund Shares",
+     6.56
+    ],
+    [
+     "Futures Margin",
+     3.4
+    ],
+    [
+     "FX Deposits",
+     1.39
+    ],
+    [
+     "Takasbank Money Market",
+     0.01
+    ]
+   ],
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 63.7,
+   "yur": 16.9,
+   "fkb": 6.6
   },
   {
    "k": "RTG",
@@ -824,28 +928,6 @@
     "mdd": -22.06,
     "vol": 28.46
    },
-   "dagilim": [
-    [
-     "Foreign Stocks",
-     64.18
-    ],
-    [
-     "Stocks",
-     19.12
-    ],
-    [
-     "Fund Shares",
-     12.12
-    ],
-    [
-     "Futures Margin",
-     4.58
-    ]
-   ],
-   "yab": 0,
-   "yur": 0,
-   "fkb": 0,
-   "kap": "Diğer / karma dağılım",
    "g": {
     "a1": -8.87,
     "a3": -13.33,
@@ -870,7 +952,29 @@
     "a3": -3.5,
     "a6": -0.78,
     "y1": 4.57
-   }
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     64.18
+    ],
+    [
+     "Stocks",
+     19.12
+    ],
+    [
+     "Fund Shares",
+     12.12
+    ],
+    [
+     "Futures Margin",
+     4.58
+    ]
+   ],
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 64.2,
+   "yur": 19.1,
+   "fkb": 12.1
   },
   {
    "k": "RUT",
@@ -895,6 +999,29 @@
    "rk": {
     "mdd": -15.27,
     "vol": 23.52
+   },
+   "g": {
+    "a1": -6.7,
+    "a3": -12.8,
+    "a6": -4.15,
+    "y1": 26.01,
+    "d1": 0.51
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1"
+   ],
+   "celiski": [],
+   "gun": 601,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2024-07-02",
+   "fark": {
+    "a1": 6.75,
+    "a3": -2.97,
+    "a6": 1.11,
+    "y1": 1.76
    },
    "dagilim": [
     [
@@ -930,33 +1057,10 @@
      0.03
     ]
    ],
-   "yab": 0,
-   "yur": 0,
-   "fkb": 0,
-   "kap": "Diğer / karma dağılım",
-   "g": {
-    "a1": -6.7,
-    "a3": -12.8,
-    "a6": -4.15,
-    "y1": 26.01,
-    "d1": 0.51
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1"
-   ],
-   "celiski": [],
-   "gun": 601,
-   "son_tarih": "2026-11-20",
-   "ilk_tarih": "2024-07-02",
-   "fark": {
-    "a1": 6.75,
-    "a3": -2.97,
-    "a6": 1.11,
-    "y1": 1.76
-   }
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 58.0,
+   "yur": 10.6,
+   "fkb": 19.0
   },
   {
    "k": "GPT",
@@ -982,24 +1086,6 @@
     "mdd": -20.09,
     "vol": 23.18
    },
-   "dagilim": [
-    [
-     "Foreign Stocks",
-     56.22
-    ],
-    [
-     "Stocks",
-     39.21
-    ],
-    [
-     "Fund Shares",
-     4.57
-    ]
-   ],
-   "yab": 0,
-   "yur": 0,
-   "fkb": 0,
-   "kap": "Diğer / karma dağılım",
    "g": {
     "a1": -9.23,
     "a3": -15.02,
@@ -1022,7 +1108,25 @@
     "a3": -5.19,
     "a6": -4.78,
     "y1": 1.41
-   }
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     56.22
+    ],
+    [
+     "Stocks",
+     39.21
+    ],
+    [
+     "Fund Shares",
+     4.57
+    ]
+   ],
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 56.2,
+   "yur": 39.2,
+   "fkb": 4.6
   },
   {
    "k": "DFC",
@@ -1047,6 +1151,31 @@
    "rk": {
     "mdd": -9.08,
     "vol": 13.82
+   },
+   "g": {
+    "a1": -1.51,
+    "a3": -5.62,
+    "a6": -4.96,
+    "y1": 24.23,
+    "y3": 66.53,
+    "d1": -1.56
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1095,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2022-07-18",
+   "fark": {
+    "a1": 11.94,
+    "a3": 4.21,
+    "a6": 0.3,
+    "y1": -0.02
    },
    "dagilim": [
     [
@@ -1074,35 +1203,10 @@
      0.07
     ]
    ],
-   "yab": 0,
-   "yur": 0,
-   "fkb": 0,
-   "kap": "Diğer / karma dağılım",
-   "g": {
-    "a1": -1.51,
-    "a3": -5.62,
-    "a6": -4.96,
-    "y1": 24.23,
-    "y3": 66.53,
-    "d1": -1.56
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3"
-   ],
-   "celiski": [],
-   "gun": 1095,
-   "son_tarih": "2026-11-20",
-   "ilk_tarih": "2022-07-18",
-   "fark": {
-    "a1": 11.94,
-    "a3": 4.21,
-    "a6": 0.3,
-    "y1": -0.02
-   }
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 66.8,
+   "yur": 15.3,
+   "fkb": 0
   },
   {
    "k": "ZTG",
@@ -1128,8 +1232,6 @@
     "mdd": -9.05,
     "vol": 8.34
    },
-   "kap": "Dağılım alınamadı",
-   "dagilim_hata": "APIError('API Error: TEFAS dagilimSiraliGetirT rate limited (HTTP 429). The block clears in about 45 seconds.')",
    "g": {
     "a1": -4.12,
     "a3": -5.26,
@@ -1152,7 +1254,29 @@
     "a3": 4.57,
     "a6": 8.86,
     "y1": -3.82
-   }
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     55.2
+    ],
+    [
+     "Fund Shares",
+     39.98
+    ],
+    [
+     "Reverse Repo",
+     3.97
+    ],
+    [
+     "Stocks",
+     0.86
+    ]
+   ],
+   "kap": "Yalnızca yabancı hisse",
+   "yab": 55.2,
+   "yur": 0.9,
+   "fkb": 40.0
   },
   {
    "k": "PIL",
@@ -1178,24 +1302,6 @@
     "mdd": -24.21,
     "vol": 22.91
    },
-   "dagilim": [
-    [
-     "Fund Shares",
-     41.75
-    ],
-    [
-     "Foreign Stocks",
-     41.74
-    ],
-    [
-     "ETF Shares",
-     16.51
-    ]
-   ],
-   "yab": 0,
-   "yur": 0,
-   "fkb": 0,
-   "kap": "Diğer / karma dağılım",
    "g": {
     "a1": -8.6,
     "a3": -16.04,
@@ -1220,7 +1326,25 @@
     "a3": -6.21,
     "a6": -14.08,
     "y1": -4.56
-   }
+   },
+   "dagilim": [
+    [
+     "Fund Shares",
+     41.75
+    ],
+    [
+     "Foreign Stocks",
+     41.74
+    ],
+    [
+     "ETF Shares",
+     16.51
+    ]
+   ],
+   "kap": "Fon sepeti (içeriği başka fonlar)",
+   "yab": 41.7,
+   "yur": 0,
+   "fkb": 58.3
   },
   {
    "k": "YLC",
@@ -1246,28 +1370,6 @@
     "mdd": -15.77,
     "vol": 12.42
    },
-   "dagilim": [
-    [
-     "Foreign Stocks",
-     67.84
-    ],
-    [
-     "Stocks",
-     27.21
-    ],
-    [
-     "Futures Margin",
-     4.49
-    ],
-    [
-     "Fund Shares",
-     0.46
-    ]
-   ],
-   "yab": 0,
-   "yur": 0,
-   "fkb": 0,
-   "kap": "Diğer / karma dağılım",
    "g": {
     "a1": -4.37,
     "a3": -10.86,
@@ -1292,7 +1394,29 @@
     "a3": -1.03,
     "a6": -1.83,
     "y1": -5.14
-   }
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     67.84
+    ],
+    [
+     "Stocks",
+     27.21
+    ],
+    [
+     "Futures Margin",
+     4.49
+    ],
+    [
+     "Fund Shares",
+     0.46
+    ]
+   ],
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 67.8,
+   "yur": 27.2,
+   "fkb": 0.5
   },
   {
    "k": "DTZ",
@@ -1318,32 +1442,6 @@
     "mdd": -18.77,
     "vol": 23.84
    },
-   "dagilim": [
-    [
-     "Foreign Stocks",
-     63.87
-    ],
-    [
-     "Stocks",
-     23.36
-    ],
-    [
-     "Fund Shares",
-     8.12
-    ],
-    [
-     "Reverse Repo",
-     4.45
-    ],
-    [
-     "TL Deposits",
-     0.2
-    ]
-   ],
-   "yab": 0,
-   "yur": 0,
-   "fkb": 0,
-   "kap": "Diğer / karma dağılım",
    "g": {
     "a1": -5.53,
     "a3": -13.52,
@@ -1368,7 +1466,33 @@
     "a3": -3.69,
     "a6": -1.17,
     "y1": -6.06
-   }
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     63.87
+    ],
+    [
+     "Stocks",
+     23.36
+    ],
+    [
+     "Fund Shares",
+     8.12
+    ],
+    [
+     "Reverse Repo",
+     4.45
+    ],
+    [
+     "TL Deposits",
+     0.2
+    ]
+   ],
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 63.9,
+   "yur": 23.4,
+   "fkb": 8.1
   },
   {
    "k": "ZFB",
@@ -1394,8 +1518,6 @@
     "mdd": -19.91,
     "vol": 24.31
    },
-   "kap": "Dağılım alınamadı",
-   "dagilim_hata": "APIError('API Error: TEFAS dagilimSiraliGetirT rate limited (HTTP 429). The block clears in about 45 seconds.')",
    "g": {
     "a1": -6.92,
     "a3": -16.14,
@@ -1420,7 +1542,29 @@
     "a3": -6.31,
     "a6": -10.06,
     "y1": -7.33
-   }
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     65.66
+    ],
+    [
+     "Stocks",
+     20.91
+    ],
+    [
+     "Fund Shares",
+     12.74
+    ],
+    [
+     "Reverse Repo",
+     0.69
+    ]
+   ],
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 65.7,
+   "yur": 20.9,
+   "fkb": 12.7
   },
   {
    "k": "TAR",
@@ -1446,8 +1590,6 @@
     "mdd": -10.55,
     "vol": 12.68
    },
-   "kap": "Dağılım alınamadı",
-   "dagilim_hata": "APIError('API Error: TEFAS dagilimSiraliGetirT rate limited (HTTP 429). The block clears in about 45 seconds.')",
    "g": {
     "a1": -1.74,
     "a3": -9.01,
@@ -1472,7 +1614,25 @@
     "a3": 0.82,
     "a6": 6.26,
     "y1": -7.65
-   }
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     66.51
+    ],
+    [
+     "Stocks",
+     32.55
+    ],
+    [
+     "TL Deposits",
+     0.94
+    ]
+   ],
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 66.5,
+   "yur": 32.5,
+   "fkb": 0
   },
   {
    "k": "GZH",
@@ -1497,6 +1657,31 @@
    "rk": {
     "mdd": -19.05,
     "vol": 17.12
+   },
+   "g": {
+    "a1": -3.39,
+    "a3": -11.15,
+    "a6": -15.37,
+    "y1": 16.14,
+    "y3": 80.49,
+    "d1": 0.5
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2021-11-22",
+   "fark": {
+    "a1": 10.06,
+    "a3": -1.32,
+    "a6": -10.11,
+    "y1": -8.11
    },
    "dagilim": [
     [
@@ -1524,35 +1709,10 @@
      0.32
     ]
    ],
-   "yab": 0,
-   "yur": 0,
-   "fkb": 0,
-   "kap": "Diğer / karma dağılım",
-   "g": {
-    "a1": -3.39,
-    "a3": -11.15,
-    "a6": -15.37,
-    "y1": 16.14,
-    "y3": 80.49,
-    "d1": 0.5
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-20",
-   "ilk_tarih": "2021-11-22",
-   "fark": {
-    "a1": 10.06,
-    "a3": -1.32,
-    "a6": -10.11,
-    "y1": -8.11
-   }
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 65.6,
+   "yur": 14.8,
+   "fkb": 0
   },
   {
    "k": "YJH",
@@ -1577,6 +1737,31 @@
    "rk": {
     "mdd": -18.29,
     "vol": 16.63
+   },
+   "g": {
+    "a1": -3.74,
+    "a3": -10.86,
+    "a6": -13.0,
+    "y1": 15.32,
+    "y3": 76.15,
+    "d1": 0.0
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2021-11-22",
+   "fark": {
+    "a1": 9.71,
+    "a3": -1.03,
+    "a6": -7.74,
+    "y1": -8.93
    },
    "dagilim": [
     [
@@ -1604,35 +1789,10 @@
      0.07
     ]
    ],
-   "yab": 0,
-   "yur": 0,
-   "fkb": 0,
-   "kap": "Diğer / karma dağılım",
-   "g": {
-    "a1": -3.74,
-    "a3": -10.86,
-    "a6": -13.0,
-    "y1": 15.32,
-    "y3": 76.15,
-    "d1": 0.0
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-20",
-   "ilk_tarih": "2021-11-22",
-   "fark": {
-    "a1": 9.71,
-    "a3": -1.03,
-    "a6": -7.74,
-    "y1": -8.93
-   }
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 65.6,
+   "yur": 14.2,
+   "fkb": 12.6
   },
   {
    "k": "AOY",
@@ -1658,20 +1818,6 @@
     "mdd": -25.64,
     "vol": 21.93
    },
-   "dagilim": [
-    [
-     "Foreign Stocks",
-     98.57
-    ],
-    [
-     "Reverse Repo",
-     1.43
-    ]
-   ],
-   "yab": 0,
-   "yur": 0,
-   "fkb": 0,
-   "kap": "Diğer / karma dağılım",
    "g": {
     "a1": -3.19,
     "a3": -10.96,
@@ -1696,7 +1842,21 @@
     "a3": -1.13,
     "a6": -12.03,
     "y1": -9.35
-   }
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     98.57
+    ],
+    [
+     "Reverse Repo",
+     1.43
+    ]
+   ],
+   "kap": "Yalnızca yabancı hisse",
+   "yab": 98.6,
+   "yur": 0,
+   "fkb": 0
   },
   {
    "k": "TMZ",
@@ -1722,8 +1882,6 @@
     "mdd": -10.92,
     "vol": 11.49
    },
-   "kap": "Dağılım alınamadı",
-   "dagilim_hata": "APIError('API Error: TEFAS dagilimSiraliGetirT rate limited (HTTP 429). The block clears in about 45 seconds.')",
    "g": {
     "a1": -4.84,
     "a3": -8.09,
@@ -1746,7 +1904,33 @@
     "a3": 1.74,
     "a6": 1.98,
     "y1": -10.98
-   }
+   },
+   "dagilim": [
+    [
+     "Fund Shares",
+     46.39
+    ],
+    [
+     "Foreign ETFs",
+     41.62
+    ],
+    [
+     "Stocks",
+     10.07
+    ],
+    [
+     "Reverse Repo",
+     1.9
+    ],
+    [
+     "Futures Margin",
+     0.02
+    ]
+   ],
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 41.6,
+   "yur": 10.1,
+   "fkb": 46.4
   },
   {
    "k": "MTS",
@@ -1772,8 +1956,6 @@
     "mdd": -10.73,
     "vol": 10.93
    },
-   "kap": "Dağılım alınamadı",
-   "dagilim_hata": "APIError('API Error: TEFAS dagilimSiraliGetirT rate limited (HTTP 429). The block clears in about 45 seconds.')",
    "g": {
     "a1": -3.62,
     "a3": -6.0,
@@ -1798,7 +1980,21 @@
     "a3": 3.83,
     "a6": 0.41,
     "y1": -11.24
-   }
+   },
+   "dagilim": [
+    [
+     "Foreign ETFs",
+     78.17
+    ],
+    [
+     "Fund Shares",
+     21.83
+    ]
+   ],
+   "kap": "Yalnızca yabancı hisse",
+   "yab": 78.2,
+   "yur": 0,
+   "fkb": 21.8
   },
   {
    "k": "OLD",
@@ -1824,8 +2020,6 @@
     "mdd": -13.85,
     "vol": 13.53
    },
-   "kap": "Dağılım alınamadı",
-   "dagilim_hata": "APIError('API Error: TEFAS dagilimSiraliGetirT rate limited (HTTP 429). The block clears in about 45 seconds.')",
    "g": {
     "a1": 2.45,
     "a3": -6.64,
@@ -1850,7 +2044,29 @@
     "a3": 3.19,
     "a6": 0.21,
     "y1": -12.67
-   }
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     78.54
+    ],
+    [
+     "Reverse Repo",
+     16.49
+    ],
+    [
+     "Stocks",
+     4.68
+    ],
+    [
+     "Takasbank Money Market",
+     0.29
+    ]
+   ],
+   "kap": "Yalnızca yabancı hisse",
+   "yab": 78.5,
+   "yur": 4.7,
+   "fkb": 0
   },
   {
    "k": "URA",
@@ -1876,8 +2092,6 @@
     "mdd": -32.23,
     "vol": 30.51
    },
-   "kap": "Dağılım alınamadı",
-   "dagilim_hata": "APIError('API Error: TEFAS dagilimSiraliGetirT rate limited (HTTP 429). The block clears in about 45 seconds.')",
    "g": {
     "a1": -10.24,
     "a3": -24.38,
@@ -1900,7 +2114,33 @@
     "a3": -14.55,
     "a6": -20.51,
     "y1": -29.54
-   }
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     61.96
+    ],
+    [
+     "Stocks",
+     20.34
+    ],
+    [
+     "Fund Shares",
+     12.48
+    ],
+    [
+     "TL Deposits",
+     4.28
+    ],
+    [
+     "Futures Margin",
+     0.94
+    ]
+   ],
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 62.0,
+   "yur": 20.3,
+   "fkb": 12.5
   },
   {
    "k": "EVM",
@@ -1925,6 +2165,26 @@
    "rk": {
     "mdd": -15.71,
     "vol": 14.36
+   },
+   "g": {
+    "a1": -9.98,
+    "a3": -11.79,
+    "a6": -7.09,
+    "d1": -0.95
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6"
+   ],
+   "celiski": [],
+   "gun": 201,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2026-02-02",
+   "fark": {
+    "a1": 3.47,
+    "a3": -1.96,
+    "a6": -1.83
    },
    "dagilim": [
     [
@@ -1952,30 +2212,10 @@
      0.22
     ]
    ],
-   "yab": 0,
-   "yur": 0,
-   "fkb": 0,
-   "kap": "Diğer / karma dağılım",
-   "g": {
-    "a1": -9.98,
-    "a3": -11.79,
-    "a6": -7.09,
-    "d1": -0.95
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6"
-   ],
-   "celiski": [],
-   "gun": 201,
-   "son_tarih": "2026-11-20",
-   "ilk_tarih": "2026-02-02",
-   "fark": {
-    "a1": 3.47,
-    "a3": -1.96,
-    "a6": -1.83
-   }
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 66.2,
+   "yur": 21.0,
+   "fkb": 10.1
   },
   {
    "k": "DRT",
@@ -2000,6 +2240,26 @@
    "rk": {
     "mdd": -16.12,
     "vol": 18.79
+   },
+   "g": {
+    "a1": -6.48,
+    "a3": -13.22,
+    "a6": -8.7,
+    "d1": 1.49
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6"
+   ],
+   "celiski": [],
+   "gun": 188,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2026-02-19",
+   "fark": {
+    "a1": 6.97,
+    "a3": -3.39,
+    "a6": -3.44
    },
    "dagilim": [
     [
@@ -2027,30 +2287,10 @@
      0.19
     ]
    ],
-   "yab": 0,
-   "yur": 0,
-   "fkb": 0,
-   "kap": "Diğer / karma dağılım",
-   "g": {
-    "a1": -6.48,
-    "a3": -13.22,
-    "a6": -8.7,
-    "d1": 1.49
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6"
-   ],
-   "celiski": [],
-   "gun": 188,
-   "son_tarih": "2026-11-20",
-   "ilk_tarih": "2026-02-19",
-   "fark": {
-    "a1": 6.97,
-    "a3": -3.39,
-    "a6": -3.44
-   }
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 93.8,
+   "yur": 17.2,
+   "fkb": 0
   },
   {
    "k": "RFM",
@@ -2069,24 +2309,6 @@
    "kor": null,
    "d1_tarih": "2026-11-20",
    "rk": null,
-   "dagilim": [
-    [
-     "Foreign Stocks",
-     71.0
-    ],
-    [
-     "ETF Shares",
-     23.96
-    ],
-    [
-     "Fund Shares",
-     5.04
-    ]
-   ],
-   "yab": 0,
-   "yur": 0,
-   "fkb": 0,
-   "kap": "Diğer / karma dağılım",
    "g": {
     "a1": -8.62,
     "a3": -4.18,
@@ -2103,7 +2325,25 @@
    "fark": {
     "a1": 4.83,
     "a3": 5.65
-   }
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     71.0
+    ],
+    [
+     "ETF Shares",
+     23.96
+    ],
+    [
+     "Fund Shares",
+     5.04
+    ]
+   ],
+   "kap": "Yalnızca yabancı hisse",
+   "yab": 71.0,
+   "yur": 0,
+   "fkb": 29.0
   },
   {
    "k": "SGK",
@@ -2122,6 +2362,23 @@
    "kor": null,
    "d1_tarih": "2026-11-20",
    "rk": null,
+   "g": {
+    "a1": 6.06,
+    "a3": -1.16,
+    "d1": -0.33
+   },
+   "teyit": [
+    "a1",
+    "a3"
+   ],
+   "celiski": [],
+   "gun": 67,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2026-08-19",
+   "fark": {
+    "a1": 19.51,
+    "a3": 8.67
+   },
    "dagilim": [
     [
      "Foreign Stocks",
@@ -2144,27 +2401,10 @@
      0.23
     ]
    ],
-   "yab": 0,
-   "yur": 0,
-   "fkb": 0,
-   "kap": "Diğer / karma dağılım",
-   "g": {
-    "a1": 6.06,
-    "a3": -1.16,
-    "d1": -0.33
-   },
-   "teyit": [
-    "a1",
-    "a3"
-   ],
-   "celiski": [],
-   "gun": 67,
-   "son_tarih": "2026-11-20",
-   "ilk_tarih": "2026-08-19",
-   "fark": {
-    "a1": 19.51,
-    "a3": 8.67
-   }
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 69.0,
+   "yur": 24.5,
+   "fkb": 4.5
   },
   {
    "k": "YZT",
@@ -2185,6 +2425,23 @@
    "rk": {
     "mdd": -19.81,
     "vol": 32.17
+   },
+   "g": {
+    "a1": -8.44,
+    "a3": -12.36,
+    "d1": 1.28
+   },
+   "teyit": [
+    "a1",
+    "a3"
+   ],
+   "celiski": [],
+   "gun": 109,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2026-06-19",
+   "fark": {
+    "a1": 5.01,
+    "a3": -2.53
    },
    "dagilim": [
     [
@@ -2208,27 +2465,10 @@
      0.15
     ]
    ],
-   "yab": 0,
-   "yur": 0,
-   "fkb": 0,
-   "kap": "Diğer / karma dağılım",
-   "g": {
-    "a1": -8.44,
-    "a3": -12.36,
-    "d1": 1.28
-   },
-   "teyit": [
-    "a1",
-    "a3"
-   ],
-   "celiski": [],
-   "gun": 109,
-   "son_tarih": "2026-11-20",
-   "ilk_tarih": "2026-06-19",
-   "fark": {
-    "a1": 5.01,
-    "a3": -2.53
-   }
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 62.9,
+   "yur": 27.8,
+   "fkb": 2.3
   },
   {
    "k": "ZTS",
@@ -2247,8 +2487,6 @@
    "kor": null,
    "d1_tarih": "2026-11-20",
    "rk": null,
-   "kap": "Dağılım alınamadı",
-   "dagilim_hata": "APIError('API Error: TEFAS dagilimSiraliGetirT rate limited (HTTP 429). The block clears in about 45 seconds.')",
    "g": {
     "a1": -6.65,
     "d1": 0.57
@@ -2262,7 +2500,29 @@
    "ilk_tarih": "2026-09-25",
    "fark": {
     "a1": 6.8
-   }
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     67.21
+    ],
+    [
+     "Stocks",
+     24.37
+    ],
+    [
+     "Futures Margin",
+     4.31
+    ],
+    [
+     "Reverse Repo",
+     4.11
+    ]
+   ],
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 67.2,
+   "yur": 24.4,
+   "fkb": 0
   }
  ]
 }
