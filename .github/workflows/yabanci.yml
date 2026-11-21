@@ -89,6 +89,8 @@ jobs:
               if seri[0][0] > hedef + datetime.timedelta(days=14):
                   return None          # seri bu donemi kapsamiyor
               onceki = [v for t, v in seri if t <= hedef]
+              if not onceki and seri[0][0] <= hedef + datetime.timedelta(days=5):
+                  onceki = [seri[0][1]]   # TEFAS gecmisi tam o gunden baslıyorsa (5 yil siniri)
               if not onceki or not onceki[-1]:
                   return None
               return round((son / onceki[-1] - 1) * 100, 2)
@@ -281,6 +283,43 @@ jobs:
           not_("Nasdaq/S&P adli aday: %d | olasi (secilmeyen Amerika/ABD adli): %d" % (len(kodlar), len(olasi)))
 
           # ---------------------------------------------------------------- 3) Fon bilgisi, fiyat gecmisi, getiri teyidi
+          def ek_olc(seri, bv):
+              # 1 hafta, yilbasindan beri, aylik getiriler, fiyat, aylik net nakit akisi (varsa)
+              r = {}
+              son_t, son = seri[-1]
+              r["fiyat"] = round(son, 6)
+              h = son_t - datetime.timedelta(days=7)
+              on = [(t, v) for t, v in seri if t <= h]
+              if on and on[-1][1] and (h - on[-1][0]).days <= 5:
+                  r["w1"] = round((son / on[-1][1] - 1) * 100, 2)
+              yb = datetime.date(son_t.year - 1, 12, 31)
+              on = [(t, v) for t, v in seri if t <= yb]
+              if on and on[-1][1] and (yb - on[-1][0]).days <= 10:
+                  r["ytd"] = round((son / on[-1][1] - 1) * 100, 2)
+              def aysonu(x):
+                  d = {}
+                  for t, v in x:
+                      d[(t.year, t.month)] = v
+                  return d
+              def onceki_ay(k):
+                  return (k[0], k[1] - 1) if k[1] > 1 else (k[0] - 1, 12)
+              fa = aysonu(seri)
+              aylik = {}
+              for k in sorted(fa):
+                  o = onceki_ay(k)
+                  if o in fa and fa[o]:
+                      aylik["%04d-%02d" % k] = round((fa[k] / fa[o] - 1) * 100, 2)
+              r["aylik"] = dict(sorted(aylik.items())[-12:])
+              if bv:
+                  ba = aysonu(bv); nak = {}
+                  for k in sorted(ba):
+                      o = onceki_ay(k)
+                      if o in ba and o in fa and k in fa and fa[o] and ba[o]:
+                          nak["%04d-%02d" % k] = round(ba[k] - ba[o] * (fa[k] / fa[o]))
+                  if nak:
+                      r["nakit"] = dict(sorted(nak.items())[-12:])
+              return r
+
           def fon_isle(kod):
               out = {"k": kod}
               f = bp.Fund(kod)
@@ -309,7 +348,7 @@ jobs:
                   out["tema"] = None
               if "OZEL FON" in sade(ad0 or ad) or any(("KAPAL" in sade(v) or sade(v) in ("FALSE", "HAYIR", "0")) for k, v in tf.items() if "tefas" in k.lower()):
                   return dict(out, atla="TEFAS'ta alınamıyor (özel fon / TEFAS'a kapalı)")
-              seri = []
+              seri, bv = [], []
               bas5 = (datetime.date.today() - datetime.timedelta(days=5 * 366 + 20)).isoformat()
               for donem in ("max", "bas5", "5y", "2y", "1y"):
                   try:
@@ -322,6 +361,12 @@ jobs:
                           t = i.date() if hasattr(i, "date") else datetime.date.fromisoformat(str(i)[:10])
                           if v and v == v:
                               seri.append((t, float(v)))
+                      bcols = [c for c in df.columns if any(x in str(c).lower() for x in ("size", "buyukluk", "büyüklük", "portfolio_value", "aum", "total_value"))]
+                      if bcols:
+                          for i, v in df[bcols[0]].items():
+                              t = i.date() if hasattr(i, "date") else datetime.date.fromisoformat(str(i)[:10])
+                              if v and v == v:
+                                  bv.append((t, float(v)))
                       break
                   except Exception as e:
                       out["gecmis_hata"] = repr(e)[:150]
@@ -365,6 +410,14 @@ jobs:
               if len(seri) >= 2 and seri[-2][1]:
                   son["d1"] = round((seri[-1][1] / seri[-2][1] - 1) * 100, 2); out["d1_tarih"] = str(seri[-1][0])
               out["rk"] = risk_olc(seri)
+              try:
+                  ek = ek_olc(seri, sorted(bv))
+                  for k in ("w1", "ytd"):
+                      if ek.get(k) is not None:
+                          son[k] = ek.pop(k)
+                  out.update(ek)
+              except Exception as e:
+                  out["ek_hata"] = repr(e)[:150]
               out.update(g=son, teyit=teyit, celiski=celiski, gun=len(seri), son_tarih=str(seri[-1][0]),
                          ilk_tarih=str(seri[0][0]))
               if not [k for k in teyit if k in DON]:
