@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-21T10:21:06Z",
+ "updatedAt": "2026-11-21T11:49:16Z",
  "updated": "2026-11-21",
  "olcut": {
   "ndx": {
@@ -26,6 +26,152 @@
   }
  },
  "fonlar": [
+  {
+   "k": "AES",
+   "ad": "AK PORTFÖY PETROL YABANCI BYF FON SEPETİ FONU",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 1330232131.94,
+   "yatirimci": 35399.0,
+   "risk": 7.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Genel yabancı hisse",
+   "kor": {
+    "ndx": -0.124,
+    "spx": -0.19,
+    "bist": -0.273
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -21.74,
+    "vol": 41.83
+   },
+   "g": {
+    "a1": -9.97,
+    "a3": 10.72,
+    "a6": 8.87,
+    "y1": 108.01,
+    "y3": 180.34,
+    "d1": -0.49
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2021-11-22",
+   "fark": {
+    "a1": 3.48,
+    "a3": 20.55,
+    "a6": 14.13,
+    "y1": 83.76
+   },
+   "dagilim": [
+    [
+     "Foreign ETFs",
+     92.26
+    ],
+    [
+     "Fund Shares",
+     6.46
+    ],
+    [
+     "Reverse Repo",
+     0.75
+    ],
+    [
+     "Precious Metals",
+     0.45
+    ],
+    [
+     "TL Deposits",
+     0.08
+    ]
+   ],
+   "kap": "Yalnızca yabancı hisse",
+   "yab": 92.3,
+   "yur": 0,
+   "fkb": 6.5
+  },
+  {
+   "k": "CPT",
+   "ad": "ROTA PORTFÖY ÇİP TEKNOLOJİLERİ DEĞİŞKEN FON",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 444653307.32,
+   "yatirimci": 9661.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Teknoloji",
+   "kor": {
+    "ndx": 0.682,
+    "spx": 0.599,
+    "bist": 0.565
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -23.15,
+    "vol": 31.08
+   },
+   "g": {
+    "a1": -6.31,
+    "a3": -10.92,
+    "a6": -5.11,
+    "y1": 66.48,
+    "d1": 2.98
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1"
+   ],
+   "celiski": [],
+   "gun": 724,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2023-12-29",
+   "fark": {
+    "a1": 7.14,
+    "a3": -1.09,
+    "a6": 0.15,
+    "y1": 42.23
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     67.12
+    ],
+    [
+     "Stocks",
+     24.75
+    ],
+    [
+     "Fund Shares",
+     6.28
+    ],
+    [
+     "VC Fund Shares",
+     1.85
+    ]
+   ],
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 67.1,
+   "yur": 24.8,
+   "fkb": 8.1
+  },
   {
    "k": "YIT",
    "ad": "GARANTİ PORTFÖY YARI İLETKEN TEKNOLOJİLERİ DEĞİŞKEN FON",
@@ -187,6 +333,78 @@
    "fkb": 0
   },
   {
+   "k": "ECA",
+   "ad": "GLOBAL MD PORTFÖY BİRİNCİ DEĞİŞKEN FON",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 248426559.93,
+   "yatirimci": 685.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Küresel",
+   "kor": {
+    "ndx": 0.248,
+    "spx": 0.23,
+    "bist": 0.761
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -15.32,
+    "vol": 15.15
+   },
+   "g": {
+    "a1": -1.57,
+    "a3": -8.46,
+    "a6": 8.56,
+    "y1": 50.62,
+    "y3": 156.87,
+    "d1": 0.31
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2021-11-22",
+   "fark": {
+    "a1": 11.88,
+    "a3": 1.37,
+    "a6": 13.82,
+    "y1": 26.37
+   },
+   "dagilim": [
+    [
+     "Stocks",
+     50.98
+    ],
+    [
+     "Foreign Stocks",
+     32.93
+    ],
+    [
+     "Futures Margin",
+     11.51
+    ],
+    [
+     "Commercial Paper",
+     4.58
+    ]
+   ],
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 32.9,
+   "yur": 51.0,
+   "fkb": 0
+  },
+  {
    "k": "IJZ",
    "ad": "İŞ PORTFÖY SİBER GÜVENLİK TEKNOLOJİLERİ DEĞİŞKEN FON",
    "tur": "YAT",
@@ -265,6 +483,226 @@
    "yab": 72.0,
    "yur": 21.8,
    "fkb": 0.3
+  },
+  {
+   "k": "GBG",
+   "ad": "INVEO PORTFÖY G-20 ÜLKELERİ YABANCI HİSSE SENEDİ FONU",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 146058025.39,
+   "yatirimci": 3290.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Genel yabancı hisse",
+   "kor": {
+    "ndx": 0.697,
+    "spx": 0.654,
+    "bist": 0.48
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -9.3,
+    "vol": 15.14
+   },
+   "g": {
+    "a1": -5.93,
+    "a3": -6.05,
+    "a6": 3.81,
+    "y1": 46.67,
+    "y3": 155.22,
+    "d1": 0.19
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2021-11-22",
+   "fark": {
+    "a1": 7.52,
+    "a3": 3.78,
+    "a6": 9.07,
+    "y1": 22.42
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     88.85
+    ],
+    [
+     "Foreign ETFs",
+     10.33
+    ],
+    [
+     "Fund Shares",
+     0.82
+    ]
+   ],
+   "kap": "Yalnızca yabancı hisse",
+   "yab": 99.2,
+   "yur": 0,
+   "fkb": 0.8
+  },
+  {
+   "k": "EBD",
+   "ad": "GLOBAL MD PORTFÖY İKİNCİ DEĞİŞKEN FON",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 64571491.4,
+   "yatirimci": 473.0,
+   "risk": 0.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Küresel",
+   "kor": {
+    "ndx": 0.498,
+    "spx": 0.435,
+    "bist": 0.51
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -13.02,
+    "vol": 16.13
+   },
+   "g": {
+    "a1": -3.75,
+    "a3": -4.64,
+    "a6": -1.81,
+    "y1": 44.98,
+    "y3": 163.82,
+    "d1": 0.42
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2021-11-22",
+   "fark": {
+    "a1": 9.7,
+    "a3": 5.19,
+    "a6": 3.45,
+    "y1": 20.73
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     80.52
+    ],
+    [
+     "Futures Margin",
+     16.24
+    ],
+    [
+     "Other",
+     3.24
+    ]
+   ],
+   "kap": "Yalnızca yabancı hisse",
+   "yab": 80.5,
+   "yur": 0,
+   "fkb": 0
+  },
+  {
+   "k": "BVV",
+   "ad": "BV PORTFÖY TEKNOLOJİ DEĞİŞKEN FON",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 48512281.59,
+   "yatirimci": 728.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Teknoloji",
+   "kor": {
+    "ndx": 0.77,
+    "spx": 0.655,
+    "bist": 0.488
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -17.58,
+    "vol": 25.64
+   },
+   "g": {
+    "a1": -8.09,
+    "a3": -11.28,
+    "a6": -1.82,
+    "y1": 44.41,
+    "y3": 196.24,
+    "d1": 0.96
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 765,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2023-11-02",
+   "fark": {
+    "a1": 5.36,
+    "a3": -1.45,
+    "a6": 3.44,
+    "y1": 20.16
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     49.3
+    ],
+    [
+     "VC Fund Shares",
+     16.18
+    ],
+    [
+     "Commercial Paper",
+     11.97
+    ],
+    [
+     "Stocks",
+     11.72
+    ],
+    [
+     "Corporate Bonds",
+     5.79
+    ],
+    [
+     "Foreign ETFs",
+     4.73
+    ],
+    [
+     "TL Participation Accounts",
+     0.31
+    ]
+   ],
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 54.0,
+   "yur": 11.7,
+   "fkb": 16.2
   },
   {
    "k": "IJC",
@@ -431,6 +869,312 @@
    "fkb": 0
   },
   {
+   "k": "TGE",
+   "ad": "İŞ PORTFÖY EMTİA YABANCI BYF FON SEPETİ FONU",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 2660174014.95,
+   "yatirimci": 33677.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Genel yabancı hisse",
+   "kor": {
+    "ndx": 0.195,
+    "spx": 0.154,
+    "bist": 0.092
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -11.76,
+    "vol": 20.15
+   },
+   "g": {
+    "a1": -7.97,
+    "a3": -1.31,
+    "a6": -0.96,
+    "y1": 41.85,
+    "y3": 144.79,
+    "d1": -0.7
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2021-11-22",
+   "fark": {
+    "a1": 5.48,
+    "a3": 8.52,
+    "a6": 4.3,
+    "y1": 17.6
+   },
+   "dagilim": [
+    [
+     "Foreign ETFs",
+     92.79
+    ],
+    [
+     "Foreign Stocks",
+     2.82
+    ],
+    [
+     "Fund Shares",
+     2.04
+    ],
+    [
+     "Reverse Repo",
+     1.36
+    ],
+    [
+     "nan",
+     0.69
+    ],
+    [
+     "Futures Margin",
+     0.3
+    ]
+   ],
+   "kap": "Yalnızca yabancı hisse",
+   "yab": 95.6,
+   "yur": 0,
+   "fkb": 2.0
+  },
+  {
+   "k": "DVT",
+   "ad": "DENİZ PORTFÖY METAVERSE VE DİJİTAL YAŞAM TEKNOLOJİLERİ DEĞİŞKEN FON",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 653133320.4,
+   "yatirimci": 9189.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Teknoloji",
+   "kor": {
+    "ndx": 0.714,
+    "spx": 0.641,
+    "bist": 0.559
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -14.01,
+    "vol": 21.42
+   },
+   "g": {
+    "a1": -6.05,
+    "a3": -9.61,
+    "a6": -3.44,
+    "y1": 41.12,
+    "y3": 206.38,
+    "d1": 1.1
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1083,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2022-08-03",
+   "fark": {
+    "a1": 7.4,
+    "a3": 0.22,
+    "a6": 1.82,
+    "y1": 16.87
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     61.08
+    ],
+    [
+     "Stocks",
+     14.96
+    ],
+    [
+     "Foreign ETFs",
+     7.08
+    ],
+    [
+     "Reverse Repo",
+     7.0
+    ],
+    [
+     "VC Fund Shares",
+     4.27
+    ],
+    [
+     "Fund Shares",
+     3.23
+    ],
+    [
+     "FX Deposits",
+     2.13
+    ],
+    [
+     "Futures Margin",
+     0.12
+    ],
+    [
+     "Takasbank Money Market",
+     0.11
+    ],
+    [
+     "TL Deposits",
+     0.02
+    ]
+   ],
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 68.2,
+   "yur": 15.0,
+   "fkb": 7.5
+  },
+  {
+   "k": "TEJ",
+   "ad": "AZİMUT PORTFÖY TEKNOLOJİ FON SEPETİ FONU",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 575457006.37,
+   "yatirimci": 1098.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Teknoloji",
+   "kor": {
+    "ndx": 0.754,
+    "spx": 0.692,
+    "bist": 0.452
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -15.36,
+    "vol": 22.93
+   },
+   "g": {
+    "a1": -7.31,
+    "a3": -9.06,
+    "a6": 0.79,
+    "y1": 39.85,
+    "d1": 1.01
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1"
+   ],
+   "celiski": [],
+   "gun": 648,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2024-04-19",
+   "fark": {
+    "a1": 6.14,
+    "a3": 0.77,
+    "a6": 6.05,
+    "y1": 15.6
+   },
+   "dagilim": [
+    [
+     "Foreign ETFs",
+     77.06
+    ],
+    [
+     "Fund Shares",
+     16.09
+    ],
+    [
+     "Stocks",
+     6.85
+    ]
+   ],
+   "kap": "Yalnızca yabancı hisse",
+   "yab": 77.1,
+   "yur": 6.8,
+   "fkb": 16.1
+  },
+  {
+   "k": "TFF",
+   "ad": "TEB PORTFÖY AMERİKA TEKNOLOJİ YABANCI BYF FON SEPETİ FONU",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 1137476465.15,
+   "yatirimci": 8322.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Teknoloji",
+   "kor": {
+    "ndx": 0.861,
+    "spx": 0.771,
+    "bist": 0.333
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -14.77,
+    "vol": 23.2
+   },
+   "g": {
+    "a1": -7.2,
+    "a3": -3.49,
+    "a6": 5.89,
+    "y1": 37.92,
+    "y3": 184.6,
+    "d1": 1.58
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2021-11-22",
+   "fark": {
+    "a1": 6.25,
+    "a3": 6.34,
+    "a6": 11.15,
+    "y1": 13.67
+   },
+   "dagilim": [
+    [
+     "Foreign ETFs",
+     99.15
+    ],
+    [
+     "TL Deposits",
+     0.85
+    ]
+   ],
+   "kap": "Yalnızca yabancı hisse",
+   "yab": 99.2,
+   "yur": 0,
+   "fkb": 0
+  },
+  {
    "k": "YJK",
    "ad": "YAPI KREDİ PORTFÖY ROBOTİK VE YARI İLETKEN TEKNOLOJİLERİ FON SEPETİ FONU",
    "tur": "YAT",
@@ -443,7 +1187,7 @@
    "tefas": {
     "tefas_status": "TEFAS'ta işlem görüyor"
    },
-   "tema": "Robotik",
+   "tema": "Yarı iletken",
    "kor": {
     "ndx": 0.746,
     "spx": 0.674,
@@ -497,6 +1241,82 @@
    "yab": 68.8,
    "yur": 0,
    "fkb": 31.1
+  },
+  {
+   "k": "GUH",
+   "ad": "GARANTİ PORTFÖY YABANCI TEKNOLOJİ HİSSE SENEDİ FONU",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 4088539347.3,
+   "yatirimci": 36697.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Teknoloji",
+   "kor": {
+    "ndx": 0.771,
+    "spx": 0.674,
+    "bist": 0.356
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -22.65,
+    "vol": 30.68
+   },
+   "g": {
+    "a1": -12.01,
+    "a3": -9.78,
+    "a6": -3.09,
+    "y1": 37.41,
+    "y3": 196.79,
+    "d1": 3.03
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2021-11-22",
+   "fark": {
+    "a1": 1.44,
+    "a3": 0.05,
+    "a6": 2.17,
+    "y1": 13.16
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     89.98
+    ],
+    [
+     "Reverse Repo",
+     5.12
+    ],
+    [
+     "Futures Margin",
+     2.61
+    ],
+    [
+     "FX Deposits",
+     2.28
+    ],
+    [
+     "TL Deposits",
+     0.02
+    ]
+   ],
+   "kap": "Yalnızca yabancı hisse",
+   "yab": 90.0,
+   "yur": 0,
+   "fkb": 0
   },
   {
    "k": "SSK",
@@ -589,6 +1409,290 @@
    "fkb": 9.8
   },
   {
+   "k": "OJT",
+   "ad": "QNB PORTFÖY TEKNOLOJİ FON SEPETİ FONU",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 3468496826.96,
+   "yatirimci": 9562.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Teknoloji",
+   "kor": {
+    "ndx": 0.798,
+    "spx": 0.722,
+    "bist": 0.446
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -15.63,
+    "vol": 23.24
+   },
+   "g": {
+    "a1": -6.5,
+    "a3": -8.41,
+    "a6": -0.82,
+    "y1": 36.28,
+    "y3": 193.31,
+    "d1": 1.47
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2021-11-22",
+   "fark": {
+    "a1": 6.95,
+    "a3": 1.42,
+    "a6": 4.44,
+    "y1": 12.03
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     77.87
+    ],
+    [
+     "Stocks",
+     13.82
+    ],
+    [
+     "Reverse Repo",
+     4.94
+    ],
+    [
+     "Fund Shares",
+     3.35
+    ],
+    [
+     "Takasbank Money Market",
+     0.02
+    ]
+   ],
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 77.9,
+   "yur": 13.8,
+   "fkb": 3.4
+  },
+  {
+   "k": "ARE",
+   "ad": "İSTANBUL PORTFÖY YABANCI HİSSE SENEDİ FONU",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 36737558.49,
+   "yatirimci": 1762.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Genel yabancı hisse",
+   "kor": {
+    "ndx": 0.533,
+    "spx": 0.639,
+    "bist": 0.405
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -8.09,
+    "vol": 15.45
+   },
+   "g": {
+    "a1": -1.5,
+    "a3": -1.41,
+    "a6": 10.22,
+    "y1": 36.25,
+    "y3": 104.95,
+    "d1": -0.66
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2021-11-22",
+   "fark": {
+    "a1": 11.95,
+    "a3": 8.42,
+    "a6": 15.48,
+    "y1": 12.0
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     90.31
+    ],
+    [
+     "Foreign Corporate Debt",
+     6.08
+    ],
+    [
+     "TL Deposits",
+     2.8
+    ],
+    [
+     "REIF Shares",
+     0.81
+    ]
+   ],
+   "kap": "Yalnızca yabancı hisse",
+   "yab": 90.3,
+   "yur": 0,
+   "fkb": 0
+  },
+  {
+   "k": "IRT",
+   "ad": "INVEO PORTFÖY TEKNOLOJİ DEĞİŞKEN FON",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 83932930.1,
+   "yatirimci": 1187.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Teknoloji",
+   "kor": {
+    "ndx": 0.717,
+    "spx": 0.629,
+    "bist": 0.58
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -16.7,
+    "vol": 22.07
+   },
+   "g": {
+    "a1": -8.67,
+    "a3": -12.42,
+    "a6": -4.46,
+    "y1": 36.14,
+    "y3": 198.21,
+    "d1": 0.57
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1221,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2022-01-12",
+   "fark": {
+    "a1": 4.78,
+    "a3": -2.59,
+    "a6": 0.8,
+    "y1": 11.89
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     64.96
+    ],
+    [
+     "Stocks",
+     20.83
+    ],
+    [
+     "Foreign ETFs",
+     7.12
+    ],
+    [
+     "Fund Shares",
+     7.09
+    ]
+   ],
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 72.1,
+   "yur": 20.8,
+   "fkb": 7.1
+  },
+  {
+   "k": "YAY",
+   "ad": "YAPI KREDİ PORTFÖY YABANCI TEKNOLOJİ SEKTÖRÜ HİSSE SENEDİ FONU",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 10926620391.46,
+   "yatirimci": 39211.0,
+   "risk": 7.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Teknoloji",
+   "kor": {
+    "ndx": 0.742,
+    "spx": 0.655,
+    "bist": 0.382
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -24.72,
+    "vol": 32.84
+   },
+   "g": {
+    "a1": -11.07,
+    "a3": -11.01,
+    "a6": -4.04,
+    "y1": 35.57,
+    "y3": 196.54,
+    "d1": 2.8
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2021-11-22",
+   "fark": {
+    "a1": 2.38,
+    "a3": -1.18,
+    "a6": 1.22,
+    "y1": 11.32
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     97.93
+    ],
+    [
+     "Fund Shares",
+     2.07
+    ]
+   ],
+   "kap": "Yalnızca yabancı hisse",
+   "yab": 97.9,
+   "yur": 0,
+   "fkb": 2.1
+  },
+  {
    "k": "GZL",
    "ad": "GARANTİ PORTFÖY TARIM VE GIDA SEKTÖRÜ DEĞİŞKEN FON",
    "tur": "YAT",
@@ -671,6 +1775,166 @@
    "yab": 60.5,
    "yur": 20.5,
    "fkb": 0
+  },
+  {
+   "k": "GBV",
+   "ad": "GARANTİ PORTFÖY BLOCKCHAİN TEKNOLOJİLERİ DEĞİŞKEN FON",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 1724522792.89,
+   "yatirimci": 18956.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Teknoloji",
+   "kor": {
+    "ndx": 0.696,
+    "spx": 0.621,
+    "bist": 0.581
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -15.41,
+    "vol": 25.94
+   },
+   "g": {
+    "a1": -3.76,
+    "a3": -4.83,
+    "a6": -3.06,
+    "y1": 34.59,
+    "y3": 310.92,
+    "d1": 1.34
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2021-11-22",
+   "fark": {
+    "a1": 9.69,
+    "a3": 5.0,
+    "a6": 2.2,
+    "y1": 10.34
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     59.21
+    ],
+    [
+     "Stocks",
+     21.42
+    ],
+    [
+     "Corporate Eurobonds",
+     9.88
+    ],
+    [
+     "Futures Margin",
+     3.69
+    ],
+    [
+     "Foreign ETFs",
+     3.05
+    ],
+    [
+     "Reverse Repo",
+     2.67
+    ],
+    [
+     "TL Deposits",
+     0.05
+    ],
+    [
+     "FX Deposits",
+     0.03
+    ]
+   ],
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 62.3,
+   "yur": 21.4,
+   "fkb": 0
+  },
+  {
+   "k": "YZC",
+   "ad": "YAPI KREDİ PORTFÖY FİNTECH VE BLOCKCHAİN TEKNOLOJİLERİ DEĞİŞKEN FON",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 545269371.46,
+   "yatirimci": 11157.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Teknoloji",
+   "kor": {
+    "ndx": 0.727,
+    "spx": 0.644,
+    "bist": 0.555
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -17.18,
+    "vol": 23.13
+   },
+   "g": {
+    "a1": -9.53,
+    "a3": -10.16,
+    "a6": -2.71,
+    "y1": 33.84,
+    "y3": 255.17,
+    "d1": 0.5
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1213,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2022-01-24",
+   "fark": {
+    "a1": 3.92,
+    "a3": -0.33,
+    "a6": 2.55,
+    "y1": 9.59
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     66.11
+    ],
+    [
+     "Stocks",
+     18.16
+    ],
+    [
+     "Fund Shares",
+     15.65
+    ],
+    [
+     "Futures Margin",
+     0.08
+    ]
+   ],
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 66.1,
+   "yur": 18.2,
+   "fkb": 15.7
   },
   {
    "k": "BTE",
@@ -817,6 +2081,158 @@
    "fkb": 1.2
   },
   {
+   "k": "RPM",
+   "ad": "ROTA PORTFÖY İLAÇ VE MEDİKAL TEKNOLOJİLERİ DEĞİŞKEN FON",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 50751173.44,
+   "yatirimci": 2109.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Teknoloji",
+   "kor": {
+    "ndx": 0.153,
+    "spx": 0.301,
+    "bist": 0.578
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -12.59,
+    "vol": 15.01
+   },
+   "g": {
+    "a1": 4.38,
+    "a3": -6.96,
+    "a6": 12.92,
+    "y1": 32.22,
+    "y3": 143.1,
+    "d1": -0.79
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1116,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2022-06-14",
+   "fark": {
+    "a1": 17.83,
+    "a3": 2.87,
+    "a6": 18.18,
+    "y1": 7.97
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     70.15
+    ],
+    [
+     "Stocks",
+     23.01
+    ],
+    [
+     "Futures Margin",
+     6.25
+    ],
+    [
+     "Fund Shares",
+     0.59
+    ]
+   ],
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 70.2,
+   "yur": 23.0,
+   "fkb": 0.6
+  },
+  {
+   "k": "MET",
+   "ad": "GARANTİ PORTFÖY METAVERSE VE YENİ TEKNOLOJİLER DEĞİŞKEN FON",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 757768081.04,
+   "yatirimci": 6060.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Teknoloji",
+   "kor": {
+    "ndx": 0.735,
+    "spx": 0.717,
+    "bist": 0.582
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -10.35,
+    "vol": 19.87
+   },
+   "g": {
+    "a1": -3.54,
+    "a3": -1.42,
+    "a6": 2.6,
+    "y1": 31.53,
+    "y3": 199.55,
+    "d1": 1.43
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1171,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2022-03-23",
+   "fark": {
+    "a1": 9.91,
+    "a3": 8.41,
+    "a6": 7.86,
+    "y1": 7.28
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     65.82
+    ],
+    [
+     "Stocks",
+     18.9
+    ],
+    [
+     "Futures Margin",
+     8.97
+    ],
+    [
+     "Reverse Repo",
+     6.19
+    ],
+    [
+     "TL Deposits",
+     0.07
+    ],
+    [
+     "FX Deposits",
+     0.06
+    ]
+   ],
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 65.8,
+   "yur": 18.9,
+   "fkb": 0
+  },
+  {
    "k": "YTV",
    "ad": "YAPI KREDİ PORTFÖY TARIM DEĞİŞKEN FON",
    "tur": "YAT",
@@ -905,6 +2321,166 @@
    "fkb": 6.6
   },
   {
+   "k": "TMG",
+   "ad": "İŞ PORTFÖY YABANCI HİSSE SENEDİ FONU",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 4842029061.04,
+   "yatirimci": 33286.0,
+   "risk": 0.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Genel yabancı hisse",
+   "kor": {
+    "ndx": 0.732,
+    "spx": 0.819,
+    "bist": 0.431
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -8.66,
+    "vol": 14.59
+   },
+   "g": {
+    "a1": -3.55,
+    "a3": -0.41,
+    "a6": 7.89,
+    "y1": 30.33,
+    "y3": 192.09,
+    "d1": 0.27
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2021-11-22",
+   "fark": {
+    "a1": 9.9,
+    "a3": 9.42,
+    "a6": 13.15,
+    "y1": 6.08
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     88.08
+    ],
+    [
+     "Government Bonds",
+     5.21
+    ],
+    [
+     "Foreign ETFs",
+     3.55
+    ],
+    [
+     "Fund Shares",
+     1.46
+    ],
+    [
+     "Reverse Repo",
+     0.89
+    ],
+    [
+     "VC Fund Shares",
+     0.42
+    ],
+    [
+     "REIF Shares",
+     0.36
+    ],
+    [
+     "Foreign Government Debt",
+     0.02
+    ],
+    [
+     "Futures Margin",
+     0.01
+    ]
+   ],
+   "kap": "Yalnızca yabancı hisse",
+   "yab": 91.6,
+   "yur": 0,
+   "fkb": 1.9
+  },
+  {
+   "k": "AFA",
+   "ad": "AK PORTFÖY AMERİKA YABANCI HİSSE SENEDİ FONU",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 4582721745.28,
+   "yatirimci": 43847.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Amerika",
+   "kor": {
+    "ndx": 0.725,
+    "spx": 0.785,
+    "bist": 0.36
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -9.32,
+    "vol": 16.26
+   },
+   "g": {
+    "a1": -4.72,
+    "a3": -1.54,
+    "a6": 7.91,
+    "y1": 30.06,
+    "y3": 183.15,
+    "d1": 0.46
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2021-11-22",
+   "fark": {
+    "a1": 8.73,
+    "a3": 8.29,
+    "a6": 13.17,
+    "y1": 5.81
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     96.6
+    ],
+    [
+     "Reverse Repo",
+     3.02
+    ],
+    [
+     "Fund Shares",
+     0.38
+    ]
+   ],
+   "kap": "Yalnızca yabancı hisse",
+   "yab": 96.6,
+   "yur": 0,
+   "fkb": 0.4
+  },
+  {
    "k": "RTG",
    "ad": "ATA PORTFÖY ROBOTİK TEKNOLOJİLERİ DEĞİŞKEN FON",
    "tur": "YAT",
@@ -975,6 +2551,154 @@
    "yab": 64.2,
    "yur": 19.1,
    "fkb": 12.1
+  },
+  {
+   "k": "AFV",
+   "ad": "AK PORTFÖY AVRUPA YABANCI HİSSE SENEDİ FONU",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 1148483162.49,
+   "yatirimci": 13595.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Avrupa",
+   "kor": {
+    "ndx": 0.382,
+    "spx": 0.559,
+    "bist": 0.446
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -10.8,
+    "vol": 13.78
+   },
+   "g": {
+    "a1": -0.23,
+    "a3": -2.57,
+    "a6": 11.37,
+    "y1": 27.81,
+    "y3": 143.69,
+    "d1": -0.74
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2021-11-22",
+   "fark": {
+    "a1": 13.22,
+    "a3": 7.26,
+    "a6": 16.63,
+    "y1": 3.56
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     97.23
+    ],
+    [
+     "Reverse Repo",
+     2.53
+    ],
+    [
+     "Fund Shares",
+     0.24
+    ]
+   ],
+   "kap": "Yalnızca yabancı hisse",
+   "yab": 97.2,
+   "yur": 0,
+   "fkb": 0.2
+  },
+  {
+   "k": "HOY",
+   "ad": "HSBC PORTFÖY YABANCI BYF FON SEPETI",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 1231409863.59,
+   "yatirimci": 2342.0,
+   "risk": 0.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Genel yabancı hisse",
+   "kor": {
+    "ndx": 0.765,
+    "spx": 0.785,
+    "bist": 0.615
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -6.96,
+    "vol": 10.39
+   },
+   "g": {
+    "a1": -1.4,
+    "a3": -1.38,
+    "a6": 6.65,
+    "y1": 26.04,
+    "y3": 135.04,
+    "d1": 0.07
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2021-11-22",
+   "fark": {
+    "a1": 12.05,
+    "a3": 8.45,
+    "a6": 11.91,
+    "y1": 1.79
+   },
+   "dagilim": [
+    [
+     "Foreign ETFs",
+     87.04
+    ],
+    [
+     "Foreign Stocks",
+     5.58
+    ],
+    [
+     "Fund Shares",
+     3.74
+    ],
+    [
+     "Corporate Eurobonds",
+     2.11
+    ],
+    [
+     "Futures Margin",
+     1.16
+    ],
+    [
+     "Takasbank Money Market",
+     0.37
+    ]
+   ],
+   "kap": "Yalnızca yabancı hisse",
+   "yab": 92.6,
+   "yur": 0,
+   "fkb": 3.7
   },
   {
    "k": "RUT",
@@ -1129,6 +2853,156 @@
    "fkb": 4.6
   },
   {
+   "k": "BCK",
+   "ad": "DENİZ PORTFÖY BLOCKCHAİN VE FINTECH TEKNOLOJİLERİ DEĞİŞKEN FON",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 86327799.3,
+   "yatirimci": 2085.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Teknoloji",
+   "kor": {
+    "ndx": 0.732,
+    "spx": 0.641,
+    "bist": 0.634
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -15.0,
+    "vol": 21.78
+   },
+   "g": {
+    "a1": -5.46,
+    "a3": -8.29,
+    "a6": -6.17,
+    "y1": 24.55,
+    "d1": 1.13
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1"
+   ],
+   "celiski": [],
+   "gun": 411,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2025-04-02",
+   "fark": {
+    "a1": 7.99,
+    "a3": 1.54,
+    "a6": -0.91,
+    "y1": 0.3
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     56.57
+    ],
+    [
+     "Stocks",
+     16.06
+    ],
+    [
+     "Reverse Repo",
+     15.71
+    ],
+    [
+     "Foreign ETFs",
+     9.25
+    ],
+    [
+     "FX Deposits",
+     1.46
+    ],
+    [
+     "Takasbank Money Market",
+     0.9
+    ],
+    [
+     "TL Deposits",
+     0.05
+    ]
+   ],
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 65.8,
+   "yur": 16.1,
+   "fkb": 0
+  },
+  {
+   "k": "GBC",
+   "ad": "AZİMUT PORTFÖY YABANCI HİSSE SENEDİ FONU",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 379450460.25,
+   "yatirimci": 1463.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Genel yabancı hisse",
+   "kor": {
+    "ndx": 0.812,
+    "spx": 0.789,
+    "bist": 0.48
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -10.52,
+    "vol": 18.88
+   },
+   "g": {
+    "a1": -4.55,
+    "a3": -3.33,
+    "a6": 1.97,
+    "y1": 24.45,
+    "y3": 138.53,
+    "d1": 0.6
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2021-11-22",
+   "fark": {
+    "a1": 8.9,
+    "a3": 6.5,
+    "a6": 7.23,
+    "y1": 0.2
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     81.74
+    ],
+    [
+     "Fund Shares",
+     17.99
+    ],
+    [
+     "Futures Margin",
+     0.27
+    ]
+   ],
+   "kap": "Yalnızca yabancı hisse",
+   "yab": 81.7,
+   "yur": 0,
+   "fkb": 18.0
+  },
+  {
    "k": "DFC",
    "ad": "DENİZ PORTFÖY TARIM VE GIDA DEĞİŞKEN FON",
    "tur": "YAT",
@@ -1209,6 +3083,392 @@
    "fkb": 0
   },
   {
+   "k": "MTV",
+   "ad": "AK PORTFÖY METAVERSE VE DİJİTAL YAŞAM TEKNOLOJİLERİ DEĞİŞKEN FON",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 123122784.48,
+   "yatirimci": 11708.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Teknoloji",
+   "kor": {
+    "ndx": 0.739,
+    "spx": 0.739,
+    "bist": 0.534
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -10.86,
+    "vol": 18.47
+   },
+   "g": {
+    "a1": -2.36,
+    "a3": -6.65,
+    "a6": -2.68,
+    "y1": 23.61,
+    "y3": 149.64,
+    "d1": 0.7
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1157,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2022-04-12",
+   "fark": {
+    "a1": 11.09,
+    "a3": 3.18,
+    "a6": 2.58,
+    "y1": -0.64
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     67.35
+    ],
+    [
+     "Stocks",
+     18.7
+    ],
+    [
+     "Fund Shares",
+     11.45
+    ],
+    [
+     "Reverse Repo",
+     1.64
+    ],
+    [
+     "TL Deposits",
+     0.86
+    ]
+   ],
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 67.3,
+   "yur": 18.7,
+   "fkb": 11.4
+  },
+  {
+   "k": "VCY",
+   "ad": "AK PORTFÖY ELEKTRİKLİ VE OTONOM ARAÇ TEKNOLOJİLERİ DEĞİŞKEN FON",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 133578639.75,
+   "yatirimci": 11180.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Teknoloji",
+   "kor": {
+    "ndx": 0.689,
+    "spx": 0.665,
+    "bist": 0.702
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -10.12,
+    "vol": 19.08
+   },
+   "g": {
+    "a1": -3.82,
+    "a3": -6.53,
+    "a6": -4.82,
+    "y1": 23.18,
+    "y3": 99.74,
+    "d1": 0.79
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1171,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2022-03-23",
+   "fark": {
+    "a1": 9.63,
+    "a3": 3.3,
+    "a6": 0.44,
+    "y1": -1.07
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     65.51
+    ],
+    [
+     "Stocks",
+     26.14
+    ],
+    [
+     "Fund Shares",
+     6.81
+    ],
+    [
+     "Reverse Repo",
+     1.54
+    ]
+   ],
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 65.5,
+   "yur": 26.1,
+   "fkb": 6.8
+  },
+  {
+   "k": "IVY",
+   "ad": "İSTANBUL PORTFÖY BLOCKCHAIN TEKNOLOJİLERİ DEĞİŞKEN FON",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 476022396.27,
+   "yatirimci": 10591.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Teknoloji",
+   "kor": {
+    "ndx": 0.718,
+    "spx": 0.622,
+    "bist": 0.375
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -18.39,
+    "vol": 26.96
+   },
+   "g": {
+    "a1": -7.6,
+    "a3": -2.65,
+    "a6": -1.25,
+    "y1": 21.08,
+    "y3": 269.29,
+    "d1": 1.06
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1207,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2022-02-01",
+   "fark": {
+    "a1": 5.85,
+    "a3": 7.18,
+    "a6": 4.01,
+    "y1": -3.17
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     62.25
+    ],
+    [
+     "Commercial Paper",
+     17.79
+    ],
+    [
+     "Fund Shares",
+     10.32
+    ],
+    [
+     "Foreign ETFs",
+     9.21
+    ],
+    [
+     "Takasbank Money Market",
+     0.43
+    ]
+   ],
+   "kap": "Yalnızca yabancı hisse",
+   "yab": 71.5,
+   "yur": 0,
+   "fkb": 10.3
+  },
+  {
+   "k": "HOA",
+   "ad": "HSBC PORTFÖY TEKNOLOJİ DEĞİŞKEN FON",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 1472320424.97,
+   "yatirimci": 2974.0,
+   "risk": 0.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Teknoloji",
+   "kor": {
+    "ndx": 0.828,
+    "spx": 0.752,
+    "bist": 0.483
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -17.61,
+    "vol": 22.68
+   },
+   "g": {
+    "a1": -8.43,
+    "a3": -9.75,
+    "a6": -5.42,
+    "y1": 21.06,
+    "y3": 200.02,
+    "d1": 1.1
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2021-11-22",
+   "fark": {
+    "a1": 5.02,
+    "a3": 0.08,
+    "a6": -0.16,
+    "y1": -3.19
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     55.77
+    ],
+    [
+     "Stocks",
+     13.43
+    ],
+    [
+     "Foreign ETFs",
+     11.67
+    ],
+    [
+     "Corporate Bonds",
+     4.9
+    ],
+    [
+     "Fund Shares",
+     4.46
+    ],
+    [
+     "Futures Margin",
+     4.35
+    ],
+    [
+     "Commercial Paper",
+     3.03
+    ],
+    [
+     "Corporate Eurobonds",
+     1.72
+    ],
+    [
+     "Takasbank Money Market",
+     0.67
+    ]
+   ],
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 67.4,
+   "yur": 13.4,
+   "fkb": 4.5
+  },
+  {
+   "k": "NTI",
+   "ad": "NEO PORTFÖY TEKNOLOJİ VE İNOVASYON DEĞİŞKEN FON",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 150056039.38,
+   "yatirimci": 944.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Teknoloji",
+   "kor": {
+    "ndx": 0.78,
+    "spx": 0.664,
+    "bist": 0.351
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -28.77,
+    "vol": 33.32
+   },
+   "g": {
+    "a1": -14.95,
+    "a3": -18.66,
+    "a6": -15.27,
+    "y1": 20.91,
+    "d1": 0.69
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1"
+   ],
+   "celiski": [],
+   "gun": 341,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2025-07-17",
+   "fark": {
+    "a1": -1.5,
+    "a3": -8.83,
+    "a6": -10.01,
+    "y1": -3.34
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     68.95
+    ],
+    [
+     "Fund Shares",
+     18.87
+    ],
+    [
+     "Futures Margin",
+     10.06
+    ],
+    [
+     "Stocks",
+     2.12
+    ]
+   ],
+   "kap": "Yalnızca yabancı hisse",
+   "yab": 69.0,
+   "yur": 2.1,
+   "fkb": 18.9
+  },
+  {
    "k": "ZTG",
    "ad": "ZİRAAT PORTFÖY TARIM VE GIDA FON SEPETİ FONU",
    "tur": "YAT",
@@ -1277,6 +3537,74 @@
    "yab": 55.2,
    "yur": 0.9,
    "fkb": 40.0
+  },
+  {
+   "k": "GMD",
+   "ad": "GLOBAL MD PORTFÖY BİRİNCİ FON SEPETİ FONU",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 14626035.0,
+   "yatirimci": 86.0,
+   "risk": 5.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Küresel",
+   "kor": {
+    "ndx": 0.366,
+    "spx": 0.326,
+    "bist": 0.874
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -7.88,
+    "vol": 9.05
+   },
+   "g": {
+    "a1": 0.24,
+    "a3": -3.87,
+    "a6": 1.32,
+    "y1": 19.96,
+    "y3": 24.9,
+    "d1": 0.01
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1228,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2022-01-03",
+   "fark": {
+    "a1": 13.69,
+    "a3": 5.96,
+    "a6": 6.58,
+    "y1": -4.29
+   },
+   "dagilim": [
+    [
+     "Fund Shares",
+     74.49
+    ],
+    [
+     "Futures Margin",
+     18.18
+    ],
+    [
+     "VC Fund Shares",
+     7.33
+    ]
+   ],
+   "kap": "Fon sepeti (içeriği başka fonlar)",
+   "yab": 0,
+   "yur": 0,
+   "fkb": 81.8
   },
   {
    "k": "PIL",
@@ -1417,6 +3745,90 @@
    "yab": 67.8,
    "yur": 27.2,
    "fkb": 0.5
+  },
+  {
+   "k": "DYN",
+   "ad": "DENİZ PORTFÖY ELEKTRİKLİ VE OTONOM ARAÇ TEKNOLOJİLERİ DEĞİŞKEN FON",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 49145230.25,
+   "yatirimci": 1446.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Teknoloji",
+   "kor": {
+    "ndx": 0.668,
+    "spx": 0.637,
+    "bist": 0.718
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -16.82,
+    "vol": 16.34
+   },
+   "g": {
+    "a1": -4.24,
+    "a3": -9.32,
+    "a6": -12.0,
+    "y1": 18.24,
+    "y3": 105.38,
+    "d1": 0.61
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1083,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2022-08-03",
+   "fark": {
+    "a1": 9.21,
+    "a3": 0.51,
+    "a6": -6.74,
+    "y1": -6.01
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     53.45
+    ],
+    [
+     "Reverse Repo",
+     18.3
+    ],
+    [
+     "Stocks",
+     14.31
+    ],
+    [
+     "Foreign ETFs",
+     12.67
+    ],
+    [
+     "FX Deposits",
+     0.99
+    ],
+    [
+     "Takasbank Money Market",
+     0.2
+    ],
+    [
+     "TL Deposits",
+     0.08
+    ]
+   ],
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 66.1,
+   "yur": 14.3,
+   "fkb": 0
   },
   {
    "k": "DTZ",
@@ -1795,6 +4207,76 @@
    "fkb": 12.6
   },
   {
+   "k": "JET",
+   "ad": "ATA PORTFÖY HAVACILIK VE SAVUNMA TEKNOLOJİLERİ DEĞİŞKEN FON",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 326287695.73,
+   "yatirimci": 13610.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Teknoloji",
+   "kor": {
+    "ndx": 0.388,
+    "spx": 0.468,
+    "bist": 0.467
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -15.48,
+    "vol": 23.26
+   },
+   "g": {
+    "a1": -1.77,
+    "a3": -13.3,
+    "a6": 0.68,
+    "y1": 15.03,
+    "d1": 0.37
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1"
+   ],
+   "celiski": [],
+   "gun": 643,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2024-04-29",
+   "fark": {
+    "a1": 11.68,
+    "a3": -3.47,
+    "a6": 5.94,
+    "y1": -9.22
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     68.98
+    ],
+    [
+     "Stocks",
+     22.13
+    ],
+    [
+     "Fund Shares",
+     7.9
+    ],
+    [
+     "Futures Margin",
+     0.99
+    ]
+   ],
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 69.0,
+   "yur": 22.1,
+   "fkb": 7.9
+  },
+  {
    "k": "AOY",
    "ad": "AK PORTFÖY ALTERNATİF ENERJİ YABANCI HİSSE SENEDİ FONU",
    "tur": "YAT",
@@ -1857,6 +4339,82 @@
    "yab": 98.6,
    "yur": 0,
    "fkb": 0
+  },
+  {
+   "k": "IEV",
+   "ad": "İŞ PORTFÖY HAVACILIK VE SAVUNMA TEKNOLOJİLERİ DEĞİŞKEN FON",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 66080398.29,
+   "yatirimci": 3728.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Teknoloji",
+   "kor": {
+    "ndx": 0.163,
+    "spx": 0.302,
+    "bist": 0.457
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -19.6,
+    "vol": 17.67
+   },
+   "g": {
+    "a1": -0.8,
+    "a3": -16.51,
+    "a6": -4.26,
+    "y1": 13.91,
+    "y3": 104.97,
+    "d1": -0.23
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1164,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2022-04-01",
+   "fark": {
+    "a1": 12.65,
+    "a3": -6.68,
+    "a6": 1.0,
+    "y1": -10.34
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     70.77
+    ],
+    [
+     "Stocks",
+     22.93
+    ],
+    [
+     "Fund Shares",
+     3.24
+    ],
+    [
+     "Futures Margin",
+     1.79
+    ],
+    [
+     "Reverse Repo",
+     1.27
+    ]
+   ],
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 70.8,
+   "yur": 22.9,
+   "fkb": 3.2
   },
   {
    "k": "TMZ",
@@ -1997,6 +4555,90 @@
    "fkb": 21.8
   },
   {
+   "k": "GZZ",
+   "ad": "GARANTİ PORTFÖY FİNANSAL TEKNOLOJİLER DEĞİŞKEN FON",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 54068622.68,
+   "yatirimci": 1120.0,
+   "risk": 5.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Teknoloji",
+   "kor": {
+    "ndx": 0.398,
+    "spx": 0.499,
+    "bist": 0.724
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -13.59,
+    "vol": 16.77
+   },
+   "g": {
+    "a1": -0.19,
+    "a3": -4.75,
+    "a6": 3.34,
+    "y1": 12.57,
+    "y3": 137.37,
+    "d1": 0.06
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2021-11-22",
+   "fark": {
+    "a1": 13.26,
+    "a3": 5.08,
+    "a6": 8.6,
+    "y1": -11.68
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     67.5
+    ],
+    [
+     "Stocks",
+     25.7
+    ],
+    [
+     "Reverse Repo",
+     3.75
+    ],
+    [
+     "Fund Shares",
+     1.39
+    ],
+    [
+     "FX Deposits",
+     0.81
+    ],
+    [
+     "TL Deposits",
+     0.75
+    ],
+    [
+     "Futures Margin",
+     0.1
+    ]
+   ],
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 67.5,
+   "yur": 25.7,
+   "fkb": 1.4
+  },
+  {
    "k": "OLD",
    "ad": "QNB PORTFÖY TEMİZ ENERJİ VE SU FON SEPETİ FONU",
    "tur": "YAT",
@@ -2067,6 +4709,375 @@
    "yab": 78.5,
    "yur": 4.7,
    "fkb": 0
+  },
+  {
+   "k": "AFT",
+   "ad": "AK PORTFÖY YENİ TEKNOLOJİLER YABANCI HİSSE SENEDİ FONU",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 14066966700.8,
+   "yatirimci": 124384.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Teknoloji",
+   "kor": {
+    "ndx": 0.733,
+    "spx": 0.67,
+    "bist": 0.343
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -22.51,
+    "vol": 28.47
+   },
+   "g": {
+    "a1": -11.38,
+    "a3": -11.99,
+    "a6": -13.81,
+    "y1": 8.68,
+    "y3": 171.0,
+    "d1": 2.35
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2021-11-22",
+   "fark": {
+    "a1": 2.07,
+    "a3": -2.16,
+    "a6": -8.55,
+    "y1": -15.57
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     99.75
+    ],
+    [
+     "Fund Shares",
+     0.22
+    ],
+    [
+     "Reverse Repo",
+     0.03
+    ]
+   ],
+   "kap": "Yalnızca yabancı hisse",
+   "yab": 99.8,
+   "yur": 0,
+   "fkb": 0.2
+  },
+  {
+   "k": "YTD",
+   "ad": "YAPI KREDİ PORTFÖY YABANCI FON SEPETİ FONU",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 1353206183.34,
+   "yatirimci": 13723.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Genel yabancı hisse",
+   "kor": {
+    "ndx": 0.772,
+    "spx": 0.694,
+    "bist": 0.328
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -28.05,
+    "vol": 30.66
+   },
+   "g": {
+    "a1": -15.53,
+    "a3": -17.28,
+    "a6": -9.49,
+    "y1": 6.7,
+    "y3": 140.06,
+    "d1": 1.82
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2021-11-22",
+   "fark": {
+    "a1": -2.08,
+    "a3": -7.45,
+    "a6": -4.23,
+    "y1": -17.55
+   },
+   "dagilim": [
+    [
+     "Foreign ETFs",
+     87.08
+    ],
+    [
+     "Foreign Stocks",
+     9.32
+    ],
+    [
+     "Fund Shares",
+     2.56
+    ],
+    [
+     "FX Deposits",
+     1.04
+    ]
+   ],
+   "kap": "Yalnızca yabancı hisse",
+   "yab": 96.4,
+   "yur": 0,
+   "fkb": 2.6
+  },
+  {
+   "k": "DHT",
+   "ad": "DENİZ PORTFÖY HAVACILIK VE SAVUNMA TEKNOLOJİLERİ DEĞİŞKEN FON",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 41854620.19,
+   "yatirimci": 646.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Teknoloji",
+   "kor": {
+    "ndx": 0.451,
+    "spx": 0.562,
+    "bist": 0.328
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -11.84,
+    "vol": 19.68
+   },
+   "g": {
+    "a1": -0.76,
+    "a3": -9.08,
+    "a6": 5.44,
+    "d1": 0.06
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6"
+   ],
+   "celiski": [],
+   "gun": 223,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2025-12-31",
+   "fark": {
+    "a1": 12.69,
+    "a3": 0.75,
+    "a6": 10.7
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     42.4
+    ],
+    [
+     "Foreign ETFs",
+     21.43
+    ],
+    [
+     "Stocks",
+     15.83
+    ],
+    [
+     "Fund Shares",
+     9.13
+    ],
+    [
+     "Reverse Repo",
+     7.2
+    ],
+    [
+     "Futures Margin",
+     2.48
+    ],
+    [
+     "Takasbank Money Market",
+     1.42
+    ],
+    [
+     "TL Deposits",
+     0.11
+    ]
+   ],
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 63.8,
+   "yur": 15.8,
+   "fkb": 9.1
+  },
+  {
+   "k": "ZMY",
+   "ad": "ZİRAAT PORTFÖY METAVERSE VE YENİ TEKNOLOJİLER DEĞİŞKEN FON",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 154983210.03,
+   "yatirimci": 2518.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Teknoloji",
+   "kor": {
+    "ndx": 0.814,
+    "spx": 0.747,
+    "bist": 0.378
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -21.47,
+    "vol": 22.71
+   },
+   "g": {
+    "a1": -11.43,
+    "a3": -15.0,
+    "a6": -13.79,
+    "y1": 2.11,
+    "y3": 107.31,
+    "d1": 0.68
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1140,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2022-05-10",
+   "fark": {
+    "a1": 2.02,
+    "a3": -5.17,
+    "a6": -8.53,
+    "y1": -22.14
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     66.44
+    ],
+    [
+     "Stocks",
+     12.68
+    ],
+    [
+     "Fund Shares",
+     10.46
+    ],
+    [
+     "Reverse Repo",
+     7.57
+    ],
+    [
+     "ETF Shares",
+     2.51
+    ],
+    [
+     "Futures Margin",
+     0.34
+    ]
+   ],
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 66.4,
+   "yur": 12.7,
+   "fkb": 13.0
+  },
+  {
+   "k": "FLY",
+   "ad": "AKTİF PORTFÖY HAVACILIK VE SAVUNMA TEKNOLOJİLERİ DEĞİŞKEN FON",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 65473415.65,
+   "yatirimci": 1641.0,
+   "risk": 5.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Teknoloji",
+   "kor": {
+    "ndx": 0.405,
+    "spx": 0.461,
+    "bist": 0.486
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -20.25,
+    "vol": 25.68
+   },
+   "g": {
+    "a1": -0.88,
+    "a3": -17.02,
+    "a6": -9.92,
+    "y1": 1.62,
+    "d1": -0.24
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1"
+   ],
+   "celiski": [],
+   "gun": 530,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2024-10-11",
+   "fark": {
+    "a1": 12.57,
+    "a3": -7.19,
+    "a6": -4.66,
+    "y1": -22.63
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     50.96
+    ],
+    [
+     "Stocks",
+     36.05
+    ],
+    [
+     "Fund Shares",
+     12.99
+    ]
+   ],
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 51.0,
+   "yur": 36.0,
+   "fkb": 13.0
   },
   {
    "k": "URA",
@@ -2293,6 +5304,145 @@
    "fkb": 0
   },
   {
+   "k": "MTD",
+   "ad": "BV PORTFÖY MALZEME TEKNOLOJİLERİ DEĞİŞKEN FON",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 34384690.54,
+   "yatirimci": 958.0,
+   "risk": 5.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Teknoloji",
+   "kor": {
+    "ndx": 0.626,
+    "spx": 0.625,
+    "bist": 0.691
+   },
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -31.81,
+    "vol": 31.97
+   },
+   "g": {
+    "a1": -12.25,
+    "a3": -22.62,
+    "a6": -24.07,
+    "d1": -0.88
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6"
+   ],
+   "celiski": [],
+   "gun": 251,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2025-11-21",
+   "fark": {
+    "a1": 1.2,
+    "a3": -12.79,
+    "a6": -18.81
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     63.9
+    ],
+    [
+     "Stocks",
+     13.46
+    ],
+    [
+     "Commercial Paper",
+     8.04
+    ],
+    [
+     "Fund Shares",
+     7.82
+    ],
+    [
+     "Foreign ETFs",
+     6.75
+    ],
+    [
+     "Futures Margin",
+     0.03
+    ]
+   ],
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 70.7,
+   "yur": 13.5,
+   "fkb": 7.8
+  },
+  {
+   "k": "HTK",
+   "ad": "QNB PORTFÖY HAVACILIK VE SAVUNMA TEKNOLOJİLERİ FON SEPETİ FONU",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 80077362.89,
+   "yatirimci": 654.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Teknoloji",
+   "kor": null,
+   "d1_tarih": "2026-11-20",
+   "rk": {
+    "mdd": -15.82,
+    "vol": 18.09
+   },
+   "g": {
+    "a1": 0.65,
+    "a3": -12.59,
+    "d1": 0.13
+   },
+   "teyit": [
+    "a1",
+    "a3"
+   ],
+   "celiski": [],
+   "gun": 120,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2026-06-04",
+   "fark": {
+    "a1": 14.1,
+    "a3": -2.76
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     62.61
+    ],
+    [
+     "Fund Shares",
+     18.13
+    ],
+    [
+     "Reverse Repo",
+     12.33
+    ],
+    [
+     "Stocks",
+     6.84
+    ],
+    [
+     "Takasbank Money Market",
+     0.09
+    ]
+   ],
+   "kap": "Yalnızca yabancı hisse",
+   "yab": 62.6,
+   "yur": 6.8,
+   "fkb": 18.1
+  },
+  {
    "k": "RFM",
    "ad": "ROTA PORTFÖY ENERJİ VE METAL FON SEPETİ FONU",
    "tur": "YAT",
@@ -2469,6 +5619,63 @@
    "yab": 62.9,
    "yur": 27.8,
    "fkb": 2.3
+  },
+  {
+   "k": "ZIH",
+   "ad": "ZİRAAT PORTFÖY HAVACILIK VE SAVUNMA TEKNOLOJİLERİ DEĞİŞKEN FON",
+   "tur": "YAT",
+   "et": "Tematik",
+   "buyukluk": 114569939.71,
+   "yatirimci": 5404.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "tefas": {
+    "tefas_status": "TEFAS'ta işlem görüyor"
+   },
+   "tema": "Teknoloji",
+   "kor": null,
+   "d1_tarih": "2026-11-20",
+   "rk": null,
+   "g": {
+    "a1": -0.79,
+    "a3": -11.48,
+    "d1": -0.3
+   },
+   "teyit": [
+    "a1",
+    "a3"
+   ],
+   "celiski": [],
+   "gun": 73,
+   "son_tarih": "2026-11-20",
+   "ilk_tarih": "2026-08-11",
+   "fark": {
+    "a1": 12.66,
+    "a3": -1.65
+   },
+   "dagilim": [
+    [
+     "Foreign Stocks",
+     68.19
+    ],
+    [
+     "Stocks",
+     17.34
+    ],
+    [
+     "Fund Shares",
+     10.15
+    ],
+    [
+     "Reverse Repo",
+     4.32
+    ]
+   ],
+   "kap": "Karışık (yurt içi + yabancı)",
+   "yab": 68.2,
+   "yur": 17.3,
+   "fkb": 10.2
   },
   {
    "k": "ZTS",
