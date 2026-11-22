@@ -282,9 +282,10 @@ function ciz(){
   /* mumlar */
   for(i=a;i<=b;i++){var r=CD[i],up=r[4]>=r[1],cx=X(i);x.strokeStyle=x.fillStyle=up?"#26a69a":"#ef5350";x.lineWidth=1;
     x.beginPath();x.moveTo(cx,Y(r[2]));x.lineTo(cx,Y(r[3]));x.stroke();var y1=Y(Math.max(r[1],r[4])),y2=Y(Math.min(r[1],r[4]));x.fillRect(cx-bw*0.35,y1,Math.max(1,bw*0.7),Math.max(1,y2-y1));}
+  var HDR=function(){
   /* halkalar (yesil: sonrasi sik yukselmis, kirmizi: seyrek yukselmis, sari: karisik). Secim tum gecmisin basindan yapilir, kaydirinca yer degistirmez. */
   HK=[];TTP=null;var RG=halkaIdx();if(RG.length){var sonH=-99,gap=Math.max(8,Math.ceil(62/bw)),rr=Math.max(4.5,Math.min(5.5,bw*0.8));
-    RG.forEach(function(o){var i=o.i;if(i-sonH<gap)return;sonH=i;HK.push(o);if(i<a||i>b)return;var RB=ROB&&ROB[SEC]?o.t.map(function(k){return ROB[SEC][k];}):[],zay=RB.length&&RB.every(function(v){return v===0;});x.globalAlpha=zay?0.5:1;x.setLineDash(zay?[3,2]:[]);x.strokeStyle=HCR[o.k];x.lineWidth=1.8;x.beginPath();x.arc(X(i),(Y(CD[i][2])+Y(CD[i][3]))/2,rr,0,6.2832);x.stroke();x.setLineDash([]);
+    RG.forEach(function(o){var i=o.i;if(i-sonH<gap)return;sonH=i;HK.push(o);if(i<a||i>b)return;var RB=ROB&&ROB[SEC]?o.t.map(function(k){return ROB[SEC][k];}):[],zay=RB.length&&RB.every(function(v){return v===0;});x.globalAlpha=zay?0.75:1;x.setLineDash(zay?[3,2]:[]);x.strokeStyle=HCR[o.k];x.lineWidth=1.8;x.beginPath();x.arc(X(i),(Y(CD[i][2])+Y(CD[i][3]))/2,rr,0,6.2832);x.stroke();x.setLineDash([]);x.globalAlpha=1;
       var HTq=TEST&&TEST.h?TEST.h[SEC]:null,nm=o.t.slice(0,2).map(function(k){var q=HTq&&HTq.d[k];var rv=ROB&&ROB[SEC]?ROB[SEC][k]:undefined;return (rv===1?"✓ ":rv===0?"~ ":"")+(SH[k]||k)+(q?" %"+Math.round(q.yuk*100):"");}),tx=nm.join(" + "),cy=(Y(CD[i][2])+Y(CD[i][3]))/2;x.font="bold 8.5px Roboto,Arial";x.textAlign="center";x.textBaseline="middle";var tw=x.measureText(tx).width,tx0=Math.max(tw/2+2,Math.min(W-tw/2-2,X(i))),ty=cy-rr-8<10?cy+rr+8:cy-rr-8;
       x.fillStyle="rgba(10,12,20,.82)";x.fillRect(tx0-tw/2-2,ty-6,tw+4,12);x.fillStyle=HCR[1];x.fillText(tx,tx0,ty);x.textAlign="left";x.globalAlpha=1;});
     TTP=function(){if(CROSS>=a&&CROSS<=b){var tol=Math.max(1,Math.round(7/bw)),hk=null;HK.forEach(function(o){if(Math.abs(o.i-CROSS)<=tol&&(!hk||Math.abs(o.i-CROSS)<Math.abs(hk.i-CROSS)))hk=o;});
@@ -294,6 +295,7 @@ function ciz(){
         x.font="11px Roboto,Arial";var bwid=Math.min(W-12,Math.max.apply(null,L.map(function(l){return x.measureText(l[0]).width;}))+16),bh=L.length*15+8,bx=6,by=6;
         x.fillStyle="#000";x.fillRect(bx,by,bwid,bh);x.strokeStyle=HCR[hk.k];x.lineWidth=1.2;x.strokeRect(bx,by,bwid,bh);x.textAlign="left";x.textBaseline="middle";
         L.forEach(function(l,n){x.font=(l[2]?"bold ":"")+"11px Roboto,Arial";x.fillStyle=l[1];x.fillText(l[0],bx+8,by+4+n*15+8);});}}}};}
+  };
   /* Fibonacci etiketleri mumlarin ustune, okunur zeminle */
   /* Fibonacci / POC etiketleri: oran sagdaki bos seritte, fiyat sagdaki eksende renkli kutuda (TradingView gibi).
      Kutular birbirine ve son fiyat kutusuna binmesin diye 16 px aralikla kaydirilir; cizgiler gercek yerinde kalir. */
@@ -309,7 +311,7 @@ function ciz(){
   x.fillStyle=x.strokeStyle;x.fillRect(W,ys-9,EKS,18);x.fillStyle="#fff";x.textBaseline="middle";x.font="bold 11px Roboto,Arial";x.fillText(f2(sc),W+4,ys);}
   /* zirve / dip */
   if(!ACIK.fib){x.font="10.5px Roboto,Arial";x.fillStyle="#b0b2c8";x.textBaseline="bottom";x.fillText("zirve "+f2(hi),Math.min(Math.max(2,X(hiI)-25),W-80),Y(hi)-2);x.textBaseline="top";x.fillText("dip "+f2(lo),Math.min(Math.max(2,X(loI)-20),W-70),Y(lo)+2);}
-  if(TTP)TTP();
+  HDR();if(TTP)TTP();
   /* artı imleci */
   if(CROSS>=a&&CROSS<=b){x.strokeStyle="rgba(220,220,240,.5)";x.setLineDash([3,3]);x.beginPath();x.moveTo(X(CROSS),0);x.lineTo(X(CROSS),HH);x.stroke();x.setLineDash([]);}
   if(CPY!=null&&CPY>=8&&CPY<=HH){var fy=pmx-(CPY-8)/(HH-8)*(pmx-pmn);CPF=fy;x.strokeStyle="rgba(220,220,240,.75)";x.setLineDash([4,3]);x.lineWidth=1;x.beginPath();x.moveTo(0,CPY);x.lineTo(W,CPY);x.stroke();x.setLineDash([]);
