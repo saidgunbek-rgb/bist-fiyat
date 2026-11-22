@@ -1,0 +1,62 @@
+name: Panel uyarisi
+
+on:
+  schedule:
+    - cron: "40 14 * * 1-5"
+    - cron: "45 18 * * 1-5"
+    - cron: "55 21 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: panel-uyari
+  cancel-in-progress: false
+
+jobs:
+  uyari:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Olaylari bul
+        run: python3 panel_uyari.py
+
+      - name: Telefon bildirimini gonder
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ ! -f bildirim.json ]; then exit 0; fi
+          python3 - <<'PY'
+          import json, subprocess, os, sys
+          repo = os.environ["GITHUB_REPOSITORY"]; sahip = os.environ["GITHUB_REPOSITORY_OWNER"]
+          hata = False
+          for b in json.load(open("bildirim.json")):
+              baslik = (b["i"] + " " + b["t"])[:250]
+              govde = b.get("g", "") + "\n\n---\nBu bildirimi bist-fiyat paneli otomatik gönderdi. Alım-satım önerisi değildir."
+              try:
+                  url = subprocess.run(["gh", "issue", "create", "--repo", repo, "--title", baslik, "--body", govde,
+                                        "--assignee", sahip], capture_output=True, text=True, check=True).stdout.strip()
+                  subprocess.run(["gh", "issue", "close", url, "--repo", repo], capture_output=True, text=True)
+                  print("Gonderildi:", baslik)
+              except subprocess.CalledProcessError as e:
+                  print("Gonderilemedi:", baslik, e.stderr); hata = True
+          if hata:
+              subprocess.run(["git", "checkout", "--", "panel-uyari-durum.json"])
+          PY
+          rm -f bildirim.json
+
+      - name: Durumu kaydet
+        run: |
+          git config user.name "fiyat-bot"
+          git config user.email "fiyat-bot@users.noreply.github.com"
+          git add panel-uyari-durum.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Panel uyari durumu"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push && exit 0
+            sleep 5
+          done
+          exit 1
