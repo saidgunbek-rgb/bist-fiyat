@@ -345,7 +345,7 @@ function cizRSI(a,b,bw){var cv=document.getElementById("rsi");cv.style.display=A
 function legend(){var i=CROSS>=0?CROSS:CD.length-1,r=CD[i],p=i>0?CD[i-1][4]:null,ch=p?(r[4]/p-1)*100:null;
   document.getElementById("lg").innerHTML=(MUM==="h"?"Hafta "+trD(r[0])+" (haftalık mum)":trD(r[0]))+" · A <i>"+f2(r[1])+"</i> Y <i>"+f2(r[2])+"</i> D <i>"+f2(r[3])+"</i> K <i>"+f2(r[4])+"</i>"+(ch!=null?' <span class="'+(ch>=0?"up":"dn")+'">'+(ch>=0?"+":"")+f2(ch)+"%</span>":"")
    +"<br>"+(ACIK.ema?"EMA20 <i>"+f2(CI.ema[20][i])+"</i> · 50 <i>"+f2(CI.ema[50][i])+"</i> · 200 <i>"+f2(CI.ema[200][i])+"</i> · ":"")+"ATR14 <i>"+f2(CI.atr14[i])+"</i>";
-  var OL_=olumluSet(),OLn=Object.keys(OL_).length;document.getElementById("lg").innerHTML+='';
+  var OL_=olumluSet(),OLn=Object.keys(OL_).length;try{var UM=uyumsuzluk(CD,CI.rsi,CD.length-1);document.getElementById("lg").innerHTML+=UM?'<br><span style="font-size:10.5px;color:'+(UM.tip<0?'#ff8a80':'#7ee2a8')+'">'+(UM.tip<0?'⚠ Negatif uyumsuzluk: fiyat tepede, RSI zayıf. Yükseliş yorulabilir.':'ℹ Pozitif uyumsuzluk: fiyat dipte, RSI güçlü. Düşüş zayıflıyor olabilir.')+'</span>':'';}catch(e){}
   document.getElementById("rsit").innerHTML="RSI 14 · <span style='color:#4fc3f7'>"+f1(CI.rsi[i])+"</span> · <span style='color:#ff2fd0'>EMA5 "+f1(CI.rsi5[i])+"</span> · 70 üstü aşırı alım, 30 altı aşırı satım";
   document.getElementById("wtt").innerHTML="WaveTrend 10/21 · <span class='up'>WT1 "+f1(CI.wt1[i])+"</span> · <span class='dn'>WT2 "+f1(CI.wt2[i])+"</span> · seviyeler ±53 / ±60";}
 function ozet(){var n=D.length-1,c=D[n][4],g={a:Math.max(0,n-249),b:n},hi=-1e9,lo=1e9;for(var i=g.a;i<=g.b;i++){hi=Math.max(hi,D[i][2]);lo=Math.min(lo,D[i][3]);}
