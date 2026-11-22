@@ -205,6 +205,7 @@ jobs:
 
           BEN = {}
           BSER = {}
+          SER = {}      # fon kodu -> haftalik fiyat serisi (fon penceresindeki grafik icin)
           try:
               usd_y = yahoo("USDTRY=X"); usd_e = ecb_kur()
               not_("USDTRY: yahoo %d gun, ecb %d gun" % (len(usd_y), len(usd_e)))
@@ -420,6 +421,13 @@ jobs:
                   out["ek_hata"] = repr(e)[:150]
               out.update(g=son, teyit=teyit, celiski=celiski, gun=len(seri), son_tarih=str(seri[-1][0]),
                          ilk_tarih=str(seri[0][0]))
+              try:
+                  wk = haftalik(seri, seri[0][0])
+                  if wk[-1][0] != seri[-1][0]:
+                      wk.append(seri[-1])      # son nokta her zaman en guncel fiyat
+                  SER[kod] = [[str(t), round(v, 6)] for t, v in wk]
+              except Exception as e:
+                  not_("%s haftalik seri HATA %r" % (kod, e))
               if not [k for k in teyit if k in DON]:
                   out["atla"] = "getirisi teyit edilemeyen"
               return out
@@ -524,13 +532,27 @@ jobs:
           if not fonlar or not BEN:
               raise SystemExit("Fon ya da olcut yok; onceki yabanci.json korunuyor (ayrinti: yabanci-kontrol.json).")
           json.dump(veri, open("yabanci.json", "w"), indent=1, ensure_ascii=False, default=str)
+          # Tematik fonlarin haftalik fiyat serisi + Nasdaq-100 (TL) haftalik serisi: yabanci.html fon penceresindeki grafik ve analiz icin
+          try:
+              tk = [r["k"] for r in fonlar if r.get("et") == "Tematik" and len(SER.get(r["k"], [])) >= 3]
+              nd = BSER.get("ndx") or []
+              wn = haftalik(nd, nd[0][0]) if nd else []
+              if wn and wn[-1][0] != nd[-1][0]:
+                  wn.append(nd[-1])
+              ndh = [[str(t), round(v, 4)] for t, v in wn]
+              if tk:
+                  json.dump({"guncel": veri["updatedAt"], "bist": ndh, "fon": {k: SER[k] for k in tk}},
+                            open("yabanci-seri.json", "w"), separators=(",", ":"), ensure_ascii=False)
+                  not_("Haftalik seri: %d fon, olcut %d hafta" % (len(tk), len(ndh)))
+          except Exception as e:
+              not_("Haftalik seri yazilamadi %r" % e)
           PY
 
       - name: Kaydet
         run: |
           git config user.name "fiyat-bot"
           git config user.email "fiyat-bot@users.noreply.github.com"
-          for f in yabanci.json yabanci-kontrol.json; do [ -f "$f" ] && git add "$f"; done
+          for f in yabanci.json yabanci-kontrol.json yabanci-seri.json; do [ -f "$f" ] && git add "$f"; done
           git diff --cached --quiet && exit 0
           git commit -m "Yabanci fon verisi"
           for i in 1 2 3 4 5; do git pull --rebase origin main && git push && exit 0; sleep 10; done
