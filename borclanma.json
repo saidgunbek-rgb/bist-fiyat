@@ -1,17 +1,17 @@
 {
- "updatedAt": "2026-11-23T06:49:11Z",
+ "updatedAt": "2026-11-23T18:47:47Z",
  "updated": "2026-11-23",
  "bist": {
-  "a1": -5.65,
-  "a3": -22.68,
-  "a6": -20.56,
-  "y1": 1.38,
-  "y3": 40.08,
-  "y5": 540.71,
-  "d1": -2.36,
+  "a1": -0.11,
+  "a3": -23.5,
+  "a6": -19.58,
+  "y1": 1.66,
+  "y3": 40.59,
+  "y5": 522.25,
+  "d1": -0.24,
   "mdd": -28.9,
-  "vol": 25.55,
-  "reel_y1": -21.88
+  "vol": 25.63,
+  "reel_y1": -21.66
  },
  "enf": {
   "y": 29.77,
@@ -115,7 +115,7 @@
     4,
     4
    ],
-   "puan": 91,
+   "puan": 92,
    "her_yonu": true,
    "kosul": 5,
    "gecmis": {
@@ -170,7 +170,7 @@
     4,
     4
    ],
-   "puan": 85,
+   "puan": 86,
    "her_yonu": true,
    "kosul": 5,
    "gecmis": {
@@ -276,7 +276,7 @@
     4,
     4
    ],
-   "puan": 86,
+   "puan": 87,
    "her_yonu": true,
    "kosul": 5,
    "gecmis": {
@@ -331,7 +331,7 @@
     4,
     4
    ],
-   "puan": 85,
+   "puan": 86,
    "her_yonu": true,
    "kosul": 5,
    "gecmis": {
@@ -386,7 +386,7 @@
     4,
     4
    ],
-   "puan": 69,
+   "puan": 70,
    "her_yonu": true,
    "kosul": 5,
    "gecmis": {
@@ -439,7 +439,7 @@
     4,
     4
    ],
-   "puan": 76,
+   "puan": 77,
    "her_yonu": true,
    "kosul": 5,
    "gecmis": {
@@ -494,7 +494,7 @@
     4,
     4
    ],
-   "puan": 78,
+   "puan": 79,
    "her_yonu": true,
    "kosul": 5,
    "gecmis": {
@@ -549,7 +549,7 @@
     4,
     4
    ],
-   "puan": 56,
+   "puan": 57,
    "her_yonu": true,
    "kosul": 5,
    "gecmis": {
@@ -604,7 +604,7 @@
     4,
     4
    ],
-   "puan": 75,
+   "puan": 77,
    "her_yonu": true,
    "kosul": 5,
    "gecmis": {
@@ -659,7 +659,7 @@
     4,
     4
    ],
-   "puan": 78,
+   "puan": 79,
    "her_yonu": true,
    "kosul": 5,
    "gecmis": {
@@ -710,7 +710,7 @@
     4,
     4
    ],
-   "puan": 75,
+   "puan": 76,
    "her_yonu": true,
    "kosul": 5,
    "gecmis": {
@@ -765,7 +765,7 @@
     4,
     4
    ],
-   "puan": 54,
+   "puan": 55,
    "her_yonu": true,
    "kosul": 5,
    "gecmis": {
@@ -820,7 +820,7 @@
     4,
     4
    ],
-   "puan": 47,
+   "puan": 48,
    "her_yonu": true,
    "kosul": 5,
    "gecmis": {
@@ -875,7 +875,7 @@
     4,
     4
    ],
-   "puan": 66,
+   "puan": 68,
    "her_yonu": true,
    "kosul": 5,
    "gecmis": {
@@ -930,7 +930,7 @@
     4,
     4
    ],
-   "puan": 71,
+   "puan": 73,
    "her_yonu": true,
    "kosul": 5,
    "gecmis": {
@@ -985,7 +985,7 @@
     4,
     4
    ],
-   "puan": 71,
+   "puan": 72,
    "her_yonu": true,
    "kosul": 5,
    "gecmis": {
@@ -1040,7 +1040,7 @@
     4,
     4
    ],
-   "puan": 65,
+   "puan": 67,
    "her_yonu": true,
    "kosul": 5,
    "gecmis": {
@@ -1095,7 +1095,7 @@
     4,
     4
    ],
-   "puan": 68,
+   "puan": 70,
    "her_yonu": true,
    "kosul": 5,
    "gecmis": {
@@ -1150,7 +1150,7 @@
     4,
     4
    ],
-   "puan": 47,
+   "puan": 48,
    "her_yonu": true,
    "kosul": 5,
    "gecmis": {
@@ -1313,7 +1313,62 @@
     4,
     4
    ],
-   "puan": 34,
+   "puan": 35,
+   "her_yonu": true,
+   "kosul": 5,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 1,
+    "seri": 0,
+    "her_yonu_gun": 1
+   }
+  },
+  {
+   "k": "GTK",
+   "ad": "GARANTİ PORTFÖY KAMU BORÇLANMA ARAÇLARI ÖZEL FONU",
+   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
+   "banka": "Garanti BBVA",
+   "grup": "Özel",
+   "buyukluk": 30173020818.53,
+   "yatirimci": 1.0,
+   "risk": 4.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 7.488092,
+   "d1_tarih": "2026-11-23",
+   "rk": {
+    "mdd": -1.03,
+    "vol": 2.95,
+    "gr": 11.81
+   },
+   "g": {
+    "a1": 2.53,
+    "a3": 6.77,
+    "a6": 16.89,
+    "y1": 34.83,
+    "y3": 141.42,
+    "y5": 600.87,
+    "reel_y1": 3.9,
+    "w1": 0.57,
+    "ytd": 28.47,
+    "d1": 0.29
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-23",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 41,
    "her_yonu": true,
    "kosul": 5,
    "gecmis": {
@@ -1423,7 +1478,62 @@
     4,
     4
    ],
-   "puan": 42,
+   "puan": 43,
+   "her_yonu": true,
+   "kosul": 5,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 1,
+    "seri": 0,
+    "her_yonu_gun": 1
+   }
+  },
+  {
+   "k": "GUA",
+   "ad": "GARANTİ PORTFÖY BİRİNCİ BORÇLANMA ARAÇLARI ÖZEL FON",
+   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
+   "banka": "Garanti BBVA",
+   "grup": "Özel",
+   "buyukluk": 2184146161.32,
+   "yatirimci": 1.0,
+   "risk": 3.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 6.388993,
+   "d1_tarih": "2026-11-23",
+   "rk": {
+    "mdd": -0.94,
+    "vol": 3.14,
+    "gr": 10.32
+   },
+   "g": {
+    "a1": 2.51,
+    "a3": 6.79,
+    "a6": 15.9,
+    "y1": 32.4,
+    "y3": 174.02,
+    "y5": 491.53,
+    "reel_y1": 2.03,
+    "w1": 0.04,
+    "ytd": 27.77,
+    "d1": -0.11
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-23",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 41,
    "her_yonu": true,
    "kosul": 5,
    "gecmis": {
@@ -1588,7 +1698,7 @@
     4,
     4
    ],
-   "puan": 33,
+   "puan": 32,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
@@ -1749,7 +1859,7 @@
     4,
     4
    ],
-   "puan": 25,
+   "puan": 24,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
@@ -1804,7 +1914,7 @@
     4,
     4
    ],
-   "puan": 24,
+   "puan": 23,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
@@ -1910,7 +2020,7 @@
     4,
     4
    ],
-   "puan": 18,
+   "puan": 17,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
@@ -2071,7 +2181,7 @@
     4,
     4
    ],
-   "puan": 11,
+   "puan": 10,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
@@ -2126,7 +2236,7 @@
     4,
     4
    ],
-   "puan": 10,
+   "puan": 9,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
@@ -2181,7 +2291,7 @@
     4,
     4
    ],
-   "puan": 20,
+   "puan": 19,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
@@ -2289,7 +2399,6 @@
  ],
  "atlanan_sayi": {
   "borçlanma fonu değil": 2283,
-  "banka fonu değil": 46,
-  "10 milyon TL altı küçük fon": 2
+  "banka fonu değil": 46
  }
 }
