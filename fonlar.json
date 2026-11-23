@@ -1,17 +1,17 @@
 {
- "updatedAt": "2026-11-23T08:00:39Z",
+ "updatedAt": "2026-11-23T18:17:36Z",
  "updated": "2026-11-23",
  "bist": {
-  "a1": 1.41,
-  "a3": -22.33,
-  "a6": -18.35,
-  "y1": 3.22,
-  "y3": 42.74,
-  "y5": 531.76,
-  "d1": 1.28,
+  "a1": -0.11,
+  "a3": -23.5,
+  "a6": -19.58,
+  "y1": 1.66,
+  "y3": 40.59,
+  "y5": 522.25,
+  "d1": -0.24,
   "mdd": -28.9,
-  "vol": 25.31,
-  "reel_y1": -20.46
+  "vol": 25.63,
+  "reel_y1": -21.66
  },
  "enf": {
   "y": 29.77,
@@ -112,12 +112,12 @@
    "gun": 1258,
    "son_tarih": "2026-11-23",
    "istikrar": [
-    3,
+    4,
     4
    ],
    "puan": 81,
    "her_yonu": false,
-   "kosul": 3,
+   "kosul": 4,
    "gecmis": {
     "kac": 5,
     "toplam": 5,
@@ -163,12 +163,12 @@
    "gun": 423,
    "son_tarih": "2026-11-23",
    "istikrar": [
-    3,
+    4,
     4
    ],
    "puan": 89,
    "her_yonu": false,
-   "kosul": 3,
+   "kosul": 4,
    "gecmis": {
     "kac": 5,
     "toplam": 5,
@@ -269,12 +269,12 @@
    "gun": 575,
    "son_tarih": "2026-11-23",
    "istikrar": [
-    3,
+    4,
     4
    ],
    "puan": 94,
    "her_yonu": false,
-   "kosul": 3,
+   "kosul": 4,
    "gecmis": {
     "kac": 4,
     "toplam": 5,
@@ -322,12 +322,12 @@
    "gun": 970,
    "son_tarih": "2026-11-23",
    "istikrar": [
-    3,
+    4,
     4
    ],
    "puan": 92,
    "her_yonu": false,
-   "kosul": 3,
+   "kosul": 4,
    "gecmis": {
     "kac": 5,
     "toplam": 5,
@@ -479,12 +479,12 @@
    "gun": 1190,
    "son_tarih": "2026-11-23",
    "istikrar": [
-    3,
+    4,
     4
    ],
    "puan": 88,
    "her_yonu": false,
-   "kosul": 3,
+   "kosul": 4,
    "gecmis": {
     "kac": 5,
     "toplam": 5,
@@ -746,12 +746,12 @@
    "gun": 1202,
    "son_tarih": "2026-11-23",
    "istikrar": [
-    3,
+    4,
     4
    ],
    "puan": 84,
    "her_yonu": false,
-   "kosul": 3,
+   "kosul": 4,
    "gecmis": {
     "kac": 4,
     "toplam": 5,
@@ -1178,12 +1178,12 @@
    "gun": 399,
    "son_tarih": "2026-11-23",
    "istikrar": [
-    3,
+    4,
     4
    ],
    "puan": 83,
    "her_yonu": false,
-   "kosul": 3,
+   "kosul": 4,
    "gecmis": {
     "kac": 2,
     "toplam": 5,
@@ -1608,12 +1608,12 @@
    "gun": 1258,
    "son_tarih": "2026-11-23",
    "istikrar": [
-    3,
+    4,
     4
    ],
    "puan": 61,
    "her_yonu": false,
-   "kosul": 3,
+   "kosul": 4,
    "gecmis": {
     "kac": 0,
     "toplam": 5,
@@ -1661,12 +1661,12 @@
    "gun": 1196,
    "son_tarih": "2026-11-23",
    "istikrar": [
-    3,
+    4,
     4
    ],
    "puan": 47,
    "her_yonu": false,
-   "kosul": 2,
+   "kosul": 3,
    "gecmis": {
     "kac": 0,
     "toplam": 5,
@@ -1871,12 +1871,12 @@
    "gun": 1035,
    "son_tarih": "2026-11-23",
    "istikrar": [
-    3,
+    4,
     4
    ],
    "puan": 52,
    "her_yonu": false,
-   "kosul": 2,
+   "kosul": 3,
    "gecmis": {
     "kac": 0,
     "toplam": 5,
@@ -1973,12 +1973,12 @@
    "gun": 746,
    "son_tarih": "2026-11-23",
    "istikrar": [
-    3,
+    4,
     4
    ],
    "puan": 72,
    "her_yonu": false,
-   "kosul": 3,
+   "kosul": 4,
    "gecmis": {
     "kac": 0,
     "toplam": 5,
@@ -2024,12 +2024,12 @@
    "gun": 417,
    "son_tarih": "2026-11-23",
    "istikrar": [
-    3,
+    4,
     4
    ],
    "puan": 50,
    "her_yonu": false,
-   "kosul": 3,
+   "kosul": 4,
    "gecmis": {
     "kac": 0,
     "toplam": 5,
@@ -2247,7 +2247,7 @@
    ],
    "puan": 68,
    "her_yonu": false,
-   "kosul": 3,
+   "kosul": 4,
    "gecmis": {
     "kac": 0,
     "toplam": 5,
@@ -2297,12 +2297,12 @@
    "gun": 1258,
    "son_tarih": "2026-11-23",
    "istikrar": [
-    3,
+    4,
     4
    ],
    "puan": 58,
    "her_yonu": false,
-   "kosul": 3,
+   "kosul": 4,
    "gecmis": {
     "kac": 0,
     "toplam": 5,
@@ -2456,7 +2456,7 @@
    "gun": 772,
    "son_tarih": "2026-11-23",
    "istikrar": [
-    2,
+    3,
     4
    ],
    "puan": 52,
@@ -2880,7 +2880,7 @@
    "gun": 936,
    "son_tarih": "2026-11-23",
    "istikrar": [
-    0,
+    1,
     4
    ],
    "puan": 21,
@@ -3200,7 +3200,7 @@
    "gun": 594,
    "son_tarih": "2026-11-23",
    "istikrar": [
-    1,
+    2,
     4
    ],
    "puan": 20,
@@ -3251,7 +3251,7 @@
    "gun": 481,
    "son_tarih": "2026-11-23",
    "istikrar": [
-    1,
+    2,
     4
    ],
    "puan": 17,
@@ -3465,7 +3465,7 @@
    "gun": 1258,
    "son_tarih": "2026-11-23",
    "istikrar": [
-    1,
+    2,
     4
    ],
    "puan": 17,
@@ -3604,7 +3604,7 @@
    "gun": 67,
    "son_tarih": "2026-11-23",
    "istikrar": [
-    1,
+    2,
     2
    ],
    "puan": null,
@@ -3651,7 +3651,7 @@
    "gun": 149,
    "son_tarih": "2026-11-23",
    "istikrar": [
-    0,
+    1,
     3
    ],
    "puan": null,
@@ -3773,7 +3773,7 @@
    "gun": 66,
    "son_tarih": "2026-11-23",
    "istikrar": [
-    1,
+    2,
     2
    ],
    "puan": null,
