@@ -547,7 +547,15 @@ function bar(t,p){if(!t||!(t.risk>0)||!(t.h1>t.risk))return"";
   var r=t.risk,h=t.h1,x=(p-r)/(h-r),xc=Math.max(0,Math.min(1,x)),renk=x<0?"var(--neg)":(x>=0.97?"var(--neg)":"var(--pos)");
   return'<div class="hbar"><div class="f" style="width:'+(xc*100).toFixed(1)+'%;background:'+renk+';opacity:.35"></div><div class="m" style="left:'+(xc*100).toFixed(1)+'%;background:'+(x<0?"var(--neg)":"var(--tx)")+'"></div></div>'+
     '<div class="hbl"><span>Risk '+fmt(r)+(x<0?' (altında)':'')+'</span><span>Hedef '+fmt(h)+'</span></div>';}
-function kartlar(){var el=document.getElementById("byk");if(!el)return;var L=eldekiler(true);
+var GIB=0;
+function giOzet(L){var el=document.getElementById("sum");if(!el||GIB)return;GIB=1;try{var old=document.getElementById("gisum");if(old)old.parentNode.removeChild(old);var d=0,sa=null,n=0;
+  L.forEach(function(x){if(x.gi){var kp=lastPx(x.k);if(kp){d+=x.q*(x.p-kp.p);sa=x.gi;n++;}}});if(!n)return;
+  var last=latest(rows());if(!last||!(last.v>0))return;var v=last.v+d,kz=last.kz+d,base=last.kp?last.kz/last.kp:0,kp2=base?kz/base:null;
+  var b=document.createElement("div");b.id="gisum";b.style.cssText="margin-top:10px;background:rgba(255,255,255,.16);border-radius:12px;padding:8px 10px;font-size:13px";
+  b.innerHTML='<div style="font-size:11px;color:#fcd34d;font-weight:700">GÜN İÇİ · '+sa+'</div>Anlık portföy değeri <b style="font-size:15px">'+fmt(v)+' TL</b><div class="'+cls(kz)+'" style="margin-top:3px;display:inline-block;padding:2px 8px">Toplam: '+ar(kz)+sg(kz)+' TL'+(kp2===null?'':' ('+pc(kp2)+')')+'</div><div style="font-size:11px;opacity:.85;margin-top:3px">kesinleşmedi · günlük, BIST 100 ve enflasyon oranları kapanışa göredir</div>';
+  el.appendChild(b);}catch(e){console.log(e);}finally{GIB=0;}}
+try{var _so=document.getElementById("sum");if(_so&&window.MutationObserver)new MutationObserver(function(){if(!document.getElementById("gisum")&&!GIB)giOzet(eldekiler(true));}).observe(_so,{childList:true});}catch(e){}
+function kartlar(){var el=document.getElementById("byk");if(!el)return;var L=eldekiler(true);giOzet(L);
   if(!L.length){el.innerHTML="";return;}
   var REN=["#7c5cff","#2ec4b6","#ff9f43","#ff6b81","#4cc47f","#6f95e8"];
   var dg='<div style="margin:2px 0 12px"><div class="mut" style="margin-bottom:6px">Portföy dağılımı</div><div style="display:flex;height:14px;border-radius:7px;overflow:hidden">'+
