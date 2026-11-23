@@ -15,12 +15,12 @@
    "search_funds(BORCLANMA): 1000 kayit, 0 yeni fon",
    "ornek alanlar: ['fund_code', 'name', 'fund_type', 'return_1y']",
    "Toplam aday fon: 2373",
-   "Enflasyon: {'y': 29.77, 't': '2026-11-22', 'k': 'borsapy:latest'}",
+   "Enflasyon: {'y': 29.77, 't': '2026-11-23', 'k': 'borsapy:latest'}",
    "BIST100 kaynaklar: {'yahoo': {'a1': -5.65, 'a3': -22.68, 'a6': -20.56, 'y1': 1.38, 'y3': 40.08, 'y5': 540.72, '_risk': {'mdd': -28.9, 'vol': 25.56}, 'd1': -2.36, '_d1t': '2026-11-20'}, 'borsapy': {'a1': -5.65, 'a3': -22.68, 'a6': -20.56, 'y1': 1.38, 'y3': 40.08, 'y5': 540.71, '_risk': {'mdd': -28.9,",
    "BIST100 (teyitli): {'a1': -5.65, 'a3': -22.68, 'a6': -20.56, 'y1': 1.38, 'y3': 40.08, 'y5': 540.71, 'd1': -2.36, 'mdd': -28.9, 'vol': 25.55, 'reel_y1': -21.88}",
    "Sorgulanacak fon: 44",
-   "Listeye giren: 39 | Atlanan: {'borçlanma fonu değil': 2283, 'banka fonu değil': 46, '10 milyon TL altı küçük fon': 5}",
-   "Grafik verisi: 39 fon, BIST100 1258 gun"
+   "Listeye giren: 42 | Atlanan: {'borçlanma fonu değil': 2283, 'banka fonu değil': 46, '10 milyon TL altı küçük fon': 2}",
+   "Grafik verisi: 42 fon, BIST100 1258 gun"
   ],
   "banka_disi_kurucular": {
    "ALLIANZ YASAM VE EMEKLILIK A.S": 2,
@@ -2388,10 +2388,7 @@
   ],
   "10 milyon TL altı küçük fon": [
    "GTK",
-   "GUA",
-   "IKV",
-   "TBV",
-   "TIV"
+   "GUA"
   ]
  }
 }
