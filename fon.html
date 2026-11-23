@@ -115,12 +115,13 @@ function seriYukle(cb){if(SERI)return cb();fetch("fon-seri.json?"+Date.now(),{ca
 var GS=null,GSK="";
 function gsFp(v){return v<1?v.toFixed(4):v<100?v.toFixed(3):v.toFixed(2);}
 function gsTr(s){return s.replace(".",",");}
-function gsKay(k){try{localStorage.setItem("fon-gor-"+k,JSON.stringify({gar:GS.gar,ema:GS.ema,fib:GS.fib,bist:GS.bist,rsi:GS.rsi,fr:GS.fr,n:GS.n,tamam:GS.tamam}));}catch(e){}}
-function gsAc(k,N){var s={gar:12,ema:1,fib:1,bist:0,rsi:0,fr:null,n:null};try{var x=JSON.parse(localStorage.getItem("fon-gor-"+k)||"null");if(x&&typeof x==="object"){["gar","ema","fib","bist","rsi"].forEach(function(a){if(x[a]!=null)s[a]=+x[a];});if(x.n>=8&&x.n<=N&&x.fr!=null){s.n=+x.n;s.fr=+x.fr;}}}catch(e){}return s;}
+function gsKay(k){try{localStorage.setItem("fon-gor-"+k,JSON.stringify({gar:GS.gar,ema:GS.ema,fib:GS.fib,bist:GS.bist,rsi:GS.rsi,s13:GS.s13,s26:GS.s26,s52:GS.s52,fr:GS.fr,n:GS.n,tamam:GS.tamam}));}catch(e){}}
+function gsAc(k,N){var s={gar:12,ema:1,fib:1,bist:0,rsi:0,s13:0,s26:0,s52:0,fr:null,n:null};try{var x=JSON.parse(localStorage.getItem("fon-gor-"+k)||"null");if(x&&typeof x==="object"){["gar","ema","fib","bist","rsi","s13","s26","s52"].forEach(function(a){if(x[a]!=null)s[a]=+x[a];});if(x.n>=8&&x.n<=N&&x.fr!=null){s.n=+x.n;s.fr=+x.fr;}}}catch(e){}return s;}
 function gsDonem(S,ay){var N=S.length;if(!ay)return[0,N];var son=S[N-1][0],Y_=+son.slice(0,4),M_=+son.slice(5,7)-ay,G_=+son.slice(8,10);while(M_<=0){M_+=12;Y_--;}
   var gm=new Date(Date.UTC(Y_,M_,0)).getUTCDate(),ls=Y_+"-"+("0"+M_).slice(-2)+"-"+("0"+Math.min(G_,gm)).slice(-2),bi=0;for(var q=0;q<N;q++){if(S[q][0]<=ls)bi=q;else break;}
   return[bi,N-bi];}
 function gsEma(v,n){var a=2/(n+1),o=[],m=0;for(var i=0;i<v.length;i++){if(i<n-1)o.push(null);else if(i===n-1){m=0;for(var j=0;j<n;j++)m+=v[j];m/=n;o.push(m);}else{m=v[i]*a+m*(1-a);o.push(m);}}return o;}
+function gsSma(v,n){var o=[],t=0;for(var i=0;i<v.length;i++){t+=v[i];if(i>=n)t-=v[i-n];o.push(i>=n-1?t/n:null);}return o;}
 function gsRsi(v,n){var o=[],ag=0,al=0;for(var i=0;i<v.length;i++){if(i<n){o.push(null);if(i>0){var d=v[i]-v[i-1];ag+=d>0?d:0;al+=d<0?-d:0;}if(i===n){ag/=n;al/=n;o[i]=al===0?100:100-100/(1+ag/al);}continue;}
   var d2=v[i]-v[i-1];ag=(ag*(n-1)+(d2>0?d2:0))/n;al=(al*(n-1)+(d2<0?-d2:0))/n;o.push(al===0?100:100-100/(1+ag/al));}return o;}
 function grafikFon(f){
@@ -130,14 +131,14 @@ function grafikFon(f){
   if(!S||S.length<3)return bas+'<div class="alt" style="padding:20px 0;text-align:center">Bu fonun grafik verisi henüz yok.</div></div>';
   if(GSK!==f.k||!GS){GSK=f.k;GS=gsAc(f.k,S.length);}
   var ar=[[3,"3 ay"],[6,"6 ay"],[12,"1 yıl"],[36,"3 yıl"],[60,"5 yıl"],[0,"Tümü"]].map(function(a){return'<button class="gab" data-gar="'+a[0]+'">'+a[1]+'</button>';}).join("");
-  var tg=[["ema","EMA 13/39"],["fib","Fibonacci (1 yıl)"],["rsi","RSI"],["bist","BIST100 ile kıyasla"]].map(function(a){return'<button class="gab" data-tg="'+a[0]+'">'+a[1]+'</button>';}).join("");
+  var tg=[["ema","EMA 13/39"],["fib","Fibonacci (1 yıl)"],["rsi","RSI"],["s13","SMA 13"],["s26","SMA 26"],["s52","SMA 52"],["bist","BIST100 ile kıyasla"]].map(function(a){return'<button class="gab" data-tg="'+a[0]+'">'+a[1]+'</button>';}).join("");
   return bas+'<div class="gar" id="gsar">'+ar+'</div><div id="gsv" style="touch-action:pan-y;user-select:none;-webkit-user-select:none"></div><div class="gar" id="gstg" style="margin:6px 0 4px">'+tg+'</div><div class="alt" id="gslg"></div></div>';}
 function gsCiz(f){var S=SERI.fon[f.k],N=S.length,v=S.map(function(p){return p[1];}),o=document.getElementById("gsv");if(!o)return;
   if(GS.n==null||GS.fr==null){var d=gsDonem(S,GS.gar);GS.fr=d[0];GS.n=Math.max(8,Math.min(N,d[1]));}
   GS.n=Math.max(Math.min(8,N),Math.min(N,GS.n));GS.fr=Math.max(0,Math.min(N-GS.n,GS.fr));
   var fr=Math.round(GS.fr),n=GS.n,bit=Math.min(N,Math.ceil(fr+n)),bist=GS.bist,
       rs=GS.rsi&&!bist,ems=GS.ema&&!bist,fb=GS.fib&&!bist;
-  var W=380,H=rs?330:250,L=4,R=bist?48:50,T=8,B=18,RH=rs?62:0,hh=250-T-B,sag=0,e13=gsEma(v,13),e39=gsEma(v,39);
+  var W=380,H=rs?330:250,L=4,R=bist?48:50,T=8,B=18,RH=rs?62:0,hh=250-T-B,sag=0,e13=gsEma(v,13),e39=gsEma(v,39),SM=[[13,"s13","#fbbf24"],[26,"s26","#38bdf8"],[52,"s52","#f472b6"]].filter(function(a){return GS[a[1]]&&!bist;}).map(function(a){return{n:a[0],c:a[2],v:gsSma(v,a[0])};});
   var BS=SERI.bist||[],bs=[];if(bist){var bj=0;S.forEach(function(p){while(bj<BS.length-1&&BS[bj+1][0]<=p[0])bj++;bs.push(BS.length&&BS[bj][0]<=p[0]?BS[bj][1]:null);});}
   var ser=[],i;
   if(bist){var f0=v[fr],b0=null;for(i=fr;i<bit;i++)if(bs[i]!=null){b0=bs[i];break;}
@@ -146,6 +147,7 @@ function gsCiz(f){var S=SERI.fon[f.k],N=S.length,v=S.map(function(p){return p[1]
   var fh=-1e18,fl=1e18;for(i=Math.max(0,N-52);i<N;i++){if(v[i]>fh)fh=v[i];if(v[i]<fl)fl=v[i];}
   var all=[];ser.forEach(function(a){a.forEach(function(x){if(x!=null)all.push(x);});});
   if(ems){for(i=fr;i<bit;i++){if(e13[i]!=null)all.push(e13[i]);if(e39[i]!=null)all.push(e39[i]);}}
+  SM.forEach(function(m){for(i=fr;i<bit;i++)if(m.v[i]!=null)all.push(m.v[i]);});
   var lo=Math.min.apply(null,all),hi=Math.max.apply(null,all);
   if(fb){lo=Math.min(lo,fl);hi=Math.max(hi,fh);sag=Math.ceil(("0,786 "+gsFp(fh)).length*5.9)+8;}
   var pd=(hi-lo)*.06||hi*.02;lo-=pd;hi+=pd;
@@ -162,6 +164,7 @@ function gsCiz(f){var S=SERI.fon[f.k],N=S.length,v=S.map(function(p){return p[1]
   else{var pts=[];for(i=fr;i<bit;i++)pts.push(X(i).toFixed(1)+","+Y(v[i]).toFixed(1));
     g+='<polygon points="'+X(fr).toFixed(1)+','+(T+hh)+' '+pts.join(" ")+' '+X(bit-1).toFixed(1)+','+(T+hh)+'" fill="#8b7cf6" opacity=".12"/>';
     if(ems)g+=pl(e39.slice(fr,bit),fr,"#ef5350",1.4)+pl(e13.slice(fr,bit),fr,"#26a69a",1.4);
+    SM.forEach(function(m){g+=pl(m.v.slice(fr,bit),fr,m.c,1.3);});
     g+=pl(ser[0],fr,"#a594ff",2);
     var last=v[N-1],yl=Y(last);if(yl>=T&&yl<=T+hh)g+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+yl.toFixed(1)+'" y2="'+yl.toFixed(1)+'" stroke="#a594ff" stroke-dasharray="2 3" opacity=".7"/>';
     var yy2=Math.max(T+8,Math.min(T+hh-8,yl));g+='<rect x="'+(W-R)+'" y="'+(yy2-8).toFixed(1)+'" width="'+R+'" height="16" rx="3" fill="#8b7cf6"/><text x="'+(W-R+3)+'" y="'+(yy2+4).toFixed(1)+'" font-size="10" font-weight="bold" fill="#fff">'+gsTr(gsFp(last))+'</text>';}
@@ -177,7 +180,7 @@ function gsCiz(f){var S=SERI.fon[f.k],N=S.length,v=S.map(function(p){return p[1]
   Array.prototype.forEach.call(document.querySelectorAll("#gstg .gab"),function(b){var a=b.getAttribute("data-tg");b.className="gab"+(GS[a]&&(a==="bist"||!GS.bist)?" on":"");});
   var lg=document.getElementById("gslg");
   lg.innerHTML=bist?'<span style="color:#a594ff">━ '+esc(f.k)+'</span> &nbsp; <span style="color:#f0957a">━ BIST100</span> &nbsp; · görünen aralığın başı = 100 (kıyas açıkken EMA, Fibonacci ve RSI gizlenir)':
-    'Haftalık fon fiyatı'+(ems?' · <span style="color:#26a69a">━ EMA 13</span> <span style="color:#ef5350">━ EMA 39</span>':'')+(fb?' · Fibonacci: son 52 haftanın en yükseği ve en düşüğü':'')+(rs?' · RSI 14 hafta':'')+'<br>Sürükle: kaydır · iki parmak: yakınlaştır';}
+    'Haftalık fon fiyatı'+(ems?' · <span style="color:#26a69a">━ EMA 13</span> <span style="color:#ef5350">━ EMA 39</span>':'')+SM.map(function(m){return' <span style="color:'+m.c+'">━ SMA '+m.n+'</span>';}).join("")+(fb?' · Fibonacci: son 52 haftanın en yükseği ve en düşüğü':'')+(rs?' · RSI 14 hafta':'')+'<br>Sürükle: kaydır · iki parmak: yakınlaştır';}
 function gsBagla(f){var o=document.getElementById("gsv");if(!o||!SERI||!SERI.fon[f.k])return;var S=SERI.fon[f.k],N=S.length;
   Array.prototype.forEach.call(document.querySelectorAll("#gsar .gab"),function(b){b.onclick=function(){GS.gar=+b.getAttribute("data-gar");var d=gsDonem(S,GS.gar);GS.fr=d[0];GS.n=Math.max(8,Math.min(N,d[1]));gsKay(f.k);gsCiz(f);};});
   Array.prototype.forEach.call(document.querySelectorAll("#gstg .gab"),function(b){b.onclick=function(){var a=b.getAttribute("data-tg");GS[a]=GS[a]?0:1;gsKay(f.k);gsCiz(f);};});

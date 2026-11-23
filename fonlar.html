@@ -89,10 +89,15 @@ var COL=[
  {id:"puan",ad:"Puan",gr:"Puan",v:function(r){return r.f.puan==null?null:r.f.puan;},t:"n0"},
  {id:"kon",ad:"52 hf konum",gr:"Teknik",v:function(r){var t=tek(r);return t?t.kon:null;},t:"pct",ilk:"asc",seri:1},
  {id:"zr",ad:"Zirveden uzaklık",gr:"Teknik",v:function(r){var t=tek(r);return t?t.zr:null;},t:"p",seri:1},
- {id:"tr",ad:"Trend (EMA 13/39)",gr:"Teknik",v:function(r){var t=tek(r);return t?t.tr:null;},t:"trend",seri:1}
+ {id:"tr",ad:"Trend (EMA 13/39)",gr:"Teknik",v:function(r){var t=tek(r);return t?t.tr:null;},t:"trend",seri:1},
+ {id:"rsi",ad:"RSI 14 (haftalık)",gr:"Teknik",v:function(r){var t=tek(r);return t?t.rsi:null;},t:"n0",ilk:"asc",seri:1},
+ {id:"s13",ad:"Fiyat–SMA 13",gr:"Teknik",v:function(r){var t=tek(r);return t?t.s13:null;},t:"p",seri:1},
+ {id:"s26",ad:"Fiyat–SMA 26",gr:"Teknik",v:function(r){var t=tek(r);return t?t.s26:null;},t:"p",seri:1},
+ {id:"s52",ad:"Fiyat–SMA 52",gr:"Teknik",v:function(r){var t=tek(r);return t?t.s52:null;},t:"p",seri:1},
+ {id:"s13y",ad:"Fiyat / SMA 13",gr:"Teknik",v:function(r){var t=tek(r);return t&&t.s13!=null?(t.s13>=0?1:-1):null;},t:"trend",seri:1}
 ];
 var CI={};COL.forEach(function(c){CI[c.id]=c;});
-var PRE=[["📈 Getiri",["d1","w1","a1","a3","a6","y1"],"y1"],["📅 Uzun vade",["y1","y3","y5","tumg","gecm"],"y3"],["🎯 Dibe yakın bakış",["kon","zr","tr","reel","y1"],"kon"],["🛡️ Risk",["mdd","vol","gr","rsk","y1"],"mdd"],["💰 Büyüklük",["buy","yat","puan","y1"],"buy"],["🏅 Puan",["puan","y1","mdd","gr"],"puan"]];
+var PRE=[["📈 Getiri",["d1","w1","a1","a3","a6","y1"],"y1"],["📅 Uzun vade",["y1","y3","y5","tumg","gecm"],"y3"],["🎯 Dibe yakın bakış",["kon","zr","tr","reel","y1"],"kon"],["🛡️ Risk",["mdd","vol","gr","rsk","y1"],"mdd"],["💰 Büyüklük",["buy","yat","puan","y1"],"buy"],["🏅 Puan",["puan","y1","mdd","gr"],"puan"],["📉 Teknik (RSI, SMA)",["rsi","s13","s26","s52","s13y"],"rsi"]];
 var SEL=sg("fonlar-sut","d1,a1,a3,a6,y1").split(",").filter(function(c){return CI[c];});if(!SEL.length)SEL=["d1","a1","a3","a6","y1"];
 var SK=sg("fonlar-sk","y1"),SD=sg("fonlar-sd","desc");if(!CI[SK]){SK="y1";SD="desc";}
 
@@ -103,6 +108,9 @@ function tek(r){if(r._t!==undefined)return r._t;var S=SER[r.tur];if(!S)return nu
     for(var i=0;i<s.length;i++){var ti=new Date(s[i][0]).getTime();if(ti>=lim){w.push(s[i][1]);if(ilk===null)ilk=ti;}}
     t={kon:null,zr:null,tr:null,tum:null,ys:null};var s0=s[0][1],d0=new Date(s[0][0]).getTime();if(s0>0){t.tum=(son/s0-1)*100;t.ys=(d-d0)/(365.25*864e5);}
     if(w.length>=30&&ilk!==null&&ilk-(d-365*864e5)<=35*864e5){var hi=Math.max.apply(null,w),lo=Math.min.apply(null,w);if(hi>lo)t.kon=(son-lo)/(hi-lo)*100;t.zr=(son/hi-1)*100;}
+    t.rsi=null;t.s13=null;t.s26=null;t.s52=null;
+    if(c.length>=15){var ag=0,al=0,df;for(var q=1;q<=14;q++){df=c[q]-c[q-1];ag+=df>0?df:0;al+=df<0?-df:0;}ag/=14;al/=14;for(q=15;q<c.length;q++){df=c[q]-c[q-1];ag=(ag*13+(df>0?df:0))/14;al=(al*13+(df<0?-df:0))/14;}t.rsi=al===0?100:100-100/(1+ag/al);}
+    [[13,"s13"],[26,"s26"],[52,"s52"]].forEach(function(a){if(c.length>=a[0]){var m=0;for(var q2=c.length-a[0];q2<c.length;q2++)m+=c[q2];m/=a[0];if(m>0)t[a[1]]=(son/m-1)*100;}});
     if(c.length>=45){var a=ema(c,13),b=ema(c,39),x=a[a.length-1],y=b[b.length-1];if(x!=null&&y!=null)t.tr=x>y?1:-1;}}
   r._t=t;return t;}
 
