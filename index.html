@@ -738,5 +738,58 @@ r[1].forEach(function(q){var u=U[q[0]];q[1].forEach(function(s){var hm=s.split("
 o+='<div class="gn">✓ = veri o saatten sonra güncellenmiş. GitHub 5–30 dk geç çalıştırabilir. Hafta sonu zamanlı güncelleme yok. Fiyat ve Kütüphane gün içi saatleri hisse fiyatının güncellendiği saatlerdir; akşam saatleri kesin kapanıştır.</div>';el.innerHTML=o;}
 function yukle(){var b=[],F={};G.forEach(function(g){g[1].forEach(function(r){r[1].forEach(function(q){F[q[0]]=1;});});});Object.keys(F).forEach(function(f){b.push(fetch(f+"?t="+Date.now(),{cache:"no-store"}).then(function(x){return x.json()}).then(function(j){var v=j&&j.updatedAt?Date.parse(j.updatedAt):0;if(v)U[f]=v;}).catch(function(){}));});Promise.all(b).then(function(){try{localStorage.setItem("gsU",JSON.stringify(U))}catch(x){}ciz();});}
 ciz();yukle();setInterval(yukle,120000);})();</script>
+<script>
+/* Altin ve gumus: islemler S.a icinde (ayni yedekte), fiyat altin.json'dan. Hisse hesaplarina karismaz. */
+(function(){
+var GM={GRAM:"Gram altın",GGUM:"Gram gümüş"},EG=null,AGP={},TS=["GRAM","GGUM"];
+try{AGP=JSON.parse(localStorage.getItem("agP")||"{}")||{};}catch(x){AGP={};}
+function hz(){if(!S.a)S.a=[];if(!S.ab)S.ab={};}
+function gk(t){t=String(t||"").toUpperCase().replace(/İ/g,"I").replace(/Ü/g,"U").replace(/Ş/g,"S").replace(/\s+/g,"");if(t==="GRAM"||t==="ALTIN"||t==="GRAMALTIN")return"GRAM";if(t==="GGUM"||t==="GUMUS"||t==="GRAMGUMUS")return"GGUM";return"";}
+function hesap(t){hz();var q=0,c=0,r=0;srt(S.a.filter(function(x){return x.t===t;})).forEach(function(x){var k=x.k||0;if(x.y==="a"){c=(q*c+x.q*x.p+k)/(q+x.q);q+=x.q;}else{r+=x.q*(x.p-c)-k;q-=x.q;if(q<1e-9){q=0;c=0;}}});return{q:q,c:c,r:r};}
+function f2(n){return fmt(n);}
+function agCiz(){hz();var card=document.getElementById("agc");
+  if(!card){var hb=document.getElementById("byk"),host=hb&&hb.closest?hb.closest(".card"):null;if(!host)return;card=document.createElement("div");card.className="card";card.id="agc";card.style.borderTop="4px solid #d4a017";host.parentNode.insertBefore(card,host.nextSibling);}
+  var act=document.activeElement;if(act&&card.contains(act)&&act.tagName==="INPUT")return;
+  var h='<h2>🥇 Altın ve Gümüş</h2>',tv=0,tc=0,tr=0,any=0,bankaV=0,bankaOk=1,kd="";
+  TS.forEach(function(t){var z=hesap(t),px=AGP[t]&&AGP[t].p>0?AGP[t]:null;tr+=z.r;if(!(z.q>0))return;any=1;
+    var v=px?z.q*px.p:null,g=px?z.q*(px.p-z.c):null,gp=px&&z.c>0?px.p/z.c-1:null;if(px){tv+=v;tc+=z.q*z.c;}
+    var ab=S.ab[t]||{};if(ab.al>0)bankaV+=z.q*ab.al;else bankaOk=0;if(px&&px.d)kd=px.d;
+    h+='<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px 12px;border-radius:12px;background:var(--hkbg,rgba(255,255,255,.05));margin-bottom:8px;border-left:3px solid #d4a017"><div style="white-space:nowrap"><b style="font-size:16px">'+GM[t]+'</b><div class="mut" style="font-size:12.5px;margin-top:2px">'+fq(z.q)+' gr · maliyet '+f2(z.c)+'</div></div>'+
+      '<div style="text-align:right;white-space:nowrap"><b style="font-size:16px">'+(px?f2(px.p):"—")+'</b>'+(px?'<div class="'+cls(g)+'" style="font-weight:700;font-size:13.5px">'+sg(g)+' TL</div><div style="font-size:12px"><span class="'+cls(g)+'" style="font-weight:700">'+(gp===null?"":pc(gp))+'</span></div>':'<div class="mut" style="font-size:12px">fiyat yok</div>')+'</div></div>';});
+  if(!any)h+='<div class="mut" style="margin-bottom:8px">Henüz altın ya da gümüş işlemi yok. “Alım / satım işlemleri” bölümünde Hisse alanına <b>GRAM</b> (altın) ya da <b>GGUM</b> (gümüş) yazıp adet yerine gram gir.</div>';
+  else{var tk=tv-tc;h+='<div style="font-size:13px;margin:2px 2px 4px"><span class="mut">Toplam değer:&nbsp;</span><b>'+f2(tv)+' TL</b> &nbsp;·&nbsp; <span class="mut">K/Z:&nbsp;</span><b class="'+cls(tk)+'">'+sg(tk)+' TL'+(tc>0?' ('+pc(tk/tc)+')':'')+'</b>'+(tr?' &nbsp;·&nbsp; <span class="mut">Gerçekleşen:&nbsp;</span><b class="'+cls(tr)+'">'+sg(tr)+' TL</b>':'')+'</div>'+(bankaOk&&bankaV>0?'<div style="font-size:13px;margin:2px 2px 4px"><span class="mut">Bankanın alış fiyatıyla (satsam):&nbsp;</span><b>'+f2(bankaV)+' TL</b></div>':'');}
+  h+='<div style="margin-top:10px;font-weight:700;font-size:13.5px">Alış / satış fiyatı</div>';
+  TS.forEach(function(t){var px=AGP[t]&&AGP[t].p>0?AGP[t]:null,ab=S.ab[t]||{},mk=ab.al>0&&ab.sa>0?(ab.sa/ab.al-1):null;
+    h+='<div style="margin-top:6px;font-size:13px"><span class="mut">'+GM[t]+' · piyasa fiyatı:&nbsp;</span><b>'+(px?f2(px.p)+' TL':'—')+'</b></div>'+
+      '<div style="display:flex;gap:6px;margin:4px 0"><label style="flex:1;font-size:11px" class="mut">Bankamın alış<input id="ab_'+t+'_al" type="text" inputmode="decimal" value="'+(ab.al>0?String(ab.al).replace(".",","):"")+'" onchange="agKaydet(\''+t+'\')" style="width:100%"></label>'+
+      '<label style="flex:1;font-size:11px" class="mut">Bankamın satış<input id="ab_'+t+'_sa" type="text" inputmode="decimal" value="'+(ab.sa>0?String(ab.sa).replace(".",","):"")+'" onchange="agKaydet(\''+t+'\')" style="width:100%"></label>'+
+      '<div style="flex:1;font-size:11px" class="mut">Makas<br><b style="font-size:14px" class="'+(mk!==null?"neg":"")+'">'+(mk!==null?"%"+(mk*100).toFixed(1).replace(".",","):"—")+'</b></div></div>';});
+  var at=AGP.at>0?new Date(AGP.at+108e5):null,za=at?(("0"+at.getUTCDate()).slice(-2)+"."+("0"+(at.getUTCMonth()+1)).slice(-2)+" "+("0"+at.getUTCHours()).slice(-2)+":"+("0"+at.getUTCMinutes()).slice(-2)):"";
+  h+='<div class="mut" style="font-size:11px;margin-top:6px;line-height:1.5">Piyasa fiyatı doğrulanmış kaynaktan gelir'+(za?' (son güncelleme '+za+')':'')+'; banka ya da kuyumcu makası dahil değildir. Canlı alış-satış fiyatının doğrulanmış kaynağı olmadığı için bunları sen girersin; kaydedilir. K/Z piyasa fiyatına göredir. Veriler bu cihazda saklanır.</div>';
+  card.innerHTML=h;}
+window.agKaydet=function(t){hz();var a=num(document.getElementById("ab_"+t+"_al").value),s=num(document.getElementById("ab_"+t+"_sa").value);S.ab[t]={al:a>0?a:0,sa:s>0?s:0};persist();agCiz();};
+function agYukle(){fetch("https://raw.githubusercontent.com/saidgunbek-rgb/bist-fiyat/main/altin.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json();}).then(function(j){TS.forEach(function(t){var d=j.stocks&&j.stocks[t]&&j.stocks[t].d;if(d&&d.length){var l=d[d.length-1];if(l[4]>0)AGP[t]={p:l[4],d:l[0]};}});var u=Date.parse(j.updatedAt);if(u>0)AGP.at=u;try{localStorage.setItem("agP",JSON.stringify(AGP));}catch(e){}agCiz();}).catch(function(){});}
+/* form: Hisse alanina GRAM / GGUM yazilinca islem S.a'ya gider */
+var lb=document.querySelector('label[for="tt"]');if(lb)lb.textContent="Hisse / varlık";var tt=document.getElementById("tt");if(tt)tt.placeholder="THYAO · GRAM (altın) · GGUM (gümüş)";
+var lq=document.querySelector('label[for="tq"]');if(lq)lq.textContent="Adet (altın/gümüşte gram)";
+function goldAdd(t){hz();var e=document.getElementById("terr"),d=document.getElementById("td").value,y=document.getElementById("ty").value,q=num(document.getElementById("tq").value),p=num(document.getElementById("tp").value),k=num(document.getElementById("tk").value);
+  e.style.color="";if(!d||!(q>0)||!(p>0)){e.textContent="Tarih, gram ve fiyatı doldur.";return;}
+  var x={d:d,t:t,y:y,q:q,p:p,k:k},L=S.a.slice();if(EG!==null&&L[EG])L[EG]=x;else L.push(x);
+  if(!okq(L)){e.textContent=EG!==null?"Bu değişiklikle elindeki gramdan fazlası satılmış olur.":"Elindeki gramdan fazlasını satamazsın.";return;}
+  S.a=L;persist();tcancel();all();}
+var tb=document.getElementById("tadd"),o0=tb.onclick;tb.onclick=function(){var t=gk(document.getElementById("tt").value);if(t){ET=null;goldAdd(t);return;}EG=null;return o0.apply(this,arguments);};
+var tc0=window.tcancel;window.tcancel=function(){EG=null;return tc0.apply(this,arguments);};
+window.edg=function(i){hz();var x=S.a[i];if(!x)return;EG=i;ET=null;document.getElementById("td").value=x.d;document.getElementById("tt").value=x.t;document.getElementById("ty").value=x.y;document.getElementById("tq").value=String(x.q).replace(".",",");document.getElementById("tp").value=String(x.p).replace(".",",");document.getElementById("tk").value=x.k?String(x.k).replace(".",","):"";
+  document.getElementById("tadd").textContent="Değişikliği kaydet";document.getElementById("tcan").style.display="";document.getElementById("terr").textContent="";document.getElementById("td").scrollIntoView({behavior:"smooth",block:"center"});};
+window.dgx=function(i){hz();var L=S.a.filter(function(x,j){return j!==i;}),e=document.getElementById("terr");if(!okq(L)){e.textContent="Bu alımı silersen sonraki satımlar için yeterli gram kalmaz.";return;}S.a=L;persist();tcancel();all();};
+var rt0=window.renderTx;window.renderTx=function(){rt0.apply(this,arguments);hz();var el=document.getElementById("pos"),h=[];TS.forEach(function(t){var z=hesap(t);if(z.q>0)h.push(GM[t]+" "+fq(z.q)+" gr (ort. maliyet "+fmt(z.c)+")");});
+  if(h.length&&el)el.innerHTML+=" · "+h.join(" · ");
+  var tl=document.getElementById("tl");if(!tl||!S.a.length)return;var L=S.a.map(function(x,i){return{x:x,i:i};}).sort(function(a,b){return a.x.d<b.x.d?1:(a.x.d>b.x.d?-1:b.i-a.i);}),s="";
+  L.forEach(function(r){var x=r.x;s+='<tr><td>'+trDate(x.d)+'</td><td>'+esc(GM[x.t]||x.t)+'</td><td>'+(x.y==="a"?"Alım":"Satım")+'</td><td>'+fq(x.q)+' gr</td><td>'+fmt(x.p)+'</td><td>'+(x.k?fmt(x.k):"-")+'</td><td><button class="ghost" onclick="edg('+r.i+')">Düzenle</button> <button class="ghost" onclick="dgx('+r.i+')">Sil</button></td></tr>';});
+  tl.innerHTML+=s;};
+var al0=window.all;window.all=function(){al0.apply(this,arguments);try{agCiz();}catch(e){console.log(e);}};
+try{agCiz();}catch(e){console.log(e);}agYukle();setInterval(agYukle,300000);
+})();
+</script>
 </body>
 </html>
