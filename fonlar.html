@@ -78,6 +78,8 @@ var COL=[
  {id:"d1",ad:"Günlük",gr:"Getiri",v:G("d1"),t:"p"},{id:"w1",ad:"1 Hafta",gr:"Getiri",v:G("w1"),t:"p"},
  {id:"a1",ad:"1 Ay",gr:"Getiri",v:G("a1"),t:"p"},{id:"a3",ad:"3 Ay",gr:"Getiri",v:G("a3"),t:"p"},{id:"a6",ad:"6 Ay",gr:"Getiri",v:G("a6"),t:"p"},
  {id:"ytd",ad:"YBB",gr:"Getiri",v:G("ytd"),t:"p"},{id:"y1",ad:"1 Yıl",gr:"Getiri",v:G("y1"),t:"p"},{id:"y3",ad:"3 Yıl",gr:"Getiri",v:G("y3"),t:"p"},{id:"y5",ad:"5 Yıl",gr:"Getiri",v:G("y5"),t:"p"},
+ {id:"tumg",ad:"Tüm zaman",gr:"Getiri",v:function(r){var t=tek(r);return t?t.tum:null;},t:"p",seri:1},
+ {id:"gecm",ad:"Kayıtlı geçmiş",gr:"Getiri",v:function(r){var t=tek(r);return t?t.ys:null;},t:"yil",seri:1},
  {id:"reel",ad:"Reel getiri (1 yıl)",gr:"Getiri",v:G("reel_y1"),t:"p"},
  {id:"fark",ad:"Endeksten fark (1 yıl)",gr:"Getiri",v:function(r){if(r.tur==="tema"){var f=(r.f.fark||{}).y1;return f==null?null:f;}if(r.tur==="hisse"){var b=((DATA.hisse||{}).bist||{}).y1,y=(r.f.g||{}).y1;return b==null||y==null?null:Math.round((y-b)*100)/100;}return null;},t:"p"},
  {id:"mdd",ad:"En büyük düşüş",gr:"Risk",v:RK("mdd"),t:"p"},{id:"vol",ad:"Dalgalanma",gr:"Risk",v:RK("vol"),t:"pu",ilk:"asc"},
@@ -90,7 +92,7 @@ var COL=[
  {id:"tr",ad:"Trend (EMA 13/39)",gr:"Teknik",v:function(r){var t=tek(r);return t?t.tr:null;},t:"trend",seri:1}
 ];
 var CI={};COL.forEach(function(c){CI[c.id]=c;});
-var PRE=[["📈 Getiri",["d1","w1","a1","a3","a6","y1"],"y1"],["🎯 Dibe yakın bakış",["kon","zr","tr","reel","y1"],"kon"],["🛡️ Risk",["mdd","vol","gr","rsk","y1"],"mdd"],["💰 Büyüklük",["buy","yat","puan","y1"],"buy"],["🏅 Puan",["puan","y1","mdd","gr"],"puan"]];
+var PRE=[["📈 Getiri",["d1","w1","a1","a3","a6","y1"],"y1"],["📅 Uzun vade",["y1","y3","y5","tumg","gecm"],"y3"],["🎯 Dibe yakın bakış",["kon","zr","tr","reel","y1"],"kon"],["🛡️ Risk",["mdd","vol","gr","rsk","y1"],"mdd"],["💰 Büyüklük",["buy","yat","puan","y1"],"buy"],["🏅 Puan",["puan","y1","mdd","gr"],"puan"]];
 var SEL=sg("fonlar-sut","d1,a1,a3,a6,y1").split(",").filter(function(c){return CI[c];});if(!SEL.length)SEL=["d1","a1","a3","a6","y1"];
 var SK=sg("fonlar-sk","y1"),SD=sg("fonlar-sd","desc");if(!CI[SK]){SK="y1";SD="desc";}
 
@@ -99,7 +101,7 @@ function ema(a,n){var o=[],k=2/(n+1),s=0,p=null;for(var i=0;i<a.length;i++){if(p
 function tek(r){if(r._t!==undefined)return r._t;var S=SER[r.tur];if(!S)return null;var s=S[r.k];var t=null;
   if(s&&s.length>=30){var c=s.map(function(p){return p[1];}),son=c[c.length-1],d=new Date(s[s.length-1][0]).getTime(),lim=d-365*864e5,w=[],ilk=null;
     for(var i=0;i<s.length;i++){var ti=new Date(s[i][0]).getTime();if(ti>=lim){w.push(s[i][1]);if(ilk===null)ilk=ti;}}
-    t={kon:null,zr:null,tr:null};
+    t={kon:null,zr:null,tr:null,tum:null,ys:null};var s0=s[0][1],d0=new Date(s[0][0]).getTime();if(s0>0){t.tum=(son/s0-1)*100;t.ys=(d-d0)/(365.25*864e5);}
     if(w.length>=30&&ilk!==null&&ilk-(d-365*864e5)<=35*864e5){var hi=Math.max.apply(null,w),lo=Math.min.apply(null,w);if(hi>lo)t.kon=(son-lo)/(hi-lo)*100;t.zr=(son/hi-1)*100;}
     if(c.length>=45){var a=ema(c,13),b=ema(c,39),x=a[a.length-1],y=b[b.length-1];if(x!=null&&y!=null)t.tr=x>y?1:-1;}}
   r._t=t;return t;}
@@ -111,7 +113,7 @@ function fmt(c,v){if(v==null)return"—";
   if(c.t==="n2")return vir(v,2);if(c.t==="n0")return String(Math.round(v));
   if(c.t==="para")return v>=1e9?vir(v/1e9,1)+" mr":Math.round(v/1e6)+" mn";
   if(c.t==="adet")return v>=1e3?vir(v/1e3,v>=1e4?0:1)+" bin":String(Math.round(v));
-  if(c.t==="trend")return v>0?"Üstünde ▲":"Altında ▼";return String(v);}
+  if(c.t==="trend")return v>0?"Üstünde ▲":"Altında ▼";if(c.t==="yil")return vir(v,1)+" yıl";return String(v);}
 function kls(c,v){if(v==null)return"";if(c.t==="p")return v>=0?"up":"dn";if(c.t==="trend")return v>0?"up":"dn";if(c.id==="gr")return v>=0?"up":"dn";return"";}
 
 /* ---- Veri ---- */
@@ -163,6 +165,7 @@ function tablo(){
   document.getElementById("bilgi").textContent=L.length+" fon · sütun başlığına dokununca o sütuna göre sıralanır (tekrar dokununca ters) · satıra dokununca fon penceresi açılır · tabloyu sağa kaydır →";
   var nt="Getiriler fonun TEFAS fiyat geçmişinden hesaplanır ve TEFAS’ın bildirdiği değerle teyit edilir; tutmayan fon listeye girmez. “—” = veri yok ya da bu fon için hesaplanamadı. ";
   if(cols.some(function(c){return c.id==="fark";}))nt+="Endeksten fark: Hisse fonlarında BIST 100, Tematik fonlarda Nasdaq-100’e göre 1 yıllık getiri farkıdır; Borçlanma fonlarında yoktur. ";
+  if(cols.some(function(c){return c.id==="tumg"||c.id==="gecm";}))nt+="Tüm zaman: fonun elimizdeki en eski fiyatından bugüne getiri. Fiyat geçmişi en fazla yaklaşık 5 yıl geriye gidebildiği için daha eski fonlarda bu, fonun kuruluşundan değil kayıtlı geçmişin başından itibarendir; “Kayıtlı geçmiş” sütunu bunun kaç yıl olduğunu gösterir. ";
   if(needS)nt+="52 hf konum: fiyatın son 1 yılın en düşüğü (%0) ile en yükseği (%100) arasındaki yeri; Trend: haftalık EMA 13’ün EMA 39’un üstünde olup olmadığı. ";
   nt+="Geçmiş getiri gelecek getirinin garantisi değildir; bu sayfa al/sat önerisi değildir, karar sana aittir.";
   document.getElementById("not").textContent=nt;}
