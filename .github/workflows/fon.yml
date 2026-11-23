@@ -282,6 +282,16 @@ jobs:
                   elif hes.get(k) is not None and a is None:
                       son[k] = hes[k]   # TEFAS bu donemi bildirmediyse resmi fiyat gecmisinden hesaplanan
               son["reel_y1"] = reel(son.get("y1"))
+              # 1 hafta ve yilbasindan beri (YBB) getiri: fonun fiyat gecmisinden hesaplanir (ilgili tarihe yakin fiyat yoksa bos kalir)
+              son_t0, son_f0 = seri[-1]
+              h7 = son_t0 - datetime.timedelta(days=7)
+              on7 = [(t, v) for t, v in seri if t <= h7]
+              if on7 and on7[-1][1] and (h7 - on7[-1][0]).days <= 5:
+                  son["w1"] = round((son_f0 / on7[-1][1] - 1) * 100, 2)
+              yb0 = datetime.date(son_t0.year - 1, 12, 31)
+              onY = [(t, v) for t, v in seri if t <= yb0]
+              if onY and onY[-1][1] and (yb0 - onY[-1][0]).days <= 10:
+                  son["ytd"] = round((son_f0 / onY[-1][1] - 1) * 100, 2)
               if len(seri) >= 2 and seri[-2][1]:
                   son["d1"] = round((seri[-1][1] / seri[-2][1] - 1) * 100, 2)   # son fiyat gununun degisimi
                   out["d1_tarih"] = str(seri[-1][0])
