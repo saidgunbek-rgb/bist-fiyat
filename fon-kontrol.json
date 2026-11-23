@@ -6,7 +6,7 @@
    "search_funds(query: str, limit: int = 20) -> list[dict[str, typing.Any]]",
    "compare_funds(fund_codes: list[str]) -> dict[str, typing.Any]",
    "Fund.history(self, period: str = '1mo', start: datetime.datetime | str | None = None, end: datetime.datetime | str | None = None) -> pandas.DataFrame",
-   "screen_funds(YAT, tumu): 2135 kayit, 2135 yeni fon",
+   "screen_funds(YAT, tumu): 2134 kayit, 2134 yeni fon",
    "ornek alanlar: ['index', 'fund_code', 'name', 'fund_type', 'return_1m', 'return_3m', 'return_6m', 'return_ytd', 'return_1y', 'return_3y', 'return_5y']",
    "search_funds(hisse): 1000 kayit, 239 yeni fon",
    "ornek alanlar: ['fund_code', 'name', 'fund_type', 'return_1y']",
@@ -14,13 +14,16 @@
    "ornek alanlar: ['fund_code', 'name', 'fund_type', 'return_1y']",
    "search_funds(HISSE): 1000 kayit, 0 yeni fon",
    "ornek alanlar: ['fund_code', 'name', 'fund_type', 'return_1y']",
-   "Toplam aday fon: 2374",
-   "Enflasyon: {'y': 29.77, 't': '2026-11-20', 'k': 'borsapy:latest'}",
-   "BIST100 kaynaklar: {'yahoo': {'a1': -5.65, 'a3': -22.68, 'a6': -20.56, 'y1': 1.38, 'y3': 40.08, 'y5': 540.73, '_risk': {'mdd': -28.9, 'vol': 25.56}, 'd1': -2.36, '_d1t': '2026-11-20'}, 'borsapy': {'a1': -5.65, 'a3': -22.68, 'a6': -20.56, 'y1': 1.38, 'y3': 40.08, 'y5': 540.71, '_risk': {'mdd': -28.9,",
-   "BIST100 (teyitli): {'a1': -5.65, 'a3': -22.68, 'a6': -20.56, 'y1': 1.38, 'y3': 40.08, 'y5': 540.71, 'd1': -2.36, 'mdd': -28.9, 'vol': 25.55, 'reel_y1': -21.88}",
+   "Toplam aday fon: 2373",
+   "Enflasyon: {'y': 29.77, 't': '2026-11-23', 'k': 'borsapy:latest'}",
+   "BIST100 kaynaklar: {'yahoo': {'a1': 1.12, 'a3': -22.55, 'a6': -18.59, 'y1': 2.92, 'y3': 42.33, 'y5': 529.93, '_risk': {'mdd': -28.9, 'vol': 25.37}, 'd1': 0.99, '_d1t': '2026-11-23'}, 'borsapy': {'a1': 1.16, 'a3': -22.52, 'a6': -18.56, 'y1': 2.96, 'y3': 42.38, 'y5': 530.19, '_risk': {'mdd': -28.9, 'v",
+   "BIST100 (teyitli): {'a1': 1.16, 'a3': -22.52, 'a6': -18.56, 'y1': 2.96, 'y3': 42.38, 'y5': 530.19, 'd1': 1.03, 'mdd': -28.9, 'vol': 25.37, 'reel_y1': -20.66}",
    "Sorgulanacak fon: 135",
-   "Listeye giren: 72 | Atlanan: {'hisse fonu değil': 1854, 'banka fonu değil': 385, 'yabancı hisse fonu': 9, 'serbest fon': 49, 'getirisi teyit edilemeyen': 4, 'işleme kapalı (fiyatı güncel değil)': 1}",
-   "Grafik verisi: 72 fon, BIST100 1259 gun"
+   "Verisi alinamayan 5 fon yeniden denenecek (tur 1)",
+   "Verisi alinamayan 5 fon yeniden denenecek (tur 2)",
+   "Verisi alinamayan 1 fon yeniden denenecek (tur 3)",
+   "Listeye giren: 66 | Atlanan: {'hisse fonu değil': 1853, 'banka fonu değil': 385, 'yabancı hisse fonu': 9, 'serbest fon': 49, 'getirisi teyit edilemeyen': 4, 'işleme kapalı (fiyatı güncel değil)': 7}",
+   "Grafik verisi: 66 fon, BIST100 1259 gun"
   ],
   "banka_disi_kurucular": {
    "ATA": 5,
@@ -744,7 +747,6 @@
    "GNP",
    "GNZ",
    "GO1",
-   "GO3",
    "GO4",
    "GO6",
    "GOF",
@@ -2401,7 +2403,13 @@
    "MDL"
   ],
   "işleme kapalı (fiyatı güncel değil)": [
-   "KHO"
+   "KHO",
+   "YAS",
+   "YEF",
+   "YHZ",
+   "YLY",
+   "ZHH",
+   "ZJV"
   ]
  }
 }
