@@ -11,6 +11,7 @@ BAS = BUGUN - datetime.timedelta(days=3660)  # 10 yil
 BAS_S = BAS.isoformat()
 EN_AZ_GUN = 120
 HATALI_PARCA = []
+GUNICI = {}  # kod -> bugunun yarim mumu (sadece Yahoo; kesinlesmedi, seriye yazilmaz)
 _TR = SIMDI + datetime.timedelta(hours=3)
 # Seans acikken (ya da kapanis kesinlesmeden) bugunun yarim mumu alinmaz
 SON_GUN = BUGUN.isoformat() if (_TR.hour, _TR.minute) >= (18, 15) or _TR.weekday() >= 5 else (BUGUN - datetime.timedelta(days=1)).isoformat()
@@ -72,6 +73,10 @@ def yahoo(kod):
         if not c:
             continue
         d = datetime.datetime.utcfromtimestamp(t + off).strftime("%Y-%m-%d")
+        if d > SON_GUN and d == BUGUN.isoformat():
+            o_, h_, l_, v_ = sayi(q["open"][i]), sayi(q["high"][i]), sayi(q["low"][i]), (q.get("volume") or [None] * (i + 1))[i]
+            if o_ and h_ and l_:
+                GUNICI[kod] = [d, o_, h_, l_, round(c, 2), v_ or 0]
         if BAS_S <= d <= SON_GUN:
             out[d] = {"o": sayi(q["open"][i]), "h": sayi(q["high"][i]), "l": sayi(q["low"][i]), "c": round(c, 2),
                       "v": (q.get("volume") or [None] * (i + 1))[i]}
@@ -293,8 +298,10 @@ def main():
         print("Hic veri alinamadi; dosya degistirilmedi")
         sys.exit(1)
     son = max(s["son"] for s in stocks.values())
+    # Gun ici mum: sadece seans acikken, serinin son gununden yeni ve sadece Yahoo'dan; kesin veri degildir
+    gunici = {k: v for k, v in GUNICI.items() if k in stocks and v[0] > stocks[k]["son"]} if SON_GUN != BUGUN.isoformat() else {}
     veri = {"updated": son, "updatedAt": SIMDI.strftime("%Y-%m-%dT%H:%M:%SZ"), "korunan": korunan,
-            "stocks": stocks, "kontrol": log}
+            "gunici": gunici, "stocks": stocks, "kontrol": log}
     json.dump(veri, open("analiz.json", "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
     print("Tamam. Korunan:", korunan)
 
