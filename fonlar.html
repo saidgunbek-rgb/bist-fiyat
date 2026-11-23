@@ -97,7 +97,7 @@ var COL=[
  {id:"s13y",ad:"Fiyat / SMA 13",gr:"Teknik",v:function(r){var t=tek(r);return t&&t.s13!=null?(t.s13>=0?1:-1):null;},t:"trend",seri:1}
 ];
 var CI={};COL.forEach(function(c){CI[c.id]=c;});
-var PRE=[["📈 Getiri",["d1","w1","a1","a3","a6","y1"],"y1"],["📅 Uzun vade",["y1","y3","y5","tumg","gecm"],"y3"],["🎯 Dibe yakın bakış",["kon","zr","tr","reel","y1"],"kon"],["🛡️ Risk",["mdd","vol","gr","rsk","y1"],"mdd"],["💰 Büyüklük",["buy","yat","puan","y1"],"buy"],["🏅 Puan",["puan","y1","mdd","gr"],"puan"],["📉 Teknik (RSI, SMA)",["rsi","s13","s26","s52","s13y"],"rsi"]];
+var PRE=[["📈 Getiri",["d1","w1","a1","a3","a6","y1"],"y1"],["📅 Uzun vade",["y1","y3","y5","tumg","gecm"],"y3"],["🎯 Dibe yakın bakış",["kon","zr","tr","reel","y1"],"kon"],["🛡️ Risk",["mdd","vol","gr","rsk","y1"],"mdd"],["💰 Büyüklük",["buy","yat","puan","y1"],"buy"],["🏅 Puan",["puan","y1","mdd","gr"],"puan"]];
 var SEL=sg("fonlar-sut","d1,a1,a3,a6,y1").split(",").filter(function(c){return CI[c];});if(!SEL.length)SEL=["d1","a1","a3","a6","y1"];
 var SK=sg("fonlar-sk","y1"),SD=sg("fonlar-sd","desc");if(!CI[SK]){SK="y1";SD="desc";}
 
