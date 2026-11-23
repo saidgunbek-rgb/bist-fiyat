@@ -453,5 +453,3 @@ json.dump({"guncel": veri["updatedAt"], "bist": haftalik(bist_uzun), "fon": FS},
 not_("Grafik verisi: %d fon, BIST100 %d gun" % (len(FS), len(bist_uzun)))
 json.dump(veri, open("borclanma.json", "w"), indent=1, ensure_ascii=False, default=str)
 json.dump({"log": LOG, "atlanan": atlanan}, open("borclanma-kontrol.json", "w"), indent=1, ensure_ascii=False, default=str)
-PY
-
