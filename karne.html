@@ -168,7 +168,7 @@ function grafikHtml(k,s){var t=NS(s.tek||{}),TUM=t.seri||[];if(TUM.length<2)retu
   var lg='<div style="margin-top:4px;font-size:11.5px;display:flex;gap:10px;flex-wrap:wrap"><span style="color:#a594ff">━ Fiyat</span><span style="color:#4fc3f7">━ '+(KIS?"20":"50")+' g. basit ort.</span><span style="color:#ff9f43">━ '+(KIS?"50":"200")+' g. basit ort.</span><span style="color:#4ade80">▮ alım bölgesi</span>'+(KIS?'':'<span style="color:#22c55e">▮ 2. alım</span><span style="color:#4fc3f7">┅ kırılım</span>')+'</div><div style="display:none"></div>';
   var ml="";if(mal>0&&fy>0){var kz=(fy/mal-1)*100;ml='<div style="font-size:12.5px;margin-top:6px;color:var(--mut)">Senin maliyetin: <b style="color:var(--tx)">'+f2(mal)+' TL</b> ('+(kz>=0?"+":"−")+"%"+Math.abs(kz).toFixed(1).replace(".",",")+')'+(t.h1>fy?' · Hedef 1\'e uzaklık: %'+((t.h1/fy-1)*100).toFixed(1).replace(".",","):'')+(t.risk>0&&fy>t.risk?' · Risk çizgisine: %'+((1-t.risk/fy)*100).toFixed(1).replace(".",","):'')+'</div>';}
   return'<div class="gr"><div class="grh"><span>Fiyat grafiği</span><span>'+ar+'</span></div>'+g+lg+'</div>';}
-function acHtml(k,s){var ks=s.vade==="kisa",ic=tekHtml(k,s.tek,s.price)+uzunHtml(s.uzun)+(ks?frHtml(s.frapor,true):byHtml(s.byorum,s.kap)+kapHtml(s.kap));if(!ic)return"";
+function acHtml(k,s){var ks=s.vade==="kisa",ic=tekHtml(k,s.tek,s.price0||s.price)+uzunHtml(s.uzun)+(ks?frHtml(s.frapor,true):byHtml(s.byorum,s.kap)+kapHtml(s.kap));if(!ic)return"";
   var d=s.tek&&DUR[s.tek.durum],g=s.uzun&&GOR[s.uzun.gor],b="";
   if(d)b+='<span class="bd" style="color:'+d[1]+'">'+d[0]+'</span>';
   if(g)b+='<span class="bd" style="color:'+g[1]+'">'+((s.uzun&&s.uzun.tur==="kisa")?"Kısa vade: ":"Uzun vade: ")+g[0]+'</span>';
@@ -301,7 +301,7 @@ function render(d){
   var ft=document.querySelector(".foot");if(ft)ft.style.display=(!KUT&&EKS.kut&&EKS.kut.indexOf(SEC)>=0)?"none":"";
   keys.forEach(function(k){var s=st[k]||{};
     if(!KUT&&EKS.kut&&EKS.kut.indexOf(k)>=0){h+=sadeKart(k,s,MAL[k]);return;}
-    h+='<div class="card" data-k="'+esc(k)+'"><div class="hd"><div class="nm">'+esc(k)+(s.vade&&!KUT?' <span style="font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:8px;vertical-align:middle;background:'+(s.vade==="kisa"?'rgba(255,159,67,.18);color:#ff9f43':'rgba(124,92,255,.18);color:var(--p)')+'">'+(s.vade==="kisa"?"Kısa vade":"Uzun vade")+'</span>':'')+(satildi(k)?' <span style="font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:8px;vertical-align:middle;background:rgba(150,150,150,.18);color:var(--mut)">Satıldı · izlemede</span>':'')+'</div><div class="pr">'+(s.price>0?f2(s.price)+" TL":"")+'</div></div>'
+    h+='<div class="card" data-k="'+esc(k)+'"><div class="hd"><div class="nm">'+esc(k)+(s.vade&&!KUT?' <span style="font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:8px;vertical-align:middle;background:'+(s.vade==="kisa"?'rgba(255,159,67,.18);color:#ff9f43':'rgba(124,92,255,.18);color:var(--p)')+'">'+(s.vade==="kisa"?"Kısa vade":"Uzun vade")+'</span>':'')+(satildi(k)?' <span style="font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:8px;vertical-align:middle;background:rgba(150,150,150,.18);color:var(--mut)">Satıldı · izlemede</span>':'')+'</div><div class="pr">'+(s.price>0?f2(s.price)+" TL":"")+(s.gi?'<div style="font-size:10px;color:#fbbf24;font-weight:700">GÜN İÇİ · '+s.gi+'</div>':'')+'</div></div>'
      +(KUT&&s.ad?'<div class="mc" style="color:var(--tx)">'+esc(s.ad)+'</div>':'')
      +(s.mc>0?'<div class="mc">Piyasa değeri: '+mcs(s.mc)+'</div>':'')
      +row("pe","F/K",s.pe,s.pe>0?f1(s.pe):"","zarar/yok")
@@ -329,13 +329,19 @@ function editNote(el,k){
   b1.onclick=function(e){e.stopPropagation();var v=ta.value.trim();if(v)NOTES[k]=v;else delete NOTES[k];saveN();paintNote(el);};
   b2.onclick=function(e){e.stopPropagation();paintNote(el);};
   el.appendChild(ta);el.appendChild(b1);el.appendChild(b2);ta.focus();}
+/* Kutuphane: gun ici fiyat (gunici.json, analiz calismasindan). Fiyata bagli oranlar bu fiyatla yeniden hesaplanir;
+   bilanco, seviye, karne ve yorumlar kapanisa bagli oldugu icin degismez. 45 dakikadan eskiyse ya da yoksa kapanis gosterilir. */
+function guniciBirlestir(d){return fetch("https://raw.githubusercontent.com/saidgunbek-rgb/bist-fiyat/main/gunici.json?t="+Date.now()).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(j){
+  var u=j&&j.updatedAt?Date.parse(j.updatedAt):0;if(!(u>0)||Date.now()-u>45*60*1000||!j.gunici)return;var tt=new Date(u+108e5),sa=("0"+tt.getUTCHours()).slice(-2)+":"+("0"+tt.getUTCMinutes()).slice(-2);
+  Object.keys(d.stocks||{}).forEach(function(k){var s=d.stocks[k],g=j.gunici[k],eski=parseFloat(s.price);if(!g||!(g[4]>0)||!(eski>0)||!(g[0]>String(d.updated||"")))return;
+    var r=g[4]/eski;s.price0=s.price;s.price=g[4];s.gi=sa;["pe","pb","mc"].forEach(function(a){var v=parseFloat(s[a]);if(v>0)s[a]=typeof s[a]==="string"?String(v*r):v*r;});var dy=parseFloat(s.dy);if(dy>0)s.dy=typeof s.dy==="string"?String(dy/r):dy/r;});}).catch(function(){});}
 function load(){
   fetch(DEFURL+"?t="+Date.now()).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(d){
     var u=d.updatedAt?new Date(d.updatedAt):null,txt="";
     try{if(u)txt=u.toLocaleString("tr-TR",{timeZone:"Europe/Istanbul",day:"2-digit",month:"2-digit",year:"numeric",hour:"2-digit",minute:"2-digit"});}catch(e){}
     document.getElementById("sub").innerHTML="Değerleme göstergeleri · Son güncelleme: "+esc(txt||trD(d.updated||""))+(d.kapUpdatedAt?" · KAP kontrolü: "+esc(trD(String(d.kapUpdatedAt).split(" ")[0])+" "+(String(d.kapUpdatedAt).split(" ")[1]||"")):"");
     if(u&&(Date.now()-u.getTime())>5*864e5)document.getElementById("msg").innerHTML='<div class="warn">Veri 5 günden eski. Otomatik güncelleme çalışmıyor olabilir.</div>';
-    (KUT?Promise.resolve():ekler()).then(function(){render(d);});
+    (KUT?guniciBirlestir(d):ekler()).then(function(){render(d);});
   }).catch(function(){document.getElementById("sub").textContent="";document.getElementById("msg").innerHTML=KUT?'<div class="warn">Kütüphane verisi henüz hazır değil. GitHub’daki “Hisse kutuphanesi” çalışması ilk kez bittikten sonra burada görünecek.</div>':'<div class="warn">Karne verisi okunamadı. İnternetini kontrol et ya da GitHub’daki “Hisse karnesi” çalışmasının en az bir kez yeşil tikle bittiğinden emin ol.</div>';});}
 if(KUT){document.title="Hisse Kütüphanesi";document.getElementById("h1").textContent="Hisse Kütüphanesi";}
 load();

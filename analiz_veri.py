@@ -303,6 +303,8 @@ def main():
     veri = {"updated": son, "updatedAt": SIMDI.strftime("%Y-%m-%dT%H:%M:%SZ"), "korunan": korunan,
             "gunici": gunici, "stocks": stocks, "kontrol": log}
     json.dump(veri, open("analiz.json", "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
+    # Kucuk dosya: ana ekran, Kutuphane ve Araclar saat listesi 1,5 MB'lik analiz.json'u indirmeden bunu okur
+    json.dump({"updatedAt": veri["updatedAt"], "gunici": gunici}, open("gunici.json", "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
     print("Tamam. Korunan:", korunan)
 
 

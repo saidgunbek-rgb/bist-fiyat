@@ -538,14 +538,16 @@ function karneUrl(){var u=(typeof feedUrl==="function"&&feedUrl())||"";return u&
 function gun(d){var t=new Date(String(d).replace(" ","T")+(String(d).length>10?":00":"T00:00:00")+"+03:00").getTime();return isFinite(t)?(Date.now()-t)/864e5:1e9;}
 var DUR={alim:["Alım bölgesi","var(--pos)"],alim2:["2. alım bölgesi","var(--pos)"],bekle:["Bekle / tut","#d9a400"],kar_al:["Kâr al bölgesi","var(--neg)"],dikkat:["Derin geri çekilme","#d9a400"],risk:["Risk","var(--neg)"]};
 var GOR={olumlu:["Uzun vade: olumlu","var(--pos)"],notr:["Uzun vade: nötr","#d9a400"],olumsuz:["Uzun vade: olumsuz","var(--neg)"]};
-function eldekiler(){var m=pos("9999-12-31"),L=[],tv=0;
-  for(var k in m){var z=m[k];if(!(z.q>0))continue;var lp=lastPx(k);if(!lp)continue;var v=z.q*lp.p,g=v-z.q*z.c+z.r+(z.dv||0);tv+=v;L.push({k:k,q:z.q,c:z.c,p:lp.p,v:v,g:g,gp:z.q*z.c?g/(z.q*z.c):0});}
+var GU=null;
+function guniciFiyat(k,d){if(!GU||!GU.gunici||!GU.updatedAt)return null;var u=Date.parse(GU.updatedAt);if(!(u>0)||Date.now()-u>45*60*1000)return null;var g=GU.gunici[kod(k)];if(!g||!(g[4]>0)||!(g[0]>d))return null;var t=new Date(u+108e5);return{p:g[4],s:("0"+t.getUTCHours()).slice(-2)+":"+("0"+t.getUTCMinutes()).slice(-2)};}
+function eldekiler(gi){var m=pos("9999-12-31"),L=[],tv=0;
+  for(var k in m){var z=m[k];if(!(z.q>0))continue;var lp=lastPx(k);if(!lp)continue;var gx=gi?guniciFiyat(k,lp.d):null;if(gx)lp={p:gx.p,d:lp.d,gi:gx.s};var v=z.q*lp.p,g=v-z.q*z.c+z.r+(z.dv||0);tv+=v;L.push({k:k,q:z.q,c:z.c,p:lp.p,gi:lp.gi,v:v,g:g,gp:z.q*z.c?g/(z.q*z.c):0});}
   L.forEach(function(x){x.pay=tv?x.v/tv:0;});L.sort(function(a,b){return b.v-a.v;});return L;}
 function bar(t,p){if(!t||!(t.risk>0)||!(t.h1>t.risk))return"";
   var r=t.risk,h=t.h1,x=(p-r)/(h-r),xc=Math.max(0,Math.min(1,x)),renk=x<0?"var(--neg)":(x>=0.97?"var(--neg)":"var(--pos)");
   return'<div class="hbar"><div class="f" style="width:'+(xc*100).toFixed(1)+'%;background:'+renk+';opacity:.35"></div><div class="m" style="left:'+(xc*100).toFixed(1)+'%;background:'+(x<0?"var(--neg)":"var(--tx)")+'"></div></div>'+
     '<div class="hbl"><span>Risk '+fmt(r)+(x<0?' (altında)':'')+'</span><span>Hedef '+fmt(h)+'</span></div>';}
-function kartlar(){var el=document.getElementById("byk");if(!el)return;var L=eldekiler();
+function kartlar(){var el=document.getElementById("byk");if(!el)return;var L=eldekiler(true);
   if(!L.length){el.innerHTML="";return;}
   var REN=["#7c5cff","#2ec4b6","#ff9f43","#ff6b81","#4cc47f","#6f95e8"];
   var dg='<div style="margin:2px 0 12px"><div class="mut" style="margin-bottom:6px">Portföy dağılımı</div><div style="display:flex;height:14px;border-radius:7px;overflow:hidden">'+
@@ -557,7 +559,7 @@ function kartlar(){var el=document.getElementById("byk");if(!el)return;var L=eld
     return'<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px 12px;border-radius:12px;background:var(--hkbg,rgba(255,255,255,.05));margin-bottom:8px;border-left:3px solid '+REN[i%6]+'">'+
       '<div style="white-space:nowrap"><b style="font-size:16px">'+esc(x.k)+'</b><div class="mut" style="font-size:12.5px;margin-top:2px">'+fq(x.q)+' adet · maliyet '+fmt(x.c)+'</div>'+
       '<a href="#" onclick="if(window.__sekme)window.__sekme(\'karne\');return false;" style="display:inline-block;margin-top:4px;font-size:12px;color:#a78bfa;text-decoration:none">Karne ›</a></div>'+
-      '<div style="text-align:right;white-space:nowrap"><b style="font-size:16px">'+fmt(x.p)+'</b><div class="'+cls(x.g)+'" style="font-weight:700;font-size:13.5px">'+sg(x.g)+' TL</div><div style="font-size:12px"><span class="'+cls(x.g)+'" style="font-weight:700">'+pc(x.gp)+'</span><span class="mut"> · pay %'+Math.round(x.pay*100)+'</span></div></div></div>';}).join("")+
+      '<div style="text-align:right;white-space:nowrap"><b style="font-size:16px">'+fmt(x.p)+'</b>'+(x.gi?'<div style="font-size:10px;color:#fbbf24">GÜN İÇİ · '+x.gi+'</div>':'')+'<div class="'+cls(x.g)+'" style="font-weight:700;font-size:13.5px">'+sg(x.g)+' TL</div><div style="font-size:12px"><span class="'+cls(x.g)+'" style="font-weight:700">'+pc(x.gp)+'</span><span class="mut"> · pay %'+Math.round(x.pay*100)+'</span></div></div></div>';}).join("")+
     (L.length>1?'<div style="display:flex;justify-content:flex-end;font-size:13px;margin:2px 2px 4px"><span class="mut">Toplam:&nbsp;</span><b class="'+cls(top)+'">'+sg(top)+' TL</b></div>':'');}
 function dikkat(){var el=document.getElementById("dik");if(!el)return;var L=eldekiler(),A=[];
   L.forEach(function(x){var st=KR&&KR.stocks&&KR.stocks[kod(x.k)]||{},t=NS(st.tek);
@@ -642,6 +644,7 @@ function hepsi(){try{kartlar();dikkat();grafik();bildirim();}catch(e){console.lo
 if(typeof renderBys==="function"){var _rb=renderBys;renderBys=function(){_rb.apply(this,arguments);hepsi();};}
 hepsi();
 fetch(((typeof feedUrl==="function"&&feedUrl())||"https://raw.githubusercontent.com/saidgunbek-rgb/bist-fiyat/main/prices.json")+"?t="+Date.now()).then(function(r){return r.json();}).then(function(j){PX=j;hepsi();}).catch(function(){});
+fetch("https://raw.githubusercontent.com/saidgunbek-rgb/bist-fiyat/main/gunici.json?t="+Date.now()).then(function(r){return r.json();}).then(function(j){GU=j;hepsi();}).catch(function(){});
 fetch(karneUrl()+"?t="+Date.now()).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(j){KR=j;hepsi();}).catch(function(){hepsi();});
 })();
 </script>
@@ -714,14 +717,18 @@ fetch(url()+"?t="+Date.now()).then(function(r){if(!r.ok)throw 0;return r.json();
 })();
 </script>
 <style>#gsb{margin-top:12px;min-height:520px}#gsb .gb{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:10px;margin-bottom:10px}#gsb h4{margin:0 0 8px;font-size:14px}#gsb .gr{margin-bottom:8px}#gsb .gl{font-size:12px;opacity:.7;margin-bottom:4px}#gsb .gl small{float:right;opacity:.8}#gsb .gc{display:inline-block;padding:3px 7px;margin:2px 3px 2px 0;border-radius:8px;background:rgba(255,255,255,.06);opacity:.75;font-size:12px}#gsb .gc.ok{background:#12361f;color:#4ade80;opacity:1}#gsb .gn{font-size:11px;opacity:.6;line-height:1.5}</style>
-<script>(function(){var A=[];for(var h=9;h<=17;h++){A.push(("0"+h).slice(-2)+":07");A.push(("0"+h).slice(-2)+":37");}A.push("19:17","21:17","00:37");
-var G=[["🥇 Altın / Gümüş",[["Gram altın · ons · gümüş","altin.json",A]]],["📈 Hisse / Analiz",[["Fiyat","prices.json",["18:23"]],["Kütüphane","kutuphane.json",["18:53","21:03"]],["Grafik analizi","analiz.json",["10:07","10:37","11:07","11:37","12:07","12:37","13:07","13:37","14:07","14:37","15:07","15:37","16:07","16:37","17:07","17:37","19:07","21:27"]]]],["💼 Fonlar",[["Hisse fonları","fonlar.json",["20:37"]],["Tematik fonlar","yabanci.json",["20:50"]],["Borçlanma fonları","borclanma.json",["20:57"]]]]];
+<script>(function(){var A=[],GI=[];for(var h=9;h<=17;h++){A.push(("0"+h).slice(-2)+":07");A.push(("0"+h).slice(-2)+":37");}A.push("19:17","21:17","00:37");
+for(var h2=10;h2<=17;h2++){GI.push(("0"+h2).slice(-2)+":07");GI.push(("0"+h2).slice(-2)+":37");}
+var G=[["🥇 Altın / Gümüş",[["Gram altın · ons · gümüş",[["altin.json",A]]]]],
+["📈 Hisse / Analiz",[["Fiyat",[["gunici.json",GI],["prices.json",["18:23"]]]],["Kütüphane",[["gunici.json",GI],["kutuphane.json",["18:53","21:03"]]]],["Grafik analizi",[["analiz.json",GI.concat(["19:07","21:27"])]]]]],
+["💼 Fonlar",[["Hisse fonları",[["fonlar.json",["20:37"]]]],["Tematik fonlar",[["yabanci.json",["20:50"]]]],["Borçlanma fonları",[["borclanma.json",["20:57"]]]]]]];
 var U={};try{U=JSON.parse(localStorage.getItem("gsU")||"{}")||{}}catch(x){U={}}function p2(n){return("0"+n).slice(-2)}
 function fmt(ms){var d=new Date(ms+108e5);return p2(d.getUTCDate())+"."+p2(d.getUTCMonth()+1)+" "+p2(d.getUTCHours())+":"+p2(d.getUTCMinutes())}
 function ciz(){var el=document.getElementById("gsb");if(!el)return;var n=Date.now(),t=new Date(n+108e5),wd=t.getUTCDay(),hafta=wd>=1&&wd<=5,y=t.getUTCFullYear(),m=t.getUTCMonth(),d=t.getUTCDate();var o="";
-G.forEach(function(g){o+='<div class="gb"><h4>'+g[0]+'</h4>';g[1].forEach(function(r){var u=U[r[1]];o+='<div class="gr"><div class="gl">'+r[0]+'<small>son: '+(u?fmt(u):"—")+'</small></div>';r[2].forEach(function(s){var hm=s.split(":"),sl=Date.UTC(y,m,d,+hm[0],+hm[1])-108e5;if(s==="00:37")sl+=864e5;var ok=hafta&&u&&u>=sl;o+='<span class="gc'+(ok?" ok":"")+'">'+(ok?"✓ ":"")+s+'</span>';});o+='</div>';});o+='</div>';});
-o+='<div class="gn">✓ = veri o saatten sonra güncellenmiş. GitHub 5–30 dk geç çalıştırabilir. Hafta sonu zamanlı güncelleme yok.</div>';el.innerHTML=o;}
-function yukle(){var b=[];G.forEach(function(g){g[1].forEach(function(r){b.push(fetch(r[1]+"?t="+Date.now(),{cache:"no-store"}).then(function(x){return x.json()}).then(function(j){var v=j&&j.updatedAt?Date.parse(j.updatedAt):0;if(v)U[r[1]]=v;}).catch(function(){}));});});Promise.all(b).then(function(){try{localStorage.setItem("gsU",JSON.stringify(U))}catch(x){}ciz();});}
+G.forEach(function(g){o+='<div class="gb"><h4>'+g[0]+'</h4>';g[1].forEach(function(r){var son=0;r[1].forEach(function(q){if(U[q[0]]>son)son=U[q[0]];});o+='<div class="gr"><div class="gl">'+r[0]+'<small>son: '+(son?fmt(son):"—")+'</small></div>';
+r[1].forEach(function(q){var u=U[q[0]];q[1].forEach(function(s){var hm=s.split(":"),sl=Date.UTC(y,m,d,+hm[0],+hm[1])-108e5;if(s==="00:37")sl+=864e5;var ok=hafta&&u&&u>=sl;o+='<span class="gc'+(ok?" ok":"")+'">'+(ok?"✓ ":"")+s+'</span>';});});o+='</div>';});o+='</div>';});
+o+='<div class="gn">✓ = veri o saatten sonra güncellenmiş. GitHub 5–30 dk geç çalıştırabilir. Hafta sonu zamanlı güncelleme yok. Fiyat ve Kütüphane gün içi saatleri hisse fiyatının güncellendiği saatlerdir; akşam saatleri kesin kapanıştır.</div>';el.innerHTML=o;}
+function yukle(){var b=[],F={};G.forEach(function(g){g[1].forEach(function(r){r[1].forEach(function(q){F[q[0]]=1;});});});Object.keys(F).forEach(function(f){b.push(fetch(f+"?t="+Date.now(),{cache:"no-store"}).then(function(x){return x.json()}).then(function(j){var v=j&&j.updatedAt?Date.parse(j.updatedAt):0;if(v)U[f]=v;}).catch(function(){}));});Promise.all(b).then(function(){try{localStorage.setItem("gsU",JSON.stringify(U))}catch(x){}ciz();});}
 ciz();yukle();setInterval(yukle,120000);})();</script>
 </body>
 </html>
