@@ -4,8 +4,9 @@ name: Altin verisi
 
 on:
   schedule:
-    - cron: "37 21 * * 1-5"   # hafta ici gece 00:37 (Turkiye saati), gunluk mum kapandiktan sonra
-    - cron: "17 14 * * 1-5"   # hafta ici 17:17: gun ici yedek
+    - cron: "7,37 6-14 * * 1-5"
+    - cron: "17 16,18 * * 1-5"
+    - cron: "37 21 * * 1-5"   
   workflow_dispatch:
 
 permissions:
