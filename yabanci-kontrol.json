@@ -2,13 +2,13 @@
  "log": {
   "surum": "0.11.0",
   "notlar": [
-   "USDTRY: yahoo 1562 gun, ecb 1541 gun",
-   "ndx y5 tutmadi: 591.84 / 585.43",
-   "spx y5 tutmadi: 573.85 / 569.52",
-   "Olcutler: {'ndx': {'a1': -13.45, 'a3': -9.83, 'a6': -5.26, 'y1': 24.25, 'y3': 175.63, 'y5': None, 'd1': -5.42, 'tarih': '2026-11-20', 'ad': 'Nasdaq-100'}, 'spx': {'a1': -8.63, 'a3': -4.82, 'a6': 3.11, 'y1': 26.2, 'y3': 168.21, 'y5': None, 'd1': -3.51, 'tarih': '2026-11-20', 'ad': 'S&P 500'}}",
-   "screen_funds(YAT): 2135 kayit, 2135 yeni fon",
+   "USDTRY: yahoo 1561 gun, ecb 1541 gun",
+   "ndx y5 tutmadi: 626.75 / 559.39",
+   "spx y5 tutmadi: 584.73 / 522.01",
+   "Olcutler: {'ndx': {'a1': -6.14, 'a3': -4.0, 'a6': 0.3, 'y1': 31.4, 'y3': 193.38, 'y5': None, 'd1': 6.81, 'tarih': '2026-11-23', 'ad': 'Nasdaq-100'}, 'spx': {'a1': -3.37, 'a3': -0.64, 'a6': 7.23, 'y1': 30.74, 'y3': 179.22, 'y5': None, 'd1': 4.85, 'tarih': '2026-11-23', 'ad': 'S&P 500'}}",
+   "screen_funds(YAT): 2134 kayit, 2134 yeni fon",
    "screen_funds(BYF): 38 kayit, 38 yeni fon",
-   "Toplam aday: 2173",
+   "Toplam aday: 2172",
    "Nasdaq/S&P adli aday: 102 | olasi (secilmeyen Amerika/ABD adli): 20",
    "Portfoy dagilimi alinamayan: 0",
    "Listeye giren: 77 | Atlanan: {'işleme kapalı (fiyatı güncel değil)': 5, 'yerli hisse/endeks fonu (tematik yabancı fon değil)': 10, 'getirisi teyit edilemeyen': 3, '10 milyon TL altı küçük fon': 5, \"TEFAS'ta alınamıyor (özel fon / TEFAS'a kapalı)\": 2}"
@@ -52,101 +52,101 @@
     "DHJ",
     "DENİZ PORTFÖY TEKNOLOJİ ŞİRKETLERİ HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞ",
     {
-     "ndx": 0.323,
-     "spx": 0.289,
-     "bist": 0.745
+     "ndx": 0.325,
+     "spx": 0.302,
+     "bist": 0.798
     },
-    139925985.74
+    136340886.34
    ],
    [
     "DJA",
     "QNB PORTFÖY QNB TEMİZ ENERJİ ENDEKSİ HİSSE SENEDİ YOĞUN BORSA YATIRIM ",
     {
-     "ndx": 0.071,
-     "spx": 0.121,
-     "bist": 0.72
+     "ndx": 0.077,
+     "spx": 0.119,
+     "bist": 0.719
     },
-    22668575.71
+    22348210.1
    ],
    [
     "DTH",
     "EMAA BLUE PORTFÖY DÖNÜŞÜM TEKNOLOJİLERİ HİSSE SENEDİ (TL) FONU (HİSSE ",
     {
-     "ndx": 0.255,
-     "spx": 0.246,
-     "bist": 0.816
+     "ndx": 0.337,
+     "spx": 0.341,
+     "bist": 0.827
     },
-    194412949.83
+    190271367.93
    ],
    [
     "EC2",
     "GLOBAL MD PORTFÖY BİRİNCİ HİSSE SENEDİ FONU(HİSSE SENEDİ YOĞUN FON)",
     {
-     "ndx": 0.237,
-     "spx": 0.203,
-     "bist": 0.868
+     "ndx": 0.239,
+     "spx": 0.212,
+     "bist": 0.878
     },
-    39199167.46
+    38440733.5
    ],
    [
     "ENJ",
     "AKTİF PORTFÖY ENERJİ ŞİRKETLERİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ Y",
     {
-     "ndx": 0.191,
-     "spx": 0.188,
-     "bist": 0.778
+     "ndx": 0.163,
+     "spx": 0.173,
+     "bist": 0.781
     },
-    47650729.08
+    46612435.37
    ],
    [
     "GNS",
     "GARANTİ PORTFÖY ENERJİ ŞİRKETLERİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ",
     {
-     "ndx": 0.255,
-     "spx": 0.252,
-     "bist": 0.794
+     "ndx": 0.227,
+     "spx": 0.227,
+     "bist": 0.792
     },
-    69442730.35
+    67689550.34
    ],
    [
     "GRT",
     "GARANTİ PORTFÖY TEKNOLOJİ ŞİRKETLERİ HİSSE SENEDİ (TL) FONU (HİSSE SEN",
     {
-     "ndx": 0.29,
-     "spx": 0.228,
-     "bist": 0.673
+     "ndx": 0.295,
+     "spx": 0.252,
+     "bist": 0.753
     },
-    103069500.05
+    100336146.7
    ],
    [
     "ICZ",
     "AK PORTFÖY TEKNOLOJİ ŞİRKETLERİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ Y",
     {
-     "ndx": 0.304,
-     "spx": 0.255,
-     "bist": 0.662
+     "ndx": 0.312,
+     "spx": 0.282,
+     "bist": 0.732
     },
-    620820903.24
+    604159047.63
    ],
    [
     "KVT",
     "AK PORTFÖY ENERJİ ŞİRKETLERİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞU",
     {
-     "ndx": 0.275,
-     "spx": 0.262,
-     "bist": 0.77
+     "ndx": 0.221,
+     "spx": 0.214,
+     "bist": 0.771
     },
-    67718647.12
+    66306238.66
    ],
    [
     "ZPT",
     "ZİRAAT PORTFÖY YILDIZ PAZAR TEKNOLOJİ VE İLETİŞİM 10 ENDEKSİ HİSSE SEN",
     {
-     "ndx": 0.349,
-     "spx": 0.323,
-     "bist": 0.707
+     "ndx": 0.328,
+     "spx": 0.309,
+     "bist": 0.742
     },
-    27528422.33
+    26957577.71
    ]
   ],
   "getirisi teyit edilemeyen": [
@@ -154,23 +154,23 @@
     "FUS",
     "QNB PORTFÖY AMERİKAN DOLARI YABANCI BORSA YATIRIM FONU",
     {
-     "ndx": -0.11,
-     "spx": -0.08,
-     "bist": -0.134
+     "ndx": -0.095,
+     "spx": -0.098,
+     "bist": -0.124
     },
-    1500975561.01
+    1502550890.58
    ],
    [
     "NEE",
     "NEO PORTFÖY ENERJİ VE EMTİA ŞİRKETLERİ DEĞİŞKEN FON",
     null,
-    29162638.62
+    28317369.67
    ],
    [
     "YZE",
     "BTCTURK PORTFÖY YAPAY ZEKA TEKNOLOJİLERİ ŞİRKETLERİ DEĞİŞKEN FON",
     null,
-    10652391.34
+    10040173.54
    ]
   ],
   "10 milyon TL altı küçük fon": [
@@ -178,31 +178,31 @@
     "GIH",
     "ALLBATROSS PORTFÖY GIDA VE İÇECEK SEKTÖRÜ HİSSE SENEDİ FONU (HİSSE SEN",
     null,
-    4596742.25
+    4483437.97
    ],
    [
     "GNH",
     "GLOBAL MD PORTFÖY ALGORİTMİK MODEL HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞ",
     null,
-    5146373.76
+    5047027.92
    ],
    [
     "IUH",
     "INVEO PORTFÖY DÖNÜŞTÜRÜCÜ TEKNOLOJİLER FON SEPETİ FONU",
     null,
-    7603185.49
+    7340187.85
    ],
    [
     "KIB",
     "TRIVE PORTFÖY ROBOTİK TEKNOLOJİLERİ DEĞİŞKEN FON",
     null,
-    7378520.15
+    7027244.2
    ],
    [
     "RTD",
     "RE-PIE PORTFÖY TEKNOLOJİ DEĞİŞKEN FON",
     null,
-    4492109.17
+    4322873.85
    ]
   ],
   "TEFAS'ta alınamıyor (özel fon / TEFAS'a kapalı)": [
@@ -210,13 +210,13 @@
     "HTJ",
     "HEDEF PORTFÖY TEKNOLOJİ DEĞİŞKEN FON",
     null,
-    37336513.76
+    34979582.7
    ],
    [
     "SOS",
     "HEDEF PORTFÖY SAĞLIK SEKTÖRÜ DEĞİŞKEN FON",
     null,
-    23249381.9
+    23092444.07
    ]
   ]
  },
