@@ -437,7 +437,7 @@ function pencere(k){var f=D.fonlar.filter(function(x){return x.k===k;})[0];if(!f
   var o=document.getElementById("pop");if(!o){o=document.createElement("div");o.id="pop";document.body.appendChild(o);}
   o.innerHTML='<div class="pk"><button class="px" aria-label="Kapat">✕</button>'+kart(f,null,"pop")+grafikFon(f)+(SERI?analizHtml(f,(D.olcut||{}).ndx||{}):'')+'<button class="pkap">Kapat</button></div>';
   o.className="on";document.body.style.overflow="hidden";
-  function kapat(){o.className="";document.body.style.overflow="";}
+  function kapat(){o.className="";document.body.style.overflow="";try{if(window.parent!==window)parent.postMessage({fonKapat:1},location.origin);}catch(e){}}
   o.onclick=function(e){if(e.target===o)kapat();};
   o.querySelector(".px").onclick=kapat;o.querySelector(".pkap").onclick=kapat;
   gsBagla(f);
@@ -447,4 +447,6 @@ fetch("yabanci.json?"+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)t
   document.getElementById("sub").innerHTML="Sektör / tema odaklı TEFAS fonları · yalnızca banka portföy şirketlerinin fonları · "+d.fonlar.filter(function(f){return f.et==="Tematik";}).length+" fon · son tarama "+trD(d.updated);ciz();})
  .catch(function(){document.getElementById("msg").innerHTML='<div class="warn">Veri henüz hazır değil. GitHub’daki “Yabanci fonlar” çalışması ilk kez bittikten sonra burada görünecek.</div>';});
 </script>
+<style>.emb,.emb body{background:transparent!important}.emb body>*:not(#pop):not(script):not(style){display:none!important}</style>
+<script>(function(){var m=/#k=([A-Za-z0-9]+)/.exec(location.hash);if(!m)return;document.documentElement.className+=" emb";var t=setInterval(function(){if(typeof D!=="undefined"&&D&&D.fonlar&&typeof pencere==="function"){clearInterval(t);pencere(m[1].toUpperCase());}},150);setTimeout(function(){clearInterval(t);},20000);})();</script>
 </body></html>

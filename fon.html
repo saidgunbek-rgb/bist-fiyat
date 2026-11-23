@@ -260,7 +260,7 @@ function pencere(k){var f=D.fonlar.filter(function(x){return x.k===k;})[0];if(!f
   var o=document.getElementById("pop");if(!o){o=document.createElement("div");o.id="pop";document.body.appendChild(o);}
   o.innerHTML='<div class="pk"><button class="px" aria-label="Kapat">✕</button>'+grafikFon(f)+kart(f,0,D.bist||{},true).replace(/<span class="pn">[^]*?<\/span><\/div>/,'<span class="pn">'+(f.her_yonu?'⭐ ':'')+(f.puan!=null?f.puan+'/100':'')+'</span></div>')+(SERI?analizHtml(f,D.bist||{}):'')+'<button class="pkap">Kapat</button></div>';
   o.className="on";document.body.style.overflow="hidden";
-  function kapat(){o.className="";document.body.style.overflow="";}
+  function kapat(){o.className="";document.body.style.overflow="";try{if(window.parent!==window)parent.postMessage({fonKapat:1},location.origin);}catch(e){}}
   o.onclick=function(e){if(e.target===o)kapat();};
   o.querySelector(".px").onclick=kapat;o.querySelector(".pkap").onclick=kapat;
   gsBagla(f);
@@ -371,4 +371,6 @@ function ciz(){var B=D.bist||{},TUM=D.fonlar;
 fetch("fonlar.json?"+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(d){D=d;
   document.getElementById("sub").innerHTML="Bankaların hisse senedi yoğun fonları (TEFAS) · "+d.fonlar.length+" fon · son tarama "+trD(d.updated);ciz();})
  .catch(function(){document.getElementById("msg").innerHTML='<div class="warn">Fon verisi henüz hazır değil. GitHub’daki “Fon bulucu” çalışması ilk kez bittikten sonra burada görünecek.</div>';});
-</script></body></html>
+</script><style>.emb,.emb body{background:transparent!important}.emb body>*:not(#pop):not(script):not(style){display:none!important}</style>
+<script>(function(){var m=/#k=([A-Za-z0-9]+)/.exec(location.hash);if(!m)return;document.documentElement.className+=" emb";var t=setInterval(function(){if(typeof D!=="undefined"&&D&&D.fonlar&&typeof pencere==="function"){clearInterval(t);pencere(m[1].toUpperCase());}},150);setTimeout(function(){clearInterval(t);},20000);})();</script>
+</body></html>
