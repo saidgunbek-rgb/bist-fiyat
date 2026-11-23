@@ -292,13 +292,14 @@ function seriYukle(cb){if(SERI)return cb();fetch("yabanci-seri.json?"+Date.now()
 var GS=null,GSK="";
 function gsFp(v){return v<1?v.toFixed(4):v<100?v.toFixed(3):v.toFixed(2);}
 function gsTr(s){return s.replace(".",",");}
-function gsKay(k){try{localStorage.setItem("yab-gor-"+k,JSON.stringify({gar:GS.gar,ema:GS.ema,fib:GS.fib,bist:GS.bist,rsi:GS.rsi,s13:GS.s13,s26:GS.s26,s52:GS.s52,fr:GS.fr,n:GS.n,tamam:GS.tamam}));}catch(e){}}
-function gsAc(k,N){var s={gar:12,ema:1,fib:1,bist:0,rsi:0,s13:0,s26:0,s52:0,fr:null,n:null};try{var x=JSON.parse(localStorage.getItem("yab-gor-"+k)||"null");if(x&&typeof x==="object"){["gar","ema","fib","bist","rsi","s13","s26","s52"].forEach(function(a){if(x[a]!=null)s[a]=+x[a];});if(x.n>=8&&x.n<=N&&x.fr!=null){s.n=+x.n;s.fr=+x.fr;}}}catch(e){}return s;}
+function gsKay(k){try{localStorage.setItem("yab-gor-"+k,JSON.stringify({gar:GS.gar,ema:GS.ema,fib:GS.fib,bist:GS.bist,rsi:GS.rsi,rse:GS.rse,s5:GS.s5,s13:GS.s13,s26:GS.s26,s52:GS.s52,fr:GS.fr,n:GS.n,tamam:GS.tamam}));}catch(e){}}
+function gsAc(k,N){var s={gar:12,ema:1,fib:1,bist:0,rsi:0,rse:0,s5:0,s13:0,s26:0,s52:0,fr:null,n:null};try{var x=JSON.parse(localStorage.getItem("yab-gor-"+k)||"null");if(x&&typeof x==="object"){["gar","ema","fib","bist","rsi","rse","s5","s13","s26","s52"].forEach(function(a){if(x[a]!=null)s[a]=+x[a];});if(x.n>=8&&x.n<=N&&x.fr!=null){s.n=+x.n;s.fr=+x.fr;}}}catch(e){}return s;}
 function gsDonem(S,ay){var N=S.length;if(!ay)return[0,N];var son=S[N-1][0],Y_=+son.slice(0,4),M_=+son.slice(5,7)-ay,G_=+son.slice(8,10);while(M_<=0){M_+=12;Y_--;}
   var gm=new Date(Date.UTC(Y_,M_,0)).getUTCDate(),ls=Y_+"-"+("0"+M_).slice(-2)+"-"+("0"+Math.min(G_,gm)).slice(-2),bi=0;for(var q=0;q<N;q++){if(S[q][0]<=ls)bi=q;else break;}
   return[bi,N-bi];}
 function gsEma(v,n){var a=2/(n+1),o=[],m=0;for(var i=0;i<v.length;i++){if(i<n-1)o.push(null);else if(i===n-1){m=0;for(var j=0;j<n;j++)m+=v[j];m/=n;o.push(m);}else{m=v[i]*a+m*(1-a);o.push(m);}}return o;}
 function gsSma(v,n){var o=[],t=0;for(var i=0;i<v.length;i++){t+=v[i];if(i>=n)t-=v[i-n];o.push(i>=n-1?t/n:null);}return o;}
+function gsEmaN(a,n){var o=[],i0=-1,i;for(i=0;i<a.length;i++){if(a[i]!=null){i0=i;break;}}if(i0<0)return a.map(function(){return null;});var e=gsEma(a.slice(i0),n);for(i=0;i<i0;i++)o.push(null);return o.concat(e);}
 function gsRsi(v,n){var o=[],ag=0,al=0;for(var i=0;i<v.length;i++){if(i<n){o.push(null);if(i>0){var d=v[i]-v[i-1];ag+=d>0?d:0;al+=d<0?-d:0;}if(i===n){ag/=n;al/=n;o[i]=al===0?100:100-100/(1+ag/al);}continue;}
   var d2=v[i]-v[i-1];ag=(ag*(n-1)+(d2>0?d2:0))/n;al=(al*(n-1)+(d2<0?-d2:0))/n;o.push(al===0?100:100-100/(1+ag/al));}return o;}
 function grafikFon(f){
@@ -308,14 +309,14 @@ function grafikFon(f){
   if(!S||S.length<3)return bas+'<div class="alt" style="padding:20px 0;text-align:center">Bu fonun grafik verisi henüz yok.</div></div>';
   if(GSK!==f.k||!GS){GSK=f.k;GS=gsAc(f.k,S.length);}
   var ar=[[3,"3 ay"],[6,"6 ay"],[12,"1 yıl"],[36,"3 yıl"],[60,"5 yıl"],[0,"Tümü"]].map(function(a){return'<button class="gab" data-gar="'+a[0]+'">'+a[1]+'</button>';}).join("");
-  var tg=[["ema","EMA 13/39"],["fib","Fibonacci (1 yıl)"],["rsi","RSI"],["s13","SMA 13"],["s26","SMA 26"],["s52","SMA 52"],["bist","Nasdaq-100 ile kıyasla"]].map(function(a){return'<button class="gab" data-tg="'+a[0]+'">'+a[1]+'</button>';}).join("");
+  var tg=[["ema","EMA 13/39"],["fib","Fibonacci (1 yıl)"],["rsi","RSI 14"],["rse","RSI sinyal (EMA 9)"],["s5","SMA 5"],["s13","SMA 13"],["s26","SMA 26"],["s52","SMA 52"],["bist","Nasdaq-100 ile kıyasla"]].map(function(a){return'<button class="gab" data-tg="'+a[0]+'">'+a[1]+'</button>';}).join("");
   return bas+'<div class="gar" id="gsar">'+ar+'</div><div id="gsv" style="touch-action:pan-y;user-select:none;-webkit-user-select:none"></div><div class="gar" id="gstg" style="margin:6px 0 4px">'+tg+'</div><div class="alt" id="gslg"></div></div>';}
 function gsCiz(f){var S=SERI.fon[f.k],N=S.length,v=S.map(function(p){return p[1];}),o=document.getElementById("gsv");if(!o)return;
   if(GS.n==null||GS.fr==null){var d=gsDonem(S,GS.gar);GS.fr=d[0];GS.n=Math.max(8,Math.min(N,d[1]));}
   GS.n=Math.max(Math.min(8,N),Math.min(N,GS.n));GS.fr=Math.max(0,Math.min(N-GS.n,GS.fr));
   var fr=Math.round(GS.fr),n=GS.n,bit=Math.min(N,Math.ceil(fr+n)),bist=GS.bist,
       rs=GS.rsi&&!bist,ems=GS.ema&&!bist,fb=GS.fib&&!bist;
-  var W=380,H=rs?330:250,L=4,R=bist?48:50,T=8,B=18,RH=rs?62:0,hh=250-T-B,sag=0,e13=gsEma(v,13),e39=gsEma(v,39),SM=[[13,"s13","#fbbf24"],[26,"s26","#38bdf8"],[52,"s52","#f472b6"]].filter(function(a){return GS[a[1]]&&!bist;}).map(function(a){return{n:a[0],c:a[2],v:gsSma(v,a[0])};});
+  var W=380,H=rs?330:250,L=4,R=bist?48:50,T=8,B=18,RH=rs?62:0,hh=250-T-B,sag=0,e13=gsEma(v,13),e39=gsEma(v,39),SM=[[5,"s5","#a3e635"],[13,"s13","#fbbf24"],[26,"s26","#38bdf8"],[52,"s52","#f472b6"]].filter(function(a){return GS[a[1]]&&!bist;}).map(function(a){return{n:a[0],c:a[2],v:gsSma(v,a[0])};});
   var BS=SERI.bist||[],bs=[];if(bist){var bj=0;S.forEach(function(p){while(bj<BS.length-1&&BS[bj+1][0]<=p[0])bj++;bs.push(BS.length&&BS[bj][0]<=p[0]?BS[bj][1]:null);});}
   var ser=[],i;
   if(bist){var f0=v[fr],b0=null;for(i=fr;i<bit;i++)if(bs[i]!=null){b0=bs[i];break;}
@@ -351,13 +352,14 @@ function gsCiz(f){var S=SERI.fon[f.k],N=S.length,v=S.map(function(p){return p[1]
     [30,70].forEach(function(l){g+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+ry(l).toFixed(1)+'" y2="'+ry(l).toFixed(1)+'" stroke="#3c3f58" stroke-dasharray="3 3"/><text x="'+(W-R+3)+'" y="'+(ry(l)+3).toFixed(1)+'" font-size="9.5" fill="#9a9ab0">'+l+'</text>';});
     var rp=[];for(i=fr;i<bit;i++)if(rv[i]!=null)rp.push((L+(i-fr)/Math.max(1,n-1)*(W-R-L)).toFixed(1)+","+ry(rv[i]).toFixed(1));
     g+='<polyline fill="none" stroke="#f5b942" stroke-width="1.5" points="'+rp.join(" ")+'"/>';
+    if(GS.rse){var re9=gsEmaN(rv,9),rq=[];for(i=fr;i<bit;i++)if(re9[i]!=null)rq.push((L+(i-fr)/Math.max(1,n-1)*(W-R-L)).toFixed(1)+","+ry(re9[i]).toFixed(1));g+='<polyline fill="none" stroke="#60a5fa" stroke-width="1.2" stroke-dasharray="4 3" points="'+rq.join(" ")+'"/>';}
     var rl=rv[N-1];if(rl!=null)g+='<text x="'+(W-R+3)+'" y="'+(y0+10)+'" font-size="10" font-weight="bold" fill="#fcd34d">'+rl.toFixed(0)+'</text>';}
   o.innerHTML=g+'</svg>';
   Array.prototype.forEach.call(document.querySelectorAll("#gsar .gab"),function(b){var a=+b.getAttribute("data-gar"),d=gsDonem(S,a);b.className="gab"+(a===GS.gar&&Math.abs(GS.n-Math.max(8,Math.min(N,d[1])))<2&&Math.abs(GS.fr-d[0])<2?" on":"");});
   Array.prototype.forEach.call(document.querySelectorAll("#gstg .gab"),function(b){var a=b.getAttribute("data-tg");b.className="gab"+(GS[a]&&(a==="bist"||!GS.bist)?" on":"");});
   var lg=document.getElementById("gslg");
   lg.innerHTML=bist?'<span style="color:#a594ff">━ '+esc(f.k)+'</span> &nbsp; <span style="color:#f0957a">━ Nasdaq-100</span> &nbsp; · görünen aralığın başı = 100 (kıyas açıkken EMA, Fibonacci ve RSI gizlenir)':
-    'Haftalık fon fiyatı'+(ems?' · <span style="color:#26a69a">━ EMA 13</span> <span style="color:#ef5350">━ EMA 39</span>':'')+SM.map(function(m){return' <span style="color:'+m.c+'">━ SMA '+m.n+'</span>';}).join("")+(fb?' · Fibonacci: son 52 haftanın en yükseği ve en düşüğü':'')+(rs?' · RSI 14 hafta':'')+'<br>Sürükle: kaydır · iki parmak: yakınlaştır';}
+    'Haftalık fon fiyatı'+(ems?' · <span style="color:#26a69a">━ EMA 13</span> <span style="color:#ef5350">━ EMA 39</span>':'')+SM.map(function(m){return' <span style="color:'+m.c+'">━ SMA '+m.n+'</span>';}).join("")+(fb?' · Fibonacci: son 52 haftanın en yükseği ve en düşüğü':'')+(rs?' · RSI 14 hafta (EMA yumuşatmalı)'+(GS.rse?' · <span style="color:#60a5fa">┅ RSI sinyal (EMA 9)</span>':''):'')+'<br>Sürükle: kaydır · iki parmak: yakınlaştır';}
 function gsBagla(f){var o=document.getElementById("gsv");if(!o||!SERI||!SERI.fon[f.k])return;var S=SERI.fon[f.k],N=S.length;
   Array.prototype.forEach.call(document.querySelectorAll("#gsar .gab"),function(b){b.onclick=function(){GS.gar=+b.getAttribute("data-gar");var d=gsDonem(S,GS.gar);GS.fr=d[0];GS.n=Math.max(8,Math.min(N,d[1]));gsKay(f.k);gsCiz(f);};});
   Array.prototype.forEach.call(document.querySelectorAll("#gstg .gab"),function(b){b.onclick=function(){var a=b.getAttribute("data-tg");GS[a]=GS[a]?0:1;gsKay(f.k);gsCiz(f);};});
@@ -412,6 +414,13 @@ function analizHtml(f,B){var g=f.g||{},h='<div class="fa"><div class="fah">📊 
       +'<div class="far"><span>Fiyat / 40 haftalık ortalama</span><b>'+String(son).replace(".",",")+' / '+m.toFixed(4).replace(".",",")+' <i class="'+(fark>=0?'up':'dn')+'">('+(fark>=0?'+':'−')+Math.abs(fark).toFixed(1).replace(".",",")+'%)</i></b></div>'
       +'<div class="far"><span>Zirveden uzaklık</span><b class="'+(son>=pk?'up':'dn')+'">'+(son>=pk?'zirvede':'−%'+((1-son/pk)*100).toFixed(1).replace(".",","))+'</b></div>'
       +'<div class="fan">Bu bölüm fonun nerede durduğunu gösterir; yükselecek ya da düşecek demez. Karar senin.</div></div>';}
+  /* 5) teknik durum: RSI 14 (EMA yumusatmali / Wilder) ve SMA 5-13-26-52, haftalik fiyattan */
+  if(fv.length>=15){var rvx=gsRsi(fv,14),rlx=rvx[rvx.length-1],tb='';
+    if(rlx!=null){var bol=rlx<30?"düşük bölge":rlx>70?"yüksek bölge":"orta bölge",rsg=gsEmaN(rvx,9),rsl=rsg[rsg.length-1];
+      tb+='<div class="far"><span>RSI 14 (haftalık)</span><b>'+rlx.toFixed(0)+' <i style="font-style:normal;opacity:.75">· '+bol+'</i></b></div>'+(rsl!=null?'<div class="far"><span>RSI sinyal (EMA 9)</span><b>'+rsl.toFixed(0)+' <i style="font-style:normal;opacity:.75">· RSI '+(rlx>=rsl?'üstünde':'altında')+'</i></b></div>':'');}
+    [5,13,26,52].forEach(function(nn){if(fv.length<nn){tb+='<div class="far"><span>SMA '+nn+'</span><b>—</b></div>';return;}var mm=0;for(var q=fv.length-nn;q<fv.length;q++)mm+=fv[q];mm/=nn;var pf=(fv[fv.length-1]/mm-1)*100;
+      tb+='<div class="far"><span>SMA '+nn+' · '+mm.toFixed(4).replace(".",",")+'</span><b class="'+(pf>=0?'up':'dn')+'">'+(pf>=0?'+':'−')+'%'+Math.abs(pf).toFixed(1).replace(".",",")+' <i style="font-style:normal;opacity:.75">'+(pf>=0?'üstünde ▲':'altında ▼')+'</i></b></div>';});
+    h+='<div class="fak k4"><div class="fat">📉 Teknik durum <small>haftalık fiyattan</small></div>'+tb+'<div class="fan">RSI 14, EMA yumuşatmalı (Wilder) hesaplanır. 30 altı / 70 üstü etiketleri sadece bilgidir. Geçmişi yetmeyen ortalama — yazar. Al/sat yorumu yazılmaz.</div></div>';}
   h+=(fv.length>=70?kademeFon(fv):'');
   return h+'</div>';}
 /* Kademeli toplama (fon penceresi): fiyat son 52 haftanin en alt %21'lik bolgesindeyse, bu fon gecmiste oraya inince
