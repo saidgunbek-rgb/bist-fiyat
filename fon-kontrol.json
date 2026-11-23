@@ -16,14 +16,11 @@
    "ornek alanlar: ['fund_code', 'name', 'fund_type', 'return_1y']",
    "Toplam aday fon: 2373",
    "Enflasyon: {'y': 29.77, 't': '2026-11-23', 'k': 'borsapy:latest'}",
-   "BIST100 kaynaklar: {'yahoo': {'a1': 1.12, 'a3': -22.55, 'a6': -18.59, 'y1': 2.92, 'y3': 42.33, 'y5': 529.93, '_risk': {'mdd': -28.9, 'vol': 25.37}, 'd1': 0.99, '_d1t': '2026-11-23'}, 'borsapy': {'a1': 1.16, 'a3': -22.52, 'a6': -18.56, 'y1': 2.96, 'y3': 42.38, 'y5': 530.19, '_risk': {'mdd': -28.9, 'v",
-   "BIST100 (teyitli): {'a1': 1.16, 'a3': -22.52, 'a6': -18.56, 'y1': 2.96, 'y3': 42.38, 'y5': 530.19, 'd1': 1.03, 'mdd': -28.9, 'vol': 25.37, 'reel_y1': -20.66}",
+   "BIST100 kaynaklar: {'yahoo': {'a1': 1.41, 'a3': -22.33, 'a6': -18.35, 'y1': 3.22, 'y3': 42.74, 'y5': 531.75, '_risk': {'mdd': -28.9, 'vol': 25.31}, 'd1': 1.28, '_d1t': '2026-11-23'}, 'borsapy': {'a1': 1.41, 'a3': -22.33, 'a6': -18.35, 'y1': 3.22, 'y3': 42.74, 'y5': 531.76, '_risk': {'mdd': -28.9, 'v",
+   "BIST100 (teyitli): {'a1': 1.41, 'a3': -22.33, 'a6': -18.35, 'y1': 3.22, 'y3': 42.74, 'y5': 531.76, 'd1': 1.28, 'mdd': -28.9, 'vol': 25.31, 'reel_y1': -20.46}",
    "Sorgulanacak fon: 135",
-   "Verisi alinamayan 5 fon yeniden denenecek (tur 1)",
-   "Verisi alinamayan 5 fon yeniden denenecek (tur 2)",
-   "Verisi alinamayan 1 fon yeniden denenecek (tur 3)",
-   "Listeye giren: 66 | Atlanan: {'hisse fonu değil': 1853, 'banka fonu değil': 385, 'yabancı hisse fonu': 9, 'serbest fon': 49, 'getirisi teyit edilemeyen': 4, 'işleme kapalı (fiyatı güncel değil)': 7}",
-   "Grafik verisi: 66 fon, BIST100 1259 gun"
+   "Listeye giren: 72 | Atlanan: {'hisse fonu değil': 1853, 'banka fonu değil': 385, 'yabancı hisse fonu': 9, 'serbest fon': 49, 'getirisi teyit edilemeyen': 4, 'işleme kapalı (fiyatı güncel değil)': 1}",
+   "Grafik verisi: 72 fon, BIST100 1259 gun"
   ],
   "banka_disi_kurucular": {
    "ATA": 5,
@@ -2403,13 +2400,7 @@
    "MDL"
   ],
   "işleme kapalı (fiyatı güncel değil)": [
-   "KHO",
-   "YAS",
-   "YEF",
-   "YHZ",
-   "YLY",
-   "ZHH",
-   "ZJV"
+   "KHO"
   ]
  }
 }

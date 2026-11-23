@@ -1,17 +1,17 @@
 {
- "updatedAt": "2026-11-23T07:55:17Z",
+ "updatedAt": "2026-11-23T08:00:39Z",
  "updated": "2026-11-23",
  "bist": {
-  "a1": 1.16,
-  "a3": -22.52,
-  "a6": -18.56,
-  "y1": 2.96,
-  "y3": 42.38,
-  "y5": 530.19,
-  "d1": 1.03,
+  "a1": 1.41,
+  "a3": -22.33,
+  "a6": -18.35,
+  "y1": 3.22,
+  "y3": 42.74,
+  "y5": 531.76,
+  "d1": 1.28,
   "mdd": -28.9,
-  "vol": 25.37,
-  "reel_y1": -20.66
+  "vol": 25.31,
+  "reel_y1": -20.46
  },
  "enf": {
   "y": 29.77,
@@ -115,7 +115,7 @@
     3,
     4
    ],
-   "puan": 82,
+   "puan": 81,
    "her_yonu": false,
    "kosul": 3,
    "gecmis": {
@@ -166,7 +166,7 @@
     3,
     4
    ],
-   "puan": 90,
+   "puan": 89,
    "her_yonu": false,
    "kosul": 3,
    "gecmis": {
@@ -174,6 +174,112 @@
     "toplam": 5,
     "seri": 5,
     "her_yonu_gun": 2
+   }
+  },
+  {
+   "k": "YHZ",
+   "ad": "YAPI KREDİ PORTFÖY BIST TEKNOLOJİ AĞIRLIK SINIRLAMALI ENDEKSİ HİSSE SENEDİ FONU ( HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "Yapı Kredi",
+   "grup": "Özel",
+   "buyukluk": 856145708.95,
+   "yatirimci": 14526.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 6.884051,
+   "d1_tarih": "2026-11-23",
+   "rk": {
+    "mdd": -33.12,
+    "vol": 28.0,
+    "gr": 0.76
+   },
+   "g": {
+    "a1": -5.93,
+    "a3": -31.77,
+    "a6": -15.98,
+    "y1": 21.41,
+    "y3": 99.87,
+    "y5": 666.06,
+    "reel_y1": -6.44,
+    "w1": -6.26,
+    "ytd": 18.18,
+    "d1": -2.48
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-23",
+   "istikrar": [
+    2,
+    4
+   ],
+   "puan": 43,
+   "her_yonu": false,
+   "kosul": 2,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 5,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "ZHH",
+   "ad": "ZİRAAT PORTFÖY HALKBANK SÜRDÜRÜLEBİLİRLİK 30 ŞİRKETLERİ HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "Ziraat Bankası",
+   "grup": "Kamu",
+   "buyukluk": 81560709.68,
+   "yatirimci": 1008.0,
+   "risk": 5.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 1.345399,
+   "d1_tarih": "2026-11-23",
+   "rk": {
+    "mdd": -14.93,
+    "vol": 23.97,
+    "gr": 0.84
+   },
+   "g": {
+    "a1": 0.51,
+    "a3": -7.8,
+    "a6": 1.87,
+    "y1": 20.08,
+    "reel_y1": -7.47,
+    "w1": -4.94,
+    "ytd": 14.33,
+    "d1": -1.68
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1"
+   ],
+   "celiski": [],
+   "gun": 575,
+   "son_tarih": "2026-11-23",
+   "istikrar": [
+    3,
+    4
+   ],
+   "puan": 94,
+   "her_yonu": false,
+   "kosul": 3,
+   "gecmis": {
+    "kac": 4,
+    "toplam": 5,
+    "seri": 2,
+    "her_yonu_gun": 1
    }
   },
   {
@@ -219,7 +325,7 @@
     3,
     4
    ],
-   "puan": 93,
+   "puan": 92,
    "her_yonu": false,
    "kosul": 3,
    "gecmis": {
@@ -270,7 +376,7 @@
     4,
     4
    ],
-   "puan": 75,
+   "puan": 74,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
@@ -323,7 +429,7 @@
     3,
     4
    ],
-   "puan": 82,
+   "puan": 81,
    "her_yonu": false,
    "kosul": 3,
    "gecmis": {
@@ -373,12 +479,12 @@
    "gun": 1190,
    "son_tarih": "2026-11-23",
    "istikrar": [
-    4,
+    3,
     4
    ],
-   "puan": 89,
+   "puan": 88,
    "her_yonu": false,
-   "kosul": 4,
+   "kosul": 3,
    "gecmis": {
     "kac": 5,
     "toplam": 5,
@@ -451,7 +557,6 @@
    "ucret": null,
    "kurucu": "",
    "fiyat": 1.136485,
-   "gecmis_hata": "RemoteProtocolError('Server disconnected without sending a response.')",
    "d1_tarih": "2026-11-23",
    "rk": {
     "mdd": -21.2,
@@ -481,7 +586,7 @@
     3,
     4
    ],
-   "puan": 63,
+   "puan": 62,
    "her_yonu": false,
    "kosul": 3,
    "gecmis": {
@@ -547,6 +652,61 @@
    }
   },
   {
+   "k": "YEF",
+   "ad": "YAPI KREDİ PORTFÖY BIST 30 ENDEKSİ HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "Yapı Kredi",
+   "grup": "Özel",
+   "buyukluk": 1591421672.83,
+   "yatirimci": 14104.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 0.82451,
+   "d1_tarih": "2026-11-23",
+   "rk": {
+    "mdd": -21.99,
+    "vol": 25.89,
+    "gr": 0.72
+   },
+   "g": {
+    "a1": -0.88,
+    "a3": -15.91,
+    "a6": -5.74,
+    "y1": 18.63,
+    "y3": 85.64,
+    "y5": 729.39,
+    "reel_y1": -8.58,
+    "w1": -5.48,
+    "ytd": 15.29,
+    "d1": -2.23
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-23",
+   "istikrar": [
+    3,
+    4
+   ],
+   "puan": 67,
+   "her_yonu": false,
+   "kosul": 3,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 5,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
    "k": "YLE",
    "ad": "YAPI KREDİ PORTFÖY BIST SÜRDÜRÜLEBİLİRLİK ENDEKSİ HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)",
    "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
@@ -558,7 +718,6 @@
    "ucret": null,
    "kurucu": "",
    "fiyat": 7.889104,
-   "gecmis_hata": "RemoteProtocolError('Server disconnected without sending a response.')",
    "d1_tarih": "2026-11-23",
    "rk": {
     "mdd": -16.72,
@@ -590,7 +749,7 @@
     3,
     4
    ],
-   "puan": 85,
+   "puan": 84,
    "her_yonu": false,
    "kosul": 3,
    "gecmis": {
@@ -645,13 +804,13 @@
     3,
     4
    ],
-   "puan": 75,
+   "puan": 74,
    "her_yonu": false,
    "kosul": 3,
    "gecmis": {
-    "kac": 5,
+    "kac": 4,
     "toplam": 5,
-    "seri": 5,
+    "seri": 0,
     "her_yonu_gun": 0
    }
   },
@@ -700,7 +859,7 @@
     3,
     4
    ],
-   "puan": 65,
+   "puan": 64,
    "her_yonu": false,
    "kosul": 3,
    "gecmis": {
@@ -755,7 +914,7 @@
     3,
     4
    ],
-   "puan": 69,
+   "puan": 68,
    "her_yonu": false,
    "kosul": 3,
    "gecmis": {
@@ -861,7 +1020,7 @@
     4,
     4
    ],
-   "puan": 69,
+   "puan": 68,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
@@ -916,7 +1075,7 @@
     3,
     4
    ],
-   "puan": 66,
+   "puan": 65,
    "her_yonu": false,
    "kosul": 3,
    "gecmis": {
@@ -993,7 +1152,6 @@
    "ucret": null,
    "kurucu": "",
    "fiyat": 1.448382,
-   "gecmis_hata": "RemoteProtocolError('Server disconnected without sending a response.')",
    "d1_tarih": "2026-11-23",
    "rk": {
     "mdd": -17.71,
@@ -1020,12 +1178,12 @@
    "gun": 399,
    "son_tarih": "2026-11-23",
    "istikrar": [
-    4,
+    3,
     4
    ],
-   "puan": 84,
+   "puan": 83,
    "her_yonu": false,
-   "kosul": 4,
+   "kosul": 3,
    "gecmis": {
     "kac": 2,
     "toplam": 5,
@@ -1078,7 +1236,7 @@
     3,
     4
    ],
-   "puan": 64,
+   "puan": 63,
    "her_yonu": false,
    "kosul": 3,
    "gecmis": {
@@ -1100,7 +1258,6 @@
    "ucret": null,
    "kurucu": "",
    "fiyat": 2.117383,
-   "gecmis_hata": "RemoteProtocolError('Server disconnected without sending a response.')",
    "d1_tarih": "2026-11-23",
    "rk": {
     "mdd": -22.84,
@@ -1238,7 +1395,7 @@
     3,
     4
    ],
-   "puan": 48,
+   "puan": 47,
    "her_yonu": false,
    "kosul": 3,
    "gecmis": {
@@ -1260,7 +1417,6 @@
    "ucret": null,
    "kurucu": "",
    "fiyat": 1.502197,
-   "gecmis_hata": "RemoteProtocolError('Server disconnected without sending a response.')",
    "d1_tarih": "2026-11-23",
    "rk": {
     "mdd": -20.92,
@@ -1290,7 +1446,7 @@
     3,
     4
    ],
-   "puan": 69,
+   "puan": 68,
    "her_yonu": false,
    "kosul": 3,
    "gecmis": {
@@ -1312,7 +1468,6 @@
    "ucret": null,
    "kurucu": "",
    "fiyat": 0.411877,
-   "gecmis_hata": "RemoteProtocolError('Server disconnected without sending a response.')",
    "d1_tarih": "2026-11-23",
    "rk": {
     "mdd": -18.29,
@@ -1346,7 +1501,7 @@
     3,
     4
    ],
-   "puan": 64,
+   "puan": 63,
    "her_yonu": false,
    "kosul": 3,
    "gecmis": {
@@ -1456,7 +1611,7 @@
     3,
     4
    ],
-   "puan": 62,
+   "puan": 61,
    "her_yonu": false,
    "kosul": 3,
    "gecmis": {
@@ -1506,12 +1661,12 @@
    "gun": 1196,
    "son_tarih": "2026-11-23",
    "istikrar": [
-    4,
+    3,
     4
    ],
    "puan": 47,
    "her_yonu": false,
-   "kosul": 3,
+   "kosul": 2,
    "gecmis": {
     "kac": 0,
     "toplam": 5,
@@ -1560,7 +1715,7 @@
     3,
     4
    ],
-   "puan": 55,
+   "puan": 54,
    "her_yonu": false,
    "kosul": 3,
    "gecmis": {
@@ -1688,7 +1843,6 @@
    "ucret": null,
    "kurucu": "",
    "fiyat": 3.224672,
-   "gecmis_hata": "RemoteProtocolError('Server disconnected without sending a response.')",
    "d1_tarih": "2026-11-23",
    "rk": {
     "mdd": -21.99,
@@ -1720,7 +1874,7 @@
     3,
     4
    ],
-   "puan": 53,
+   "puan": 52,
    "her_yonu": false,
    "kosul": 2,
    "gecmis": {
@@ -1742,7 +1896,6 @@
    "ucret": null,
    "kurucu": "",
    "fiyat": 1.097867,
-   "gecmis_hata": "RemoteProtocolError('Server disconnected without sending a response.')",
    "d1_tarih": "2026-11-23",
    "rk": {
     "mdd": -24.63,
@@ -1823,7 +1976,7 @@
     3,
     4
    ],
-   "puan": 73,
+   "puan": 72,
    "her_yonu": false,
    "kosul": 3,
    "gecmis": {
@@ -1845,7 +1998,6 @@
    "ucret": null,
    "kurucu": "",
    "fiyat": 1.199767,
-   "gecmis_hata": "RemoteProtocolError('Server disconnected without sending a response.')",
    "d1_tarih": "2026-11-23",
    "rk": {
     "mdd": -24.72,
@@ -1930,7 +2082,7 @@
     3,
     4
    ],
-   "puan": 41,
+   "puan": 42,
    "her_yonu": false,
    "kosul": 3,
    "gecmis": {
@@ -1985,7 +2137,7 @@
     3,
     4
    ],
-   "puan": 41,
+   "puan": 42,
    "her_yonu": false,
    "kosul": 3,
    "gecmis": {
@@ -2038,7 +2190,7 @@
     4,
     4
    ],
-   "puan": 33,
+   "puan": 34,
    "her_yonu": false,
    "kosul": 2,
    "gecmis": {
@@ -2060,7 +2212,6 @@
    "ucret": null,
    "kurucu": "",
    "fiyat": 0.606807,
-   "gecmis_hata": "RemoteProtocolError('Server disconnected without sending a response.')",
    "d1_tarih": "2026-11-23",
    "rk": {
     "mdd": -28.26,
@@ -2096,7 +2247,7 @@
    ],
    "puan": 68,
    "her_yonu": false,
-   "kosul": 4,
+   "kosul": 3,
    "gecmis": {
     "kac": 0,
     "toplam": 5,
@@ -2116,7 +2267,6 @@
    "ucret": null,
    "kurucu": "",
    "fiyat": 0.110625,
-   "gecmis_hata": "RemoteProtocolError('Server disconnected without sending a response.')",
    "d1_tarih": "2026-11-23",
    "rk": {
     "mdd": -23.09,
@@ -2223,7 +2373,6 @@
    "ucret": null,
    "kurucu": "",
    "fiyat": 5.962165,
-   "gecmis_hata": "RemoteProtocolError('Server disconnected without sending a response.')",
    "d1_tarih": "2026-11-23",
    "rk": {
     "mdd": -39.58,
@@ -2236,6 +2385,7 @@
     "a6": -25.61,
     "y1": 1.55,
     "y3": 60.98,
+    "y5": 506.42,
     "reel_y1": -21.75,
     "w1": -7.07,
     "ytd": -0.56,
@@ -2246,16 +2396,17 @@
     "a3",
     "a6",
     "y1",
-    "y3"
+    "y3",
+    "y5"
    ],
    "celiski": [],
-   "gun": 751,
+   "gun": 1258,
    "son_tarih": "2026-11-23",
    "istikrar": [
     0,
     4
    ],
-   "puan": 16,
+   "puan": 17,
    "her_yonu": false,
    "kosul": 1,
    "gecmis": {
@@ -2308,7 +2459,7 @@
     2,
     4
    ],
-   "puan": 51,
+   "puan": 52,
    "her_yonu": false,
    "kosul": 2,
    "gecmis": {
@@ -2414,7 +2565,7 @@
     2,
     4
    ],
-   "puan": 43,
+   "puan": 44,
    "her_yonu": false,
    "kosul": 2,
    "gecmis": {
@@ -2436,7 +2587,6 @@
    "ucret": null,
    "kurucu": "",
    "fiyat": 1.097638,
-   "gecmis_hata": "RemoteProtocolError('Server disconnected without sending a response.')",
    "d1_tarih": "2026-11-23",
    "rk": {
     "mdd": -24.58,
@@ -2466,9 +2616,64 @@
     2,
     4
    ],
-   "puan": 43,
+   "puan": 44,
    "her_yonu": false,
    "kosul": 2,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 5,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "YAS",
+   "ad": "YAPI KREDİ PORTFÖY KOÇ HOLDİNG İŞTİRAK VE HİSSE SENEDİ FONU(HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "Yapı Kredi",
+   "grup": "Özel",
+   "buyukluk": 5028023458.68,
+   "yatirimci": 56223.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 13.166802,
+   "d1_tarih": "2026-11-23",
+   "rk": {
+    "mdd": -18.3,
+    "vol": 20.4,
+    "gr": -0.06
+   },
+   "g": {
+    "a1": -1.33,
+    "a3": -12.26,
+    "a6": -4.48,
+    "y1": -1.26,
+    "y3": 29.98,
+    "y5": 489.18,
+    "reel_y1": -23.91,
+    "w1": -5.32,
+    "ytd": -0.81,
+    "d1": -2.17
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-23",
+   "istikrar": [
+    2,
+    4
+   ],
+   "puan": 49,
+   "her_yonu": false,
+   "kosul": 1,
    "gecmis": {
     "kac": 0,
     "toplam": 5,
@@ -2517,9 +2722,62 @@
     2,
     4
    ],
-   "puan": 34,
+   "puan": 35,
    "her_yonu": false,
    "kosul": 2,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 5,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "YLY",
+   "ad": "YAPI KREDİ PORTFÖY KAR PAYI ÖDEYEN HİSSE SENEDİ (TL) FON (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "Yapı Kredi",
+   "grup": "Özel",
+   "buyukluk": 29608505.6,
+   "yatirimci": 874.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 2.013202,
+   "d1_tarih": "2026-11-23",
+   "rk": {
+    "mdd": -21.41,
+    "vol": 21.3,
+    "gr": -0.12
+   },
+   "g": {
+    "a1": -1.7,
+    "a3": -11.47,
+    "a6": -11.49,
+    "y1": -2.57,
+    "y3": 24.04,
+    "reel_y1": -24.92,
+    "w1": -5.22,
+    "ytd": -2.21,
+    "d1": -1.89
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 943,
+   "son_tarih": "2026-11-23",
+   "istikrar": [
+    2,
+    4
+   ],
+   "puan": 38,
+   "her_yonu": false,
+   "kosul": 1,
    "gecmis": {
     "kac": 0,
     "toplam": 5,
@@ -2539,7 +2797,6 @@
    "ucret": null,
    "kurucu": "",
    "fiyat": 0.953309,
-   "gecmis_hata": "RemoteProtocolError('Server disconnected without sending a response.')",
    "d1_tarih": "2026-11-23",
    "rk": {
     "mdd": -47.78,
@@ -2626,7 +2883,7 @@
     0,
     4
    ],
-   "puan": 20,
+   "puan": 21,
    "her_yonu": false,
    "kosul": 2,
    "gecmis": {
@@ -2681,7 +2938,7 @@
     2,
     4
    ],
-   "puan": 21,
+   "puan": 22,
    "her_yonu": false,
    "kosul": 1,
    "gecmis": {
@@ -2734,7 +2991,7 @@
     1,
     4
    ],
-   "puan": 18,
+   "puan": 19,
    "her_yonu": false,
    "kosul": 1,
    "gecmis": {
@@ -2800,6 +3057,61 @@
    }
   },
   {
+   "k": "ZJV",
+   "ad": "ZİRAAT PORTFÖY BIST 30 DIŞI YILDIZ PAZAR ŞİRKETLERİ HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "Ziraat Bankası",
+   "grup": "Kamu",
+   "buyukluk": 543857922.81,
+   "yatirimci": 1229.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 8.734723,
+   "d1_tarih": "2026-11-23",
+   "rk": {
+    "mdd": -24.65,
+    "vol": 24.78,
+    "gr": -0.2
+   },
+   "g": {
+    "a1": -2.88,
+    "a3": -18.66,
+    "a6": -13.49,
+    "y1": -4.92,
+    "y3": 45.79,
+    "y5": 660.78,
+    "reel_y1": -26.73,
+    "w1": -5.71,
+    "ytd": -6.0,
+    "d1": -1.73
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-23",
+   "istikrar": [
+    2,
+    4
+   ],
+   "puan": 24,
+   "her_yonu": false,
+   "kosul": 2,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 5,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
    "k": "NST",
    "ad": "İŞ PORTFÖY EMLAK SEKTÖRÜ HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)",
    "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
@@ -2811,7 +3123,6 @@
    "ucret": null,
    "kurucu": "",
    "fiyat": 0.976742,
-   "gecmis_hata": "RemoteProtocolError('Server disconnected without sending a response.')",
    "d1_tarih": "2026-11-23",
    "rk": {
     "mdd": -26.33,
@@ -3049,7 +3360,7 @@
     0,
     4
    ],
-   "puan": 9,
+   "puan": 10,
    "her_yonu": false,
    "kosul": 0,
    "gecmis": {
@@ -3154,7 +3465,7 @@
    "gun": 1258,
    "son_tarih": "2026-11-23",
    "istikrar": [
-    2,
+    1,
     4
    ],
    "puan": 17,
@@ -3179,7 +3490,6 @@
    "ucret": null,
    "kurucu": "",
    "fiyat": 9.231965,
-   "gecmis_hata": "RemoteProtocolError('Server disconnected without sending a response.')",
    "d1_tarih": "2026-11-23",
    "rk": {
     "mdd": -31.45,
@@ -3213,7 +3523,7 @@
     0,
     4
    ],
-   "puan": 7,
+   "puan": 8,
    "her_yonu": false,
    "kosul": 1,
    "gecmis": {
@@ -3294,7 +3604,7 @@
    "gun": 67,
    "son_tarih": "2026-11-23",
    "istikrar": [
-    2,
+    1,
     2
    ],
    "puan": null,
@@ -3341,7 +3651,7 @@
    "gun": 149,
    "son_tarih": "2026-11-23",
    "istikrar": [
-    1,
+    0,
     3
    ],
    "puan": null,
@@ -3366,7 +3676,6 @@
    "ucret": null,
    "kurucu": "",
    "fiyat": 0.783999,
-   "gecmis_hata": "RemoteProtocolError('Server disconnected without sending a response.')",
    "d1_tarih": "2026-11-23",
    "rk": null,
    "g": {
@@ -3484,6 +3793,6 @@
   "yabancı hisse fonu": 9,
   "serbest fon": 49,
   "getirisi teyit edilemeyen": 4,
-  "işleme kapalı (fiyatı güncel değil)": 7
+  "işleme kapalı (fiyatı güncel değil)": 1
  }
 }
