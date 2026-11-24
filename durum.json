@@ -1,7 +1,7 @@
 {
  "bist": {
-  "b": 11104.38,
-  "d": "2026-11-23",
+  "b": null,
+  "d": "2026-11-24",
   "gunler": {
    "2026-11-10": true,
    "2026-11-11": true,
@@ -14,16 +14,17 @@
    "2026-11-20": true,
    "2026-11-23": true
   },
-  "kaynaklar": [
-   "yahoo",
-   "borsapy"
-  ],
-  "teyit": true
+  "kaynaklar": [],
+  "teyit": false
  },
  "deneme": {
   "fiyat|2026-11-23": {
    "n": 2,
    "son": "2026-11-24T00:34"
+  },
+  "fiyat|2026-11-24": {
+   "n": 1,
+   "son": "2026-11-24T18:46"
   },
   "fon|2026-11-23": {
    "n": 1,
@@ -49,6 +50,10 @@
    "n": 1,
    "son": "2026-11-24T17:04"
   },
+  "kap|2026-11-24 18": {
+   "n": 0,
+   "son": null
+  },
   "karne|2026-11-23": {
    "n": 1,
    "son": "2026-11-23T19:06"
@@ -59,48 +64,48 @@
   "t": "2026-11-24",
   "y": 29.77
  },
- "islem_gunu": "2026-11-23",
+ "islem_gunu": "2026-11-24",
  "kaynaklar": {
   "fiyat": {
-   "deneme": 2,
-   "durum": "ok",
+   "deneme": 1,
+   "durum": "deneniyor",
    "maks": 4,
-   "not": "",
+   "not": "Teyit edilemeyen: THYAO",
    "saat": "2026-11-23T21:34:46Z",
-   "veri": "2026-11-23"
+   "veri": "2026-11-24"
   },
   "fon": {
-   "deneme": 1,
-   "durum": "ok",
+   "deneme": 0,
+   "durum": "bekliyor",
    "maks": 4,
-   "not": "",
+   "not": "Bugünün fon taraması yok",
    "saat": "2026-11-23T18:24:58Z",
    "veri": "2026-11-23"
   },
   "kap": {
-   "deneme": 1,
+   "deneme": 0,
    "durum": "deneniyor",
    "maks": 4,
    "not": "Son KAP taraması gecikti",
-   "saat": "2026-11-24 15:16",
-   "veri": "2026-11-24 15:16"
+   "saat": "2026-11-24 17:29",
+   "veri": "2026-11-24 17:29"
   },
   "karne": {
-   "deneme": 1,
-   "durum": "ok",
+   "deneme": 0,
+   "durum": "bekliyor",
    "maks": 4,
-   "not": "",
+   "not": "bugünün hesabı yok",
    "saat": "2026-11-24T06:09:08Z",
-   "veri": "2026-11-23"
+   "veri": "2026-11-24"
   },
   "kutuphane": {
    "deneme": 0,
-   "durum": "ok",
+   "durum": "bekliyor",
    "maks": 4,
-   "not": "",
+   "not": "bugünün verisi yok",
    "saat": "2026-11-23T18:59:16Z",
    "veri": "2026-11-23"
   }
  },
- "kontrolAt": "2026-11-24T14:04:22Z"
+ "kontrolAt": "2026-11-24T15:46:15Z"
 }
