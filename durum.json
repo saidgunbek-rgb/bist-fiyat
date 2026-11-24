@@ -1,9 +1,8 @@
 {
  "bist": {
-  "b": null,
+  "b": 10965.93,
   "d": "2026-11-24",
   "gunler": {
-   "2026-11-10": true,
    "2026-11-11": true,
    "2026-11-12": true,
    "2026-11-13": true,
@@ -12,10 +11,14 @@
    "2026-11-18": true,
    "2026-11-19": true,
    "2026-11-20": true,
-   "2026-11-23": true
+   "2026-11-23": true,
+   "2026-11-24": true
   },
-  "kaynaklar": [],
-  "teyit": false
+  "kaynaklar": [
+   "yahoo",
+   "borsapy"
+  ],
+  "teyit": true
  },
  "deneme": {
   "fiyat|2026-11-23": {
@@ -57,6 +60,10 @@
   "karne|2026-11-23": {
    "n": 1,
    "son": "2026-11-23T19:06"
+  },
+  "karne|2026-11-24": {
+   "n": 1,
+   "son": "2026-11-24T19:11"
   }
  },
  "enf": {
@@ -68,10 +75,10 @@
  "kaynaklar": {
   "fiyat": {
    "deneme": 1,
-   "durum": "deneniyor",
+   "durum": "ok",
    "maks": 4,
-   "not": "Teyit edilemeyen: THYAO",
-   "saat": "2026-11-23T21:34:46Z",
+   "not": "",
+   "saat": "2026-11-24T15:46:46Z",
    "veri": "2026-11-24"
   },
   "fon": {
@@ -91,10 +98,10 @@
    "veri": "2026-11-24 17:29"
   },
   "karne": {
-   "deneme": 0,
-   "durum": "bekliyor",
+   "deneme": 1,
+   "durum": "deneniyor",
    "maks": 4,
-   "not": "bugünün hesabı yok",
+   "not": "bugünün hesabı yok, THYAO fiyatı uyuşmuyor",
    "saat": "2026-11-24T06:09:08Z",
    "veri": "2026-11-24"
   },
@@ -107,5 +114,5 @@
    "veri": "2026-11-23"
   }
  },
- "kontrolAt": "2026-11-24T15:46:15Z"
+ "kontrolAt": "2026-11-24T16:11:02Z"
 }
