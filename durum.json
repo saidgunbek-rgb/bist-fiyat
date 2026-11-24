@@ -12,13 +12,12 @@
    "2026-11-19": true,
    "2026-11-20": true,
    "2026-11-23": true,
-   "2026-11-24": true
+   "2026-11-24": false
   },
   "kaynaklar": [
-   "yahoo",
    "borsapy"
   ],
-  "teyit": true
+  "teyit": false
  },
  "deneme": {
   "fiyat|2026-11-23": {
@@ -26,8 +25,8 @@
    "son": "2026-11-24T00:34"
   },
   "fiyat|2026-11-24": {
-   "n": 1,
-   "son": "2026-11-24T18:46"
+   "n": 2,
+   "son": "2026-11-25T00:39"
   },
   "fon|2026-11-23": {
    "n": 1,
@@ -78,10 +77,10 @@
  "islem_gunu": "2026-11-24",
  "kaynaklar": {
   "fiyat": {
-   "deneme": 1,
-   "durum": "ok",
+   "deneme": 2,
+   "durum": "deneniyor",
    "maks": 4,
-   "not": "",
+   "not": "BIST 100 kapanışı iki kaynakla teyit edilemedi",
    "saat": "2026-11-24T16:32:52Z",
    "veri": "2026-11-24"
   },
@@ -118,5 +117,5 @@
    "veri": "2026-11-24"
   }
  },
- "kontrolAt": "2026-11-24T19:27:48Z"
+ "kontrolAt": "2026-11-24T21:39:17Z"
 }
