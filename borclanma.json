@@ -1,21 +1,21 @@
 {
- "updatedAt": "2026-11-23T18:47:47Z",
- "updated": "2026-11-23",
+ "updatedAt": "2026-11-24T18:46:03Z",
+ "updated": "2026-11-24",
  "bist": {
-  "a1": -0.11,
-  "a3": -23.5,
-  "a6": -19.58,
-  "y1": 1.66,
-  "y3": 40.59,
-  "y5": 522.25,
-  "d1": -0.24,
+  "a1": -1.36,
+  "a3": -24.38,
+  "a6": -20.58,
+  "y1": 0.72,
+  "y3": 37.76,
+  "y5": 505.08,
+  "d1": -1.25,
   "mdd": -28.9,
   "vol": 25.63,
-  "reel_y1": -21.66
+  "reel_y1": -22.39
  },
  "enf": {
   "y": 29.77,
-  "t": "2026-11-23",
+  "t": "2026-11-24",
   "k": "borsapy:latest"
  },
  "fonlar": [
@@ -25,29 +25,29 @@
    "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
    "banka": "Akbank",
    "grup": "Özel",
-   "buyukluk": 677378553.19,
+   "buyukluk": 677962623.03,
    "yatirimci": 4.0,
    "risk": 1.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 0.203713,
-   "d1_tarih": "2026-11-23",
+   "fiyat": 0.203889,
+   "d1_tarih": "2026-11-24",
    "rk": {
     "mdd": -0.27,
     "vol": 0.47,
-    "gr": 101.34
+    "gr": 100.55
    },
    "g": {
-    "a1": 2.75,
-    "a3": 9.6,
-    "a6": 21.18,
-    "y1": 47.63,
-    "y3": 265.02,
-    "y5": 506.05,
-    "reel_y1": 13.76,
-    "w1": 0.68,
-    "ytd": 41.34,
-    "d1": 0.3
+    "a1": 2.83,
+    "a3": 9.33,
+    "a6": 21.29,
+    "y1": 47.26,
+    "y3": 264.93,
+    "y5": 506.31,
+    "reel_y1": 13.48,
+    "w1": 0.67,
+    "ytd": 41.46,
+    "d1": 0.09
    },
    "teyit": [
     "a1",
@@ -59,19 +59,19 @@
    ],
    "celiski": [],
    "gun": 1258,
-   "son_tarih": "2026-11-23",
+   "son_tarih": "2026-11-24",
    "istikrar": [
     4,
     4
    ],
-   "puan": 88,
+   "puan": 89,
    "her_yonu": true,
    "kosul": 5,
    "gecmis": {
-    "kac": 1,
-    "toplam": 1,
-    "seri": 1,
-    "her_yonu_gun": 1
+    "kac": 2,
+    "toplam": 2,
+    "seri": 2,
+    "her_yonu_gun": 2
    }
   },
   {
@@ -80,27 +80,27 @@
    "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
    "banka": "Akbank",
    "grup": "Özel",
-   "buyukluk": 4701362360.24,
-   "yatirimci": 2455.0,
+   "buyukluk": 4743411062.63,
+   "yatirimci": 2531.0,
    "risk": 1.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 1.83248,
-   "d1_tarih": "2026-11-23",
+   "fiyat": 1.833381,
+   "d1_tarih": "2026-11-24",
    "rk": {
     "mdd": -0.19,
     "vol": 0.96,
-    "gr": 48.62
+    "gr": 48.3
    },
    "g": {
-    "a1": 3.28,
-    "a3": 10.24,
-    "a6": 21.84,
-    "y1": 46.68,
-    "reel_y1": 13.03,
-    "w1": 0.69,
-    "ytd": 40.47,
-    "d1": 0.24
+    "a1": 3.33,
+    "a3": 9.91,
+    "a6": 21.9,
+    "y1": 46.37,
+    "reel_y1": 12.79,
+    "w1": 0.61,
+    "ytd": 40.54,
+    "d1": 0.05
    },
    "teyit": [
     "a1",
@@ -109,8 +109,8 @@
     "y1"
    ],
    "celiski": [],
-   "gun": 384,
-   "son_tarih": "2026-11-23",
+   "gun": 385,
+   "son_tarih": "2026-11-24",
    "istikrar": [
     4,
     4
@@ -119,10 +119,10 @@
    "her_yonu": true,
    "kosul": 5,
    "gecmis": {
-    "kac": 1,
-    "toplam": 1,
-    "seri": 1,
-    "her_yonu_gun": 1
+    "kac": 2,
+    "toplam": 2,
+    "seri": 2,
+    "her_yonu_gun": 2
    }
   },
   {
@@ -131,29 +131,29 @@
    "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
    "banka": "Yapı Kredi",
    "grup": "Özel",
-   "buyukluk": 2326559646.76,
-   "yatirimci": 12435.0,
+   "buyukluk": 2325629016.46,
+   "yatirimci": 12424.0,
    "risk": 1.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 0.159305,
-   "d1_tarih": "2026-11-23",
+   "fiyat": 0.159442,
+   "d1_tarih": "2026-11-24",
    "rk": {
     "mdd": -0.05,
     "vol": 0.89,
-    "gr": 51.65
+    "gr": 51.29
    },
    "g": {
-    "a1": 2.92,
-    "a3": 9.47,
-    "a6": 20.56,
-    "y1": 45.97,
-    "y3": 230.23,
-    "y5": 424.01,
-    "reel_y1": 12.48,
-    "w1": 0.65,
-    "ytd": 39.37,
-    "d1": 0.27
+    "a1": 3.01,
+    "a3": 9.23,
+    "a6": 20.67,
+    "y1": 45.65,
+    "y3": 230.21,
+    "y5": 424.03,
+    "reel_y1": 12.24,
+    "w1": 0.64,
+    "ytd": 39.49,
+    "d1": 0.09
    },
    "teyit": [
     "a1",
@@ -165,113 +165,7 @@
    ],
    "celiski": [],
    "gun": 1258,
-   "son_tarih": "2026-11-23",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 86,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 1,
-    "toplam": 1,
-    "seri": 1,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "GUB",
-   "ad": "GARANTİ PORTFÖY ÖZEL SEKTÖR BORÇLANMA ARAÇLARI FONU",
-   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
-   "banka": "Garanti BBVA",
-   "grup": "Özel",
-   "buyukluk": 5158764000.84,
-   "yatirimci": 12390.0,
-   "risk": 1.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 2.809874,
-   "d1_tarih": "2026-11-23",
-   "rk": {
-    "mdd": 0.0,
-    "vol": 0.23,
-    "gr": 196.87
-   },
-   "g": {
-    "a1": 2.87,
-    "a3": 9.48,
-    "a6": 20.42,
-    "y1": 45.28,
-    "reel_y1": 11.95,
-    "w1": 0.63,
-    "ytd": 39.42,
-    "d1": 0.27
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1"
-   ],
-   "celiski": [],
-   "gun": 623,
-   "son_tarih": "2026-11-23",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 88,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 1,
-    "toplam": 1,
-    "seri": 1,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "AVT",
-   "ad": "AK PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU",
-   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
-   "banka": "Akbank",
-   "grup": "Özel",
-   "buyukluk": 5580881385.37,
-   "yatirimci": 20443.0,
-   "risk": 1.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 248.127495,
-   "d1_tarih": "2026-11-23",
-   "rk": {
-    "mdd": -0.18,
-    "vol": 0.91,
-    "gr": 49.33
-   },
-   "g": {
-    "a1": 2.98,
-    "a3": 9.54,
-    "a6": 20.56,
-    "y1": 44.89,
-    "y3": 242.2,
-    "y5": 398.05,
-    "reel_y1": 11.65,
-    "w1": 0.67,
-    "ytd": 38.82,
-    "d1": 0.26
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-23",
+   "son_tarih": "2026-11-24",
    "istikrar": [
     4,
     4
@@ -280,1461 +174,39 @@
    "her_yonu": true,
    "kosul": 5,
    "gecmis": {
-    "kac": 1,
-    "toplam": 1,
-    "seri": 1,
-    "her_yonu_gun": 1
+    "kac": 2,
+    "toplam": 2,
+    "seri": 2,
+    "her_yonu_gun": 2
    }
   },
   {
-   "k": "DBK",
-   "ad": "DENİZ PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU",
+   "k": "GUB",
+   "ad": "GARANTİ PORTFÖY ÖZEL SEKTÖR BORÇLANMA ARAÇLARI FONU",
    "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
-   "banka": "DenizBank",
+   "banka": "Garanti BBVA",
    "grup": "Özel",
-   "buyukluk": 906955276.78,
-   "yatirimci": 84650.0,
+   "buyukluk": 5162771614.56,
+   "yatirimci": 12418.0,
    "risk": 1.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 0.132364,
-   "d1_tarih": "2026-11-23",
+   "fiyat": 2.811636,
+   "d1_tarih": "2026-11-24",
    "rk": {
     "mdd": 0.0,
-    "vol": 0.41,
-    "gr": 108.46
+    "vol": 0.23,
+    "gr": 195.3
    },
    "g": {
-    "a1": 2.98,
-    "a3": 9.34,
-    "a6": 20.18,
-    "y1": 44.47,
-    "y3": 240.56,
-    "y5": 407.82,
-    "reel_y1": 11.33,
-    "w1": 0.64,
-    "ytd": 38.36,
-    "d1": 0.26
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-23",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 86,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 1,
-    "toplam": 1,
-    "seri": 1,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "TBV",
-   "ad": "İŞ PORTFÖY ÖZEL SEKTÖR BORÇLANMA ARAÇLARI (TL) FONU",
-   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
-   "banka": "İş Bankası",
-   "grup": "Özel",
-   "buyukluk": 1413067651.66,
-   "yatirimci": 8207.0,
-   "risk": 1.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 0.44696,
-   "d1_tarih": "2026-11-23",
-   "rk": {
-    "mdd": -0.61,
-    "vol": 0.98,
-    "gr": 45.09
-   },
-   "g": {
-    "a1": 2.26,
-    "a3": 8.89,
-    "a6": 19.94,
-    "y1": 44.19,
-    "y3": 240.69,
-    "y5": 420.37,
-    "reel_y1": 11.11,
-    "w1": 0.64,
-    "ytd": 38.41,
-    "d1": 0.29
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-23",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 70,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 1,
-    "seri": 0,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "CVA",
-   "ad": "AK PORTFÖY ÜÇÜNCÜ KAMU BORÇLANMA ARAÇLARI (TL) ÖZEL FONU",
-   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
-   "banka": "Akbank",
-   "grup": "Özel",
-   "buyukluk": 10535387240.53,
-   "yatirimci": 1.0,
-   "risk": 3.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 4.558856,
-   "d1_tarih": "2026-11-23",
-   "rk": {
-    "mdd": -0.67,
-    "vol": 2.54,
-    "gr": 17.39
-   },
-   "g": {
-    "a1": 3.14,
-    "a3": 9.88,
-    "a6": 21.24,
-    "y1": 44.18,
-    "y3": 223.07,
-    "reel_y1": 11.1,
-    "w1": 0.73,
-    "ytd": 37.64,
-    "d1": 0.29
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3"
-   ],
-   "celiski": [],
-   "gun": 1067,
-   "son_tarih": "2026-11-23",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 77,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 1,
-    "toplam": 1,
-    "seri": 1,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "HKV",
-   "ad": "ZİRAAT PORTFÖY HALKBANK KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU",
-   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
-   "banka": "Ziraat Bankası",
-   "grup": "Kamu",
-   "buyukluk": 5030663967.48,
-   "yatirimci": 36688.0,
-   "risk": 1.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 646.141263,
-   "d1_tarih": "2026-11-23",
-   "rk": {
-    "mdd": -0.09,
-    "vol": 0.75,
-    "gr": 58.47
-   },
-   "g": {
-    "a1": 2.9,
-    "a3": 9.34,
-    "a6": 20.28,
-    "y1": 43.85,
-    "y3": 227.6,
-    "y5": 397.25,
-    "reel_y1": 10.85,
-    "w1": 0.66,
-    "ytd": 38.16,
-    "d1": 0.28
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-23",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 79,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 1,
-    "toplam": 1,
-    "seri": 1,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "IBK",
-   "ad": "İŞ PORTFÖY ÜÇÜNCÜ KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU",
-   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
-   "banka": "İş Bankası",
-   "grup": "Özel",
-   "buyukluk": 240151749.66,
-   "yatirimci": 124110.0,
-   "risk": 1.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 0.147587,
-   "d1_tarih": "2026-11-23",
-   "rk": {
-    "mdd": -1.2,
-    "vol": 1.46,
-    "gr": 29.92
-   },
-   "g": {
-    "a1": 1.68,
-    "a3": 8.19,
-    "a6": 19.27,
-    "y1": 43.69,
-    "y3": 241.75,
-    "y5": 414.78,
-    "reel_y1": 10.73,
-    "w1": 0.66,
-    "ytd": 37.84,
-    "d1": 0.28
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-23",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 57,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 1,
-    "seri": 0,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "VKT",
-   "ad": "V PORTFÖY VAKIFBANK KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU",
-   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
-   "banka": "Vakıf Bankası",
-   "grup": "Kamu",
-   "buyukluk": 4392303510.59,
-   "yatirimci": 38761.0,
-   "risk": 1.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 0.133058,
-   "d1_tarih": "2026-11-23",
-   "rk": {
-    "mdd": -0.06,
-    "vol": 0.75,
-    "gr": 58.15
-   },
-   "g": {
-    "a1": 2.89,
-    "a3": 9.26,
-    "a6": 20.04,
-    "y1": 43.61,
-    "y3": 229.82,
-    "y5": 395.87,
-    "reel_y1": 10.67,
-    "w1": 0.67,
-    "ytd": 37.92,
-    "d1": 0.27
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-23",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 77,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 1,
-    "toplam": 1,
-    "seri": 1,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "YDK",
-   "ad": "YAPI KREDİ PORTFÖY ÇALIŞAN HESAP KISA VADELİ BORÇLANMA ARAÇLARI FONU",
-   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
-   "banka": "Yapı Kredi",
-   "grup": "Özel",
-   "buyukluk": 159716196.64,
-   "yatirimci": 48204.0,
-   "risk": 2.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 0.131248,
-   "d1_tarih": "2026-11-23",
-   "rk": {
-    "mdd": -0.31,
-    "vol": 1.67,
-    "gr": 26.05
-   },
-   "g": {
-    "a1": 3.05,
-    "a3": 9.57,
-    "a6": 20.2,
-    "y1": 43.5,
-    "y3": 240.1,
-    "y5": 412.29,
-    "reel_y1": 10.58,
-    "w1": 0.71,
-    "ytd": 37.86,
-    "d1": 0.25
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-23",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 79,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 1,
-    "toplam": 1,
-    "seri": 1,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "IKV",
-   "ad": "İŞ PORTFÖY İKİNCİ KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU",
-   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
-   "banka": "İş Bankası",
-   "grup": "Özel",
-   "buyukluk": 978238398.27,
-   "yatirimci": 1567.0,
-   "risk": 1.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 1.662658,
-   "d1_tarih": "2026-11-23",
-   "rk": {
-    "mdd": -0.66,
-    "vol": 1.04,
-    "gr": 41.77
-   },
-   "g": {
-    "a1": 3.0,
-    "a3": 9.48,
-    "a6": 20.17,
-    "y1": 43.44,
-    "reel_y1": 10.53,
-    "w1": 0.63,
-    "ytd": 37.58,
-    "d1": 0.26
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1"
-   ],
-   "celiski": [],
-   "gun": 348,
-   "son_tarih": "2026-11-23",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 76,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 1,
-    "seri": 0,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "AYR",
-   "ad": "AK PORTFÖY ÖZEL SEKTÖR BORÇLANMA ARAÇLARI (TL) FONU",
-   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
-   "banka": "Akbank",
-   "grup": "Özel",
-   "buyukluk": 1441741427.94,
-   "yatirimci": 12752.0,
-   "risk": 1.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 0.151627,
-   "d1_tarih": "2026-11-23",
-   "rk": {
-    "mdd": -0.99,
-    "vol": 1.15,
-    "gr": 37.57
-   },
-   "g": {
-    "a1": 1.83,
-    "a3": 8.26,
-    "a6": 19.08,
-    "y1": 43.21,
-    "y3": 234.58,
-    "y5": 424.59,
-    "reel_y1": 10.36,
-    "w1": 0.65,
-    "ytd": 37.52,
-    "d1": 0.28
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-23",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 55,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 1,
-    "seri": 0,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "DBZ",
-   "ad": "DENİZ PORTFÖY ÖZEL SEKTÖR BORÇLANMA ARAÇLARI FONU",
-   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
-   "banka": "DenizBank",
-   "grup": "Özel",
-   "buyukluk": 591969585.89,
-   "yatirimci": 2695.0,
-   "risk": 2.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 0.151558,
-   "d1_tarih": "2026-11-23",
-   "rk": {
-    "mdd": -1.48,
-    "vol": 1.72,
-    "gr": 25.05
-   },
-   "g": {
-    "a1": 1.32,
-    "a3": 7.8,
-    "a6": 18.58,
-    "y1": 43.08,
-    "y3": 236.94,
-    "y5": 412.04,
-    "reel_y1": 10.26,
-    "w1": 0.66,
-    "ytd": 37.13,
-    "d1": 0.28
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-23",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 48,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 1,
-    "seri": 0,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "TZV",
-   "ad": "ZİRAAT PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU",
-   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
-   "banka": "Ziraat Bankası",
-   "grup": "Kamu",
-   "buyukluk": 29897875327.17,
-   "yatirimci": 130258.0,
-   "risk": 1.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 1033.155448,
-   "d1_tarih": "2026-11-23",
-   "rk": {
-    "mdd": -0.12,
-    "vol": 0.87,
-    "gr": 49.45
-   },
-   "g": {
-    "a1": 2.65,
-    "a3": 8.97,
-    "a6": 19.71,
-    "y1": 43.02,
-    "y3": 225.71,
-    "y5": 385.02,
-    "reel_y1": 10.21,
-    "w1": 0.72,
-    "ytd": 37.38,
-    "d1": 0.28
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-23",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 68,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 1,
-    "seri": 0,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "TGT",
-   "ad": "GARANTİ PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI FONU",
-   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
-   "banka": "Garanti BBVA",
-   "grup": "Özel",
-   "buyukluk": 5448543491.28,
-   "yatirimci": 63704.0,
-   "risk": 1.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 0.131001,
-   "d1_tarih": "2026-11-23",
-   "rk": {
-    "mdd": -0.11,
-    "vol": 1.03,
-    "gr": 41.57
-   },
-   "g": {
-    "a1": 2.92,
-    "a3": 9.44,
-    "a6": 19.76,
-    "y1": 42.82,
-    "y3": 232.35,
-    "y5": 392.39,
-    "reel_y1": 10.06,
-    "w1": 0.69,
-    "ytd": 36.92,
-    "d1": 0.28
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-23",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 73,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 1,
-    "seri": 0,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "TSI",
-   "ad": "İŞ PORTFÖY MAKSİMUM HESAP KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU",
-   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
-   "banka": "İş Bankası",
-   "grup": "Özel",
-   "buyukluk": 24329929551.28,
-   "yatirimci": 76029.0,
-   "risk": 1.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 0.226349,
-   "d1_tarih": "2026-11-23",
-   "rk": {
-    "mdd": -0.16,
-    "vol": 0.88,
-    "gr": 48.66
-   },
-   "g": {
-    "a1": 2.96,
-    "a3": 9.37,
-    "a6": 19.86,
-    "y1": 42.82,
-    "y3": 229.24,
-    "y5": 373.29,
-    "reel_y1": 10.06,
-    "w1": 0.65,
-    "ytd": 37.17,
-    "d1": 0.26
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-23",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 72,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 1,
-    "seri": 0,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "YHT",
-   "ad": "YAPI KREDİ PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU",
-   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
-   "banka": "Yapı Kredi",
-   "grup": "Özel",
-   "buyukluk": 4242383735.32,
-   "yatirimci": 85492.0,
-   "risk": 1.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 0.451192,
-   "d1_tarih": "2026-11-23",
-   "rk": {
-    "mdd": -0.26,
-    "vol": 1.23,
-    "gr": 34.59
-   },
-   "g": {
-    "a1": 2.99,
-    "a3": 9.18,
-    "a6": 19.55,
-    "y1": 42.55,
-    "y3": 229.63,
-    "y5": 385.75,
-    "reel_y1": 9.85,
-    "w1": 0.65,
-    "ytd": 36.5,
-    "d1": 0.26
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-23",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 67,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 1,
-    "seri": 0,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "TIV",
-   "ad": "İŞ PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU",
-   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
-   "banka": "İş Bankası",
-   "grup": "Özel",
-   "buyukluk": 37046269407.61,
-   "yatirimci": 122935.0,
-   "risk": 1.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 57.967741,
-   "d1_tarih": "2026-11-23",
-   "rk": {
-    "mdd": -0.16,
-    "vol": 1.07,
-    "gr": 39.59
-   },
-   "g": {
-    "a1": 3.0,
-    "a3": 9.44,
-    "a6": 19.79,
-    "y1": 42.36,
-    "y3": 222.64,
-    "y5": 357.15,
-    "reel_y1": 9.7,
-    "w1": 0.66,
-    "ytd": 36.61,
-    "d1": 0.27
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-23",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 70,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 1,
-    "seri": 0,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "TPO",
-   "ad": "İŞ PORTFÖY PY ÖZEL SEKTÖR BORÇLANMA ARAÇLARI (TL) ÖZEL FONU",
-   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
-   "banka": "İş Bankası",
-   "grup": "Özel",
-   "buyukluk": 114469121.25,
-   "yatirimci": 3.0,
-   "risk": 2.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 0.195496,
-   "d1_tarih": "2026-11-23",
-   "rk": {
-    "mdd": -2.47,
-    "vol": 3.38,
-    "gr": 12.17
-   },
-   "g": {
-    "a1": 1.19,
-    "a3": 7.87,
-    "a6": 19.33,
-    "y1": 41.13,
-    "y3": 242.89,
-    "y5": 460.59,
-    "reel_y1": 8.75,
-    "w1": 0.69,
-    "ytd": 35.43,
-    "d1": 0.3
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-23",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 48,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 1,
-    "seri": 0,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "CVE",
-   "ad": "AK PORTFÖY BİRİNCİ KAMU BORÇLANMA ARAÇLARI (TL) ÖZEL FONU",
-   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
-   "banka": "Akbank",
-   "grup": "Özel",
-   "buyukluk": 332534210.54,
-   "yatirimci": 1.0,
-   "risk": 3.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 3.022427,
-   "d1_tarih": "2026-11-23",
-   "rk": {
-    "mdd": -2.78,
-    "vol": 4.42,
-    "gr": 8.99
-   },
-   "g": {
-    "a1": 2.75,
-    "a3": 9.41,
-    "a6": 21.99,
-    "y1": 39.72,
-    "y3": 170.64,
-    "reel_y1": 7.67,
-    "w1": 0.68,
-    "ytd": 33.03,
-    "d1": 0.36
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3"
-   ],
-   "celiski": [],
-   "gun": 1046,
-   "son_tarih": "2026-11-23",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 57,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 1,
-    "seri": 0,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "DBB",
-   "ad": "DENİZ PORTFÖY BORÇLANMA ARAÇLARI FONU",
-   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
-   "banka": "DenizBank",
-   "grup": "Özel",
-   "buyukluk": 263312117.22,
-   "yatirimci": 1929.0,
-   "risk": 3.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 0.122571,
-   "d1_tarih": "2026-11-23",
-   "rk": {
-    "mdd": -2.43,
-    "vol": 5.25,
-    "gr": 6.73
-   },
-   "g": {
-    "a1": 2.27,
-    "a3": 8.3,
-    "a6": 19.79,
-    "y1": 35.33,
-    "y3": 163.07,
-    "y5": 325.55,
-    "reel_y1": 4.28,
-    "w1": 0.56,
-    "ytd": 27.57,
-    "d1": 0.47
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-23",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 45,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 1,
-    "seri": 0,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "YOT",
-   "ad": "YAPI KREDİ PORTFÖY BORÇLANMA ARAÇLARI FONU",
-   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
-   "banka": "Yapı Kredi",
-   "grup": "Özel",
-   "buyukluk": 1743620776.03,
-   "yatirimci": 9510.0,
-   "risk": 4.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 43.213443,
-   "d1_tarih": "2026-11-23",
-   "rk": {
-    "mdd": -3.82,
-    "vol": 6.73,
-    "gr": 5.22
-   },
-   "g": {
-    "a1": 1.94,
-    "a3": 7.4,
-    "a6": 19.44,
-    "y1": 35.14,
-    "y3": 158.13,
-    "y5": 375.96,
-    "reel_y1": 4.14,
-    "w1": 0.42,
-    "ytd": 25.14,
-    "d1": 0.42
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-23",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 35,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 1,
-    "seri": 0,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "GTK",
-   "ad": "GARANTİ PORTFÖY KAMU BORÇLANMA ARAÇLARI ÖZEL FONU",
-   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
-   "banka": "Garanti BBVA",
-   "grup": "Özel",
-   "buyukluk": 30173020818.53,
-   "yatirimci": 1.0,
-   "risk": 4.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 7.488092,
-   "d1_tarih": "2026-11-23",
-   "rk": {
-    "mdd": -1.03,
-    "vol": 2.95,
-    "gr": 11.81
-   },
-   "g": {
-    "a1": 2.53,
-    "a3": 6.77,
-    "a6": 16.89,
-    "y1": 34.83,
-    "y3": 141.42,
-    "y5": 600.87,
-    "reel_y1": 3.9,
-    "w1": 0.57,
-    "ytd": 28.47,
-    "d1": 0.29
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-23",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 41,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 1,
-    "seri": 0,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "TZT",
-   "ad": "ZİRAAT PORTFÖY BORÇLANMA ARAÇLARI (TL) FONU",
-   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
-   "banka": "Ziraat Bankası",
-   "grup": "Kamu",
-   "buyukluk": 345012629.69,
-   "yatirimci": 5676.0,
-   "risk": 3.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 0.18066,
-   "d1_tarih": "2026-11-23",
-   "rk": {
-    "mdd": -2.19,
-    "vol": 5.66,
-    "gr": 6.06
-   },
-   "g": {
-    "a1": 1.75,
-    "a3": 7.15,
-    "a6": 17.19,
-    "y1": 34.31,
-    "y3": 168.68,
-    "y5": 397.64,
-    "reel_y1": 3.5,
-    "w1": 0.38,
-    "ytd": 23.58,
-    "d1": 0.48
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-23",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 34,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 1,
-    "seri": 0,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "GA1",
-   "ad": "GARANTİ PORTFÖY BORÇLANMA ARAÇLARI FONU",
-   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
-   "banka": "Garanti BBVA",
-   "grup": "Özel",
-   "buyukluk": 331400744.08,
-   "yatirimci": 1498.0,
-   "risk": 3.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 2.160344,
-   "d1_tarih": "2026-11-23",
-   "rk": {
-    "mdd": -3.43,
-    "vol": 6.01,
-    "gr": 5.67
-   },
-   "g": {
-    "a1": 2.21,
-    "a3": 8.14,
-    "a6": 20.23,
-    "y1": 34.1,
-    "y3": 174.64,
-    "y5": 364.12,
-    "reel_y1": 3.34,
-    "w1": 0.59,
-    "ytd": 27.18,
-    "d1": 0.44
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-23",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 43,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 1,
-    "seri": 0,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "GUA",
-   "ad": "GARANTİ PORTFÖY BİRİNCİ BORÇLANMA ARAÇLARI ÖZEL FON",
-   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
-   "banka": "Garanti BBVA",
-   "grup": "Özel",
-   "buyukluk": 2184146161.32,
-   "yatirimci": 1.0,
-   "risk": 3.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 6.388993,
-   "d1_tarih": "2026-11-23",
-   "rk": {
-    "mdd": -0.94,
-    "vol": 3.14,
-    "gr": 10.32
-   },
-   "g": {
-    "a1": 2.51,
-    "a3": 6.79,
-    "a6": 15.9,
-    "y1": 32.4,
-    "y3": 174.02,
-    "y5": 491.53,
-    "reel_y1": 2.03,
-    "w1": 0.04,
-    "ytd": 27.77,
-    "d1": -0.11
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-23",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 41,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 1,
-    "seri": 0,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "TI6",
-   "ad": "İŞ PORTFÖY BORÇLANMA ARAÇLARI (TL) FONU",
-   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
-   "banka": "İş Bankası",
-   "grup": "Özel",
-   "buyukluk": 709325509.41,
-   "yatirimci": 4824.0,
-   "risk": 4.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 0.058267,
-   "d1_tarih": "2026-11-23",
-   "rk": {
-    "mdd": -4.99,
-    "vol": 7.82,
-    "gr": 4.06
-   },
-   "g": {
-    "a1": 2.32,
-    "a3": 8.48,
-    "a6": 18.89,
-    "y1": 31.76,
-    "y3": 150.93,
-    "y5": 334.15,
-    "reel_y1": 1.53,
+    "a1": 2.94,
+    "a3": 9.2,
+    "a6": 20.49,
+    "y1": 44.92,
+    "reel_y1": 11.67,
     "w1": 0.6,
-    "ytd": 21.32,
-    "d1": 0.55
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-23",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 34,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 1,
-    "seri": 0,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "APT",
-   "ad": "AK PORTFÖY ORTA VADELI BORÇLANMA ARAÇLARI FONU",
-   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
-   "banka": "Akbank",
-   "grup": "Özel",
-   "buyukluk": 321782709.82,
-   "yatirimci": 12766.0,
-   "risk": 3.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 0.173457,
-   "d1_tarih": "2026-11-23",
-   "rk": {
-    "mdd": -5.26,
-    "vol": 7.6,
-    "gr": 4.17
-   },
-   "g": {
-    "a1": 1.85,
-    "a3": 7.35,
-    "a6": 18.81,
-    "y1": 31.71,
-    "y3": 138.9,
-    "y5": 203.87,
-    "reel_y1": 1.49,
-    "w1": 0.5,
-    "ytd": 22.48,
-    "d1": 0.52
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-23",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 27,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 1,
-    "seri": 0,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "TPE",
-   "ad": "İŞ PORTFÖY PY EUROBOND BORÇLANMA ARAÇLARI (DÖVİZ) ÖZEL FONU",
-   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
-   "banka": "İş Bankası",
-   "grup": "Özel",
-   "buyukluk": 2384730282.88,
-   "yatirimci": 33.0,
-   "risk": 0.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 0.57966,
-   "d1_tarih": "2026-11-23",
-   "rk": {
-    "mdd": -0.84,
-    "vol": 2.25,
-    "gr": 11.63
-   },
-   "g": {
-    "a1": 2.2,
-    "a3": 5.56,
-    "a6": 12.9,
-    "y1": 26.17,
-    "y3": 123.83,
-    "y5": 530.67,
-    "reel_y1": -2.77,
-    "w1": 0.5,
-    "ytd": 22.01,
-    "d1": 0.02
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-23",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 32,
-   "her_yonu": false,
-   "kosul": 4,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 1,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "GUV",
-   "ad": "GARANTİ PORTFÖY UZUN VADELİ BORÇLANMA ARAÇLARI FONU",
-   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
-   "banka": "Garanti BBVA",
-   "grup": "Özel",
-   "buyukluk": 1001330409.6,
-   "yatirimci": 1571.0,
-   "risk": 5.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 1.839914,
-   "d1_tarih": "2026-11-23",
-   "rk": {
-    "mdd": -8.63,
-    "vol": 11.07,
-    "gr": 2.31
-   },
-   "g": {
-    "a1": 1.67,
-    "a3": 6.37,
-    "a6": 17.71,
-    "y1": 25.52,
-    "reel_y1": -3.28,
-    "w1": 0.48,
-    "ytd": 14.57,
-    "d1": 0.65
+    "ytd": 39.5,
+    "d1": 0.06
    },
    "teyit": [
     "a1",
@@ -1743,160 +215,50 @@
     "y1"
    ],
    "celiski": [],
-   "gun": 623,
-   "son_tarih": "2026-11-23",
+   "gun": 624,
+   "son_tarih": "2026-11-24",
    "istikrar": [
     4,
     4
    ],
-   "puan": 19,
-   "her_yonu": false,
-   "kosul": 4,
+   "puan": 89,
+   "her_yonu": true,
+   "kosul": 5,
    "gecmis": {
-    "kac": 0,
-    "toplam": 1,
-    "seri": 0,
-    "her_yonu_gun": 0
+    "kac": 2,
+    "toplam": 2,
+    "seri": 2,
+    "her_yonu_gun": 2
    }
   },
   {
-   "k": "AK2",
-   "ad": "AK PORTFÖY UZUN VADELİ BORÇLANMA ARAÇLARI FONU",
+   "k": "AVT",
+   "ad": "AK PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU",
    "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
    "banka": "Akbank",
    "grup": "Özel",
-   "buyukluk": 173841146.0,
-   "yatirimci": 8861.0,
-   "risk": 5.0,
+   "buyukluk": 5578427885.04,
+   "yatirimci": 20445.0,
+   "risk": 1.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 0.56974,
-   "d1_tarih": "2026-11-23",
+   "fiyat": 248.328757,
+   "d1_tarih": "2026-11-24",
    "rk": {
-    "mdd": -6.52,
-    "vol": 9.49,
-    "gr": 2.57
+    "mdd": -0.18,
+    "vol": 0.91,
+    "gr": 48.99
    },
    "g": {
-    "a1": 0.75,
-    "a3": 4.93,
-    "a6": 15.07,
-    "y1": 24.42,
-    "y3": 101.52,
-    "y5": 141.11,
-    "reel_y1": -4.12,
-    "w1": 0.01,
-    "ytd": 13.56,
-    "d1": 0.51
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-23",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 11,
-   "her_yonu": false,
-   "kosul": 4,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 1,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "IPV",
-   "ad": "İŞ PORTFÖY EUROBOND BORÇLANMA ARAÇLARI (DÖVİZ) FONU",
-   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
-   "banka": "İş Bankası",
-   "grup": "Özel",
-   "buyukluk": 2218854783.18,
-   "yatirimci": 11726.0,
-   "risk": 0.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 82.131745,
-   "d1_tarih": "2026-11-23",
-   "rk": {
-    "mdd": -1.5,
-    "vol": 2.79,
-    "gr": 8.55
-   },
-   "g": {
-    "a1": 2.02,
-    "a3": 4.95,
-    "a6": 11.66,
-    "y1": 23.86,
-    "y3": 113.99,
-    "y5": 503.53,
-    "reel_y1": -4.55,
-    "w1": 0.18,
-    "ytd": 19.54,
-    "d1": -0.11
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-23",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 24,
-   "her_yonu": false,
-   "kosul": 4,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 1,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "YOA",
-   "ad": "YAPI KREDİ PORTFÖY PY BORÇLANMA ARAÇLARI (DÖVİZ) ÖZEL FONU",
-   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
-   "banka": "Yapı Kredi",
-   "grup": "Özel",
-   "buyukluk": 1987639147.61,
-   "yatirimci": 139.0,
-   "risk": 0.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 93.790293,
-   "d1_tarih": "2026-11-23",
-   "rk": {
-    "mdd": -2.29,
-    "vol": 3.75,
-    "gr": 6.23
-   },
-   "g": {
-    "a1": 2.2,
-    "a3": 4.49,
-    "a6": 12.24,
-    "y1": 23.37,
-    "y3": 122.41,
-    "y5": 554.15,
-    "reel_y1": -4.93,
-    "w1": 0.49,
-    "ytd": 19.58,
+    "a1": 3.06,
+    "a3": 9.24,
+    "a6": 20.66,
+    "y1": 44.58,
+    "y3": 242.17,
+    "y5": 398.34,
+    "reel_y1": 11.41,
+    "w1": 0.64,
+    "ytd": 38.93,
     "d1": 0.08
    },
    "teyit": [
@@ -1909,17 +271,1600 @@
    ],
    "celiski": [],
    "gun": 1258,
-   "son_tarih": "2026-11-23",
+   "son_tarih": "2026-11-24",
    "istikrar": [
     4,
     4
    ],
-   "puan": 23,
+   "puan": 88,
+   "her_yonu": true,
+   "kosul": 5,
+   "gecmis": {
+    "kac": 2,
+    "toplam": 2,
+    "seri": 2,
+    "her_yonu_gun": 2
+   }
+  },
+  {
+   "k": "DBK",
+   "ad": "DENİZ PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU",
+   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
+   "banka": "DenizBank",
+   "grup": "Özel",
+   "buyukluk": 870692181.38,
+   "yatirimci": 84652.0,
+   "risk": 1.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 0.132464,
+   "d1_tarih": "2026-11-24",
+   "rk": {
+    "mdd": 0.0,
+    "vol": 0.41,
+    "gr": 107.66
+   },
+   "g": {
+    "a1": 3.06,
+    "a3": 9.08,
+    "a6": 20.27,
+    "y1": 44.14,
+    "y3": 240.52,
+    "y5": 408.09,
+    "reel_y1": 11.07,
+    "w1": 0.61,
+    "ytd": 38.46,
+    "d1": 0.08
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-24",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 87,
+   "her_yonu": true,
+   "kosul": 5,
+   "gecmis": {
+    "kac": 2,
+    "toplam": 2,
+    "seri": 2,
+    "her_yonu_gun": 2
+   }
+  },
+  {
+   "k": "TBV",
+   "ad": "İŞ PORTFÖY ÖZEL SEKTÖR BORÇLANMA ARAÇLARI (TL) FONU",
+   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
+   "banka": "İş Bankası",
+   "grup": "Özel",
+   "buyukluk": 1408036786.3,
+   "yatirimci": 8168.0,
+   "risk": 1.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 0.447292,
+   "d1_tarih": "2026-11-24",
+   "rk": {
+    "mdd": -0.61,
+    "vol": 0.98,
+    "gr": 44.76
+   },
+   "g": {
+    "a1": 2.34,
+    "a3": 8.62,
+    "a6": 20.03,
+    "y1": 43.86,
+    "y3": 240.64,
+    "y5": 419.51,
+    "reel_y1": 10.86,
+    "w1": 0.62,
+    "ytd": 38.51,
+    "d1": 0.07
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-24",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 70,
+   "her_yonu": true,
+   "kosul": 5,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 2,
+    "seri": 0,
+    "her_yonu_gun": 2
+   }
+  },
+  {
+   "k": "CVA",
+   "ad": "AK PORTFÖY ÜÇÜNCÜ KAMU BORÇLANMA ARAÇLARI (TL) ÖZEL FONU",
+   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
+   "banka": "Akbank",
+   "grup": "Özel",
+   "buyukluk": 10540328729.23,
+   "yatirimci": 1.0,
+   "risk": 3.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 4.560994,
+   "d1_tarih": "2026-11-24",
+   "rk": {
+    "mdd": -0.67,
+    "vol": 2.54,
+    "gr": 17.25
+   },
+   "g": {
+    "a1": 3.18,
+    "a3": 9.55,
+    "a6": 21.3,
+    "y1": 43.82,
+    "y3": 222.86,
+    "reel_y1": 10.83,
+    "w1": 0.65,
+    "ytd": 37.7,
+    "d1": 0.05
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1068,
+   "son_tarih": "2026-11-24",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 77,
+   "her_yonu": true,
+   "kosul": 5,
+   "gecmis": {
+    "kac": 2,
+    "toplam": 2,
+    "seri": 2,
+    "her_yonu_gun": 2
+   }
+  },
+  {
+   "k": "HKV",
+   "ad": "ZİRAAT PORTFÖY HALKBANK KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU",
+   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
+   "banka": "Ziraat Bankası",
+   "grup": "Kamu",
+   "buyukluk": 4930390740.03,
+   "yatirimci": 36538.0,
+   "risk": 1.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 646.63771,
+   "d1_tarih": "2026-11-24",
+   "rk": {
+    "mdd": -0.09,
+    "vol": 0.75,
+    "gr": 58.04
+   },
+   "g": {
+    "a1": 2.98,
+    "a3": 9.06,
+    "a6": 20.37,
+    "y1": 43.53,
+    "y3": 227.57,
+    "y5": 397.35,
+    "reel_y1": 10.6,
+    "w1": 0.63,
+    "ytd": 38.26,
+    "d1": 0.08
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-24",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 79,
+   "her_yonu": true,
+   "kosul": 5,
+   "gecmis": {
+    "kac": 2,
+    "toplam": 2,
+    "seri": 2,
+    "her_yonu_gun": 2
+   }
+  },
+  {
+   "k": "IBK",
+   "ad": "İŞ PORTFÖY ÜÇÜNCÜ KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU",
+   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
+   "banka": "İş Bankası",
+   "grup": "Özel",
+   "buyukluk": 240116520.34,
+   "yatirimci": 124107.0,
+   "risk": 1.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 0.147673,
+   "d1_tarih": "2026-11-24",
+   "rk": {
+    "mdd": -1.2,
+    "vol": 1.46,
+    "gr": 29.67
+   },
+   "g": {
+    "a1": 1.74,
+    "a3": 7.91,
+    "a6": 19.34,
+    "y1": 43.32,
+    "y3": 241.64,
+    "y5": 414.93,
+    "reel_y1": 10.44,
+    "w1": 0.62,
+    "ytd": 37.92,
+    "d1": 0.06
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-24",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 56,
+   "her_yonu": true,
+   "kosul": 5,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 2,
+    "seri": 0,
+    "her_yonu_gun": 2
+   }
+  },
+  {
+   "k": "VKT",
+   "ad": "V PORTFÖY VAKIFBANK KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU",
+   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
+   "banka": "Vakıf Bankası",
+   "grup": "Kamu",
+   "buyukluk": 4350620272.04,
+   "yatirimci": 38608.0,
+   "risk": 1.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 0.133156,
+   "d1_tarih": "2026-11-24",
+   "rk": {
+    "mdd": -0.06,
+    "vol": 0.75,
+    "gr": 57.71
+   },
+   "g": {
+    "a1": 2.97,
+    "a3": 8.99,
+    "a6": 20.13,
+    "y1": 43.28,
+    "y3": 229.77,
+    "y5": 395.98,
+    "reel_y1": 10.41,
+    "w1": 0.63,
+    "ytd": 38.02,
+    "d1": 0.07
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-24",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 78,
+   "her_yonu": true,
+   "kosul": 5,
+   "gecmis": {
+    "kac": 2,
+    "toplam": 2,
+    "seri": 2,
+    "her_yonu_gun": 2
+   }
+  },
+  {
+   "k": "YDK",
+   "ad": "YAPI KREDİ PORTFÖY ÇALIŞAN HESAP KISA VADELİ BORÇLANMA ARAÇLARI FONU",
+   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
+   "banka": "Yapı Kredi",
+   "grup": "Özel",
+   "buyukluk": 159711427.41,
+   "yatirimci": 48200.0,
+   "risk": 2.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 0.131322,
+   "d1_tarih": "2026-11-24",
+   "rk": {
+    "mdd": -0.31,
+    "vol": 1.67,
+    "gr": 25.86
+   },
+   "g": {
+    "a1": 3.1,
+    "a3": 9.17,
+    "a6": 20.27,
+    "y1": 43.18,
+    "y3": 240.02,
+    "y5": 412.8,
+    "reel_y1": 10.33,
+    "w1": 0.68,
+    "ytd": 37.94,
+    "d1": 0.06
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-24",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 77,
+   "her_yonu": true,
+   "kosul": 5,
+   "gecmis": {
+    "kac": 2,
+    "toplam": 2,
+    "seri": 2,
+    "her_yonu_gun": 2
+   }
+  },
+  {
+   "k": "IKV",
+   "ad": "İŞ PORTFÖY İKİNCİ KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU",
+   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
+   "banka": "İş Bankası",
+   "grup": "Özel",
+   "buyukluk": 981605713.8,
+   "yatirimci": 1571.0,
+   "risk": 1.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 1.663454,
+   "d1_tarih": "2026-11-24",
+   "rk": {
+    "mdd": -0.66,
+    "vol": 1.04,
+    "gr": 41.41
+   },
+   "g": {
+    "a1": 3.05,
+    "a3": 9.18,
+    "a6": 20.23,
+    "y1": 43.07,
+    "reel_y1": 10.25,
+    "w1": 0.58,
+    "ytd": 37.65,
+    "d1": 0.05
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1"
+   ],
+   "celiski": [],
+   "gun": 349,
+   "son_tarih": "2026-11-24",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 75,
+   "her_yonu": true,
+   "kosul": 5,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 2,
+    "seri": 0,
+    "her_yonu_gun": 2
+   }
+  },
+  {
+   "k": "AYR",
+   "ad": "AK PORTFÖY ÖZEL SEKTÖR BORÇLANMA ARAÇLARI (TL) FONU",
+   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
+   "banka": "Akbank",
+   "grup": "Özel",
+   "buyukluk": 1437502967.72,
+   "yatirimci": 12729.0,
+   "risk": 1.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 0.151745,
+   "d1_tarih": "2026-11-24",
+   "rk": {
+    "mdd": -0.99,
+    "vol": 1.15,
+    "gr": 37.28
+   },
+   "g": {
+    "a1": 1.91,
+    "a3": 8.0,
+    "a6": 19.17,
+    "y1": 42.87,
+    "y3": 234.51,
+    "y5": 424.8,
+    "reel_y1": 10.09,
+    "w1": 0.63,
+    "ytd": 37.63,
+    "d1": 0.08
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-24",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 55,
+   "her_yonu": true,
+   "kosul": 5,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 2,
+    "seri": 0,
+    "her_yonu_gun": 2
+   }
+  },
+  {
+   "k": "DBZ",
+   "ad": "DENİZ PORTFÖY ÖZEL SEKTÖR BORÇLANMA ARAÇLARI FONU",
+   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
+   "banka": "DenizBank",
+   "grup": "Özel",
+   "buyukluk": 590979449.76,
+   "yatirimci": 2690.0,
+   "risk": 2.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 0.151702,
+   "d1_tarih": "2026-11-24",
+   "rk": {
+    "mdd": -1.48,
+    "vol": 1.72,
+    "gr": 24.87
+   },
+   "g": {
+    "a1": 1.41,
+    "a3": 7.56,
+    "a6": 18.7,
+    "y1": 42.77,
+    "y3": 236.94,
+    "y5": 412.06,
+    "reel_y1": 10.02,
+    "w1": 0.66,
+    "ytd": 37.26,
+    "d1": 0.1
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-24",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 48,
+   "her_yonu": true,
+   "kosul": 5,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 2,
+    "seri": 0,
+    "her_yonu_gun": 2
+   }
+  },
+  {
+   "k": "TZV",
+   "ad": "ZİRAAT PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU",
+   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
+   "banka": "Ziraat Bankası",
+   "grup": "Kamu",
+   "buyukluk": 30062176588.46,
+   "yatirimci": 129924.0,
+   "risk": 1.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 1033.799288,
+   "d1_tarih": "2026-11-24",
+   "rk": {
+    "mdd": -0.12,
+    "vol": 0.87,
+    "gr": 49.07
+   },
+   "g": {
+    "a1": 2.71,
+    "a3": 8.69,
+    "a6": 19.79,
+    "y1": 42.69,
+    "y3": 225.62,
+    "y5": 385.09,
+    "reel_y1": 9.96,
+    "w1": 0.67,
+    "ytd": 37.47,
+    "d1": 0.06
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-24",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 67,
+   "her_yonu": true,
+   "kosul": 5,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 2,
+    "seri": 0,
+    "her_yonu_gun": 2
+   }
+  },
+  {
+   "k": "TSI",
+   "ad": "İŞ PORTFÖY MAKSİMUM HESAP KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU",
+   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
+   "banka": "İş Bankası",
+   "grup": "Özel",
+   "buyukluk": 24234424602.78,
+   "yatirimci": 75999.0,
+   "risk": 1.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 0.226522,
+   "d1_tarih": "2026-11-24",
+   "rk": {
+    "mdd": -0.16,
+    "vol": 0.88,
+    "gr": 48.32
+   },
+   "g": {
+    "a1": 3.04,
+    "a3": 9.1,
+    "a6": 19.95,
+    "y1": 42.52,
+    "y3": 229.24,
+    "y5": 373.55,
+    "reel_y1": 9.83,
+    "w1": 0.62,
+    "ytd": 37.28,
+    "d1": 0.08
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-24",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 73,
+   "her_yonu": true,
+   "kosul": 5,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 2,
+    "seri": 0,
+    "her_yonu_gun": 2
+   }
+  },
+  {
+   "k": "TGT",
+   "ad": "GARANTİ PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI FONU",
+   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
+   "banka": "Garanti BBVA",
+   "grup": "Özel",
+   "buyukluk": 5437625177.05,
+   "yatirimci": 63630.0,
+   "risk": 1.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 0.131057,
+   "d1_tarih": "2026-11-24",
+   "rk": {
+    "mdd": -0.11,
+    "vol": 1.03,
+    "gr": 41.22
+   },
+   "g": {
+    "a1": 2.96,
+    "a3": 9.14,
+    "a6": 19.81,
+    "y1": 42.46,
+    "y3": 232.24,
+    "y5": 392.47,
+    "reel_y1": 9.78,
+    "w1": 0.63,
+    "ytd": 36.97,
+    "d1": 0.04
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-24",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 72,
+   "her_yonu": true,
+   "kosul": 5,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 2,
+    "seri": 0,
+    "her_yonu_gun": 2
+   }
+  },
+  {
+   "k": "YHT",
+   "ad": "YAPI KREDİ PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU",
+   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
+   "banka": "Yapı Kredi",
+   "grup": "Özel",
+   "buyukluk": 4303486797.49,
+   "yatirimci": 85477.0,
+   "risk": 1.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 0.451193,
+   "d1_tarih": "2026-11-24",
+   "rk": {
+    "mdd": -0.26,
+    "vol": 1.23,
+    "gr": 34.26
+   },
+   "g": {
+    "a1": 2.99,
+    "a3": 8.82,
+    "a6": 19.55,
+    "y1": 42.14,
+    "y3": 229.4,
+    "y5": 385.53,
+    "reel_y1": 9.53,
+    "w1": 0.55,
+    "ytd": 36.5,
+    "d1": 0.0
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-24",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 66,
+   "her_yonu": true,
+   "kosul": 5,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 2,
+    "seri": 0,
+    "her_yonu_gun": 2
+   }
+  },
+  {
+   "k": "TIV",
+   "ad": "İŞ PORTFÖY KISA VADELİ BORÇLANMA ARAÇLARI (TL) FONU",
+   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
+   "banka": "İş Bankası",
+   "grup": "Özel",
+   "buyukluk": 37528020467.4,
+   "yatirimci": 123295.0,
+   "risk": 1.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 58.014999,
+   "d1_tarih": "2026-11-24",
+   "rk": {
+    "mdd": -0.16,
+    "vol": 1.07,
+    "gr": 39.32
+   },
+   "g": {
+    "a1": 3.09,
+    "a3": 9.18,
+    "a6": 19.89,
+    "y1": 42.07,
+    "y3": 222.65,
+    "y5": 357.44,
+    "reel_y1": 9.48,
+    "w1": 0.64,
+    "ytd": 36.72,
+    "d1": 0.08
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-24",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 71,
+   "her_yonu": true,
+   "kosul": 5,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 2,
+    "seri": 0,
+    "her_yonu_gun": 2
+   }
+  },
+  {
+   "k": "TPO",
+   "ad": "İŞ PORTFÖY PY ÖZEL SEKTÖR BORÇLANMA ARAÇLARI (TL) ÖZEL FONU",
+   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
+   "banka": "İş Bankası",
+   "grup": "Özel",
+   "buyukluk": 114560243.5,
+   "yatirimci": 3.0,
+   "risk": 2.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 0.195652,
+   "d1_tarih": "2026-11-24",
+   "rk": {
+    "mdd": -2.47,
+    "vol": 3.38,
+    "gr": 12.09
+   },
+   "g": {
+    "a1": 1.27,
+    "a3": 7.6,
+    "a6": 19.42,
+    "y1": 40.85,
+    "y3": 242.84,
+    "y5": 459.29,
+    "reel_y1": 8.54,
+    "w1": 0.67,
+    "ytd": 35.54,
+    "d1": 0.08
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-24",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 47,
+   "her_yonu": true,
+   "kosul": 5,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 2,
+    "seri": 0,
+    "her_yonu_gun": 2
+   }
+  },
+  {
+   "k": "CVE",
+   "ad": "AK PORTFÖY BİRİNCİ KAMU BORÇLANMA ARAÇLARI (TL) ÖZEL FONU",
+   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
+   "banka": "Akbank",
+   "grup": "Özel",
+   "buyukluk": 332358398.06,
+   "yatirimci": 1.0,
+   "risk": 3.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 3.020829,
+   "d1_tarih": "2026-11-24",
+   "rk": {
+    "mdd": -2.78,
+    "vol": 4.42,
+    "gr": 8.9
+   },
+   "g": {
+    "a1": 2.69,
+    "a3": 8.95,
+    "a6": 21.92,
+    "y1": 39.32,
+    "y3": 169.65,
+    "reel_y1": 7.36,
+    "w1": 0.58,
+    "ytd": 32.96,
+    "d1": -0.05
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1047,
+   "son_tarih": "2026-11-24",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 55,
+   "her_yonu": true,
+   "kosul": 5,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 2,
+    "seri": 0,
+    "her_yonu_gun": 2
+   }
+  },
+  {
+   "k": "YOT",
+   "ad": "YAPI KREDİ PORTFÖY BORÇLANMA ARAÇLARI FONU",
+   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
+   "banka": "Yapı Kredi",
+   "grup": "Özel",
+   "buyukluk": 1745066878.44,
+   "yatirimci": 9507.0,
+   "risk": 4.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 43.24757,
+   "d1_tarih": "2026-11-24",
+   "rk": {
+    "mdd": -3.82,
+    "vol": 6.73,
+    "gr": 5.22
+   },
+   "g": {
+    "a1": 2.02,
+    "a3": 7.27,
+    "a6": 19.53,
+    "y1": 35.11,
+    "y3": 158.03,
+    "y5": 375.3,
+    "reel_y1": 4.11,
+    "w1": 0.58,
+    "ytd": 25.24,
+    "d1": 0.08
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-24",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 35,
+   "her_yonu": true,
+   "kosul": 5,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 2,
+    "seri": 0,
+    "her_yonu_gun": 2
+   }
+  },
+  {
+   "k": "DBB",
+   "ad": "DENİZ PORTFÖY BORÇLANMA ARAÇLARI FONU",
+   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
+   "banka": "DenizBank",
+   "grup": "Özel",
+   "buyukluk": 263364307.87,
+   "yatirimci": 1925.0,
+   "risk": 3.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 0.122632,
+   "d1_tarih": "2026-11-24",
+   "rk": {
+    "mdd": -2.43,
+    "vol": 5.25,
+    "gr": 6.68
+   },
+   "g": {
+    "a1": 2.32,
+    "a3": 8.04,
+    "a6": 19.85,
+    "y1": 35.09,
+    "y3": 162.96,
+    "y5": 328.83,
+    "reel_y1": 4.1,
+    "w1": 0.67,
+    "ytd": 27.63,
+    "d1": 0.05
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-24",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 44,
+   "her_yonu": true,
+   "kosul": 5,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 2,
+    "seri": 0,
+    "her_yonu_gun": 2
+   }
+  },
+  {
+   "k": "GTK",
+   "ad": "GARANTİ PORTFÖY KAMU BORÇLANMA ARAÇLARI ÖZEL FONU",
+   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
+   "banka": "Garanti BBVA",
+   "grup": "Özel",
+   "buyukluk": 30193866893.66,
+   "yatirimci": 1.0,
+   "risk": 4.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 7.493265,
+   "d1_tarih": "2026-11-24",
+   "rk": {
+    "mdd": -1.03,
+    "vol": 2.95,
+    "gr": 11.72
+   },
+   "g": {
+    "a1": 2.6,
+    "a3": 6.61,
+    "a6": 16.98,
+    "y1": 34.57,
+    "y3": 141.31,
+    "y5": 601.15,
+    "reel_y1": 3.7,
+    "w1": 0.59,
+    "ytd": 28.56,
+    "d1": 0.07
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-24",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 40,
+   "her_yonu": true,
+   "kosul": 5,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 2,
+    "seri": 0,
+    "her_yonu_gun": 2
+   }
+  },
+  {
+   "k": "TZT",
+   "ad": "ZİRAAT PORTFÖY BORÇLANMA ARAÇLARI (TL) FONU",
+   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
+   "banka": "Ziraat Bankası",
+   "grup": "Kamu",
+   "buyukluk": 347681224.8,
+   "yatirimci": 5667.0,
+   "risk": 3.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 0.180941,
+   "d1_tarih": "2026-11-24",
+   "rk": {
+    "mdd": -2.19,
+    "vol": 5.66,
+    "gr": 6.02
+   },
+   "g": {
+    "a1": 1.91,
+    "a3": 6.99,
+    "a6": 17.37,
+    "y1": 34.07,
+    "y3": 168.9,
+    "y5": 400.58,
+    "reel_y1": 3.31,
+    "w1": 0.66,
+    "ytd": 23.77,
+    "d1": 0.16
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-24",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 34,
+   "her_yonu": true,
+   "kosul": 5,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 2,
+    "seri": 0,
+    "her_yonu_gun": 2
+   }
+  },
+  {
+   "k": "GA1",
+   "ad": "GARANTİ PORTFÖY BORÇLANMA ARAÇLARI FONU",
+   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
+   "banka": "Garanti BBVA",
+   "grup": "Özel",
+   "buyukluk": 331284202.01,
+   "yatirimci": 1500.0,
+   "risk": 3.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 2.160637,
+   "d1_tarih": "2026-11-24",
+   "rk": {
+    "mdd": -3.43,
+    "vol": 6.01,
+    "gr": 5.63
+   },
+   "g": {
+    "a1": 2.22,
+    "a3": 7.85,
+    "a6": 20.25,
+    "y1": 33.83,
+    "y3": 174.43,
+    "y5": 363.98,
+    "reel_y1": 3.13,
+    "w1": 0.65,
+    "ytd": 27.2,
+    "d1": 0.01
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-24",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 42,
+   "her_yonu": true,
+   "kosul": 5,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 2,
+    "seri": 0,
+    "her_yonu_gun": 2
+   }
+  },
+  {
+   "k": "GUA",
+   "ad": "GARANTİ PORTFÖY BİRİNCİ BORÇLANMA ARAÇLARI ÖZEL FON",
+   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
+   "banka": "Garanti BBVA",
+   "grup": "Özel",
+   "buyukluk": 2189363165.97,
+   "yatirimci": 1.0,
+   "risk": 3.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 6.404253,
+   "d1_tarih": "2026-11-24",
+   "rk": {
+    "mdd": -0.94,
+    "vol": 3.14,
+    "gr": 10.39
+   },
+   "g": {
+    "a1": 2.76,
+    "a3": 6.71,
+    "a6": 16.17,
+    "y1": 32.64,
+    "y3": 174.34,
+    "y5": 491.16,
+    "reel_y1": 2.21,
+    "w1": 0.16,
+    "ytd": 28.08,
+    "d1": 0.24
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-24",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 42,
+   "her_yonu": true,
+   "kosul": 5,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 2,
+    "seri": 0,
+    "her_yonu_gun": 2
+   }
+  },
+  {
+   "k": "TI6",
+   "ad": "İŞ PORTFÖY BORÇLANMA ARAÇLARI (TL) FONU",
+   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
+   "banka": "İş Bankası",
+   "grup": "Özel",
+   "buyukluk": 709872894.14,
+   "yatirimci": 4823.0,
+   "risk": 4.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 0.058317,
+   "d1_tarih": "2026-11-24",
+   "rk": {
+    "mdd": -4.99,
+    "vol": 7.82,
+    "gr": 4.05
+   },
+   "g": {
+    "a1": 2.41,
+    "a3": 8.03,
+    "a6": 18.99,
+    "y1": 31.7,
+    "y3": 150.97,
+    "y5": 334.46,
+    "reel_y1": 1.49,
+    "w1": 0.82,
+    "ytd": 21.42,
+    "d1": 0.09
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-24",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 33,
+   "her_yonu": true,
+   "kosul": 5,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 2,
+    "seri": 0,
+    "her_yonu_gun": 2
+   }
+  },
+  {
+   "k": "APT",
+   "ad": "AK PORTFÖY ORTA VADELI BORÇLANMA ARAÇLARI FONU",
+   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
+   "banka": "Akbank",
+   "grup": "Özel",
+   "buyukluk": 321871913.61,
+   "yatirimci": 12765.0,
+   "risk": 3.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 0.173549,
+   "d1_tarih": "2026-11-24",
+   "rk": {
+    "mdd": -5.26,
+    "vol": 7.6,
+    "gr": 4.16
+   },
+   "g": {
+    "a1": 1.91,
+    "a3": 7.21,
+    "a6": 18.87,
+    "y1": 31.65,
+    "y3": 138.83,
+    "y5": 205.02,
+    "reel_y1": 1.45,
+    "w1": 0.65,
+    "ytd": 22.54,
+    "d1": 0.05
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-24",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 27,
+   "her_yonu": true,
+   "kosul": 5,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 2,
+    "seri": 0,
+    "her_yonu_gun": 2
+   }
+  },
+  {
+   "k": "TPE",
+   "ad": "İŞ PORTFÖY PY EUROBOND BORÇLANMA ARAÇLARI (DÖVİZ) ÖZEL FONU",
+   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
+   "banka": "İş Bankası",
+   "grup": "Özel",
+   "buyukluk": 2386966586.46,
+   "yatirimci": 33.0,
+   "risk": 0.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 0.580204,
+   "d1_tarih": "2026-11-24",
+   "rk": {
+    "mdd": -0.84,
+    "vol": 2.25,
+    "gr": 11.64
+   },
+   "g": {
+    "a1": 2.29,
+    "a3": 5.53,
+    "a6": 13.0,
+    "y1": 26.19,
+    "y3": 123.84,
+    "y5": 484.03,
+    "reel_y1": -2.76,
+    "w1": 0.31,
+    "ytd": 22.12,
+    "d1": 0.09
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-24",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 33,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
     "kac": 0,
-    "toplam": 1,
+    "toplam": 2,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "GUV",
+   "ad": "GARANTİ PORTFÖY UZUN VADELİ BORÇLANMA ARAÇLARI FONU",
+   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
+   "banka": "Garanti BBVA",
+   "grup": "Özel",
+   "buyukluk": 1002280196.33,
+   "yatirimci": 1568.0,
+   "risk": 5.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 1.841536,
+   "d1_tarih": "2026-11-24",
+   "rk": {
+    "mdd": -8.63,
+    "vol": 11.07,
+    "gr": 2.31
+   },
+   "g": {
+    "a1": 1.76,
+    "a3": 6.29,
+    "a6": 17.81,
+    "y1": 25.6,
+    "reel_y1": -3.21,
+    "w1": 0.73,
+    "ytd": 14.67,
+    "d1": 0.09
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1"
+   ],
+   "celiski": [],
+   "gun": 624,
+   "son_tarih": "2026-11-24",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 19,
+   "her_yonu": false,
+   "kosul": 4,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 2,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "AK2",
+   "ad": "AK PORTFÖY UZUN VADELİ BORÇLANMA ARAÇLARI FONU",
+   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
+   "banka": "Akbank",
+   "grup": "Özel",
+   "buyukluk": 174337931.96,
+   "yatirimci": 8857.0,
+   "risk": 5.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 0.572033,
+   "d1_tarih": "2026-11-24",
+   "rk": {
+    "mdd": -6.52,
+    "vol": 9.49,
+    "gr": 2.61
+   },
+   "g": {
+    "a1": 1.15,
+    "a3": 5.22,
+    "a6": 15.53,
+    "y1": 24.79,
+    "y3": 102.18,
+    "y5": 146.78,
+    "reel_y1": -3.84,
+    "w1": 0.63,
+    "ytd": 14.02,
+    "d1": 0.4
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-24",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 12,
+   "her_yonu": false,
+   "kosul": 4,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 2,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "IPV",
+   "ad": "İŞ PORTFÖY EUROBOND BORÇLANMA ARAÇLARI (DÖVİZ) FONU",
+   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
+   "banka": "İş Bankası",
+   "grup": "Özel",
+   "buyukluk": 2215479874.63,
+   "yatirimci": 11738.0,
+   "risk": 0.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 82.22154,
+   "d1_tarih": "2026-11-24",
+   "rk": {
+    "mdd": -1.5,
+    "vol": 2.79,
+    "gr": 8.56
+   },
+   "g": {
+    "a1": 2.13,
+    "a3": 4.96,
+    "a6": 11.78,
+    "y1": 23.88,
+    "y3": 113.96,
+    "y5": 462.45,
+    "reel_y1": -4.54,
+    "w1": 0.05,
+    "ytd": 19.67,
+    "d1": 0.11
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-24",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 24,
+   "her_yonu": false,
+   "kosul": 4,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 2,
     "seri": 0,
     "her_yonu_gun": 0
    }
@@ -1930,27 +1875,27 @@
    "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
    "banka": "Yapı Kredi",
    "grup": "Özel",
-   "buyukluk": 85153915.4,
-   "yatirimci": 624.0,
+   "buyukluk": 85063930.67,
+   "yatirimci": 622.0,
    "risk": 5.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 1.438726,
-   "d1_tarih": "2026-11-23",
+   "fiyat": 1.444487,
+   "d1_tarih": "2026-11-24",
    "rk": {
     "mdd": -8.56,
     "vol": 10.48,
-    "gr": 2.23
+    "gr": 2.25
    },
    "g": {
-    "a1": 0.94,
-    "a3": 5.29,
-    "a6": 17.12,
-    "y1": 23.33,
-    "reel_y1": -4.96,
-    "w1": 0.13,
-    "ytd": 12.41,
-    "d1": 0.53
+    "a1": 1.34,
+    "a3": 5.3,
+    "a6": 17.58,
+    "y1": 23.63,
+    "reel_y1": -4.73,
+    "w1": 0.71,
+    "ytd": 12.86,
+    "d1": 0.4
    },
    "teyit": [
     "a1",
@@ -1959,18 +1904,73 @@
     "y1"
    ],
    "celiski": [],
-   "gun": 458,
-   "son_tarih": "2026-11-23",
+   "gun": 459,
+   "son_tarih": "2026-11-24",
    "istikrar": [
     4,
     4
    ],
-   "puan": 13,
+   "puan": 14,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
     "kac": 0,
-    "toplam": 1,
+    "toplam": 2,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "YOA",
+   "ad": "YAPI KREDİ PORTFÖY PY BORÇLANMA ARAÇLARI (DÖVİZ) ÖZEL FONU",
+   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
+   "banka": "Yapı Kredi",
+   "grup": "Özel",
+   "buyukluk": 1992480272.7,
+   "yatirimci": 139.0,
+   "risk": 0.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 94.01873,
+   "d1_tarih": "2026-11-24",
+   "rk": {
+    "mdd": -2.29,
+    "vol": 3.75,
+    "gr": 6.29
+   },
+   "g": {
+    "a1": 2.45,
+    "a3": 4.67,
+    "a6": 12.51,
+    "y1": 23.6,
+    "y3": 122.81,
+    "y5": 508.75,
+    "reel_y1": -4.75,
+    "w1": 0.5,
+    "ytd": 19.87,
+    "d1": 0.24
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-24",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 24,
+   "her_yonu": false,
+   "kosul": 4,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 2,
     "seri": 0,
     "her_yonu_gun": 0
    }
@@ -1981,29 +1981,29 @@
    "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
    "banka": "DenizBank",
    "grup": "Özel",
-   "buyukluk": 918690224.18,
-   "yatirimci": 7604.0,
+   "buyukluk": 920011440.28,
+   "yatirimci": 7597.0,
    "risk": 6.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 0.399013,
-   "d1_tarih": "2026-11-23",
+   "fiyat": 0.399811,
+   "d1_tarih": "2026-11-24",
    "rk": {
     "mdd": -3.12,
     "vol": 4.53,
-    "gr": 4.97
+    "gr": 5.0
    },
    "g": {
-    "a1": 1.65,
-    "a3": 4.13,
-    "a6": 12.13,
-    "y1": 22.52,
-    "y3": 134.25,
-    "y5": 597.36,
-    "reel_y1": -5.59,
-    "w1": -0.08,
-    "ytd": 19.28,
-    "d1": -0.32
+    "a1": 1.85,
+    "a3": 4.26,
+    "a6": 12.36,
+    "y1": 22.66,
+    "y3": 134.7,
+    "y5": 563.93,
+    "reel_y1": -5.48,
+    "w1": -0.14,
+    "ytd": 19.52,
+    "d1": 0.2
    },
    "teyit": [
     "a1",
@@ -2015,7 +2015,7 @@
    ],
    "celiski": [],
    "gun": 1258,
-   "son_tarih": "2026-11-23",
+   "son_tarih": "2026-11-24",
    "istikrar": [
     4,
     4
@@ -2025,7 +2025,7 @@
    "kosul": 4,
    "gecmis": {
     "kac": 0,
-    "toplam": 1,
+    "toplam": 2,
     "seri": 0,
     "her_yonu_gun": 0
    }
@@ -2036,27 +2036,27 @@
    "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
    "banka": "DenizBank",
    "grup": "Özel",
-   "buyukluk": 52567009.71,
-   "yatirimci": 170.0,
+   "buyukluk": 52076556.2,
+   "yatirimci": 168.0,
    "risk": 5.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 1.368974,
-   "d1_tarih": "2026-11-23",
+   "fiyat": 1.371961,
+   "d1_tarih": "2026-11-24",
    "rk": {
     "mdd": -8.86,
     "vol": 11.12,
-    "gr": 1.99
+    "gr": 2.0
    },
    "g": {
-    "a1": 0.88,
-    "a3": 4.86,
-    "a6": 16.07,
-    "y1": 22.09,
-    "reel_y1": -5.92,
-    "w1": 0.17,
-    "ytd": 11.23,
-    "d1": 0.65
+    "a1": 1.1,
+    "a3": 4.91,
+    "a6": 16.32,
+    "y1": 22.21,
+    "reel_y1": -5.83,
+    "w1": 0.67,
+    "ytd": 11.47,
+    "d1": 0.22
    },
    "teyit": [
     "a1",
@@ -2065,18 +2065,18 @@
     "y1"
    ],
    "celiski": [],
-   "gun": 433,
-   "son_tarih": "2026-11-23",
+   "gun": 434,
+   "son_tarih": "2026-11-24",
    "istikrar": [
     4,
     4
    ],
-   "puan": 9,
+   "puan": 8,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
     "kac": 0,
-    "toplam": 1,
+    "toplam": 2,
     "seri": 0,
     "her_yonu_gun": 0
    }
@@ -2087,29 +2087,29 @@
    "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
    "banka": "Yapı Kredi",
    "grup": "Özel",
-   "buyukluk": 4988089680.31,
-   "yatirimci": 13331.0,
+   "buyukluk": 5007565345.13,
+   "yatirimci": 13321.0,
    "risk": 5.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 1.902803,
-   "d1_tarih": "2026-11-23",
+   "fiyat": 1.910704,
+   "d1_tarih": "2026-11-24",
    "rk": {
     "mdd": -4.55,
     "vol": 6.04,
-    "gr": 3.55
+    "gr": 3.63
    },
    "g": {
-    "a1": 1.09,
-    "a3": 2.88,
-    "a6": 11.97,
-    "y1": 21.44,
-    "y3": 121.67,
-    "y5": 491.83,
-    "reel_y1": -6.42,
-    "w1": -0.52,
-    "ytd": 17.42,
-    "d1": -0.62
+    "a1": 1.51,
+    "a3": 3.29,
+    "a6": 12.43,
+    "y1": 21.9,
+    "y3": 122.53,
+    "y5": 462.79,
+    "reel_y1": -6.06,
+    "w1": -0.31,
+    "ytd": 17.9,
+    "d1": 0.42
    },
    "teyit": [
     "a1",
@@ -2121,17 +2121,17 @@
    ],
    "celiski": [],
    "gun": 1258,
-   "son_tarih": "2026-11-23",
+   "son_tarih": "2026-11-24",
    "istikrar": [
     4,
     4
    ],
-   "puan": 9,
+   "puan": 10,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
     "kac": 0,
-    "toplam": 1,
+    "toplam": 2,
     "seri": 0,
     "her_yonu_gun": 0
    }
@@ -2142,29 +2142,29 @@
    "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
    "banka": "Garanti BBVA",
    "grup": "Özel",
-   "buyukluk": 879871084.84,
-   "yatirimci": 5260.0,
+   "buyukluk": 883371638.65,
+   "yatirimci": 5254.0,
    "risk": 5.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 24.056182,
-   "d1_tarih": "2026-11-23",
+   "fiyat": 24.178245,
+   "d1_tarih": "2026-11-24",
    "rk": {
     "mdd": -3.24,
     "vol": 5.26,
-    "gr": 4.0
+    "gr": 4.13
    },
    "g": {
-    "a1": 1.18,
-    "a3": 3.17,
-    "a6": 11.38,
-    "y1": 21.02,
-    "y3": 121.13,
-    "y5": 489.41,
-    "reel_y1": -6.74,
-    "w1": -0.48,
-    "ytd": 17.36,
-    "d1": -0.59
+    "a1": 1.69,
+    "a3": 3.68,
+    "a6": 11.95,
+    "y1": 21.7,
+    "y3": 122.08,
+    "y5": 456.39,
+    "reel_y1": -6.22,
+    "w1": -0.08,
+    "ytd": 17.95,
+    "d1": 0.51
    },
    "teyit": [
     "a1",
@@ -2176,72 +2176,17 @@
    ],
    "celiski": [],
    "gun": 1258,
-   "son_tarih": "2026-11-23",
+   "son_tarih": "2026-11-24",
    "istikrar": [
     4,
     4
    ],
-   "puan": 10,
+   "puan": 12,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
     "kac": 0,
-    "toplam": 1,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "AKE",
-   "ad": "AK PORTFÖY EUROBOND (AMERİKAN DOLARI) BORÇLANMA ARAÇLARI FONU",
-   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
-   "banka": "Akbank",
-   "grup": "Özel",
-   "buyukluk": 1048597068.13,
-   "yatirimci": 12855.0,
-   "risk": 5.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 0.544662,
-   "d1_tarih": "2026-11-23",
-   "rk": {
-    "mdd": -3.25,
-    "vol": 5.09,
-    "gr": 3.76
-   },
-   "g": {
-    "a1": 1.42,
-    "a3": 3.25,
-    "a6": 10.73,
-    "y1": 19.13,
-    "y3": 109.5,
-    "y5": 464.62,
-    "reel_y1": -8.2,
-    "w1": -0.16,
-    "ytd": 15.66,
-    "d1": -0.39
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-23",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 9,
-   "her_yonu": false,
-   "kosul": 4,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 1,
+    "toplam": 2,
     "seri": 0,
     "her_yonu_gun": 0
    }
@@ -2252,29 +2197,29 @@
    "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
    "banka": "İş Bankası",
    "grup": "Özel",
-   "buyukluk": 503781311.87,
-   "yatirimci": 2479.0,
+   "buyukluk": 504781239.24,
+   "yatirimci": 2461.0,
    "risk": 0.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 0.552022,
-   "d1_tarih": "2026-11-23",
+   "fiyat": 0.553847,
+   "d1_tarih": "2026-11-24",
    "rk": {
     "mdd": -1.8,
     "vol": 3.02,
-    "gr": 6.33
+    "gr": 6.45
    },
    "g": {
-    "a1": 2.46,
-    "a3": 4.57,
-    "a6": 9.74,
-    "y1": 19.12,
-    "y3": 90.4,
-    "y5": 350.33,
-    "reel_y1": -8.21,
-    "w1": 1.27,
-    "ytd": 17.16,
-    "d1": 0.6
+    "a1": 2.79,
+    "a3": 4.88,
+    "a6": 10.1,
+    "y1": 19.49,
+    "y3": 90.93,
+    "y5": 318.96,
+    "reel_y1": -7.92,
+    "w1": 1.3,
+    "ytd": 17.55,
+    "d1": 0.33
    },
    "teyit": [
     "a1",
@@ -2286,17 +2231,72 @@
    ],
    "celiski": [],
    "gun": 1258,
-   "son_tarih": "2026-11-23",
+   "son_tarih": "2026-11-24",
    "istikrar": [
     4,
     4
    ],
-   "puan": 19,
+   "puan": 22,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
     "kac": 0,
-    "toplam": 1,
+    "toplam": 2,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "AKE",
+   "ad": "AK PORTFÖY EUROBOND (AMERİKAN DOLARI) BORÇLANMA ARAÇLARI FONU",
+   "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
+   "banka": "Akbank",
+   "grup": "Özel",
+   "buyukluk": 1050516361.7,
+   "yatirimci": 12846.0,
+   "risk": 5.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 0.545849,
+   "d1_tarih": "2026-11-24",
+   "rk": {
+    "mdd": -3.25,
+    "vol": 5.09,
+    "gr": 3.8
+   },
+   "g": {
+    "a1": 1.65,
+    "a3": 3.43,
+    "a6": 10.97,
+    "y1": 19.35,
+    "y3": 109.94,
+    "y5": 429.96,
+    "reel_y1": -8.03,
+    "w1": -0.13,
+    "ytd": 15.91,
+    "d1": 0.22
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-24",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 8,
+   "her_yonu": false,
+   "kosul": 4,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 2,
     "seri": 0,
     "her_yonu_gun": 0
    }
@@ -2307,25 +2307,25 @@
    "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
    "banka": "İş Bankası",
    "grup": "Özel",
-   "buyukluk": 130958220.02,
-   "yatirimci": 963.0,
+   "buyukluk": 130936259.57,
+   "yatirimci": 966.0,
    "risk": 4.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 1.36963,
-   "d1_tarih": "2026-11-23",
+   "fiyat": 1.370728,
+   "d1_tarih": "2026-11-24",
    "rk": {
     "mdd": -0.67,
     "vol": 3.48
    },
    "g": {
-    "a1": 2.51,
-    "a3": 6.48,
-    "a6": 15.13,
+    "a1": 2.59,
+    "a3": 6.39,
+    "a6": 15.23,
     "reel_y1": null,
     "w1": 0.56,
-    "ytd": 32.3,
-    "d1": 0.24
+    "ytd": 32.4,
+    "d1": 0.08
    },
    "teyit": [
     "a1",
@@ -2333,8 +2333,8 @@
     "a6"
    ],
    "celiski": [],
-   "gun": 248,
-   "son_tarih": "2026-11-23",
+   "gun": 249,
+   "son_tarih": "2026-11-24",
    "istikrar": [
     3,
     3
@@ -2344,7 +2344,7 @@
    "kosul": 2,
    "gecmis": {
     "kac": 0,
-    "toplam": 1,
+    "toplam": 2,
     "seri": 0,
     "her_yonu_gun": 0
    }
@@ -2355,24 +2355,24 @@
    "kat": "Borçlanma Araçları Fonu Borçlanma Araçları Şemsiye Fonu YAT",
    "banka": "Yapı Kredi",
    "grup": "Özel",
-   "buyukluk": 67124913.37,
-   "yatirimci": 540.0,
+   "buyukluk": 67208696.15,
+   "yatirimci": 542.0,
    "risk": 2.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 1.288413,
-   "d1_tarih": "2026-11-23",
+   "fiyat": 1.288738,
+   "d1_tarih": "2026-11-24",
    "rk": {
     "mdd": -0.51,
     "vol": 2.07
    },
    "g": {
-    "a1": 2.89,
-    "a3": 8.91,
-    "a6": 18.98,
+    "a1": 2.91,
+    "a3": 8.47,
+    "a6": 19.01,
     "reel_y1": null,
-    "w1": 0.68,
-    "d1": 0.26
+    "w1": 0.58,
+    "d1": 0.03
    },
    "teyit": [
     "a1",
@@ -2380,8 +2380,8 @@
     "a6"
    ],
    "celiski": [],
-   "gun": 180,
-   "son_tarih": "2026-11-23",
+   "gun": 181,
+   "son_tarih": "2026-11-24",
    "istikrar": [
     3,
     3
@@ -2391,7 +2391,7 @@
    "kosul": 2,
    "gecmis": {
     "kac": 0,
-    "toplam": 1,
+    "toplam": 2,
     "seri": 0,
     "her_yonu_gun": 0
    }

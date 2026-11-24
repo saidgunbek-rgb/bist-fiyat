@@ -15,12 +15,12 @@
    "search_funds(BORCLANMA): 1000 kayit, 0 yeni fon",
    "ornek alanlar: ['fund_code', 'name', 'fund_type', 'return_1y']",
    "Toplam aday fon: 2373",
-   "Enflasyon: {'y': 29.77, 't': '2026-11-23', 'k': 'borsapy:latest'}",
-   "BIST100 kaynaklar: {'yahoo': {'a1': -0.11, 'a3': -23.5, 'a6': -19.58, 'y1': 1.66, 'y3': 40.59, 'y5': 522.23, '_risk': {'mdd': -28.9, 'vol': 25.63}, 'd1': -0.24, '_d1t': '2026-11-23'}, 'borsapy': {'a1': -0.11, 'a3': -23.5, 'a6': -19.58, 'y1': 1.66, 'y3': 40.59, 'y5': 522.25, '_risk': {'mdd': -28.9, '",
-   "BIST100 (teyitli): {'a1': -0.11, 'a3': -23.5, 'a6': -19.58, 'y1': 1.66, 'y3': 40.59, 'y5': 522.25, 'd1': -0.24, 'mdd': -28.9, 'vol': 25.63, 'reel_y1': -21.66}",
+   "Enflasyon: {'y': 29.77, 't': '2026-11-24', 'k': 'borsapy:latest'}",
+   "BIST100 kaynaklar: {'yahoo': {'a1': -1.36, 'a3': -24.38, 'a6': -20.58, 'y1': 0.72, 'y3': 37.76, 'y5': 505.08, '_risk': {'mdd': -28.9, 'vol': 25.63}, 'd1': -1.25, '_d1t': '2026-11-24'}, 'borsapy': {'a1': -1.36, 'a3': -24.38, 'a6': -20.58, 'y1': 0.72, 'y3': 37.76, 'y5': 505.08, '_risk': {'mdd': -28.9,",
+   "BIST100 (teyitli): {'a1': -1.36, 'a3': -24.38, 'a6': -20.58, 'y1': 0.72, 'y3': 37.76, 'y5': 505.08, 'd1': -1.25, 'mdd': -28.9, 'vol': 25.63, 'reel_y1': -22.39}",
    "Sorgulanacak fon: 44",
    "Listeye giren: 44 | Atlanan: {'borçlanma fonu değil': 2283, 'banka fonu değil': 46}",
-   "Grafik verisi: 44 fon, BIST100 1259 gun"
+   "Grafik verisi: 44 fon, BIST100 1260 gun"
   ],
   "banka_disi_kurucular": {
    "ALLIANZ YASAM VE EMEKLILIK A.S": 2,
