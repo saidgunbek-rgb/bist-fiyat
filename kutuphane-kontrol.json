@@ -1,7 +1,7 @@
 {
  "hisseler": {
   "THYAO": {
-   "updatedAt": "2026-11-23T18:56:21Z",
+   "updatedAt": "2026-11-24T16:50:40Z",
    "hisseler": {
     "THYAO": {
      "ozet": {
@@ -14,7 +14,7 @@
       "isyatirim": 290,
       "yahoo": 290,
       "borsapy": 290,
-      "kendi_kayit": 30
+      "kendi_kayit": 31
      },
      "bolunmeler": [
       "2025-06-16",
@@ -25,7 +25,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-23 21:56",
+    "updatedAt": "2026-11-24 19:51",
     "hisseler": {
      "THYAO": {
       "kap_icerik": [],
@@ -63,13 +63,13 @@
    }
   },
   "AKBNK": {
-   "updatedAt": "2026-11-23T18:56:38Z",
+   "updatedAt": "2026-11-24T16:50:28Z",
    "hisseler": {
     "AKBNK": {
      "ozet": {
-      "iki_kaynak": 165,
+      "iki_kaynak": 166,
       "ek_kaynak": 0,
-      "duzeltme": 125,
+      "duzeltme": 124,
       "cozulemedi": 0
      },
      "kaynak_gun_sayisi": {
@@ -488,7 +488,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-23 21:57",
+    "updatedAt": "2026-11-24 19:51",
     "hisseler": {
      "AKBNK": {
       "kap_icerik": [],
@@ -524,13 +524,13 @@
    }
   },
   "MGROS": {
-   "updatedAt": "2026-11-23T18:56:22Z",
+   "updatedAt": "2026-11-24T16:50:47Z",
    "hisseler": {
     "MGROS": {
      "ozet": {
-      "iki_kaynak": 9,
+      "iki_kaynak": 10,
       "ek_kaynak": 0,
-      "duzeltme": 281,
+      "duzeltme": 280,
       "cozulemedi": 0
      },
      "kaynak_gun_sayisi": {
@@ -951,7 +951,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-23 21:56",
+    "updatedAt": "2026-11-24 19:51",
     "hisseler": {
      "MGROS": {
       "kap_icerik": [],
@@ -988,13 +988,13 @@
    }
   },
   "BIMAS": {
-   "updatedAt": "2026-11-23T18:56:24Z",
+   "updatedAt": "2026-11-24T16:50:36Z",
    "hisseler": {
     "BIMAS": {
      "ozet": {
-      "iki_kaynak": 48,
+      "iki_kaynak": 49,
       "ek_kaynak": 0,
-      "duzeltme": 242,
+      "duzeltme": 241,
       "cozulemedi": 0
      },
      "kaynak_gun_sayisi": {
@@ -1418,7 +1418,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-23 21:56",
+    "updatedAt": "2026-11-24 19:51",
     "hisseler": {
      "BIMAS": {
       "kap_icerik": [],
@@ -1455,13 +1455,13 @@
    }
   },
   "TCELL": {
-   "updatedAt": "2026-11-23T18:56:16Z",
+   "updatedAt": "2026-11-24T16:50:46Z",
    "hisseler": {
     "TCELL": {
      "ozet": {
-      "iki_kaynak": 227,
+      "iki_kaynak": 228,
       "ek_kaynak": 0,
-      "duzeltme": 63,
+      "duzeltme": 62,
       "cozulemedi": 0
      },
      "kaynak_gun_sayisi": {
@@ -1881,7 +1881,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-23 21:56",
+    "updatedAt": "2026-11-24 19:51",
     "hisseler": {
      "TCELL": {
       "kap_icerik": [],
@@ -1918,7 +1918,7 @@
    }
   },
   "YKBNK": {
-   "updatedAt": "2026-11-23T18:57:41Z",
+   "updatedAt": "2026-11-24T16:52:56Z",
    "hisseler": {
     "YKBNK": {
      "ozet": {
@@ -1939,7 +1939,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-23 21:57",
+    "updatedAt": "2026-11-24 19:54",
     "hisseler": {
      "YKBNK": {
       "kap_icerik": [],
@@ -1975,13 +1975,13 @@
    }
   },
   "GARAN": {
-   "updatedAt": "2026-11-23T18:57:26Z",
+   "updatedAt": "2026-11-24T16:53:10Z",
    "hisseler": {
     "GARAN": {
      "ozet": {
-      "iki_kaynak": 157,
+      "iki_kaynak": 158,
       "ek_kaynak": 0,
-      "duzeltme": 133,
+      "duzeltme": 132,
       "cozulemedi": 0
      },
      "kaynak_gun_sayisi": {
@@ -2400,7 +2400,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-23 21:57",
+    "updatedAt": "2026-11-24 19:54",
     "hisseler": {
      "GARAN": {
       "kap_icerik": [],
@@ -2436,12 +2436,12 @@
    }
   },
   "ASELS": {
-   "updatedAt": "2026-11-23T18:57:29Z",
+   "updatedAt": "2026-11-24T16:52:36Z",
    "hisseler": {
     "ASELS": {
      "ozet": {
-      "iki_kaynak": 290,
-      "ek_kaynak": 0,
+      "iki_kaynak": 251,
+      "ek_kaynak": 39,
       "duzeltme": 0,
       "cozulemedi": 0
      },
@@ -2453,14 +2453,406 @@
      },
      "bolunmeler": [
       "2024-11-25",
-      "2025-11-25"
+      "2025-11-25",
+      "2026-11-24"
      ],
      "hatalar": [],
-     "secim_kayitlari": []
+     "secim_kayitlari": [
+      {
+       "tarih": "2025-09-30",
+       "degerler": {
+        "isyatirim": 214.4443,
+        "yahoo": 215.0,
+        "borsapy": 215.0
+       },
+       "secilen": 215.0,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-10-01",
+       "degerler": {
+        "isyatirim": 217.5363,
+        "yahoo": 218.1,
+        "borsapy": 218.1
+       },
+       "secilen": 218.1,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-10-02",
+       "degerler": {
+        "isyatirim": 216.4391,
+        "yahoo": 217.0,
+        "borsapy": 217.0
+       },
+       "secilen": 217.0,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-10-03",
+       "degerler": {
+        "isyatirim": 215.5415,
+        "yahoo": 216.1,
+        "borsapy": 216.1
+       },
+       "secilen": 216.1,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-10-06",
+       "degerler": {
+        "isyatirim": 214.6438,
+        "yahoo": 215.2,
+        "borsapy": 215.2
+       },
+       "secilen": 215.2,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-10-07",
+       "degerler": {
+        "isyatirim": 208.9585,
+        "yahoo": 209.5,
+        "borsapy": 209.5
+       },
+       "secilen": 209.5,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-10-08",
+       "degerler": {
+        "isyatirim": 215.0428,
+        "yahoo": 215.6,
+        "borsapy": 215.6
+       },
+       "secilen": 215.6,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-10-09",
+       "degerler": {
+        "isyatirim": 218.6335,
+        "yahoo": 219.2,
+        "borsapy": 219.2
+       },
+       "secilen": 219.2,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-10-10",
+       "degerler": {
+        "isyatirim": 212.9482,
+        "yahoo": 213.5,
+        "borsapy": 213.5
+       },
+       "secilen": 213.5,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-10-13",
+       "degerler": {
+        "isyatirim": 213.4469,
+        "yahoo": 214.0,
+        "borsapy": 214.0
+       },
+       "secilen": 214.0,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-10-14",
+       "degerler": {
+        "isyatirim": 211.4521,
+        "yahoo": 212.0,
+        "borsapy": 212.0
+       },
+       "secilen": 212.0,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-10-15",
+       "degerler": {
+        "isyatirim": 206.9637,
+        "yahoo": 207.5,
+        "borsapy": 207.5
+       },
+       "secilen": 207.5,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-10-16",
+       "degerler": {
+        "isyatirim": 203.4727,
+        "yahoo": 204.0,
+        "borsapy": 204.0
+       },
+       "secilen": 204.0,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-10-17",
+       "degerler": {
+        "isyatirim": 194.3963,
+        "yahoo": 194.9,
+        "borsapy": 194.9
+       },
+       "secilen": 194.9,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-10-20",
+       "degerler": {
+        "isyatirim": 203.373,
+        "yahoo": 203.9,
+        "borsapy": 203.9
+       },
+       "secilen": 203.9,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-10-21",
+       "degerler": {
+        "isyatirim": 205.0686,
+        "yahoo": 205.6,
+        "borsapy": 205.6
+       },
+       "secilen": 205.6,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-10-22",
+       "degerler": {
+        "isyatirim": 207.0634,
+        "yahoo": 207.6,
+        "borsapy": 207.6
+       },
+       "secilen": 207.6,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-10-23",
+       "degerler": {
+        "isyatirim": 205.9663,
+        "yahoo": 206.5,
+        "borsapy": 206.5
+       },
+       "secilen": 206.5,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-10-24",
+       "degerler": {
+        "isyatirim": 203.373,
+        "yahoo": 203.9,
+        "borsapy": 203.9
+       },
+       "secilen": 203.9,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-10-27",
+       "degerler": {
+        "isyatirim": 208.2603,
+        "yahoo": 208.8,
+        "borsapy": 208.8
+       },
+       "secilen": 208.8,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-10-28",
+       "degerler": {
+        "isyatirim": 210.8536,
+        "yahoo": 211.4,
+        "borsapy": 211.4
+       },
+       "secilen": 211.4,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-10-30",
+       "degerler": {
+        "isyatirim": 205.1684,
+        "yahoo": 205.7,
+        "borsapy": 205.7
+       },
+       "secilen": 205.7,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-10-31",
+       "degerler": {
+        "isyatirim": 203.0738,
+        "yahoo": 203.6,
+        "borsapy": 203.6
+       },
+       "secilen": 203.6,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-11-03",
+       "degerler": {
+        "isyatirim": 202.0764,
+        "yahoo": 202.6,
+        "borsapy": 202.6
+       },
+       "secilen": 202.6,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-11-04",
+       "degerler": {
+        "isyatirim": 196.7901,
+        "yahoo": 197.3,
+        "borsapy": 197.3
+       },
+       "secilen": 197.3,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-11-05",
+       "degerler": {
+        "isyatirim": 193.5983,
+        "yahoo": 194.1,
+        "borsapy": 194.1
+       },
+       "secilen": 194.1,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-11-06",
+       "degerler": {
+        "isyatirim": 186.9156,
+        "yahoo": 187.4,
+        "borsapy": 187.4
+       },
+       "secilen": 187.4,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-11-07",
+       "degerler": {
+        "isyatirim": 184.6216,
+        "yahoo": 185.1,
+        "borsapy": 185.1
+       },
+       "secilen": 185.1,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-11-10",
+       "degerler": {
+        "isyatirim": 185.9182,
+        "yahoo": 186.4,
+        "borsapy": 186.4
+       },
+       "secilen": 186.4,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-11-11",
+       "degerler": {
+        "isyatirim": 180.9312,
+        "yahoo": 181.4,
+        "borsapy": 181.4
+       },
+       "secilen": 181.4,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-11-12",
+       "degerler": {
+        "isyatirim": 183.1255,
+        "yahoo": 183.6,
+        "borsapy": 183.6
+       },
+       "secilen": 183.6,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-11-13",
+       "degerler": {
+        "isyatirim": 177.3405,
+        "yahoo": 177.8,
+        "borsapy": 177.8
+       },
+       "secilen": 177.8,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-11-14",
+       "degerler": {
+        "isyatirim": 175.5451,
+        "yahoo": 176.0,
+        "borsapy": 176.0
+       },
+       "secilen": 176.0,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-11-17",
+       "degerler": {
+        "isyatirim": 187.8133,
+        "yahoo": 188.3,
+        "borsapy": 188.3
+       },
+       "secilen": 188.3,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-11-18",
+       "degerler": {
+        "isyatirim": 187.7136,
+        "yahoo": 188.2,
+        "borsapy": 188.2
+       },
+       "secilen": 188.2,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-11-19",
+       "degerler": {
+        "isyatirim": 183.8237,
+        "yahoo": 184.3,
+        "borsapy": 184.3
+       },
+       "secilen": 184.3,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-11-20",
+       "degerler": {
+        "isyatirim": 184.3224,
+        "yahoo": 184.8,
+        "borsapy": 184.8
+       },
+       "secilen": 184.8,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-11-21",
+       "degerler": {
+        "isyatirim": 184.2226,
+        "yahoo": 184.7,
+        "borsapy": 184.7
+       },
+       "secilen": 184.7,
+       "neden": "cogunluk: borsapy,yahoo"
+      },
+      {
+       "tarih": "2025-11-24",
+       "degerler": {
+        "isyatirim": 183.9234,
+        "yahoo": 184.4,
+        "borsapy": 184.4
+       },
+       "secilen": 184.4,
+       "neden": "cogunluk: borsapy,yahoo"
+      }
+     ]
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-23 21:57",
+    "updatedAt": "2026-11-24 19:53",
     "hisseler": {
      "ASELS": {
       "kap_icerik": [],
@@ -2497,13 +2889,13 @@
    }
   },
   "FROTO": {
-   "updatedAt": "2026-11-23T18:57:45Z",
+   "updatedAt": "2026-11-24T16:53:09Z",
    "hisseler": {
     "FROTO": {
      "ozet": {
-      "iki_kaynak": 172,
+      "iki_kaynak": 173,
       "ek_kaynak": 0,
-      "duzeltme": 118,
+      "duzeltme": 117,
       "cozulemedi": 0
      },
      "kaynak_gun_sayisi": {
@@ -2924,7 +3316,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-23 21:57",
+    "updatedAt": "2026-11-24 19:54",
     "hisseler": {
      "FROTO": {
       "kap_icerik": [],
@@ -2962,13 +3354,13 @@
    }
   },
   "KCHOL": {
-   "updatedAt": "2026-11-23T18:58:23Z",
+   "updatedAt": "2026-11-24T16:52:57Z",
    "hisseler": {
     "KCHOL": {
      "ozet": {
-      "iki_kaynak": 166,
+      "iki_kaynak": 167,
       "ek_kaynak": 0,
-      "duzeltme": 124,
+      "duzeltme": 123,
       "cozulemedi": 0
      },
      "kaynak_gun_sayisi": {
@@ -3387,7 +3779,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-23 21:58",
+    "updatedAt": "2026-11-24 19:54",
     "hisseler": {
      "KCHOL": {
       "kap_icerik": [],
@@ -3424,13 +3816,13 @@
    }
   },
   "ISCTR": {
-   "updatedAt": "2026-11-23T18:58:32Z",
+   "updatedAt": "2026-11-24T16:55:27Z",
    "hisseler": {
     "ISCTR": {
      "ozet": {
-      "iki_kaynak": 161,
+      "iki_kaynak": 162,
       "ek_kaynak": 0,
-      "duzeltme": 129,
+      "duzeltme": 128,
       "cozulemedi": 0
      },
      "kaynak_gun_sayisi": {
@@ -3849,7 +4241,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-23 21:58",
+    "updatedAt": "2026-11-24 19:56",
     "hisseler": {
      "ISCTR": {
       "kap_icerik": [],
@@ -3884,7 +4276,7 @@
    }
   },
   "PGSUS": {
-   "updatedAt": "2026-11-23T18:58:35Z",
+   "updatedAt": "2026-11-24T16:55:18Z",
    "hisseler": {
     "PGSUS": {
      "ozet": {
@@ -3905,7 +4297,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-23 21:58",
+    "updatedAt": "2026-11-24 19:56",
     "hisseler": {
      "PGSUS": {
       "kap_icerik": [],
@@ -3942,12 +4334,12 @@
    }
   },
   "TUPRS": {
-   "updatedAt": "2026-11-23T18:58:50Z",
+   "updatedAt": "2026-11-24T16:55:19Z",
    "hisseler": {
     "TUPRS": {
      "ozet": {
-      "iki_kaynak": 38,
-      "ek_kaynak": 1,
+      "iki_kaynak": 39,
+      "ek_kaynak": 0,
       "duzeltme": 251,
       "cozulemedi": 0
      },
@@ -4369,7 +4761,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-23 21:59",
+    "updatedAt": "2026-11-24 19:56",
     "hisseler": {
      "TUPRS": {
       "kap_icerik": [],
@@ -4406,5 +4798,5 @@
    }
   }
  },
- "updatedAt": "2026-11-23T18:59:16Z"
+ "updatedAt": "2026-11-24T16:56:46Z"
 }
