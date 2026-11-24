@@ -3,9 +3,9 @@
   "surum": "0.11.0",
   "notlar": [
    "USDTRY: yahoo 1561 gun, ecb 1541 gun",
-   "ndx y5 tutmadi: 626.75 / 559.39",
-   "spx y5 tutmadi: 584.73 / 522.01",
-   "Olcutler: {'ndx': {'a1': -6.14, 'a3': -4.0, 'a6': 0.3, 'y1': 31.4, 'y3': 193.38, 'y5': None, 'd1': 6.81, 'tarih': '2026-11-23', 'ad': 'Nasdaq-100'}, 'spx': {'a1': -3.37, 'a3': -0.64, 'a6': 7.23, 'y1': 30.74, 'y3': 179.22, 'y5': None, 'd1': 4.85, 'tarih': '2026-11-23', 'ad': 'S&P 500'}}",
+   "ndx y5 tutmadi: 533.22 / 573.04",
+   "spx y5 tutmadi: 504.79 / 543.06",
+   "Olcutler: {'ndx': {'a1': -7.74, 'a3': -4.78, 'a6': -1.42, 'y1': 25.99, 'y3': 188.24, 'y5': None, 'd1': -1.78, 'tarih': '2026-11-24', 'ad': 'Nasdaq-100'}, 'spx': {'a1': -3.86, 'a3': -0.93, 'a6': 6.69, 'y1': 28.22, 'y3': 177.19, 'y5': None, 'd1': -0.42, 'tarih': '2026-11-24', 'ad': 'S&P 500'}}",
    "screen_funds(YAT): 2134 kayit, 2134 yeni fon",
    "screen_funds(BYF): 38 kayit, 38 yeni fon",
    "Toplam aday: 2172",
@@ -56,7 +56,7 @@
      "spx": 0.302,
      "bist": 0.798
     },
-    136340886.34
+    135844220.1
    ],
    [
     "DJA",
@@ -66,7 +66,7 @@
      "spx": 0.119,
      "bist": 0.719
     },
-    22348210.1
+    22561708.48
    ],
    [
     "DTH",
@@ -76,7 +76,7 @@
      "spx": 0.341,
      "bist": 0.827
     },
-    190271367.93
+    189839898.67
    ],
    [
     "EC2",
@@ -86,7 +86,7 @@
      "spx": 0.212,
      "bist": 0.878
     },
-    38440733.5
+    38223978.4
    ],
    [
     "ENJ",
@@ -96,7 +96,7 @@
      "spx": 0.173,
      "bist": 0.781
     },
-    46612435.37
+    46419630.07
    ],
    [
     "GNS",
@@ -106,7 +106,7 @@
      "spx": 0.227,
      "bist": 0.792
     },
-    67689550.34
+    67389130.01
    ],
    [
     "GRT",
@@ -116,7 +116,7 @@
      "spx": 0.252,
      "bist": 0.753
     },
-    100336146.7
+    100898431.72
    ],
    [
     "ICZ",
@@ -126,7 +126,7 @@
      "spx": 0.282,
      "bist": 0.732
     },
-    604159047.63
+    604137707.71
    ],
    [
     "KVT",
@@ -136,7 +136,7 @@
      "spx": 0.214,
      "bist": 0.771
     },
-    66306238.66
+    54569091.59
    ],
    [
     "ZPT",
@@ -146,7 +146,7 @@
      "spx": 0.309,
      "bist": 0.742
     },
-    26957577.71
+    26860308.02
    ]
   ],
   "getirisi teyit edilemeyen": [
@@ -154,23 +154,23 @@
     "FUS",
     "QNB PORTFÖY AMERİKAN DOLARI YABANCI BORSA YATIRIM FONU",
     {
-     "ndx": -0.095,
-     "spx": -0.098,
+     "ndx": -0.094,
+     "spx": -0.1,
      "bist": -0.124
     },
-    1502550890.58
+    1504715969.18
    ],
    [
     "NEE",
     "NEO PORTFÖY ENERJİ VE EMTİA ŞİRKETLERİ DEĞİŞKEN FON",
     null,
-    28317369.67
+    28268361.81
    ],
    [
     "YZE",
     "BTCTURK PORTFÖY YAPAY ZEKA TEKNOLOJİLERİ ŞİRKETLERİ DEĞİŞKEN FON",
     null,
-    10040173.54
+    10376601.75
    ]
   ],
   "10 milyon TL altı küçük fon": [
@@ -178,31 +178,31 @@
     "GIH",
     "ALLBATROSS PORTFÖY GIDA VE İÇECEK SEKTÖRÜ HİSSE SENEDİ FONU (HİSSE SEN",
     null,
-    4483437.97
+    4459693.18
    ],
    [
     "GNH",
     "GLOBAL MD PORTFÖY ALGORİTMİK MODEL HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞ",
     null,
-    5047027.92
+    4985028.67
    ],
    [
     "IUH",
     "INVEO PORTFÖY DÖNÜŞTÜRÜCÜ TEKNOLOJİLER FON SEPETİ FONU",
     null,
-    7340187.85
+    7361265.04
    ],
    [
     "KIB",
     "TRIVE PORTFÖY ROBOTİK TEKNOLOJİLERİ DEĞİŞKEN FON",
     null,
-    7027244.2
+    7111893.6
    ],
    [
     "RTD",
     "RE-PIE PORTFÖY TEKNOLOJİ DEĞİŞKEN FON",
     null,
-    4322873.85
+    4380345.52
    ]
   ],
   "TEFAS'ta alınamıyor (özel fon / TEFAS'a kapalı)": [
@@ -210,13 +210,13 @@
     "HTJ",
     "HEDEF PORTFÖY TEKNOLOJİ DEĞİŞKEN FON",
     null,
-    34979582.7
+    36112722.91
    ],
    [
     "SOS",
     "HEDEF PORTFÖY SAĞLIK SEKTÖRÜ DEĞİŞKEN FON",
     null,
-    23092444.07
+    22914158.02
    ]
   ]
  },
