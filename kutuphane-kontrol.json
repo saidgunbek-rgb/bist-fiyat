@@ -1,7 +1,7 @@
 {
  "hisseler": {
   "THYAO": {
-   "updatedAt": "2026-11-24T16:50:40Z",
+   "updatedAt": "2026-11-24T18:55:33Z",
    "hisseler": {
     "THYAO": {
      "ozet": {
@@ -25,7 +25,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-24 19:51",
+    "updatedAt": "2026-11-24 21:55",
     "hisseler": {
      "THYAO": {
       "kap_icerik": [],
@@ -63,7 +63,7 @@
    }
   },
   "AKBNK": {
-   "updatedAt": "2026-11-24T16:50:28Z",
+   "updatedAt": "2026-11-24T18:55:32Z",
    "hisseler": {
     "AKBNK": {
      "ozet": {
@@ -488,7 +488,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-24 19:51",
+    "updatedAt": "2026-11-24 21:56",
     "hisseler": {
      "AKBNK": {
       "kap_icerik": [],
@@ -524,7 +524,7 @@
    }
   },
   "MGROS": {
-   "updatedAt": "2026-11-24T16:50:47Z",
+   "updatedAt": "2026-11-24T18:55:38Z",
    "hisseler": {
     "MGROS": {
      "ozet": {
@@ -951,7 +951,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-24 19:51",
+    "updatedAt": "2026-11-24 21:56",
     "hisseler": {
      "MGROS": {
       "kap_icerik": [],
@@ -988,7 +988,7 @@
    }
   },
   "BIMAS": {
-   "updatedAt": "2026-11-24T16:50:36Z",
+   "updatedAt": "2026-11-24T18:55:51Z",
    "hisseler": {
     "BIMAS": {
      "ozet": {
@@ -1418,7 +1418,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-24 19:51",
+    "updatedAt": "2026-11-24 21:56",
     "hisseler": {
      "BIMAS": {
       "kap_icerik": [],
@@ -1455,7 +1455,7 @@
    }
   },
   "TCELL": {
-   "updatedAt": "2026-11-24T16:50:46Z",
+   "updatedAt": "2026-11-24T18:55:39Z",
    "hisseler": {
     "TCELL": {
      "ozet": {
@@ -1881,7 +1881,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-24 19:51",
+    "updatedAt": "2026-11-24 21:56",
     "hisseler": {
      "TCELL": {
       "kap_icerik": [],
@@ -1918,7 +1918,7 @@
    }
   },
   "YKBNK": {
-   "updatedAt": "2026-11-24T16:52:56Z",
+   "updatedAt": "2026-11-24T18:57:14Z",
    "hisseler": {
     "YKBNK": {
      "ozet": {
@@ -1939,7 +1939,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-24 19:54",
+    "updatedAt": "2026-11-24 21:57",
     "hisseler": {
      "YKBNK": {
       "kap_icerik": [],
@@ -1975,7 +1975,7 @@
    }
   },
   "GARAN": {
-   "updatedAt": "2026-11-24T16:53:10Z",
+   "updatedAt": "2026-11-24T18:57:13Z",
    "hisseler": {
     "GARAN": {
      "ozet": {
@@ -2400,7 +2400,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-24 19:54",
+    "updatedAt": "2026-11-24 21:57",
     "hisseler": {
      "GARAN": {
       "kap_icerik": [],
@@ -2436,7 +2436,7 @@
    }
   },
   "ASELS": {
-   "updatedAt": "2026-11-24T16:52:36Z",
+   "updatedAt": "2026-11-24T18:57:14Z",
    "hisseler": {
     "ASELS": {
      "ozet": {
@@ -2852,7 +2852,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-24 19:53",
+    "updatedAt": "2026-11-24 21:57",
     "hisseler": {
      "ASELS": {
       "kap_icerik": [],
@@ -2889,7 +2889,7 @@
    }
   },
   "FROTO": {
-   "updatedAt": "2026-11-24T16:53:09Z",
+   "updatedAt": "2026-11-24T18:58:00Z",
    "hisseler": {
     "FROTO": {
      "ozet": {
@@ -3316,7 +3316,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-24 19:54",
+    "updatedAt": "2026-11-24 21:58",
     "hisseler": {
      "FROTO": {
       "kap_icerik": [],
@@ -3354,7 +3354,7 @@
    }
   },
   "KCHOL": {
-   "updatedAt": "2026-11-24T16:52:57Z",
+   "updatedAt": "2026-11-24T18:57:48Z",
    "hisseler": {
     "KCHOL": {
      "ozet": {
@@ -3779,7 +3779,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-24 19:54",
+    "updatedAt": "2026-11-24 21:58",
     "hisseler": {
      "KCHOL": {
       "kap_icerik": [],
@@ -3816,7 +3816,7 @@
    }
   },
   "ISCTR": {
-   "updatedAt": "2026-11-24T16:55:27Z",
+   "updatedAt": "2026-11-24T18:59:12Z",
    "hisseler": {
     "ISCTR": {
      "ozet": {
@@ -4241,7 +4241,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-24 19:56",
+    "updatedAt": "2026-11-24 21:59",
     "hisseler": {
      "ISCTR": {
       "kap_icerik": [],
@@ -4276,7 +4276,7 @@
    }
   },
   "PGSUS": {
-   "updatedAt": "2026-11-24T16:55:18Z",
+   "updatedAt": "2026-11-24T18:58:40Z",
    "hisseler": {
     "PGSUS": {
      "ozet": {
@@ -4297,7 +4297,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-24 19:56",
+    "updatedAt": "2026-11-24 21:59",
     "hisseler": {
      "PGSUS": {
       "kap_icerik": [],
@@ -4334,7 +4334,7 @@
    }
   },
   "TUPRS": {
-   "updatedAt": "2026-11-24T16:55:19Z",
+   "updatedAt": "2026-11-24T18:59:16Z",
    "hisseler": {
     "TUPRS": {
      "ozet": {
@@ -4761,7 +4761,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-24 19:56",
+    "updatedAt": "2026-11-24 22:00",
     "hisseler": {
      "TUPRS": {
       "kap_icerik": [],
@@ -4798,5 +4798,5 @@
    }
   }
  },
- "updatedAt": "2026-11-24T16:56:46Z"
+ "updatedAt": "2026-11-24T19:01:13Z"
 }
