@@ -14,8 +14,8 @@
    "ornek alanlar: ['fund_code', 'name', 'fund_type', 'return_1y']",
    "Toplam aday fon: 2373",
    "Enflasyon: {'y': 29.77, 't': '2026-11-25', 'k': 'borsapy:latest'}",
-   "BIST100 kaynaklar: {'yahoo': {'a1': -2.88, 'a3': -25.4, 'a6': -22.28, 'y1': -0.56, 'y3': 35.64, 'y5': 493.49, '_risk': {'mdd': -28.9, 'vol': 25.63}, 'd1': -1.54, '_d1t': '2026-11-25'}, 'borsapy': {'a1': -2.88, 'a3': -25.4, 'a6': -22.28, 'y1': -0.56, 'y3': 35.64, 'y5': 493.47, '_risk': {'mdd': -28.9,",
-   "BIST100 (teyitli): {'a1': -2.88, 'a3': -25.4, 'a6': -22.28, 'y1': -0.56, 'y3': 35.64, 'y5': 493.47, 'd1': -1.54, 'mdd': -28.9, 'vol': 25.63, 'reel_y1': -23.37}",
+   "BIST100 kaynaklar: {'yahoo': {'a1': -4.15, 'a3': -26.38, 'a6': -23.29, 'y1': -1.86, 'y3': 33.87, 'y5': 485.74, '_risk': {'mdd': -29.59, 'vol': 25.63}, 'd1': -2.83, '_d1t': '2026-11-25'}, 'borsapy': {'a1': -4.15, 'a3': -26.38, 'a6': -23.29, 'y1': -1.86, 'y3': 33.87, 'y5': 485.73, '_risk': {'mdd': -29",
+   "BIST100 (teyitli): {'a1': -4.15, 'a3': -26.38, 'a6': -23.29, 'y1': -1.86, 'y3': 33.87, 'y5': 485.73, 'd1': -2.83, 'mdd': -29.59, 'vol': 25.63, 'reel_y1': -24.37}",
    "Sorgulanacak fon: 45",
    "Listeye giren: 11 | Atlanan: {'para piyasası fonu değil': 2210, 'banka fonu değil': 118, \"TEFAS'ta işlem görmüyor\": 16, 'serbest fon': 18}",
    "Grafik verisi: 11 fon, BIST100 1261 gun"
