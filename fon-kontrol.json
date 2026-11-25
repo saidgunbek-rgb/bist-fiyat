@@ -16,11 +16,14 @@
    "ornek alanlar: ['fund_code', 'name', 'fund_type', 'return_1y']",
    "Toplam aday fon: 2373",
    "Enflasyon: {'y': 29.77, 't': '2026-11-25', 'k': 'borsapy:latest'}",
-   "BIST100 kaynaklar: {'yahoo': {'a1': -2.45, 'a3': -25.08, 'a6': -21.93, 'y1': -0.12, 'y3': 36.23, 'y5': 496.1, '_risk': {'mdd': -28.9, 'vol': 25.63}, 'd1': -1.11, '_d1t': '2026-11-25'}, 'borsapy': {'a1': -2.45, 'a3': -25.08, 'a6': -21.93, 'y1': -0.12, 'y3': 36.23, 'y5': 496.09, '_risk': {'mdd': -28.9",
-   "BIST100 (teyitli): {'a1': -2.45, 'a3': -25.08, 'a6': -21.93, 'y1': -0.12, 'y3': 36.23, 'y5': 496.09, 'd1': -1.11, 'mdd': -28.9, 'vol': 25.63, 'reel_y1': -23.03}",
+   "BIST100 kaynaklar: {'yahoo': {'a1': -2.92, 'a3': -25.43, 'a6': -22.3, 'y1': -0.6, 'y3': 35.59, 'y5': 493.26, '_risk': {'mdd': -28.9, 'vol': 25.63}, 'd1': -1.58, '_d1t': '2026-11-25'}, 'borsapy': {'a1': -2.92, 'a3': -25.43, 'a6': -22.3, 'y1': -0.59, 'y3': 35.59, 'y5': 493.25, '_risk': {'mdd': -28.9, ",
+   "BIST100 (teyitli): {'a1': -2.92, 'a3': -25.43, 'a6': -22.3, 'y1': -0.59, 'y3': 35.59, 'y5': 493.25, 'd1': -1.58, 'mdd': -28.9, 'vol': 25.63, 'reel_y1': -23.4}",
    "Sorgulanacak fon: 135",
-   "Listeye giren: 72 | Atlanan: {'hisse fonu değil': 1853, 'banka fonu değil': 385, 'yabancı hisse fonu': 9, 'serbest fon': 49, 'getirisi teyit edilemeyen': 4, 'işleme kapalı (fiyatı güncel değil)': 1}",
-   "Grafik verisi: 72 fon, BIST100 1261 gun"
+   "Verisi alinamayan 18 fon yeniden denenecek (tur 1)",
+   "Verisi alinamayan 18 fon yeniden denenecek (tur 2)",
+   "Verisi alinamayan 18 fon yeniden denenecek (tur 3)",
+   "Listeye giren: 69 | Atlanan: {'hisse fonu değil': 1853, 'banka fonu değil': 385, 'yabancı hisse fonu': 9, 'serbest fon': 49, \"TEFAS'ta işlem görmüyor\": 8}",
+   "Grafik verisi: 69 fon, BIST100 1261 gun"
   ],
   "banka_disi_kurucular": {
    "ATA": 5,
@@ -2393,14 +2396,15 @@
    "ZJR",
    "ZPJ"
   ],
-  "getirisi teyit edilemeyen": [
+  "TEFAS'ta işlem görmüyor": [
    "BLH",
    "BND",
    "BOE",
-   "MDL"
-  ],
-  "işleme kapalı (fiyatı güncel değil)": [
-   "KHO"
+   "DMI",
+   "KHO",
+   "MDL",
+   "PMG",
+   "TPR"
   ]
  }
 }

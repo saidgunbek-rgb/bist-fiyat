@@ -1,17 +1,17 @@
 {
- "updatedAt": "2026-11-25T09:38:42Z",
+ "updatedAt": "2026-11-25T11:39:28Z",
  "updated": "2026-11-25",
  "bist": {
-  "a1": -2.45,
-  "a3": -25.08,
-  "a6": -21.93,
-  "y1": -0.12,
-  "y3": 36.23,
-  "y5": 496.09,
-  "d1": -1.11,
+  "a1": -2.92,
+  "a3": -25.43,
+  "a6": -22.3,
+  "y1": -0.59,
+  "y3": 35.59,
+  "y5": 493.25,
+  "d1": -1.58,
   "mdd": -28.9,
   "vol": 25.63,
-  "reel_y1": -23.03
+  "reel_y1": -23.4
  },
  "enf": {
   "y": 29.77,
@@ -33,6 +33,7 @@
    "ucret": null,
    "kurucu": "",
    "fiyat": 1.659189,
+   "gecmis_hata": "RemoteProtocolError('Server disconnected without sending a response.')",
    "d1_tarih": "2026-11-25",
    "rk": {
     "mdd": -24.09,
@@ -62,7 +63,7 @@
     3,
     4
    ],
-   "puan": 60,
+   "puan": 61,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
@@ -119,7 +120,7 @@
     4,
     4
    ],
-   "puan": 84,
+   "puan": 85,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
@@ -172,7 +173,7 @@
     4,
     4
    ],
-   "puan": 90,
+   "puan": 91,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
@@ -229,9 +230,9 @@
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
-    "kac": 1,
+    "kac": 2,
     "toplam": 7,
-    "seri": 0,
+    "seri": 1,
     "her_yonu_gun": 0
    }
   },
@@ -279,7 +280,7 @@
    "gun": 1258,
    "son_tarih": "2026-11-25",
    "istikrar": [
-    1,
+    2,
     4
    ],
    "puan": 42,
@@ -392,7 +393,7 @@
     4,
     4
    ],
-   "puan": 82,
+   "puan": 83,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
@@ -449,7 +450,7 @@
     3,
     4
    ],
-   "puan": 79,
+   "puan": 80,
    "her_yonu": false,
    "kosul": 3,
    "gecmis": {
@@ -501,10 +502,10 @@
    "gun": 1089,
    "son_tarih": "2026-11-25",
    "istikrar": [
-    2,
+    3,
     4
    ],
-   "puan": 43,
+   "puan": 44,
    "her_yonu": false,
    "kosul": 3,
    "gecmis": {
@@ -669,7 +670,7 @@
     4,
     4
    ],
-   "puan": 70,
+   "puan": 71,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
@@ -779,7 +780,7 @@
     4,
     4
    ],
-   "puan": 79,
+   "puan": 80,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
@@ -948,7 +949,7 @@
     4,
     4
    ],
-   "puan": 71,
+   "puan": 72,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
@@ -1005,64 +1006,7 @@
     4,
     4
    ],
-   "puan": 56,
-   "her_yonu": false,
-   "kosul": 4,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 7,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "TPR",
-   "ad": "İŞ PORTFÖY PY HİSSE SENEDİ (TL) ÖZEL FONU (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "İş Bankası",
-   "grup": "Özel",
-   "buyukluk": 6854775388.64,
-   "yatirimci": 1.0,
-   "vb": null,
-   "vs": null,
-   "risk": 6.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 0.411451,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -23.83,
-    "vol": 24.83,
-    "gr": 0.56
-   },
-   "g": {
-    "a1": -0.71,
-    "a3": -15.52,
-    "a6": -13.98,
-    "y1": 13.87,
-    "y3": 96.11,
-    "y5": 1158.11,
-    "reel_y1": -12.25,
-    "w1": -4.64,
-    "ytd": 9.68,
-    "d1": -0.68
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 71,
+   "puan": 57,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
@@ -1115,7 +1059,7 @@
     4,
     4
    ],
-   "puan": 67,
+   "puan": 68,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
@@ -1139,6 +1083,7 @@
    "ucret": null,
    "kurucu": "",
    "fiyat": 22.512129,
+   "gecmis_hata": "RemoteProtocolError('Server disconnected without sending a response.')",
    "d1_tarih": "2026-11-25",
    "rk": {
     "mdd": -20.43,
@@ -1169,12 +1114,12 @@
    "gun": 1258,
    "son_tarih": "2026-11-25",
    "istikrar": [
-    3,
+    4,
     4
    ],
-   "puan": 65,
+   "puan": 66,
    "her_yonu": false,
-   "kosul": 3,
+   "kosul": 4,
    "gecmis": {
     "kac": 0,
     "toplam": 7,
@@ -1226,12 +1171,12 @@
    "gun": 1258,
    "son_tarih": "2026-11-25",
    "istikrar": [
-    3,
+    4,
     4
    ],
-   "puan": 65,
+   "puan": 67,
    "her_yonu": false,
-   "kosul": 3,
+   "kosul": 4,
    "gecmis": {
     "kac": 0,
     "toplam": 7,
@@ -1286,66 +1231,13 @@
     4,
     4
    ],
-   "puan": 57,
+   "puan": 58,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
     "kac": 0,
     "toplam": 7,
     "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "PMG",
-   "ad": "İŞ PORTFÖY MG HİSSE SENEDİ ÖZEL FONU (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "İş Bankası",
-   "grup": "Özel",
-   "buyukluk": 683805779.68,
-   "yatirimci": 1.0,
-   "vb": null,
-   "vs": null,
-   "risk": 6.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 1.423955,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -17.71,
-    "vol": 21.08,
-    "gr": 0.52
-   },
-   "g": {
-    "a1": -0.4,
-    "a3": -12.38,
-    "a6": -5.72,
-    "y1": 10.9,
-    "reel_y1": -14.54,
-    "w1": -4.71,
-    "ytd": 7.52,
-    "d1": -1.35
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1"
-   ],
-   "celiski": [],
-   "gun": 401,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 82,
-   "her_yonu": false,
-   "kosul": 4,
-   "gecmis": {
-    "kac": 4,
-    "toplam": 7,
-    "seri": 4,
     "her_yonu_gun": 0
    }
   },
@@ -1392,7 +1284,7 @@
     4,
     4
    ],
-   "puan": 71,
+   "puan": 73,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
@@ -1447,7 +1339,7 @@
     4,
     4
    ],
-   "puan": 49,
+   "puan": 51,
    "her_yonu": false,
    "kosul": 3,
    "gecmis": {
@@ -1502,7 +1394,7 @@
     3,
     4
    ],
-   "puan": 47,
+   "puan": 48,
    "her_yonu": false,
    "kosul": 3,
    "gecmis": {
@@ -1526,6 +1418,7 @@
    "ucret": null,
    "kurucu": "",
    "fiyat": 0.405824,
+   "gecmis_hata": "RemoteProtocolError('Server disconnected without sending a response.')",
    "d1_tarih": "2026-11-25",
    "rk": {
     "mdd": -18.29,
@@ -1537,8 +1430,7 @@
     "a3": -16.51,
     "a6": -6.43,
     "y1": 9.78,
-    "y3": 71.96,
-    "y5": 716.63,
+    "y3": 70.79,
     "reel_y1": -15.4,
     "w1": -5.55,
     "ytd": 5.33,
@@ -1549,17 +1441,16 @@
     "a3",
     "a6",
     "y1",
-    "y3",
-    "y5"
+    "y3"
    ],
    "celiski": [],
-   "gun": 1258,
+   "gun": 751,
    "son_tarih": "2026-11-25",
    "istikrar": [
     3,
     4
    ],
-   "puan": 64,
+   "puan": 66,
    "her_yonu": false,
    "kosul": 3,
    "gecmis": {
@@ -1616,7 +1507,7 @@
     3,
     4
    ],
-   "puan": 39,
+   "puan": 41,
    "her_yonu": false,
    "kosul": 3,
    "gecmis": {
@@ -1673,7 +1564,7 @@
     4,
     4
    ],
-   "puan": 60,
+   "puan": 62,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
@@ -1723,12 +1614,12 @@
    "gun": 513,
    "son_tarih": "2026-11-25",
    "istikrar": [
-    3,
+    4,
     4
    ],
-   "puan": 62,
+   "puan": 63,
    "her_yonu": false,
-   "kosul": 3,
+   "kosul": 4,
    "gecmis": {
     "kac": 0,
     "toplam": 7,
@@ -1779,7 +1670,7 @@
     3,
     4
    ],
-   "puan": 54,
+   "puan": 56,
    "her_yonu": false,
    "kosul": 3,
    "gecmis": {
@@ -1834,7 +1725,7 @@
     4,
     4
    ],
-   "puan": 54,
+   "puan": 55,
    "her_yonu": false,
    "kosul": 3,
    "gecmis": {
@@ -1944,7 +1835,7 @@
     2,
     4
    ],
-   "puan": 28,
+   "puan": 29,
    "her_yonu": false,
    "kosul": 3,
    "gecmis": {
@@ -2001,7 +1892,7 @@
     3,
     4
    ],
-   "puan": 43,
+   "puan": 44,
    "her_yonu": false,
    "kosul": 3,
    "gecmis": {
@@ -2058,7 +1949,7 @@
     4,
     4
    ],
-   "puan": 44,
+   "puan": 46,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
@@ -2111,7 +2002,7 @@
     3,
     4
    ],
-   "puan": 53,
+   "puan": 55,
    "her_yonu": false,
    "kosul": 3,
    "gecmis": {
@@ -2164,7 +2055,7 @@
     4,
     4
    ],
-   "puan": 72,
+   "puan": 74,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
@@ -2217,7 +2108,7 @@
     4,
     4
    ],
-   "puan": 50,
+   "puan": 52,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
@@ -2272,7 +2163,7 @@
     4,
     4
    ],
-   "puan": 37,
+   "puan": 38,
    "her_yonu": false,
    "kosul": 2,
    "gecmis": {
@@ -2329,7 +2220,7 @@
     4,
     4
    ],
-   "puan": 68,
+   "puan": 69,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
@@ -2386,7 +2277,7 @@
     4,
     4
    ],
-   "puan": 55,
+   "puan": 57,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
@@ -2439,7 +2330,7 @@
     3,
     4
    ],
-   "puan": 46,
+   "puan": 48,
    "her_yonu": false,
    "kosul": 3,
    "gecmis": {
@@ -2550,10 +2441,10 @@
    "gun": 1258,
    "son_tarih": "2026-11-25",
    "istikrar": [
-    2,
+    3,
     4
    ],
-   "puan": 53,
+   "puan": 54,
    "her_yonu": false,
    "kosul": 1,
    "gecmis": {
@@ -2608,7 +2499,7 @@
     3,
     4
    ],
-   "puan": 48,
+   "puan": 49,
    "her_yonu": false,
    "kosul": 2,
    "gecmis": {
@@ -2661,7 +2552,7 @@
     3,
     4
    ],
-   "puan": 37,
+   "puan": 38,
    "her_yonu": false,
    "kosul": 2,
    "gecmis": {
@@ -2715,10 +2606,10 @@
    "gun": 1258,
    "son_tarih": "2026-11-25",
    "istikrar": [
-    2,
+    3,
     4
    ],
-   "puan": 39,
+   "puan": 40,
    "her_yonu": false,
    "kosul": 2,
    "gecmis": {
@@ -2771,7 +2662,7 @@
     3,
     4
    ],
-   "puan": 42,
+   "puan": 44,
    "her_yonu": false,
    "kosul": 2,
    "gecmis": {
@@ -2826,7 +2717,7 @@
     2,
     4
    ],
-   "puan": 42,
+   "puan": 43,
    "her_yonu": false,
    "kosul": 1,
    "gecmis": {
@@ -2879,7 +2770,7 @@
     2,
     4
    ],
-   "puan": 31,
+   "puan": 32,
    "her_yonu": false,
    "kosul": 2,
    "gecmis": {
@@ -2936,7 +2827,7 @@
     2,
     4
    ],
-   "puan": 24,
+   "puan": 25,
    "her_yonu": false,
    "kosul": 2,
    "gecmis": {
@@ -2993,7 +2884,7 @@
     0,
     4
    ],
-   "puan": 9,
+   "puan": 10,
    "her_yonu": false,
    "kosul": 1,
    "gecmis": {
@@ -3050,7 +2941,7 @@
     2,
     4
    ],
-   "puan": 26,
+   "puan": 27,
    "her_yonu": false,
    "kosul": 2,
    "gecmis": {
@@ -3105,7 +2996,7 @@
     0,
     4
    ],
-   "puan": 17,
+   "puan": 18,
    "her_yonu": false,
    "kosul": 1,
    "gecmis": {
@@ -3162,7 +3053,7 @@
     1,
     4
    ],
-   "puan": 23,
+   "puan": 24,
    "her_yonu": false,
    "kosul": 2,
    "gecmis": {
@@ -3267,10 +3158,10 @@
    "gun": 483,
    "son_tarih": "2026-11-25",
    "istikrar": [
-    1,
+    2,
     4
    ],
-   "puan": 18,
+   "puan": 19,
    "her_yonu": false,
    "kosul": 2,
    "gecmis": {
@@ -3323,7 +3214,7 @@
     2,
     4
    ],
-   "puan": 21,
+   "puan": 22,
    "her_yonu": false,
    "kosul": 2,
    "gecmis": {
@@ -3429,7 +3320,7 @@
     2,
     4
    ],
-   "puan": 16,
+   "puan": 17,
    "her_yonu": false,
    "kosul": 2,
    "gecmis": {
@@ -3710,50 +3601,6 @@
    }
   },
   {
-   "k": "DMI",
-   "ad": "İŞ PORTFÖY DM HİSSE SENEDİ ÖZEL FON (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "İş Bankası",
-   "grup": "Özel",
-   "buyukluk": 895909200.42,
-   "yatirimci": 1.0,
-   "vb": null,
-   "vs": null,
-   "risk": 6.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 0.895602,
-   "d1_tarih": "2026-11-25",
-   "rk": null,
-   "g": {
-    "a1": -0.24,
-    "a3": -11.67,
-    "reel_y1": null,
-    "w1": -4.98,
-    "d1": -1.26
-   },
-   "teyit": [
-    "a1",
-    "a3"
-   ],
-   "celiski": [],
-   "gun": 69,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    2,
-    2
-   ],
-   "puan": null,
-   "her_yonu": false,
-   "kosul": 1,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 7,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
    "k": "PSH",
    "ad": "DENİZ PORTFÖY PERAKENDE SEKTÖRÜ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
    "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
@@ -3936,7 +3783,6 @@
   "banka fonu değil": 385,
   "yabancı hisse fonu": 9,
   "serbest fon": 49,
-  "getirisi teyit edilemeyen": 4,
-  "işleme kapalı (fiyatı güncel değil)": 1
+  "TEFAS'ta işlem görmüyor": 8
  }
 }
