@@ -98,24 +98,24 @@
    "durum": "ok",
    "maks": 4,
    "not": "",
-   "saat": "2026-11-25T09:38:42Z",
+   "saat": "2026-11-25T11:39:28Z",
    "veri": "2026-11-25"
   },
   "kap": {
    "deneme": 1,
-   "durum": "deneniyor",
-   "maks": 4,
-   "not": "Son KAP taraması gecikti",
-   "saat": "2026-11-25 11:42",
-   "veri": "2026-11-25 11:42"
-  },
-  "karne": {
-   "deneme": 1,
    "durum": "ok",
    "maks": 4,
    "not": "",
-   "saat": "2026-11-25T06:09:46Z",
-   "veri": "2026-11-24"
+   "saat": "2026-11-25 13:26",
+   "veri": "2026-11-25 13:26"
+  },
+  "karne": {
+   "deneme": 1,
+   "durum": "deneniyor",
+   "maks": 4,
+   "not": "THYAO fiyatı uyuşmuyor · seans kapanınca (18:15 sonrası) yeniden hesaplanacak",
+   "saat": "2026-11-25T11:20:05Z",
+   "veri": "2026-11-25"
   },
   "kutuphane": {
    "deneme": 0,
@@ -126,5 +126,5 @@
    "veri": "2026-11-24"
   }
  },
- "kontrolAt": "2026-11-25T09:53:15Z"
+ "kontrolAt": "2026-11-25T11:41:14Z"
 }
