@@ -1,17 +1,17 @@
 {
- "updatedAt": "2026-11-25T09:31:56Z",
+ "updatedAt": "2026-11-25T10:59:24Z",
  "updated": "2026-11-25",
  "bist": {
-  "a1": -2.47,
-  "a3": -25.09,
-  "a6": -21.94,
-  "y1": -0.13,
-  "y3": 36.22,
-  "y5": 496.01,
-  "d1": -1.12,
+  "a1": -2.88,
+  "a3": -25.4,
+  "a6": -22.28,
+  "y1": -0.56,
+  "y3": 35.64,
+  "y5": 493.47,
+  "d1": -1.54,
   "mdd": -28.9,
   "vol": 25.63,
-  "reel_y1": -23.04
+  "reel_y1": -23.37
  },
  "enf": {
   "y": 29.77,
@@ -64,64 +64,7 @@
     4,
     4
    ],
-   "puan": 69,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 1,
-    "toplam": 1,
-    "seri": 1,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "IOP",
-   "ad": "İŞ PORTFÖY ODEABANK PARA PİYASASI (TL) FONU",
-   "kat": "Para Piyasası Fonu Para Piyasası Şemsiye Fonu YAT",
-   "banka": "İş Bankası",
-   "grup": "Özel",
-   "buyukluk": 6803375763.6,
-   "yatirimci": 6076.0,
-   "vb": null,
-   "vs": null,
-   "risk": 2.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 6.954167,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": 0.0,
-    "vol": 0.62,
-    "gr": 74.29
-   },
-   "g": {
-    "a1": 3.26,
-    "a3": 9.47,
-    "a6": 20.97,
-    "y1": 46.06,
-    "y3": 263.28,
-    "y5": 457.26,
-    "reel_y1": 12.55,
-    "w1": 0.66,
-    "ytd": 40.63,
-    "d1": 0.09
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 76,
+   "puan": 65,
    "her_yonu": true,
    "kosul": 5,
    "gecmis": {
@@ -178,7 +121,7 @@
     4,
     4
    ],
-   "puan": 76,
+   "puan": 68,
    "her_yonu": true,
    "kosul": 5,
    "gecmis": {
@@ -235,7 +178,7 @@
     4,
     4
    ],
-   "puan": 55,
+   "puan": 43,
    "her_yonu": true,
    "kosul": 5,
    "gecmis": {
@@ -291,64 +234,7 @@
     4,
     4
    ],
-   "puan": 67,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 1,
-    "toplam": 1,
-    "seri": 1,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "HLL",
-   "ad": "ZİRAAT PORTFÖY HALKBANK PARA PİYASASI (TL) FONU",
-   "kat": "Para Piyasası Fonu Para Piyasası Şemsiye Fonu YAT",
-   "banka": "Ziraat Bankası",
-   "grup": "Kamu",
-   "buyukluk": 52125592053.81,
-   "yatirimci": 1021012.0,
-   "vb": null,
-   "vs": null,
-   "risk": 1.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 0.419706,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": 0.0,
-    "vol": 0.63,
-    "gr": 72.0
-   },
-   "g": {
-    "a1": 3.21,
-    "a3": 9.34,
-    "a6": 20.74,
-    "y1": 45.36,
-    "y3": 255.26,
-    "y5": 452.88,
-    "reel_y1": 12.01,
-    "w1": 0.66,
-    "ytd": 40.11,
-    "d1": 0.09
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 54,
+   "puan": 65,
    "her_yonu": true,
    "kosul": 5,
    "gecmis": {
@@ -401,182 +287,13 @@
     4,
     4
    ],
-   "puan": 51,
+   "puan": 36,
    "her_yonu": true,
    "kosul": 5,
    "gecmis": {
     "kac": 1,
     "toplam": 1,
     "seri": 1,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "VK6",
-   "ad": "V PORTFÖY VAKIFBANK PARA PİYASASI (TL) FONU",
-   "kat": "Para Piyasası Fonu Para Piyasası Şemsiye Fonu YAT",
-   "banka": "Vakıf Bankası",
-   "grup": "Kamu",
-   "buyukluk": 78895615875.52,
-   "yatirimci": 160440.0,
-   "vb": null,
-   "vs": null,
-   "risk": 1.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 4.563356,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": 0.0,
-    "vol": 0.62,
-    "gr": 73.06
-   },
-   "g": {
-    "a1": 3.2,
-    "a3": 9.37,
-    "a6": 20.72,
-    "y1": 45.3,
-    "y3": 257.02,
-    "y5": 458.85,
-    "reel_y1": 11.97,
-    "w1": 0.66,
-    "ytd": 40.06,
-    "d1": 0.09
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 57,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 1,
-    "toplam": 1,
-    "seri": 1,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "IUZ",
-   "ad": "İŞ PORTFÖY ANADOLUBANK PARA PİYASASI (TL) FONU",
-   "kat": "Para Piyasası Fonu Para Piyasası Şemsiye Fonu YAT",
-   "banka": "İş Bankası",
-   "grup": "Özel",
-   "buyukluk": 726829794.54,
-   "yatirimci": 1175.0,
-   "vb": null,
-   "vs": null,
-   "risk": 1.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 5.223289,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": 0.0,
-    "vol": 0.62,
-    "gr": 72.85
-   },
-   "g": {
-    "a1": 3.15,
-    "a3": 9.34,
-    "a6": 20.58,
-    "y1": 45.17,
-    "y3": 255.69,
-    "reel_y1": 11.87,
-    "w1": 0.61,
-    "ytd": 39.87,
-    "d1": 0.08
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3"
-   ],
-   "celiski": [],
-   "gun": 1195,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 45,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 1,
-    "seri": 0,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "TZL",
-   "ad": "ZİRAAT PORTFÖY PARA PİYASASI (TL) FONU",
-   "kat": "Para Piyasası Fonu Para Piyasası Şemsiye Fonu YAT",
-   "banka": "Ziraat Bankası",
-   "grup": "Kamu",
-   "buyukluk": 92319262949.36,
-   "yatirimci": 186526.0,
-   "vb": null,
-   "vs": null,
-   "risk": 1.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 0.151617,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": 0.0,
-    "vol": 0.63,
-    "gr": 71.68
-   },
-   "g": {
-    "a1": 3.16,
-    "a3": 9.28,
-    "a6": 20.63,
-    "y1": 45.16,
-    "y3": 253.81,
-    "y5": 450.97,
-    "reel_y1": 11.86,
-    "w1": 0.65,
-    "ytd": 39.93,
-    "d1": 0.08
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 39,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 1,
-    "seri": 0,
     "her_yonu_gun": 1
    }
   },
@@ -625,7 +342,7 @@
     4,
     4
    ],
-   "puan": 73,
+   "puan": 63,
    "her_yonu": true,
    "kosul": 5,
    "gecmis": {
@@ -678,70 +395,13 @@
     4,
     4
    ],
-   "puan": 50,
+   "puan": 35,
    "her_yonu": true,
    "kosul": 5,
    "gecmis": {
     "kac": 1,
     "toplam": 1,
     "seri": 1,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "ANL",
-   "ad": "AK PORTFÖY ALTERNATİF BANK PARA PİYASASI (TL)FONU",
-   "kat": "Para Piyasası Fonu Para Piyasası Şemsiye Fonu YAT",
-   "banka": "Akbank",
-   "grup": "Özel",
-   "buyukluk": 619242662.28,
-   "yatirimci": 3477.0,
-   "vb": null,
-   "vs": null,
-   "risk": 1.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 41.125569,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -0.01,
-    "vol": 0.65,
-    "gr": 69.2
-   },
-   "g": {
-    "a1": 3.16,
-    "a3": 9.23,
-    "a6": 20.53,
-    "y1": 44.98,
-    "y3": 258.0,
-    "y5": 455.54,
-    "reel_y1": 11.72,
-    "w1": 0.62,
-    "ytd": 39.71,
-    "d1": 0.08
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 36,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 1,
-    "seri": 0,
     "her_yonu_gun": 1
    }
   },
@@ -788,180 +448,13 @@
     4,
     4
    ],
-   "puan": 39,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 1,
-    "seri": 0,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "SAP",
-   "ad": "AK PORTFÖY ŞEKERBANK PARA PİYASASI (TL) FONU",
-   "kat": "Para Piyasası Fonu Para Piyasası Şemsiye Fonu YAT",
-   "banka": "Akbank",
-   "grup": "Özel",
-   "buyukluk": 558163015.0,
-   "yatirimci": 401.0,
-   "vb": null,
-   "vs": null,
-   "risk": 1.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 2.031328,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": 0.0,
-    "vol": 0.61,
-    "gr": 73.61
-   },
-   "g": {
-    "a1": 3.17,
-    "a3": 9.32,
-    "a6": 20.58,
-    "y1": 44.9,
-    "reel_y1": 11.66,
-    "w1": 0.65,
-    "ytd": 39.65,
-    "d1": 0.1
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1"
-   ],
-   "celiski": [],
-   "gun": 448,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 43,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 1,
-    "seri": 0,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "TI1",
-   "ad": "İŞ PORTFÖY PARA PİYASASI (TL) FONU",
-   "kat": "Para Piyasası Fonu Para Piyasası Şemsiye Fonu YAT",
-   "banka": "İş Bankası",
-   "grup": "Özel",
-   "buyukluk": 223646609628.02,
-   "yatirimci": 237931.0,
-   "vb": null,
-   "vs": null,
-   "risk": 2.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 1829.186812,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": 0.0,
-    "vol": 0.59,
-    "gr": 75.93
-   },
-   "g": {
-    "a1": 3.17,
-    "a3": 9.32,
-    "a6": 20.49,
-    "y1": 44.8,
-    "y3": 253.81,
-    "y5": 435.25,
-    "reel_y1": 11.58,
-    "w1": 0.64,
-    "ytd": 39.53,
-    "d1": 0.08
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 43,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 1,
-    "seri": 0,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "YLB",
-   "ad": "YAPI KREDİ PORTFÖY PARA PİYASASI FONU",
-   "kat": "Para Piyasası Fonu Para Piyasası Şemsiye Fonu YAT",
-   "banka": "Yapı Kredi",
-   "grup": "Özel",
-   "buyukluk": 109845664009.3,
-   "yatirimci": 371234.0,
-   "vb": null,
-   "vs": null,
-   "risk": 1.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 1.995485,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": 0.0,
-    "vol": 0.62,
-    "gr": 72.21
-   },
-   "g": {
-    "a1": 3.16,
-    "a3": 9.23,
-    "a6": 20.36,
-    "y1": 44.77,
-    "y3": 253.23,
-    "y5": 438.9,
-    "reel_y1": 11.56,
-    "w1": 0.64,
-    "ytd": 39.49,
-    "d1": 0.08
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
    "puan": 27,
    "her_yonu": true,
    "kosul": 5,
    "gecmis": {
-    "kac": 0,
+    "kac": 1,
     "toplam": 1,
-    "seri": 0,
+    "seri": 1,
     "her_yonu_gun": 1
    }
   },
@@ -1012,180 +505,13 @@
     4,
     4
    ],
-   "puan": 29,
+   "puan": 20,
    "her_yonu": true,
    "kosul": 5,
    "gecmis": {
-    "kac": 0,
+    "kac": 1,
     "toplam": 1,
-    "seri": 0,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "ALE",
-   "ad": "AK PORTFÖY PARA PİYASASI (TL) FONU",
-   "kat": "Para Piyasası Fonu Para Piyasası Şemsiye Fonu YAT",
-   "banka": "Akbank",
-   "grup": "Özel",
-   "buyukluk": 81458475478.69,
-   "yatirimci": 143935.0,
-   "vb": null,
-   "vs": null,
-   "risk": 1.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 14.817721,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": 0.0,
-    "vol": 0.59,
-    "gr": 75.71
-   },
-   "g": {
-    "a1": 3.15,
-    "a3": 9.19,
-    "a6": 20.45,
-    "y1": 44.67,
-    "y3": 253.38,
-    "y5": 437.88,
-    "reel_y1": 11.48,
-    "w1": 0.64,
-    "ytd": 39.47,
-    "d1": 0.08
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 32,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 1,
-    "seri": 0,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "DCN",
-   "ad": "DENİZ PORTFÖY ÜÇÜNCÜ PARA PİYASASI (TL) FONU",
-   "kat": "Para Piyasası Fonu Para Piyasası Şemsiye Fonu YAT",
-   "banka": "DenizBank",
-   "grup": "Özel",
-   "buyukluk": 138455571.06,
-   "yatirimci": 920.0,
-   "vb": null,
-   "vs": null,
-   "risk": 1.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 1.575825,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": 0.0,
-    "vol": 0.62,
-    "gr": 71.82
-   },
-   "g": {
-    "a1": 3.15,
-    "a3": 9.09,
-    "a6": 20.19,
-    "y1": 44.53,
-    "reel_y1": 11.37,
-    "w1": 0.62,
-    "ytd": 39.3,
-    "d1": 0.08
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1"
-   ],
-   "celiski": [],
-   "gun": 307,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 18,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 1,
-    "seri": 0,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "GTL",
-   "ad": "GARANTİ PORTFÖY BİRİNCİ PARA PİYASASI (TL) FONU",
-   "kat": "Para Piyasası Fonu Para Piyasası Şemsiye Fonu YAT",
-   "banka": "Garanti BBVA",
-   "grup": "Özel",
-   "buyukluk": 183346089949.82,
-   "yatirimci": 358889.0,
-   "vb": null,
-   "vs": null,
-   "risk": 1.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 0.147707,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": 0.0,
-    "vol": 0.63,
-    "gr": 70.54
-   },
-   "g": {
-    "a1": 3.18,
-    "a3": 9.24,
-    "a6": 20.37,
-    "y1": 44.44,
-    "y3": 253.95,
-    "y5": 442.76,
-    "reel_y1": 11.3,
-    "w1": 0.64,
-    "ytd": 39.17,
-    "d1": 0.08
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 29,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 1,
-    "seri": 0,
+    "seri": 1,
     "her_yonu_gun": 1
    }
   },
@@ -1232,223 +558,14 @@
     4,
     4
    ],
-   "puan": 24,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 1,
-    "seri": 0,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "YVD",
-   "ad": "YAPI KREDİ PORTFÖY İKİNCİ PARA PİYASASI (TL) FONU",
-   "kat": "Para Piyasası Fonu Para Piyasası Şemsiye Fonu YAT",
-   "banka": "Yapı Kredi",
-   "grup": "Özel",
-   "buyukluk": 46306954840.14,
-   "yatirimci": 82130.0,
-   "vb": null,
-   "vs": null,
-   "risk": 1.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 4.841163,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -0.02,
-    "vol": 0.67,
-    "gr": 65.72
-   },
-   "g": {
-    "a1": 3.15,
-    "a3": 9.18,
-    "a6": 20.13,
-    "y1": 44.03,
-    "y3": 252.64,
-    "reel_y1": 10.99,
-    "w1": 0.61,
-    "ytd": 38.76,
-    "d1": 0.06
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3"
-   ],
-   "celiski": [],
-   "gun": 1105,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 10,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 1,
-    "seri": 0,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "GNP",
-   "ad": "GARANTİ PORTFÖY NEMA PARA PİYASASI (TL) FONU",
-   "kat": "Para Piyasası Fonu Para Piyasası Şemsiye Fonu YAT",
-   "banka": "Garanti BBVA",
-   "grup": "Özel",
-   "buyukluk": 685534689.87,
-   "yatirimci": 1309.0,
-   "vb": null,
-   "vs": null,
-   "risk": 1.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 1.61306,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": 0.0,
-    "vol": 0.52,
-    "gr": 84.58
-   },
-   "g": {
-    "a1": 3.13,
-    "a3": 9.06,
-    "a6": 20.09,
-    "y1": 43.98,
-    "reel_y1": 10.95,
-    "w1": 0.64,
-    "ytd": 38.82,
-    "d1": 0.08
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1"
-   ],
-   "celiski": [],
-   "gun": 324,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 21,
-   "her_yonu": true,
-   "kosul": 5,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 1,
-    "seri": 0,
-    "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "GAL",
-   "ad": "GARANTİ PORTFÖY İKİNCİ PARA PİYASASI (TL) FONU",
-   "kat": "Para Piyasası Fonu Para Piyasası Şemsiye Fonu YAT",
-   "banka": "Garanti BBVA",
-   "grup": "Özel",
-   "buyukluk": 68197892896.82,
-   "yatirimci": 58840.0,
-   "vb": null,
-   "vs": null,
-   "risk": 1.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 448.433407,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": 0.0,
-    "vol": 0.59,
-    "gr": 73.71
-   },
-   "g": {
-    "a1": 3.14,
-    "a3": 9.09,
-    "a6": 20.03,
-    "y1": 43.49,
-    "y3": 250.23,
-    "y5": 436.43,
-    "reel_y1": 10.57,
-    "w1": 0.63,
-    "ytd": 38.26,
-    "d1": 0.08
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
    "puan": 16,
    "her_yonu": true,
    "kosul": 5,
    "gecmis": {
-    "kac": 0,
+    "kac": 1,
     "toplam": 1,
-    "seri": 0,
+    "seri": 1,
     "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "NMP",
-   "ad": "AK PORTFÖY NEMA PARA PİYASASI (TL) FONU",
-   "kat": "Para Piyasası Fonu Para Piyasası Şemsiye Fonu YAT",
-   "banka": "Akbank",
-   "grup": "Özel",
-   "buyukluk": 34097416.29,
-   "yatirimci": 1051.0,
-   "vb": null,
-   "vs": null,
-   "risk": 1.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 1.118345,
-   "d1_tarih": "2026-11-25",
-   "rk": null,
-   "g": {
-    "a1": 3.38,
-    "a3": 9.6,
-    "reel_y1": null,
-    "w1": 0.66,
-    "d1": 0.09
-   },
-   "teyit": [
-    "a1",
-    "a3"
-   ],
-   "celiski": [],
-   "gun": 78,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    2,
-    2
-   ],
-   "puan": null,
-   "her_yonu": false,
-   "kosul": 1,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 1,
-    "seri": 0,
-    "her_yonu_gun": 0
    }
   },
   {
@@ -1499,6 +616,7 @@
  "atlanan_sayi": {
   "para piyasası fonu değil": 2210,
   "banka fonu değil": 118,
+  "TEFAS'ta işlem görmüyor": 16,
   "serbest fon": 18
  }
 }
