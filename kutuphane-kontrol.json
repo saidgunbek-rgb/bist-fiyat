@@ -1,7 +1,7 @@
 {
  "hisseler": {
   "THYAO": {
-   "updatedAt": "2026-11-24T18:55:33Z",
+   "updatedAt": "2026-11-25T16:50:43Z",
    "hisseler": {
     "THYAO": {
      "ozet": {
@@ -14,7 +14,7 @@
       "isyatirim": 290,
       "yahoo": 290,
       "borsapy": 290,
-      "kendi_kayit": 31
+      "kendi_kayit": 32
      },
      "bolunmeler": [
       "2025-06-16",
@@ -25,7 +25,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-24 21:55",
+    "updatedAt": "2026-11-25 19:51",
     "hisseler": {
      "THYAO": {
       "kap_icerik": [],
@@ -63,13 +63,13 @@
    }
   },
   "AKBNK": {
-   "updatedAt": "2026-11-24T18:55:32Z",
+   "updatedAt": "2026-11-25T16:50:42Z",
    "hisseler": {
     "AKBNK": {
      "ozet": {
-      "iki_kaynak": 166,
+      "iki_kaynak": 167,
       "ek_kaynak": 0,
-      "duzeltme": 124,
+      "duzeltme": 123,
       "cozulemedi": 0
      },
      "kaynak_gun_sayisi": {
@@ -488,7 +488,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-24 21:56",
+    "updatedAt": "2026-11-25 19:51",
     "hisseler": {
      "AKBNK": {
       "kap_icerik": [],
@@ -524,13 +524,13 @@
    }
   },
   "MGROS": {
-   "updatedAt": "2026-11-24T18:55:38Z",
+   "updatedAt": "2026-11-25T16:50:36Z",
    "hisseler": {
     "MGROS": {
      "ozet": {
-      "iki_kaynak": 10,
+      "iki_kaynak": 11,
       "ek_kaynak": 0,
-      "duzeltme": 280,
+      "duzeltme": 279,
       "cozulemedi": 0
      },
      "kaynak_gun_sayisi": {
@@ -951,7 +951,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-24 21:56",
+    "updatedAt": "2026-11-25 19:50",
     "hisseler": {
      "MGROS": {
       "kap_icerik": [],
@@ -988,13 +988,13 @@
    }
   },
   "BIMAS": {
-   "updatedAt": "2026-11-24T18:55:51Z",
+   "updatedAt": "2026-11-25T16:50:47Z",
    "hisseler": {
     "BIMAS": {
      "ozet": {
-      "iki_kaynak": 49,
+      "iki_kaynak": 50,
       "ek_kaynak": 0,
-      "duzeltme": 241,
+      "duzeltme": 240,
       "cozulemedi": 0
      },
      "kaynak_gun_sayisi": {
@@ -1418,7 +1418,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-24 21:56",
+    "updatedAt": "2026-11-25 19:51",
     "hisseler": {
      "BIMAS": {
       "kap_icerik": [],
@@ -1455,13 +1455,13 @@
    }
   },
   "TCELL": {
-   "updatedAt": "2026-11-24T18:55:39Z",
+   "updatedAt": "2026-11-25T16:51:04Z",
    "hisseler": {
     "TCELL": {
      "ozet": {
-      "iki_kaynak": 228,
+      "iki_kaynak": 229,
       "ek_kaynak": 0,
-      "duzeltme": 62,
+      "duzeltme": 61,
       "cozulemedi": 0
      },
      "kaynak_gun_sayisi": {
@@ -1881,7 +1881,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-24 21:56",
+    "updatedAt": "2026-11-25 19:51",
     "hisseler": {
      "TCELL": {
       "kap_icerik": [],
@@ -1918,7 +1918,7 @@
    }
   },
   "YKBNK": {
-   "updatedAt": "2026-11-24T18:57:14Z",
+   "updatedAt": "2026-11-25T16:52:17Z",
    "hisseler": {
     "YKBNK": {
      "ozet": {
@@ -1939,7 +1939,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-24 21:57",
+    "updatedAt": "2026-11-25 19:52",
     "hisseler": {
      "YKBNK": {
       "kap_icerik": [],
@@ -1975,13 +1975,13 @@
    }
   },
   "GARAN": {
-   "updatedAt": "2026-11-24T18:57:13Z",
+   "updatedAt": "2026-11-25T16:52:25Z",
    "hisseler": {
     "GARAN": {
      "ozet": {
-      "iki_kaynak": 158,
+      "iki_kaynak": 159,
       "ek_kaynak": 0,
-      "duzeltme": 132,
+      "duzeltme": 131,
       "cozulemedi": 0
      },
      "kaynak_gun_sayisi": {
@@ -2400,7 +2400,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-24 21:57",
+    "updatedAt": "2026-11-25 19:52",
     "hisseler": {
      "GARAN": {
       "kap_icerik": [],
@@ -2436,12 +2436,12 @@
    }
   },
   "ASELS": {
-   "updatedAt": "2026-11-24T18:57:14Z",
+   "updatedAt": "2026-11-25T16:52:16Z",
    "hisseler": {
     "ASELS": {
      "ozet": {
-      "iki_kaynak": 251,
-      "ek_kaynak": 39,
+      "iki_kaynak": 252,
+      "ek_kaynak": 38,
       "duzeltme": 0,
       "cozulemedi": 0
      },
@@ -2458,16 +2458,6 @@
      ],
      "hatalar": [],
      "secim_kayitlari": [
-      {
-       "tarih": "2025-09-30",
-       "degerler": {
-        "isyatirim": 214.4443,
-        "yahoo": 215.0,
-        "borsapy": 215.0
-       },
-       "secilen": 215.0,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
       {
        "tarih": "2025-10-01",
        "degerler": {
@@ -2852,7 +2842,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-24 21:57",
+    "updatedAt": "2026-11-25 19:52",
     "hisseler": {
      "ASELS": {
       "kap_icerik": [],
@@ -2889,13 +2879,13 @@
    }
   },
   "FROTO": {
-   "updatedAt": "2026-11-24T18:58:00Z",
+   "updatedAt": "2026-11-25T16:52:10Z",
    "hisseler": {
     "FROTO": {
      "ozet": {
-      "iki_kaynak": 173,
+      "iki_kaynak": 174,
       "ek_kaynak": 0,
-      "duzeltme": 117,
+      "duzeltme": 116,
       "cozulemedi": 0
      },
      "kaynak_gun_sayisi": {
@@ -3316,7 +3306,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-24 21:58",
+    "updatedAt": "2026-11-25 19:52",
     "hisseler": {
      "FROTO": {
       "kap_icerik": [],
@@ -3354,13 +3344,13 @@
    }
   },
   "KCHOL": {
-   "updatedAt": "2026-11-24T18:57:48Z",
+   "updatedAt": "2026-11-25T16:52:39Z",
    "hisseler": {
     "KCHOL": {
      "ozet": {
-      "iki_kaynak": 167,
+      "iki_kaynak": 168,
       "ek_kaynak": 0,
-      "duzeltme": 123,
+      "duzeltme": 122,
       "cozulemedi": 0
      },
      "kaynak_gun_sayisi": {
@@ -3779,7 +3769,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-24 21:58",
+    "updatedAt": "2026-11-25 19:52",
     "hisseler": {
      "KCHOL": {
       "kap_icerik": [],
@@ -3816,13 +3806,13 @@
    }
   },
   "ISCTR": {
-   "updatedAt": "2026-11-24T18:59:12Z",
+   "updatedAt": "2026-11-25T16:53:42Z",
    "hisseler": {
     "ISCTR": {
      "ozet": {
-      "iki_kaynak": 162,
+      "iki_kaynak": 163,
       "ek_kaynak": 0,
-      "duzeltme": 128,
+      "duzeltme": 127,
       "cozulemedi": 0
      },
      "kaynak_gun_sayisi": {
@@ -4241,7 +4231,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-24 21:59",
+    "updatedAt": "2026-11-25 19:54",
     "hisseler": {
      "ISCTR": {
       "kap_icerik": [],
@@ -4256,8 +4246,8 @@
        },
        "karsi": {
         "tradingview": {
-         "kar": 67923102000.0,
-         "ozkaynak": 540585000000.0
+         "kar": 64183452000.0,
+         "ozkaynak": 551630000000.0
         },
         "yahoo": {
          "kar": [
@@ -4276,7 +4266,7 @@
    }
   },
   "PGSUS": {
-   "updatedAt": "2026-11-24T18:58:40Z",
+   "updatedAt": "2026-11-25T16:53:48Z",
    "hisseler": {
     "PGSUS": {
      "ozet": {
@@ -4297,7 +4287,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-24 21:59",
+    "updatedAt": "2026-11-25 19:54",
     "hisseler": {
      "PGSUS": {
       "kap_icerik": [],
@@ -4334,13 +4324,13 @@
    }
   },
   "TUPRS": {
-   "updatedAt": "2026-11-24T18:59:16Z",
+   "updatedAt": "2026-11-25T16:53:51Z",
    "hisseler": {
     "TUPRS": {
      "ozet": {
-      "iki_kaynak": 39,
+      "iki_kaynak": 40,
       "ek_kaynak": 0,
-      "duzeltme": 251,
+      "duzeltme": 250,
       "cozulemedi": 0
      },
      "kaynak_gun_sayisi": {
@@ -4761,7 +4751,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-24 22:00",
+    "updatedAt": "2026-11-25 19:54",
     "hisseler": {
      "TUPRS": {
       "kap_icerik": [],
@@ -4798,5 +4788,5 @@
    }
   }
  },
- "updatedAt": "2026-11-24T19:01:13Z"
+ "updatedAt": "2026-11-25T16:54:37Z"
 }
