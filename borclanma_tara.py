@@ -206,6 +206,8 @@ def fon_isle(kod):
            "y5": sayi(al(info, "return_5y")) if al(info, "return_5y") is not None else sayi(al(aday.get(kod, {}), "return_5y"))}
     out.update(buyukluk=sayi(al(info, "fund_size", "size", "portfolio_size")),
                yatirimci=sayi(al(info, "investor_count", "investors")),
+               vb=sayi(al(info, "buy_valor", "buying_valor")),
+               vs=sayi(al(info, "sell_valor", "selling_valor")),
                risk=sayi(al(info, "risk_value", "risk")),
                ucret=sayi(al(info, "management_fee", "fee", "yonetim_ucreti", "annual_fee")),
                kurucu=str(al(info, "founder", "manager") or "").strip(),
