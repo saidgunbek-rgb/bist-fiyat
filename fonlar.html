@@ -43,6 +43,10 @@ tr.rw{cursor:pointer}
 .bx{background:var(--card);border-radius:12px;padding:10px 12px;margin:10px 0}.bx .t{font-weight:700;margin-bottom:6px;font-size:14px}
 .far{display:flex;justify-content:space-between;padding:6px 0;border-top:1px solid #2a2d42;font-size:13px}.far:first-of-type{border-top:0}
 .pkap{display:block;width:100%;font:inherit;font-size:15px;font-weight:700;background:#8b7cf6;color:#fff;border:0;border-radius:12px;padding:12px;margin-top:10px}
+.gb{border-radius:12px;padding:2px 10px 4px;margin:8px 0;background:rgba(var(--gc),.10);border-left:4px solid rgb(var(--gc))}
+.gb .sg{color:rgb(var(--gc));font-weight:700;margin-top:8px}
+.gb .ch.on{background:rgba(var(--gc),.28);color:rgb(var(--gc));border-color:rgb(var(--gc))}
+.gb0{--gc:74,222,128}.gb1{--gc:250,150,60}.gb2{--gc:56,189,248}.gb3{--gc:244,114,182}.gb4{--gc:167,139,250}
 canvas{width:100%;height:150px;display:block}
 </style></head><body>
 <div><a href="index.html">‹ Panele dön</a></div>
@@ -148,7 +152,7 @@ function ciz(){
   var up=[];Object.keys(KAY).forEach(function(t){var d=DATA[t];if(d&&(d.updated||d.updatedAt))up.push(d.updated||String(d.updatedAt).slice(0,10));});
   document.getElementById("sub").textContent="Hisse, tematik ve borçlanma fonları tek yerde · yalnızca banka portföy şirketlerinin fonları"+(up.length?" · son tarama "+trD(up.sort().slice(-1)[0]):"");
   var p="";PRE.forEach(function(x,i){p+='<button data-p="'+i+'">'+x[0]+'</button>';});document.getElementById("pre").innerHTML=p;
-  var s="",grs=["Getiri","Risk","Büyüklük","Puan","Teknik"];grs.forEach(function(g){s+='<div class="sg">'+(g==="Teknik"?"Teknik (fiyat geçmişinden)":g)+'</div>';COL.filter(function(c){return c.gr===g;}).forEach(function(c){s+='<button class="ch'+(SEL.indexOf(c.id)>=0?" on":"")+'" data-c="'+c.id+'">'+c.ad+'</button>';});});
+  var s="",grs=["Getiri","Risk","Büyüklük","Puan","Teknik"];grs.forEach(function(g,gi){s+='<div class="gb gb'+gi+'"><div class="sg">'+(g==="Teknik"?"Teknik (fiyat geçmişinden)":g)+'</div>';COL.filter(function(c){return c.gr===g;}).forEach(function(c){s+='<button class="ch'+(SEL.indexOf(c.id)>=0?" on":"")+'" data-c="'+c.id+'">'+c.ad+'</button>';});s+='</div>';});
   document.getElementById("sut").innerHTML=s;
   var F=filtreler();if(F.indexOf(FIL)<0)FIL="Hepsi";var f="";if(F.length>1)F.forEach(function(x){f+='<button data-f="'+esc(x)+'" class="'+(FIL===x?"on":"")+'">'+esc(x)+'</button>';});document.getElementById("flt").innerHTML=f;
   tablo();}
