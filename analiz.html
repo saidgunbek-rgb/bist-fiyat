@@ -650,7 +650,7 @@ function phCiz(){var kt=document.getElementById("panelk"),el=document.getElement
   if(!rows.length){kt.style.display="none";return;}
   var h="";
   rows.forEach(function(r,i){var open=!!PHA[r.id],ch="";
-    if(!open)ch=r.it.slice(0,2).map(function(q){return'<span class="c"><b>'+esc(q.x.ad)+'</b> '+esc(sv(q.g,q.x))+'</span>';}).join("");
+    if(!open){var tot=0,pk=[];r.it.forEach(function(q){var L=String(q.x.ad).length+sv(q.g,q.x).length+2;if(pk.length<3&&(pk.length===0||tot+L<=40-r.t.length)){pk.push(q);tot+=L;}});ch=pk.map(function(q){return'<span class="c"><b>'+esc(q.x.ad)+'</b> '+esc(sv(q.g,q.x))+'</span>';}).join("");}
     h+='<button class="phs'+(i?"":" f")+'" data-ph="'+r.id+'"><span class="k">'+r.t+'<i>'+r.it.length+'</i></span>'+ch+'<span class="q">'+(open?"▾":"›")+'</span></button>';
     if(open){h+='<div class="phx">';r.gs.forEach(function(g){if(!out[g])return;h+='<div class="phg">'+(r.gs.length>1?'<div class="pht">'+ic[G[g][1]]+' '+G[g][2]+'</div>':'')+'<div class="phc">'+out[g].map(function(x){return'<button class="phr" data-k="'+esc(x.k)+'"><b>'+esc(x.ad)+'</b><i>'+esc(x.v)+'</i></button>';}).join("")+'</div></div>';});h+='</div>';}});
   var son=H.stocks[Object.keys(H.stocks)[0]].son;

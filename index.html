@@ -698,7 +698,7 @@ window.__sekme=function(k){ac(k);};
 if(history.state&&history.state.sk){try{history.replaceState(null,"");}catch(e){}}
 ac(null);
 (function(){var m=/[?&]s=([a-z]+)/.exec(location.search);if(m&&SK[m[1]]){ac(m[1],true);try{history.replaceState(null,"","?s="+m[1]);}catch(e){}}})();
-if(APP)ac("arac",true);
+if(APP&&SEC!=="arac")ac("arac",true);
 })();
 </script>
 <script>
