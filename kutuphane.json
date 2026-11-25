@@ -1263,9 +1263,9 @@
    "dunden": [],
    "dy": 0.13,
    "kb": 75.1,
-   "mc": 1470600000000.0,
-   "pb": 4.39,
-   "pe": 30.27,
+   "mc": 1430700032000.0,
+   "pb": 4.27,
+   "pe": 29.45,
    "price": 313.75,
    "roe": 14.5,
    "sektor": "Savunma",
@@ -2362,7 +2362,7 @@
      {
       "ad": "Değerleme",
       "p": -1,
-      "t": "pahalı (F/K 30,27, PD/DD 4,39)"
+      "t": "pahalı (F/K 29,45, PD/DD 4,27)"
      },
      {
       "ad": "Uzun trend",
@@ -3643,9 +3643,9 @@
    "dunden": [],
    "dy": 13.86,
    "kb": -33.6,
-   "mc": 245286095354.46167,
-   "pb": 1.25,
-   "pe": 7.55,
+   "mc": 234758800000.0,
+   "pb": 1.2,
+   "pe": 7.22,
    "price": 66.9,
    "roe": 16.6,
    "sektor": "Otomotiv",
@@ -4736,7 +4736,7 @@
      {
       "ad": "Değerleme",
       "p": 0,
-      "t": "makul (F/K 7,55, PD/DD 1,25)"
+      "t": "makul (F/K 7,22, PD/DD 1,2)"
      },
      {
       "ad": "Uzun trend",
@@ -8373,9 +8373,9 @@
    "dunden": [],
    "dy": 2.67,
    "kb": -34.1,
-   "mc": 73774710163.0,
-   "pb": 0.73,
-   "pe": 13.02,
+   "mc": 72557500000.0,
+   "pb": 0.71,
+   "pe": 12.8,
    "price": 400.75,
    "roe": 5.6,
    "sektor": "Perakende",
@@ -9466,7 +9466,7 @@
      {
       "ad": "Değerleme",
       "p": 0,
-      "t": "makul (F/K 13,02, PD/DD 0,73)"
+      "t": "makul (F/K 12,8, PD/DD 0,71)"
      },
      {
       "ad": "Uzun trend",
@@ -10740,9 +10740,9 @@
    "dunden": [],
    "dy": 4.44,
    "kb": 0.5,
-   "mc": 196807027367.0,
-   "pb": 0.59,
-   "pe": 8.96,
+   "mc": 191290000000.0,
+   "pb": 0.57,
+   "pe": 8.71,
    "price": 86.95,
    "roe": 6.6,
    "sektor": "İletişim",
@@ -11833,7 +11833,7 @@
      {
       "ad": "Değerleme",
       "p": 0,
-      "t": "makul (F/K 8,96, PD/DD 0,59)"
+      "t": "makul (F/K 8,71, PD/DD 0,57)"
      },
      {
       "ad": "Uzun trend",
@@ -13114,9 +13114,9 @@
    "dunden": [],
    "dy": 4.22,
    "kb": 328.5,
-   "mc": 616574591360.0,
-   "pb": 1.18,
-   "pe": 4.75,
+   "mc": 612721033216.0,
+   "pb": 1.17,
+   "pe": 4.72,
    "price": 318.0,
    "roe": 24.8,
    "sektor": "Enerji",
@@ -14216,7 +14216,7 @@
      {
       "ad": "Değerleme",
       "p": 0,
-      "t": "makul (F/K 4,75, PD/DD 1,18)"
+      "t": "makul (F/K 4,72, PD/DD 1,17)"
      },
      {
       "ad": "Uzun trend",
@@ -14303,9 +14303,9 @@
    "dunden": [],
    "dy": 0.0,
    "kb": 10.2,
-   "mc": 301728664218.0,
-   "pb": 1.02,
-   "pe": 5.92,
+   "mc": 287537633440.86646,
+   "pb": 0.97,
+   "pe": 5.64,
    "price": 34.04,
    "roe": 17.2,
    "sektor": "Banka",
@@ -15398,8 +15398,8 @@
     "olcut": [
      {
       "ad": "Değerleme",
-      "p": 0,
-      "t": "makul (F/K 5,92, PD/DD 1,02)"
+      "p": 1,
+      "t": "ucuz (F/K 5,64, PD/DD 0,97)"
      },
      {
       "ad": "Uzun trend",
@@ -15418,10 +15418,10 @@
      }
     ],
     "oneri": "Uzun vade görünümü nötr: tut ve izle, yeni alım için acele etme.",
-    "puan": 0
+    "puan": 1
    }
   }
  },
  "updated": "2026-11-25",
- "updatedAt": "2026-11-25T16:54:37Z"
+ "updatedAt": "2026-11-25T18:52:48Z"
 }
