@@ -12,12 +12,13 @@
    "2026-11-19": true,
    "2026-11-20": true,
    "2026-11-23": true,
-   "2026-11-24": false
+   "2026-11-24": true
   },
   "kaynaklar": [
+   "yahoo",
    "borsapy"
   ],
-  "teyit": false
+  "teyit": true
  },
  "deneme": {
   "fiyat|2026-11-23": {
@@ -71,17 +72,17 @@
  },
  "enf": {
   "k": "borsapy:latest",
-  "t": "2026-11-24",
+  "t": "2026-11-25",
   "y": 29.77
  },
  "islem_gunu": "2026-11-24",
  "kaynaklar": {
   "fiyat": {
    "deneme": 2,
-   "durum": "deneniyor",
+   "durum": "ok",
    "maks": 4,
-   "not": "BIST 100 kapanışı iki kaynakla teyit edilemedi",
-   "saat": "2026-11-24T16:32:52Z",
+   "not": "",
+   "saat": "2026-11-24T21:39:47Z",
    "veri": "2026-11-24"
   },
   "fon": {
@@ -97,15 +98,15 @@
    "durum": "ok",
    "maks": 4,
    "not": "",
-   "saat": "2026-11-24 21:06",
-   "veri": "2026-11-24 21:06"
+   "saat": "2026-11-25 09:16",
+   "veri": "2026-11-25 09:16"
   },
   "karne": {
    "deneme": 1,
    "durum": "ok",
    "maks": 4,
    "not": "",
-   "saat": "2026-11-24T16:42:30Z",
+   "saat": "2026-11-25T06:09:46Z",
    "veri": "2026-11-24"
   },
   "kutuphane": {
@@ -117,5 +118,5 @@
    "veri": "2026-11-24"
   }
  },
- "kontrolAt": "2026-11-24T21:39:17Z"
+ "kontrolAt": "2026-11-25T06:43:52Z"
 }
