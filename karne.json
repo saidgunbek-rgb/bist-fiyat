@@ -48,12 +48,13 @@
   "t": "2026-11-25",
   "y": 29.77
  },
- "kapUpdatedAt": "2026-11-25 11:15",
+ "kapUpdatedAt": "2026-11-25 11:42",
  "stocks": {
   "THYAO": {
    "bdog": {
     "d": "2026/9",
-    "kaynak": []
+    "kaynak": [],
+    "tv_onceki": "2026/6"
    },
    "byorum": {
     "d": "2026/9",
