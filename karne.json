@@ -17,7 +17,8 @@
     "https://www.kap.org.tr/tr/Bildirim/1698710",
     "https://www.kap.org.tr/tr/Bildirim/1699178",
     "https://www.kap.org.tr/tr/Bildirim/1700080",
-    "https://www.kap.org.tr/tr/Bildirim/1700461"
+    "https://www.kap.org.tr/tr/Bildirim/1700461",
+    "https://www.kap.org.tr/tr/Bildirim/1702488"
    ]
   }
  },
@@ -48,7 +49,7 @@
   "t": "2026-11-25",
   "y": 29.77
  },
- "kapUpdatedAt": "2026-11-25 15:20",
+ "kapUpdatedAt": "2026-11-25 17:34",
  "stocks": {
   "THYAO": {
    "bdog": {
@@ -115,6 +116,17 @@
    },
    "dy": 0.0,
    "kap": [
+    {
+     "d": "2026-11-25 16:14",
+     "k": "KAP",
+     "o": false,
+     "t": "VİOP İşlem İptali Duyuruları",
+     "u": "https://www.kap.org.tr/tr/Bildirim/1702488",
+     "y": {
+      "e": "notr",
+      "t": "Vadeli işlemler piyasasında işlem iptali duyurusu. Şirketin kendisiyle ilgili değil."
+     }
+    },
     {
      "d": "2026-11-19 23:33",
      "k": "KAP",
@@ -213,17 +225,6 @@
      "y": {
       "e": "notr",
       "t": "Vadeli işlemler piyasasında işlem iptali duyurusu. Şirketin kendisiyle ilgili değil."
-     }
-    },
-    {
-     "d": "2026-11-04 12:46",
-     "k": "KAP",
-     "o": false,
-     "t": "Temerrüt İşlemi",
-     "u": "https://www.kap.org.tr/tr/Bildirim/1692139",
-     "y": {
-      "e": "notr",
-      "t": "Takasbank'ın, bir aracı kurumdaki işlem temerrüdüne dair rutin bildirimi. Şirketin kendisiyle ilgili değil."
      }
     }
    ],
