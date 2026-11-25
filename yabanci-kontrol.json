@@ -2,16 +2,18 @@
  "log": {
   "surum": "0.11.0",
   "notlar": [
-   "USDTRY: yahoo 1561 gun, ecb 1540 gun",
-   "ndx y5 tutmadi: 532.2 / 572.38",
-   "spx y5 tutmadi: 504.6 / 543.36",
-   "Olcutler: {'ndx': {'a1': -7.89, 'a3': -4.94, 'a6': -1.58, 'y1': 25.78, 'y3': 187.78, 'y5': None, 'd1': -1.94, 'tarih': '2026-11-24', 'ad': 'Nasdaq-100'}, 'spx': {'a1': -3.89, 'a3': -0.96, 'a6': 6.66, 'y1': 28.18, 'y3': 177.11, 'y5': None, 'd1': -0.45, 'tarih': '2026-11-24', 'ad': 'S&P 500'}}",
+   "USDTRY: yahoo 1561 gun, ecb 1541 gun",
+   "ndx y5 tutmadi: 523.36 / 562.6",
+   "spx y5 tutmadi: 501.73 / 539.8",
+   "Olcutler: {'ndx': {'a1': -9.18, 'a3': -6.93, 'a6': -2.95, 'y1': 23.17, 'y3': 183.76, 'y5': None, 'd1': -1.4, 'tarih': '2026-11-25', 'ad': 'Nasdaq-100'}, 'spx': {'a1': -4.35, 'a3': -1.82, 'a6': 6.15, 'y1': 26.29, 'y3': 175.79, 'y5': None, 'd1': -0.48, 'tarih': '2026-11-25', 'ad': 'S&P 500'}}",
    "screen_funds(YAT): 2134 kayit, 2134 yeni fon",
    "screen_funds(BYF): 38 kayit, 38 yeni fon",
    "Toplam aday: 2172",
    "Nasdaq/S&P adli aday: 102 | olasi (secilmeyen Amerika/ABD adli): 20",
+   "Verisi alinamayan 52 fon yeniden denenecek (tur 1)",
+   "Verisi alinamayan 24 fon yeniden denenecek (tur 2)",
    "Portfoy dagilimi alinamayan: 0",
-   "Listeye giren: 77 | Atlanan: {'işleme kapalı (fiyatı güncel değil)': 5, 'yerli hisse/endeks fonu (tematik yabancı fon değil)': 10, 'getirisi teyit edilemeyen': 3, '10 milyon TL altı küçük fon': 5, \"TEFAS'ta alınamıyor (özel fon / TEFAS'a kapalı)\": 2}"
+   "Listeye giren: 69 | Atlanan: {'işleme kapalı (fiyatı güncel değil)': 8, 'yerli hisse/endeks fonu (tematik yabancı fon değil)': 9, 'getirisi teyit edilemeyen': 3, '10 milyon TL altı küçük fon': 4, 'verisi alınamayan': 7, \"TEFAS'ta alınamıyor (özel fon / TEFAS'a kapalı)\": 2}"
   ]
  },
  "atlanan": {
@@ -29,10 +31,16 @@
     0.0
    ],
    [
-    "HRT",
-    "HEDEF PORTFÖY ROBOTİK TEKNOLOJİLER DEĞİŞKEN FON",
+    "GNH",
+    "GLOBAL MD PORTFÖY ALGORİTMİK MODEL HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞ",
     null,
-    0.0
+    4928519.18
+   ],
+   [
+    "GNS",
+    "GARANTİ PORTFÖY ENERJİ ŞİRKETLERİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ",
+    null,
+    66652419.21
    ],
    [
     "HTE",
@@ -45,6 +53,18 @@
     "HEDEF PORTFÖY TARIM VE GIDA DEĞİŞKEN FON",
     null,
     0.0
+   ],
+   [
+    "RTG",
+    "ATA PORTFÖY ROBOTİK TEKNOLOJİLERİ DEĞİŞKEN FON",
+    null,
+    153157764.64
+   ],
+   [
+    "YJH",
+    "YAPI KREDİ PORTFÖY TEMİZ ENERJİ DEĞİŞKEN FONU",
+    null,
+    133011420.46
    ]
   ],
   "yerli hisse/endeks fonu (tematik yabancı fon değil)": [
@@ -97,16 +117,6 @@
      "bist": 0.802
     },
     46268070.87
-   ],
-   [
-    "GNS",
-    "GARANTİ PORTFÖY ENERJİ ŞİRKETLERİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ",
-    {
-     "ndx": 0.235,
-     "spx": 0.231,
-     "bist": 0.792
-    },
-    66652419.21
    ],
    [
     "GRT",
@@ -181,12 +191,6 @@
     4417784.54
    ],
    [
-    "GNH",
-    "GLOBAL MD PORTFÖY ALGORİTMİK MODEL HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞ",
-    null,
-    4928519.18
-   ],
-   [
     "IUH",
     "INVEO PORTFÖY DÖNÜŞTÜRÜCÜ TEKNOLOJİLER FON SEPETİ FONU",
     null,
@@ -203,6 +207,50 @@
     "RE-PIE PORTFÖY TEKNOLOJİ DEĞİŞKEN FON",
     null,
     4304084.47
+   ]
+  ],
+  "verisi alınamayan": [
+   [
+    "GUH",
+    "",
+    null,
+    null
+   ],
+   [
+    "GZG",
+    "",
+    null,
+    null
+   ],
+   [
+    "GZH",
+    "",
+    null,
+    null
+   ],
+   [
+    "GZL",
+    "",
+    null,
+    null
+   ],
+   [
+    "GZZ",
+    "",
+    null,
+    null
+   ],
+   [
+    "HOA",
+    "",
+    null,
+    null
+   ],
+   [
+    "HRT",
+    "",
+    null,
+    null
    ]
   ],
   "TEFAS'ta alınamıyor (özel fon / TEFAS'a kapalı)": [
