@@ -201,6 +201,8 @@ def fon_isle(kod):
         return dict(out, atla="özel fon (sınırlı yatırımcı)")
     if re.search(r"OZEL FON(U)?\s*$", sade(ad).strip()):
         return dict(out, atla="özel fon (sınırlı yatırımcı)")
+    if "rmüyor" in str(al(info, "tefas_status") or "").lower():
+        return dict(out, atla="TEFAS'ta işlem görmüyor")
     rap = {"a1": sayi(al(info, "return_1m")), "a3": sayi(al(info, "return_3m")),
            "a6": sayi(al(info, "return_6m")), "y1": sayi(al(info, "return_1y", "return_12m")),
            "y3": sayi(al(info, "return_3y")) if al(info, "return_3y") is not None else sayi(al(aday.get(kod, {}), "return_3y")),

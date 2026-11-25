@@ -198,6 +198,8 @@ def fon_isle(kod):
     out.update(banka=bk, grup=bg)
     if "SERBEST" in u:
         return dict(out, atla="serbest fon")
+    if "rmüyor" in str(al(info, "tefas_status") or "").lower():
+        return dict(out, atla="TEFAS'ta işlem görmüyor")
     rap = {"a1": sayi(al(info, "return_1m")), "a3": sayi(al(info, "return_3m")),
            "a6": sayi(al(info, "return_6m")), "y1": sayi(al(info, "return_1y", "return_12m")),
            "y3": sayi(al(info, "return_3y")) if al(info, "return_3y") is not None else sayi(al(aday.get(kod, {}), "return_3y")),
