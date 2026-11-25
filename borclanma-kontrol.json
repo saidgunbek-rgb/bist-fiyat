@@ -16,11 +16,11 @@
    "ornek alanlar: ['fund_code', 'name', 'fund_type', 'return_1y']",
    "Toplam aday fon: 2373",
    "Enflasyon: {'y': 29.77, 't': '2026-11-25', 'k': 'borsapy:latest'}",
-   "BIST100 kaynaklar: {'yahoo': {'a1': -2.48, 'a3': -25.1, 'a6': -21.96, 'y1': -0.15, 'y3': 36.19, 'y5': 495.92, '_risk': {'mdd': -28.9, 'vol': 25.63}, 'd1': -1.14, '_d1t': '2026-11-25'}, 'borsapy': {'a1': -2.48, 'a3': -25.1, 'a6': -21.95, 'y1': -0.15, 'y3': 36.2, 'y5': 495.92, '_risk': {'mdd': -28.9, ",
-   "BIST100 (teyitli): {'a1': -2.48, 'a3': -25.1, 'a6': -21.95, 'y1': -0.15, 'y3': 36.2, 'y5': 495.92, 'd1': -1.14, 'mdd': -28.9, 'vol': 25.63, 'reel_y1': -23.06}",
+   "BIST100 kaynaklar: {'yahoo': {'a1': -2.88, 'a3': -25.4, 'a6': -22.27, 'y1': -0.56, 'y3': 35.64, 'y5': 493.5, '_risk': {'mdd': -28.9, 'vol': 25.63}, 'd1': -1.54, '_d1t': '2026-11-25'}, 'borsapy': {'a1': -2.88, 'a3': -25.4, 'a6': -22.27, 'y1': -0.56, 'y3': 35.64, 'y5': 493.49, '_risk': {'mdd': -28.9, ",
+   "BIST100 (teyitli): {'a1': -2.88, 'a3': -25.4, 'a6': -22.27, 'y1': -0.56, 'y3': 35.64, 'y5': 493.49, 'd1': -1.54, 'mdd': -28.9, 'vol': 25.63, 'reel_y1': -23.37}",
    "Sorgulanacak fon: 44",
-   "Listeye giren: 36 | Atlanan: {'borçlanma fonu değil': 2283, 'banka fonu değil': 46, 'özel fon (sınırlı yatırımcı)': 8}",
-   "Grafik verisi: 36 fon, BIST100 1261 gun"
+   "Listeye giren: 27 | Atlanan: {'borçlanma fonu değil': 2283, 'banka fonu değil': 46, \"TEFAS'ta işlem görmüyor\": 9, 'özel fon (sınırlı yatırımcı)': 8}",
+   "Grafik verisi: 27 fon, BIST100 1261 gun"
   ],
   "banka_disi_kurucular": {
    "ALLIANZ YASAM VE EMEKLILIK A.S": 2,
@@ -2385,6 +2385,17 @@
    "TPF",
    "TPL",
    "TRJ"
+  ],
+  "TEFAS'ta işlem görmüyor": [
+   "AVT",
+   "HKV",
+   "IBK",
+   "TGT",
+   "TIV",
+   "TSI",
+   "TZV",
+   "VKT",
+   "YDK"
   ],
   "özel fon (sınırlı yatırımcı)": [
    "AZF",
