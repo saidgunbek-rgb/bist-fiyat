@@ -1,0 +1,28 @@
+name: Valor testi
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Gerekli paketler
+        run: pip install borsapy 2>&1 | tail -1
+      - name: Testi calistir
+        run: python3 valor_test.py
+      - name: Kaydet
+        if: always()
+        run: |
+          git config user.name "fiyat-bot"
+          git config user.email "fiyat-bot@users.noreply.github.com"
+          [ -f valor-test.json ] && git add valor-test.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Valor testi sonucu"
+          for i in 1 2 3 4 5; do git pull --rebase origin main && git push && exit 0; sleep 10; done
+          exit 1
