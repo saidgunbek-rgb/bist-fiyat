@@ -1,9 +1,8 @@
 {
  "bist": {
-  "b": null,
+  "b": 10655.74,
   "d": "2026-11-25",
   "gunler": {
-   "2026-11-11": true,
    "2026-11-12": true,
    "2026-11-13": true,
    "2026-11-16": true,
@@ -12,10 +11,14 @@
    "2026-11-19": true,
    "2026-11-20": true,
    "2026-11-23": true,
-   "2026-11-24": true
+   "2026-11-24": true,
+   "2026-11-25": true
   },
-  "kaynaklar": [],
-  "teyit": false
+  "kaynaklar": [
+   "yahoo",
+   "borsapy"
+  ],
+  "teyit": true
  },
  "deneme": {
   "fiyat|2026-11-23": {
@@ -96,10 +99,10 @@
  "kaynaklar": {
   "fiyat": {
    "deneme": 1,
-   "durum": "deneniyor",
+   "durum": "ok",
    "maks": 4,
-   "not": "Teyit edilemeyen: THYAO",
-   "saat": "2026-11-24T21:39:47Z",
+   "not": "",
+   "saat": "2026-11-25T16:32:27Z",
    "veri": "2026-11-25"
   },
   "fon": {
@@ -112,28 +115,28 @@
   },
   "kap": {
    "deneme": 0,
-   "durum": "deneniyor",
+   "durum": "ok",
    "maks": 4,
-   "not": "Son KAP taraması gecikti",
-   "saat": "2026-11-25 17:34",
-   "veri": "2026-11-25 17:34"
+   "not": "",
+   "saat": "2026-11-25 19:28",
+   "veri": "2026-11-25 19:28"
   },
   "karne": {
    "deneme": 0,
-   "durum": "deneniyor",
+   "durum": "ok",
    "maks": 4,
-   "not": "bugünün hesabı yok",
-   "saat": "2026-11-25T11:20:05Z",
+   "not": "",
+   "saat": "2026-11-25T16:43:29Z",
    "veri": "2026-11-25"
   },
   "kutuphane": {
    "deneme": 0,
-   "durum": "bekliyor",
+   "durum": "ok",
    "maks": 4,
-   "not": "bugünün verisi yok",
-   "saat": "2026-11-24T19:01:13Z",
-   "veri": "2026-11-24"
+   "not": "",
+   "saat": "2026-11-25T16:54:37Z",
+   "veri": "2026-11-25"
   }
  },
- "kontrolAt": "2026-11-25T16:09:03Z"
+ "kontrolAt": "2026-11-25T17:22:39Z"
 }
