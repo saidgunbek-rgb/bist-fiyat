@@ -87,6 +87,7 @@ canvas{display:block;width:100%;touch-action:pan-y;-webkit-user-select:none;user
 .tzk{font-size:12.5px;color:#f3e3bd;line-height:1.5;margin:2px 0 6px}
 .lj{display:flex;gap:12px;flex-wrap:wrap;font-size:11.5px;color:#e5d8b5}.lj i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px}
 .lj2{font-size:11px;color:#bfb08a;margin:4px 0 4px}
+.phs{display:flex;align-items:center;gap:6px;width:100%;font:inherit;font-size:12.5px;color:var(--tx);background:none;border:0;border-top:1px solid var(--ln);padding:7px 0;text-align:left;cursor:pointer;white-space:nowrap;overflow:hidden}.phs.f{border-top:0}.phs .k{font-weight:700;flex:0 0 auto;min-width:112px}.phs .k i{font-style:normal;color:var(--mut);font-weight:400;margin-left:4px}.phs .c{background:var(--card2);border:1px solid var(--ln);border-radius:14px;padding:1px 8px;font-size:12px;flex:0 1 auto;overflow:hidden;text-overflow:ellipsis}.phs .q{margin-left:auto;color:var(--mut);flex:0 0 auto}.phx{padding:2px 0 8px;border-top:1px solid var(--ln)}
 .pht2{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:9px}.pth{font:inherit;font-size:12px;border-radius:16px;padding:5px 10px;background:var(--card2);color:var(--mut);border:1px solid transparent;cursor:pointer}.pth.on{color:#fff;border-color:var(--p);background:rgba(139,124,246,.18)}.pth i{font-style:normal;opacity:.8;margin-left:3px}.phm summary{cursor:pointer;font-size:12.5px;font-weight:700;color:var(--p);padding:6px 0}.phm[open] summary{margin-bottom:6px}.phg{margin-bottom:9px}.pht{font-size:13px;font-weight:700;margin-bottom:5px}.phc{display:flex;flex-wrap:wrap;gap:6px}.phr{font:inherit;font-size:12px;background:var(--card2);border:1px solid var(--ln);color:var(--tx);border-radius:16px;padding:5px 10px;cursor:pointer}.phr b{font-weight:700}.phr i{font-style:normal;color:var(--mut);margin-left:5px;font-size:11px}
 .hbr{display:block;text-decoration:none;color:var(--tx);padding:8px 2px;border-bottom:1px solid var(--ln)}.hbr:last-of-type{border-bottom:0}.hb1{display:block;font-size:13.5px;line-height:1.4}.hb2{display:block;font-size:11px;color:var(--mut);margin-top:3px}
 .tum{background:var(--card);border-radius:12px;padding:10px 12px;margin-bottom:10px}.tum summary{font-size:13.5px;font-weight:700;cursor:pointer}.tum .bx{padding:0}
@@ -616,7 +617,7 @@ function ALTN(k){return !!(H&&H.stocks[k]&&H.stocks[k].grup==="altin");}
 var HABER=null;
 /* ---- Panel haberleri: panelin kendi verisinden (gunluk mumlar) hesaplanan durum ve gelisme notlari. Yorum/tavsiye degil, olculen sey yazilir. */
 function panelHaber(){var kt=document.getElementById("panelk"),el=document.getElementById("panelhab");if(!kt||!el||!H||!H.stocks)return;
-  var G={dip:[9,"bk","Dibe yakın: son 1 yılın en alt bölgesinde"],gup:[8,"up","Yükselişe devam edenler: son günde sert yükselenler"],gdn:[8,"dn","Son günde sert düşenler"],emu:[7,"up","Fiyatı EMA 50'nin üstüne çıkanlar (son 5 iş günü)"],emd:[7,"dn","Fiyatı EMA 50'nin altına inenler (son 5 iş günü)"],stu:[7,"up","Supertrend yükselişe dönenler (son 5 iş günü)"],std:[7,"dn","Supertrend düşüşe dönenler (son 5 iş günü)"],rlo:[6,"bk","RSI 30 altında (aşırı satım bölgesi)"],rhi:[6,"bk","RSI 70 üstünde (aşırı alım bölgesi)"],rup:[6,"up","RSI 30'un altından çıkanlar (son 5 iş günü)"],mup:[6,"up","Yükselişe devam edenler: son 1 ayda belirgin yükselenler"],mdn:[6,"dn","Son 1 ayda belirgin düşenler"],wup:[5,"up","WaveTrend dipte yukarı kesişenler (son 5 iş günü)"],wdn:[5,"dn","WaveTrend tepede aşağı kesişenler (son 5 iş günü)"],zrv:[5,"up","Yükselişe devam edenler: 1 yıllık zirveye çok yakın"]};
+  var G={dip:[9,"bk","Dibe yakın: son 1 yılın en alt bölgesinde"],gup:[8,"up","Yükselişe devam edenler: son günde sert yükselenler"],gdn:[8,"dn","Bugün en az %3 düşenler"],emu:[7,"up","Fiyatı EMA 50'nin üstüne çıkanlar (son 5 iş günü)"],emd:[7,"dn","Fiyatı EMA 50'nin altına inenler (son 5 iş günü)"],stu:[7,"up","Supertrend yükselişe dönenler (son 5 iş günü)"],std:[7,"dn","Supertrend düşüşe dönenler (son 5 iş günü)"],rlo:[6,"bk","RSI 30 altında (aşırı satım bölgesi)"],rhi:[6,"bk","RSI 70 üstünde (aşırı alım bölgesi)"],rup:[6,"up","RSI 30'un altından çıkanlar (son 5 iş günü)"],mup:[6,"up","Yükselişe devam edenler: son 1 ayda belirgin yükselenler"],mdn:[6,"dn","Son 1 ayda belirgin düşenler"],wup:[5,"up","WaveTrend dipte yukarı kesişenler (son 5 iş günü)"],wdn:[5,"dn","WaveTrend tepede aşağı kesişenler (son 5 iş günü)"],zrv:[5,"up","Yükselişe devam edenler: 1 yıllık zirveye çok yakın"]};
   var out={},toplam=0,SIG={};function P(x,g){return x.toFixed(g==null?1:g).replace(".",",");}
   var SIGAD={emu:"EMA 50",stu:"Supertrend",rup:"RSI",wup:"WaveTrend"};
   function ekle(g,k,ad,v){(out[g]=out[g]||[]).push({k:k,ad:ad,v:v});toplam++;if(SIGAD[g]){var q=SIG[k]=SIG[k]||{ad:ad,l:[]};q.l.push(SIGAD[g]);}}
@@ -637,26 +638,25 @@ function panelHaber(){var kt=document.getElementById("panelk"),el=document.getEl
     for(i=n;i>n-5&&i>1;i--){if(R.kes[i]===1&&R.wt1[i]!=null&&R.wt1[i]<-30){ekle("wup",k,ad,gun(i));break;}if(R.kes[i]===-1&&R.wt1[i]!=null&&R.wt1[i]>30){ekle("wdn",k,ad,gun(i));break;}}
     var th=alt?8:15,r21=n>=21?(c/d[n-21][4]-1)*100:null;
     if(r21!=null&&r21>=th)ekle("mup",k,ad,"+%"+P(r21));else if(r21!=null&&r21<=-th)ekle("mdn",k,ad,"−%"+P(Math.abs(r21)));
-    var r1=(c/d[n-1][4]-1)*100,t1=alt?3:5;if(r1>=t1)ekle("gup",k,ad,"+%"+P(r1));else if(r1<=-t1)ekle("gdn",k,ad,"−%"+P(Math.abs(r1)));});
+    var r1=(c/d[n-1][4]-1)*100,t1=alt?3:5;if(r1>=t1)ekle("gup",k,ad,"+%"+P(r1));else if(r1<=-3)ekle("gdn",k,ad,"−%"+P(Math.abs(r1)));});
   PHO={out:out,G:G,SIG:SIG};phCiz();}
 var PHO=null,PHT="yuk";
+var PHA={};
 function phCiz(){var kt=document.getElementById("panelk"),el=document.getElementById("panelhab");if(!PHO||!kt||!el)return;var out=PHO.out,G=PHO.G;
-  var TAB=[["yuk","🟢 Yükselişe geçenler",["emu","stu","rup","wup","gup","mup","zrv","rhi"]],["zay","🔴 Zayıflayanlar",["emd","std","wdn","gdn","mdn"]],["dip","🟡 Dibe yakın",["dip","rlo"]]];
-  var ks=Object.keys(out).sort(function(a,b){return G[b][0]-G[a][0];});
-  if(!ks.length){kt.style.display="none";return;}
-  var ic={up:"🟢",dn:"🔴",bk:"🟡"},h="";
-  var blok=function(g){return'<div class="phg"><div class="pht">'+ic[G[g][1]]+' '+G[g][2]+'</div><div class="phc">'+out[g].map(function(x){return'<button class="phr" data-k="'+esc(x.k)+'"><b>'+esc(x.ad)+'</b><i>'+esc(x.v)+'</i></button>';}).join("")+'</div></div>';};
-  h+='<div class="pht2">'+TAB.map(function(t){var n=t[2].reduce(function(a,g){return a+(out[g]?out[g].length:0);},0);return'<button class="pth'+(PHT===t[0]?" on":"")+'" data-pht="'+t[0]+'">'+t[1]+' <i>'+n+'</i>'+'</button>';}).join("")+'</div>';
-  if(false){}
-  else{var T=TAB.filter(function(t){return t[0]===PHT;})[0],L=T[2].filter(function(g){return out[g];}).sort(function(a,b){return G[b][0]-G[a][0];});
-    if(!L.length)h+='<div style="font-size:13px;color:var(--mut);padding:6px 2px">'+(PHT==="yuk"?"Yükselişte olan ürün yok.":"Şu an bu gruba giren ürün yok.")+'</div>';
-    if(PHT==="yuk"){var ML=Object.keys(PHO.SIG||{}).filter(function(k){return PHO.SIG[k].l.length>=2;}).sort(function(a,b){return PHO.SIG[b].l.length-PHO.SIG[a].l.length;});
-      if(ML.length)h+='<div class="phg"><div class="pht">🟢 Birden fazla yükseliş işareti verenler (son 5 iş günü)</div><div class="phc">'+ML.map(function(k){var q=PHO.SIG[k];return'<button class="phr" data-k="'+esc(k)+'"><b>'+esc(q.ad)+'</b><i>'+q.l.length+' işaret: '+esc(q.l.join(" + "))+'</i></button>';}).join("")+'</div></div>';}
-    L.forEach(function(g){h+=blok(g);});}
+  var S5=[["gdn","🔻 Düşerken",["gdn"]],["dip","🟡 Dibe yakın",["dip"]],["st","🔄 Supertrend",["stu","std"]],["rsi","📉 RSI",["rup","rlo","rhi"]],["yd","🟢 Yükselişe devam",["mup","gup","zrv"]]];
+  function sv(g,x){var v=String(x.v);if(g==="dip")return v.replace("dipten ","").replace(" yukarıda","");if(g==="stu")return"▲ "+v.replace(" gün önce","g");if(g==="std")return"▼ "+v.replace(" gün önce","g");if(g==="rup")return"30↑ "+v.replace(" gün önce","g");if(g==="rlo")return"30↓ "+v.replace("RSI ","");if(g==="rhi")return"70↑ "+v.replace("RSI ","");if(g==="zrv")return"zirve";return v;}
+  var ic={up:"🟢",dn:"🔴",bk:"🟡"};
+  var rows=S5.map(function(s){var it=[];s[2].forEach(function(g){(out[g]||[]).forEach(function(x){it.push({g:g,x:x});});});return{id:s[0],t:s[1],it:it,gs:s[2]};}).filter(function(r){return r.it.length;});
+  if(!rows.length){kt.style.display="none";return;}
+  var h="";
+  rows.forEach(function(r,i){var open=!!PHA[r.id],ch="";
+    if(!open)ch=r.it.slice(0,2).map(function(q){return'<span class="c"><b>'+esc(q.x.ad)+'</b> '+esc(sv(q.g,q.x))+'</span>';}).join("");
+    h+='<button class="phs'+(i?"":" f")+'" data-ph="'+r.id+'"><span class="k">'+r.t+'<i>'+r.it.length+'</i></span>'+ch+'<span class="q">'+(open?"▾":"›")+'</span></button>';
+    if(open){h+='<div class="phx">';r.gs.forEach(function(g){if(!out[g])return;h+='<div class="phg">'+(r.gs.length>1?'<div class="pht">'+ic[G[g][1]]+' '+G[g][2]+'</div>':'')+'<div class="phc">'+out[g].map(function(x){return'<button class="phr" data-k="'+esc(x.k)+'"><b>'+esc(x.ad)+'</b><i>'+esc(x.v)+'</i></button>';}).join("")+'</div></div>';});h+='</div>';}});
   var son=H.stocks[Object.keys(H.stocks)[0]].son;
-  el.innerHTML=h+'<div style="margin-top:6px;font-size:11px;line-height:1.45;color:var(--mut)">Bu notlar panelin kendi günlük verisinden otomatik hesaplanır'+(son?" ("+trD(son)+" kapanışı)":"")+'. Ölçülen durumu yazar; al-sat önerisi ya da tahmin değildir. Dokununca o ürünün grafiği açılır.</div>';
+  el.innerHTML=h+'<div style="margin-top:6px;font-size:11px;line-height:1.45;color:var(--mut)">Satıra dokununca tam liste açılır. Bu notlar panelin kendi günlük verisinden otomatik hesaplanır'+(son?" ("+trD(son)+" kapanışı)":"")+'. Ölçülen durumu yazar; al-sat önerisi ya da tahmin değildir. 30↑ RSI 30\'un üstüne çıktı, 30↓ RSI 30\'un altında, 70↑ RSI 70\'in üstünde.</div>';
   document.getElementById("panels").textContent="📣 Panel haberleri";kt.style.display="";}
-document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("button.pth");if(b){PHT=b.getAttribute("data-pht");phCiz();}});
+document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("button.phs");if(b){var i=b.getAttribute("data-ph");PHA[i]=!PHA[i];phCiz();}});
 document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("button.phr");if(b){setTimeout(function(){var c=document.getElementById("kart");if(c)c.scrollIntoView({behavior:"smooth",block:"start"});},50);}});
 
 function haberCiz(){var el=document.getElementById("haber");if(!el)return;if(el.parentNode.style.display==="none")return;
@@ -731,7 +731,7 @@ if(PANEL){var pk0=document.getElementById("panelk");Array.prototype.forEach.call
   document.body.style.padding="0";document.body.style.background="transparent";document.body.insertBefore(pk0,document.body.firstChild);pk0.style.margin="0";
   var ph_send=function(){try{parent.postMessage({phH:Math.ceil(pk0.getBoundingClientRect().height)+2},"*");}catch(e){}};
   document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("button.phr");if(b){e.stopImmediatePropagation();e.preventDefault();var k=b.getAttribute("data-k"),alt=H&&H.stocks[k]&&H.stocks[k].grup==="altin";try{localStorage.setItem(alt?"altin-sec":"analiz-sec",k);}catch(x){}try{window.top.location.href="analiz.html"+(alt?"?k=altin":"");}catch(x){window.location.href="analiz.html"+(alt?"?k=altin":"");}return;}
-    if(e.target.closest&&e.target.closest("button.pth"))setTimeout(ph_send,60);},true);
+    if(e.target.closest&&e.target.closest("button.phs"))setTimeout(ph_send,60);},true);
   Promise.all([yukle(VERI_URL,"analiz.json"),yukle(ALTIN_URL,"altin.json")]).then(function(r){var st={};[r[0],r[1]].forEach(function(j){Object.keys((j&&j.stocks)||{}).forEach(function(k){if((j.stocks[k].d||[]).length>30)st[k]=j.stocks[k];});});H={stocks:st,updated:r[0]&&r[0].updated};panelHaber();setTimeout(ph_send,60);}).catch(function(){});
 }
 var ilk=PANEL?Promise.reject("panel"):ALTMOD?(window.ALTIN?Promise.resolve(window.ALTIN):yukle(ALTIN_URL,"altin.json")):(window.VERI?Promise.resolve(window.VERI):yukle(VERI_URL,"analiz.json"));
