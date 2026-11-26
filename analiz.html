@@ -616,7 +616,7 @@ function ALTN(k){return !!(H&&H.stocks[k]&&H.stocks[k].grup==="altin");}
 /* Altin/gumus: hacim verisi guvenilir degil (vadeli kontrat), bu yuzden hacim profili fiyatta gecirilen gun sayisina gore (her gun 1) hesaplanir */
 var HABER=null;
 /* ---- Panel haberleri: panelin kendi verisinden (gunluk mumlar) hesaplanan durum ve gelisme notlari. Yorum/tavsiye degil, olculen sey yazilir. */
-function panelHaber(){var kt=document.getElementById("panelk"),el=document.getElementById("panelhab");if(!kt||!el||!H||!H.stocks)return;
+function panelHaber(){if(!/[?&]panel=1/.test(location.search))return;var kt=document.getElementById("panelk"),el=document.getElementById("panelhab");if(!kt||!el||!H||!H.stocks)return;
   var G={dip:[9,"bk","Dibe yakın: son 1 yılın en alt bölgesinde"],gup:[8,"up","Yükselişe devam edenler: son günde sert yükselenler"],gdn:[8,"dn","Bugün en az %3 düşenler"],emu:[7,"up","Fiyatı EMA 50'nin üstüne çıkanlar (son 5 iş günü)"],emd:[7,"dn","Fiyatı EMA 50'nin altına inenler (son 5 iş günü)"],stu:[7,"up","Supertrend yükselişe dönenler (son 5 iş günü)"],std:[7,"dn","Supertrend düşüşe dönenler (son 5 iş günü)"],rlo:[6,"bk","RSI 30 altında (aşırı satım bölgesi)"],rhi:[6,"bk","RSI 70 üstünde (aşırı alım bölgesi)"],rup:[6,"up","RSI 30'un altından çıkanlar (son 5 iş günü)"],mup:[6,"up","Yükselişe devam edenler: son 1 ayda belirgin yükselenler"],mdn:[6,"dn","Son 1 ayda belirgin düşenler"],wup:[5,"up","WaveTrend dipte yukarı kesişenler (son 5 iş günü)"],wdn:[5,"dn","WaveTrend tepede aşağı kesişenler (son 5 iş günü)"],zrv:[5,"up","Yükselişe devam edenler: 1 yıllık zirveye çok yakın"]};
   var out={},toplam=0,SIG={};function P(x,g){return x.toFixed(g==null?1:g).replace(".",",");}
   var SIGAD={emu:"EMA 50",stu:"Supertrend",rup:"RSI",wup:"WaveTrend"};
