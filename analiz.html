@@ -724,7 +724,7 @@ function oranCiz(){var kt=document.getElementById("orank"),el=document.getElemen
   var ga=H.stocks.ONS.d,gg=H.stocks.XAG.d,L={};gg.forEach(function(r){L[r[0]]=r[4];});
   var canli={};ga.forEach(function(r){if(L[r[0]]>0&&r[4]>0)canli[r[0]]=r[4]/L[r[0]];});
   var cd=Object.keys(canli).sort();if(cd.length<30)return;
-  fetch("altin-uzun.json?t="+Date.now()).then(function(r){if(!r.ok)throw 0;return r.json();}).catch(function(){return null;}).then(function(U){
+  Promise.all([fetch("altin-uzun.json?t="+Date.now()).then(function(r){if(!r.ok)throw 0;return r.json();}).catch(function(){return null;}),fetch("oran.json?t="+Date.now()).then(function(r){if(!r.ok)throw 0;return r.json();}).catch(function(){return null;})]).then(function(UU){var U=UU[0],OR=UU[1];
     var o={};
     if(U&&U.ons_altin&&U.ons_gumus){Object.keys(U.ons_altin).forEach(function(d){var g=U.ons_altin[d],m=U.ons_gumus[d];if(g>0&&m>0&&new Date(d+"T00:00:00Z").getUTCDay()%6!==0&&d<cd[0])o[d]=g/m;});}
     cd.forEach(function(d){o[d]=canli[d];});
@@ -745,7 +745,7 @@ function oranCiz(){var kt=document.getElementById("orank"),el=document.getElemen
     function sat(a1,b1){return '<div style="display:flex;justify-content:space-between;gap:8px;padding:6px 0;border-top:1px solid #2a2a3a"><span style="color:#9a9ab0">'+a1+'</span><b>'+b1+'</b></div>';}
     var h='<div style="color:#9a9ab0;font-size:12px">Ons altın ÷ ons gümüş (XAU/XAG)</div><div style="font-size:28px;font-weight:800;margin:2px 0">'+f(son,2)+'</div>'
      +(n>1?'<div style="font-size:13px;color:'+(son>=v[n-2]?'#26a69a':'#ef5350')+'">'+(son>=v[n-2]?'+':'−')+f(Math.abs(son-v[n-2]),2)+' ('+(son>=v[n-2]?'+':'−')+'%'+f(Math.abs((son/v[n-2]-1)*100),2)+') · önceki kapanışa göre</div>':'')+'<div style="color:#9a9ab0;font-size:12px">'+f(gs,2)+' $ ÷ '+f(ms,2)+' $ · 1 ons altın ≈ '+f(son,1)+' ons gümüş (gram için de aynı) · '+tg(ds[n-1])+'</div>'
-     +'<div id="orbtn" style="display:flex;gap:6px;margin:10px 0 4px">'+[["1A",22],["3A",63],["1Y",250],["5Y",1250],["Maks",0]].map(function(p,i){return '<button data-n="'+p[1]+'" style="flex:1;padding:6px 0;border-radius:8px;border:1px solid #333;background:'+(i===2?"#2a2a3a":"transparent")+';color:#fff;font-size:12.5px;font-weight:600">'+p[0]+'</button>';}).join("")+'</div><div id="orgr"></div>'
+     +'<div id="orbtn" style="display:flex;gap:6px;margin:10px 0 4px">'+[["1G","1G"],["1W","1W"],["1A","1A"],["1Y","1Y"],["5Y","5Y"],["Maks","M"]].map(function(p,i){return '<button data-n="'+p[1]+'" style="flex:1;padding:6px 0;border-radius:8px;border:1px solid #333;background:'+(i===2?"#2a2a3a":"transparent")+';color:#fff;font-size:12.5px;font-weight:600">'+p[0]+'</button>';}).join("")+'</div><div id="orgr"></div>'
      +'<div id="oraltyz" style="color:#9a9ab0;font-size:11.5px;margin-bottom:6px"></div>';
     [[30,"30 gün önce"],[90,"90 gün önce"],[250,"1 yıl önce"]].forEach(function(p){var x=once(p[0]);if(x)h+=sat(p[1],f(x,1)+" → "+f(son,1));});
     h+=sat(tg(ds[0]).slice(6)+"'den en düşük",f(mn,1)+" · "+tg(ds[imn]))+sat(tg(ds[0]).slice(6)+"'den en yüksek",f(mx,1)+" · "+tg(ds[imx]));
@@ -765,21 +765,32 @@ function oranCiz(){var kt=document.getElementById("orank"),el=document.getElemen
       for(var i=Math.max(0,d0);i<ds.length;i++){var k=anahtar(ds[i]);if(!cur||cur.k!==k){if(cur)A.push(cur);cur={k:k,o:onceki!==null?onceki:v[i],c:v[i],d:ds[i]};}cur.c=v[i];onceki=v[i];}
       if(cur)A.push(cur);return A;}
     function hafta(d){var t=new Date(d+"T00:00:00Z"),g=(t.getUTCDay()+6)%7;t.setUTCDate(t.getUTCDate()-g);return t.toISOString().slice(0,10);}
-    function ciz2(nn){var W2=340,H2=150,d,alt;
-      if(nn>0&&nn<=250){d=cm.slice(-nn);alt="Her mum bir gün: günlük açılış ve kapanış oranı.";}
-      else if(nn===1250){d=grup(1250,hafta);alt="Her mum bir hafta (son 5 yıl): haftanın açılış ve kapanış oranı.";}
-      else{d=grup(0,function(x){return x.slice(0,7);});alt="Her mum bir ay ("+tg(ds[0])+"'den bugüne): ayın açılış ve kapanış oranı.";}
-      if(!d||d.length<5)return;
-      var lo=Math.min.apply(null,d.map(function(x){return Math.min(x.o,x.c);})),hi=Math.max.apply(null,d.map(function(x){return Math.max(x.o,x.c);})),
-        yy=function(x){return H2-8-(x-lo)/(hi-lo||1)*(H2-16);},bw=Math.max(1.2,W2/d.length*0.7),g="";
-      d.forEach(function(x,i){var cx=(i+0.5)*W2/d.length,up=x.c>=x.o,t=yy(Math.max(x.o,x.c)),b=yy(Math.min(x.o,x.c));
-        g+='<rect x="'+(cx-bw/2).toFixed(1)+'" y="'+t.toFixed(1)+'" width="'+bw.toFixed(1)+'" height="'+Math.max(1,b-t).toFixed(1)+'" fill="'+(up?"#26a69a":"#ef5350")+'"/>';});
-      var md=yy(med);if(md>2&&md<H2-2)g='<line x1="0" x2="'+W2+'" y1="'+md.toFixed(1)+'" y2="'+md.toFixed(1)+'" stroke="#9a9ab0" stroke-dasharray="4 3"/>'+g;
-      document.getElementById("orgr").innerHTML='<svg width="100%" viewBox="0 0 '+W2+' '+H2+'" style="background:#14141f;border-radius:8px">'+g+'</svg>';
-      document.getElementById("oraltyz").textContent=alt+" Günün en yüksek/en düşük oranı kaynakta olmadığı için fitil çizilmez."+(md>2&&md<H2-2?" Kesikli çizgi: "+tg(ds[0]).slice(6)+"'den medyan "+f(med,1)+".":"");}
-    ciz2(250);
+    function birles(bars,anahtar,sonN){var A=[],cur=null;bars.forEach(function(r){var k=anahtar(r[0]);if(!cur||cur.k!==k){if(cur)A.push(cur);cur={k:k,t:r[0],o:r[1],h:r[2],l:r[3],c:r[4]};}else{if(r[2]>cur.h)cur.h=r[2];if(r[3]<cur.l)cur.l=r[3];cur.c=r[4];}});
+      if(cur)A.push(cur);return sonN?A.slice(-sonN):A;}
+    function saatS(t){var z=function(x){return ("0"+x).slice(-2);},d=new Date((t+10800)*1000);return z(d.getUTCDate())+"."+z(d.getUTCMonth()+1)+" "+z(d.getUTCHours())+":"+z(d.getUTCMinutes());}
+    function ciz2(kod){var W2=340,H2=170,d,alt,fit=false;
+      var g15=OR&&OR.g15&&OR.g15.length>200?OR.g15:null,g60=OR&&OR.g60&&OR.g60.length>200?OR.g60:null;
+      if(kod==="1G"&&g15){d=birles(g15,function(t){return Math.floor(t/3600);},24);fit=true;alt="Her mum 1 saat (son 24 saatlik işlem). Fitil: o saatteki 15 dakikalık oranların en yüksek ve en düşüğü.";}
+      else if(kod==="1W"&&g15){d=birles(g15,function(t){return Math.floor(t/3600);},120);fit=true;alt="Her mum 1 saat (son 5 işlem günü). Fitil: o saatteki 15 dakikalık oranların en yüksek ve en düşüğü.";}
+      else if(kod==="1A"&&g15){d=birles(g15.filter(function(r){return r[0]>g15[g15.length-1][0]-31*86400;}),function(t){return Math.floor(t/14400);});fit=true;alt="Her mum 4 saat (son 1 ay). Fitil: o dönemdeki 15 dakikalık oranların en yüksek ve en düşüğü.";}
+      else if(kod==="1Y"&&g60){d=birles(g60,function(t){return Math.floor((t+7200)/86400);},250);fit=true;alt="Her mum 1 gün (son ~1 yıl). Fitil: o gündeki saatlik oranların en yüksek ve en düşüğü.";}
+      else if(kod==="5Y"){d=grup(1250,hafta);alt="Her mum bir hafta (son 5 yıl): haftanın açılış ve kapanış oranı. Fitil çizilmez (eski veride gün içi yok).";}
+      else if(kod==="M"){d=grup(0,function(x){return x.slice(0,7);});alt="Her mum bir ay ("+tg(ds[0])+"'den bugüne): ayın açılış ve kapanış oranı. Fitil çizilmez (eski veride gün içi yok).";}
+      else{var n2=kod==="1G"?1:kod==="1W"?5:kod==="1A"?22:250;d=cm.slice(-n2<-cm.length?0:-n2);alt="Saatlik veri yüklenemedi; her mum bir gün: günlük açılış ve kapanış oranı. Fitil çizilmez.";}
+      if(!d||d.length<3)return;
+      var lo=Math.min.apply(null,d.map(function(x){return fit?x.l:Math.min(x.o,x.c);})),hi=Math.max.apply(null,d.map(function(x){return fit?x.h:Math.max(x.o,x.c);})),
+        yy=function(x){return H2-8-(x-lo)/(hi-lo||1)*(H2-16);},bw=Math.max(1.2,W2/d.length*0.66),g="";
+      d.forEach(function(x,i){var cx=(i+0.5)*W2/d.length,up=x.c>=x.o,rk=up?"#26a69a":"#ef5350",t=yy(Math.max(x.o,x.c)),b=yy(Math.min(x.o,x.c));
+        if(fit)g+='<line x1="'+cx.toFixed(1)+'" x2="'+cx.toFixed(1)+'" y1="'+yy(x.h).toFixed(1)+'" y2="'+yy(x.l).toFixed(1)+'" stroke="'+rk+'" stroke-width="1"/>';
+        g+='<rect x="'+(cx-bw/2).toFixed(1)+'" y="'+t.toFixed(1)+'" width="'+bw.toFixed(1)+'" height="'+Math.max(1,b-t).toFixed(1)+'" fill="'+rk+'"/>';});
+      var md=yy(med);if(!fit&&md>2&&md<H2-2)g='<line x1="0" x2="'+W2+'" y1="'+md.toFixed(1)+'" y2="'+md.toFixed(1)+'" stroke="#9a9ab0" stroke-dasharray="4 3"/>'+g;
+      var ek='<div style="display:flex;justify-content:space-between;color:#9a9ab0;font-size:11px;margin-top:3px"><span>'+f(lo,2)+'</span><span>'+f(hi,2)+'</span></div>';
+      document.getElementById("orgr").innerHTML='<svg width="100%" viewBox="0 0 '+W2+' '+H2+'" style="background:#14141f;border-radius:8px">'+g+'</svg>'+ek;
+      var kay=fit&&OR?" Saatlik veri: Yahoo vadeli altın ÷ vadeli gümüş (spot orandan %0,3 kadar sapabilir); son çubuk "+saatS(g15?g15[g15.length-1][0]:g60[g60.length-1][0])+".":"";
+      document.getElementById("oraltyz").textContent=alt+kay;}
+    ciz2("1A");
     document.getElementById("orbtn").addEventListener("click",function(e){var bt=e.target.closest("button");if(!bt)return;
-      Array.prototype.forEach.call(this.children,function(x){x.style.background="transparent";});bt.style.background="#2a2a3a";ciz2(+bt.getAttribute("data-n"));});
+      Array.prototype.forEach.call(this.children,function(x){x.style.background="transparent";});bt.style.background="#2a2a3a";ciz2(bt.getAttribute("data-n"));});
   });
 }
 function baslat(j){H=j;var ks=Object.keys(j.stocks||{}).filter(function(k){return (j.stocks[k].d||[]).length>30;});
