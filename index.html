@@ -4,7 +4,7 @@
 <script>try{var _k="bist-takip-v2",_s=JSON.parse(localStorage.getItem(_k)||"null");if(_s&&(_s.a||_s.ab)){delete _s.a;delete _s.ab;localStorage.setItem(_k,JSON.stringify(_s));}localStorage.removeItem("agP");}catch(e){}</script>
 <script>(function(){var a=/[?&]uygulama=araclar/.test(location.search),st=false;try{st=(window.matchMedia&&matchMedia("(display-mode: standalone)").matches)||navigator.standalone===true;}catch(e){}try{if(a)sessionStorage.setItem("bist-app","araclar");else if(!st)sessionStorage.removeItem("bist-app");a=a||sessionStorage.getItem("bist-app")==="araclar";}catch(e){}if(a)document.documentElement.setAttribute("data-app","araclar");document.write('<link rel="manifest" href="'+(a?"manifest-araclar.json":"manifest.json")+'"><link rel="apple-touch-icon" href="'+(a?"icon-araclar-192.png":"icon-192.png")+'">');})();</script>
 <meta name="theme-color" content="#101317">
-<style>html[data-app="araclar"] h1,html[data-app="araclar"] #tb,html[data-app="araclar"] #sgeri,html[data-app="araclar"] #sbos{display:none!important}#yenb{display:none;position:fixed;right:14px;bottom:18px;width:44px;height:44px;border-radius:50%;border:1px solid var(--bd);background:var(--card);color:var(--tx);font-size:20px;line-height:1;z-index:60;box-shadow:0 2px 10px rgba(0,0,0,.4)}</style>
+<style>html[data-app="araclar"] h1,html[data-app="araclar"] #tb,html[data-app="araclar"] #sgeri,html[data-app="araclar"] #sbos,html[data-app="araclar"] #dipbtn{display:none!important}#yenb{display:none;position:fixed;right:14px;bottom:18px;width:44px;height:44px;border-radius:50%;border:1px solid var(--bd);background:var(--card);color:var(--tx);font-size:20px;line-height:1;z-index:60;box-shadow:0 2px 10px rgba(0,0,0,.4)}</style>
 <meta name="robots" content="noindex,nofollow">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -116,11 +116,31 @@ function bant(t){if(gos||window.top!==window)return;gos=1;var z=t&&t.length>15?n
  function ek(){var d=document.createElement("div");d.id="cvd";d.style.cssText="background:#3a2f12;color:#ffd27a;border:1px solid #6b5520;border-radius:10px;padding:8px 12px;margin:8px;font:13px/1.45 system-ui,-apple-system,sans-serif";d.textContent="📴 İnternet yok · "+(y?y+" tarihinde kaydedilen":"en son kaydedilen")+" veriler gösteriliyor. İnternet gelince sayfayı yenile.";document.body.insertBefore(d,document.body.firstChild);}
  if(document.body)ek();else document.addEventListener("DOMContentLoaded",ek);}
 window.fetch=function(){return of.apply(this,arguments).then(function(r){try{var k=r.headers.get("x-onbellek");if(k)bant(k);}catch(e){}return r;});};})();</script>
+<style>
+.dipbtn{position:relative;display:flex;align-items:center;gap:12px;width:100%;text-align:left;border:1px solid var(--b2);background:linear-gradient(135deg,var(--b1),var(--b2));color:#fff;border-radius:16px;padding:15px 16px;margin:2px 0 12px;font-family:inherit;cursor:pointer}
+.dipbtn .dic{font-size:28px}.dipbtn .dtx{display:flex;flex-direction:column;gap:2px;min-width:0}.dipbtn b{font-size:16px;color:#fff}.dipbtn small{font-size:12px;color:#ece8ff;line-height:1.35}
+.dipbtn .dok{margin-left:auto;font-size:22px;color:#ece8ff}
+.dipbtn.dsolu{background:var(--card);border-color:var(--bd);color:var(--tx)}.dipbtn.dsolu b{color:var(--tx)}.dipbtn.dsolu small,.dipbtn.dsolu .dok{color:var(--mut)}
+.drz{position:absolute;top:-8px;right:-6px;min-width:26px;height:26px;border-radius:13px;background:#ef4444;color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;padding:0 7px;border:3px solid var(--bg)}
+.dpk{background:var(--bg);border-radius:12px;margin:8px 0;border-left:4px solid #f5a300;overflow:hidden}
+.dh{display:flex;align-items:center;gap:8px;padding:11px 12px;cursor:pointer}.dh b{font-size:14px}.da{color:var(--acc);width:12px}
+.dh em{font-style:normal;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;background:rgba(245,163,0,.18);color:#f5a300}.dh em.ded{background:rgba(111,149,232,.2);color:var(--acc)}
+.dh .ds{margin-left:auto;color:var(--mut);font-size:12px}
+.dbody{display:none;padding:0 12px 12px}.dpk.o .dbody{display:block}
+.dr{display:flex;justify-content:space-between;gap:10px;font-size:12.5px;padding:6px 0;border-bottom:1px solid var(--bd)}.dr span:first-child{color:var(--mut)}.dr b{text-align:right}
+.dg{font-size:12px;color:var(--mut);line-height:1.5;margin-top:8px}
+.db3{display:grid;grid-template-columns:50px 1fr 100px;gap:8px;align-items:center;font-size:12px;margin:6px 0}
+.dbar{height:10px;border-radius:5px;background:var(--bd);position:relative;overflow:hidden}.dbar i{position:absolute;left:0;top:0;bottom:0;border-radius:5px}.dbar i.up{background:var(--pos)}.dbar i.dn{background:var(--neg)}
+.dbody .up{color:var(--pos)}.dbody .dn{color:var(--neg)}
+.dw{font-size:11px;color:#b86e00;background:rgba(245,163,0,.12);border-radius:8px;padding:7px 9px;margin-top:8px;line-height:1.5}
+.dgr{font-size:12px;color:var(--mut);margin-top:8px;padding:8px 10px;border:1px dashed var(--bd);border-radius:10px;line-height:1.6}
+</style>
 </head>
 <body>
 <main>
 <div class="sbar" id="sbar"><button id="sgeri">‹ Geri</button><b id="sbad"></b></div>
 <h1>📈 Günlük Kâr/Zarar Takibi</h1>
+<button type="button" class="dipbtn" id="dipbtn"><span class="dic">📍</span><span class="dtx"><b>Dip Bölgesi Analizi</b><small id="dipalt">Yükleniyor…</small></span><span class="dok">›</span><span class="drz" id="diprz" style="display:none"></span></button>
 
 <div class="ast na" id="ast">Otomatik fiyat güncellemesi kontrol ediliyor…</div>
 <details class="vd" id="vd" style="display:none"></details>
@@ -156,6 +176,7 @@ window.fetch=function(){return of.apply(this,arguments).then(function(r){try{var
 
 <div class="card"><h2>Hisselerim</h2><div id="byk"></div><details class="ac" style="margin:4px 0 6px"><summary>Tablo görünümü</summary><div class="scroll"><table id="bys"></table></div></details><div class="mut" id="bysd" style="margin-top:6px;display:none"></div><details class="ac" style="display:none"><summary>🔗 Bu tablo neye bağlı?</summary>• <b>Adet, ort. maliyet ve gerçekleşen K/Z</b> tüm alım/satım işlemlerinden hesaplanır. İşlem ekleyince tablo anında değişir.<br>• <b>Alım</b> adedi artırır ve ort. maliyeti günceller. <b>Satım</b> adedi azaltır, ort. maliyeti değiştirmez, kârı/zararı gerçekleşen K/Z’ye ekler. Tamamen satılan hissede adet 0 olur, yalnızca gerçekleşen K/Z kalır.<br>• <b>Fiyat</b> son kayıtlı kapanıştan gelir. Gün sonu fiyatını değiştirirsen Değer, K/Z, % ve Pay güncellenir. İşlem yaptığın gün kapanış girilmediyse * işaretli son işlem fiyatı kullanılır.<br>• <b>Temettü</b> girersen ilgili hissenin K/Z’sine eklenir. <b>Toplam</b> satırı yalnızca elindeki hisselerin toplamıdır. Satılan hisseler ve gerçekleşen kâr aşağıdaki “Satışlar ve gerçekleşen kâr” bölümündedir; Özet kartı ikisini birlikte gösterir.</details></div>
 <nav class="tb" id="tb"><button data-s="grafik">📈 Grafik</button><button data-s="karne">📋 Karne</button><button data-s="arac">🧰 Araçlar</button><button data-s="islem">💼 İşlemler</button><button data-s="gecmis">🗓 Geçmiş</button><button data-s="ayar">⚙️ Ayarlar</button></nav>
+<div class="card" id="cldip"><h2 style="margin:0 0 4px;font-size:17px">📍 Dip Bölgesi Analizi</h2><div class="dg" style="margin-bottom:8px">Dokununca açılır, tekrar dokununca kapanır.</div><div id="dipicerik"><div class="dg">Yükleniyor…</div></div></div>
 <div id="sbos" class="mut" style="text-align:center;margin:2px 0 14px">Diğer bölümler için yukarıdaki sekmelerden birine dokun.</div>
 <div class="card" id="cla"><iframe id="phfr" scrolling="no" title="Panel haberleri" style="width:100%;height:0;border:0;display:block;margin-bottom:10px;background:transparent;opacity:0;transition:opacity .25s"></iframe><div class="arg"><a href="analiz.html"><b>📈 Analiz</b><span>Hisse grafiği, seviyeler, kademeli toplama</span></a><a href="karne.html?k=kutuphane"><b>📚 Kütüphane</b><span>İzlediğin hisseler</span></a><a href="analiz.html?k=altin"><b>🥇 Altın</b><span>Altın ve gümüş analizi</span></a><a href="fonlar.html"><b>💼 Fonlar</b><span>Hisse, tematik ve borçlanma fonları: sütun seç, sırala</span></a></div></div><div id="gsb"></div></div>
 <div class="card" id="clk"><iframe id="kfr" scrolling="no" title="Karne" style="width:100%;height:560px;border:0;display:block;border-radius:10px"></iframe><div class="mut" style="margin-top:6px"><a href="karne.html" target="_blank" rel="noopener" style="color:inherit">Tam sayfada aç ↗</a></div></div>
@@ -663,7 +684,7 @@ fetch(karneUrl()+"?t="+Date.now()).then(function(r){if(!r.ok)throw 0;return r.js
 <script>
 /* ---- Sekmeler: Ozet her zaman ana ekranda; diger bolumler sekmelerde ---- */
 (function(){
-var SK={grafik:["#clg"],arac:["#cla"],karne:["#clk"],islem:["#clt","#clv","#cls"],gecmis:["#clw","#clh"],ayar:["#cln","#clb"]};
+var SK={dip:["#cldip"],grafik:["#clg"],arac:["#cla"],karne:["#clk"],islem:["#clt","#clv","#cls"],gecmis:["#clw","#clh"],ayar:["#cln","#clb"]};
 var ACIK={grafik:["clg"]},SEC=null;
 var main=document.querySelector("main"),tb=document.getElementById("tb"),bos=document.getElementById("sbos");
 function kart(sel){var e=document.querySelector(sel);if(!e)return null;return e.closest(".card")||e;}
@@ -681,11 +702,12 @@ function ac(k,geriden){if(k===SEC)k=null;var once=SEC;
   main.classList.toggle("sekacik",!!k);
   if(bos)bos.style.display=k?"none":"";
   sbar.style.display=k?"flex":"none";
-  if(k){var tbb=tb.querySelector('button[data-s="'+k+'"]');document.getElementById("sbad").textContent=tbb?tbb.textContent:"";}
+  if(k){var tbb=tb.querySelector('button[data-s="'+k+'"]');document.getElementById("sbad").textContent=tbb?tbb.textContent:(k==="dip"?"📍 Dip Bölgesi":"");}
   (ACIK[k]||[]).forEach(function(id){var d=document.getElementById(id);if(d&&!d.open)d.open=true;});
   if(k==="arac"&&window.__panelYukle)window.__panelYukle();
   if(k==="karne"&&window.__karneYukle)window.__karneYukle();
   if(k==="kut"&&window.__kutYukle)window.__kutYukle();
+  if(k==="dip"&&window.__dipAc)window.__dipAc();
   /* telefonun geri tusu / geri hareketi de bolumu kapatsin */
   if(k&&!once&&!geriden){try{history.pushState({sk:k},"","?s="+k);}catch(e){}}
   if(k)window.scrollTo(0,0);else if(once)window.scrollTo(0,YER);}
@@ -746,5 +768,115 @@ function yukle(){var b=[],F={};G.forEach(function(g){g[1].forEach(function(r){r[
 ciz();yukle();setInterval(yukle,120000);})();</script>
 <button id="yenb" aria-label="Yenile" onclick="location.reload()">↻</button>
 <script>try{if((window.matchMedia&&matchMedia("(display-mode: standalone)").matches)||navigator.standalone===true)document.getElementById("yenb").style.display="block";}catch(e){}</script>
+<script>
+/* ---- Dip bolgesi analizi: gecmiste benzer durumlar (tarayicida hesaplanir; veri: analiz.json + altin.json) ---- */
+(function(){
+var W=60,KEY="dip-gorulen-v1",AD={GRAM:"Gram altın",GGUM:"Gram gümüş"},TLS={GRAM:1,GGUM:1};
+var LST=[],SON="",HATA=false,SEEN={};
+try{SEEN=JSON.parse(localStorage.getItem(KEY)||"{}")||{};}catch(e){SEEN={};}
+function kayit(){try{localStorage.setItem(KEY,JSON.stringify(SEEN));}catch(e){}}
+function med(a){a=a.slice().sort(function(x,y){return x-y;});var m=a.length>>1;return a.length%2?a[m]:(a[m-1]+a[m])/2;}
+function tr(x,dp){return Number(x).toLocaleString("tr-TR",{minimumFractionDigits:dp,maximumFractionDigits:dp});}
+function yz(x){return (x>=0?"+":"−")+"%"+tr(Math.abs(x),1);}
+function tar(s){var p=String(s).split("-");return p.length===3?p[2]+"."+p[1]+"."+p[0]:s;}
+function isim(k){return AD[k]||k;}
+function analiz(kod,d0){
+  var d=d0.filter(function(x){return x&&x.length>=5&&isFinite(x[3])&&isFinite(x[4])&&x[3]>0&&x[4]>0;});
+  var n=d.length;if(n<W+70)return null;
+  var c=d.map(function(x){return +x[4];}),lo=d.map(function(x){return +x[3];});
+  function minr(a,b){var m=Infinity;for(var i=a;i<=b;i++)if(lo[i]<m)m=lo[i];return m;}
+  function kir(i){return i>W&&lo[i]<minr(i-W,i-1)*0.998;}
+  function dipte(i){if(i<W)return false;var m=Infinity,j=-1;for(var k=i-W+1;k<=i;k++)if(lo[k]<m){m=lo[k];j=k;}
+    return (i-j)>=10&&c[i]<=m*1.03&&c[i]>=m&&minr(j+1,i)>=m*0.995;}
+  function vakalar(fn){var h=[],son=-99;for(var i=W+1;i<n-W;i++){if(fn(i)&&i-son>=10){h.push(i);son=i;}}return h;}
+  function sonuc(h){var o={n:h.length,h:{}};[10,20,60].forEach(function(H){var r=h.map(function(i){return (c[i+H]/c[i]-1)*100;});
+    if(r.length)o.h[H]={m:med(r),art:100*r.filter(function(x){return x>0;}).length/r.length,min:Math.min.apply(null,r),max:Math.max.apply(null,r)};});return o;}
+  var prev=minr(n-3-W,n-4),cur=minr(n-3,n-1),cj=n-1;for(var q=n-3;q<n;q++)if(lo[q]===cur)cj=q;
+  var res={kod:kod,c:c[n-1],ilk:d[0][0],son:d[n-1][0],tip:null};
+  if(cur<prev*0.998){
+    res.tip="k";res.prev=prev;res.cur=cur;res.curT=d[cj][0];res.st=sonuc(vakalar(kir));res.id=kod+":k:"+res.curT;
+  }else if(dipte(n-1)){
+    var m=Infinity,j=-1;for(var k=n-W;k<n;k++)if(lo[k]<m){m=lo[k];j=k;}
+    var test=0;for(var t=j+1;t<n;t++)if(lo[t]<=m*1.02)test++;
+    res.tip="d";res.dip=m;res.dipT=d[j][0];res.gun=n-1-j;res.test=test;res.st=sonuc(vakalar(dipte));res.id=kod+":d:"+res.dipT;
+  }
+  return res;
+}
+function satirlar(r){var s="";
+  function sat(a,b){s+='<div class="dr"><span>'+a+'</span><b>'+b+'</b></div>';}
+  sat(TLS[r.kod]?"Son fiyat (gün içi olabilir)":"Son kapanış",tr(r.c,2)+(TLS[r.kod]?" TL":""));
+  if(r.tip==="k"){
+    sat("Kırılan 60 günlük dip",tr(r.prev,2)+" → en düşük "+tr(r.cur,2));
+    sat("En düşük görülen gün",tar(r.curT));
+    sat("Son fiyat dipten",yz((r.c/r.cur-1)*100).replace("+","")+" yukarıda");
+    sat("Son fiyat önceki dibe göre",r.c<r.prev?"altında":"üstüne döndü");
+  }else{
+    sat("60 günlük dip",tr(r.dip,2)+" · "+tar(r.dipT));
+    sat("Dip kaç gündür kırılmadı",r.gun+" işlem günü · "+r.test+" kez test");
+    sat("Son fiyat dipten",yz((r.c/r.dip-1)*100).replace("+","")+" yukarıda");
+  }
+  sat("Geçmişte benzer durum",r.st.n+" kez");
+  if(r.st.n){
+    s+='<div class="dg">Benzer durumlardan sonra fiyat (medyan · yükselen vaka):</div>';
+    [10,20,60].forEach(function(H){var x=r.st.h[H];if(!x)return;var w=Math.min(100,Math.abs(x.m)*10);
+      s+='<div class="db3"><span>'+H+' gün</span><div class="dbar"><i class="'+(x.m>=0?"up":"dn")+'" style="width:'+w+'%"></i></div><b>'+yz(x.m)+' · %'+Math.round(x.art)+'</b></div>';});
+    var x=r.st.h[20];if(x)sat("En kötü / en iyi (20 gün)",'<span class="dn">'+yz(x.min)+'</span> / <span class="up">'+yz(x.max)+'</span>');
+  }
+  var w=[];
+  if(!r.st.n)w.push("Geçmişte benzer durum bulunamadı.");
+  else if(r.st.n<20)w.push("Yalnızca "+r.st.n+" vaka: çok az bir örnek, sonuç güvenilir sayılmaz.");
+  if(TLS[r.kod])w.push("Fiyat TL cinsinden; dolar/TL yükseldiği için sonuçlar altın/gümüşten çok kurdan da etkilenir.");
+  w.push("Geçmiş taraması: "+r.ilk.slice(0,4)+" yılından bugüne. Günler işlem günüdür (20 gün ≈ 1 ay). Geçmiş sonuç garanti değildir; al/sat önerisi değildir.");
+  s+='<div class="dw">⚠️ '+w.join("<br>")+'</div>';
+  return s;}
+function ciz(){
+  var el=document.getElementById("dipicerik");if(!el)return;
+  if(HATA&&!LST.length){el.innerHTML='<div class="dg">Veri şu an yüklenemedi. Biraz sonra tekrar deneyin.</div>';return;}
+  var imp=LST.filter(function(r){return r.tip;});
+  imp.sort(function(a,b){var ka=a.tip==="k"?0:1,kb=b.tip==="k"?0:1;if(ka!==kb)return ka-kb;var ma=TLS[a.kod]?0:1,mb=TLS[b.kod]?0:1;return ma-mb;});
+  var goster=imp.slice(0,5),diger=imp.slice(5),h="";
+  goster.forEach(function(r,i){h+='<div class="dpk"><div class="dh" data-i="'+i+'"><span class="da">▸</span><b>'+isim(r.kod)+'</b><em class="'+(r.tip==="k"?"dek":"ded")+'">'+(r.tip==="k"?"dip kırıldı":"dip bölgesinde")+'</em><span class="ds">'+tr(r.c,2)+'</span></div><div class="dbody">'+satirlar(r)+'</div></div>';});
+  var yok=LST.length-imp.length,ds=[];
+  diger.forEach(function(r){ds.push(isim(r.kod)+(r.tip==="k"?" dibi kırdı":" dip bölgesinde"));});
+  var ok=imp.length?"":'<div class="dg" style="margin:6px 0">Şu an dibi kıran ya da dip bölgesinde tutunan varlık yok.</div>';
+  h=ok+h+'<div class="dgr"><b>Diğer:</b> '+(ds.length?ds.join(", ")+". ":"")+yok+' varlıkta önemli değişiklik yok.</div>'
+   +'<div class="dg" style="margin-top:8px">Önemli sayılanlar: ① 60 günlük dibini son 3 işlem gününde aşağı kıranlar ② dibi en az 10 gündür tutan ve dibe %3’ten yakın olanlar. En fazla 5 kart gösterilir. Veri: '+tar(SON)+'.</div>';
+  el.innerHTML=h;
+}
+function rozet(){
+  var b=document.getElementById("dipbtn");if(!b)return;
+  var imp=LST.filter(function(r){return r.tip;}),yeni=imp.filter(function(r){return !SEEN[r.id];});
+  var rz=document.getElementById("diprz"),al=document.getElementById("dipalt");
+  var bilinen=false;for(var k in SEEN)if(k!=="_t"){bilinen=true;break;}
+  if(HATA&&!LST.length){rz.style.display="none";al.textContent="Veri şu an yüklenemedi";b.classList.add("dsolu");return;}
+  if(yeni.length){rz.style.display="";rz.textContent=yeni.length>9?"9+":yeni.length;b.classList.remove("dsolu");
+    al.textContent=(bilinen?"Yeni: ":"")+yeni.slice(0,3).map(function(r){return isim(r.kod)+(r.tip==="k"?" dibi kırdı":" dip bölgesinde");}).join(", ")+(yeni.length>3?" +"+(yeni.length-3):"");}
+  else{rz.style.display="none";b.classList.add("dsolu");
+    al.textContent=imp.length?"Yeni gelişme yok"+(SEEN._t?" · son bakış "+SEEN._t:""):"Şu an önemli gelişme yok";}
+}
+function yukle(){
+  var t="?t="+Date.now(),L=[],hata=0;
+  Promise.all([fetch("analiz.json"+t).then(function(r){if(!r.ok)throw 0;return r.json();}).catch(function(){hata++;return null;}),
+               fetch("altin.json"+t).then(function(r){if(!r.ok)throw 0;return r.json();}).catch(function(){hata++;return null;})]).then(function(a){
+    ["GRAM","GGUM"].forEach(function(k){var s=a[1]&&a[1].stocks&&a[1].stocks[k];if(s&&s.d){var r=analiz(k,s.d);if(r)L.push(r);}});
+    if(a[0]&&a[0].stocks)Object.keys(a[0].stocks).forEach(function(k){var s=a[0].stocks[k];if(s&&s.d){var r=analiz(k,s.d);if(r)L.push(r);}});
+    LST=L;HATA=hata>0&&!L.length;SON=L.reduce(function(m,r){return r.son>m?r.son:m;},"");
+    ciz();rozet();
+  });
+}
+document.addEventListener("click",function(e){
+  var h=e.target.closest&&e.target.closest(".dh");
+  if(h){var k=h.parentNode;k.classList.toggle("o");h.querySelector(".da").textContent=k.classList.contains("o")?"▾":"▸";return;}
+  if(e.target.closest&&e.target.closest("#dipbtn")&&window.__sekme)window.__sekme("dip");
+});
+window.__dipAc=function(){
+  ciz();
+  LST.forEach(function(r){if(r.tip)SEEN[r.id]=1;});
+  var d=new Date();SEEN._t=("0"+d.getHours()).slice(-2)+":"+("0"+d.getMinutes()).slice(-2);kayit();rozet();
+  yukle();
+};
+yukle();setInterval(yukle,300000);
+})();
+</script>
 </body>
 </html>
