@@ -786,7 +786,7 @@ function oranCiz(){var kt=document.getElementById("orank"),el=document.getElemen
       var md=yy(med);if(!fit&&md>2&&md<H2-2)g='<line x1="0" x2="'+W2+'" y1="'+md.toFixed(1)+'" y2="'+md.toFixed(1)+'" stroke="#9a9ab0" stroke-dasharray="4 3"/>'+g;
       var ek='<div style="display:flex;justify-content:space-between;color:#9a9ab0;font-size:11px;margin-top:3px"><span>'+f(lo,2)+'</span><span>'+f(hi,2)+'</span></div>';
       document.getElementById("orgr").innerHTML='<svg width="100%" viewBox="0 0 '+W2+' '+H2+'" style="background:#14141f;border-radius:8px">'+g+'</svg>'+ek;
-      var kay=fit&&OR?" Saatlik veri: Yahoo vadeli altın ÷ vadeli gümüş (spot orandan %0,3 kadar sapabilir); son çubuk "+saatS(g15?g15[g15.length-1][0]:g60[g60.length-1][0])+".":"";
+      var kay=fit&&OR?" Saatlik veri: Yahoo vadeli altın ÷ vadeli gümüş (spot orandan %0,3 kadar sapabilir); "+(function(){var q=g15||g60,l=q[q.length-1][0],pr=q.length>1?q[q.length-2][0]:l;return l-pr>7200?"Yahoo saatlik verisi "+saatS(pr)+"'e kadar geliyor; son çubuk anlık fiyattan ("+saatS(l)+"), arada saatler eksik.":"son çubuk "+saatS(l)+".";})():"";
       document.getElementById("oraltyz").textContent=alt+kay;}
     ciz2("1A");
     document.getElementById("orbtn").addEventListener("click",function(e){var bt=e.target.closest("button");if(!bt)return;

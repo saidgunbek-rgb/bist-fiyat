@@ -22,6 +22,17 @@ def oran(interval, rng):
         # Fitil: iki enstrumanin ayni baradaki en uc degerlerinden oranin MUMKUN en genis araligi degil, sadece
         # acilis-kapanis arasi kullanilir; fitil ust-donem birlestirmesinde (saatlik/4 saatlik/gunluk) olusur.
         bars.append([t, round(o, 3), round(max(o, c), 3), round(min(o, c), 3), round(c, 3)])
+    # Yahoo'nun grafik verisi bazen saatler geriden gelir; anlik fiyat (meta) daha guncel. Aradaki saatler yoksa
+    # son noktayi anlik fiyattan ekle (panel bunu "arada veri yok" diye belirtir).
+    gm, sm = META.get("GC=F" + interval), META.get("SI=F" + interval)
+    try:
+        if bars and gm and sm and gm["regularMarketPrice"] and sm["regularMarketPrice"]:
+            t = min(gm["regularMarketTime"], sm["regularMarketTime"])
+            if t > bars[-1][0] + 900:
+                c = round(gm["regularMarketPrice"] / sm["regularMarketPrice"], 3); o = bars[-1][4]
+                bars.append([t, o, round(max(o, c), 3), round(min(o, c), 3), c])
+    except Exception as e:
+        print("anlik nokta eklenemedi", e)
     return bars
 sonuc = {"kaynak": "Yahoo Finance GC=F / SI=F (vadeli islem, spot'a cok yakin)", "guncelleme": datetime.datetime.utcnow().isoformat() + "Z"}
 for ad, iv, rg in (("g15", "15m", "60d"), ("g60", "60m", "730d")):
