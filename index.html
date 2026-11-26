@@ -815,6 +815,8 @@ function satirlar(r){var s="";
     sat("Dip kaç gündür kırılmadı",r.gun+" işlem günü · "+r.test+" kez test");
     sat("Son fiyat dipten",yz((r.c/r.dip-1)*100).replace("+","")+" yukarıda");
   }
+  var yl=(new Date(r.son)-new Date(r.ilk))/31557600000;
+  sat("Taranan geçmiş",tar(r.ilk)+" → "+tar(r.son)+" ("+tr(yl,1)+" yıl)");
   sat("Geçmişte benzer durum",r.st.n+" kez");
   if(r.st.n){
     s+='<div class="dg">Benzer durumlardan sonra fiyat (medyan · yükselen vaka):</div>';
