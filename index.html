@@ -791,6 +791,11 @@ function analiz(kod,d0){
     if(r.length)o.h[H]={m:med(r),art:100*r.filter(function(x){return x>0;}).length/r.length,min:Math.min.apply(null,r),max:Math.max.apply(null,r)};});return o;}
   var prev=minr(n-3-W,n-4),cur=minr(n-3,n-1),cj=n-1;for(var q=n-3;q<n;q++)if(lo[q]===cur)cj=q;
   var res={kod:kod,c:c[n-1],ilk:d[0][0],son:d[n-1][0],tip:null};
+  res.kd=(function(){if(n<330)return null;var hi=function(a,b){var m=-1e9;for(var i=a;i<=b;i++)if(+d[i][2]>m)m=+d[i][2];return m;},
+    ev=[],last=-99,i;
+    for(i=250;i<n-63;i++){var h=hi(i-249,i),l=minr(i-249,i);if(h>l&&(c[i]-l)/(h-l)<=0.214&&i-last>=20){last=i;var mn=Infinity;for(var k=i+1;k<=i+63;k++)if(lo[k]<mn)mn=lo[k];ev.push([mn/c[i]-1,c[i+63]/c[i]-1]);}}
+    var l1=minr(n-250,n-1),tr14=0,cnt=0;for(i=n-14;i<n;i++){var pc=c[i-1];tr14+=Math.max(+d[i][2]-lo[i],Math.abs(+d[i][2]-pc),Math.abs(lo[i]-pc));cnt++;}
+    return {lo:l1,atr:tr14/cnt,ev:ev};})();
   if(cur<prev*0.998){
     res.tip="k";res.prev=prev;res.cur=cur;res.curT=d[cj][0];res.st=sonuc(vakalar(kir));res.id=kod+":k:"+res.curT;
   }else if(dipte(n-1)){
@@ -800,6 +805,19 @@ function analiz(kod,d0){
   }
   return res;
 }
+function kademeli(r){var k=r.kd;if(!k)return '<div class="dg" style="margin-top:8px">Kademeli alım seviyeleri için yeterli geçmiş veri yok.</div>';
+  var c=r.c,ev=k.ev,m=ev.length,h="",pc=function(x){return (x<0?"−":"+")+"%"+tr(Math.abs(x)*100,1);},sn=function(x){return x<0?"dn":"up";},birim=TLS[r.kod]?" TL":(USD[r.kod]?" $":"");
+  var yeniDip=c<=k.lo*1.003;
+  if(m>=10){var dd=ev.map(function(e){return e[0];}).sort(function(a,b){return a-b;}),rt=ev.map(function(e){return e[1];}).sort(function(a,b){return a-b;}),pos=0,mdd=dd[Math.floor(m/2)],mr=rt[Math.floor(m/2)];rt.forEach(function(x){if(x>0)pos++;});
+    h+='<div class="dg" style="margin:6px 0 4px">Geçmişte 1 yıllık aralığın en alt %21’lik bölgesine <b>'+m+' kez</b> inmiş. Sonraki 3 ayda <b>en çok ek düşüş</b>: ortanca <span class="'+sn(mdd)+'">'+pc(mdd)+'</span>, en kötü <span class="dn">'+pc(dd[0])+'</span>. 3 ay sonunda <b>'+pos+' / '+m+'</b> artıda, ortanca <span class="'+sn(mr)+'">'+pc(mr)+'</span>.</div>';}
+  else h+='<div class="dg" style="margin:6px 0 4px">1 yıllık aralığın en alt bölgesine geçmişte yeterince inmemiş ('+m+' kez); geçmiş davranış rakamı yazılmıyor, aşağıdakiler yalnızca seviyelerdir.</div>';
+  if(!yeniDip){
+    h+='<div class="dr"><span><b>1</b> · Şimdi</span><b>'+tr(c,2)+birim+'</b></div>'
+     +'<div class="dr"><span><b>2</b> · 1 yıllık dip ('+pc(k.lo/c-1)+')</span><b>'+tr(k.lo,2)+birim+'</b></div>'
+     +(m>=10?'<div class="dr"><span>Ortanca ek düşüşe denk fiyat</span><b>'+tr(c*(1+mdd),2)+birim+'</b></div>':'')
+     +'<div class="dr"><span><b>!</b> · Plan bozulur (dip − 1 ATR altı kapanış)</span><b class="dn">'+tr(k.lo-k.atr,2)+birim+'</b></div>';}
+  else h+='<div class="dg">Fiyat 1 yıllık dibin ya da altında; dayanak olacak bir dip seviyesi yok. Seviye vermiyorum.</div>';
+  return '<details class="dkd" style="margin-top:10px;border-top:1px solid var(--bd);padding-top:8px"><summary style="font-size:14px;font-weight:700;cursor:pointer">🪜 Kademeli alım seviyeleri</summary>'+h+'<div class="dg" style="margin-top:4px">Kaç parça ve ne kadar alacağın sende. Bu tahmin değil, ürünün kendi geçmişinin özeti; örnekler aynı dönemlere yığılmış olabilir.</div></details>';}
 function satirlar(r){var s="";
   function sat(a,b){s+='<div class="dr"><span>'+a+'</span><b>'+b+'</b></div>';}
   sat((TLS[r.kod]||USD[r.kod])?"Son fiyat (gün içi olabilir)":"Son kapanış",tr(r.c,2)+(TLS[r.kod]?" TL":(USD[r.kod]?" $":"")));
@@ -815,16 +833,8 @@ function satirlar(r){var s="";
   }
   var yl=(new Date(r.son)-new Date(r.ilk))/31557600000;
   sat("Taranan geçmiş",tar(r.ilk)+" → "+tar(r.son)+" ("+tr(yl,1)+" yıl)");
-  sat("Geçmişte benzer durum",r.st.n+" kez");
-  if(r.st.n){
-    s+='<div class="dg">Benzer durumlardan sonra fiyat (medyan · yükselen vaka):</div>';
-    [10,20,60].forEach(function(H){var x=r.st.h[H];if(!x)return;var w=Math.min(100,Math.abs(x.m)*10);
-      s+='<div class="db3"><span>'+H+' gün</span><div class="dbar"><i class="'+(x.m>=0?"up":"dn")+'" style="width:'+w+'%"></i></div><b>'+yz(x.m)+' · %'+Math.round(x.art)+'</b></div>';});
-    var x=r.st.h[20];if(x)sat("En kötü / en iyi (20 gün)",'<span class="dn">'+yz(x.min)+'</span> / <span class="up">'+yz(x.max)+'</span>');
-  }
+  s+=kademeli(r);
   var w=[];
-  if(!r.st.n)w.push("Geçmişte benzer durum bulunamadı.");
-  else if(r.st.n<20)w.push("Yalnızca "+r.st.n+" vaka: çok az bir örnek, sonuç güvenilir sayılmaz.");
   if(TLS[r.kod])w.push("Fiyat TL cinsinden; dolar/TL yükseldiği için sonuçlar altın/gümüşten çok kurdan da etkilenir.");
   if(r.uz)w.push("Eski dönem (en düşük fiyat verisi olmadığından) günlük kapanışlardan hesaplandı; bu kısımda dipler kapanışa göre bulunur.");
   w.push("Geçmiş taraması: "+r.ilk.slice(0,4)+" yılından bugüne. Günler işlem günüdür (20 gün ≈ 1 ay). Geçmiş sonuç garanti değildir; al/sat önerisi değildir.");
