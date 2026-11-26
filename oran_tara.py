@@ -1,11 +1,13 @@
 # Altin/Gumus orani icin saatlik ve 15 dakikalik veri (Yahoo: GC=F altin vadeli, SI=F gumus vadeli). Sonuc: oran.json
 import json, urllib.request, datetime, sys
 UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36"}
+META = {}
 def yahoo(sym, interval, rng):
     u = f"https://query1.finance.yahoo.com/v8/finance/chart/{sym}?interval={interval}&range={rng}"
     r = urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=60)
     res = json.loads(r.read().decode())["chart"]["result"][0]
     q = res["indicators"]["quote"][0]; out = {}
+    m = res.get("meta", {}); META[sym + interval] = {"regularMarketTime": m.get("regularMarketTime"), "regularMarketPrice": m.get("regularMarketPrice"), "gmtoffset": m.get("gmtoffset"), "timezone": m.get("exchangeTimezoneName"), "dataGranularity": m.get("dataGranularity"), "ham_son_zaman": res["timestamp"][-1], "ham_son_kapanis": (q["close"][-1] if q["close"] else None)}
     for i, t in enumerate(res["timestamp"]):
         o, h, l, c = q["open"][i], q["high"][i], q["low"][i], q["close"][i]
         if None in (o, h, l, c) or min(o, h, l, c) <= 0: continue
@@ -29,5 +31,6 @@ for ad, iv, rg in (("g15", "15m", "60d"), ("g60", "60m", "730d")):
         print("HATA", ad, e); sonuc[ad] = None
 if not sonuc.get("g15") and not sonuc.get("g60"):
     sys.exit("veri alinamadi")
+sonuc["meta"] = META
 json.dump(sonuc, open("oran.json", "w"), separators=(",", ":"))
 print({k: (len(v) if isinstance(v, list) else v) for k, v in sonuc.items()})
