@@ -769,9 +769,9 @@ ciz();yukle();setInterval(yukle,120000);})();</script>
 <button id="yenb" aria-label="Yenile" onclick="location.reload()">↻</button>
 <script>try{if((window.matchMedia&&matchMedia("(display-mode: standalone)").matches)||navigator.standalone===true)document.getElementById("yenb").style.display="block";}catch(e){}</script>
 <script>
-/* ---- Dip bolgesi analizi: gecmiste benzer durumlar (tarayicida hesaplanir; veri: analiz.json + altin.json) ---- */
+/* ---- Dip bolgesi analizi: gecmiste benzer durumlar (tarayicida hesaplanir; veri: altin.json + altin-uzun.json) ---- */
 (function(){
-var W=60,KEY="dip-gorulen-v1",AD={GRAM:"Gram altın",GGUM:"Gram gümüş"},TLS={GRAM:1,GGUM:1};
+var W=60,KEY="dip-gorulen-v1",AD={GRAM:"Gram altın",GGUM:"Gram gümüş",ONS:"Ons altın",XAG:"Ons gümüş"},TLS={GRAM:1,GGUM:1},USD={ONS:1,XAG:1};
 var LST=[],SON="",HATA=false,SEEN={};
 try{SEEN=JSON.parse(localStorage.getItem(KEY)||"{}")||{};}catch(e){SEEN={};}
 function kayit(){try{localStorage.setItem(KEY,JSON.stringify(SEEN));}catch(e){}}
@@ -804,7 +804,7 @@ function analiz(kod,d0){
 }
 function satirlar(r){var s="";
   function sat(a,b){s+='<div class="dr"><span>'+a+'</span><b>'+b+'</b></div>';}
-  sat(TLS[r.kod]?"Son fiyat (gün içi olabilir)":"Son kapanış",tr(r.c,2)+(TLS[r.kod]?" TL":""));
+  sat((TLS[r.kod]||USD[r.kod])?"Son fiyat (gün içi olabilir)":"Son kapanış",tr(r.c,2)+(TLS[r.kod]?" TL":(USD[r.kod]?" $":"")));
   if(r.tip==="k"){
     sat("Kırılan 60 günlük dip",tr(r.prev,2)+" → en düşük "+tr(r.cur,2));
     sat("En düşük görülen gün",tar(r.curT));
@@ -826,6 +826,7 @@ function satirlar(r){var s="";
   if(!r.st.n)w.push("Geçmişte benzer durum bulunamadı.");
   else if(r.st.n<20)w.push("Yalnızca "+r.st.n+" vaka: çok az bir örnek, sonuç güvenilir sayılmaz.");
   if(TLS[r.kod])w.push("Fiyat TL cinsinden; dolar/TL yükseldiği için sonuçlar altın/gümüşten çok kurdan da etkilenir.");
+  if(r.uz)w.push("Eski dönem (en düşük fiyat verisi olmadığından) günlük kapanışlardan hesaplandı; bu kısımda dipler kapanışa göre bulunur.");
   w.push("Geçmiş taraması: "+r.ilk.slice(0,4)+" yılından bugüne. Günler işlem günüdür (20 gün ≈ 1 ay). Geçmiş sonuç garanti değildir; al/sat önerisi değildir.");
   s+='<div class="dw">⚠️ '+w.join("<br>")+'</div>';
   return s;}
@@ -833,7 +834,7 @@ function ciz(){
   var el=document.getElementById("dipicerik");if(!el)return;
   if(HATA&&!LST.length){el.innerHTML='<div class="dg">Veri şu an yüklenemedi. Biraz sonra tekrar deneyin.</div>';return;}
   var imp=LST.filter(function(r){return r.tip;});
-  imp.sort(function(a,b){var ka=a.tip==="k"?0:1,kb=b.tip==="k"?0:1;if(ka!==kb)return ka-kb;var ma=TLS[a.kod]?0:1,mb=TLS[b.kod]?0:1;return ma-mb;});
+  imp.sort(function(a,b){var ka=a.tip==="k"?0:1,kb=b.tip==="k"?0:1;if(ka!==kb)return ka-kb;var ma=TLS[a.kod]?0:(USD[a.kod]?1:2),mb=TLS[b.kod]?0:(USD[b.kod]?1:2);return ma-mb;});
   var goster=imp.slice(0,5),diger=imp.slice(5),h="";
   goster.forEach(function(r,i){h+='<div class="dpk"><div class="dh" data-i="'+i+'"><span class="da">▸</span><b>'+isim(r.kod)+'</b><em class="'+(r.tip==="k"?"dek":"ded")+'">'+(r.tip==="k"?"dip kırıldı":"dip bölgesinde")+'</em><span class="ds">'+tr(r.c,2)+'</span></div><div class="dbody">'+satirlar(r)+'</div></div>';});
   var yok=LST.length-imp.length,ds=[];
@@ -854,12 +855,26 @@ function rozet(){
   else{rz.style.display="none";b.classList.add("dsolu");
     al.textContent=imp.length?"Yeni gelişme yok"+(SEEN._t?" · son bakış "+SEEN._t:""):"Şu an önemli gelişme yok";}
 }
+function med2(a){a=a.slice().sort(function(x,y){return x-y;});var m=a.length>>1;return a.length%2?a[m]:(a[m-1]+a[m])/2;}
+function uzatil(kod,d,U){
+  if(!U||!d||!d.length)return {d:d,uz:false};
+  var G=U.ons_altin||{},S=U.ons_gumus||{},F=U.usdtry||{};
+  function der(t){var a;if(kod==="ONS")return G[t]||null;if(kod==="XAG")return S[t]||null;
+    a=kod==="GRAM"?G[t]:S[t];return (a&&F[t])?a*F[t]/31.1035:null;}
+  var ilk=d[0][0],oran=[];
+  for(var i=0;i<d.length&&oran.length<120;i++){var v=der(d[i][0]);if(v&&d[i][4]>0)oran.push(d[i][4]/v);}
+  if(oran.length<60)return {d:d,uz:false};
+  var f=med2(oran);if(!(f>0.95&&f<1.05))return {d:d,uz:false};
+  var ek=[];Object.keys(kod==="GGUM"||kod==="XAG"?S:G).sort().forEach(function(t){if(t>=ilk)return;
+    if(new Date(t+"T00:00:00Z").getUTCDay()%6===0)return;var v=der(t);if(v)ek.push([t,v*f,v*f,v*f,v*f,0]);});
+  return {d:ek.concat(d),uz:ek.length>0};
+}
 function yukle(){
   var t="?t="+Date.now(),L=[],hata=0;
-  Promise.all([fetch("analiz.json"+t).then(function(r){if(!r.ok)throw 0;return r.json();}).catch(function(){hata++;return null;}),
-               fetch("altin.json"+t).then(function(r){if(!r.ok)throw 0;return r.json();}).catch(function(){hata++;return null;})]).then(function(a){
-    ["GRAM","GGUM"].forEach(function(k){var s=a[1]&&a[1].stocks&&a[1].stocks[k];if(s&&s.d){var r=analiz(k,s.d);if(r)L.push(r);}});
-    if(a[0]&&a[0].stocks)Object.keys(a[0].stocks).forEach(function(k){var s=a[0].stocks[k];if(s&&s.d){var r=analiz(k,s.d);if(r)L.push(r);}});
+  Promise.all([Promise.resolve(null),
+               fetch("altin.json"+t).then(function(r){if(!r.ok)throw 0;return r.json();}).catch(function(){hata++;return null;}),
+               fetch("altin-uzun.json"+t).then(function(r){if(!r.ok)throw 0;return r.json();}).catch(function(){return null;})]).then(function(a){
+    ["GRAM","GGUM","ONS","XAG"].forEach(function(k){var s=a[1]&&a[1].stocks&&a[1].stocks[k];if(s&&s.d){var u=uzatil(k,s.d,a[2]);var r=analiz(k,u.d);if(r){r.uz=u.uz;L.push(r);}}});
     LST=L;HATA=hata>0&&!L.length;SON=L.reduce(function(m,r){return r.son>m?r.son:m;},"");
     ciz();rozet();
   });
