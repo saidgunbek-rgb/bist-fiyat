@@ -135,11 +135,11 @@
   },
   "fon": {
    "deneme": 1,
-   "durum": "deneniyor",
+   "durum": "ok",
    "maks": 4,
-   "not": "Bugünün fon taraması yok",
-   "saat": "2026-11-25T18:19:00Z",
-   "veri": "2026-11-25"
+   "not": "",
+   "saat": "2026-11-26T18:21:01Z",
+   "veri": "2026-11-26"
   },
   "kap": {
    "deneme": 0,
@@ -162,9 +162,9 @@
    "durum": "ok",
    "maks": 4,
    "not": "",
-   "saat": "2026-11-26T16:56:41Z",
+   "saat": "2026-11-26T18:57:28Z",
    "veri": "2026-11-26"
   }
  },
- "kontrolAt": "2026-11-26T18:12:13Z"
+ "kontrolAt": "2026-11-26T19:29:18Z"
 }
