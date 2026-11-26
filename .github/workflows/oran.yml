@@ -1,0 +1,31 @@
+name: Altin gumus orani
+
+on:
+  schedule:
+    - cron: "5,35 * * * 0-5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: oran
+  cancel-in-progress: false
+
+jobs:
+  oran:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Veriyi cek
+        run: python3 oran_tara.py
+      - name: Kaydet
+        run: |
+          git config user.name "fiyat-bot"
+          git config user.email "fiyat-bot@users.noreply.github.com"
+          git add oran.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Altin gumus orani guncellendi"
+          for i in 1 2 3 4 5; do git pull --rebase origin main && git push && exit 0; sleep 10; done
+          exit 1
