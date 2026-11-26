@@ -1,21 +1,21 @@
 {
- "updatedAt": "2026-11-25T18:19:00Z",
- "updated": "2026-11-25",
+ "updatedAt": "2026-11-26T18:12:53Z",
+ "updated": "2026-11-26",
  "bist": {
-  "a1": -4.15,
-  "a3": -26.38,
-  "a6": -23.29,
-  "y1": -1.86,
-  "y3": 33.87,
-  "y5": 485.73,
-  "d1": -2.83,
+  "a1": -3.67,
+  "a3": -26.47,
+  "a6": -21.37,
+  "y1": -1.57,
+  "y3": 34.96,
+  "y5": 504.77,
+  "d1": 0.82,
   "mdd": -29.59,
-  "vol": 25.63,
-  "reel_y1": -24.37
+  "vol": 24.11,
+  "reel_y1": -24.15
  },
  "enf": {
   "y": 29.77,
-  "t": "2026-11-25",
+  "t": "2026-11-26",
   "k": "borsapy:latest"
  },
  "fonlar": [
@@ -25,29 +25,29 @@
    "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
    "banka": "Yapı Kredi",
    "grup": "Özel",
-   "buyukluk": 850294942.58,
-   "yatirimci": 5514.0,
+   "buyukluk": 829523416.76,
+   "yatirimci": 5484.0,
    "vb": 1.0,
    "vs": 2.0,
    "risk": 6.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 1.659189,
-   "d1_tarih": "2026-11-25",
+   "fiyat": 1.620222,
+   "d1_tarih": "2026-11-26",
    "rk": {
-    "mdd": -24.09,
-    "vol": 25.89,
-    "gr": 1.17
+    "mdd": -24.78,
+    "vol": 25.42,
+    "gr": 1.1
    },
    "g": {
-    "a1": -3.17,
-    "a3": -21.84,
-    "a6": -14.05,
-    "y1": 30.32,
-    "reel_y1": 0.42,
-    "w1": -6.6,
-    "ytd": 25.31,
-    "d1": -1.2
+    "a1": -4.24,
+    "a3": -23.58,
+    "a6": -16.73,
+    "y1": 27.99,
+    "reel_y1": -1.37,
+    "w1": -7.1,
+    "ytd": 22.37,
+    "d1": -2.35
    },
    "teyit": [
     "a1",
@@ -56,18 +56,18 @@
     "y1"
    ],
    "celiski": [],
-   "gun": 648,
-   "son_tarih": "2026-11-25",
+   "gun": 649,
+   "son_tarih": "2026-11-26",
    "istikrar": [
-    4,
+    3,
     4
    ],
-   "puan": 61,
-   "her_yonu": true,
-   "kosul": 5,
+   "puan": 63,
+   "her_yonu": false,
+   "kosul": 3,
    "gecmis": {
     "kac": 0,
-    "toplam": 7,
+    "toplam": 8,
     "seri": 0,
     "her_yonu_gun": 2
    }
@@ -78,31 +78,31 @@
    "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
    "banka": "Akbank",
    "grup": "Özel",
-   "buyukluk": 2196796225.13,
-   "yatirimci": 17722.0,
+   "buyukluk": 2153093675.61,
+   "yatirimci": 17688.0,
    "vb": 1.0,
    "vs": 2.0,
    "risk": 6.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 0.837051,
-   "d1_tarih": "2026-11-25",
+   "fiyat": 0.818254,
+   "d1_tarih": "2026-11-26",
    "rk": {
-    "mdd": -18.93,
-    "vol": 24.46,
-    "gr": 0.97
+    "mdd": -18.98,
+    "vol": 23.59,
+    "gr": 0.89
    },
    "g": {
-    "a1": -1.1,
-    "a3": -15.26,
-    "a6": -7.71,
-    "y1": 23.68,
-    "y3": 80.95,
-    "y5": 660.24,
-    "reel_y1": -4.69,
-    "w1": -4.42,
-    "ytd": 18.54,
-    "d1": -0.99
+    "a1": -2.64,
+    "a3": -16.9,
+    "a6": -9.91,
+    "y1": 21.08,
+    "y3": 76.89,
+    "y5": 643.03,
+    "reel_y1": -6.7,
+    "w1": -5.65,
+    "ytd": 15.88,
+    "d1": -2.25
    },
    "teyit": [
     "a1",
@@ -114,124 +114,18 @@
    ],
    "celiski": [],
    "gun": 1258,
-   "son_tarih": "2026-11-25",
+   "son_tarih": "2026-11-26",
    "istikrar": [
     4,
     4
    ],
-   "puan": 85,
+   "puan": 86,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
-    "kac": 7,
-    "toplam": 7,
-    "seri": 7,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "GKG",
-   "ad": "GARANTİ PORTFÖY KAR PAYI ÖDEYEN HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "Garanti BBVA",
-   "grup": "Özel",
-   "buyukluk": 49296449.53,
-   "yatirimci": 1595.0,
-   "vb": 1.0,
-   "vs": 2.0,
-   "risk": 6.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 1.263613,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -16.78,
-    "vol": 23.69,
-    "gr": 0.91
-   },
-   "g": {
-    "a1": -1.18,
-    "a3": -12.48,
-    "a6": -7.86,
-    "y1": 21.56,
-    "reel_y1": -6.33,
-    "w1": -5.51,
-    "ytd": 16.27,
-    "d1": -1.36
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1"
-   ],
-   "celiski": [],
-   "gun": 425,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 91,
-   "her_yonu": false,
-   "kosul": 4,
-   "gecmis": {
-    "kac": 7,
-    "toplam": 7,
-    "seri": 7,
-    "her_yonu_gun": 2
-   }
-  },
-  {
-   "k": "GTH",
-   "ad": "GARANTİ PORTFÖY İHRACATÇI ŞİRKETLER HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "Garanti BBVA",
-   "grup": "Özel",
-   "buyukluk": 19301666.54,
-   "yatirimci": 584.0,
-   "vb": 1.0,
-   "vs": 2.0,
-   "risk": 6.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 1.24608,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -24.7,
-    "vol": 25.13,
-    "gr": 0.81
-   },
-   "g": {
-    "a1": 1.08,
-    "a3": -19.33,
-    "a6": -5.88,
-    "y1": 20.39,
-    "reel_y1": -7.23,
-    "w1": -4.74,
-    "ytd": 16.44,
-    "d1": -0.82
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1"
-   ],
-   "celiski": [],
-   "gun": 450,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 77,
-   "her_yonu": false,
-   "kosul": 4,
-   "gecmis": {
-    "kac": 2,
-    "toplam": 7,
-    "seri": 1,
+    "kac": 8,
+    "toplam": 8,
+    "seri": 8,
     "her_yonu_gun": 0
    }
   },
@@ -241,31 +135,31 @@
    "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
    "banka": "Yapı Kredi",
    "grup": "Özel",
-   "buyukluk": 837316776.23,
-   "yatirimci": 14492.0,
+   "buyukluk": 819333373.29,
+   "yatirimci": 14447.0,
    "vb": 1.0,
    "vs": 2.0,
    "risk": 6.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 6.736326,
-   "d1_tarih": "2026-11-25",
+   "fiyat": 6.595749,
+   "d1_tarih": "2026-11-26",
    "rk": {
-    "mdd": -34.55,
-    "vol": 27.86,
-    "gr": 0.71
+    "mdd": -35.92,
+    "vol": 26.87,
+    "gr": 0.72
    },
    "g": {
-    "a1": -7.95,
-    "a3": -32.22,
-    "a6": -22.13,
-    "y1": 19.71,
-    "y3": 94.88,
-    "y5": 634.5,
-    "reel_y1": -7.75,
-    "w1": -7.5,
-    "ytd": 15.64,
-    "d1": -2.46
+    "a1": -8.56,
+    "a3": -33.6,
+    "a6": -25.58,
+    "y1": 19.48,
+    "y3": 90.81,
+    "y5": 608.8,
+    "reel_y1": -7.93,
+    "w1": -7.69,
+    "ytd": 13.23,
+    "d1": -2.09
    },
    "teyit": [
     "a1",
@@ -277,17 +171,231 @@
    ],
    "celiski": [],
    "gun": 1258,
-   "son_tarih": "2026-11-25",
+   "son_tarih": "2026-11-26",
    "istikrar": [
-    2,
+    1,
     4
    ],
-   "puan": 42,
+   "puan": 44,
    "her_yonu": false,
    "kosul": 2,
    "gecmis": {
     "kac": 0,
-    "toplam": 7,
+    "toplam": 8,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "GKG",
+   "ad": "GARANTİ PORTFÖY KAR PAYI ÖDEYEN HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "Garanti BBVA",
+   "grup": "Özel",
+   "buyukluk": 48156799.24,
+   "yatirimci": 1585.0,
+   "vb": 1.0,
+   "vs": 2.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 1.232026,
+   "d1_tarih": "2026-11-26",
+   "rk": {
+    "mdd": -16.78,
+    "vol": 22.66,
+    "gr": 0.83
+   },
+   "g": {
+    "a1": -3.13,
+    "a3": -14.05,
+    "a6": -9.48,
+    "y1": 18.78,
+    "reel_y1": -8.47,
+    "w1": -6.59,
+    "ytd": 13.37,
+    "d1": -2.5
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1"
+   ],
+   "celiski": [],
+   "gun": 426,
+   "son_tarih": "2026-11-26",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 90,
+   "her_yonu": false,
+   "kosul": 4,
+   "gecmis": {
+    "kac": 8,
+    "toplam": 8,
+    "seri": 8,
+    "her_yonu_gun": 2
+   }
+  },
+  {
+   "k": "GTH",
+   "ad": "GARANTİ PORTFÖY İHRACATÇI ŞİRKETLER HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "Garanti BBVA",
+   "grup": "Özel",
+   "buyukluk": 18809309.41,
+   "yatirimci": 582.0,
+   "vb": 1.0,
+   "vs": 2.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 1.215195,
+   "d1_tarih": "2026-11-26",
+   "rk": {
+    "mdd": -24.7,
+    "vol": 24.61,
+    "gr": 0.73
+   },
+   "g": {
+    "a1": 0.13,
+    "a3": -20.96,
+    "a6": -9.12,
+    "y1": 17.85,
+    "reel_y1": -9.19,
+    "w1": -5.45,
+    "ytd": 13.56,
+    "d1": -2.48
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1"
+   ],
+   "celiski": [],
+   "gun": 451,
+   "son_tarih": "2026-11-26",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 77,
+   "her_yonu": false,
+   "kosul": 4,
+   "gecmis": {
+    "kac": 3,
+    "toplam": 8,
+    "seri": 2,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "GKV",
+   "ad": "GARANTİ PORTFÖY KATILIM HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "Garanti BBVA",
+   "grup": "Özel",
+   "buyukluk": 179273060.21,
+   "yatirimci": 3649.0,
+   "vb": 1.0,
+   "vs": 2.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 6.398983,
+   "d1_tarih": "2026-11-26",
+   "rk": {
+    "mdd": -28.6,
+    "vol": 25.3,
+    "gr": 0.68
+   },
+   "g": {
+    "a1": -4.7,
+    "a3": -26.75,
+    "a6": -22.25,
+    "y1": 17.27,
+    "y3": 65.11,
+    "reel_y1": -9.63,
+    "w1": -7.22,
+    "ytd": 11.25,
+    "d1": -2.34
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1090,
+   "son_tarih": "2026-11-26",
+   "istikrar": [
+    1,
+    4
+   ],
+   "puan": 48,
+   "her_yonu": false,
+   "kosul": 3,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 8,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "KH1",
+   "ad": "AK PORTFÖY KATILIM HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "Akbank",
+   "grup": "Özel",
+   "buyukluk": 71755746.49,
+   "yatirimci": 1048.0,
+   "vb": 1.0,
+   "vs": 2.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 1.097407,
+   "d1_tarih": "2026-11-26",
+   "rk": {
+    "mdd": -21.98,
+    "vol": 22.65,
+    "gr": 0.75
+   },
+   "g": {
+    "a1": -4.32,
+    "a3": -19.93,
+    "a6": -14.3,
+    "y1": 17.06,
+    "reel_y1": -9.79,
+    "w1": -6.18,
+    "ytd": 11.05,
+    "d1": -2.21
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1"
+   ],
+   "celiski": [],
+   "gun": 316,
+   "son_tarih": "2026-11-26",
+   "istikrar": [
+    3,
+    4
+   ],
+   "puan": 72,
+   "her_yonu": false,
+   "kosul": 3,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 8,
     "seri": 0,
     "her_yonu_gun": 0
    }
@@ -298,30 +406,30 @@
    "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
    "banka": "DenizBank",
    "grup": "Özel",
-   "buyukluk": 52705399.0,
-   "yatirimci": 532.0,
+   "buyukluk": 51799395.33,
+   "yatirimci": 528.0,
    "vb": 1.0,
    "vs": 2.0,
    "risk": 6.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 6.924648,
-   "d1_tarih": "2026-11-25",
+   "fiyat": 6.741658,
+   "d1_tarih": "2026-11-26",
    "rk": {
     "mdd": -15.78,
-    "vol": 24.42,
-    "gr": 0.8
+    "vol": 24.1,
+    "gr": 0.7
    },
    "g": {
-    "a1": -0.18,
-    "a3": -10.87,
-    "a6": -1.96,
-    "y1": 19.55,
-    "y3": 82.35,
-    "reel_y1": -7.88,
-    "w1": -5.4,
-    "ytd": 13.53,
-    "d1": -1.31
+    "a1": -2.31,
+    "a3": -12.55,
+    "a6": -5.7,
+    "y1": 16.91,
+    "y3": 77.53,
+    "reel_y1": -9.91,
+    "w1": -6.49,
+    "ytd": 10.53,
+    "d1": -2.64
    },
    "teyit": [
     "a1",
@@ -331,19 +439,19 @@
     "y3"
    ],
    "celiski": [],
-   "gun": 1192,
-   "son_tarih": "2026-11-25",
+   "gun": 1193,
+   "son_tarih": "2026-11-26",
    "istikrar": [
     4,
     4
    ],
-   "puan": 91,
+   "puan": 90,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
-    "kac": 7,
-    "toplam": 7,
-    "seri": 7,
+    "kac": 8,
+    "toplam": 8,
+    "seri": 8,
     "her_yonu_gun": 1
    }
   },
@@ -353,30 +461,30 @@
    "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
    "banka": "Garanti BBVA",
    "grup": "Özel",
-   "buyukluk": 889854054.5,
-   "yatirimci": 12033.0,
+   "buyukluk": 856045517.26,
+   "yatirimci": 12011.0,
    "vb": 1.0,
    "vs": 2.0,
    "risk": 6.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 6.882364,
-   "d1_tarih": "2026-11-25",
+   "fiyat": 6.704947,
+   "d1_tarih": "2026-11-26",
    "rk": {
-    "mdd": -17.39,
-    "vol": 24.0,
-    "gr": 0.79
+    "mdd": -19.08,
+    "vol": 23.09,
+    "gr": 0.71
    },
    "g": {
-    "a1": -2.04,
-    "a3": -14.55,
-    "a6": -11.49,
-    "y1": 18.97,
-    "y3": 103.58,
-    "reel_y1": -8.32,
-    "w1": -5.85,
-    "ytd": 12.96,
-    "d1": -1.23
+    "a1": -4.27,
+    "a3": -16.03,
+    "a6": -13.25,
+    "y1": 16.37,
+    "y3": 98.33,
+    "reel_y1": -10.33,
+    "w1": -6.97,
+    "ytd": 10.05,
+    "d1": -2.58
    },
    "teyit": [
     "a1",
@@ -386,19 +494,19 @@
     "y3"
    ],
    "celiski": [],
-   "gun": 1084,
-   "son_tarih": "2026-11-25",
+   "gun": 1085,
+   "son_tarih": "2026-11-26",
    "istikrar": [
-    4,
+    3,
     4
    ],
-   "puan": 83,
+   "puan": 80,
    "her_yonu": false,
-   "kosul": 4,
+   "kosul": 3,
    "gecmis": {
-    "kac": 7,
-    "toplam": 7,
-    "seri": 7,
+    "kac": 8,
+    "toplam": 8,
+    "seri": 8,
     "her_yonu_gun": 0
    }
   },
@@ -408,31 +516,31 @@
    "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
    "banka": "DenizBank",
    "grup": "Özel",
-   "buyukluk": 258835625.38,
-   "yatirimci": 4640.0,
+   "buyukluk": 251643293.35,
+   "yatirimci": 4631.0,
    "vb": 1.0,
    "vs": 2.0,
    "risk": 6.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 15.87638,
-   "d1_tarih": "2026-11-25",
+   "fiyat": 15.449805,
+   "d1_tarih": "2026-11-26",
    "rk": {
-    "mdd": -16.79,
-    "vol": 23.81,
-    "gr": 0.79
+    "mdd": -17.99,
+    "vol": 23.46,
+    "gr": 0.67
    },
    "g": {
-    "a1": -3.04,
-    "a3": -13.14,
-    "a6": -5.11,
-    "y1": 18.88,
-    "y3": 80.55,
-    "y5": 578.45,
-    "reel_y1": -8.39,
-    "w1": -5.84,
-    "ytd": 15.47,
-    "d1": -1.21
+    "a1": -5.22,
+    "a3": -14.31,
+    "a6": -7.14,
+    "y1": 15.79,
+    "y3": 75.7,
+    "y5": 551.04,
+    "reel_y1": -10.77,
+    "w1": -7.13,
+    "ytd": 12.37,
+    "d1": -2.69
    },
    "teyit": [
     "a1",
@@ -444,73 +552,18 @@
    ],
    "celiski": [],
    "gun": 1258,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 80,
-   "her_yonu": false,
-   "kosul": 4,
-   "gecmis": {
-    "kac": 7,
-    "toplam": 7,
-    "seri": 7,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "GKV",
-   "ad": "GARANTİ PORTFÖY KATILIM HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "Garanti BBVA",
-   "grup": "Özel",
-   "buyukluk": 183540501.87,
-   "yatirimci": 3663.0,
-   "vb": 1.0,
-   "vs": 2.0,
-   "risk": 6.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 6.552236,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -27.7,
-    "vol": 25.84,
-    "gr": 0.72
-   },
-   "g": {
-    "a1": -4.15,
-    "a3": -25.38,
-    "a6": -20.13,
-    "y1": 18.7,
-    "y3": 69.07,
-    "reel_y1": -8.53,
-    "w1": -6.62,
-    "ytd": 13.91,
-    "d1": -1.45
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3"
-   ],
-   "celiski": [],
-   "gun": 1089,
-   "son_tarih": "2026-11-25",
+   "son_tarih": "2026-11-26",
    "istikrar": [
     3,
     4
    ],
-   "puan": 44,
+   "puan": 76,
    "her_yonu": false,
    "kosul": 3,
    "gecmis": {
-    "kac": 0,
-    "toplam": 7,
-    "seri": 0,
+    "kac": 8,
+    "toplam": 8,
+    "seri": 8,
     "her_yonu_gun": 0
    }
   },
@@ -520,30 +573,30 @@
    "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
    "banka": "Garanti BBVA",
    "grup": "Özel",
-   "buyukluk": 62003735.16,
-   "yatirimci": 4192.0,
+   "buyukluk": 60043121.12,
+   "yatirimci": 4185.0,
    "vb": 1.0,
    "vs": 2.0,
    "risk": 6.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 3.278153,
-   "d1_tarih": "2026-11-25",
+   "fiyat": 3.188116,
+   "d1_tarih": "2026-11-26",
    "rk": {
-    "mdd": -15.35,
-    "vol": 24.8,
-    "gr": 0.75
+    "mdd": -15.83,
+    "vol": 24.2,
+    "gr": 0.64
    },
    "g": {
-    "a1": -0.77,
-    "a3": -11.04,
-    "a6": -4.68,
-    "y1": 18.64,
-    "y3": 100.67,
-    "reel_y1": -8.58,
-    "w1": -5.31,
-    "ytd": 13.06,
-    "d1": -1.26
+    "a1": -3.14,
+    "a3": -13.01,
+    "a6": -7.66,
+    "y1": 15.38,
+    "y3": 95.16,
+    "reel_y1": -11.09,
+    "w1": -6.72,
+    "ytd": 9.96,
+    "d1": -2.75
    },
    "teyit": [
     "a1",
@@ -553,73 +606,20 @@
     "y3"
    ],
    "celiski": [],
-   "gun": 972,
-   "son_tarih": "2026-11-25",
+   "gun": 973,
+   "son_tarih": "2026-11-26",
    "istikrar": [
     4,
     4
    ],
-   "puan": 90,
+   "puan": 88,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
-    "kac": 7,
-    "toplam": 7,
-    "seri": 7,
+    "kac": 8,
+    "toplam": 8,
+    "seri": 8,
     "her_yonu_gun": 1
-   }
-  },
-  {
-   "k": "KH1",
-   "ad": "AK PORTFÖY KATILIM HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "Akbank",
-   "grup": "Özel",
-   "buyukluk": 73323486.16,
-   "yatirimci": 1054.0,
-   "vb": 1.0,
-   "vs": 2.0,
-   "risk": 6.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 1.122219,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -21.2,
-    "vol": 23.67,
-    "gr": 0.78
-   },
-   "g": {
-    "a1": -3.93,
-    "a3": -18.48,
-    "a6": -12.69,
-    "y1": 18.55,
-    "reel_y1": -8.65,
-    "w1": -5.47,
-    "ytd": 13.56,
-    "d1": -0.96
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1"
-   ],
-   "celiski": [],
-   "gun": 315,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 64,
-   "her_yonu": false,
-   "kosul": 4,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 7,
-    "seri": 0,
-    "her_yonu_gun": 0
    }
   },
   {
@@ -628,31 +628,31 @@
    "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
    "banka": "Yapı Kredi",
    "grup": "Özel",
-   "buyukluk": 1573703148.39,
-   "yatirimci": 14077.0,
+   "buyukluk": 1530609133.01,
+   "yatirimci": 14050.0,
    "vb": 1.0,
    "vs": 2.0,
    "risk": 6.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 0.814424,
-   "d1_tarih": "2026-11-25",
+   "fiyat": 0.792539,
+   "d1_tarih": "2026-11-26",
    "rk": {
-    "mdd": -21.99,
-    "vol": 26.48,
-    "gr": 0.7
+    "mdd": -22.6,
+    "vol": 25.63,
+    "gr": 0.6
    },
    "g": {
-    "a1": -2.1,
-    "a3": -18.36,
-    "a6": -10.97,
-    "y1": 18.48,
-    "y3": 85.47,
-    "y5": 697.15,
-    "reel_y1": -8.7,
-    "w1": -5.36,
-    "ytd": 13.88,
-    "d1": -1.11
+    "a1": -4.02,
+    "a3": -20.31,
+    "a6": -13.63,
+    "y1": 15.35,
+    "y3": 80.49,
+    "y5": 674.49,
+    "reel_y1": -11.11,
+    "w1": -6.72,
+    "ytd": 10.82,
+    "d1": -2.69
    },
    "teyit": [
     "a1",
@@ -664,72 +664,19 @@
    ],
    "celiski": [],
    "gun": 1258,
-   "son_tarih": "2026-11-25",
+   "son_tarih": "2026-11-26",
    "istikrar": [
-    4,
+    3,
     4
    ],
-   "puan": 71,
+   "puan": 69,
    "her_yonu": false,
-   "kosul": 4,
+   "kosul": 3,
    "gecmis": {
     "kac": 0,
-    "toplam": 7,
+    "toplam": 8,
     "seri": 0,
     "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "ZHH",
-   "ad": "ZİRAAT PORTFÖY HALKBANK SÜRDÜRÜLEBİLİRLİK 30 ŞİRKETLERİ HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "Ziraat Bankası",
-   "grup": "Kamu",
-   "buyukluk": 80346160.16,
-   "yatirimci": 1008.0,
-   "vb": 1.0,
-   "vs": 2.0,
-   "risk": 5.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 1.324806,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -14.93,
-    "vol": 23.95,
-    "gr": 0.77
-   },
-   "g": {
-    "a1": -1.02,
-    "a3": -10.55,
-    "a6": -3.29,
-    "y1": 18.4,
-    "reel_y1": -8.76,
-    "w1": -4.97,
-    "ytd": 12.58,
-    "d1": -1.51
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1"
-   ],
-   "celiski": [],
-   "gun": 577,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 91,
-   "her_yonu": false,
-   "kosul": 4,
-   "gecmis": {
-    "kac": 6,
-    "toplam": 7,
-    "seri": 4,
-    "her_yonu_gun": 1
    }
   },
   {
@@ -738,31 +685,31 @@
    "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
    "banka": "Akbank",
    "grup": "Özel",
-   "buyukluk": 7083168924.72,
-   "yatirimci": 18527.0,
+   "buyukluk": 6874085562.93,
+   "yatirimci": 18469.0,
    "vb": 1.0,
    "vs": 2.0,
    "risk": 6.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 46.121639,
-   "d1_tarih": "2026-11-25",
+   "fiyat": 44.838473,
+   "d1_tarih": "2026-11-26",
    "rk": {
-    "mdd": -19.31,
-    "vol": 23.42,
-    "gr": 0.75
+    "mdd": -20.54,
+    "vol": 22.47,
+    "gr": 0.66
    },
    "g": {
-    "a1": -1.89,
-    "a3": -15.6,
-    "a6": -12.03,
-    "y1": 17.59,
-    "y3": 127.14,
-    "y5": 1084.85,
-    "reel_y1": -9.39,
-    "w1": -4.74,
-    "ytd": 14.01,
-    "d1": -1.28
+    "a1": -3.93,
+    "a3": -17.06,
+    "a6": -14.44,
+    "y1": 14.8,
+    "y3": 120.82,
+    "y5": 1052.0,
+    "reel_y1": -11.54,
+    "w1": -6.11,
+    "ytd": 10.83,
+    "d1": -2.78
    },
    "teyit": [
     "a1",
@@ -774,18 +721,18 @@
    ],
    "celiski": [],
    "gun": 1258,
-   "son_tarih": "2026-11-25",
+   "son_tarih": "2026-11-26",
    "istikrar": [
-    4,
+    3,
     4
    ],
-   "puan": 80,
+   "puan": 78,
    "her_yonu": false,
-   "kosul": 4,
+   "kosul": 3,
    "gecmis": {
-    "kac": 6,
-    "toplam": 7,
-    "seri": 2,
+    "kac": 7,
+    "toplam": 8,
+    "seri": 3,
     "her_yonu_gun": 0
    }
   },
@@ -795,30 +742,30 @@
    "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
    "banka": "Yapı Kredi",
    "grup": "Özel",
-   "buyukluk": 188527311.43,
-   "yatirimci": 2082.0,
+   "buyukluk": 184157473.67,
+   "yatirimci": 2080.0,
    "vb": 1.0,
    "vs": 2.0,
    "risk": 6.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 7.782932,
-   "d1_tarih": "2026-11-25",
+   "fiyat": 7.582819,
+   "d1_tarih": "2026-11-26",
    "rk": {
-    "mdd": -16.72,
-    "vol": 24.22,
-    "gr": 0.72
+    "mdd": -17.08,
+    "vol": 23.4,
+    "gr": 0.61
    },
    "g": {
-    "a1": -1.44,
-    "a3": -12.55,
-    "a6": -5.61,
-    "y1": 17.36,
-    "y3": 88.06,
-    "reel_y1": -9.56,
-    "w1": -5.41,
-    "ytd": 12.15,
-    "d1": -1.13
+    "a1": -3.54,
+    "a3": -14.25,
+    "a6": -8.21,
+    "y1": 14.36,
+    "y3": 83.23,
+    "reel_y1": -11.87,
+    "w1": -6.64,
+    "ytd": 9.26,
+    "d1": -2.57
    },
    "teyit": [
     "a1",
@@ -828,8 +775,8 @@
     "y3"
    ],
    "celiski": [],
-   "gun": 1204,
-   "son_tarih": "2026-11-25",
+   "gun": 1205,
+   "son_tarih": "2026-11-26",
    "istikrar": [
     4,
     4
@@ -838,9 +785,119 @@
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
-    "kac": 6,
-    "toplam": 7,
-    "seri": 4,
+    "kac": 7,
+    "toplam": 8,
+    "seri": 5,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "ZHH",
+   "ad": "ZİRAAT PORTFÖY HALKBANK SÜRDÜRÜLEBİLİRLİK 30 ŞİRKETLERİ HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "Ziraat Bankası",
+   "grup": "Kamu",
+   "buyukluk": 77145698.43,
+   "yatirimci": 1009.0,
+   "vb": 1.0,
+   "vs": 2.0,
+   "risk": 5.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 1.288069,
+   "d1_tarih": "2026-11-26",
+   "rk": {
+    "mdd": -15.05,
+    "vol": 23.53,
+    "gr": 0.61
+   },
+   "g": {
+    "a1": -3.12,
+    "a3": -12.5,
+    "a6": -6.41,
+    "y1": 14.34,
+    "reel_y1": -11.89,
+    "w1": -5.99,
+    "ytd": 9.46,
+    "d1": -2.77
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1"
+   ],
+   "celiski": [],
+   "gun": 578,
+   "son_tarih": "2026-11-26",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 89,
+   "her_yonu": false,
+   "kosul": 4,
+   "gecmis": {
+    "kac": 7,
+    "toplam": 8,
+    "seri": 5,
+    "her_yonu_gun": 1
+   }
+  },
+  {
+   "k": "ALC",
+   "ad": "AK PORTFÖY KAR PAYI ÖDEYEN ŞİRKETLER HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "Akbank",
+   "grup": "Özel",
+   "buyukluk": 1284627418.7,
+   "yatirimci": 22601.0,
+   "vb": 1.0,
+   "vs": 2.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 0.307456,
+   "d1_tarih": "2026-11-26",
+   "rk": {
+    "mdd": -20.74,
+    "vol": 22.17,
+    "gr": 0.59
+   },
+   "g": {
+    "a1": -3.67,
+    "a3": -19.24,
+    "a6": -14.59,
+    "y1": 13.17,
+    "y3": 120.56,
+    "y5": 637.61,
+    "reel_y1": -12.79,
+    "w1": -5.9,
+    "ytd": 7.8,
+    "d1": -2.32
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-26",
+   "istikrar": [
+    3,
+    4
+   ],
+   "puan": 75,
+   "her_yonu": false,
+   "kosul": 3,
+   "gecmis": {
+    "kac": 1,
+    "toplam": 8,
+    "seri": 0,
     "her_yonu_gun": 0
    }
   },
@@ -850,31 +907,31 @@
    "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
    "banka": "Garanti BBVA",
    "grup": "Özel",
-   "buyukluk": 1220615603.06,
-   "yatirimci": 14541.0,
+   "buyukluk": 1179689869.67,
+   "yatirimci": 14511.0,
    "vb": 1.0,
    "vs": 2.0,
    "risk": 6.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 0.384853,
-   "d1_tarih": "2026-11-25",
+   "fiyat": 0.374061,
+   "d1_tarih": "2026-11-26",
    "rk": {
-    "mdd": -22.17,
-    "vol": 26.27,
-    "gr": 0.61
+    "mdd": -22.33,
+    "vol": 25.59,
+    "gr": 0.5
    },
    "g": {
-    "a1": -1.58,
-    "a3": -17.67,
-    "a6": -13.17,
-    "y1": 15.98,
-    "y3": 72.88,
-    "y5": 617.05,
-    "reel_y1": -10.63,
-    "w1": -5.42,
-    "ytd": 12.11,
-    "d1": -1.19
+    "a1": -3.43,
+    "a3": -19.82,
+    "a6": -15.73,
+    "y1": 12.82,
+    "y3": 68.03,
+    "y5": 596.65,
+    "reel_y1": -13.06,
+    "w1": -6.86,
+    "ytd": 8.97,
+    "d1": -2.8
    },
    "teyit": [
     "a1",
@@ -886,131 +943,17 @@
    ],
    "celiski": [],
    "gun": 1258,
-   "son_tarih": "2026-11-25",
+   "son_tarih": "2026-11-26",
    "istikrar": [
     4,
     4
    ],
-   "puan": 66,
+   "puan": 67,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
     "kac": 0,
-    "toplam": 7,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "ALC",
-   "ad": "AK PORTFÖY KAR PAYI ÖDEYEN ŞİRKETLER HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "Akbank",
-   "grup": "Özel",
-   "buyukluk": 1315595684.35,
-   "yatirimci": 22630.0,
-   "vb": 1.0,
-   "vs": 2.0,
-   "risk": 6.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 0.314768,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -19.42,
-    "vol": 22.92,
-    "gr": 0.65
-   },
-   "g": {
-    "a1": -2.18,
-    "a3": -18.13,
-    "a6": -12.94,
-    "y1": 14.97,
-    "y3": 125.81,
-    "y5": 664.61,
-    "reel_y1": -11.4,
-    "w1": -5.08,
-    "ytd": 10.36,
-    "d1": -1.12
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 72,
-   "her_yonu": false,
-   "kosul": 4,
-   "gecmis": {
-    "kac": 1,
-    "toplam": 7,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "TIE",
-   "ad": "İŞ PORTFÖY BIST 30 ENDEKSİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "İş Bankası",
-   "grup": "Özel",
-   "buyukluk": 1612752136.48,
-   "yatirimci": 18623.0,
-   "vb": 1.0,
-   "vs": 2.0,
-   "risk": 6.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 0.618437,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -23.58,
-    "vol": 26.87,
-    "gr": 0.53
-   },
-   "g": {
-    "a1": -2.21,
-    "a3": -19.8,
-    "a6": -14.87,
-    "y1": 14.36,
-    "y3": 70.66,
-    "y5": 603.95,
-    "reel_y1": -11.87,
-    "w1": -5.64,
-    "ytd": 10.34,
-    "d1": -1.21
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 57,
-   "her_yonu": false,
-   "kosul": 4,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 7,
+    "toplam": 8,
     "seri": 0,
     "her_yonu_gun": 0
    }
@@ -1021,29 +964,29 @@
    "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
    "banka": "DenizBank",
    "grup": "Özel",
-   "buyukluk": 36669904.68,
-   "yatirimci": 919.0,
+   "buyukluk": 35771246.76,
+   "yatirimci": 918.0,
    "vb": 1.0,
    "vs": 2.0,
    "risk": 6.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 1.57821,
-   "d1_tarih": "2026-11-25",
+   "fiyat": 1.539582,
+   "d1_tarih": "2026-11-26",
    "rk": {
     "mdd": -22.82,
-    "vol": 26.88,
-    "gr": 0.49
+    "vol": 25.69,
+    "gr": 0.45
    },
    "g": {
-    "a1": 0.01,
-    "a3": -18.68,
-    "a6": -12.93,
-    "y1": 13.16,
-    "reel_y1": -12.8,
-    "w1": -5.95,
-    "ytd": 5.63,
-    "d1": -1.19
+    "a1": -1.04,
+    "a3": -19.99,
+    "a6": -16.05,
+    "y1": 11.54,
+    "reel_y1": -14.05,
+    "w1": -6.34,
+    "ytd": 3.05,
+    "d1": -2.45
    },
    "teyit": [
     "a1",
@@ -1052,18 +995,75 @@
     "y1"
    ],
    "celiski": [],
-   "gun": 743,
-   "son_tarih": "2026-11-25",
+   "gun": 744,
+   "son_tarih": "2026-11-26",
    "istikrar": [
     4,
     4
    ],
-   "puan": 68,
+   "puan": 70,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
     "kac": 0,
-    "toplam": 7,
+    "toplam": 8,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "TIE",
+   "ad": "İŞ PORTFÖY BIST 30 ENDEKSİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "İş Bankası",
+   "grup": "Özel",
+   "buyukluk": 1566527375.52,
+   "yatirimci": 18594.0,
+   "vb": 1.0,
+   "vs": 2.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 0.601102,
+   "d1_tarih": "2026-11-26",
+   "rk": {
+    "mdd": -24.13,
+    "vol": 26.06,
+    "gr": 0.43
+   },
+   "g": {
+    "a1": -4.0,
+    "a3": -21.79,
+    "a6": -17.39,
+    "y1": 11.17,
+    "y3": 65.87,
+    "y5": 583.93,
+    "reel_y1": -14.33,
+    "w1": -7.06,
+    "ytd": 7.24,
+    "d1": -2.8
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-26",
+   "istikrar": [
+    3,
+    4
+   ],
+   "puan": 56,
+   "her_yonu": false,
+   "kosul": 3,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 8,
     "seri": 0,
     "her_yonu_gun": 0
    }
@@ -1074,31 +1074,31 @@
    "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
    "banka": "Yapı Kredi",
    "grup": "Özel",
-   "buyukluk": 1850552694.34,
-   "yatirimci": 7874.0,
+   "buyukluk": 1804117230.21,
+   "yatirimci": 7858.0,
    "vb": 1.0,
    "vs": 2.0,
    "risk": 6.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 22.512129,
-   "d1_tarih": "2026-11-25",
+   "fiyat": 21.965034,
+   "d1_tarih": "2026-11-26",
    "rk": {
-    "mdd": -20.43,
-    "vol": 25.95,
-    "gr": 0.45
+    "mdd": -21.01,
+    "vol": 24.99,
+    "gr": 0.37
    },
    "g": {
-    "a1": -2.6,
-    "a3": -17.91,
-    "a6": -9.8,
-    "y1": 11.69,
-    "y3": 80.52,
-    "y5": 725.88,
-    "reel_y1": -13.93,
-    "w1": -5.24,
-    "ytd": 7.42,
-    "d1": -1.15
+    "a1": -4.25,
+    "a3": -19.54,
+    "a6": -12.3,
+    "y1": 9.26,
+    "y3": 76.13,
+    "y5": 702.84,
+    "reel_y1": -15.8,
+    "w1": -6.13,
+    "ytd": 4.81,
+    "d1": -2.43
    },
    "teyit": [
     "a1",
@@ -1110,239 +1110,17 @@
    ],
    "celiski": [],
    "gun": 1258,
-   "son_tarih": "2026-11-25",
+   "son_tarih": "2026-11-26",
    "istikrar": [
-    4,
+    3,
     4
    ],
-   "puan": 66,
-   "her_yonu": false,
-   "kosul": 4,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 7,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "GZR",
-   "ad": "GARANTİ PORTFÖY SÜRDÜRÜLEBİLİRLİK HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "Garanti BBVA",
-   "grup": "Özel",
-   "buyukluk": 973995801.31,
-   "yatirimci": 1769.0,
-   "vb": 1.0,
-   "vs": 2.0,
-   "risk": 6.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 9.975883,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -19.09,
-    "vol": 23.34,
-    "gr": 0.47
-   },
-   "g": {
-    "a1": -2.72,
-    "a3": -15.14,
-    "a6": -12.35,
-    "y1": 11.07,
-    "y3": 71.54,
-    "y5": 675.9,
-    "reel_y1": -14.41,
-    "w1": -5.39,
-    "ytd": 7.16,
-    "d1": -1.16
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 66,
-   "her_yonu": false,
-   "kosul": 4,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 7,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "TZD",
-   "ad": "ZİRAAT PORTFÖY HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "Ziraat Bankası",
-   "grup": "Kamu",
-   "buyukluk": 550022484.42,
-   "yatirimci": 7463.0,
-   "vb": 1.0,
-   "vs": 2.0,
-   "risk": 6.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 2.087099,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -22.84,
-    "vol": 25.86,
-    "gr": 0.43
-   },
-   "g": {
-    "a1": -2.11,
-    "a3": -19.7,
-    "a6": -10.33,
-    "y1": 11.0,
-    "y3": 52.15,
-    "y5": 693.8,
-    "reel_y1": -14.46,
-    "w1": -5.66,
-    "ytd": 2.39,
-    "d1": -1.55
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 58,
-   "her_yonu": false,
-   "kosul": 4,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 7,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "HVI",
-   "ad": "DENİZ PORTFÖY HOLDİNGLER VE İŞTİRAKLERİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "DenizBank",
-   "grup": "Özel",
-   "buyukluk": 28977156.7,
-   "yatirimci": 284.0,
-   "vb": 1.0,
-   "vs": 2.0,
-   "risk": 6.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 1.120982,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -18.1,
-    "vol": 24.47,
-    "gr": 0.42
-   },
-   "g": {
-    "a1": -2.29,
-    "a3": -14.21,
-    "a6": -8.61,
-    "y1": 10.39,
-    "reel_y1": -14.93,
-    "w1": -5.98,
-    "ytd": 5.79,
-    "d1": -1.54
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1"
-   ],
-   "celiski": [],
-   "gun": 270,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 73,
-   "her_yonu": false,
-   "kosul": 4,
-   "gecmis": {
-    "kac": 3,
-    "toplam": 7,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "FUA",
-   "ad": "AK PORTFÖY İHRACATÇI ŞİRKETLER HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "Akbank",
-   "grup": "Özel",
-   "buyukluk": 252362616.6,
-   "yatirimci": 4353.0,
-   "vb": 1.0,
-   "vs": 2.0,
-   "risk": 6.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 4.450454,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -25.44,
-    "vol": 25.79,
-    "gr": 0.39
-   },
-   "g": {
-    "a1": 0.44,
-    "a3": -19.5,
-    "a6": -15.03,
-    "y1": 10.13,
-    "y3": 25.77,
-    "reel_y1": -15.13,
-    "w1": -4.43,
-    "ytd": 3.96,
-    "d1": -0.84
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3"
-   ],
-   "celiski": [],
-   "gun": 1198,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 51,
+   "puan": 67,
    "her_yonu": false,
    "kosul": 3,
    "gecmis": {
     "kac": 0,
-    "toplam": 7,
+    "toplam": 8,
     "seri": 0,
     "her_yonu_gun": 0
    }
@@ -1353,30 +1131,30 @@
    "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
    "banka": "DenizBank",
    "grup": "Özel",
-   "buyukluk": 60382124.45,
-   "yatirimci": 1234.0,
+   "buyukluk": 59035256.75,
+   "yatirimci": 1230.0,
    "vb": 1.0,
    "vs": 2.0,
    "risk": 5.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 3.051417,
-   "d1_tarih": "2026-11-25",
+   "fiyat": 2.982284,
+   "d1_tarih": "2026-11-26",
    "rk": {
-    "mdd": -22.0,
-    "vol": 23.8,
-    "gr": 0.42
+    "mdd": -23.52,
+    "vol": 22.99,
+    "gr": 0.37
    },
    "g": {
-    "a1": -4.64,
-    "a3": -21.15,
-    "a6": -17.79,
-    "y1": 9.88,
-    "y3": 80.35,
-    "reel_y1": -15.33,
-    "w1": -6.73,
-    "ytd": 6.76,
-    "d1": -1.5
+    "a1": -5.24,
+    "a3": -22.35,
+    "a6": -19.93,
+    "y1": 8.57,
+    "y3": 76.26,
+    "reel_y1": -16.34,
+    "w1": -7.14,
+    "ytd": 4.34,
+    "d1": -2.27
    },
    "teyit": [
     "a1",
@@ -1386,53 +1164,53 @@
     "y3"
    ],
    "celiski": [],
-   "gun": 858,
-   "son_tarih": "2026-11-25",
+   "gun": 859,
+   "son_tarih": "2026-11-26",
    "istikrar": [
     3,
     4
    ],
-   "puan": 48,
+   "puan": 50,
    "her_yonu": false,
    "kosul": 3,
    "gecmis": {
     "kac": 0,
-    "toplam": 7,
+    "toplam": 8,
     "seri": 0,
     "her_yonu_gun": 0
    }
   },
   {
-   "k": "YDI",
-   "ad": "YAPI KREDİ PORTFÖY MODEL PORTFÖY HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)",
+   "k": "GZR",
+   "ad": "GARANTİ PORTFÖY SÜRDÜRÜLEBİLİRLİK HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
    "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "Yapı Kredi",
+   "banka": "Garanti BBVA",
    "grup": "Özel",
-   "buyukluk": 960722000.21,
-   "yatirimci": 6453.0,
+   "buyukluk": 930970493.32,
+   "yatirimci": 1766.0,
    "vb": 1.0,
    "vs": 2.0,
    "risk": 6.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 0.405824,
-   "d1_tarih": "2026-11-25",
+   "fiyat": 9.732426,
+   "d1_tarih": "2026-11-26",
    "rk": {
-    "mdd": -18.29,
-    "vol": 24.11,
-    "gr": 0.41
+    "mdd": -20.14,
+    "vol": 22.72,
+    "gr": 0.37
    },
    "g": {
-    "a1": -3.16,
-    "a3": -16.51,
-    "a6": -6.43,
-    "y1": 9.78,
-    "y3": 71.96,
-    "y5": 716.63,
-    "reel_y1": -15.4,
-    "w1": -5.55,
-    "ytd": 5.33,
-    "d1": -1.03
+    "a1": -4.5,
+    "a3": -16.86,
+    "a6": -14.57,
+    "y1": 8.43,
+    "y3": 67.36,
+    "y5": 655.87,
+    "reel_y1": -16.44,
+    "w1": -6.39,
+    "ytd": 4.55,
+    "d1": -2.44
    },
    "teyit": [
     "a1",
@@ -1444,17 +1222,72 @@
    ],
    "celiski": [],
    "gun": 1258,
-   "son_tarih": "2026-11-25",
+   "son_tarih": "2026-11-26",
+   "istikrar": [
+    3,
+    4
+   ],
+   "puan": 64,
+   "her_yonu": false,
+   "kosul": 3,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 8,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "FUA",
+   "ad": "AK PORTFÖY İHRACATÇI ŞİRKETLER HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "Akbank",
+   "grup": "Özel",
+   "buyukluk": 246410599.28,
+   "yatirimci": 4349.0,
+   "vb": 1.0,
+   "vs": 2.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 4.347331,
+   "d1_tarih": "2026-11-26",
+   "rk": {
+    "mdd": -25.44,
+    "vol": 24.31,
+    "gr": 0.34
+   },
+   "g": {
+    "a1": -0.51,
+    "a3": -20.59,
+    "a6": -17.35,
+    "y1": 8.31,
+    "y3": 22.85,
+    "reel_y1": -16.54,
+    "w1": -5.23,
+    "ytd": 1.55,
+    "d1": -2.32
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1199,
+   "son_tarih": "2026-11-26",
    "istikrar": [
     4,
     4
    ],
-   "puan": 66,
+   "puan": 53,
    "her_yonu": false,
-   "kosul": 4,
+   "kosul": 3,
    "gecmis": {
     "kac": 0,
-    "toplam": 7,
+    "toplam": 8,
     "seri": 0,
     "her_yonu_gun": 0
    }
@@ -1465,31 +1298,31 @@
    "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
    "banka": "Ziraat Bankası",
    "grup": "Kamu",
-   "buyukluk": 913753132.46,
-   "yatirimci": 6824.0,
+   "buyukluk": 891695471.69,
+   "yatirimci": 6813.0,
    "vb": 1.0,
    "vs": 2.0,
    "risk": 6.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 27.676405,
-   "d1_tarih": "2026-11-25",
+   "fiyat": 26.983334,
+   "d1_tarih": "2026-11-26",
    "rk": {
-    "mdd": -25.54,
-    "vol": 25.87,
-    "gr": 0.37
+    "mdd": -26.38,
+    "vol": 24.99,
+    "gr": 0.31
    },
    "g": {
-    "a1": -4.22,
-    "a3": -23.08,
-    "a6": -15.53,
-    "y1": 9.6,
-    "y3": 61.28,
-    "y5": 635.24,
-    "reel_y1": -15.54,
-    "w1": -5.96,
-    "ytd": 4.38,
-    "d1": -1.12
+    "a1": -4.4,
+    "a3": -24.15,
+    "a6": -17.49,
+    "y1": 7.77,
+    "y3": 57.24,
+    "y5": 611.76,
+    "reel_y1": -16.95,
+    "w1": -6.39,
+    "ytd": 1.77,
+    "d1": -2.5
    },
    "teyit": [
     "a1",
@@ -1501,17 +1334,184 @@
    ],
    "celiski": [],
    "gun": 1258,
-   "son_tarih": "2026-11-25",
+   "son_tarih": "2026-11-26",
    "istikrar": [
     3,
     4
    ],
-   "puan": 41,
+   "puan": 45,
    "her_yonu": false,
    "kosul": 3,
    "gecmis": {
     "kac": 0,
-    "toplam": 7,
+    "toplam": 8,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "TZD",
+   "ad": "ZİRAAT PORTFÖY HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "Ziraat Bankası",
+   "grup": "Kamu",
+   "buyukluk": 532232450.21,
+   "yatirimci": 7450.0,
+   "vb": 1.0,
+   "vs": 2.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 2.02028,
+   "d1_tarih": "2026-11-26",
+   "rk": {
+    "mdd": -22.84,
+    "vol": 25.89,
+    "gr": 0.29
+   },
+   "g": {
+    "a1": -3.67,
+    "a3": -21.13,
+    "a6": -13.99,
+    "y1": 7.54,
+    "y3": 47.28,
+    "y5": 663.27,
+    "reel_y1": -17.13,
+    "w1": -6.72,
+    "ytd": -0.88,
+    "d1": -3.2
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-26",
+   "istikrar": [
+    3,
+    4
+   ],
+   "puan": 57,
+   "her_yonu": false,
+   "kosul": 3,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 8,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "HVI",
+   "ad": "DENİZ PORTFÖY HOLDİNGLER VE İŞTİRAKLERİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "DenizBank",
+   "grup": "Özel",
+   "buyukluk": 28115447.92,
+   "yatirimci": 285.0,
+   "vb": 1.0,
+   "vs": 2.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 1.087584,
+   "d1_tarih": "2026-11-26",
+   "rk": {
+    "mdd": -18.69,
+    "vol": 24.41,
+    "gr": 0.29
+   },
+   "g": {
+    "a1": -4.84,
+    "a3": -16.18,
+    "a6": -12.16,
+    "y1": 7.09,
+    "reel_y1": -17.48,
+    "w1": -6.69,
+    "ytd": 2.64,
+    "d1": -2.98
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1"
+   ],
+   "celiski": [],
+   "gun": 271,
+   "son_tarih": "2026-11-26",
+   "istikrar": [
+    3,
+    4
+   ],
+   "puan": 67,
+   "her_yonu": false,
+   "kosul": 3,
+   "gecmis": {
+    "kac": 3,
+    "toplam": 8,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "YDI",
+   "ad": "YAPI KREDİ PORTFÖY MODEL PORTFÖY HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "Yapı Kredi",
+   "grup": "Özel",
+   "buyukluk": 935990634.03,
+   "yatirimci": 6445.0,
+   "vb": 1.0,
+   "vs": 2.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 0.395389,
+   "d1_tarih": "2026-11-26",
+   "rk": {
+    "mdd": -19.62,
+    "vol": 23.77,
+    "gr": 0.29
+   },
+   "g": {
+    "a1": -4.97,
+    "a3": -18.31,
+    "a6": -8.94,
+    "y1": 6.98,
+    "y3": 67.54,
+    "y5": 695.9,
+    "reel_y1": -17.56,
+    "w1": -6.4,
+    "ytd": 2.63,
+    "d1": -2.57
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-26",
+   "istikrar": [
+    3,
+    4
+   ],
+   "puan": 64,
+   "her_yonu": false,
+   "kosul": 3,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 8,
     "seri": 0,
     "her_yonu_gun": 0
    }
@@ -1522,31 +1522,31 @@
    "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
    "banka": "Garanti BBVA",
    "grup": "Özel",
-   "buyukluk": 2414607609.54,
-   "yatirimci": 14056.0,
+   "buyukluk": 2287699250.33,
+   "yatirimci": 14035.0,
    "vb": 1.0,
    "vs": 2.0,
    "risk": 6.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 33.35625,
-   "d1_tarih": "2026-11-25",
+   "fiyat": 32.3377,
+   "d1_tarih": "2026-11-26",
    "rk": {
     "mdd": -23.31,
-    "vol": 27.67,
-    "gr": 0.34
+    "vol": 26.79,
+    "gr": 0.23
    },
    "g": {
-    "a1": -1.23,
-    "a3": -18.44,
-    "a6": -13.12,
-    "y1": 9.3,
-    "y3": 83.32,
-    "y5": 878.31,
-    "reel_y1": -15.77,
-    "w1": -6.01,
-    "ytd": 4.28,
-    "d1": -1.59
+    "a1": -3.08,
+    "a3": -20.22,
+    "a6": -16.1,
+    "y1": 6.1,
+    "y3": 77.72,
+    "y5": 844.65,
+    "reel_y1": -18.24,
+    "w1": -7.22,
+    "ytd": 1.09,
+    "d1": -3.05
    },
    "teyit": [
     "a1",
@@ -1558,60 +1558,7 @@
    ],
    "celiski": [],
    "gun": 1258,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 62,
-   "her_yonu": false,
-   "kosul": 4,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 7,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "IML",
-   "ad": "İŞ PORTFÖY MODEL PORTFÖY HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "İş Bankası",
-   "grup": "Özel",
-   "buyukluk": 685905745.89,
-   "yatirimci": 3427.0,
-   "vb": 1.0,
-   "vs": 2.0,
-   "risk": 6.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 1.465587,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -20.92,
-    "vol": 27.03,
-    "gr": 0.3
-   },
-   "g": {
-    "a1": -2.58,
-    "a3": -17.33,
-    "a6": -9.7,
-    "y1": 8.23,
-    "reel_y1": -16.6,
-    "w1": -6.49,
-    "ytd": 4.08,
-    "d1": -1.8
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1"
-   ],
-   "celiski": [],
-   "gun": 513,
-   "son_tarih": "2026-11-25",
+   "son_tarih": "2026-11-26",
    "istikrar": [
     4,
     4
@@ -1621,60 +1568,7 @@
    "kosul": 4,
    "gecmis": {
     "kac": 0,
-    "toplam": 7,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "BIG",
-   "ad": "YAPI KREDİ PORTFÖY ÜÇÜNCÜ HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "Yapı Kredi",
-   "grup": "Özel",
-   "buyukluk": 355223383.88,
-   "yatirimci": 2658.0,
-   "vb": 1.0,
-   "vs": 2.0,
-   "risk": 6.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 1.208466,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -19.35,
-    "vol": 24.79,
-    "gr": 0.27
-   },
-   "g": {
-    "a1": -6.22,
-    "a3": -16.9,
-    "a6": -10.75,
-    "y1": 6.76,
-    "reel_y1": -17.73,
-    "w1": -5.6,
-    "ytd": 3.36,
-    "d1": -1.22
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1"
-   ],
-   "celiski": [],
-   "gun": 487,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    3,
-    4
-   ],
-   "puan": 56,
-   "her_yonu": false,
-   "kosul": 3,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 7,
+    "toplam": 8,
     "seri": 0,
     "her_yonu_gun": 0
    }
@@ -1685,30 +1579,30 @@
    "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
    "banka": "İş Bankası",
    "grup": "Özel",
-   "buyukluk": 58722126.05,
-   "yatirimci": 2965.0,
+   "buyukluk": 57504746.27,
+   "yatirimci": 2954.0,
    "vb": 1.0,
    "vs": 2.0,
    "risk": 6.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 3.176987,
-   "d1_tarih": "2026-11-25",
+   "fiyat": 3.111967,
+   "d1_tarih": "2026-11-26",
    "rk": {
     "mdd": -21.99,
-    "vol": 23.24,
-    "gr": 0.28
+    "vol": 22.59,
+    "gr": 0.23
    },
    "g": {
-    "a1": -1.24,
-    "a3": -16.82,
-    "a6": -13.8,
-    "y1": 6.42,
-    "y3": 25.82,
-    "reel_y1": -17.99,
-    "w1": -4.66,
-    "ytd": 0.99,
-    "d1": -0.98
+    "a1": -1.89,
+    "a3": -18.11,
+    "a6": -16.17,
+    "y1": 5.12,
+    "y3": 23.24,
+    "reel_y1": -19.0,
+    "w1": -5.26,
+    "ytd": -1.08,
+    "d1": -2.05
    },
    "teyit": [
     "a1",
@@ -1718,75 +1612,71 @@
     "y3"
    ],
    "celiski": [],
-   "gun": 1037,
-   "son_tarih": "2026-11-25",
+   "gun": 1038,
+   "son_tarih": "2026-11-26",
    "istikrar": [
     4,
     4
    ],
-   "puan": 55,
+   "puan": 60,
    "her_yonu": false,
    "kosul": 3,
    "gecmis": {
     "kac": 0,
-    "toplam": 7,
+    "toplam": 8,
     "seri": 0,
     "her_yonu_gun": 0
    }
   },
   {
-   "k": "ADP",
-   "ad": "AK PORTFÖY BIST BANKA ENDEKSİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
+   "k": "IML",
+   "ad": "İŞ PORTFÖY MODEL PORTFÖY HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
    "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "Akbank",
+   "banka": "İş Bankası",
    "grup": "Özel",
-   "buyukluk": 3797678247.63,
-   "yatirimci": 18945.0,
+   "buyukluk": 662926210.8,
+   "yatirimci": 3413.0,
    "vb": 1.0,
    "vs": 2.0,
-   "risk": 7.0,
+   "risk": 6.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 1.217699,
-   "d1_tarih": "2026-11-25",
+   "fiyat": 1.416339,
+   "d1_tarih": "2026-11-26",
    "rk": {
-    "mdd": -25.88,
-    "vol": 35.49,
-    "gr": 0.15
+    "mdd": -22.25,
+    "vol": 25.89,
+    "gr": 0.2
    },
    "g": {
-    "a1": 1.34,
-    "a3": -3.05,
-    "a6": 1.71,
-    "y1": 5.33,
-    "y3": 110.86,
-    "y5": 957.68,
-    "reel_y1": -18.83,
-    "w1": -5.12,
-    "ytd": -1.33,
-    "d1": -2.05
+    "a1": -4.98,
+    "a3": -19.4,
+    "a6": -13.69,
+    "y1": 5.08,
+    "reel_y1": -19.03,
+    "w1": -7.66,
+    "ytd": 0.58,
+    "d1": -3.36
    },
    "teyit": [
     "a1",
     "a3",
     "a6",
-    "y1",
-    "y3",
-    "y5"
+    "y1"
    ],
    "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-25",
+   "gun": 514,
+   "son_tarih": "2026-11-26",
    "istikrar": [
-    4,
+    3,
     4
    ],
-   "puan": 74,
+   "puan": 57,
    "her_yonu": false,
-   "kosul": 4,
+   "kosul": 3,
    "gecmis": {
-    "kac": 1,
-    "toplam": 7,
+    "kac": 0,
+    "toplam": 8,
     "seri": 0,
     "her_yonu_gun": 0
    }
@@ -1797,29 +1687,29 @@
    "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
    "banka": "İş Bankası",
    "grup": "Özel",
-   "buyukluk": 54046700.92,
-   "yatirimci": 1461.0,
+   "buyukluk": 52890483.28,
+   "yatirimci": 1456.0,
    "vb": 1.0,
    "vs": 2.0,
    "risk": 6.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 1.073331,
-   "d1_tarih": "2026-11-25",
+   "fiyat": 1.05123,
+   "d1_tarih": "2026-11-26",
    "rk": {
-    "mdd": -26.31,
-    "vol": 24.81,
-    "gr": 0.2
+    "mdd": -27.83,
+    "vol": 24.22,
+    "gr": 0.16
    },
    "g": {
-    "a1": -7.98,
-    "a3": -24.76,
-    "a6": -22.43,
-    "y1": 4.97,
-    "reel_y1": -19.11,
-    "w1": -7.17,
-    "ytd": -0.68,
-    "d1": -1.45
+    "a1": -8.51,
+    "a3": -25.71,
+    "a6": -24.11,
+    "y1": 3.95,
+    "reel_y1": -19.9,
+    "w1": -7.21,
+    "ytd": -2.73,
+    "d1": -2.06
    },
    "teyit": [
     "a1",
@@ -1828,165 +1718,51 @@
     "y1"
    ],
    "celiski": [],
-   "gun": 309,
-   "son_tarih": "2026-11-25",
+   "gun": 310,
+   "son_tarih": "2026-11-26",
    "istikrar": [
-    3,
+    2,
     4
    ],
-   "puan": 29,
+   "puan": 30,
    "her_yonu": false,
    "kosul": 3,
    "gecmis": {
     "kac": 0,
-    "toplam": 7,
+    "toplam": 8,
     "seri": 0,
     "her_yonu_gun": 0
    }
   },
   {
-   "k": "DAH",
-   "ad": "DENİZ PORTFÖY HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)",
+   "k": "BIG",
+   "ad": "YAPI KREDİ PORTFÖY ÜÇÜNCÜ HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)",
    "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "DenizBank",
+   "banka": "Yapı Kredi",
    "grup": "Özel",
-   "buyukluk": 437142633.87,
-   "yatirimci": 2265.0,
+   "buyukluk": 346385987.62,
+   "yatirimci": 2655.0,
    "vb": 1.0,
    "vs": 2.0,
    "risk": 6.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 3.001747,
-   "d1_tarih": "2026-11-25",
+   "fiyat": 1.179,
+   "d1_tarih": "2026-11-26",
    "rk": {
-    "mdd": -24.87,
-    "vol": 29.74,
+    "mdd": -21.32,
+    "vol": 24.43,
     "gr": 0.16
    },
    "g": {
-    "a1": -3.33,
-    "a3": -18.4,
-    "a6": -14.84,
-    "y1": 4.89,
-    "y3": 63.59,
-    "y5": 722.32,
-    "reel_y1": -19.17,
-    "w1": -6.69,
-    "ytd": 0.67,
-    "d1": -1.62
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 44,
-   "her_yonu": false,
-   "kosul": 4,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 7,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "DZE",
-   "ad": "DENİZ PORTFÖY BIST 100 ENDEKSİ HİSSE SENEDİ FONU(HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "DenizBank",
-   "grup": "Özel",
-   "buyukluk": 161770941.65,
-   "yatirimci": 2692.0,
-   "vb": 1.0,
-   "vs": 2.0,
-   "risk": 6.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 0.814222,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -24.2,
-    "vol": 25.26,
-    "gr": 0.19
-   },
-   "g": {
-    "a1": -1.94,
-    "a3": -20.06,
-    "a6": -16.63,
-    "y1": 4.89,
-    "y3": 50.88,
-    "y5": 584.27,
-    "reel_y1": -19.17,
-    "w1": -5.46,
-    "ytd": 0.9,
-    "d1": -1.14
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 46,
-   "her_yonu": false,
-   "kosul": 4,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 7,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "SAS",
-   "ad": "AK PORTFÖY SABANCI TOPLULUĞU ŞİRKETLERİ ENDEKSİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "Akbank",
-   "grup": "Özel",
-   "buyukluk": 656988125.17,
-   "yatirimci": 36925.0,
-   "vb": 1.0,
-   "vs": 2.0,
-   "risk": 5.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 1.394393,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -21.55,
-    "vol": 26.7,
-    "gr": 0.18
-   },
-   "g": {
-    "a1": -4.9,
-    "a3": -13.87,
-    "a6": -11.55,
-    "y1": 4.83,
-    "reel_y1": -19.22,
-    "w1": -6.93,
-    "ytd": -1.17,
-    "d1": -1.78
+    "a1": -7.84,
+    "a3": -18.66,
+    "a6": -13.57,
+    "y1": 3.88,
+    "reel_y1": -19.95,
+    "w1": -6.13,
+    "ytd": 0.84,
+    "d1": -2.44
    },
    "teyit": [
     "a1",
@@ -1995,8 +1771,8 @@
     "y1"
    ],
    "celiski": [],
-   "gun": 679,
-   "son_tarih": "2026-11-25",
+   "gun": 488,
+   "son_tarih": "2026-11-26",
    "istikrar": [
     3,
     4
@@ -2006,113 +1782,7 @@
    "kosul": 3,
    "gecmis": {
     "kac": 0,
-    "toplam": 7,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "VAY",
-   "ad": "AK PORTFÖY DEĞER ODAKLI 100 ŞİRKETLERİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "Akbank",
-   "grup": "Özel",
-   "buyukluk": 35574553.11,
-   "yatirimci": 2664.0,
-   "vb": 1.0,
-   "vs": 2.0,
-   "risk": 5.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 1.415248,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -18.47,
-    "vol": 25.12,
-    "gr": 0.19
-   },
-   "g": {
-    "a1": -1.2,
-    "a3": -10.8,
-    "a6": -5.28,
-    "y1": 4.76,
-    "reel_y1": -19.27,
-    "w1": -5.11,
-    "ytd": 2.92,
-    "d1": -1.43
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1"
-   ],
-   "celiski": [],
-   "gun": 748,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 74,
-   "her_yonu": false,
-   "kosul": 4,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 7,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "SSS",
-   "ad": "YAPI KREDİ PORTFÖY SAVUNMA SANAYİİ ŞİRKETLERİ ENDEKSİ HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "Yapı Kredi",
-   "grup": "Özel",
-   "buyukluk": 169672400.11,
-   "yatirimci": 4356.0,
-   "vb": 1.0,
-   "vs": 2.0,
-   "risk": 6.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 1.180391,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -24.72,
-    "vol": 24.21,
-    "gr": 0.19
-   },
-   "g": {
-    "a1": -0.68,
-    "a3": -18.07,
-    "a6": -17.63,
-    "y1": 4.6,
-    "reel_y1": -19.4,
-    "w1": -5.2,
-    "ytd": 1.71,
-    "d1": -0.9
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1"
-   ],
-   "celiski": [],
-   "gun": 419,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 52,
-   "her_yonu": false,
-   "kosul": 4,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 7,
+    "toplam": 8,
     "seri": 0,
     "her_yonu_gun": 0
    }
@@ -2123,30 +1793,30 @@
    "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
    "banka": "Akbank",
    "grup": "Özel",
-   "buyukluk": 252106537.91,
-   "yatirimci": 15089.0,
+   "buyukluk": 245026224.64,
+   "yatirimci": 15072.0,
    "vb": 1.0,
    "vs": 2.0,
    "risk": 5.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 1.421579,
-   "d1_tarih": "2026-11-25",
+   "fiyat": 1.385063,
+   "d1_tarih": "2026-11-26",
    "rk": {
     "mdd": -29.99,
-    "vol": 27.06,
-    "gr": 0.17
+    "vol": 25.37,
+    "gr": 0.12
    },
    "g": {
-    "a1": 2.27,
-    "a3": -20.73,
-    "a6": -19.16,
-    "y1": 4.53,
-    "y3": 6.74,
-    "reel_y1": -19.45,
-    "w1": -4.29,
-    "ytd": -0.6,
-    "d1": -1.23
+    "a1": 1.43,
+    "a3": -22.94,
+    "a6": -22.06,
+    "y1": 3.09,
+    "y3": 4.0,
+    "reel_y1": -20.56,
+    "w1": -5.07,
+    "ytd": -3.15,
+    "d1": -2.57
    },
    "teyit": [
     "a1",
@@ -2156,53 +1826,106 @@
     "y3"
    ],
    "celiski": [],
-   "gun": 846,
-   "son_tarih": "2026-11-25",
+   "gun": 847,
+   "son_tarih": "2026-11-26",
    "istikrar": [
-    4,
+    3,
     4
    ],
-   "puan": 38,
+   "puan": 40,
    "her_yonu": false,
-   "kosul": 2,
+   "kosul": 1,
    "gecmis": {
     "kac": 0,
-    "toplam": 7,
+    "toplam": 8,
     "seri": 0,
     "her_yonu_gun": 0
    }
   },
   {
-   "k": "TAU",
-   "ad": "İŞ PORTFÖY BIST BANKA ENDEKSİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
+   "k": "SSS",
+   "ad": "YAPI KREDİ PORTFÖY SAVUNMA SANAYİİ ŞİRKETLERİ ENDEKSİ HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)",
    "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "İş Bankası",
+   "banka": "Yapı Kredi",
    "grup": "Özel",
-   "buyukluk": 2112243384.55,
-   "yatirimci": 30663.0,
+   "buyukluk": 165936137.34,
+   "yatirimci": 4343.0,
    "vb": 1.0,
    "vs": 2.0,
-   "risk": 7.0,
+   "risk": 6.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 0.597433,
-   "d1_tarih": "2026-11-25",
+   "fiyat": 1.155478,
+   "d1_tarih": "2026-11-26",
    "rk": {
-    "mdd": -28.26,
-    "vol": 37.13,
-    "gr": 0.06
+    "mdd": -24.72,
+    "vol": 24.08,
+    "gr": 0.11
    },
    "g": {
-    "a1": 0.83,
-    "a3": -5.51,
-    "a6": -0.78,
-    "y1": 2.29,
-    "y3": 107.52,
-    "y5": 927.45,
+    "a1": -2.65,
+    "a3": -19.03,
+    "a6": -19.12,
+    "y1": 2.61,
+    "reel_y1": -20.93,
+    "w1": -5.86,
+    "ytd": -0.44,
+    "d1": -2.11
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1"
+   ],
+   "celiski": [],
+   "gun": 420,
+   "son_tarih": "2026-11-26",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 55,
+   "her_yonu": false,
+   "kosul": 4,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 8,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "DZE",
+   "ad": "DENİZ PORTFÖY BIST 100 ENDEKSİ HİSSE SENEDİ FONU(HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "DenizBank",
+   "grup": "Özel",
+   "buyukluk": 156780031.51,
+   "yatirimci": 2691.0,
+   "vb": 1.0,
+   "vs": 2.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 0.792685,
+   "d1_tarih": "2026-11-26",
+   "rk": {
+    "mdd": -24.69,
+    "vol": 24.57,
+    "gr": 0.09
+   },
+   "g": {
+    "a1": -3.7,
+    "a3": -21.85,
+    "a6": -19.16,
+    "y1": 2.28,
+    "y3": 46.89,
+    "y5": 563.98,
     "reel_y1": -21.18,
-    "w1": -5.72,
-    "ytd": -4.45,
-    "d1": -2.21
+    "w1": -6.58,
+    "ytd": -1.76,
+    "d1": -2.65
    },
    "teyit": [
     "a1",
@@ -2214,17 +1937,180 @@
    ],
    "celiski": [],
    "gun": 1258,
-   "son_tarih": "2026-11-25",
+   "son_tarih": "2026-11-26",
+   "istikrar": [
+    3,
+    4
+   ],
+   "puan": 44,
+   "her_yonu": false,
+   "kosul": 3,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 8,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "VAY",
+   "ad": "AK PORTFÖY DEĞER ODAKLI 100 ŞİRKETLERİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "Akbank",
+   "grup": "Özel",
+   "buyukluk": 34589300.77,
+   "yatirimci": 2659.0,
+   "vb": 1.0,
+   "vs": 2.0,
+   "risk": 5.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 1.376501,
+   "d1_tarih": "2026-11-26",
+   "rk": {
+    "mdd": -18.47,
+    "vol": 24.56,
+    "gr": 0.09
+   },
+   "g": {
+    "a1": -2.53,
+    "a3": -12.91,
+    "a6": -9.08,
+    "y1": 2.13,
+    "reel_y1": -21.3,
+    "w1": -5.98,
+    "ytd": 0.1,
+    "d1": -2.74
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1"
+   ],
+   "celiski": [],
+   "gun": 749,
+   "son_tarih": "2026-11-26",
    "istikrar": [
     4,
     4
    ],
-   "puan": 69,
+   "puan": 75,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
     "kac": 0,
-    "toplam": 7,
+    "toplam": 8,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "DAH",
+   "ad": "DENİZ PORTFÖY HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "DenizBank",
+   "grup": "Özel",
+   "buyukluk": 423327580.88,
+   "yatirimci": 2261.0,
+   "vb": 1.0,
+   "vs": 2.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 2.912633,
+   "d1_tarih": "2026-11-26",
+   "rk": {
+    "mdd": -25.3,
+    "vol": 29.63,
+    "gr": 0.07
+   },
+   "g": {
+    "a1": -4.98,
+    "a3": -20.52,
+    "a6": -17.9,
+    "y1": 2.11,
+    "y3": 58.73,
+    "y5": 697.91,
+    "reel_y1": -21.31,
+    "w1": -7.22,
+    "ytd": -2.32,
+    "d1": -2.97
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-26",
+   "istikrar": [
+    3,
+    4
+   ],
+   "puan": 41,
+   "her_yonu": false,
+   "kosul": 3,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 8,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "SAS",
+   "ad": "AK PORTFÖY SABANCI TOPLULUĞU ŞİRKETLERİ ENDEKSİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "Akbank",
+   "grup": "Özel",
+   "buyukluk": 638767704.27,
+   "yatirimci": 36856.0,
+   "vb": 1.0,
+   "vs": 2.0,
+   "risk": 5.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 1.357168,
+   "d1_tarih": "2026-11-26",
+   "rk": {
+    "mdd": -23.64,
+    "vol": 26.99,
+    "gr": 0.06
+   },
+   "g": {
+    "a1": -6.34,
+    "a3": -15.55,
+    "a6": -14.63,
+    "y1": 1.72,
+    "reel_y1": -21.62,
+    "w1": -7.08,
+    "ytd": -3.81,
+    "d1": -2.67
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1"
+   ],
+   "celiski": [],
+   "gun": 680,
+   "son_tarih": "2026-11-26",
+   "istikrar": [
+    3,
+    4
+   ],
+   "puan": 50,
+   "her_yonu": false,
+   "kosul": 3,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 8,
     "seri": 0,
     "her_yonu_gun": 0
    }
@@ -2235,31 +2121,31 @@
    "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
    "banka": "İş Bankası",
    "grup": "Özel",
-   "buyukluk": 2634053517.01,
-   "yatirimci": 18377.0,
+   "buyukluk": 2568004471.71,
+   "yatirimci": 18347.0,
    "vb": 1.0,
    "vs": 2.0,
    "risk": 7.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 0.108244,
-   "d1_tarih": "2026-11-25",
+   "fiyat": 0.10548,
+   "d1_tarih": "2026-11-26",
    "rk": {
-    "mdd": -23.09,
-    "vol": 24.72,
-    "gr": 0.09
+    "mdd": -23.24,
+    "vol": 24.4,
+    "gr": 0.0
    },
    "g": {
-    "a1": -2.0,
-    "a3": -16.54,
-    "a6": -14.7,
-    "y1": 2.23,
-    "y3": 84.18,
-    "y5": 1010.08,
-    "reel_y1": -21.22,
-    "w1": -6.52,
-    "ytd": -1.33,
-    "d1": -1.8
+    "a1": -3.45,
+    "a3": -18.13,
+    "a6": -16.98,
+    "y1": 0.06,
+    "y3": 79.47,
+    "y5": 973.59,
+    "reel_y1": -22.89,
+    "w1": -7.11,
+    "ytd": -3.85,
+    "d1": -2.55
    },
    "teyit": [
     "a1",
@@ -2271,17 +2157,74 @@
    ],
    "celiski": [],
    "gun": 1258,
-   "son_tarih": "2026-11-25",
+   "son_tarih": "2026-11-26",
    "istikrar": [
     4,
     4
    ],
-   "puan": 57,
+   "puan": 59,
    "her_yonu": false,
    "kosul": 4,
    "gecmis": {
     "kac": 0,
-    "toplam": 7,
+    "toplam": 8,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "ADP",
+   "ad": "AK PORTFÖY BIST BANKA ENDEKSİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "Akbank",
+   "grup": "Özel",
+   "buyukluk": 3635623583.2,
+   "yatirimci": 18913.0,
+   "vb": 1.0,
+   "vs": 2.0,
+   "risk": 7.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 1.166544,
+   "d1_tarih": "2026-11-26",
+   "rk": {
+    "mdd": -25.88,
+    "vol": 35.38,
+    "gr": -0.01
+   },
+   "g": {
+    "a1": -1.35,
+    "a3": -7.03,
+    "a6": -4.59,
+    "y1": -0.43,
+    "y3": 102.0,
+    "y5": 927.1,
+    "reel_y1": -23.27,
+    "w1": -6.85,
+    "ytd": -5.48,
+    "d1": -4.2
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-26",
+   "istikrar": [
+    4,
+    4
+   ],
+   "puan": 72,
+   "her_yonu": false,
+   "kosul": 4,
+   "gecmis": {
+    "kac": 1,
+    "toplam": 8,
     "seri": 0,
     "her_yonu_gun": 0
    }
@@ -2292,29 +2235,29 @@
    "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
    "banka": "Garanti BBVA",
    "grup": "Özel",
-   "buyukluk": 153458880.23,
-   "yatirimci": 3138.0,
+   "buyukluk": 148630427.13,
+   "yatirimci": 3134.0,
    "vb": 1.0,
    "vs": 2.0,
    "risk": 6.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 1.199533,
-   "d1_tarih": "2026-11-25",
+   "fiyat": 1.161957,
+   "d1_tarih": "2026-11-26",
    "rk": {
-    "mdd": -23.93,
-    "vol": 26.83,
-    "gr": 0.08
+    "mdd": -24.12,
+    "vol": 26.4,
+    "gr": -0.04
    },
    "g": {
-    "a1": -3.3,
-    "a3": -16.29,
-    "a6": -13.33,
-    "y1": 2.11,
-    "reel_y1": -21.31,
-    "w1": -7.04,
-    "ytd": -2.09,
-    "d1": -1.74
+    "a1": -5.78,
+    "a3": -18.17,
+    "a6": -16.8,
+    "y1": -1.15,
+    "reel_y1": -23.83,
+    "w1": -7.63,
+    "ytd": -5.16,
+    "d1": -3.13
    },
    "teyit": [
     "a1",
@@ -2323,18 +2266,18 @@
     "y1"
    ],
    "celiski": [],
-   "gun": 362,
-   "son_tarih": "2026-11-25",
+   "gun": 363,
+   "son_tarih": "2026-11-26",
    "istikrar": [
-    4,
+    3,
     4
    ],
-   "puan": 48,
+   "puan": 45,
    "her_yonu": false,
-   "kosul": 4,
+   "kosul": 3,
    "gecmis": {
     "kac": 0,
-    "toplam": 7,
+    "toplam": 8,
     "seri": 0,
     "her_yonu_gun": 0
    }
@@ -2345,31 +2288,31 @@
    "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
    "banka": "Akbank",
    "grup": "Özel",
-   "buyukluk": 587895242.84,
-   "yatirimci": 19654.0,
+   "buyukluk": 570359739.34,
+   "yatirimci": 19612.0,
    "vb": 1.0,
    "vs": 2.0,
    "risk": 6.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 5.807674,
-   "d1_tarih": "2026-11-25",
+   "fiyat": 5.635393,
+   "d1_tarih": "2026-11-26",
    "rk": {
-    "mdd": -41.14,
-    "vol": 30.26,
-    "gr": -0.0
+    "mdd": -42.89,
+    "vol": 29.29,
+    "gr": -0.05
    },
    "g": {
-    "a1": -8.41,
-    "a3": -39.61,
-    "a6": -31.23,
-    "y1": -0.01,
-    "y3": 56.52,
-    "y5": 477.45,
-    "reel_y1": -22.95,
-    "w1": -8.58,
-    "ytd": -3.13,
-    "d1": -2.64
+    "a1": -9.08,
+    "a3": -41.74,
+    "a6": -34.59,
+    "y1": -1.32,
+    "y3": 51.88,
+    "y5": 454.21,
+    "reel_y1": -23.96,
+    "w1": -9.11,
+    "ytd": -6.01,
+    "d1": -2.97
    },
    "teyit": [
     "a1",
@@ -2381,7 +2324,7 @@
    ],
    "celiski": [],
    "gun": 1258,
-   "son_tarih": "2026-11-25",
+   "son_tarih": "2026-11-26",
    "istikrar": [
     1,
     4
@@ -2391,7 +2334,7 @@
    "kosul": 2,
    "gecmis": {
     "kac": 0,
-    "toplam": 7,
+    "toplam": 8,
     "seri": 0,
     "her_yonu_gun": 0
    }
@@ -2402,1132 +2345,30 @@
    "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
    "banka": "Yapı Kredi",
    "grup": "Özel",
-   "buyukluk": 4910359249.3,
-   "yatirimci": 56085.0,
+   "buyukluk": 4813448564.23,
+   "yatirimci": 55989.0,
    "vb": 1.0,
    "vs": 2.0,
    "risk": 6.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 13.000038,
-   "d1_tarih": "2026-11-25",
+   "fiyat": 12.747867,
+   "d1_tarih": "2026-11-26",
    "rk": {
-    "mdd": -18.39,
-    "vol": 21.69,
-    "gr": -0.03
+    "mdd": -19.98,
+    "vol": 21.59,
+    "gr": -0.1
    },
    "g": {
-    "a1": -2.58,
-    "a3": -14.51,
-    "a6": -8.41,
-    "y1": -0.74,
-    "y3": 30.3,
-    "y5": 471.19,
-    "reel_y1": -23.51,
-    "w1": -4.99,
-    "ytd": -2.07,
-    "d1": -1.57
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 54,
-   "her_yonu": false,
-   "kosul": 3,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 7,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "BIO",
-   "ad": "İŞ PORTFÖY SÜRDÜRÜLEBİLİRLİK HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "İş Bankası",
-   "grup": "Özel",
-   "buyukluk": 551522409.08,
-   "yatirimci": 8639.0,
-   "vb": 1.0,
-   "vs": 2.0,
-   "risk": 6.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 1.993618,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -25.43,
-    "vol": 25.9,
-    "gr": -0.03
-   },
-   "g": {
-    "a1": -2.18,
-    "a3": -18.06,
-    "a6": -16.37,
-    "y1": -0.79,
-    "y3": 88.31,
-    "reel_y1": -23.55,
-    "w1": -6.55,
-    "ytd": -3.2,
-    "d1": -2.03
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3"
-   ],
-   "celiski": [],
-   "gun": 774,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 49,
-   "her_yonu": false,
-   "kosul": 4,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 7,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "GNS",
-   "ad": "GARANTİ PORTFÖY ENERJİ ŞİRKETLERİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "Garanti BBVA",
-   "grup": "Özel",
-   "buyukluk": 66652419.21,
-   "yatirimci": 1223.0,
-   "vb": 1.0,
-   "vs": 2.0,
-   "risk": 6.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 1.253321,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -27.63,
-    "vol": 25.34,
-    "gr": -0.04
-   },
-   "g": {
-    "a1": -1.9,
-    "a3": -19.61,
-    "a6": -18.95,
-    "y1": -1.09,
-    "reel_y1": -23.78,
-    "w1": -6.98,
-    "ytd": -1.72,
-    "d1": -1.03
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1"
-   ],
-   "celiski": [],
-   "gun": 445,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 38,
-   "her_yonu": false,
-   "kosul": 4,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 7,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "IHK",
-   "ad": "İŞ PORTFÖY İŞ'TE KADIN HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "İş Bankası",
-   "grup": "Özel",
-   "buyukluk": 1102507891.82,
-   "yatirimci": 25504.0,
-   "vb": 1.0,
-   "vs": 2.0,
-   "risk": 6.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 13.842727,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -26.16,
-    "vol": 25.31,
-    "gr": -0.05
-   },
-   "g": {
-    "a1": -2.67,
-    "a3": -18.59,
-    "a6": -16.6,
-    "y1": -1.37,
-    "y3": 79.85,
-    "y5": 968.95,
-    "reel_y1": -24.0,
-    "w1": -6.34,
-    "ytd": -4.36,
-    "d1": -1.85
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 40,
-   "her_yonu": false,
-   "kosul": 4,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 7,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "KPH",
-   "ad": "İŞ PORTFÖY KAR PAYI ÖDEYEN HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "İş Bankası",
-   "grup": "Özel",
-   "buyukluk": 432147858.19,
-   "yatirimci": 10263.0,
-   "vb": 1.0,
-   "vs": 2.0,
-   "risk": 6.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 1.079231,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -24.58,
-    "vol": 24.03,
-    "gr": -0.06
-   },
-   "g": {
-    "a1": -2.38,
-    "a3": -15.7,
-    "a6": -16.76,
-    "y1": -1.53,
-    "reel_y1": -24.12,
-    "w1": -6.34,
-    "ytd": -4.14,
-    "d1": -1.61
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1"
-   ],
-   "celiski": [],
-   "gun": 602,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    4,
-    4
-   ],
-   "puan": 44,
-   "her_yonu": false,
-   "kosul": 4,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 7,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "YLY",
-   "ad": "YAPI KREDİ PORTFÖY KAR PAYI ÖDEYEN HİSSE SENEDİ (TL) FON (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "Yapı Kredi",
-   "grup": "Özel",
-   "buyukluk": 29244342.2,
-   "yatirimci": 872.0,
-   "vb": 1.0,
-   "vs": 2.0,
-   "risk": 6.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 1.988135,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -21.41,
-    "vol": 22.06,
-    "gr": -0.09
-   },
-   "g": {
-    "a1": -2.92,
-    "a3": -13.56,
-    "a6": -15.92,
-    "y1": -2.09,
-    "y3": 23.1,
-    "reel_y1": -24.55,
-    "w1": -4.8,
-    "ytd": -3.43,
-    "d1": -1.12
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3"
-   ],
-   "celiski": [],
-   "gun": 945,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    3,
-    4
-   ],
-   "puan": 43,
-   "her_yonu": false,
-   "kosul": 1,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 7,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "BDY",
-   "ad": "AK PORTFÖY BIST 100 DIŞI ŞİRKETLER HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "Akbank",
-   "grup": "Özel",
-   "buyukluk": 73416306.49,
-   "yatirimci": 2208.0,
-   "vb": 1.0,
-   "vs": 2.0,
-   "risk": 6.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 1.36337,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -22.91,
-    "vol": 22.03,
-    "gr": -0.17
-   },
-   "g": {
-    "a1": -4.73,
-    "a3": -21.84,
-    "a6": -14.94,
-    "y1": -3.69,
-    "reel_y1": -25.78,
-    "w1": -7.1,
-    "ytd": -2.27,
-    "d1": -1.68
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1"
-   ],
-   "celiski": [],
-   "gun": 647,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    2,
-    4
-   ],
-   "puan": 32,
-   "her_yonu": false,
-   "kosul": 2,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 7,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "ZLH",
-   "ad": "ZİRAAT PORTFÖY BIST 100-30 ŞİRKETLERİ HİSSE SENEDİ FONU ( HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "Ziraat Bankası",
-   "grup": "Kamu",
-   "buyukluk": 351091665.88,
-   "yatirimci": 3182.0,
-   "vb": 1.0,
-   "vs": 2.0,
-   "risk": 6.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 9.139989,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -26.97,
-    "vol": 25.99,
-    "gr": -0.16
-   },
-   "g": {
-    "a1": -3.7,
-    "a3": -21.77,
-    "a6": -19.61,
-    "y1": -4.13,
-    "y3": 39.93,
-    "y5": 643.0,
-    "reel_y1": -26.12,
-    "w1": -5.18,
-    "ytd": -10.47,
-    "d1": -1.05
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    3,
-    4
-   ],
-   "puan": 25,
-   "her_yonu": false,
-   "kosul": 2,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 7,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "TTE",
-   "ad": "İŞ PORTFÖY BIST TEKNOLOJİ AĞIRLIK SINIRLAMALI ENDEKSİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "İş Bankası",
-   "grup": "Özel",
-   "buyukluk": 1923828916.88,
-   "yatirimci": 37574.0,
-   "vb": 1.0,
-   "vs": 2.0,
-   "risk": 7.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 0.926883,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -49.23,
-    "vol": 32.6,
-    "gr": -0.14
-   },
-   "g": {
-    "a1": -8.62,
-    "a3": -46.28,
-    "a6": -40.38,
-    "y1": -4.45,
-    "y3": 40.8,
-    "y5": 447.32,
-    "reel_y1": -26.37,
-    "w1": -8.93,
-    "ytd": -7.77,
-    "d1": -2.62
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    0,
-    4
-   ],
-   "puan": 10,
-   "her_yonu": false,
-   "kosul": 1,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 7,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "ZJV",
-   "ad": "ZİRAAT PORTFÖY BIST 30 DIŞI YILDIZ PAZAR ŞİRKETLERİ HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "Ziraat Bankası",
-   "grup": "Kamu",
-   "buyukluk": 536046012.91,
-   "yatirimci": 1224.0,
-   "vb": 1.0,
-   "vs": 2.0,
-   "risk": 6.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 8.614253,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -24.65,
-    "vol": 25.21,
-    "gr": -0.21
-   },
-   "g": {
-    "a1": -4.22,
-    "a3": -21.35,
-    "a6": -19.37,
-    "y1": -5.23,
-    "y3": 44.85,
-    "y5": 643.38,
-    "reel_y1": -26.97,
-    "w1": -5.72,
-    "ytd": -7.3,
-    "d1": -1.17
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    2,
-    4
-   ],
-   "puan": 27,
-   "her_yonu": false,
-   "kosul": 2,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 7,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "DTL",
-   "ad": "DENİZ PORTFÖY BIST 100 DIŞI ŞİRKETLER HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "DenizBank",
-   "grup": "Özel",
-   "buyukluk": 106180802.21,
-   "yatirimci": 2431.0,
-   "vb": 1.0,
-   "vs": 2.0,
-   "risk": 6.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 3.087604,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -29.14,
-    "vol": 25.82,
-    "gr": -0.21
-   },
-   "g": {
-    "a1": -3.45,
-    "a3": -27.01,
-    "a6": -24.88,
-    "y1": -5.36,
-    "y3": 42.53,
-    "reel_y1": -27.07,
-    "w1": -7.84,
-    "ytd": -7.09,
-    "d1": -2.1
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3"
-   ],
-   "celiski": [],
-   "gun": 938,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    1,
-    4
-   ],
-   "puan": 18,
-   "her_yonu": false,
-   "kosul": 2,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 7,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "ZJL",
-   "ad": "ZİRAAT PORTFÖY BIST 100 DIŞI ŞİRKETLER HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "Ziraat Bankası",
-   "grup": "Kamu",
-   "buyukluk": 283581831.42,
-   "yatirimci": 2372.0,
-   "vb": 1.0,
-   "vs": 2.0,
-   "risk": 6.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 11.211028,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -28.4,
-    "vol": 24.79,
-    "gr": -0.23
-   },
-   "g": {
-    "a1": -2.95,
-    "a3": -26.46,
-    "a6": -20.65,
-    "y1": -5.61,
-    "y3": 56.26,
-    "y5": 865.24,
-    "reel_y1": -27.26,
-    "w1": -6.58,
-    "ytd": -10.23,
-    "d1": -1.41
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    2,
-    4
-   ],
-   "puan": 24,
-   "her_yonu": false,
-   "kosul": 2,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 7,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "YHB",
-   "ad": "YAPI KREDİ PORTFÖY BIST 100 DIŞI ŞİRKETLER HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "Yapı Kredi",
-   "grup": "Özel",
-   "buyukluk": 162712587.16,
-   "yatirimci": 6528.0,
-   "vb": 1.0,
-   "vs": 2.0,
-   "risk": 6.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 1.756047,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -30.51,
-    "vol": 26.88,
-    "gr": -0.21
-   },
-   "g": {
-    "a1": -4.46,
-    "a3": -29.23,
-    "a6": -21.08,
-    "y1": -5.76,
-    "y3": 50.68,
-    "reel_y1": -27.38,
-    "w1": -6.96,
-    "ytd": -1.74,
-    "d1": -2.0
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3"
-   ],
-   "celiski": [],
-   "gun": 810,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    1,
-    4
-   ],
-   "puan": 17,
-   "her_yonu": false,
-   "kosul": 1,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 7,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "KVT",
-   "ad": "AK PORTFÖY ENERJİ ŞİRKETLERİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "Akbank",
-   "grup": "Özel",
-   "buyukluk": 54409587.63,
-   "yatirimci": 2487.0,
-   "vb": 1.0,
-   "vs": 2.0,
-   "risk": 6.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 1.086712,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -28.84,
-    "vol": 26.98,
-    "gr": -0.27
-   },
-   "g": {
-    "a1": -3.25,
-    "a3": -25.26,
-    "a6": -21.62,
-    "y1": -7.36,
-    "reel_y1": -28.61,
-    "w1": -6.7,
-    "ytd": -5.48,
-    "d1": -0.43
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1"
-   ],
-   "celiski": [],
-   "gun": 483,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    3,
-    4
-   ],
-   "puan": 19,
-   "her_yonu": false,
-   "kosul": 2,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 7,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "GID",
-   "ad": "GARANTİ PORTFÖY İNŞAAT SEKTÖRÜ HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Değişken Fon Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "Garanti BBVA",
-   "grup": "Özel",
-   "buyukluk": 24997832.93,
-   "yatirimci": 1633.0,
-   "vb": 1.0,
-   "vs": 2.0,
-   "risk": 6.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 1.294763,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -28.51,
-    "vol": 25.02,
-    "gr": -0.31
-   },
-   "g": {
-    "a1": -2.3,
-    "a3": -25.93,
-    "a6": -20.58,
-    "y1": -7.84,
-    "reel_y1": -28.98,
-    "w1": -6.24,
-    "ytd": -10.29,
-    "d1": -1.39
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1"
-   ],
-   "celiski": [],
-   "gun": 596,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    3,
-    4
-   ],
-   "puan": 22,
-   "her_yonu": false,
-   "kosul": 2,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 7,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "GRT",
-   "ad": "GARANTİ PORTFÖY TEKNOLOJİ ŞİRKETLERİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "Garanti BBVA",
-   "grup": "Özel",
-   "buyukluk": 98495955.4,
-   "yatirimci": 1534.0,
-   "vb": 1.0,
-   "vs": 2.0,
-   "risk": 6.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 1.050217,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -43.63,
-    "vol": 30.42,
-    "gr": -0.26
-   },
-   "g": {
-    "a1": -8.83,
-    "a3": -37.6,
-    "a6": -36.85,
-    "y1": -8.0,
-    "reel_y1": -29.11,
-    "w1": -8.41,
-    "ytd": -9.8,
-    "d1": -2.56
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1"
-   ],
-   "celiski": [],
-   "gun": 455,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    0,
-    4
-   ],
-   "puan": 4,
-   "her_yonu": false,
-   "kosul": 1,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 7,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "NST",
-   "ad": "İŞ PORTFÖY EMLAK SEKTÖRÜ HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "İş Bankası",
-   "grup": "Özel",
-   "buyukluk": 30116012.66,
-   "yatirimci": 2313.0,
-   "vb": 1.0,
-   "vs": 2.0,
-   "risk": 6.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 0.947627,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -26.6,
-    "vol": 24.19,
-    "gr": -0.34
-   },
-   "g": {
-    "a1": -4.97,
-    "a3": -22.73,
-    "a6": -20.84,
-    "y1": -8.27,
-    "reel_y1": -29.31,
-    "w1": -6.22,
-    "ytd": -6.54,
-    "d1": -1.6
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1"
-   ],
-   "celiski": [],
-   "gun": 337,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    2,
-    4
-   ],
-   "puan": 17,
-   "her_yonu": false,
-   "kosul": 2,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 7,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "GOH",
-   "ad": "GARANTİ PORTFÖY BIST 100 DIŞI ŞİRKETLER HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "Garanti BBVA",
-   "grup": "Özel",
-   "buyukluk": 383460186.76,
-   "yatirimci": 7657.0,
-   "vb": 1.0,
-   "vs": 2.0,
-   "risk": 6.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 11.75491,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -30.83,
-    "vol": 25.12,
-    "gr": -0.44
-   },
-   "g": {
-    "a1": -5.15,
-    "a3": -29.5,
-    "a6": -27.03,
-    "y1": -11.14,
-    "y3": 33.35,
-    "y5": 897.45,
-    "reel_y1": -31.53,
-    "w1": -7.82,
-    "ytd": -10.91,
-    "d1": -1.77
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    0,
-    4
-   ],
-   "puan": 9,
-   "her_yonu": false,
-   "kosul": 0,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 7,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "DHJ",
-   "ad": "DENİZ PORTFÖY TEKNOLOJİ ŞİRKETLERİ HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "DenizBank",
-   "grup": "Özel",
-   "buyukluk": 132715409.14,
-   "yatirimci": 2606.0,
-   "vb": 1.0,
-   "vs": 2.0,
-   "risk": 7.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 4.698004,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -42.93,
-    "vol": 29.82,
-    "gr": -0.42
-   },
-   "g": {
-    "a1": -7.44,
-    "a3": -35.47,
-    "a6": -36.9,
-    "y1": -12.4,
-    "y3": 11.18,
-    "reel_y1": -32.5,
-    "w1": -8.53,
-    "ytd": -15.15,
-    "d1": -2.25
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3"
-   ],
-   "celiski": [],
-   "gun": 1222,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    0,
-    4
-   ],
-   "puan": 4,
-   "her_yonu": false,
-   "kosul": 0,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 7,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "TI3",
-   "ad": "İŞ PORTFÖY İŞ BANKASI İŞTİRAKLERİ ENDEKSİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "İş Bankası",
-   "grup": "Özel",
-   "buyukluk": 1447616390.67,
-   "yatirimci": 19199.0,
-   "vb": 1.0,
-   "vs": 2.0,
-   "risk": 7.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 0.088342,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -33.93,
-    "vol": 30.02,
-    "gr": -0.47
-   },
-   "g": {
-    "a1": -3.37,
-    "a3": -20.74,
-    "a6": -23.66,
-    "y1": -14.08,
-    "y3": 10.12,
-    "y5": 603.7,
-    "reel_y1": -33.79,
-    "w1": -6.72,
-    "ytd": -16.01,
-    "d1": -2.22
-   },
-   "teyit": [
-    "a1",
-    "a3",
-    "a6",
-    "y1",
-    "y3",
-    "y5"
-   ],
-   "celiski": [],
-   "gun": 1258,
-   "son_tarih": "2026-11-25",
-   "istikrar": [
-    2,
-    4
-   ],
-   "puan": 13,
-   "her_yonu": false,
-   "kosul": 0,
-   "gecmis": {
-    "kac": 0,
-    "toplam": 7,
-    "seri": 0,
-    "her_yonu_gun": 0
-   }
-  },
-  {
-   "k": "IDH",
-   "ad": "İŞ PORTFÖY BIST 100 DIŞI ŞİRKETLER HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
-   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
-   "banka": "İş Bankası",
-   "grup": "Özel",
-   "buyukluk": 549619536.37,
-   "yatirimci": 17531.0,
-   "vb": 1.0,
-   "vs": 2.0,
-   "risk": 6.0,
-   "ucret": null,
-   "kurucu": "",
-   "fiyat": 8.979557,
-   "d1_tarih": "2026-11-25",
-   "rk": {
-    "mdd": -33.32,
-    "vol": 25.37,
-    "gr": -0.58
-   },
-   "g": {
-    "a1": -8.28,
-    "a3": -32.7,
-    "a6": -28.41,
-    "y1": -14.74,
-    "y3": 40.48,
-    "y5": 781.63,
-    "reel_y1": -34.3,
-    "w1": -7.5,
-    "ytd": -15.74,
+    "a1": -4.38,
+    "a3": -14.92,
+    "a6": -9.6,
+    "y1": -2.11,
+    "y3": 27.77,
+    "y5": 453.38,
+    "reel_y1": -24.57,
+    "w1": -5.84,
+    "ytd": -3.97,
     "d1": -1.94
    },
    "teyit": [
@@ -3540,7 +2381,1109 @@
    ],
    "celiski": [],
    "gun": 1258,
-   "son_tarih": "2026-11-25",
+   "son_tarih": "2026-11-26",
+   "istikrar": [
+    2,
+    4
+   ],
+   "puan": 53,
+   "her_yonu": false,
+   "kosul": 1,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 8,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "GNS",
+   "ad": "GARANTİ PORTFÖY ENERJİ ŞİRKETLERİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "Garanti BBVA",
+   "grup": "Özel",
+   "buyukluk": 64762506.65,
+   "yatirimci": 1218.0,
+   "vb": 1.0,
+   "vs": 2.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 1.221291,
+   "d1_tarih": "2026-11-26",
+   "rk": {
+    "mdd": -28.89,
+    "vol": 25.59,
+    "gr": -0.1
+   },
+   "g": {
+    "a1": -3.17,
+    "a3": -21.83,
+    "a6": -22.78,
+    "y1": -2.66,
+    "reel_y1": -24.99,
+    "w1": -6.68,
+    "ytd": -4.23,
+    "d1": -2.56
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1"
+   ],
+   "celiski": [],
+   "gun": 446,
+   "son_tarih": "2026-11-26",
+   "istikrar": [
+    2,
+    4
+   ],
+   "puan": 37,
+   "her_yonu": false,
+   "kosul": 2,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 8,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "BIO",
+   "ad": "İŞ PORTFÖY SÜRDÜRÜLEBİLİRLİK HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "İş Bankası",
+   "grup": "Özel",
+   "buyukluk": 536142680.54,
+   "yatirimci": 8622.0,
+   "vb": 1.0,
+   "vs": 2.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 1.938402,
+   "d1_tarih": "2026-11-26",
+   "rk": {
+    "mdd": -25.9,
+    "vol": 25.6,
+    "gr": -0.13
+   },
+   "g": {
+    "a1": -3.84,
+    "a3": -19.8,
+    "a6": -18.55,
+    "y1": -3.25,
+    "y3": 83.09,
+    "reel_y1": -25.45,
+    "w1": -7.62,
+    "ytd": -5.88,
+    "d1": -2.77
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 775,
+   "son_tarih": "2026-11-26",
+   "istikrar": [
+    2,
+    4
+   ],
+   "puan": 49,
+   "her_yonu": false,
+   "kosul": 2,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 8,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "TAU",
+   "ad": "İŞ PORTFÖY BIST BANKA ENDEKSİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "İş Bankası",
+   "grup": "Özel",
+   "buyukluk": 2013874677.72,
+   "yatirimci": 30602.0,
+   "vb": 1.0,
+   "vs": 2.0,
+   "risk": 7.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 0.570395,
+   "d1_tarih": "2026-11-26",
+   "rk": {
+    "mdd": -28.26,
+    "vol": 36.85,
+    "gr": -0.1
+   },
+   "g": {
+    "a1": -1.96,
+    "a3": -9.74,
+    "a6": -7.24,
+    "y1": -3.61,
+    "y3": 98.13,
+    "y5": 894.59,
+    "reel_y1": -25.72,
+    "w1": -7.55,
+    "ytd": -8.77,
+    "d1": -4.53
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-26",
+   "istikrar": [
+    3,
+    4
+   ],
+   "puan": 66,
+   "her_yonu": false,
+   "kosul": 2,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 8,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "YLY",
+   "ad": "YAPI KREDİ PORTFÖY KAR PAYI ÖDEYEN HİSSE SENEDİ (TL) FON (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "Yapı Kredi",
+   "grup": "Özel",
+   "buyukluk": 28666236.66,
+   "yatirimci": 868.0,
+   "vb": 1.0,
+   "vs": 2.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 1.943623,
+   "d1_tarih": "2026-11-26",
+   "rk": {
+    "mdd": -23.06,
+    "vol": 22.31,
+    "gr": -0.16
+   },
+   "g": {
+    "a1": -4.49,
+    "a3": -14.56,
+    "a6": -17.74,
+    "y1": -3.67,
+    "y3": 20.34,
+    "reel_y1": -25.77,
+    "w1": -5.78,
+    "ytd": -5.59,
+    "d1": -2.24
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 946,
+   "son_tarih": "2026-11-26",
+   "istikrar": [
+    2,
+    4
+   ],
+   "puan": 41,
+   "her_yonu": false,
+   "kosul": 1,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 8,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "IHK",
+   "ad": "İŞ PORTFÖY İŞ'TE KADIN HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "İş Bankası",
+   "grup": "Özel",
+   "buyukluk": 1072634128.12,
+   "yatirimci": 25474.0,
+   "vb": 1.0,
+   "vs": 2.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 13.477301,
+   "d1_tarih": "2026-11-26",
+   "rk": {
+    "mdd": -26.52,
+    "vol": 25.23,
+    "gr": -0.15
+   },
+   "g": {
+    "a1": -3.67,
+    "a3": -20.38,
+    "a6": -19.01,
+    "y1": -3.72,
+    "y3": 75.1,
+    "y5": 940.99,
+    "reel_y1": -25.81,
+    "w1": -7.2,
+    "ytd": -6.89,
+    "d1": -2.64
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-26",
+   "istikrar": [
+    2,
+    4
+   ],
+   "puan": 42,
+   "her_yonu": false,
+   "kosul": 2,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 8,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "KPH",
+   "ad": "İŞ PORTFÖY KAR PAYI ÖDEYEN HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "İş Bankası",
+   "grup": "Özel",
+   "buyukluk": 420699425.67,
+   "yatirimci": 10236.0,
+   "vb": 1.0,
+   "vs": 2.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 1.050731,
+   "d1_tarih": "2026-11-26",
+   "rk": {
+    "mdd": -24.93,
+    "vol": 23.37,
+    "gr": -0.16
+   },
+   "g": {
+    "a1": -3.99,
+    "a3": -17.57,
+    "a6": -18.97,
+    "y1": -3.77,
+    "reel_y1": -25.85,
+    "w1": -6.83,
+    "ytd": -6.67,
+    "d1": -2.64
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1"
+   ],
+   "celiski": [],
+   "gun": 603,
+   "son_tarih": "2026-11-26",
+   "istikrar": [
+    2,
+    4
+   ],
+   "puan": 44,
+   "her_yonu": false,
+   "kosul": 2,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 8,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "TTE",
+   "ad": "İŞ PORTFÖY BIST TEKNOLOJİ AĞIRLIK SINIRLAMALI ENDEKSİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "İş Bankası",
+   "grup": "Özel",
+   "buyukluk": 1875252423.02,
+   "yatirimci": 37489.0,
+   "vb": 1.0,
+   "vs": 2.0,
+   "risk": 7.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 0.904101,
+   "d1_tarih": "2026-11-26",
+   "rk": {
+    "mdd": -50.48,
+    "vol": 31.95,
+    "gr": -0.15
+   },
+   "g": {
+    "a1": -9.24,
+    "a3": -47.89,
+    "a6": -43.38,
+    "y1": -4.7,
+    "y3": 37.34,
+    "y5": 419.67,
+    "reel_y1": -26.56,
+    "w1": -8.85,
+    "ytd": -10.03,
+    "d1": -2.46
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-26",
+   "istikrar": [
+    0,
+    4
+   ],
+   "puan": 10,
+   "her_yonu": false,
+   "kosul": 1,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 8,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "BDY",
+   "ad": "AK PORTFÖY BIST 100 DIŞI ŞİRKETLER HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "Akbank",
+   "grup": "Özel",
+   "buyukluk": 71885883.48,
+   "yatirimci": 2201.0,
+   "vb": 1.0,
+   "vs": 2.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 1.334007,
+   "d1_tarih": "2026-11-26",
+   "rk": {
+    "mdd": -24.57,
+    "vol": 20.98,
+    "gr": -0.22
+   },
+   "g": {
+    "a1": -5.79,
+    "a3": -23.27,
+    "a6": -17.23,
+    "y1": -4.71,
+    "reel_y1": -26.57,
+    "w1": -6.91,
+    "ytd": -4.38,
+    "d1": -2.15
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1"
+   ],
+   "celiski": [],
+   "gun": 648,
+   "son_tarih": "2026-11-26",
+   "istikrar": [
+    2,
+    4
+   ],
+   "puan": 32,
+   "her_yonu": false,
+   "kosul": 2,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 8,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "DTL",
+   "ad": "DENİZ PORTFÖY BIST 100 DIŞI ŞİRKETLER HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "DenizBank",
+   "grup": "Özel",
+   "buyukluk": 104285639.94,
+   "yatirimci": 2425.0,
+   "vb": 1.0,
+   "vs": 2.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 3.032235,
+   "d1_tarih": "2026-11-26",
+   "rk": {
+    "mdd": -30.41,
+    "vol": 25.71,
+    "gr": -0.24
+   },
+   "g": {
+    "a1": -3.74,
+    "a3": -27.79,
+    "a6": -27.74,
+    "y1": -6.09,
+    "y3": 39.97,
+    "reel_y1": -27.63,
+    "w1": -6.69,
+    "ytd": -8.75,
+    "d1": -1.79
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 939,
+   "son_tarih": "2026-11-26",
+   "istikrar": [
+    0,
+    4
+   ],
+   "puan": 24,
+   "her_yonu": false,
+   "kosul": 1,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 8,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "YHB",
+   "ad": "YAPI KREDİ PORTFÖY BIST 100 DIŞI ŞİRKETLER HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "Yapı Kredi",
+   "grup": "Özel",
+   "buyukluk": 160077448.9,
+   "yatirimci": 6514.0,
+   "vb": 1.0,
+   "vs": 2.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 1.727439,
+   "d1_tarih": "2026-11-26",
+   "rk": {
+    "mdd": -31.64,
+    "vol": 25.99,
+    "gr": -0.24
+   },
+   "g": {
+    "a1": -5.17,
+    "a3": -30.44,
+    "a6": -23.72,
+    "y1": -6.17,
+    "y3": 48.22,
+    "reel_y1": -27.7,
+    "w1": -6.14,
+    "ytd": -3.34,
+    "d1": -1.63
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 811,
+   "son_tarih": "2026-11-26",
+   "istikrar": [
+    0,
+    4
+   ],
+   "puan": 20,
+   "her_yonu": false,
+   "kosul": 1,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 8,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "ZJV",
+   "ad": "ZİRAAT PORTFÖY BIST 30 DIŞI YILDIZ PAZAR ŞİRKETLERİ HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "Ziraat Bankası",
+   "grup": "Kamu",
+   "buyukluk": 524193474.88,
+   "yatirimci": 1222.0,
+   "vb": 1.0,
+   "vs": 2.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 8.424419,
+   "d1_tarih": "2026-11-26",
+   "rk": {
+    "mdd": -26.18,
+    "vol": 25.1,
+    "gr": -0.26
+   },
+   "g": {
+    "a1": -5.0,
+    "a3": -22.63,
+    "a6": -22.46,
+    "y1": -6.41,
+    "y3": 41.66,
+    "y5": 622.94,
+    "reel_y1": -27.88,
+    "w1": -5.53,
+    "ytd": -9.34,
+    "d1": -2.2
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-26",
+   "istikrar": [
+    1,
+    4
+   ],
+   "puan": 26,
+   "her_yonu": false,
+   "kosul": 2,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 8,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "ZJL",
+   "ad": "ZİRAAT PORTFÖY BIST 100 DIŞI ŞİRKETLER HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "Ziraat Bankası",
+   "grup": "Kamu",
+   "buyukluk": 277262114.12,
+   "yatirimci": 2370.0,
+   "vb": 1.0,
+   "vs": 2.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 10.956725,
+   "d1_tarih": "2026-11-26",
+   "rk": {
+    "mdd": -28.91,
+    "vol": 24.91,
+    "gr": -0.26
+   },
+   "g": {
+    "a1": -4.01,
+    "a3": -28.09,
+    "a6": -23.07,
+    "y1": -6.55,
+    "y3": 52.72,
+    "y5": 839.23,
+    "reel_y1": -27.99,
+    "w1": -6.21,
+    "ytd": -12.27,
+    "d1": -2.27
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-26",
+   "istikrar": [
+    0,
+    4
+   ],
+   "puan": 26,
+   "her_yonu": false,
+   "kosul": 2,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 8,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "ZLH",
+   "ad": "ZİRAAT PORTFÖY BIST 100-30 ŞİRKETLERİ HİSSE SENEDİ FONU ( HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "Ziraat Bankası",
+   "grup": "Kamu",
+   "buyukluk": 343762827.71,
+   "yatirimci": 3175.0,
+   "vb": 1.0,
+   "vs": 2.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 8.942004,
+   "d1_tarih": "2026-11-26",
+   "rk": {
+    "mdd": -27.15,
+    "vol": 25.36,
+    "gr": -0.27
+   },
+   "g": {
+    "a1": -4.51,
+    "a3": -22.65,
+    "a6": -22.52,
+    "y1": -6.74,
+    "y3": 36.9,
+    "y5": 621.99,
+    "reel_y1": -28.13,
+    "w1": -5.07,
+    "ytd": -12.41,
+    "d1": -2.17
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-26",
+   "istikrar": [
+    1,
+    4
+   ],
+   "puan": 24,
+   "her_yonu": false,
+   "kosul": 2,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 8,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "GRT",
+   "ad": "GARANTİ PORTFÖY TEKNOLOJİ ŞİRKETLERİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "Garanti BBVA",
+   "grup": "Özel",
+   "buyukluk": 96218053.96,
+   "yatirimci": 1527.0,
+   "vb": 1.0,
+   "vs": 2.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 1.025191,
+   "d1_tarih": "2026-11-26",
+   "rk": {
+    "mdd": -44.97,
+    "vol": 29.11,
+    "gr": -0.29
+   },
+   "g": {
+    "a1": -9.38,
+    "a3": -38.93,
+    "a6": -39.89,
+    "y1": -8.52,
+    "reel_y1": -29.51,
+    "w1": -8.32,
+    "ytd": -11.95,
+    "d1": -2.38
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1"
+   ],
+   "celiski": [],
+   "gun": 456,
+   "son_tarih": "2026-11-26",
+   "istikrar": [
+    0,
+    4
+   ],
+   "puan": 5,
+   "her_yonu": false,
+   "kosul": 1,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 8,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "KVT",
+   "ad": "AK PORTFÖY ENERJİ ŞİRKETLERİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "Akbank",
+   "grup": "Özel",
+   "buyukluk": 52709741.13,
+   "yatirimci": 2480.0,
+   "vb": 1.0,
+   "vs": 2.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 1.0528,
+   "d1_tarih": "2026-11-26",
+   "rk": {
+    "mdd": -31.05,
+    "vol": 26.5,
+    "gr": -0.35
+   },
+   "g": {
+    "a1": -4.97,
+    "a3": -27.72,
+    "a6": -25.72,
+    "y1": -9.34,
+    "reel_y1": -30.14,
+    "w1": -6.81,
+    "ytd": -8.43,
+    "d1": -3.12
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1"
+   ],
+   "celiski": [],
+   "gun": 484,
+   "son_tarih": "2026-11-26",
+   "istikrar": [
+    0,
+    4
+   ],
+   "puan": 16,
+   "her_yonu": false,
+   "kosul": 1,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 8,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "NST",
+   "ad": "İŞ PORTFÖY EMLAK SEKTÖRÜ HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "İş Bankası",
+   "grup": "Özel",
+   "buyukluk": 29399221.89,
+   "yatirimci": 2308.0,
+   "vb": 1.0,
+   "vs": 2.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 0.926316,
+   "d1_tarih": "2026-11-26",
+   "rk": {
+    "mdd": -28.25,
+    "vol": 23.27,
+    "gr": -0.42
+   },
+   "g": {
+    "a1": -6.51,
+    "a3": -24.04,
+    "a6": -23.51,
+    "y1": -9.67,
+    "reel_y1": -30.39,
+    "w1": -6.62,
+    "ytd": -8.64,
+    "d1": -2.25
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1"
+   ],
+   "celiski": [],
+   "gun": 338,
+   "son_tarih": "2026-11-26",
+   "istikrar": [
+    1,
+    4
+   ],
+   "puan": 17,
+   "her_yonu": false,
+   "kosul": 2,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 8,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "GID",
+   "ad": "GARANTİ PORTFÖY İNŞAAT SEKTÖRÜ HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Değişken Fon Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "Garanti BBVA",
+   "grup": "Özel",
+   "buyukluk": 24407047.86,
+   "yatirimci": 1630.0,
+   "vb": 1.0,
+   "vs": 2.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 1.264371,
+   "d1_tarih": "2026-11-26",
+   "rk": {
+    "mdd": -28.51,
+    "vol": 24.92,
+    "gr": -0.39
+   },
+   "g": {
+    "a1": -2.85,
+    "a3": -27.42,
+    "a6": -23.21,
+    "y1": -9.73,
+    "reel_y1": -30.44,
+    "w1": -6.02,
+    "ytd": -12.4,
+    "d1": -2.35
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1"
+   ],
+   "celiski": [],
+   "gun": 597,
+   "son_tarih": "2026-11-26",
+   "istikrar": [
+    1,
+    4
+   ],
+   "puan": 27,
+   "her_yonu": false,
+   "kosul": 2,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 8,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "GOH",
+   "ad": "GARANTİ PORTFÖY BIST 100 DIŞI ŞİRKETLER HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "Garanti BBVA",
+   "grup": "Özel",
+   "buyukluk": 373728203.81,
+   "yatirimci": 7643.0,
+   "vb": 1.0,
+   "vs": 2.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 11.475493,
+   "d1_tarih": "2026-11-26",
+   "rk": {
+    "mdd": -32.47,
+    "vol": 24.39,
+    "gr": -0.5
+   },
+   "g": {
+    "a1": -6.33,
+    "a3": -30.7,
+    "a6": -29.81,
+    "y1": -12.16,
+    "y3": 30.18,
+    "y5": 869.38,
+    "reel_y1": -32.31,
+    "w1": -7.51,
+    "ytd": -13.03,
+    "d1": -2.38
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-26",
+   "istikrar": [
+    0,
+    4
+   ],
+   "puan": 10,
+   "her_yonu": false,
+   "kosul": 0,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 8,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "DHJ",
+   "ad": "DENİZ PORTFÖY TEKNOLOJİ ŞİRKETLERİ HİSSE SENEDİ FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "DenizBank",
+   "grup": "Özel",
+   "buyukluk": 129310471.01,
+   "yatirimci": 2604.0,
+   "vb": 1.0,
+   "vs": 2.0,
+   "risk": 7.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 4.581612,
+   "d1_tarih": "2026-11-26",
+   "rk": {
+    "mdd": -44.34,
+    "vol": 28.76,
+    "gr": -0.46
+   },
+   "g": {
+    "a1": -7.77,
+    "a3": -37.08,
+    "a6": -39.74,
+    "y1": -13.26,
+    "y3": 8.43,
+    "reel_y1": -33.16,
+    "w1": -8.69,
+    "ytd": -17.25,
+    "d1": -2.48
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3"
+   ],
+   "celiski": [],
+   "gun": 1223,
+   "son_tarih": "2026-11-26",
+   "istikrar": [
+    0,
+    4
+   ],
+   "puan": 5,
+   "her_yonu": false,
+   "kosul": 0,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 8,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "IDH",
+   "ad": "İŞ PORTFÖY BIST 100 DIŞI ŞİRKETLER HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "İş Bankası",
+   "grup": "Özel",
+   "buyukluk": 539636280.11,
+   "yatirimci": 17496.0,
+   "vb": 1.0,
+   "vs": 2.0,
+   "risk": 6.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 8.82019,
+   "d1_tarih": "2026-11-26",
+   "rk": {
+    "mdd": -34.51,
+    "vol": 24.51,
+    "gr": -0.62
+   },
+   "g": {
+    "a1": -8.61,
+    "a3": -33.72,
+    "a6": -30.57,
+    "y1": -15.1,
+    "y3": 37.98,
+    "y5": 756.51,
+    "reel_y1": -34.58,
+    "w1": -6.71,
+    "ytd": -17.24,
+    "d1": -1.77
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-26",
    "istikrar": [
     0,
     4
@@ -3550,7 +3493,64 @@
    "kosul": 1,
    "gecmis": {
     "kac": 0,
-    "toplam": 7,
+    "toplam": 8,
+    "seri": 0,
+    "her_yonu_gun": 0
+   }
+  },
+  {
+   "k": "TI3",
+   "ad": "İŞ PORTFÖY İŞ BANKASI İŞTİRAKLERİ ENDEKSİ HİSSE SENEDİ (TL) FONU (HİSSE SENEDİ YOĞUN FON)",
+   "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
+   "banka": "İş Bankası",
+   "grup": "Özel",
+   "buyukluk": 1412581913.67,
+   "yatirimci": 19166.0,
+   "vb": 1.0,
+   "vs": 2.0,
+   "risk": 7.0,
+   "ucret": null,
+   "kurucu": "",
+   "fiyat": 0.086276,
+   "d1_tarih": "2026-11-26",
+   "rk": {
+    "mdd": -35.46,
+    "vol": 29.47,
+    "gr": -0.56
+   },
+   "g": {
+    "a1": -4.41,
+    "a3": -21.91,
+    "a6": -26.17,
+    "y1": -16.47,
+    "y3": 7.55,
+    "y5": 592.2,
+    "reel_y1": -35.63,
+    "w1": -6.8,
+    "ytd": -17.97,
+    "d1": -2.34
+   },
+   "teyit": [
+    "a1",
+    "a3",
+    "a6",
+    "y1",
+    "y3",
+    "y5"
+   ],
+   "celiski": [],
+   "gun": 1258,
+   "son_tarih": "2026-11-26",
+   "istikrar": [
+    1,
+    4
+   ],
+   "puan": 14,
+   "her_yonu": false,
+   "kosul": 0,
+   "gecmis": {
+    "kac": 0,
+    "toplam": 8,
     "seri": 0,
     "her_yonu_gun": 0
    }
@@ -3561,32 +3561,32 @@
    "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
    "banka": "Akbank",
    "grup": "Özel",
-   "buyukluk": 26810727.6,
-   "yatirimci": 251.0,
+   "buyukluk": 26036265.98,
+   "yatirimci": 252.0,
    "vb": 1.0,
    "vs": 2.0,
    "risk": 6.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 0.815928,
-   "d1_tarih": "2026-11-25",
+   "fiyat": 0.792285,
+   "d1_tarih": "2026-11-26",
    "rk": null,
    "g": {
-    "a1": -3.3,
-    "a3": -21.5,
+    "a1": -5.21,
+    "a3": -23.39,
     "reel_y1": null,
-    "w1": -4.54,
-    "d1": -0.91
+    "w1": -6.03,
+    "d1": -2.9
    },
    "teyit": [
     "a1",
     "a3"
    ],
    "celiski": [],
-   "gun": 80,
-   "son_tarih": "2026-11-25",
+   "gun": 81,
+   "son_tarih": "2026-11-26",
    "istikrar": [
-    2,
+    1,
     2
    ],
    "puan": null,
@@ -3594,7 +3594,7 @@
    "kosul": 1,
    "gecmis": {
     "kac": 0,
-    "toplam": 7,
+    "toplam": 8,
     "seri": 0,
     "her_yonu_gun": 0
    }
@@ -3605,26 +3605,26 @@
    "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
    "banka": "DenizBank",
    "grup": "Özel",
-   "buyukluk": 13627503.12,
-   "yatirimci": 269.0,
+   "buyukluk": 13368746.04,
+   "yatirimci": 268.0,
    "vb": 1.0,
    "vs": 2.0,
    "risk": 6.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 0.779319,
-   "d1_tarih": "2026-11-25",
+   "fiyat": 0.764178,
+   "d1_tarih": "2026-11-26",
    "rk": {
-    "mdd": -27.49,
+    "mdd": -28.9,
     "vol": 23.3
    },
    "g": {
-    "a1": -5.06,
-    "a3": -26.04,
-    "a6": -23.07,
+    "a1": -8.06,
+    "a3": -27.82,
+    "a6": -24.87,
     "reel_y1": null,
-    "w1": -8.67,
-    "d1": -0.55
+    "w1": -7.77,
+    "d1": -1.94
    },
    "teyit": [
     "a1",
@@ -3632,10 +3632,10 @@
     "a6"
    ],
    "celiski": [],
-   "gun": 151,
-   "son_tarih": "2026-11-25",
+   "gun": 152,
+   "son_tarih": "2026-11-26",
    "istikrar": [
-    2,
+    0,
     3
    ],
    "puan": null,
@@ -3643,7 +3643,7 @@
    "kosul": 2,
    "gecmis": {
     "kac": 0,
-    "toplam": 7,
+    "toplam": 8,
     "seri": 0,
     "her_yonu_gun": 0
    }
@@ -3654,30 +3654,30 @@
    "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
    "banka": "Vakıf Bankası",
    "grup": "Kamu",
-   "buyukluk": 13094923.67,
-   "yatirimci": 695.0,
+   "buyukluk": 12257919.16,
+   "yatirimci": 689.0,
    "vb": 1.0,
    "vs": 2.0,
    "risk": 6.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 0.774322,
-   "d1_tarih": "2026-11-25",
+   "fiyat": 0.752322,
+   "d1_tarih": "2026-11-26",
    "rk": null,
    "g": {
-    "a1": -3.66,
+    "a1": -4.28,
     "reel_y1": null,
-    "w1": -5.64,
-    "d1": -1.17
+    "w1": -6.54,
+    "d1": -2.84
    },
    "teyit": [
     "a1"
    ],
    "celiski": [],
-   "gun": 60,
-   "son_tarih": "2026-11-25",
+   "gun": 61,
+   "son_tarih": "2026-11-26",
    "istikrar": [
-    1,
+    0,
     1
    ],
    "puan": null,
@@ -3685,7 +3685,7 @@
    "kosul": 1,
    "gecmis": {
     "kac": 0,
-    "toplam": 7,
+    "toplam": 8,
     "seri": 0,
     "her_yonu_gun": 0
    }
@@ -3696,30 +3696,30 @@
    "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
    "banka": "Vakıf Bankası",
    "grup": "Kamu",
-   "buyukluk": 20868894.76,
-   "yatirimci": 616.0,
+   "buyukluk": 20158478.62,
+   "yatirimci": 612.0,
    "vb": 1.0,
    "vs": 2.0,
    "risk": 6.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 0.841805,
-   "d1_tarih": "2026-11-25",
+   "fiyat": 0.814343,
+   "d1_tarih": "2026-11-26",
    "rk": null,
    "g": {
-    "a1": -2.3,
+    "a1": -4.25,
     "reel_y1": null,
-    "w1": -5.94,
-    "d1": -1.53
+    "w1": -7.14,
+    "d1": -3.26
    },
    "teyit": [
     "a1"
    ],
    "celiski": [],
-   "gun": 60,
-   "son_tarih": "2026-11-25",
+   "gun": 61,
+   "son_tarih": "2026-11-26",
    "istikrar": [
-    1,
+    0,
     1
    ],
    "puan": null,
@@ -3727,7 +3727,7 @@
    "kosul": 1,
    "gecmis": {
     "kac": 0,
-    "toplam": 7,
+    "toplam": 8,
     "seri": 0,
     "her_yonu_gun": 0
    }
@@ -3738,32 +3738,32 @@
    "kat": "Hisse Senedi Fonu Hisse Senedi Şemsiye Fonu YAT",
    "banka": "Ziraat Bankası",
    "grup": "Kamu",
-   "buyukluk": 545384750.38,
-   "yatirimci": 1501.0,
+   "buyukluk": 525456516.83,
+   "yatirimci": 1489.0,
    "vb": 1.0,
    "vs": 2.0,
    "risk": 0.0,
    "ucret": null,
    "kurucu": "",
-   "fiyat": 0.851203,
-   "d1_tarih": "2026-11-25",
+   "fiyat": 0.820603,
+   "d1_tarih": "2026-11-26",
    "rk": null,
    "g": {
-    "a1": -1.55,
-    "a3": -17.67,
+    "a1": -4.04,
+    "a3": -20.18,
     "reel_y1": null,
-    "w1": -5.8,
-    "d1": -1.97
+    "w1": -7.19,
+    "d1": -3.59
    },
    "teyit": [
     "a1",
     "a3"
    ],
    "celiski": [],
-   "gun": 68,
-   "son_tarih": "2026-11-25",
+   "gun": 69,
+   "son_tarih": "2026-11-26",
    "istikrar": [
-    2,
+    1,
     2
    ],
    "puan": null,
@@ -3771,7 +3771,7 @@
    "kosul": 1,
    "gecmis": {
     "kac": 0,
-    "toplam": 7,
+    "toplam": 8,
     "seri": 0,
     "her_yonu_gun": 0
    }

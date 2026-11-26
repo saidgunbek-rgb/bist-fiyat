@@ -15,9 +15,9 @@
    "search_funds(HISSE): 1000 kayit, 0 yeni fon",
    "ornek alanlar: ['fund_code', 'name', 'fund_type', 'return_1y']",
    "Toplam aday fon: 2373",
-   "Enflasyon: {'y': 29.77, 't': '2026-11-25', 'k': 'borsapy:latest'}",
-   "BIST100 kaynaklar: {'yahoo': {'a1': -4.15, 'a3': -26.38, 'a6': -23.29, 'y1': -1.86, 'y3': 33.87, 'y5': 485.74, '_risk': {'mdd': -29.59, 'vol': 25.63}, 'd1': -2.83, '_d1t': '2026-11-25'}, 'borsapy': {'a1': -4.15, 'a3': -26.38, 'a6': -23.29, 'y1': -1.86, 'y3': 33.87, 'y5': 485.73, '_risk': {'mdd': -29",
-   "BIST100 (teyitli): {'a1': -4.15, 'a3': -26.38, 'a6': -23.29, 'y1': -1.86, 'y3': 33.87, 'y5': 485.73, 'd1': -2.83, 'mdd': -29.59, 'vol': 25.63, 'reel_y1': -24.37}",
+   "Enflasyon: {'y': 29.77, 't': '2026-11-26', 'k': 'borsapy:latest'}",
+   "BIST100 kaynaklar: {'yahoo': {'a1': -3.67, 'a3': -26.47, 'a6': -21.37, 'y1': -1.57, 'y3': 34.96, 'y5': 504.77, '_risk': {'mdd': -29.59, 'vol': 24.11}, 'd1': 0.82, '_d1t': '2026-11-26'}, 'borsapy': {'a1': -3.67, 'a3': -26.47, 'a6': -21.37, 'y1': -1.57, 'y3': 34.96, 'y5': 504.77, '_risk': {'mdd': -29.",
+   "BIST100 (teyitli): {'a1': -3.67, 'a3': -26.47, 'a6': -21.37, 'y1': -1.57, 'y3': 34.96, 'y5': 504.77, 'd1': 0.82, 'mdd': -29.59, 'vol': 24.11, 'reel_y1': -24.15}",
    "Sorgulanacak fon: 135",
    "Listeye giren: 69 | Atlanan: {'hisse fonu değil': 1853, 'banka fonu değil': 385, 'yabancı hisse fonu': 9, 'serbest fon': 49, \"TEFAS'ta işlem görmüyor\": 8}",
    "Grafik verisi: 69 fon, BIST100 1261 gun"
