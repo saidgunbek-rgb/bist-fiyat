@@ -1,0 +1,74 @@
+{
+ "tarih": "2026-11-26T14:27:47.885819Z",
+ "sonuclar": {
+  "XAUXAG=X|60m|1mo": {
+   "hata": "HTTP Error 404: Not Found"
+  },
+  "XAUXAG=X|1d|1mo": {
+   "hata": "HTTP Error 404: Not Found"
+  },
+  "XAUUSD=X|60m|1mo": {
+   "hata": "HTTP Error 404: Not Found"
+  },
+  "XAGUSD=X|60m|1mo": {
+   "hata": "HTTP Error 404: Not Found"
+  },
+  "GC=F|60m|1mo": {
+   "adet": 649,
+   "tam_ohlc": 531,
+   "ilk": "2026-10-26T04:00:00",
+   "son": "2026-11-26T04:00:00",
+   "son_bar": [
+    3602.10009765625,
+    3626.699951171875,
+    3601.39990234375,
+    3620.39990234375
+   ]
+  },
+  "SI=F|60m|1mo": {
+   "adet": 649,
+   "tam_ohlc": 529,
+   "ilk": "2026-10-26T04:00:00",
+   "son": "2026-11-26T04:00:00",
+   "son_bar": [
+    41.96500015258789,
+    42.2599983215332,
+    41.935001373291016,
+    42.084999084472656
+   ]
+  },
+  "xauxag": {
+   "satir": 3,
+   "ilk": [
+    "<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"noindex,nofollow\"></head><body><noscript>This site requires JavaScript to verify your browser. Please enable JavaScript and reload.</noscript><script nonce=\"H5-sVgY-893sHCSWDwkXwg\">",
+    "(async()=>{const c=\"AAAAAGsIQeVuIKm0EgNTYJ6UIRCeATIHrKsPAvub4cnR3xnQC5x9nBLLRt0\",d=4,t=\"0\".repeat(d),e=new TextEncoder;let n=0;while(1){const h=await crypto.subtle.digest(\"SHA-256\",e.encode(c+n)),x=Array.from(new Uint8Array(h)).map(b=>b.toString(16).padStart(2,\"0\")).join(\"\");if(x.startsWith(t))break;n++}const r=await fetch(\"/__verify\",{method:\"POST\",headers:{\"Content-Type\":\"application/x-www-form-urlencoded\"},body:\"c=\"+encodeURIComponent(c)+\"&n=\"+n,credentials:\"same-origin\"});if(r.ok)location.reload()})();"
+   ],
+   "son": [
+    "(async()=>{const c=\"AAAAAGsIQeVuIKm0EgNTYJ6UIRCeATIHrKsPAvub4cnR3xnQC5x9nBLLRt0\",d=4,t=\"0\".repeat(d),e=new TextEncoder;let n=0;while(1){const h=await crypto.subtle.digest(\"SHA-256\",e.encode(c+n)),x=Array.from(new Uint8Array(h)).map(b=>b.toString(16).padStart(2,\"0\")).join(\"\");if(x.startsWith(t))break;n++}const r=await fetch(\"/__verify\",{method:\"POST\",headers:{\"Content-Type\":\"application/x-www-form-urlencoded\"},body:\"c=\"+encodeURIComponent(c)+\"&n=\"+n,credentials:\"same-origin\"});if(r.ok)location.reload()})();",
+    "</script></body></html>"
+   ]
+  },
+  "xauusd": {
+   "satir": 3,
+   "ilk": [
+    "<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"noindex,nofollow\"></head><body><noscript>This site requires JavaScript to verify your browser. Please enable JavaScript and reload.</noscript><script nonce=\"iNANRjRPvElZloiYn5g-3A\">",
+    "(async()=>{const c=\"AAAAAGsIQeayeG4-4oSVD85JEFnbY3-irKsPAmXGx7-qfYxl0uMVNU2ER9Y\",d=4,t=\"0\".repeat(d),e=new TextEncoder;let n=0;while(1){const h=await crypto.subtle.digest(\"SHA-256\",e.encode(c+n)),x=Array.from(new Uint8Array(h)).map(b=>b.toString(16).padStart(2,\"0\")).join(\"\");if(x.startsWith(t))break;n++}const r=await fetch(\"/__verify\",{method:\"POST\",headers:{\"Content-Type\":\"application/x-www-form-urlencoded\"},body:\"c=\"+encodeURIComponent(c)+\"&n=\"+n,credentials:\"same-origin\"});if(r.ok)location.reload()})();"
+   ],
+   "son": [
+    "(async()=>{const c=\"AAAAAGsIQeayeG4-4oSVD85JEFnbY3-irKsPAmXGx7-qfYxl0uMVNU2ER9Y\",d=4,t=\"0\".repeat(d),e=new TextEncoder;let n=0;while(1){const h=await crypto.subtle.digest(\"SHA-256\",e.encode(c+n)),x=Array.from(new Uint8Array(h)).map(b=>b.toString(16).padStart(2,\"0\")).join(\"\");if(x.startsWith(t))break;n++}const r=await fetch(\"/__verify\",{method:\"POST\",headers:{\"Content-Type\":\"application/x-www-form-urlencoded\"},body:\"c=\"+encodeURIComponent(c)+\"&n=\"+n,credentials:\"same-origin\"});if(r.ok)location.reload()})();",
+    "</script></body></html>"
+   ]
+  },
+  "xagusd": {
+   "satir": 3,
+   "ilk": [
+    "<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"noindex,nofollow\"></head><body><noscript>This site requires JavaScript to verify your browser. Please enable JavaScript and reload.</noscript><script nonce=\"KFdEVz8ZrqT_5QjtmW6PFg\">",
+    "(async()=>{const c=\"AAAAAGsIQeb8Zlk8M05kGFbRxa-H9xRwrKsPAmVrcT_vAispXnvaIWiNvW0\",d=4,t=\"0\".repeat(d),e=new TextEncoder;let n=0;while(1){const h=await crypto.subtle.digest(\"SHA-256\",e.encode(c+n)),x=Array.from(new Uint8Array(h)).map(b=>b.toString(16).padStart(2,\"0\")).join(\"\");if(x.startsWith(t))break;n++}const r=await fetch(\"/__verify\",{method:\"POST\",headers:{\"Content-Type\":\"application/x-www-form-urlencoded\"},body:\"c=\"+encodeURIComponent(c)+\"&n=\"+n,credentials:\"same-origin\"});if(r.ok)location.reload()})();"
+   ],
+   "son": [
+    "(async()=>{const c=\"AAAAAGsIQeb8Zlk8M05kGFbRxa-H9xRwrKsPAmVrcT_vAispXnvaIWiNvW0\",d=4,t=\"0\".repeat(d),e=new TextEncoder;let n=0;while(1){const h=await crypto.subtle.digest(\"SHA-256\",e.encode(c+n)),x=Array.from(new Uint8Array(h)).map(b=>b.toString(16).padStart(2,\"0\")).join(\"\");if(x.startsWith(t))break;n++}const r=await fetch(\"/__verify\",{method:\"POST\",headers:{\"Content-Type\":\"application/x-www-form-urlencoded\"},body:\"c=\"+encodeURIComponent(c)+\"&n=\"+n,credentials:\"same-origin\"});if(r.ok)location.reload()})();",
+    "</script></body></html>"
+   ]
+  }
+ }
+}
