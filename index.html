@@ -772,7 +772,7 @@ ciz();yukle();setInterval(yukle,120000);})();</script>
 /* ---- Dip bolgesi analizi: gecmiste benzer durumlar (tarayicida hesaplanir; veri: altin.json + altin-uzun.json) ---- */
 (function(){
 var W=60,KEY="dip-gorulen-v1",AD={GRAM:"Gram altın",GGUM:"Gram gümüş",ONS:"Ons altın",XAG:"Ons gümüş"},TLS={GRAM:1,GGUM:1},USD={ONS:1,XAG:1};
-var LST=[],SON="",HATA=false,SEEN={};
+var LST=[],SON="",GUN=0,HATA=false,SEEN={};
 try{SEEN=JSON.parse(localStorage.getItem(KEY)||"{}")||{};}catch(e){SEEN={};}
 function kayit(){try{localStorage.setItem(KEY,JSON.stringify(SEEN));}catch(e){}}
 function med(a){a=a.slice().sort(function(x,y){return x-y;});var m=a.length>>1;return a.length%2?a[m]:(a[m-1]+a[m])/2;}
@@ -832,6 +832,11 @@ function satirlar(r){var s="";
   w.push("Geçmiş taraması: "+r.ilk.slice(0,4)+" yılından bugüne. Günler işlem günüdür (20 gün ≈ 1 ay). Geçmiş sonuç garanti değildir; al/sat önerisi değildir.");
   s+='<div class="dw">⚠️ '+w.join("<br>")+'</div>';
   return s;}
+function gunc(){if(!GUN)return "";var d=new Date(GUN),t=new Date(GUN+108e5),z=function(x){return ("0"+x).slice(-2);};
+  var m=t.getUTCFullYear(),txt=z(t.getUTCDate())+"."+z(t.getUTCMonth()+1)+"."+m+" "+z(t.getUTCHours())+":"+z(t.getUTCMinutes());
+  var n=new Date(Date.now()+108e5),wd=n.getUTCDay(),sa=n.getUTCHours(),yas=(Date.now()-GUN)/6e4;
+  var eski=wd>=1&&wd<=5&&sa>=9&&sa<18&&yas>90;
+  return '<div class="dg" style="margin:0 0 8px">Son güncelleme: <b>'+txt+'</b>'+(eski?' · <span style="color:#c0392b;font-weight:600">veri eski olabilir</span>':'')+'</div>';}
 function dur(r){if(r.tip!=="k")return ["Şu an dip bölgesinde (dibe %3’ten yakın)","#2563eb"];
   if(r.c<r.prev)return ["▼ Şu an eski dibin hâlâ altında","#c0392b"];
   return ["▲ Şu an eski dibin üstüne döndü","#15803d"];}
@@ -847,7 +852,7 @@ function ciz(){
   var ok=imp.length?"":'<div class="dg" style="margin:6px 0">Şu an dibi kıran ya da dip bölgesinde tutunan varlık yok.</div>';
   h=ok+h+'<div class="dgr"><b>Diğer:</b> '+(ds.length?ds.join(", ")+". ":"")+yok+' varlıkta önemli değişiklik yok.</div>'
    +'<div class="dg" style="margin-top:8px">Önemli sayılanlar: ① 60 günlük dibini son 3 işlem gününde aşağı kıranlar ② dibi en az 10 gündür tutan ve dibe %3’ten yakın olanlar. En fazla 5 kart gösterilir. Veri: '+tar(SON)+'.</div>';
-  if(el)el.innerHTML=h;if(el2)el2.innerHTML=h;
+  h=gunc()+h;if(el)el.innerHTML=h;if(el2)el2.innerHTML=h;
 }
 function rozet(){
   var b=document.getElementById("dipbtn");if(!b)return;
@@ -880,7 +885,7 @@ function yukle(){
                fetch("altin.json"+t).then(function(r){if(!r.ok)throw 0;return r.json();}).catch(function(){hata++;return null;}),
                fetch("altin-uzun.json"+t).then(function(r){if(!r.ok)throw 0;return r.json();}).catch(function(){return null;})]).then(function(a){
     ["GRAM","GGUM","ONS","XAG"].forEach(function(k){var s=a[1]&&a[1].stocks&&a[1].stocks[k];if(s&&s.d){var u=uzatil(k,s.d,a[2]);var r=analiz(k,u.d);if(r){r.uz=u.uz;L.push(r);}}});
-    LST=L;HATA=hata>0&&!L.length;SON=L.reduce(function(m,r){return r.son>m?r.son:m;},"");
+    LST=L;GUN=(a[1]&&a[1].updatedAt)?Date.parse(a[1].updatedAt)||0:0;HATA=hata>0&&!L.length;SON=L.reduce(function(m,r){return r.son>m?r.son:m;},"");
     ciz();rozet();
   });
 }
