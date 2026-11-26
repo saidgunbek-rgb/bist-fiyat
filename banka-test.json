@@ -1,0 +1,45 @@
+{
+ "tarih": "2026-11-26T14:22:41.827231Z",
+ "kaynak": {
+  "altin": [
+   {
+    "url": "https://altin.doviz.com/alternatif-bank/gram-altin/bilgi",
+    "durum": 200,
+    "boyut": 485758,
+    "bulunan": {
+     "Kapalıçarşı": {
+      "alis": 5983.89,
+      "satis": 6063.34
+     },
+     "Akbank": {
+      "alis": 5674.29,
+      "satis": 5869.8
+     },
+     "Garanti BBVA": {
+      "alis": 5743.36,
+      "satis": 5920.04
+     },
+     "Enpara": {
+      "alis": 5666.98,
+      "satis": 6002.89
+     }
+    },
+    "ornek": "00 %2,24 Harem 5.983,89 6.063,34 79,45 %1,33 Odacı 6.016,00 6.065,00 49,00 %0,81 Papara 5.757,33 5.855,73 98,40 %1,71 Hepsipay 5.757,30 5.867,41 110,11 %1,91 Getirfinans 5.789,12 5.843,68 54,56 %0,94 Akbank 5.674,29 5.869,80 195,51 %3,45 Albaraka Türk 5.730,86 5.837,30 106,43 %1,86 CEPTETEB 5.698,48 5.901,18 202,69 %3,56 Denizbank 5.739,33 5.901,27 161,94 %2,82 DestekBank 5.719,01 5.850,87 131,86 %2,31 Dünya Katılım 5.774,48 5.812,74 38,26 %0,66 Emlak Katılım 4.953,40 6.110,05 1.156,66 %23,35 En"
+   }
+  ],
+  "gumus": [
+   {
+    "url": "https://altin.doviz.com/alternatif-bank/gram-gumus/bilgi",
+    "hata": "HTTP Error 404: Not Found"
+   },
+   {
+    "url": "https://altin.doviz.com/akbank/gram-gumus/bilgi",
+    "hata": "HTTP Error 404: Not Found"
+   },
+   {
+    "url": "https://altin.doviz.com/gram-gumus",
+    "hata": "HTTP Error 404: Not Found"
+   }
+  ]
+ }
+}
