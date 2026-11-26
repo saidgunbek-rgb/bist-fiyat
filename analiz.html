@@ -104,6 +104,7 @@ canvas{display:block;width:100%;touch-action:pan-y;-webkit-user-select:none;user
 <details class="tum" id="panelk" open style="display:none"><summary id="panels">📣 Panel haberleri</summary><div id="panelhab" style="margin-top:8px"></div></details>
 <div class="grp g-h" id="hissekutu"><div class="gl">🏷️ Hisse</div><div class="row" id="hisseler"></div></div>
 <div class="grp g-a" id="altinkutu"><div class="gl">🥇 Altın · Gümüş <span>· uluslararası piyasa fiyatı, kuyumcu fiyatı değil</span></div><div class="row" id="altinlar"></div></div>
+<details class="tum t-alt" id="orank" open style="display:none"><summary>⚖️ Altın / Gümüş Oranı</summary><div id="oran" style="margin-top:8px"></div></details>
 <div class="grp g-z"><div class="gl">🗓️ Dönem ve mum</div><div class="row sm" id="donem"></div><div class="row sm" id="mum"></div></div>
 <div class="grp g-g"><div class="gl">🧰 Göstergeler <span>· dokun: aç / kapat</span></div><div class="row sm" id="gost"></div></div>
 <details class="grp g-y"><summary class="gl">👆 Grafiği kullanma</summary><div class="yk">Grafikte: dokun = o noktanın fiyatı ve günün değerleri · basılı tut ve gezdir = artı imleci (yatay çizgi fiyatı gösterir) · sağa/sola kaydır = geçmişe git · iki parmak = yakınlaş/uzaklaş · sağdaki fiyat ekseninde yukarı/aşağı kaydır = mumları uzat/kısalt (yatayda grafiğin her yerinde) · çift dokun = sıfırla</div></details>
@@ -718,12 +719,73 @@ function bitis(e){clearTimeout(BASILI);if(!DK)return;var cv=hedef(e);
 document.addEventListener("touchstart",function(e){if((CROSS>=0||CPY!=null)&&!e.target.closest("canvas")&&!e.target.closest("#eks")){CROSS=-1;CPY=null;ciz();}},{passive:true});
 window.addEventListener("resize",function(){if(TAM){var k=document.getElementById("kart");DONDUR=DONDUR&&window.innerHeight>window.innerWidth;k.classList.toggle("dondur",DONDUR);}ciz();});
 
+/* Altin/gumus orani: gram altin / gram gumus (= ons orani). Veri: altin.json (guncel) + altin-uzun.json (2012'den, gunluk kapanis) */
+function oranCiz(){var kt=document.getElementById("orank"),el=document.getElementById("oran");if(!kt||!el||!H||!H.stocks||!H.stocks.GRAM||!H.stocks.GGUM)return;
+  var ga=H.stocks.GRAM.d,gg=H.stocks.GGUM.d,L={};gg.forEach(function(r){L[r[0]]=r[4];});
+  var canli={};ga.forEach(function(r){if(L[r[0]]>0&&r[4]>0)canli[r[0]]=r[4]/L[r[0]];});
+  var cd=Object.keys(canli).sort();if(cd.length<30)return;
+  fetch("altin-uzun.json?t="+Date.now()).then(function(r){if(!r.ok)throw 0;return r.json();}).catch(function(){return null;}).then(function(U){
+    var o={};
+    if(U&&U.ons_altin&&U.ons_gumus){Object.keys(U.ons_altin).forEach(function(d){var g=U.ons_altin[d],m=U.ons_gumus[d];if(g>0&&m>0&&new Date(d+"T00:00:00Z").getUTCDay()%6!==0&&d<cd[0])o[d]=g/m;});}
+    cd.forEach(function(d){o[d]=canli[d];});
+    var ds=Object.keys(o).sort(),v=ds.map(function(d){return o[d];}),n=v.length;if(n<60)return;
+    var cm=[];ga.forEach(function(r,i){var q=gg.filter?null:null;});
+    var GG={};gg.forEach(function(r){GG[r[0]]=r;});
+    ga.forEach(function(r){var m=GG[r[0]];if(m&&r[1]>0&&r[4]>0&&m[1]>0&&m[4]>0)cm.push({d:r[0],o:r[1]/m[1],c:r[4]/m[4]});});
+    var son=v[n-1],srt=v.slice().sort(function(a,b){return a-b;}),med=srt[n>>1],mn=srt[0],mx=srt[n-1],imn=v.indexOf(mn),imx=v.indexOf(mx);
+    var alt=0;for(var i=0;i<n;i++)if(v[i]<=son)alt++;
+    function f(x,d){return Number(x).toLocaleString("tr-TR",{minimumFractionDigits:d,maximumFractionDigits:d});}
+    function tg(d){var p=d.split("-");return p[2]+"."+p[1]+"."+p[0];}
+    var gs=ga[ga.length-1][4],ms=gg[gg.length-1][4];
+    var k=v.slice(-250),W=340,Hh=110,a=Math.min.apply(null,k),b=Math.max.apply(null,k);
+    function y(x){return Hh-5-(x-a)/(b-a||1)*(Hh-10);}
+    var pts=k.map(function(x,i){return (i*W/(k.length-1)).toFixed(1)+","+y(x).toFixed(1);}).join(" ");
+    var my=Math.min(Hh-3,Math.max(3,y(med)));
+    function once(g){return n>g?v[n-1-g]:null;}
+    function sat(a1,b1){return '<div style="display:flex;justify-content:space-between;gap:8px;padding:6px 0;border-top:1px solid #2a2a3a"><span style="color:#9a9ab0">'+a1+'</span><b>'+b1+'</b></div>';}
+    var h='<div style="color:#9a9ab0;font-size:12px">Gram altın ÷ gram gümüş</div><div style="font-size:28px;font-weight:800;margin:2px 0">'+f(son,2)+'</div>'
+     +(n>1?'<div style="font-size:13px;color:'+(son>=v[n-2]?'#26a69a':'#ef5350')+'">'+(son>=v[n-2]?'+':'−')+f(Math.abs(son-v[n-2]),2)+' ('+(son>=v[n-2]?'+':'−')+'%'+f(Math.abs((son/v[n-2]-1)*100),2)+') · önceki kapanışa göre</div>':'')+'<div style="color:#9a9ab0;font-size:12px">'+f(gs,2)+' TL ÷ '+f(ms,2)+' TL · 1 gram altın ≈ '+f(son,1)+' gram gümüş · '+tg(ds[n-1])+'</div>'
+     +'<div id="orbtn" style="display:flex;gap:6px;margin:10px 0 4px">'+[["1A",22],["3A",63],["1Y",250],["5Y",1250],["Maks",0]].map(function(p,i){return '<button data-n="'+p[1]+'" style="flex:1;padding:6px 0;border-radius:8px;border:1px solid #333;background:'+(i===2?"#2a2a3a":"transparent")+';color:#fff;font-size:12.5px;font-weight:600">'+p[0]+'</button>';}).join("")+'</div><div id="orgr"></div>'
+     +'<div id="oraltyz" style="color:#9a9ab0;font-size:11.5px;margin-bottom:6px"></div>';
+    [[30,"30 gün önce"],[90,"90 gün önce"],[250,"1 yıl önce"]].forEach(function(p){var x=once(p[0]);if(x)h+=sat(p[1],f(x,1)+" → "+f(son,1));});
+    h+=sat(tg(ds[0]).slice(6)+"'den en düşük",f(mn,1)+" · "+tg(ds[imn]))+sat(tg(ds[0]).slice(6)+"'den en yüksek",f(mx,1)+" · "+tg(ds[imx]));
+    function mini(ad,rows,renk){var d=rows.slice(-250);if(d.length<30)return "";var c=d.map(function(r){return r[4];}),lo=Math.min.apply(null,c),hi=Math.max.apply(null,c),
+      yy=function(x){return Hh-5-(x-lo)/(hi-lo||1)*(Hh-10);},pt=c.map(function(x,i){return (i*W/(c.length-1)).toFixed(1)+","+yy(x).toFixed(1);}).join(" "),
+      de=(c[c.length-1]/c[0]-1)*100;
+      return '<div style="margin-top:12px;border-top:1px solid #2a2a3a;padding-top:8px"><div style="display:flex;justify-content:space-between;align-items:baseline"><b>'+ad+'</b><span style="font-size:13px">'+f(c[c.length-1],2)+' TL <span style="color:'+(de>=0?"#26a69a":"#ef5350")+'">'+(de>=0?"+":"−")+"%"+f(Math.abs(de),1)+'</span></span></div>'
+       +'<svg width="100%" viewBox="0 0 '+W+' '+Hh+'" style="margin:6px 0 2px"><polyline fill="none" stroke="'+renk+'" stroke-width="2" points="'+pt+'"/></svg>'
+       +'<div style="display:flex;justify-content:space-between;color:#9a9ab0;font-size:11.5px"><span>Son 1 yıl · en düşük '+f(lo,2)+'</span><span>en yüksek '+f(hi,2)+'</span></div></div>';}
+    var yz=Math.round(100*alt/n);
+    h+='<div style="font-size:12.5px;margin-top:8px">'+tg(ds[0]).slice(6)+" yılından bu yana günlerin <b>%"+yz+"</b>’inde oran bugünkünden düşük veya eşit.</div>"
+     +'<div style="height:8px;border-radius:4px;background:linear-gradient(90deg,#15803d,#4b5563,#c0392b);position:relative;margin:10px 0 2px"><i style="position:absolute;top:-4px;width:3px;height:16px;background:#fff;left:'+Math.min(98,Math.max(0,yz))+'%"></i></div>'
+     +'<div style="display:flex;justify-content:space-between;color:#9a9ab0;font-size:11px"><span>düşük</span><span>yüksek</span></div>'
+     +mini("Gram altın",ga,"#f0b429")+mini("Gram gümüş",gg,"#c9d1e0")
+     +'<div style="color:#9a9ab0;font-size:11.5px;margin-top:8px;line-height:1.45">Oran yükselince altın gümüşe göre pahalılaşmış, düşünce gümüş toparlamıştır. Ölçülen durumu gösterir; al/sat önerisi değildir. Gram ve ons oranı aynıdır (kur ikisinde de aynı çarpan). Eski dönem günlük kapanışlardan, yeni dönem panel verisinden hesaplanır.</div>';
+    el.innerHTML=h;kt.style.display="";
+    function ciz2(nn){var W2=340,H2=150,mum=nn>0&&nn<=250,g="",alt="";
+      if(mum){var d=cm.slice(-nn);if(d.length<5)return;var lo=Math.min.apply(null,d.map(function(x){return Math.min(x.o,x.c);})),hi=Math.max.apply(null,d.map(function(x){return Math.max(x.o,x.c);})),
+        yy=function(x){return H2-8-(x-lo)/(hi-lo||1)*(H2-16);},bw=Math.max(1.5,W2/d.length*0.62);
+        d.forEach(function(x,i){var cx=(i+0.5)*W2/d.length,up=x.c>=x.o,rk=up?"#26a69a":"#ef5350",t=yy(Math.max(x.o,x.c)),b=yy(Math.min(x.o,x.c));
+          g+='<rect x="'+(cx-bw/2).toFixed(1)+'" y="'+t.toFixed(1)+'" width="'+bw.toFixed(1)+'" height="'+Math.max(1,b-t).toFixed(1)+'" fill="'+rk+'"/>';});
+        alt="Mum: günlük açılış ve kapanış oranı. Günün en yüksek/en düşük oranı kaynakta olmadığı için çizilmez.";
+        var dl=Math.min.apply(null,d.map(function(x){return Math.min(x.o,x.c);}));
+      }else{var dd=nn===0?ds.map(function(x,i){return v[i];}):v.slice(-nn);var lo2=Math.min.apply(null,dd),hi2=Math.max.apply(null,dd),y2=function(x){return H2-8-(x-lo2)/(hi2-lo2||1)*(H2-16);};
+        g='<polyline fill="none" stroke="#4fc3f7" stroke-width="1.6" points="'+dd.map(function(x,i){return (i*W2/(dd.length-1)).toFixed(1)+","+y2(x).toFixed(1);}).join(" ")+'"/>';
+        var md=H2-8-(med-lo2)/(hi2-lo2||1)*(H2-16);if(md>0&&md<H2)g='<line x1="0" x2="'+W2+'" y1="'+md.toFixed(1)+'" y2="'+md.toFixed(1)+'" stroke="#9a9ab0" stroke-dasharray="4 3"/>'+g;
+        alt="Çizgi: günlük kapanış oranı"+(nn===0?" ("+tg(ds[0])+"'den bugüne)":"")+". Kesikli çizgi: "+tg(ds[0]).slice(6)+"'den medyan "+f(med,1)+".";}
+      document.getElementById("orgr").innerHTML='<svg width="100%" viewBox="0 0 '+W2+' '+H2+'" style="background:#14141f;border-radius:8px">'+g+'</svg>';
+      document.getElementById("oraltyz").textContent=alt;}
+    ciz2(250);
+    document.getElementById("orbtn").addEventListener("click",function(e){var bt=e.target.closest("button");if(!bt)return;
+      Array.prototype.forEach.call(this.children,function(x){x.style.background="transparent";});bt.style.background="#2a2a3a";ciz2(+bt.getAttribute("data-n"));});
+  });
+}
 function baslat(j){H=j;var ks=Object.keys(j.stocks||{}).filter(function(k){return (j.stocks[k].d||[]).length>30;});
   if(!ks.length){document.getElementById("uyari").innerHTML='<div class="warn">'+(ALTMOD?"Henüz altın verisi yok. Otomatik güncelleme hafta içi gece 00:37'de çalışır.":"Henüz analiz verisi yok. İlk otomatik güncelleme hafta içi 19:07\'de çalışır.")+'</div>';return;}
   if(j.taslak)document.getElementById("uyari").innerHTML='<div class="warn">'+esc(j.taslak)+'</div>';
   else if(j.updated){var gun=(Date.now()-new Date(j.updated+"T19:00:00+03:00").getTime())/864e5;if(gun>4)document.getElementById("uyari").innerHTML='<div class="warn">Analiz verisi '+trD(j.updated)+' tarihli. Otomatik güncelleme birkaç gündür çalışmamış olabilir.</div>';}
   document.getElementById("kaynak").innerHTML=j.taslak?"":"Veri: "+trD(j.updated)+" kapanışı · Her günün kapanışı üç kaynakla (Yahoo, borsapy, İş Yatırım) karşılaştırılır. Kaynaklar tutmadığında doğru değer, İş Yatırım'ın temettü düzeltme çarpanı çevredeki doğrulanmış günlerden hesaplanarak bulunur; uydurma değer yazılmaz. Sadece borsanın kapalı olduğu günler grafikte yoktur. Göstergeler TradingView'deki formüllerle bu sayfada hesaplanır.";
-  sec(SEC&&j.stocks[SEC]?SEC:ks[0]);setTimeout(panelHaber,30);
+  sec(SEC&&j.stocks[SEC]?SEC:ks[0]);setTimeout(panelHaber,30);if(ALTMOD)setTimeout(oranCiz,40);
   setTimeout(function(){try{TEST=gecmisTest();}catch(e){TEST=null;}degerlendir();if(TEST)dayanikTest();try{ciz();}catch(e){}},60);}
 function yukle(u,yerel){return fetch(u+"?t="+Date.now()).then(function(r){if(!r.ok)throw 0;return r.json();}).catch(function(){return fetch(yerel+"?t="+Date.now()).then(function(r){if(!r.ok)throw 0;return r.json();});});}
 var PANEL=/[?&]panel=1/.test(location.search);
