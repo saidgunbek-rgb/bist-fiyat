@@ -1,0 +1,26 @@
+name: Banka kaynagi testi
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Testi calistir
+        run: python3 banka_test.py
+      - name: Kaydet
+        if: always()
+        run: |
+          git config user.name "fiyat-bot"
+          git config user.email "fiyat-bot@users.noreply.github.com"
+          [ -f banka-test.json ] && git add banka-test.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Banka kaynagi testi sonucu"
+          for i in 1 2 3 4 5; do git pull --rebase origin main && git push && exit 0; sleep 10; done
+          exit 1
