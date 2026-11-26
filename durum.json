@@ -1,9 +1,8 @@
 {
  "bist": {
-  "b": null,
+  "b": 10743.11,
   "d": "2026-11-26",
   "gunler": {
-   "2026-11-12": true,
    "2026-11-13": true,
    "2026-11-16": true,
    "2026-11-17": true,
@@ -12,10 +11,14 @@
    "2026-11-20": true,
    "2026-11-23": true,
    "2026-11-24": true,
-   "2026-11-25": true
+   "2026-11-25": true,
+   "2026-11-26": true
   },
-  "kaynaklar": [],
-  "teyit": false
+  "kaynaklar": [
+   "yahoo",
+   "borsapy"
+  ],
+  "teyit": true
  },
  "deneme": {
   "fiyat|2026-11-23": {
@@ -91,8 +94,8 @@
    "son": "2026-11-26T12:50"
   },
   "kap|2026-11-26 18": {
-   "n": 0,
-   "son": null
+   "n": 1,
+   "son": "2026-11-26T19:04"
   },
   "karne|2026-11-23": {
    "n": 1,
@@ -105,6 +108,10 @@
   "karne|2026-11-25": {
    "n": 0,
    "son": null
+  },
+  "karne|2026-11-26": {
+   "n": 1,
+   "son": "2026-11-26T19:04"
   }
  },
  "enf": {
@@ -116,11 +123,11 @@
  "kaynaklar": {
   "fiyat": {
    "deneme": 1,
-   "durum": "deneniyor",
+   "durum": "ok",
    "maks": 4,
-   "not": "Teyit edilemeyen: THYAO",
-   "saat": "2026-11-25T16:32:27Z",
-   "veri": "2026-11-25"
+   "not": "",
+   "saat": "2026-11-26T15:43:29Z",
+   "veri": "2026-11-26"
   },
   "fon": {
    "deneme": 0,
@@ -131,7 +138,7 @@
    "veri": "2026-11-25"
   },
   "kap": {
-   "deneme": 0,
+   "deneme": 1,
    "durum": "deneniyor",
    "maks": 4,
    "not": "Son KAP taraması gecikti",
@@ -139,10 +146,10 @@
    "veri": "2026-11-26 17:30"
   },
   "karne": {
-   "deneme": 0,
-   "durum": "bekliyor",
+   "deneme": 1,
+   "durum": "deneniyor",
    "maks": 4,
-   "not": "bugünün hesabı yok",
+   "not": "bugünün hesabı yok, THYAO fiyatı uyuşmuyor",
    "saat": "2026-11-26T06:08:24Z",
    "veri": "2026-11-26"
   },
@@ -155,5 +162,5 @@
    "veri": "2026-11-25"
   }
  },
- "kontrolAt": "2026-11-26T15:43:02Z"
+ "kontrolAt": "2026-11-26T16:04:48Z"
 }
