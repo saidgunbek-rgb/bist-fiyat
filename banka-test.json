@@ -1,43 +1,74 @@
 {
- "tarih": "2026-11-26T14:22:41.827231Z",
+ "tarih": "2026-11-26T14:25:32.882775Z",
  "kaynak": {
   "altin": [
    {
     "url": "https://altin.doviz.com/alternatif-bank/gram-altin/bilgi",
     "durum": 200,
-    "boyut": 485758,
+    "boyut": 486524,
     "bulunan": {
      "Kapalıçarşı": {
-      "alis": 5983.89,
-      "satis": 6063.34
+      "alis": 5985.53,
+      "satis": 6064.99
      },
      "Akbank": {
-      "alis": 5674.29,
-      "satis": 5869.8
+      "alis": 5673.7,
+      "satis": 5869.17
      },
      "Garanti BBVA": {
-      "alis": 5743.36,
-      "satis": 5920.04
+      "alis": 5741.34,
+      "satis": 5917.96
      },
      "Enpara": {
-      "alis": 5666.98,
-      "satis": 6002.89
+      "alis": 5668.5,
+      "satis": 6004.47
      }
     },
-    "ornek": "00 %2,24 Harem 5.983,89 6.063,34 79,45 %1,33 Odacı 6.016,00 6.065,00 49,00 %0,81 Papara 5.757,33 5.855,73 98,40 %1,71 Hepsipay 5.757,30 5.867,41 110,11 %1,91 Getirfinans 5.789,12 5.843,68 54,56 %0,94 Akbank 5.674,29 5.869,80 195,51 %3,45 Albaraka Türk 5.730,86 5.837,30 106,43 %1,86 CEPTETEB 5.698,48 5.901,18 202,69 %3,56 Denizbank 5.739,33 5.901,27 161,94 %2,82 DestekBank 5.719,01 5.850,87 131,86 %2,31 Dünya Katılım 5.774,48 5.812,74 38,26 %0,66 Emlak Katılım 4.953,40 6.110,05 1.156,66 %23,35 En"
+    "ornek": "00 %2,20 Harem 5.985,53 6.064,99 79,46 %1,33 Odacı 6.019,00 6.066,00 47,00 %0,78 Papara 5.753,97 5.852,31 98,34 %1,71 Hepsipay 5.753,97 5.864,01 110,04 %1,91 Getirfinans 5.789,50 5.844,01 54,51 %0,94 Akbank 5.673,70 5.869,17 195,47 %3,45 Albaraka Türk 5.728,49 5.834,93 106,44 %1,86 CEPTETEB 5.697,47 5.900,48 203,00 %3,56 Denizbank 5.735,42 5.897,40 161,98 %2,82 DestekBank 5.720,50 5.852,33 131,83 %2,30 Dünya Katılım 5.775,57 5.813,79 38,22 %0,66 Emlak Katılım 4.954,19 6.110,87 1.156,68 %23,35 En"
+   }
+  ]
+ },
+ "gumus_banka": {
+  "Akbank": [
+   {
+    "url": "https://altin.doviz.com/akbank/gumus",
+    "durum": 200,
+    "bulunan": {
+     "alis": 66.27,
+     "satis": 68.47
+    },
+    "ornek": "esini kişiselleştirebilmek için ücretsiz kaydolun! Ücretsiz kaydol Kapat Bu alanı Takip Listem 'e giderek düzenleyebilirsin! Kapat Yükleniyor... Doviz.com &raquo; Altın Fiyatları &raquo; Akbank Altın Fiyatları &raquo; Akbank Gram Gümüş Gram Gümüş Akbank Gram Gümüş Son ( 17:25 ) 68,47 %1,02 ( 0,69 ) Alış / Satış 66,27 / 68,47 Güncel Karşılaştır YENİ Yorumlar Tarihsel Veri Paylaş 1 yıl önce Gram Gümüş yatırımı yapsaydınız bugünkü karşılığı ne olurdu? Tutar TL Hesapla — — — Detaylı hesapla ve karşı"
    }
   ],
-  "gumus": [
+  "Garanti BBVA": [
    {
-    "url": "https://altin.doviz.com/alternatif-bank/gram-gumus/bilgi",
+    "url": "https://altin.doviz.com/garanti-bbva/gumus",
+    "durum": 200,
+    "bulunan": {
+     "alis": 66.62,
+     "satis": 69.32
+    },
+    "ornek": "rebilmek için ücretsiz kaydolun! Ücretsiz kaydol Kapat Bu alanı Takip Listem 'e giderek düzenleyebilirsin! Kapat Yükleniyor... Doviz.com &raquo; Altın Fiyatları &raquo; Garanti BBVA Altın Fiyatları &raquo; Garanti BBVA Gram Gümüş Gram Gümüş Garanti BBVA Gram Gümüş Son ( 17:25 ) 69,32 %1,02 ( 0,70 ) Alış / Satış 66,62 / 69,32 Güncel Karşılaştır YENİ Yorumlar Tarihsel Veri Paylaş 1 yıl önce Gram Gümüş yatırımı yapsaydınız bugünkü karşılığı ne olurdu? Tutar TL Hesapla — — — Detaylı hesapla ve karşı"
+   }
+  ],
+  "Enpara": [
+   {
+    "url": "https://altin.doviz.com/enpara/gumus",
+    "durum": 200,
+    "bulunan": {
+     "alis": 66.16,
+     "satis": 85.79
+    },
+    "ornek": "esini kişiselleştirebilmek için ücretsiz kaydolun! Ücretsiz kaydol Kapat Bu alanı Takip Listem 'e giderek düzenleyebilirsin! Kapat Yükleniyor... Doviz.com &raquo; Altın Fiyatları &raquo; Enpara Altın Fiyatları &raquo; Enpara Gram Gümüş Gram Gümüş Enpara Gram Gümüş Son ( 17:25 ) 85,79 %1,02 ( 0,87 ) Alış / Satış 66,16 / 85,79 Güncel Karşılaştır YENİ Yorumlar Tarihsel Veri Paylaş 1 yıl önce Gram Gümüş yatırımı yapsaydınız bugünkü karşılığı ne olurdu? Tutar TL Hesapla — — — Detaylı hesapla ve karşı"
+   }
+  ],
+  "Kapalıçarşı": [
+   {
+    "url": "https://altin.doviz.com/kapalicarsi/gumus",
     "hata": "HTTP Error 404: Not Found"
    },
    {
-    "url": "https://altin.doviz.com/akbank/gram-gumus/bilgi",
-    "hata": "HTTP Error 404: Not Found"
-   },
-   {
-    "url": "https://altin.doviz.com/gram-gumus",
+    "url": "https://altin.doviz.com/kapalicarsi/gram-gumus",
     "hata": "HTTP Error 404: Not Found"
    }
   ]
