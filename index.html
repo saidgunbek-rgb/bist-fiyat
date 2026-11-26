@@ -832,13 +832,16 @@ function satirlar(r){var s="";
   w.push("Geçmiş taraması: "+r.ilk.slice(0,4)+" yılından bugüne. Günler işlem günüdür (20 gün ≈ 1 ay). Geçmiş sonuç garanti değildir; al/sat önerisi değildir.");
   s+='<div class="dw">⚠️ '+w.join("<br>")+'</div>';
   return s;}
+function dur(r){if(r.tip!=="k")return ["Şu an dip bölgesinde (dibe %3’ten yakın)","#2563eb"];
+  if(r.c<r.prev)return ["▼ Şu an eski dibin hâlâ altında","#c0392b"];
+  return ["▲ Şu an eski dibin üstüne döndü","#15803d"];}
 function ciz(){
   var el=document.getElementById("dipicerik"),el2=document.getElementById("dipicerik2");if(!el&&!el2)return;
   if(HATA&&!LST.length){var hm='<div class="dg">Veri şu an yüklenemedi. Biraz sonra tekrar deneyin.</div>';if(el)el.innerHTML=hm;if(el2)el2.innerHTML=hm;return;}
   var imp=LST.filter(function(r){return r.tip;});
   imp.sort(function(a,b){var ka=a.tip==="k"?0:1,kb=b.tip==="k"?0:1;if(ka!==kb)return ka-kb;var ma=TLS[a.kod]?0:(USD[a.kod]?1:2),mb=TLS[b.kod]?0:(USD[b.kod]?1:2);return ma-mb;});
   var goster=imp.slice(0,5),diger=imp.slice(5),h="";
-  goster.forEach(function(r,i){h+='<div class="dpk"><div class="dh" data-i="'+i+'"><span class="da">▸</span><b>'+isim(r.kod)+'</b><em class="'+(r.tip==="k"?"dek":"ded")+'">'+(r.tip==="k"?"dip kırıldı":"dip bölgesinde")+'</em><span class="ds">'+tr(r.c,2)+'</span></div><div class="dbody">'+satirlar(r)+'</div></div>';});
+  goster.forEach(function(r,i){h+='<div class="dpk"><div class="dh" data-i="'+i+'"><span class="da">▸</span><span style="flex:1;min-width:0"><b>'+isim(r.kod)+'</b> <em class="'+(r.tip==="k"?"dek":"ded")+'">'+(r.tip==="k"?"dip kırıldı":"dip bölgesinde")+'</em><small style="display:block;margin-top:3px;font-size:12px;font-weight:600;color:'+dur(r)[1]+'">'+dur(r)[0]+'</small></span><span class="ds">'+tr(r.c,2)+'</span></div><div class="dbody">'+satirlar(r)+'</div></div>';});
   var yok=LST.length-imp.length,ds=[];
   diger.forEach(function(r){ds.push(isim(r.kod)+(r.tip==="k"?" dibi kırdı":" dip bölgesinde"));});
   var ok=imp.length?"":'<div class="dg" style="margin:6px 0">Şu an dibi kıran ya da dip bölgesinde tutunan varlık yok.</div>';
