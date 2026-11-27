@@ -1,7 +1,7 @@
 {
  "enf": {
   "k": "borsapy:latest",
-  "t": "2026-11-26",
+  "t": "2026-11-27",
   "y": 29.77
  },
  "guncellenen": [
@@ -84,25 +84,25 @@
    "mc": 315380007934.5703,
    "pb": 0.95,
    "pe": 4.9,
-   "price": 60.65,
+   "price": 59.95,
    "roe": 19.5,
    "sektor": "Banka",
    "tek": {
     "alim": null,
     "alim2": null,
-    "atr": 2.15,
+    "atr": 2.26,
     "bolge": null,
-    "dip": 60.4,
+    "dip": 57.05,
     "durum": "dikkat",
-    "f236": 85.69,
-    "f382": 80.86,
-    "f50": 76.95,
-    "f618": 73.04,
-    "f786": 67.48,
-    "gun": 2506,
+    "f236": 84.9,
+    "f382": 79.58,
+    "f50": 75.28,
+    "f618": 70.97,
+    "f786": 64.85,
+    "gun": 2507,
     "h1": 93.5,
     "h1n": "son 1 yılın zirvesi",
-    "h2": 102.5,
+    "h2": 103.41,
     "h2n": "Fibonacci 1,272 uzantısı",
     "kes": null,
     "kir": {
@@ -111,19 +111,15 @@
      "gt_ust": 93.5,
      "sev": 93.5
     },
-    "ma200": 69.49,
-    "ma200_once": 70.17,
-    "ma50": 67.26,
-    "mum_notu": "ok (2506 mum, son 2026-11-26)",
+    "ma200": 69.4,
+    "ma200_once": 70.08,
+    "ma50": 66.98,
+    "mum_notu": "ok (2507 mum, son 2026-11-27)",
     "ort_tur": "EMA",
-    "poc": 68.26,
-    "risk": 60.4,
+    "poc": 67.53,
+    "risk": 57.05,
     "riskn": "1 yıllık dip",
     "seri": [
-     [
-      "2025-11-14",
-      56.49
-     ],
      [
       "2025-11-17",
       56.54
@@ -1159,11 +1155,15 @@
      [
       "2026-11-26",
       60.65
+     ],
+     [
+      "2026-11-27",
+      59.95
      ]
     ],
-    "son": 60.65,
+    "son": 59.95,
     "stopA": null,
-    "tarih": "2026-11-26",
+    "tarih": "2026-11-27",
     "trend": "asagi",
     "yontem": "analiz",
     "zirve": 93.5
@@ -1263,22 +1263,22 @@
    "dunden": [],
    "dy": 0.14,
    "kb": 75.1,
-   "mc": 1436400000000.0,
-   "pb": 4.29,
-   "pe": 29.56,
-   "price": 315.0,
+   "mc": 1513920000000.0,
+   "pb": 4.52,
+   "pe": 31.16,
+   "price": 332.0,
    "roe": 14.5,
    "sektor": "Savunma",
    "tek": {
     "alim": [
+     284.07,
+     315.75
+    ],
+    "alim2": [
      238.96,
      284.07
     ],
-    "alim2": [
-     181.5,
-     238.96
-    ],
-    "atr": 14.0,
+    "atr": 14.47,
     "bolge": null,
     "dip": 181.5,
     "durum": "bekle",
@@ -1287,31 +1287,30 @@
     "f50": 315.75,
     "f618": 284.07,
     "f786": 238.96,
-    "gun": 2506,
+    "gun": 2507,
     "h1": 450.0,
     "h1n": "son 1 yılın zirvesi",
     "h2": 523.03,
     "h2n": "Fibonacci 1,272 uzantısı",
-    "kes": null,
+    "kes": [
+     302.32,
+     315.75
+    ],
     "kir": {
      "durum": "bekleniyor",
      "gt_alt": 436.5,
      "gt_ust": 450.0,
      "sev": 450.0
     },
-    "ma200": 339.5,
-    "ma200_once": 340.22,
-    "ma50": 346.24,
-    "mum_notu": "ok (2506 mum, son 2026-11-26)",
+    "ma200": 339.43,
+    "ma200_once": 340.29,
+    "ma50": 345.68,
+    "mum_notu": "ok (2507 mum, son 2026-11-27)",
     "ort_tur": "EMA",
     "poc": 345.96,
     "risk": 181.5,
     "riskn": "1 yıllık dip",
     "seri": [
-     [
-      "2025-11-14",
-      176.0
-     ],
      [
       "2025-11-17",
       188.3
@@ -2347,11 +2346,15 @@
      [
       "2026-11-26",
       315.0
+     ],
+     [
+      "2026-11-27",
+      332.0
      ]
     ],
-    "son": 315.0,
-    "stopA": 224.96,
-    "tarih": "2026-11-26",
+    "son": 332.0,
+    "stopA": 269.6,
+    "tarih": "2026-11-27",
     "trend": "zayiflama",
     "yontem": "analiz",
     "zirve": 450.0
@@ -2362,7 +2365,7 @@
      {
       "ad": "Değerleme",
       "p": -1,
-      "t": "pahalı (F/K 29,56, PD/DD 4,29)"
+      "t": "pahalı (F/K 31,16, PD/DD 4,52)"
      },
      {
       "ad": "Uzun trend",
@@ -2449,12 +2452,12 @@
     "y": 2026
    },
    "dunden": [],
-   "dy": 1.95,
+   "dy": 1.94,
    "kb": 79.1,
-   "mc": 432000000000.0,
-   "pb": 1.95,
-   "pe": 12.44,
-   "price": 360.0,
+   "mc": 438701064192.0,
+   "pb": 1.98,
+   "pe": 12.64,
+   "price": 370.75,
    "roe": 15.7,
    "sektor": "Perakende",
    "tek": {
@@ -2466,7 +2469,7 @@
      296.07,
      327.53
     ],
-    "atr": 11.31,
+    "atr": 11.72,
     "bolge": null,
     "dip": 256.0,
     "durum": "bekle",
@@ -2475,7 +2478,7 @@
     "f50": 349.62,
     "f618": 327.53,
     "f786": 296.07,
-    "gun": 2506,
+    "gun": 2507,
     "h1": 443.25,
     "h1n": "son 1 yılın zirvesi",
     "h2": 494.18,
@@ -2491,18 +2494,14 @@
      "sev": 443.25
     },
     "ma200": 371.12,
-    "ma200_once": 370.29,
-    "ma50": 385.19,
-    "mum_notu": "ok (2506 mum, son 2026-11-26)",
+    "ma200_once": 370.07,
+    "ma50": 384.62,
+    "mum_notu": "ok (2507 mum, son 2026-11-27)",
     "ort_tur": "EMA",
     "poc": 375.37,
     "risk": 256.0,
     "riskn": "1 yıllık dip",
     "seri": [
-     [
-      "2025-11-14",
-      266.83
-     ],
      [
       "2025-11-17",
       264.63
@@ -3538,11 +3537,15 @@
      [
       "2026-11-26",
       360.0
+     ],
+     [
+      "2026-11-27",
+      370.75
      ]
     ],
-    "son": 360.0,
-    "stopA": 316.22,
-    "tarih": "2026-11-26",
+    "son": 370.75,
+    "stopA": 315.81,
+    "tarih": "2026-11-27",
     "trend": "zayiflama",
     "yontem": "analiz",
     "zirve": 443.25
@@ -3553,7 +3556,7 @@
      {
       "ad": "Değerleme",
       "p": 0,
-      "t": "makul (F/K 12,44, PD/DD 1,95)"
+      "t": "makul (F/K 12,64, PD/DD 1,98)"
      },
      {
       "ad": "Uzun trend",
@@ -3641,12 +3644,12 @@
     "y": 2026
    },
    "dunden": [],
-   "dy": 14.48,
+   "dy": 10.2,
    "kb": -33.6,
-   "mc": 230898800000.0,
-   "pb": 1.18,
-   "pe": 7.1,
-   "price": 65.8,
+   "mc": 239496069120.0,
+   "pb": 1.22,
+   "pe": 7.37,
+   "price": 68.25,
    "roe": 16.6,
    "sektor": "Otomotiv",
    "tek": {
@@ -4736,7 +4739,7 @@
      {
       "ad": "Değerleme",
       "p": 0,
-      "t": "makul (F/K 7,1, PD/DD 1,18)"
+      "t": "makul (F/K 7,37, PD/DD 1,22)"
      },
      {
       "ad": "Uzun trend",
@@ -4816,12 +4819,12 @@
     "y": 2026
    },
    "dunden": [],
-   "dy": 3.82,
+   "dy": 3.76,
    "kb": 15.6,
-   "mc": 588420022272.0,
+   "mc": 588420025634.7656,
    "pb": 1.13,
    "pe": 4.75,
-   "price": 140.1,
+   "price": 138.1,
    "roe": 23.8,
    "sektor": "Banka",
    "tek": {
@@ -4833,7 +4836,7 @@
      116.9,
      128.2
     ],
-    "atr": 4.77,
+    "atr": 4.87,
     "bolge": null,
     "dip": 116.9,
     "durum": "bekle",
@@ -4842,14 +4845,14 @@
     "f50": 143.3,
     "f618": 137.07,
     "f786": 128.2,
-    "gun": 2506,
+    "gun": 2507,
     "h1": 169.7,
     "h1n": "son 1 yılın zirvesi",
     "h2": 184.06,
     "h2n": "Fibonacci 1,272 uzantısı",
     "kes": [
      128.2,
-     131.83
+     131.87
     ],
     "kir": {
      "durum": "bekleniyor",
@@ -4857,19 +4860,15 @@
      "gt_ust": 169.7,
      "sev": 169.7
     },
-    "ma200": 134.85,
-    "ma200_once": 132.84,
+    "ma200": 134.88,
+    "ma200_once": 132.76,
     "ma50": 137.97,
-    "mum_notu": "ok (2506 mum, son 2026-11-26)",
+    "mum_notu": "ok (2507 mum, son 2026-11-27)",
     "ort_tur": "EMA",
     "poc": 129.44,
-    "risk": 134.85,
+    "risk": 134.88,
     "riskn": "200 günlük ortalama",
     "seri": [
-     [
-      "2025-11-14",
-      124.18
-     ],
      [
       "2025-11-17",
       123.03
@@ -5905,11 +5904,15 @@
      [
       "2026-11-26",
       140.1
+     ],
+     [
+      "2026-11-27",
+      138.1
      ]
     ],
-    "son": 140.1,
-    "stopA": 123.43,
-    "tarih": "2026-11-26",
+    "son": 138.1,
+    "stopA": 123.33,
+    "tarih": "2026-11-27",
     "trend": "yukari",
     "yontem": "analiz",
     "zirve": 169.7
@@ -6004,30 +6007,30 @@
     "y": 2026
    },
    "dunden": [],
-   "dy": 4.56,
+   "dy": 4.57,
    "kb": -8.1,
-   "mc": 295499637770.6146,
+   "mc": 295250001920.0,
    "pb": 0.65,
-   "pe": 4.63,
+   "pe": 4.62,
    "price": 11.81,
    "roe": 14.0,
    "sektor": "Banka",
    "tek": {
     "alim": null,
     "alim2": null,
-    "atr": 0.41,
+    "atr": 0.43,
     "bolge": null,
-    "dip": 11.64,
+    "dip": 11.12,
     "durum": "dikkat",
-    "f236": 16.66,
-    "f382": 15.7,
-    "f50": 14.93,
-    "f618": 14.15,
-    "f786": 13.05,
-    "gun": 2506,
+    "f236": 16.54,
+    "f382": 15.5,
+    "f50": 14.66,
+    "f618": 13.83,
+    "f786": 12.64,
+    "gun": 2507,
     "h1": 18.21,
     "h1n": "son 1 yılın zirvesi",
-    "h2": 20.0,
+    "h2": 20.14,
     "h2n": "Fibonacci 1,272 uzantısı",
     "kes": null,
     "kir": {
@@ -6036,19 +6039,15 @@
      "gt_ust": 18.21,
      "sev": 18.21
     },
-    "ma200": 13.37,
-    "ma200_once": 13.49,
-    "ma50": 12.82,
-    "mum_notu": "ok (2506 mum, son 2026-11-26)",
+    "ma200": 13.35,
+    "ma200_once": 13.47,
+    "ma50": 12.78,
+    "mum_notu": "ok (2507 mum, son 2026-11-27)",
     "ort_tur": "EMA",
-    "poc": 14.35,
-    "risk": 11.64,
+    "poc": 13.87,
+    "risk": 11.12,
     "riskn": "1 yıllık dip",
     "seri": [
-     [
-      "2025-11-14",
-      11.82
-     ],
      [
       "2025-11-17",
       11.74
@@ -7084,11 +7083,15 @@
      [
       "2026-11-26",
       11.81
+     ],
+     [
+      "2026-11-27",
+      11.81
      ]
     ],
     "son": 11.81,
     "stopA": null,
-    "tarih": "2026-11-26",
+    "tarih": "2026-11-27",
     "trend": "asagi",
     "yontem": "analiz",
     "zirve": 18.21
@@ -7099,7 +7102,7 @@
      {
       "ad": "Değerleme",
       "p": 1,
-      "t": "ucuz (F/K 4,63, PD/DD 0,65)"
+      "t": "ucuz (F/K 4,62, PD/DD 0,65)"
      },
      {
       "ad": "Uzun trend",
@@ -7186,12 +7189,12 @@
     "y": 2026
    },
    "dunden": [],
-   "dy": 3.74,
+   "dy": 3.67,
    "kb": 202.8,
-   "mc": 471677000000.0,
-   "pb": 0.55,
-   "pe": 7.24,
-   "price": 186.0,
+   "mc": 480130400256.0,
+   "pb": 0.56,
+   "pe": 7.37,
+   "price": 189.4,
    "roe": 7.6,
    "sektor": "Holding",
    "tek": {
@@ -7200,7 +7203,7 @@
      180.0
     ],
     "alim2": null,
-    "atr": 6.14,
+    "atr": 6.31,
     "bolge": null,
     "dip": 165.7,
     "durum": "bekle",
@@ -7209,7 +7212,7 @@
     "f50": 199.1,
     "f618": 191.22,
     "f786": 180.0,
-    "gun": 2506,
+    "gun": 2507,
     "h1": 232.5,
     "h1n": "son 1 yılın zirvesi",
     "h2": 250.67,
@@ -7221,19 +7224,15 @@
      "gt_ust": 232.5,
      "sev": 232.5
     },
-    "ma200": 199.54,
-    "ma200_once": 199.89,
-    "ma50": 202.09,
-    "mum_notu": "ok (2506 mum, son 2026-11-26)",
+    "ma200": 199.44,
+    "ma200_once": 199.82,
+    "ma50": 201.59,
+    "mum_notu": "ok (2507 mum, son 2026-11-27)",
     "ort_tur": "EMA",
     "poc": 194.92,
     "risk": 165.7,
     "riskn": "1 yıllık dip",
     "seri": [
-     [
-      "2025-11-14",
-      158.09
-     ],
      [
       "2025-11-17",
       161.75
@@ -8269,11 +8268,15 @@
      [
       "2026-11-26",
       186.0
+     ],
+     [
+      "2026-11-27",
+      189.4
      ]
     ],
-    "son": 186.0,
-    "stopA": 159.56,
-    "tarih": "2026-11-26",
+    "son": 189.4,
+    "stopA": 159.39,
+    "tarih": "2026-11-27",
     "trend": "zayiflama",
     "yontem": "analiz",
     "zirve": 232.5
@@ -8284,7 +8287,7 @@
      {
       "ad": "Değerleme",
       "p": 1,
-      "t": "ucuz (F/K 7,24, PD/DD 0,55)"
+      "t": "ucuz (F/K 7,37, PD/DD 0,56)"
      },
      {
       "ad": "Uzun trend",
@@ -8373,10 +8376,10 @@
    "dunden": [],
    "dy": 2.76,
    "kb": -34.1,
-   "mc": 72376400000.0,
-   "pb": 0.71,
-   "pe": 12.77,
-   "price": 399.75,
+   "mc": 73062285312.0,
+   "pb": 0.72,
+   "pe": 12.89,
+   "price": 410.25,
    "roe": 5.6,
    "sektor": "Perakende",
    "tek": {
@@ -9466,7 +9469,7 @@
      {
       "ad": "Değerleme",
       "p": 0,
-      "t": "makul (F/K 12,77, PD/DD 0,71)"
+      "t": "makul (F/K 12,89, PD/DD 0,72)"
      },
      {
       "ad": "Uzun trend",
@@ -9555,10 +9558,10 @@
    "dunden": [],
    "dy": 0.0,
    "kb": -109.6,
-   "mc": 75699994624.0,
-   "pb": 0.57,
-   "pe": 30.43,
-   "price": 151.4,
+   "mc": 76300000000.0,
+   "pb": 0.58,
+   "pe": 30.67,
+   "price": 152.6,
    "roe": 1.9,
    "sektor": "Havayolu",
    "tek": {
@@ -9567,7 +9570,7 @@
      138.46
     ],
     "alim2": null,
-    "atr": 5.4,
+    "atr": 5.42,
     "bolge": null,
     "dip": 114.6,
     "durum": "bekle",
@@ -9576,7 +9579,7 @@
     "f50": 170.35,
     "f618": 157.19,
     "f786": 138.46,
-    "gun": 2506,
+    "gun": 2507,
     "h1": 226.1,
     "h1n": "son 1 yılın zirvesi",
     "h2": 256.43,
@@ -9588,19 +9591,15 @@
      "gt_ust": 226.1,
      "sev": 226.1
     },
-    "ma200": 164.25,
-    "ma200_once": 167.92,
-    "ma50": 145.25,
-    "mum_notu": "ok (2506 mum, son 2026-11-26)",
+    "ma200": 164.14,
+    "ma200_once": 167.39,
+    "ma50": 145.54,
+    "mum_notu": "ok (2507 mum, son 2026-11-27)",
     "ort_tur": "EMA",
     "poc": 205.19,
     "risk": 143.86,
     "riskn": "Supertrend",
     "seri": [
-     [
-      "2025-11-14",
-      204.0
-     ],
      [
       "2025-11-17",
       204.0
@@ -10636,11 +10635,15 @@
      [
       "2026-11-26",
       151.4
+     ],
+     [
+      "2026-11-27",
+      152.6
      ]
     ],
-    "son": 151.4,
-    "stopA": 109.2,
-    "tarih": "2026-11-26",
+    "son": 152.6,
+    "stopA": 109.18,
+    "tarih": "2026-11-27",
     "trend": "asagi",
     "yontem": "analiz",
     "zirve": 226.1
@@ -10651,7 +10654,7 @@
      {
       "ad": "Değerleme",
       "p": 0,
-      "t": "makul (F/K 30,43, PD/DD 0,57)"
+      "t": "makul (F/K 30,67, PD/DD 0,58)"
      },
      {
       "ad": "Uzun trend",
@@ -10738,18 +10741,18 @@
     "y": 2026
    },
    "dunden": [],
-   "dy": 4.6,
+   "dy": 4.62,
    "kb": 0.5,
-   "mc": 190410000000.0,
-   "pb": 0.57,
-   "pe": 8.67,
-   "price": 86.55,
+   "mc": 194573975552.0,
+   "pb": 0.58,
+   "pe": 8.86,
+   "price": 89.4,
    "roe": 6.6,
    "sektor": "İletişim",
    "tek": {
     "alim": null,
     "alim2": null,
-    "atr": 2.89,
+    "atr": 3.01,
     "bolge": null,
     "dip": 84.85,
     "durum": "dikkat",
@@ -10758,7 +10761,7 @@
     "f50": 107.22,
     "f618": 101.94,
     "f786": 94.43,
-    "gun": 2506,
+    "gun": 2507,
     "h1": 129.6,
     "h1n": "son 1 yılın zirvesi",
     "h2": 141.77,
@@ -10770,19 +10773,15 @@
      "gt_ust": 129.6,
      "sev": 129.6
     },
-    "ma200": 101.35,
-    "ma200_once": 103.26,
-    "ma50": 95.19,
-    "mum_notu": "ok (2506 mum, son 2026-11-26)",
+    "ma200": 101.23,
+    "ma200_once": 103.13,
+    "ma50": 94.96,
+    "mum_notu": "ok (2507 mum, son 2026-11-27)",
     "ort_tur": "EMA",
     "poc": 105.55,
     "risk": 84.85,
     "riskn": "1 yıllık dip",
     "seri": [
-     [
-      "2025-11-14",
-      91.43
-     ],
      [
       "2025-11-17",
       91.38
@@ -11818,11 +11817,15 @@
      [
       "2026-11-26",
       86.55
+     ],
+     [
+      "2026-11-27",
+      89.4
      ]
     ],
-    "son": 86.55,
+    "son": 89.4,
     "stopA": null,
-    "tarih": "2026-11-26",
+    "tarih": "2026-11-27",
     "trend": "asagi",
     "yontem": "analiz",
     "zirve": 129.6
@@ -11833,7 +11836,7 @@
      {
       "ad": "Değerleme",
       "p": 0,
-      "t": "makul (F/K 8,67, PD/DD 0,57)"
+      "t": "makul (F/K 8,86, PD/DD 0,58)"
      },
      {
       "ad": "Uzun trend",
@@ -11923,10 +11926,10 @@
    "dunden": [],
    "dy": 0.0,
    "kb": -0.9,
-   "mc": 429870000000.0,
+   "mc": 430896971776.0,
    "pb": 0.38,
-   "pe": 2.94,
-   "price": 309.75,
+   "pe": 2.95,
+   "price": 314.0,
    "roe": 12.9,
    "sektor": "Havayolu",
    "tek": {
@@ -11938,7 +11941,7 @@
      266.45,
      285.48
     ],
-    "atr": 9.48,
+    "atr": 9.65,
     "bolge": null,
     "dip": 242.2,
     "durum": "bekle",
@@ -11947,13 +11950,13 @@
     "f50": 298.85,
     "f618": 285.48,
     "f786": 266.45,
-    "gun": 2506,
+    "gun": 2507,
     "h1": 355.5,
     "h1n": "son 1 yılın zirvesi",
     "h2": 386.32,
     "h2n": "Fibonacci 1,272 uzantısı",
     "kes": [
-     289.86,
+     289.78,
      298.85
     ],
     "kir": {
@@ -11962,19 +11965,15 @@
      "gt_ust": 355.5,
      "sev": 355.5
     },
-    "ma200": 300.45,
-    "ma200_once": 298.96,
-    "ma50": 298.61,
-    "mum_notu": "ok (2506 mum, son 2026-11-26)",
+    "ma200": 300.58,
+    "ma200_once": 298.4,
+    "ma50": 299.22,
+    "mum_notu": "ok (2507 mum, son 2026-11-27)",
     "ort_tur": "EMA",
     "poc": 294.6,
     "risk": 299.35,
     "riskn": "Supertrend",
     "seri": [
-     [
-      "2025-11-14",
-      269.0
-     ],
      [
       "2025-11-17",
       268.5
@@ -13010,11 +13009,15 @@
      [
       "2026-11-26",
       309.75
+     ],
+     [
+      "2026-11-27",
+      314.0
      ]
     ],
-    "son": 309.75,
-    "stopA": 276.0,
-    "tarih": "2026-11-26",
+    "son": 314.0,
+    "stopA": 275.83,
+    "tarih": "2026-11-27",
     "trend": "toparlanma",
     "yontem": "analiz",
     "zirve": 355.5
@@ -13025,7 +13028,7 @@
      {
       "ad": "Değerleme",
       "p": 1,
-      "t": "ucuz (F/K 2,94, PD/DD 0,38)"
+      "t": "ucuz (F/K 2,95, PD/DD 0,38)"
      },
      {
       "ad": "Uzun trend",
@@ -13112,12 +13115,12 @@
     "y": 2026
    },
    "dunden": [],
-   "dy": 4.24,
+   "dy": 4.17,
    "kb": 328.5,
-   "mc": 622836700000.0,
-   "pb": 1.19,
-   "pe": 4.8,
-   "price": 323.25,
+   "mc": 635842500000.0,
+   "pb": 1.22,
+   "pe": 4.9,
+   "price": 330.0,
    "roe": 24.8,
    "sektor": "Enerji",
    "tek": {
@@ -13129,7 +13132,7 @@
      234.16,
      274.79
     ],
-    "atr": 12.54,
+    "atr": 12.83,
     "bolge": null,
     "dip": 182.4,
     "durum": "bekle",
@@ -13138,7 +13141,7 @@
     "f50": 303.32,
     "f618": 274.79,
     "f786": 234.16,
-    "gun": 2506,
+    "gun": 2507,
     "h1": 424.25,
     "h1n": "son 1 yılın zirvesi",
     "h2": 490.03,
@@ -13153,19 +13156,15 @@
      "gt_ust": 424.25,
      "sev": 424.25
     },
-    "ma200": 307.86,
-    "ma200_once": 301.38,
-    "ma50": 351.69,
-    "mum_notu": "ok (2506 mum, son 2026-11-26)",
+    "ma200": 308.08,
+    "ma200_once": 301.8,
+    "ma50": 350.83,
+    "mum_notu": "ok (2507 mum, son 2026-11-27)",
     "ort_tur": "EMA",
     "poc": 257.98,
-    "risk": 307.86,
+    "risk": 308.08,
     "riskn": "200 günlük ortalama",
     "seri": [
-     [
-      "2025-11-14",
-      187.98
-     ],
      [
       "2025-11-17",
       190.34
@@ -14201,11 +14200,15 @@
      [
       "2026-11-26",
       323.25
+     ],
+     [
+      "2026-11-27",
+      330.0
      ]
     ],
-    "son": 323.25,
-    "stopA": 262.24,
-    "tarih": "2026-11-26",
+    "son": 330.0,
+    "stopA": 261.96,
+    "tarih": "2026-11-27",
     "trend": "yukari",
     "yontem": "analiz",
     "zirve": 424.25
@@ -14216,7 +14219,7 @@
      {
       "ad": "Değerleme",
       "p": 0,
-      "t": "makul (F/K 4,8, PD/DD 1,19)"
+      "t": "makul (F/K 4,9, PD/DD 1,22)"
      },
      {
       "ad": "Uzun trend",
@@ -14249,35 +14252,10 @@
    },
    "byorum": {
     "d": "2026/9",
-    "etki": "olumsuz",
+    "etki": "karisik",
     "ilk": "2026-11-16",
-    "kaynak": "İş Yatırım",
+    "kaynak": "Yahoo",
     "m": [
-     {
-      "k": "net kâr reel olarak %15,1 azaldı",
-      "p": -1,
-      "t": "Net kâr geçen yılın aynı dönemine göre %10,2 arttı (37,8 milyar TL → 41,7 milyar TL, enflasyondan arındırınca yaklaşık -%15,1)."
-     },
-     {
-      "k": "net faiz geliri reel olarak %33,1 arttı",
-      "p": 1,
-      "t": "Net faiz geliri geçen yılın aynı dönemine göre %72,8 arttı (97,2 milyar TL → 167,9 milyar TL, enflasyondan arındırınca yaklaşık +%33,1)."
-     },
-     {
-      "k": "net ücret ve komisyon gelirleri reel olarak %8,6 azaldı",
-      "p": -1,
-      "t": "Net ücret ve komisyon gelirleri geçen yılın aynı dönemine göre %18,7 arttı (79,7 milyar TL → 94,6 milyar TL, enflasyondan arındırınca yaklaşık -%8,6)."
-     },
-     {
-      "k": "",
-      "p": 0,
-      "t": "Mevduat bir yılda %37,5 büyüdü."
-     },
-     {
-      "k": "son çeyrek kârı reel olarak %45,4 azaldı",
-      "p": -1,
-      "t": "Son çeyrekte (Temmuz-Eylül) net kâr 10,7 milyar TL; geçen yılın aynı çeyreğinde 15,1 milyar TL idi (-%29,2, enflasyondan arındırınca yaklaşık -%45,4)."
-     },
      {
       "k": "özkaynak kârlılığı zayıf",
       "p": 0,
@@ -14289,8 +14267,8 @@
       "t": "Not: Geçen yılın rakamları o dönemin TL'siyle raporlandığı için büyümeler ayrıca yıllık enflasyona (%29,8) göre de değerlendirildi."
      }
     ],
-    "ozet": "Genel tablo zayıf: net faiz geliri reel olarak %33,1 arttı; buna karşın net kâr reel olarak %15,1 azaldı ve net ücret ve komisyon gelirleri reel olarak %8,6 azaldı.",
-    "puan": -2
+    "ozet": "Karışık bir tablo.",
+    "puan": 0
    },
    "chk": {
     "d": "2026/9",
@@ -14303,28 +14281,25 @@
    "dunden": [],
    "dy": 0.0,
    "kb": 10.2,
-   "mc": 283145200000.0,
-   "pb": 0.96,
-   "pe": 5.56,
-   "price": 33.52,
+   "mc": 283145146054.0,
+   "pb": 0.95,
+   "pe": 5.51,
+   "price": 32.92,
    "roe": 17.2,
    "sektor": "Banka",
    "tek": {
-    "alim": [
-     30.42,
-     33.43
-    ],
+    "alim": null,
     "alim2": null,
-    "atr": 1.2,
+    "atr": 1.27,
     "bolge": null,
     "dip": 30.42,
-    "durum": "bekle",
+    "durum": "dikkat",
     "f236": 41.18,
     "f382": 39.12,
     "f50": 37.46,
     "f618": 35.8,
     "f786": 33.43,
-    "gun": 2506,
+    "gun": 2507,
     "h1": 44.5,
     "h1n": "son 1 yılın zirvesi",
     "h2": 48.33,
@@ -14336,19 +14311,15 @@
      "gt_ust": 44.5,
      "sev": 44.5
     },
-    "ma200": 35.85,
-    "ma200_once": 35.71,
-    "ma50": 36.11,
-    "mum_notu": "ok (2506 mum, son 2026-11-26)",
+    "ma200": 35.82,
+    "ma200_once": 35.7,
+    "ma50": 35.98,
+    "mum_notu": "ok (2507 mum, son 2026-11-27)",
     "ort_tur": "EMA",
     "poc": 36.58,
     "risk": 30.42,
     "riskn": "1 yıllık dip",
     "seri": [
-     [
-      "2025-11-14",
-      31.96
-     ],
      [
       "2025-11-17",
       32.1
@@ -15384,11 +15355,15 @@
      [
       "2026-11-26",
       33.52
+     ],
+     [
+      "2026-11-27",
+      32.92
      ]
     ],
-    "son": 33.52,
-    "stopA": 29.22,
-    "tarih": "2026-11-26",
+    "son": 32.92,
+    "stopA": null,
+    "tarih": "2026-11-27",
     "trend": "zayiflama",
     "yontem": "analiz",
     "zirve": 44.5
@@ -15399,7 +15374,7 @@
      {
       "ad": "Değerleme",
       "p": 1,
-      "t": "ucuz (F/K 5,56, PD/DD 0,96)"
+      "t": "ucuz (F/K 5,51, PD/DD 0,95)"
      },
      {
       "ad": "Uzun trend",
@@ -15422,6 +15397,6 @@
    }
   }
  },
- "updated": "2026-11-26",
- "updatedAt": "2026-11-26T18:57:28Z"
+ "updated": "2026-11-27",
+ "updatedAt": "2026-11-27T17:22:54Z"
 }
