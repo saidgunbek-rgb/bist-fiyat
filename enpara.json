@@ -1,25 +1,25 @@
 {
- "updatedAt": "2026-11-27T08:32:48Z",
+ "updatedAt": "2026-11-27T09:21:04Z",
  "kaynak": "doviz.com (Enpara)",
  "GRAMALTIN": {
-  "alis": 5923.35,
-  "satis": 6043.82,
-  "saat": "11:32",
+  "alis": 5929.62,
+  "satis": 6050.2,
+  "saat": "12:20",
   "makas": 2.03,
   "tamam": true,
-  "zaman": "2026-11-27T08:32:48Z",
-  "ref": 6023.11,
+  "zaman": "2026-11-27T09:21:04Z",
+  "ref": 6038.77,
   "ref_kaynak": "altin.json 2026-11-27",
   "gecerli": true
  },
  "GRAMGUMUS": {
-  "alis": 71.8,
-  "satis": 74.78,
-  "saat": "11:32",
-  "makas": 4.15,
+  "alis": 71.93,
+  "satis": 74.95,
+  "saat": "12:20",
+  "makas": 4.2,
   "tamam": true,
-  "zaman": "2026-11-27T08:32:48Z",
-  "ref": 72.84,
+  "zaman": "2026-11-27T09:21:04Z",
+  "ref": 72.7,
   "ref_kaynak": "altin.json 2026-11-27",
   "gecerli": true
  }
