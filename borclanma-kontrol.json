@@ -6,7 +6,7 @@
    "search_funds(query: str, limit: int = 20) -> list[dict[str, typing.Any]]",
    "compare_funds(fund_codes: list[str]) -> dict[str, typing.Any]",
    "Fund.history(self, period: str = '1mo', start: datetime.datetime | str | None = None, end: datetime.datetime | str | None = None) -> pandas.DataFrame",
-   "screen_funds(YAT, tumu): 2134 kayit, 2134 yeni fon",
+   "screen_funds(YAT, tumu): 2135 kayit, 2135 yeni fon",
    "ornek alanlar: ['index', 'fund_code', 'name', 'fund_type', 'return_1m', 'return_3m', 'return_6m', 'return_ytd', 'return_1y', 'return_3y', 'return_5y']",
    "search_funds(borçlanma): 1000 kayit, 239 yeni fon",
    "ornek alanlar: ['fund_code', 'name', 'fund_type', 'return_1y']",
@@ -14,13 +14,13 @@
    "ornek alanlar: ['fund_code', 'name', 'fund_type', 'return_1y']",
    "search_funds(BORCLANMA): 1000 kayit, 0 yeni fon",
    "ornek alanlar: ['fund_code', 'name', 'fund_type', 'return_1y']",
-   "Toplam aday fon: 2373",
-   "Enflasyon: {'y': 29.77, 't': '2026-11-26', 'k': 'borsapy:latest'}",
-   "BIST100 kaynaklar: {'yahoo': {'a1': -3.67, 'a3': -26.47, 'a6': -21.37, 'y1': -1.57, 'y3': 34.96, 'y5': 504.77, '_risk': {'mdd': -29.59, 'vol': 24.11}, 'd1': 0.82, '_d1t': '2026-11-26'}, 'borsapy': {'a1': -3.67, 'a3': -26.47, 'a6': -21.37, 'y1': -1.57, 'y3': 34.96, 'y5': 504.77, '_risk': {'mdd': -29.",
-   "BIST100 (teyitli): {'a1': -3.67, 'a3': -26.47, 'a6': -21.37, 'y1': -1.57, 'y3': 34.96, 'y5': 504.77, 'd1': 0.82, 'mdd': -29.59, 'vol': 24.11, 'reel_y1': -24.15}",
+   "Toplam aday fon: 2374",
+   "Enflasyon: {'y': 29.77, 't': '2026-11-27', 'k': 'borsapy:latest'}",
+   "BIST100 kaynaklar: {'yahoo': {'a1': -1.56, 'a3': -24.69, 'a6': -19.66, 'y1': 0.29, 'y3': 35.4, 'y5': 517.94, '_risk': {'mdd': -29.59, 'vol': 26.37}, 'd1': 2.18, '_d1t': '2026-11-27'}, 'borsapy': {'a1': -1.56, 'a3': -24.69, 'a6': -19.66, 'y1': 0.29, 'y3': 35.4, 'y5': 517.93, '_risk': {'mdd': -29.59, ",
+   "BIST100 (teyitli): {'a1': -1.56, 'a3': -24.69, 'a6': -19.66, 'y1': 0.29, 'y3': 35.4, 'y5': 517.93, 'd1': 2.18, 'mdd': -29.59, 'vol': 26.36, 'reel_y1': -22.72}",
    "Sorgulanacak fon: 44",
-   "Listeye giren: 27 | Atlanan: {'borçlanma fonu değil': 2283, 'banka fonu değil': 46, \"TEFAS'ta işlem görmüyor\": 9, 'özel fon (sınırlı yatırımcı)': 8}",
-   "Grafik verisi: 27 fon, BIST100 1261 gun"
+   "Listeye giren: 7 | Atlanan: {'borçlanma fonu değil': 2284, 'banka fonu değil': 46, 'getirisi fiyat geçmişiyle tutmayan': 20, \"TEFAS'ta işlem görmüyor\": 9, 'özel fon (sınırlı yatırımcı)': 8}",
+   "Grafik verisi: 7 fon, BIST100 1259 gun"
   ],
   "banka_disi_kurucular": {
    "ALLIANZ YASAM VE EMEKLILIK A.S": 2,
@@ -2258,6 +2258,7 @@
    "YZH",
    "YZK",
    "YZL",
+   "YZS",
    "YZT",
    "ZA2",
    "ZAD",
@@ -2385,6 +2386,228 @@
    "TPF",
    "TPL",
    "TRJ"
+  ],
+  "getirisi fiyat geçmişiyle tutmayan": [
+   [
+    "AK2",
+    [
+     [
+      "a6",
+      12.2698,
+      13.2,
+      15.22
+     ]
+    ]
+   ],
+   [
+    "APT",
+    [
+     [
+      "a6",
+      16.3619,
+      17.2,
+      18.75
+     ]
+    ]
+   ],
+   [
+    "AYR",
+    [
+     [
+      "a6",
+      18.2712,
+      18.89,
+      19.4
+     ]
+    ]
+   ],
+   [
+    "BRR",
+    [
+     [
+      "a6",
+      20.2779,
+      21.01,
+      21.68
+     ]
+    ]
+   ],
+   [
+    "DBB",
+    [
+     [
+      "a6",
+      17.1438,
+      17.95,
+      19.41
+     ]
+    ]
+   ],
+   [
+    "DBK",
+    [
+     [
+      "a6",
+      19.0611,
+      19.8,
+      20.29
+     ]
+    ]
+   ],
+   [
+    "DBZ",
+    [
+     [
+      "a6",
+      17.8055,
+      18.43,
+      18.93
+     ]
+    ]
+   ],
+   [
+    "DUV",
+    [
+     [
+      "a6",
+      12.5396,
+      13.53,
+      16.48
+     ]
+    ]
+   ],
+   [
+    "GA1",
+    [
+     [
+      "a6",
+      17.5769,
+      18.43,
+      20.11
+     ]
+    ]
+   ],
+   [
+    "GUB",
+    [
+     [
+      "a6",
+      19.5974,
+      20.22,
+      20.72
+     ]
+    ]
+   ],
+   [
+    "GUV",
+    [
+     [
+      "a6",
+      14.2282,
+      15.15,
+      17.98
+     ]
+    ]
+   ],
+   [
+    "IKV",
+    [
+     [
+      "a6",
+      19.1707,
+      19.84,
+      20.27
+     ]
+    ]
+   ],
+   [
+    "TBV",
+    [
+     [
+      "a6",
+      19.1054,
+      19.75,
+      20.27
+     ]
+    ]
+   ],
+   [
+    "TI6",
+    [
+     [
+      "a6",
+      16.1935,
+      16.95,
+      18.63
+     ]
+    ]
+   ],
+   [
+    "TZT",
+    [
+     [
+      "a6",
+      15.1334,
+      15.74,
+      17.43
+     ]
+    ]
+   ],
+   [
+    "YAE",
+    [
+     [
+      "a6",
+      18.2713,
+      18.93,
+      19.12
+     ]
+    ]
+   ],
+   [
+    "YBS",
+    [
+     [
+      "a6",
+      19.6942,
+      20.3,
+      20.9
+     ]
+    ]
+   ],
+   [
+    "YHT",
+    [
+     [
+      "a6",
+      18.2933,
+      19.0,
+      19.44
+     ]
+    ]
+   ],
+   [
+    "YOT",
+    [
+     [
+      "a6",
+      16.4554,
+      17.26,
+      18.97
+     ]
+    ]
+   ],
+   [
+    "YVB",
+    [
+     [
+      "a6",
+      14.0218,
+      14.96,
+      17.56
+     ]
+    ]
+   ]
   ],
   "TEFAS'ta işlem görmüyor": [
    "AVT",
