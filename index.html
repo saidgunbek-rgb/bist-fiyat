@@ -587,7 +587,7 @@ var GOR={olumlu:["Uzun vade: olumlu","var(--pos)"],notr:["Uzun vade: nötr","#d9
 var GU=null;
 function guniciFiyat(k,d){if(!GU||!GU.gunici||!GU.updatedAt)return null;var u=Date.parse(GU.updatedAt);if(!(u>0)||Date.now()-u>45*60*1000)return null;var g=GU.gunici[kod(k)];if(!g||!(g[4]>0)||!(g[0]>d))return null;var t=new Date(u+108e5);return{p:g[4],s:("0"+t.getUTCHours()).slice(-2)+":"+("0"+t.getUTCMinutes()).slice(-2)};}
 function eldekiler(gi){var m=pos("9999-12-31"),L=[],tv=0;
-  for(var k in m){var z=m[k];if(!(z.q>0))continue;var lp=lastPx(k);if(!lp)continue;var gx=gi?guniciFiyat(k,lp.d):null;if(gx)lp={p:gx.p,d:lp.d,gi:gx.s};var ex=gi?enpLive(k):null;if(ex)lp={p:ex.p,d:lp.d,gi:ex.s,enp:1};var v=z.q*lp.p,g=v-z.q*z.c;tv+=v;L.push({k:k,q:z.q,c:z.c,p:lp.p,gi:lp.gi,enp:lp.enp,v:v,g:g,gp:z.q*z.c?g/(z.q*z.c):0});}
+  for(var k in m){var z=m[k];if(!(z.q>0))continue;var lp=lastPx(k);if(!lp)continue;var gx=gi?guniciFiyat(k,lp.est?"0000-00-00":lp.d):null;if(gx)lp={p:gx.p,d:lp.d,gi:gx.s};var ex=gi?enpLive(k):null;if(ex)lp={p:ex.p,d:lp.d,gi:ex.s,enp:1};var v=z.q*lp.p,g=v-z.q*z.c;tv+=v;L.push({k:k,q:z.q,c:z.c,p:lp.p,gi:lp.gi,enp:lp.enp,v:v,g:g,gp:z.q*z.c?g/(z.q*z.c):0});}
   L.forEach(function(x){x.pay=tv?x.v/tv:0;});L.sort(function(a,b){return b.v-a.v;});return L;}
 function bar(t,p){if(!t||!(t.risk>0)||!(t.h1>t.risk))return"";
   var r=t.risk,h=t.h1,x=(p-r)/(h-r),xc=Math.max(0,Math.min(1,x)),renk=x<0?"var(--neg)":(x>=0.97?"var(--neg)":"var(--pos)");
