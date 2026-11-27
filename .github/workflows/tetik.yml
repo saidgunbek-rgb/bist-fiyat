@@ -1,0 +1,41 @@
+# Tek tetikleyici: cron-job.org bu dosyayi (workflow_dispatch) hafta ici 09:07-18:37 arasi 30 dakikada bir calistirir.
+# Saate bakar ve Hisselerim icin gereken botlari baslatir. GitHub'in kendi zamanlayicisi bu botlari atlasa da veri guncel kalir.
+#   Enpara gram altin / gumus .... 09:07 - 18:37 (enpara.yml)
+#   Analiz verisi (hisse gun ici) .. 10:07 - 17:37 (analiz.yml)
+#   BIST kapanis fiyatlari ......... 18:37'de bir kez (fiyat.yml); 18:23'teki kendi zamanlamasi de aynen duruyor
+# Yeni bot eklemek icin asagidaki listeye bir satir eklemek yeter. Baska dosyaya dokunmaz.
+name: Tetikleyici
+
+on:
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: tetik
+  cancel-in-progress: false
+
+jobs:
+  tetik:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Saate gore botlari baslat
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          H=$((10#$(TZ=Europe/Istanbul date +%H)))
+          M=$((10#$(TZ=Europe/Istanbul date +%M)))
+          GUN=$(TZ=Europe/Istanbul date +%u)
+          echo "Turkiye saati: $H:$M, haftanin gunu: $GUN"
+          baslat() {
+            echo "-> $1 baslatiliyor"
+            gh workflow run "$1" --ref main || echo "UYARI: $1 baslatilamadi"
+          }
+          if [ "$GUN" -ge 6 ]; then echo "Hafta sonu, bir sey baslatilmadi."; exit 0; fi
+          if [ "$H" -ge 9 ] && [ "$H" -le 18 ]; then baslat enpara.yml; fi
+          if [ "$H" -ge 10 ] && [ "$H" -le 17 ]; then baslat analiz.yml; fi
+          if [ "$H" -eq 18 ] && [ "$M" -ge 30 ]; then baslat fiyat.yml; fi
