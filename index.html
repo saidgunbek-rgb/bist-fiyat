@@ -194,6 +194,7 @@ window.fetch=function(){return of.apply(this,arguments).then(function(r){try{var
 <div class="card"><details class="cl" id="clt">
 <summary><h2>Alım / satım işlemleri</h2></summary>
 <div class="mut" id="pos" style="margin-bottom:10px"></div>
+<div id="enp" style="margin:0 0 10px;padding:10px 12px;background:var(--card);border:1px solid var(--bd,#333);border-radius:12px;font-size:13px"><div style="font-weight:700;margin-bottom:6px">🥇 Sanal alım · Enpara gram altın / gümüş</div><div id="enpv" class="mut">Fiyatlar yükleniyor…</div><div class="row" style="margin-top:8px;gap:8px"><button class="ghost" id="enpa" type="button">Gram altın</button><button class="ghost" id="enpg" type="button">Gram gümüş</button></div><div class="mut" style="margin-top:6px;font-size:11.5px">Sanal kayıttır, gerçek işlem yapmaz. Alımda Enpara <b>satış</b>, satımda <b>alış</b> fiyatı forma gelir; değiştirebilirsin. Değer, Enpara alış fiyatıyla hesaplanır. Kaynak doviz.com, saatlik gecikme olabilir.</div></div>
 <div class="row"><label for="td">Tarih</label><input type="date" id="td" style="flex:2"></div>
 <div class="row"><label for="tt">Hisse</label><input id="tt" type="text" placeholder="THYAO" style="flex:2"></div>
 <div class="row"><label for="ty">İşlem</label><select id="ty" style="flex:2"><option value="a">Alım</option><option value="s">Satım</option></select></div>
@@ -375,7 +376,7 @@ function renderPrices(){
   document.getElementById("prices").innerHTML=h;
 }
 function renderTx(){var m=pos("9999-12-31"),h=[];for(var t in m){if(m[t].q>0)h.push(esc(t)+" "+fq(m[t].q)+" adet (ort. maliyet "+fmt(m[t].c)+")");}
-  document.getElementById("pos").innerHTML="Mevcut: "+(h.join(" · ")||"hisse yok");
+  document.getElementById("pos").innerHTML="Mevcut: "+(h.join(" · ")||"hisse yok");try{enpYaz();}catch(e){}
   var L=S.t.map(function(x,i){return{x:x,i:i};}).sort(function(a,b){return a.x.d<b.x.d?1:(a.x.d>b.x.d?-1:b.i-a.i);}),
   s='<tr><th>Tarih</th><th>Hisse</th><th>İşlem</th><th>Adet</th><th>Fiyat</th><th>Kom.</th><th></th></tr>';
   L.forEach(function(r){var x=r.x;s+='<tr><td>'+trDate(x.d)+'</td><td>'+esc(x.t)+'</td><td>'+(x.o?'Açılış':(x.y==="a"?'Alım':'Satım'))+'</td><td>'+fq(x.q)+'</td><td>'+fmt(x.p)+'</td><td>'+(x.k?fmt(x.k):'-')+'</td><td><button class="ghost" onclick="edt('+r.i+')">Düzenle</button> <button class="ghost" onclick="dtx('+r.i+')">Sil</button></td></tr>';});
@@ -497,7 +498,27 @@ document.getElementById("vadd").onclick=function(){
 };
 document.getElementById("bk").onclick=function(){var t=document.getElementById("bt"),m=document.getElementById("bm"),ok=false;t.value=JSON.stringify(S);t.select();try{ok=document.execCommand("copy");}catch(e){}try{if(navigator.clipboard){navigator.clipboard.writeText(t.value);ok=true;}}catch(e){}m.textContent=ok?"Yedek kopyalandı. Bir notlar uygulamasına yapıştırıp sakla.":"Metin seçildi, elle kopyalayabilirsin.";};
 document.getElementById("rs").onclick=function(){var m=document.getElementById("bm");try{var o=mig(JSON.parse(document.getElementById("bt").value));if(!o||!o.d||!o.t)throw 0;o.seed=Math.max(o.seed||0,6);S=o;persist();all();m.textContent="Yedek yüklendi.";}catch(e){m.textContent="Yedek metni geçersiz.";}};
-var INV={THYAO:"https://www.investing.com/equities/turk-hava-yollari-historical-data",FROTO:"https://www.investing.com/equities/ford-otosan-historical-data"};
+
+/* Enpara gram altin / gumus: sanal alim-satim yardimcisi */
+var ENP=null;
+function enpGec(q){if(!q||!(q.alis>0)||q.gecerli!==true)return false;var z=q.zaman?new Date(q.zaman).getTime():0;return z>0&&Date.now()-z<6*3600*1000;}
+function enpYaz(){var el=document.getElementById("enpv");if(!el)return;
+  var AD={GRAMALTIN:"Gram altın",GRAMGUMUS:"Gram gümüş"},h="",kz="",m=pos("9999-12-31");
+  ["GRAMALTIN","GRAMGUMUS"].forEach(function(t){var q=ENP&&ENP[t],ok=enpGec(q);
+    if(!ok)h+='<div>'+AD[t]+': <b>—</b> <span class="mut">('+(q&&q.alis>0&&q.gecerli===false?'fiyat kontrolden geçmedi':q&&q.alis>0?'veri eski':'fiyat alınamadı')+', fiyatı kendin yaz)</span></div>';
+    else h+='<div>'+AD[t]+': alış <b>'+fmt(q.alis)+'</b> · satış <b>'+(q.tamam===false?'—':fmt(q.satis))+'</b>'+(q.tamam===false?' <span class="mut">(satış doğrulanamadı, fark %'+String(q.makas).replace(".",",")+')</span>':'')+'</div>';
+    var z=m[t];if(z&&z.q>0){if(ok){var v=z.q*q.alis,c=z.q*z.c,d=v-c;kz+='<div>'+AD[t]+' '+fq(z.q)+' g · maliyet '+fmt(c)+' · şimdi (Enpara alış) '+fmt(v)+' · <b style="color:'+(d>=0?'var(--pos)':'var(--neg)')+'">K/Z '+sg(d)+' TL ('+(d>=0?'+':'')+fmt(d/c*100)+'%)</b></div>';}
+      else kz+='<div>'+AD[t]+' '+fq(z.q)+' g · maliyet '+fmt(z.q*z.c)+' · <b>K/Z gösterilemiyor</b> <span class="mut">(doğrulanmış güncel fiyat yok)</span></div>';}});
+  var zz=ENP&&ENP.updatedAt?new Date(ENP.updatedAt):null,sa=zz?zz.toLocaleString("tr-TR",{timeZone:"Europe/Istanbul",day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"}):"";
+  el.innerHTML=h+(kz?'<div style="margin-top:6px;padding-top:6px;border-top:1px solid var(--bd,#333)"><div style="font-weight:700">Anlık tahmini K/Z</div>'+kz+'</div>':'')+(sa?'<div class="mut" style="font-size:11.5px;margin-top:4px">Son güncelleme: '+sa+' · fiyat, ons×dolar referansıyla kontrol edilir</div>':'');}
+function enpDoldur(t){var e=document.getElementById("terr"),q=ENP&&ENP[t],y=document.getElementById("ty").value;
+  document.getElementById("tt").value=t;
+  var v=enpGec(q)?(y==="a"?(q.tamam===false?0:q.satis):q.alis):0;
+  if(v>0){document.getElementById("tp").value=fx(v);e.textContent="";}
+  else{document.getElementById("tp").value="";e.textContent=(y==="a"?"Enpara satış fiyatı doğrulanamadı":"Enpara alış fiyatı doğrulanamadı")+", fiyatı kendin yaz.";}}
+(function(){var a=document.getElementById("enpa"),g=document.getElementById("enpg");if(a)a.onclick=function(){enpDoldur("GRAMALTIN");};if(g)g.onclick=function(){enpDoldur("GRAMGUMUS");};
+  fetch("enpara.json?t="+Date.now()).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(j){ENP=j;enpYaz();}).catch(function(){ENP=null;enpYaz();});})();
+var INV={GRAMALTIN:"https://altin.doviz.com/enpara/gram-altin",GRAMGUMUS:"https://altin.doviz.com/enpara/gumus",THYAO:"https://www.investing.com/equities/turk-hava-yollari-historical-data",FROTO:"https://www.investing.com/equities/ford-otosan-historical-data"};
 document.getElementById("kb").onclick=function(){
   var k=document.getElementById("kp"),h="";
   if(k.style.display==="block"){k.style.display="none";return;}
