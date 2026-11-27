@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-27T16:03:24Z",
+ "updatedAt": "2026-11-27T16:42:24Z",
  "hisseler": {
   "THYAO": {
    "ozet": {
@@ -19,7 +19,7 @@
     "2025-09-02"
    ],
    "hatalar": [
-    "isyatirim: The read operation timed out"
+    "isyatirim: [Errno 104] Connection reset by peer"
    ],
    "secim_kayitlari": [
     {
