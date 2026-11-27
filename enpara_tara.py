@@ -31,16 +31,37 @@ def altin_yedek():
             return {"alis": sayi(n[0]), "satis": sayi(n[1]), "saat": None}
     return None
 def yahoo_canli(sym):
-    r = json.load(urllib.request.urlopen(urllib.request.Request("https://query1.finance.yahoo.com/v8/finance/chart/%s?range=1d&interval=1h" % sym, headers=UA), timeout=30))["chart"]["result"][0]["meta"]
-    v = float(r["regularMarketPrice"]); return v if v > 0 else None
-REF = {}
+    son = None
+    for host in ("query1", "query2"):
+        try:
+            r = json.load(urllib.request.urlopen(urllib.request.Request("https://%s.finance.yahoo.com/v8/finance/chart/%s?interval=1d&range=5d" % (host, sym), headers=UA), timeout=30))["chart"]["result"][0]["meta"]
+            v = float(r["regularMarketPrice"])
+            if v > 0: return v
+        except Exception as e:
+            son = e
+            print("HATA yahoo", host, sym, str(e)[:100])
+    raise son or Exception("fiyat yok")
+ist_ = datetime.datetime.utcnow() + datetime.timedelta(hours=3)
+REF, REFK = {}, {}
 try:
     usd = yahoo_canli("USDTRY=X")
-    REF["GRAMALTIN"] = yahoo_canli("GC=F") * usd / 31.1035
-    REF["GRAMGUMUS"] = yahoo_canli("SI=F") * usd / 31.1035
-    print("referans (ons x USDTRY / 31,1035):", {k: round(v, 2) for k, v in REF.items()})
+    REF["GRAMALTIN"] = yahoo_canli("GC=F") * usd / 31.1035; REFK["GRAMALTIN"] = "yahoo canli"
+    REF["GRAMGUMUS"] = yahoo_canli("SI=F") * usd / 31.1035; REFK["GRAMGUMUS"] = "yahoo canli"
 except Exception as e:
-    print("HATA referans", str(e)[:120])
+    print("HATA referans (yahoo)", str(e)[:120])
+# yedek referans: altin.json (ons x USDTRY / 31,1035, kendi botu) son satir; 2 gunden eskiyse kullanilmaz
+try:
+    aj = json.load(open("altin.json", encoding="utf-8"))
+    for ad, k in (("GRAMALTIN", "GRAM"), ("GRAMGUMUS", "GGUM")):
+        if ad in REF: continue
+        satir = aj["stocks"][k]; satir = satir["d"] if isinstance(satir, dict) else satir
+        t = datetime.datetime.strptime(satir[-1][0], "%Y-%m-%d")
+        if (ist_ - t).days <= 2 and satir[-1][4] > 0:
+            REF[ad] = float(satir[-1][4]); REFK[ad] = "altin.json " + satir[-1][0]
+except Exception as e:
+    print("HATA referans (yedek)", str(e)[:120])
+print("referans:", {k: (round(v, 2), REFK[k]) for k, v in REF.items()})
+ist_ = datetime.datetime.utcnow() + datetime.timedelta(hours=3)
 KAYNAK = {"GRAMALTIN": ["https://altin.doviz.com/enpara/gram-altin", "https://altin.doviz.com/enpara/gram-altin/bilgi"],
           "GRAMGUMUS": ["https://altin.doviz.com/enpara/gumus", "https://altin.doviz.com/enpara/gumus/bilgi"]}
 try: eski = json.load(open("enpara.json", encoding="utf-8"))
@@ -65,6 +86,7 @@ for ad, urller in KAYNAK.items():
         r = REF.get(ad)
         # capraz kontrol: Enpara alisi, ons x dolar referansindan %10'dan fazla asagi ya da %3'ten fazla yukari sapmissa gecersiz
         q["ref"] = round(r, 2) if r else None
+        q["ref_kaynak"] = REFK.get(ad)
         q["gecerli"] = bool(r) and (0.90 * r <= q["alis"] <= 1.03 * r)
         out[ad] = q
         print(ad, q)
