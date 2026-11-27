@@ -6,19 +6,19 @@
    "search_funds(query: str, limit: int = 20) -> list[dict[str, typing.Any]]",
    "compare_funds(fund_codes: list[str]) -> dict[str, typing.Any]",
    "Fund.history(self, period: str = '1mo', start: datetime.datetime | str | None = None, end: datetime.datetime | str | None = None) -> pandas.DataFrame",
-   "screen_funds(YAT, tumu): 2134 kayit, 2134 yeni fon",
+   "screen_funds(YAT, tumu): 2135 kayit, 2135 yeni fon",
    "ornek alanlar: ['index', 'fund_code', 'name', 'fund_type', 'return_1m', 'return_3m', 'return_6m', 'return_ytd', 'return_1y', 'return_3y', 'return_5y']",
    "search_funds(para piyasası): 1000 kayit, 239 yeni fon",
    "ornek alanlar: ['fund_code', 'name', 'fund_type', 'return_1y']",
    "search_funds(PARA PIYASASI): 1000 kayit, 0 yeni fon",
    "ornek alanlar: ['fund_code', 'name', 'fund_type', 'return_1y']",
-   "Toplam aday fon: 2373",
-   "Enflasyon: {'y': 29.77, 't': '2026-11-26', 'k': 'borsapy:latest'}",
-   "BIST100 kaynaklar: {'yahoo': {'a1': -3.67, 'a3': -26.47, 'a6': -21.37, 'y1': -1.57, 'y3': 34.96, 'y5': 504.77, '_risk': {'mdd': -29.59, 'vol': 24.11}, 'd1': 0.82, '_d1t': '2026-11-26'}, 'borsapy': {'a1': -3.67, 'a3': -26.47, 'a6': -21.37, 'y1': -1.57, 'y3': 34.96, 'y5': 504.77, '_risk': {'mdd': -29.",
-   "BIST100 (teyitli): {'a1': -3.67, 'a3': -26.47, 'a6': -21.37, 'y1': -1.57, 'y3': 34.96, 'y5': 504.77, 'd1': 0.82, 'mdd': -29.59, 'vol': 24.11, 'reel_y1': -24.15}",
+   "Toplam aday fon: 2374",
+   "Enflasyon: {'y': 29.77, 't': '2026-11-27', 'k': 'borsapy:latest'}",
+   "BIST100 kaynaklar: {'yahoo': {'a1': -1.56, 'a3': -24.69, 'a6': -19.66, 'y1': 0.29, 'y3': 35.4, 'y5': 517.94, '_risk': {'mdd': -29.59, 'vol': 26.37}, 'd1': 2.18, '_d1t': '2026-11-27'}, 'borsapy': {'a1': -1.56, 'a3': -24.69, 'a6': -19.66, 'y1': 0.29, 'y3': 35.4, 'y5': 517.93, '_risk': {'mdd': -29.59, ",
+   "BIST100 (teyitli): {'a1': -1.56, 'a3': -24.69, 'a6': -19.66, 'y1': 0.29, 'y3': 35.4, 'y5': 517.93, 'd1': 2.18, 'mdd': -29.59, 'vol': 26.36, 'reel_y1': -22.72}",
    "Sorgulanacak fon: 45",
-   "Listeye giren: 11 | Atlanan: {'para piyasası fonu değil': 2210, 'banka fonu değil': 118, \"TEFAS'ta işlem görmüyor\": 16, 'serbest fon': 18}",
-   "Grafik verisi: 11 fon, BIST100 1261 gun"
+   "Listeye giren: 1 | Atlanan: {'para piyasası fonu değil': 2211, 'banka fonu değil': 118, 'getirisi fiyat geçmişiyle tutmayan': 10, \"TEFAS'ta işlem görmüyor\": 16, 'serbest fon': 18}",
+   "Grafik verisi: 1 fon, BIST100 99 gun"
   ],
   "banka_disi_kurucular": {
    "ATA": 3,
@@ -2213,6 +2213,7 @@
    "YZH",
    "YZK",
    "YZL",
+   "YZS",
    "YZT",
    "ZAD",
    "ZAV",
@@ -2405,6 +2406,118 @@
    "YMP",
    "ZA2",
    "ZAY"
+  ],
+  "getirisi fiyat geçmişiyle tutmayan": [
+   [
+    "AIS",
+    [
+     [
+      "a6",
+      20.0459,
+      20.69,
+      21.19
+     ]
+    ]
+   ],
+   [
+    "BGP",
+    [
+     [
+      "a6",
+      20.1988,
+      20.83,
+      21.26
+     ]
+    ]
+   ],
+   [
+    "DL2",
+    [
+     [
+      "a6",
+      19.9201,
+      20.64,
+      21.07
+     ]
+    ]
+   ],
+   [
+    "DLY",
+    [
+     [
+      "a6",
+      19.6007,
+      20.31,
+      20.76
+     ]
+    ]
+   ],
+   [
+    "GPN",
+    [
+     [
+      "a6",
+      20.0871,
+      20.72,
+      21.25
+     ]
+    ]
+   ],
+   [
+    "GPZ",
+    [
+     [
+      "a6",
+      20.2626,
+      20.94,
+      21.42
+     ]
+    ]
+   ],
+   [
+    "IOO",
+    [
+     [
+      "a6",
+      20.0172,
+      20.69,
+      21.14
+     ]
+    ]
+   ],
+   [
+    "KPI",
+    [
+     [
+      "a6",
+      19.7302,
+      20.37,
+      20.88
+     ]
+    ]
+   ],
+   [
+    "PPI",
+    [
+     [
+      "a6",
+      19.6603,
+      20.36,
+      20.78
+     ]
+    ]
+   ],
+   [
+    "ZBJ",
+    [
+     [
+      "a6",
+      20.2305,
+      20.95,
+      21.42
+     ]
+    ]
+   ]
   ],
   "TEFAS'ta işlem görmüyor": [
    "ALE",
