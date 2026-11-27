@@ -312,7 +312,7 @@ function renderBys(){
   var m=pos("9999-12-31"),t=document.getElementById('bys'),dd=document.getElementById('bysd'),L=[],tv=0,tcb=0,tkz=0,np=[],ep=[],ds={};
   for(var k in m){var z=m[k],e=z.r+(z.dv||0);
     if(z.q>0){var lp=lastPx(k),est=lp&&lp.est?1:0;if(!lp){var bt=srt(S.t).filter(function(x){return x.t===k&&x.y==='a';}).pop();if(bt){lp={p:bt.p,d:bt.d};est=1;}}
-      if(lp){var ex=enpLive(k);if(ex){lp={p:ex.p,d:lp.d};est=0;}var v=z.q*lp.p,cb=z.q*z.c,g=v-cb+e;tv+=v;tcb+=cb;tkz+=g;if(ex)ds.enp=1;else if(est)ep.push(k);else ds[lp.d]=1;L.push({k:k,z:z,lp:lp,est:est,ex:ex?1:0,v:v,g:g,gp:cb?g/cb:0});}
+      if(lp){var ex=enpLive(k);if(ex){lp={p:ex.p,d:lp.d};est=0;}var v=z.q*lp.p,cb=z.q*z.c,g=v-cb;tv+=v;tcb+=cb;tkz+=g;if(ex)ds.enp=1;else if(est)ep.push(k);else ds[lp.d]=1;L.push({k:k,z:z,lp:lp,est:est,ex:ex?1:0,v:v,g:g,gp:cb?g/cb:0});}
       else{np.push(k);L.push({k:k,z:z,lp:null});}}
   }
   if(!L.length){t.innerHTML='';dd.textContent=S.t.some(function(x){return x.y!=='a';})?'Elinde hisse yok. Satılan hisseler aşağıdaki “Satışlar ve gerçekleşen kâr” bölümünde.':'Henüz hisse yok. Alım / satım işlemleri bölümünden ekle.';return;}
@@ -324,7 +324,7 @@ function renderBys(){
   t.innerHTML=h;
   var enpv=ds.enp;delete ds.enp;var dl=Object.keys(ds).sort(),n='Adet ve maliyet, tüm işlemlerin güncel durumudur. ';
   n+=dl.length===1?'Fiyatlar '+trDate(dl[0])+' kapanışına göre. ':(dl.length?'Fiyatlar her hissenin son girilen kapanışına göre ('+trDate(dl[0])+' – '+trDate(dl[dl.length-1])+'). ':'');
-  n+='K/Z, gerçekleşen kısmı ve temettüyü de içerir.';
+  n+='K/Z, sadece elindeki adetlerin fiyat farkıdır; daha önce gerçekleşen kâr ve temettü dahil değildir.';
   if(S.t.some(function(x){return x.y!=='a';}))n+=' Satılan hisseler ve gerçekleşen kâr “Satışlar ve gerçekleşen kâr” bölümünde.';
   if(ep.length)n+=' *'+ep.map(esc).join(', ')+' için kapanış girilmedi, kapanış yerine son işlem fiyatı kullanıldı (tahmini).';
   if(np.length)n+=' '+np.map(esc).join(', ')+' için kapanış fiyatı henüz gelmediği için toplama dahil değil; akşamki otomatik güncellemeyle eklenir.';
@@ -587,7 +587,7 @@ var GOR={olumlu:["Uzun vade: olumlu","var(--pos)"],notr:["Uzun vade: nötr","#d9
 var GU=null;
 function guniciFiyat(k,d){if(!GU||!GU.gunici||!GU.updatedAt)return null;var u=Date.parse(GU.updatedAt);if(!(u>0)||Date.now()-u>45*60*1000)return null;var g=GU.gunici[kod(k)];if(!g||!(g[4]>0)||!(g[0]>d))return null;var t=new Date(u+108e5);return{p:g[4],s:("0"+t.getUTCHours()).slice(-2)+":"+("0"+t.getUTCMinutes()).slice(-2)};}
 function eldekiler(gi){var m=pos("9999-12-31"),L=[],tv=0;
-  for(var k in m){var z=m[k];if(!(z.q>0))continue;var lp=lastPx(k);if(!lp)continue;var gx=gi?guniciFiyat(k,lp.d):null;if(gx)lp={p:gx.p,d:lp.d,gi:gx.s};var ex=gi?enpLive(k):null;if(ex)lp={p:ex.p,d:lp.d,gi:ex.s,enp:1};var v=z.q*lp.p,g=v-z.q*z.c+z.r+(z.dv||0);tv+=v;L.push({k:k,q:z.q,c:z.c,p:lp.p,gi:lp.gi,enp:lp.enp,v:v,g:g,gp:z.q*z.c?g/(z.q*z.c):0});}
+  for(var k in m){var z=m[k];if(!(z.q>0))continue;var lp=lastPx(k);if(!lp)continue;var gx=gi?guniciFiyat(k,lp.d):null;if(gx)lp={p:gx.p,d:lp.d,gi:gx.s};var ex=gi?enpLive(k):null;if(ex)lp={p:ex.p,d:lp.d,gi:ex.s,enp:1};var v=z.q*lp.p,g=v-z.q*z.c;tv+=v;L.push({k:k,q:z.q,c:z.c,p:lp.p,gi:lp.gi,enp:lp.enp,v:v,g:g,gp:z.q*z.c?g/(z.q*z.c):0});}
   L.forEach(function(x){x.pay=tv?x.v/tv:0;});L.sort(function(a,b){return b.v-a.v;});return L;}
 function bar(t,p){if(!t||!(t.risk>0)||!(t.h1>t.risk))return"";
   var r=t.risk,h=t.h1,x=(p-r)/(h-r),xc=Math.max(0,Math.min(1,x)),renk=x<0?"var(--neg)":(x>=0.97?"var(--neg)":"var(--pos)");
