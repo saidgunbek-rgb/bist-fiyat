@@ -81,9 +81,9 @@
    "dunden": [],
    "dy": 3.63,
    "kb": 18.1,
-   "mc": 315380007934.5703,
-   "pb": 0.95,
-   "pe": 4.9,
+   "mc": 311740006400.0,
+   "pb": 0.94,
+   "pe": 4.85,
    "price": 59.95,
    "roe": 19.5,
    "sektor": "Banka",
@@ -1174,7 +1174,7 @@
      {
       "ad": "Değerleme",
       "p": 1,
-      "t": "ucuz (F/K 4,9, PD/DD 0,95)"
+      "t": "ucuz (F/K 4,85, PD/DD 0,94)"
      },
      {
       "ad": "Uzun trend",
@@ -2454,9 +2454,9 @@
    "dunden": [],
    "dy": 1.94,
    "kb": 79.1,
-   "mc": 438701064192.0,
-   "pb": 1.98,
-   "pe": 12.64,
+   "mc": 444900000000.0,
+   "pb": 2.01,
+   "pe": 12.82,
    "price": 370.75,
    "roe": 15.7,
    "sektor": "Perakende",
@@ -3556,7 +3556,7 @@
      {
       "ad": "Değerleme",
       "p": 0,
-      "t": "makul (F/K 12,64, PD/DD 1,98)"
+      "t": "makul (F/K 12,82, PD/DD 2,01)"
      },
      {
       "ad": "Uzun trend",
@@ -3646,7 +3646,7 @@
    "dunden": [],
    "dy": 10.2,
    "kb": -33.6,
-   "mc": 239496069120.0,
+   "mc": 239496075000.0,
    "pb": 1.22,
    "pe": 7.37,
    "price": 68.25,
@@ -4821,9 +4821,9 @@
    "dunden": [],
    "dy": 3.76,
    "kb": 15.6,
-   "mc": 588420025634.7656,
-   "pb": 1.13,
-   "pe": 4.75,
+   "mc": 580020025634.7656,
+   "pb": 1.12,
+   "pe": 4.69,
    "price": 138.1,
    "roe": 23.8,
    "sektor": "Banka",
@@ -5923,7 +5923,7 @@
      {
       "ad": "Değerleme",
       "p": 0,
-      "t": "makul (F/K 4,75, PD/DD 1,13)"
+      "t": "makul (F/K 4,69, PD/DD 1,12)"
      },
      {
       "ad": "Uzun trend",
@@ -7191,9 +7191,9 @@
    "dunden": [],
    "dy": 3.67,
    "kb": 202.8,
-   "mc": 480130400256.0,
+   "mc": 480299075192.1066,
    "pb": 0.56,
-   "pe": 7.37,
+   "pe": 7.38,
    "price": 189.4,
    "roe": 7.6,
    "sektor": "Holding",
@@ -8287,7 +8287,7 @@
      {
       "ad": "Değerleme",
       "p": 1,
-      "t": "ucuz (F/K 7,37, PD/DD 0,56)"
+      "t": "ucuz (F/K 7,38, PD/DD 0,56)"
      },
      {
       "ad": "Uzun trend",
@@ -10743,9 +10743,9 @@
    "dunden": [],
    "dy": 4.62,
    "kb": 0.5,
-   "mc": 194573975552.0,
-   "pb": 0.58,
-   "pe": 8.86,
+   "mc": 196680000000.0,
+   "pb": 0.59,
+   "pe": 8.95,
    "price": 89.4,
    "roe": 6.6,
    "sektor": "İletişim",
@@ -11836,7 +11836,7 @@
      {
       "ad": "Değerleme",
       "p": 0,
-      "t": "makul (F/K 8,86, PD/DD 0,58)"
+      "t": "makul (F/K 8,95, PD/DD 0,59)"
      },
      {
       "ad": "Uzun trend",
@@ -11926,9 +11926,9 @@
    "dunden": [],
    "dy": 0.0,
    "kb": -0.9,
-   "mc": 430896971776.0,
+   "mc": 433320000000.0,
    "pb": 0.38,
-   "pe": 2.95,
+   "pe": 2.96,
    "price": 314.0,
    "roe": 12.9,
    "sektor": "Havayolu",
@@ -13028,7 +13028,7 @@
      {
       "ad": "Değerleme",
       "p": 1,
-      "t": "ucuz (F/K 2,95, PD/DD 0,38)"
+      "t": "ucuz (F/K 2,96, PD/DD 0,38)"
      },
      {
       "ad": "Uzun trend",
@@ -13117,7 +13117,7 @@
    "dunden": [],
    "dy": 4.17,
    "kb": 328.5,
-   "mc": 635842500000.0,
+   "mc": 635842547340.0,
    "pb": 1.22,
    "pe": 4.9,
    "price": 330.0,
@@ -14252,10 +14252,35 @@
    },
    "byorum": {
     "d": "2026/9",
-    "etki": "karisik",
+    "etki": "olumsuz",
     "ilk": "2026-11-16",
-    "kaynak": "Yahoo",
+    "kaynak": "İş Yatırım",
     "m": [
+     {
+      "k": "net kâr reel olarak %15,1 azaldı",
+      "p": -1,
+      "t": "Net kâr geçen yılın aynı dönemine göre %10,2 arttı (37,8 milyar TL → 41,7 milyar TL, enflasyondan arındırınca yaklaşık -%15,1)."
+     },
+     {
+      "k": "net faiz geliri reel olarak %33,1 arttı",
+      "p": 1,
+      "t": "Net faiz geliri geçen yılın aynı dönemine göre %72,8 arttı (97,2 milyar TL → 167,9 milyar TL, enflasyondan arındırınca yaklaşık +%33,1)."
+     },
+     {
+      "k": "net ücret ve komisyon gelirleri reel olarak %8,6 azaldı",
+      "p": -1,
+      "t": "Net ücret ve komisyon gelirleri geçen yılın aynı dönemine göre %18,7 arttı (79,7 milyar TL → 94,6 milyar TL, enflasyondan arındırınca yaklaşık -%8,6)."
+     },
+     {
+      "k": "",
+      "p": 0,
+      "t": "Mevduat bir yılda %37,5 büyüdü."
+     },
+     {
+      "k": "son çeyrek kârı reel olarak %45,4 azaldı",
+      "p": -1,
+      "t": "Son çeyrekte (Temmuz-Eylül) net kâr 10,7 milyar TL; geçen yılın aynı çeyreğinde 15,1 milyar TL idi (-%29,2, enflasyondan arındırınca yaklaşık -%45,4)."
+     },
      {
       "k": "özkaynak kârlılığı zayıf",
       "p": 0,
@@ -14267,8 +14292,8 @@
       "t": "Not: Geçen yılın rakamları o dönemin TL'siyle raporlandığı için büyümeler ayrıca yıllık enflasyona (%29,8) göre de değerlendirildi."
      }
     ],
-    "ozet": "Karışık bir tablo.",
-    "puan": 0
+    "ozet": "Genel tablo zayıf: net faiz geliri reel olarak %33,1 arttı; buna karşın net kâr reel olarak %15,1 azaldı ve net ücret ve komisyon gelirleri reel olarak %8,6 azaldı.",
+    "puan": -2
    },
    "chk": {
     "d": "2026/9",
@@ -14282,8 +14307,8 @@
    "dy": 0.0,
    "kb": 10.2,
    "mc": 283145146054.0,
-   "pb": 0.95,
-   "pe": 5.51,
+   "pb": 0.96,
+   "pe": 5.56,
    "price": 32.92,
    "roe": 17.2,
    "sektor": "Banka",
@@ -15374,7 +15399,7 @@
      {
       "ad": "Değerleme",
       "p": 1,
-      "t": "ucuz (F/K 5,51, PD/DD 0,95)"
+      "t": "ucuz (F/K 5,56, PD/DD 0,96)"
      },
      {
       "ad": "Uzun trend",
@@ -15398,5 +15423,5 @@
   }
  },
  "updated": "2026-11-27",
- "updatedAt": "2026-11-27T17:22:54Z"
+ "updatedAt": "2026-11-27T18:56:32Z"
 }

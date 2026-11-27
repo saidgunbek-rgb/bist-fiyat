@@ -1,7 +1,7 @@
 {
  "hisseler": {
   "THYAO": {
-   "updatedAt": "2026-11-27T16:51:58Z",
+   "updatedAt": "2026-11-27T18:54:00Z",
    "hisseler": {
     "THYAO": {
      "ozet": {
@@ -25,7 +25,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-27 19:52",
+    "updatedAt": "2026-11-27 21:54",
     "hisseler": {
      "THYAO": {
       "kap_icerik": [],
@@ -63,7 +63,7 @@
    }
   },
   "AKBNK": {
-   "updatedAt": "2026-11-27T16:52:05Z",
+   "updatedAt": "2026-11-27T18:53:59Z",
    "hisseler": {
     "AKBNK": {
      "ozet": {
@@ -488,7 +488,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-27 19:52",
+    "updatedAt": "2026-11-27 21:54",
     "hisseler": {
      "AKBNK": {
       "kap_icerik": [],
@@ -524,7 +524,7 @@
    }
   },
   "MGROS": {
-   "updatedAt": "2026-11-27T16:51:53Z",
+   "updatedAt": "2026-11-27T18:53:58Z",
    "hisseler": {
     "MGROS": {
      "ozet": {
@@ -951,7 +951,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-27 19:52",
+    "updatedAt": "2026-11-27 21:54",
     "hisseler": {
      "MGROS": {
       "kap_icerik": [],
@@ -988,7 +988,7 @@
    }
   },
   "BIMAS": {
-   "updatedAt": "2026-11-27T16:52:16Z",
+   "updatedAt": "2026-11-27T18:54:00Z",
    "hisseler": {
     "BIMAS": {
      "ozet": {
@@ -1418,7 +1418,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-27 19:52",
+    "updatedAt": "2026-11-27 21:54",
     "hisseler": {
      "BIMAS": {
       "kap_icerik": [],
@@ -1455,7 +1455,7 @@
    }
   },
   "TCELL": {
-   "updatedAt": "2026-11-27T16:51:56Z",
+   "updatedAt": "2026-11-27T18:53:51Z",
    "hisseler": {
     "TCELL": {
      "ozet": {
@@ -1881,7 +1881,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-27 19:52",
+    "updatedAt": "2026-11-27 21:54",
     "hisseler": {
      "TCELL": {
       "kap_icerik": [],
@@ -1918,391 +1918,28 @@
    }
   },
   "YKBNK": {
-   "updatedAt": "2026-11-27T17:09:15Z",
+   "updatedAt": "2026-11-27T18:54:55Z",
    "hisseler": {
     "YKBNK": {
      "ozet": {
-      "iki_kaynak": 0,
-      "ek_kaynak": 290,
+      "iki_kaynak": 290,
+      "ek_kaynak": 0,
       "duzeltme": 0,
       "cozulemedi": 0
      },
      "kaynak_gun_sayisi": {
-      "isyatirim": 0,
+      "isyatirim": 290,
       "yahoo": 290,
       "borsapy": 290,
       "kendi_kayit": 0
      },
      "bolunmeler": [],
-     "hatalar": [
-      "isyatirim: <urlopen error timed out>"
-     ],
-     "secim_kayitlari": [
-      {
-       "tarih": "2026-10-02",
-       "degerler": {
-        "yahoo": 34.94,
-        "borsapy": 34.94
-       },
-       "secilen": 34.94,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-10-05",
-       "degerler": {
-        "yahoo": 35.9,
-        "borsapy": 35.9
-       },
-       "secilen": 35.9,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-10-06",
-       "degerler": {
-        "yahoo": 36.46,
-        "borsapy": 36.46
-       },
-       "secilen": 36.46,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-10-07",
-       "degerler": {
-        "yahoo": 36.6,
-        "borsapy": 36.6
-       },
-       "secilen": 36.6,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-10-08",
-       "degerler": {
-        "yahoo": 35.66,
-        "borsapy": 35.66
-       },
-       "secilen": 35.66,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-10-09",
-       "degerler": {
-        "yahoo": 35.44,
-        "borsapy": 35.44
-       },
-       "secilen": 35.44,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-10-12",
-       "degerler": {
-        "yahoo": 35.7,
-        "borsapy": 35.7
-       },
-       "secilen": 35.7,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-10-13",
-       "degerler": {
-        "yahoo": 36.42,
-        "borsapy": 36.42
-       },
-       "secilen": 36.42,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-10-14",
-       "degerler": {
-        "yahoo": 35.94,
-        "borsapy": 35.94
-       },
-       "secilen": 35.94,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-10-15",
-       "degerler": {
-        "yahoo": 36.3,
-        "borsapy": 36.3
-       },
-       "secilen": 36.3,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-10-16",
-       "degerler": {
-        "yahoo": 35.7,
-        "borsapy": 35.7
-       },
-       "secilen": 35.7,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-10-19",
-       "degerler": {
-        "yahoo": 36.1,
-        "borsapy": 36.1
-       },
-       "secilen": 36.1,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-10-20",
-       "degerler": {
-        "yahoo": 36.66,
-        "borsapy": 36.66
-       },
-       "secilen": 36.66,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-10-21",
-       "degerler": {
-        "yahoo": 36.42,
-        "borsapy": 36.42
-       },
-       "secilen": 36.42,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-10-22",
-       "degerler": {
-        "yahoo": 35.32,
-        "borsapy": 35.32
-       },
-       "secilen": 35.32,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-10-23",
-       "degerler": {
-        "yahoo": 34.68,
-        "borsapy": 34.68
-       },
-       "secilen": 34.68,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-10-26",
-       "degerler": {
-        "yahoo": 35.84,
-        "borsapy": 35.84
-       },
-       "secilen": 35.84,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-10-27",
-       "degerler": {
-        "yahoo": 35.38,
-        "borsapy": 35.38
-       },
-       "secilen": 35.38,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-10-28",
-       "degerler": {
-        "yahoo": 34.48,
-        "borsapy": 34.48
-       },
-       "secilen": 34.48,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-10-30",
-       "degerler": {
-        "yahoo": 33.96,
-        "borsapy": 33.96
-       },
-       "secilen": 33.96,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-11-02",
-       "degerler": {
-        "yahoo": 35.64,
-        "borsapy": 35.64
-       },
-       "secilen": 35.64,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-11-03",
-       "degerler": {
-        "yahoo": 34.7,
-        "borsapy": 34.7
-       },
-       "secilen": 34.7,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-11-04",
-       "degerler": {
-        "yahoo": 35.88,
-        "borsapy": 35.88
-       },
-       "secilen": 35.88,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-11-05",
-       "degerler": {
-        "yahoo": 36.52,
-        "borsapy": 36.52
-       },
-       "secilen": 36.52,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-11-06",
-       "degerler": {
-        "yahoo": 37.24,
-        "borsapy": 37.24
-       },
-       "secilen": 37.24,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-11-09",
-       "degerler": {
-        "yahoo": 38.74,
-        "borsapy": 38.74
-       },
-       "secilen": 38.74,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-11-10",
-       "degerler": {
-        "yahoo": 38.48,
-        "borsapy": 38.48
-       },
-       "secilen": 38.48,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-11-11",
-       "degerler": {
-        "yahoo": 38.44,
-        "borsapy": 38.44
-       },
-       "secilen": 38.44,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-11-12",
-       "degerler": {
-        "yahoo": 37.9,
-        "borsapy": 37.9
-       },
-       "secilen": 37.9,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-11-13",
-       "degerler": {
-        "yahoo": 37.78,
-        "borsapy": 37.78
-       },
-       "secilen": 37.78,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-11-16",
-       "degerler": {
-        "yahoo": 37.48,
-        "borsapy": 37.48
-       },
-       "secilen": 37.48,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-11-17",
-       "degerler": {
-        "yahoo": 37.36,
-        "borsapy": 37.36
-       },
-       "secilen": 37.36,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-11-18",
-       "degerler": {
-        "yahoo": 36.52,
-        "borsapy": 36.52
-       },
-       "secilen": 36.52,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-11-19",
-       "degerler": {
-        "yahoo": 36.76,
-        "borsapy": 36.76
-       },
-       "secilen": 36.76,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-11-20",
-       "degerler": {
-        "yahoo": 36.16,
-        "borsapy": 36.16
-       },
-       "secilen": 36.16,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-11-23",
-       "degerler": {
-        "yahoo": 36.8,
-        "borsapy": 36.8
-       },
-       "secilen": 36.8,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-11-24",
-       "degerler": {
-        "yahoo": 35.72,
-        "borsapy": 35.72
-       },
-       "secilen": 35.72,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-11-25",
-       "degerler": {
-        "yahoo": 34.04,
-        "borsapy": 34.04
-       },
-       "secilen": 34.04,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-11-26",
-       "degerler": {
-        "yahoo": 33.52,
-        "borsapy": 33.52
-       },
-       "secilen": 33.52,
-       "neden": "cogunluk: borsapy,yahoo"
-      },
-      {
-       "tarih": "2026-11-27",
-       "degerler": {
-        "yahoo": 32.92,
-        "borsapy": 32.92
-       },
-       "secilen": 32.92,
-       "neden": "cogunluk: borsapy,yahoo"
-      }
-     ]
+     "hatalar": [],
+     "secim_kayitlari": []
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-27 20:12",
+    "updatedAt": "2026-11-27 21:55",
     "hisseler": {
      "YKBNK": {
       "kap_icerik": [],
@@ -2338,7 +1975,7 @@
    }
   },
   "GARAN": {
-   "updatedAt": "2026-11-27T16:53:15Z",
+   "updatedAt": "2026-11-27T18:54:53Z",
    "hisseler": {
     "GARAN": {
      "ozet": {
@@ -2763,7 +2400,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-27 19:53",
+    "updatedAt": "2026-11-27 21:55",
     "hisseler": {
      "GARAN": {
       "kap_icerik": [],
@@ -2799,7 +2436,7 @@
    }
   },
   "ASELS": {
-   "updatedAt": "2026-11-27T16:53:13Z",
+   "updatedAt": "2026-11-27T18:55:03Z",
    "hisseler": {
     "ASELS": {
      "ozet": {
@@ -3184,7 +2821,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-27 19:53",
+    "updatedAt": "2026-11-27 21:55",
     "hisseler": {
      "ASELS": {
       "kap_icerik": [],
@@ -3221,7 +2858,7 @@
    }
   },
   "FROTO": {
-   "updatedAt": "2026-11-27T16:53:17Z",
+   "updatedAt": "2026-11-27T18:55:03Z",
    "hisseler": {
     "FROTO": {
      "ozet": {
@@ -3234,7 +2871,7 @@
       "isyatirim": 290,
       "yahoo": 290,
       "borsapy": 290,
-      "kendi_kayit": 24
+      "kendi_kayit": 32
      },
      "bolunmeler": [
       "2025-04-03",
@@ -3614,7 +3251,8 @@
        "degerler": {
         "isyatirim": 69.2684,
         "yahoo": 72.6,
-        "borsapy": 72.6
+        "borsapy": 72.6,
+        "kendi_kayit": 72.6
        },
        "secilen": 69.2684,
        "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-11-26), ham fiyat Yahoo+borsapy ile teyitli"
@@ -3624,7 +3262,8 @@
        "degerler": {
         "isyatirim": 68.4097,
         "yahoo": 71.7,
-        "borsapy": 71.7
+        "borsapy": 71.7,
+        "kendi_kayit": 71.7
        },
        "secilen": 68.4097,
        "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-11-26), ham fiyat Yahoo+borsapy ile teyitli"
@@ -3634,7 +3273,8 @@
        "degerler": {
         "isyatirim": 66.9786,
         "yahoo": 70.2,
-        "borsapy": 70.2
+        "borsapy": 70.2,
+        "kendi_kayit": 70.2
        },
        "secilen": 66.9786,
        "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-11-26), ham fiyat Yahoo+borsapy ile teyitli"
@@ -3644,7 +3284,8 @@
        "degerler": {
         "isyatirim": 67.885,
         "yahoo": 71.15,
-        "borsapy": 71.15
+        "borsapy": 71.15,
+        "kendi_kayit": 71.15
        },
        "secilen": 67.885,
        "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-11-26), ham fiyat Yahoo+borsapy ile teyitli"
@@ -3654,7 +3295,8 @@
        "degerler": {
         "isyatirim": 66.6923,
         "yahoo": 69.9,
-        "borsapy": 69.9
+        "borsapy": 69.9,
+        "kendi_kayit": 69.9
        },
        "secilen": 66.6923,
        "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-11-26), ham fiyat Yahoo+borsapy ile teyitli"
@@ -3664,7 +3306,8 @@
        "degerler": {
         "isyatirim": 63.83,
         "yahoo": 66.9,
-        "borsapy": 66.9
+        "borsapy": 66.9,
+        "kendi_kayit": 66.9
        },
        "secilen": 63.83,
        "neden": "temettu/bedelsiz duzeltilmis fiyat (olay: 2026-11-26), ham fiyat Yahoo+borsapy ile teyitli"
@@ -3673,7 +3316,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-27 19:53",
+    "updatedAt": "2026-11-27 21:55",
     "hisseler": {
      "FROTO": {
       "kap_icerik": [],
@@ -3711,7 +3354,7 @@
    }
   },
   "KCHOL": {
-   "updatedAt": "2026-11-27T16:53:50Z",
+   "updatedAt": "2026-11-27T18:55:00Z",
    "hisseler": {
     "KCHOL": {
      "ozet": {
@@ -4136,7 +3779,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-27 19:54",
+    "updatedAt": "2026-11-27 21:55",
     "hisseler": {
      "KCHOL": {
       "kap_icerik": [],
@@ -4173,7 +3816,7 @@
    }
   },
   "ISCTR": {
-   "updatedAt": "2026-11-27T16:54:48Z",
+   "updatedAt": "2026-11-27T18:56:01Z",
    "hisseler": {
     "ISCTR": {
      "ozet": {
@@ -4598,7 +4241,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-27 19:55",
+    "updatedAt": "2026-11-27 21:56",
     "hisseler": {
      "ISCTR": {
       "kap_icerik": [],
@@ -4633,7 +4276,7 @@
    }
   },
   "PGSUS": {
-   "updatedAt": "2026-11-27T16:54:38Z",
+   "updatedAt": "2026-11-27T18:55:51Z",
    "hisseler": {
     "PGSUS": {
      "ozet": {
@@ -4654,7 +4297,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-27 19:54",
+    "updatedAt": "2026-11-27 21:56",
     "hisseler": {
      "PGSUS": {
       "kap_icerik": [],
@@ -4691,7 +4334,7 @@
    }
   },
   "TUPRS": {
-   "updatedAt": "2026-11-27T16:54:55Z",
+   "updatedAt": "2026-11-27T18:55:59Z",
    "hisseler": {
     "TUPRS": {
      "ozet": {
@@ -5118,7 +4761,7 @@
     }
    },
    "kap_ve_bilanco": {
-    "updatedAt": "2026-11-27 19:55",
+    "updatedAt": "2026-11-27 21:56",
     "hisseler": {
      "TUPRS": {
       "kap_icerik": [],
@@ -5155,5 +4798,5 @@
    }
   }
  },
- "updatedAt": "2026-11-27T17:22:54Z"
+ "updatedAt": "2026-11-27T18:56:32Z"
 }
