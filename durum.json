@@ -122,8 +122,8 @@
    "son": "2026-11-26T19:04"
   },
   "karne|2026-11-27": {
-   "n": 2,
-   "son": "2026-11-27T21:11"
+   "n": 3,
+   "son": "2026-11-27T22:25"
   },
   "kutuphane|2026-11-27": {
    "n": 0,
@@ -147,11 +147,11 @@
   },
   "fon": {
    "deneme": 1,
-   "durum": "deneniyor",
+   "durum": "ok",
    "maks": 4,
-   "not": "Bugünün fon taraması yok",
-   "saat": "2026-11-26T18:21:01Z",
-   "veri": "2026-11-26"
+   "not": "",
+   "saat": "2026-11-27T18:21:24Z",
+   "veri": "2026-11-27"
   },
   "kap": {
    "deneme": 0,
@@ -162,11 +162,11 @@
    "veri": "2026-11-27 21:07"
   },
   "karne": {
-   "deneme": 2,
+   "deneme": 3,
    "durum": "deneniyor",
    "maks": 4,
    "not": "FROTO fiyatı uyuşmuyor",
-   "saat": "2026-11-27T16:42:24Z",
+   "saat": "2026-11-27T18:12:37Z",
    "veri": "2026-11-27"
   },
   "kutuphane": {
@@ -174,9 +174,9 @@
    "durum": "ok",
    "maks": 4,
    "not": "",
-   "saat": "2026-11-27T17:22:54Z",
+   "saat": "2026-11-27T18:56:32Z",
    "veri": "2026-11-27"
   }
  },
- "kontrolAt": "2026-11-27T18:11:51Z"
+ "kontrolAt": "2026-11-27T19:25:41Z"
 }
