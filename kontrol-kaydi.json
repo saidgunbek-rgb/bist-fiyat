@@ -1,17 +1,17 @@
 {
- "updatedAt": "2026-11-27T20:24:33Z",
+ "updatedAt": "2026-11-28T06:11:10Z",
  "hisseler": {
   "THYAO": {
    "ozet": {
-    "iki_kaynak": 290,
-    "ek_kaynak": 0,
+    "iki_kaynak": 288,
+    "ek_kaynak": 1,
     "duzeltme": 0,
     "cozulemedi": 0
    },
    "kaynak_gun_sayisi": {
-    "isyatirim": 290,
-    "yahoo": 290,
-    "borsapy": 290,
+    "isyatirim": 289,
+    "yahoo": 288,
+    "borsapy": 289,
     "kendi_kayit": 34
    },
    "bolunmeler": [
@@ -19,7 +19,18 @@
     "2025-09-02"
    ],
    "hatalar": [],
-   "secim_kayitlari": []
+   "secim_kayitlari": [
+    {
+     "tarih": "2026-11-27",
+     "degerler": {
+      "isyatirim": 314.0,
+      "borsapy": 314.0,
+      "kendi_kayit": 314.0
+     },
+     "secilen": 314.0,
+     "neden": "cogunluk: borsapy,isyatirim,kendi_kayit"
+    }
+   ]
   }
  },
  "kap_ve_bilanco": {
