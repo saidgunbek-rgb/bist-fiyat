@@ -412,7 +412,7 @@ function gecmisTest(){var T={h:{},genel:null},G={taban:[],d:{},run:{},bolge:{b:0
   function bolge(d,n,st,h,kv){var son=Math.min(d.length-1,n+63);for(var j=n;j<=son;j++){if(d[j][3]<=st){kv.f++;return;}if(j>n&&d[j][2]>=h){kv.b++;return;}}kv.s++;}
   function bitir(R){var o={taban:oz(R.taban),d:{},bolge:R.bolge,rast:R.rast,risk:oz(R.risk),riskDus:R.riskDus.length?R.riskDus.reduce(function(x,y){return x+y;},0)/R.riskDus.length:null};
     for(var a in R.d){o.d[a]=oz(R.d[a]);o.d[a].olay=R.run[a]||0;}return o;}
-  for(k in H.stocks){var G0=G;if(ALTN(k))G={taban:[],d:{},run:{},bolge:{b:0,f:0,s:0},rast:{b:0,f:0,s:0},risk:[],riskDus:[]};
+  for(k in H.stocks){if(ENDK(k))continue;var G0=G;if(ALTN(k))G={taban:[],d:{},run:{},bolge:{b:0,f:0,s:0},rast:{b:0,f:0,s:0},risk:[],riskDus:[]};
     var d=ALTN(k)?H.stocks[k].d.map(function(r){return[r[0],r[1],r[2],r[3],r[4],1];}):H.stocks[k].d;if(d.length<330){G=G0;continue;}var I=hesapla(d),onc=null,oncD={},bB=-99,bR=-99,bS=-99;
     var R={taban:[],d:{},run:{},bolge:{b:0,f:0,s:0},rast:{b:0,f:0,s:0},risk:[],riskDus:[]};
     for(var n=260;n+63<d.length;n++){var f=d[n+63][4]/d[n][4]-1,sv=seviyeler(d,I,n),o=durumlar(d,I,n,sv.VP);R.taban.push(f);G.taban.push(f);
@@ -535,7 +535,11 @@ function urunle(){if(!ALT)return;["oneri","karar"].forEach(function(id){var el=d
   var w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT),t;while((t=w.nextNode()))t.nodeValue=t.nodeValue.replace(/Bu hissede/g,"Bu üründe").replace(/bu hissede/g,"bu üründe").replace(/Bu hissenin/g,"Bu ürünün").replace(/bu hissenin/g,"bu ürünün").replace(/hissenin/g,"ürünün")
     .replace(/Kararın temeli değerleme \(karne\) olsun, seviyeler plan için\./g,"Seviyeler plan içindir.").replace(/Hacim yoğunluğu/g,"Fiyat yoğunluğu").replace(/hacim yoğunluğu/g,"fiyat yoğunluğu")
     .replace(new RegExp("^"+SEC+"(?= ·)"),H.stocks[SEC].ad).replace(/(\d) TL\b/g,H.stocks[SEC].birim==="$"?"$1 $":"$1 TL");});}
-function degerlendir(){try{degerlendir0();}finally{urunle();}}
+function ENDK(k){return !!(H&&H.stocks[k]&&H.stocks[k].grup==="endeks");}
+/* BIST 100 endeksi seciliyken: "hisse" yerine "endeks", fiyat seviyeleri "TL" yerine "puan" */
+function endeksle(){if(!ENDK(SEC))return;["oneri","karar"].forEach(function(id){var el=document.getElementById(id);if(!el)return;
+  var w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT),t;while((t=w.nextNode()))t.nodeValue=t.nodeValue.replace(/Bu hissede/g,"Bu endekste").replace(/bu hissede/g,"bu endekste").replace(/Bu hissenin/g,"Bu endeksin").replace(/bu hissenin/g,"bu endeksin").replace(/hissenin/g,"endeksin").replace(/(\d) TL\b/g,"$1 puan");});}
+function degerlendir(){try{degerlendir0();}finally{urunle();try{endeksle();}catch(e){}}}
 function degerlendir0(){var n=D.length-1,o=durumlar(D,IND,n),z=seviyeler(D,IND,n),c=z.c,E=IND.ema,K=SEC,R1=[],R2=[];
   function yz(v){return "%"+f1(Math.abs(v)*100);}
   function sat(L,ik,lb,vl,ton,ds,ad,gec,dot){L.push({ik:ik,lb:lb,vl:vl,ton:ton,ds:ds,ad:ad,gec:gec,dot:dot});}
@@ -598,15 +602,15 @@ var RN_={up:"#26a69a",dn:"#ef5350",uy:"#f5b942",nt:"#8b7cf6"};
 
 /* ---------- Arayuz ---------- */
 function butonlar(){
-  var ks=Object.keys(H.stocks);if(ks.indexOf(SEC)<0)SEC=ks[0];
+  var ks=Object.keys(H.stocks).sort(function(a,b){return (ENDK(b)?1:0)-(ENDK(a)?1:0);});if(ks.indexOf(SEC)<0)SEC=ks.filter(function(k){return !ENDK(k);})[0]||ks[0];
   var bist=ks.filter(function(k){return !ALTN(k);}),alt=ks.filter(ALTN);
-  document.getElementById("hisseler").innerHTML=bist.map(function(k){return'<button data-k="'+esc(k)+'" class="'+(k===SEC?"on":"")+'">'+esc(k)+"</button>";}).join("");
+  document.getElementById("hisseler").innerHTML=bist.map(function(k){return'<button data-k="'+esc(k)+'" class="'+(k===SEC?"on":"")+'">'+esc(ENDK(k)?"BIST 100":k)+"</button>";}).join("");
 
   document.getElementById("altinlar").innerHTML=alt.map(function(k){return'<button data-k="'+esc(k)+'" class="'+(k===SEC?"on":"")+'">'+esc(H.stocks[k].ad||k)+"</button>";}).join("");
   document.getElementById("donem").innerHTML=DONEM.map(function(d){return'<button data-d="'+d[1]+'" class="'+(d[1]===DON?"on":"")+'">'+d[0]+"</button>";}).join("");
   document.getElementById("mum").innerHTML=[["g","Günlük mum"],["h","Haftalık mum"]].map(function(m){return'<button data-m="'+m[0]+'" class="'+(MUM===m[0]?"on":"")+'">'+m[1]+"</button>";}).join("");
   var KIS={fib:"Fib",vp:"Profil",ema:"EMA",e5:"E5",e13:"E13",e39:"E39",st:"ST",hac:"Hacim",wt:"WT",rsi:"RSI"};
-  document.getElementById("ta").innerHTML='<select id="tsec"'+(ALTN(SEC)?' class="alt"':'')+'>'+ks.map(function(k){return'<option value="'+esc(k)+'"'+(k===SEC?" selected":"")+'>'+esc(ALTN(k)?H.stocks[k].ad:k)+"</option>";}).join("")+"</select><i></i>"
+  document.getElementById("ta").innerHTML='<select id="tsec"'+(ALTN(SEC)?' class="alt"':'')+'>'+ks.map(function(k){return'<option value="'+esc(k)+'"'+(k===SEC?" selected":"")+'>'+esc(ALTN(k)||ENDK(k)?H.stocks[k].ad:k)+"</option>";}).join("")+"</select><i></i>"
     +DONEM.map(function(d){return'<button data-d="'+d[1]+'" class="'+(d[1]===DON?"on":"")+'">'+d[0]+"</button>";}).join("")+"<i></i>"
     +[["g","Gün"],["h","Hafta"]].map(function(m){return'<button data-m="'+m[0]+'" class="'+(MUM===m[0]?"on":"")+'">'+m[1]+"</button>";}).join("")+"<i></i>"
     +GOST.filter(function(g){return !(ALT&&g[0]==="hac");}).map(function(g){return'<button data-g="'+g[0]+'" class="'+(ACIK[g[0]]?"on":"")+'">'+KIS[g[0]]+"</button>";}).join("");
@@ -622,7 +626,7 @@ function panelHaber(){if(!/[?&]panel=1/.test(location.search))return;var kt=docu
   var out={},toplam=0,SIG={};function P(x,g){return x.toFixed(g==null?1:g).replace(".",",");}
   var SIGAD={emu:"EMA 50",stu:"Supertrend",rup:"RSI",wup:"WaveTrend"};
   function ekle(g,k,ad,v){(out[g]=out[g]||[]).push({k:k,ad:ad,v:v});toplam++;if(SIGAD[g]){var q=SIG[k]=SIG[k]||{ad:ad,l:[]};q.l.push(SIGAD[g]);}}
-  Object.keys(H.stocks).forEach(function(k){var s=H.stocks[k];if(!s.d||s.d.length<80)return;
+  Object.keys(H.stocks).forEach(function(k){var s=H.stocks[k];if(!s.d||s.d.length<80||s.grup==="endeks")return;
     var alt=ALTN(k),d=alt?s.d.map(function(r){return[r[0],r[1],r[2],r[3],r[4],1];}):s.d,R;try{R=hesapla(d);}catch(e){return;}
     var n=d.length-1,c=d[n][4],i,ad=alt?(s.ad||k):k;
     function gun(i){var g=n-i;return g===0?"bugün":g+" gün önce";}
@@ -668,7 +672,7 @@ function haberCiz(){var el=document.getElementById("haber");if(!el)return;if(el.
     el.innerHTML=h+'<div style="margin-top:6px;font-size:11px;line-height:1.45;color:var(--mut)">Başlıklar haber sitelerinden otomatik alınır, içerikleri doğrulanmaz. Dokununca haberin kendi sayfası açılır. Yatırım tavsiyesi değildir.'+(HABER.guncel?" Son güncelleme: "+trD(HABER.guncel)+".":"")+'</div>';}
   if(HABER)return yaz();fetch("haber.json?"+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(d){HABER=d;yaz();}).catch(function(){HABER={};yaz();});}
 var GI=null;function sec(k){SEC=k;haberCiz();ls(SECK,k);var s=H.stocks[k];ALT=ALTN(k);D=ALT?s.d.map(function(r){return[r[0],r[1],r[2],r[3],r[4],1];}):s.d;GI=null;if(!ALT&&H.gunici&&H.gunici[k]&&H.gunici[k][0]>s.son){GI=H.gunici[k];D=D.concat([GI]);}IND=hesapla(D);grafikVeri();
-  document.getElementById("ad").textContent=ALT?s.ad:k+(s.ad?" · "+s.ad:"");document.getElementById("fiyat").textContent=(s.birim==="$"?"$":"")+f2(D[D.length-1][4])+(s.birim==="$"?"":" TL");
+  document.getElementById("ad").textContent=ALT?s.ad:(ENDK(k)?(s.ad||k)+" · Endeks":k+(s.ad?" · "+s.ad:""));document.getElementById("fiyat").textContent=(s.birim==="$"?"$":"")+f2(D[D.length-1][4])+(s.birim==="$"?"":(ENDK(k)?" puan":" TL"));
   var kn=document.getElementById("kaynak");if(kn){if(!KAYNAK_BIST)KAYNAK_BIST=kn.innerHTML;kn.innerHTML=(GI?"<b style=\"color:#fbbf24\">GÜN İÇİ · kesinleşmedi:</b> bugünkü mum tek kaynaktan (Yahoo), akşam kesin değerle değişir. ":"")+(ALT?"Veri: "+trD(s.son)+" · Ons fiyatları Yahoo'nun sürekli vadeli kontratından (altın GC=F, gümüş SI=F); gram = ons × dolar/TL ÷ 31,1035. Veriler ikinci bir kaynakla karşılaştırılır (altın: PAXG, gümüş: SLV, dolar/TL: Avrupa Merkez Bankası kuru). Son gün, piyasa açıkken gün içi değerdir. Hacim verisi kullanılmaz; hacim profili fiyatta geçen gün sayısıyla hesaplanır.":KAYNAK_BIST);}
   butonlar();ciz();ozet();degerlendir();}
 document.addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;
@@ -810,7 +814,7 @@ function oranCiz(){var kt=document.getElementById("orank"),el=document.getElemen
       Array.prototype.forEach.call(this.children,function(x){x.style.background="transparent";});bt.style.background="#2a2a3a";ciz2(bt.getAttribute("data-n"));});
   });
 }
-function baslat(j){H=j;var ks=Object.keys(j.stocks||{}).filter(function(k){return (j.stocks[k].d||[]).length>30;});
+function baslat(j){if(j&&j.endeks&&j.stocks&&!ALTMOD){Object.keys(j.endeks).forEach(function(k){var e=j.endeks[k];if(e&&e.d&&e.d.length>30&&!j.stocks[k]){j.stocks[k]=e;e.grup="endeks";e.birim="puan";}});}H=j;var ks=Object.keys(j.stocks||{}).filter(function(k){return (j.stocks[k].d||[]).length>30;});
   if(!ks.length){document.getElementById("uyari").innerHTML='<div class="warn">'+(ALTMOD?"Henüz altın verisi yok. Otomatik güncelleme hafta içi gece 00:37'de çalışır.":"Henüz analiz verisi yok. İlk otomatik güncelleme hafta içi 19:07\'de çalışır.")+'</div>';return;}
   if(j.taslak)document.getElementById("uyari").innerHTML='<div class="warn">'+esc(j.taslak)+'</div>';
   else if(j.updated){var gun=(Date.now()-new Date(j.updated+"T19:00:00+03:00").getTime())/864e5;if(gun>4)document.getElementById("uyari").innerHTML='<div class="warn">Analiz verisi '+trD(j.updated)+' tarihli. Otomatik güncelleme birkaç gündür çalışmamış olabilir.</div>';}

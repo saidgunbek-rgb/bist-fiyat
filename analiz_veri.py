@@ -10,6 +10,7 @@ BUGUN = (SIMDI + datetime.timedelta(hours=3)).date()
 BAS = BUGUN - datetime.timedelta(days=3660)  # 10 yil
 BAS_S = BAS.isoformat()
 EN_AZ_GUN = 120
+ENDEKS = "XU100"  # BIST 100 endeksi: hisse listesinden ayri tutulur (analiz.json -> "endeks")
 HATALI_PARCA = []
 GUNICI = {}  # kod -> bugunun yarim mumu (sadece Yahoo; kesinlesmedi, seriye yazilmaz)
 _TR = SIMDI + datetime.timedelta(hours=3)
@@ -63,8 +64,13 @@ def get(url):
 
 
 def yahoo(kod):
-    u = "https://query1.finance.yahoo.com/v8/finance/chart/%s.IS?range=10y&interval=1d" % kod
-    r = get(u)["chart"]["result"][0]
+    if kod == ENDEKS:
+        try:
+            r = get("https://query1.finance.yahoo.com/v8/finance/chart/%s.IS?range=10y&interval=1d" % kod)["chart"]["result"][0]
+        except Exception:
+            r = get("https://query1.finance.yahoo.com/v8/finance/chart/%5E" + kod + "?range=10y&interval=1d")["chart"]["result"][0]
+    else:
+        r = get("https://query1.finance.yahoo.com/v8/finance/chart/%s.IS?range=10y&interval=1d" % kod)["chart"]["result"][0]
     off = r["meta"].get("gmtoffset", 10800)
     q = r["indicators"]["quote"][0]
     out = {}
@@ -85,10 +91,16 @@ def yahoo(kod):
 
 def borsapy_gecmis(kod):
     import borsapy as bp
-    try:
-        df = bp.Ticker(kod).history(period="10y")
-    except Exception:
-        df = bp.Ticker(kod).history(period="max")
+    if kod == ENDEKS:
+        try:
+            df = bp.Index(kod).history(period="10y")
+        except Exception:
+            df = bp.Index(kod).history(period="max")
+    else:
+        try:
+            df = bp.Ticker(kod).history(period="10y")
+        except Exception:
+            df = bp.Ticker(kod).history(period="max")
     out = {}
     for idx, row in df.iterrows():
         c = sayi(row.get("Close"))
@@ -256,8 +268,12 @@ def main():
         print("borsapy yok:", e)
         bp_var = False
 
+    # Endeksin onceki dogrulanmis verisi de yedek olarak kalir
+    eski = dict(eski)
+    for _k, _v in (onceki.get("endeks") or {}).items():
+        eski.setdefault(_k, _v)
     stocks, log, korunan = {}, {}, []
-    for kod in kodlar:
+    for kod in kodlar + [ENDEKS]:
         K, hatalar = {}, []
         kaynaklar = [("yahoo", yahoo)] + ([("borsapy", borsapy_gecmis)] if bp_var else [])
         for ad, fn in kaynaklar:
@@ -269,7 +285,7 @@ def main():
                 print("HATA", kod, ad, e)
         # Is Yatirim sadece iki kaynak bazi gunlerde tutmadiginda ya da biri hic gelmediginde sorulur
         # Is Yatirim her zaman sorulur: ucuncu kaynak olarak tutmayan gunlerin dogru degerini bulmaya yarar
-        if True:
+        if kod != ENDEKS:  # Is Yatirim endeks icin sorulmaz (iki kaynak yeterli, endekste temettu duzeltmesi yok)
             try:
                 K["isyatirim"] = isyatirim(kod)
             except Exception as e:
@@ -297,11 +313,18 @@ def main():
     if not stocks:
         print("Hic veri alinamadi; dosya degistirilmedi")
         sys.exit(1)
+    endeks = {}
+    if ENDEKS in stocks:
+        endeks[ENDEKS] = dict(stocks.pop(ENDEKS), ad="BIST 100")
+    if not stocks:
+        print("Hic hisse verisi alinamadi; dosya degistirilmedi")
+        sys.exit(1)
     son = max(s["son"] for s in stocks.values())
     # Gun ici mum: sadece seans acikken, serinin son gununden yeni ve sadece Yahoo'dan; kesin veri degildir
-    gunici = {k: v for k, v in GUNICI.items() if k in stocks and v[0] > stocks[k]["son"]} if SON_GUN != BUGUN.isoformat() else {}
+    _tum = dict(stocks); _tum.update(endeks)
+    gunici = {k: v for k, v in GUNICI.items() if k in _tum and v[0] > _tum[k]["son"]} if SON_GUN != BUGUN.isoformat() else {}
     veri = {"updated": son, "updatedAt": SIMDI.strftime("%Y-%m-%dT%H:%M:%SZ"), "korunan": korunan,
-            "gunici": gunici, "stocks": stocks, "kontrol": log}
+            "gunici": gunici, "stocks": stocks, "endeks": endeks, "kontrol": log}
     json.dump(veri, open("analiz.json", "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
     # Kucuk dosya: ana ekran, Kutuphane ve Araclar saat listesi 1,5 MB'lik analiz.json'u indirmeden bunu okur
     json.dump({"updatedAt": veri["updatedAt"], "gunici": gunici}, open("gunici.json", "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
