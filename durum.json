@@ -135,11 +135,11 @@
   },
   "karne": {
    "deneme": 5,
-   "durum": "basarisiz",
+   "durum": "ok",
    "maks": 4,
-   "not": "FROTO fiyatı uyuşmuyor",
-   "saat": "2026-11-28T06:11:10Z",
-   "veri": "2026-11-28"
+   "not": "",
+   "saat": "2026-11-28T16:21:37Z",
+   "veri": "2026-11-27"
   },
   "kutuphane": {
    "deneme": 0,
@@ -150,5 +150,5 @@
    "veri": "2026-11-27"
   }
  },
- "kontrolAt": "2026-11-28T10:38:33Z"
+ "kontrolAt": "2026-11-28T16:29:46Z"
 }
