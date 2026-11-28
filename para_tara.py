@@ -276,6 +276,16 @@ def fon_isle(kod):
     if out["rk"] and son.get("y1") is not None and out["rk"]["vol"] > 0:
         out["rk"]["gr"] = round(son["y1"] / out["rk"]["vol"], 2)   # getiri / oynaklik
     out["_seri"] = seri
+    # Tek istisna: sadece 6 aylik getiri TEFAS'in bildirdigiyle tutmuyor (fark en fazla 2 puan), 1 ay / 3 ay / 1 yil teyitli ve
+    # 6 aylik getiri fiyat gecmisinden hesaplanabiliyorsa fon listeden atilmaz; 6 aylik deger "teyitsiz" olarak isaretlenir.
+    if celiski and all(c[0] == "a6" for c in celiski) and all(k in teyit for k in ("a1", "a3", "y1")) and hes.get("a6") is not None:
+        c6 = celiski[0]
+        fark = min(abs(c6[1] - c6[2]), abs(c6[1] - c6[3]))
+        if fark <= 2.0:
+            son["a6"] = hes["a6"]
+            out["teyitsiz"] = ["a6"]
+            out["teyitsiz_ayrinti"] = {"a6_tefas": c6[1], "a6_fiyat_gecmisi_aralik": [c6[2], c6[3]]}
+            celiski = []
     out.update(g=son, teyit=teyit, celiski=celiski, gun=len(seri),
                son_tarih=str(seri[-1][0]) if seri else None)
     if celiski or not [k for k in teyit if k in DON]:

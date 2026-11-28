@@ -175,7 +175,7 @@ function tablo(){
   var h='<tr><th>#</th><th>Fon</th>';cols.forEach(function(c){h+='<th data-s="'+c.id+'" class="'+(c.id===SK?"so":"")+'">'+c.ad+(c.id===SK?(SD==="asc"?" ▲":" ▼"):"")+'</th>';});h+='</tr>';
   var ET={hisse:"Hisse",tema:"Tematik",borc:"Borçlanma",para:"Para piyasası"};
   L.forEach(function(r,i){h+='<tr class="rw" data-k="'+esc(r.k)+'" data-t="'+r.tur+'"><td>'+(i+1)+'</td><td><b>'+esc(r.k)+'</b><small>'+(TS==="tum"?ET[r.tur]+" · ":"")+esc(r.alt)+'</small></td>';
-    cols.forEach(function(c){var v=c.v(r);h+='<td class="'+kls(c,v)+'">'+fmt(c,v)+'</td>';});h+='</tr>';});
+    cols.forEach(function(c){var v=c.v(r);h+='<td class="'+kls(c,v)+'">'+fmt(c,v)+(v!=null&&(r.teyitsiz||[]).indexOf(c.id)>=0?"*":"")+'</td>';});h+='</tr>';});
   if(!L.length)h+='<tr><td colspan="'+(cols.length+2)+'" style="text-align:center;color:var(--mut)">Gösterilecek fon yok</td></tr>';
   document.getElementById("tb").innerHTML=h;
   document.getElementById("bilgi").textContent=L.length+" fon · sütun başlığına dokununca o sütuna göre sıralanır (tekrar dokununca ters) · satıra dokununca fon penceresi açılır · tabloyu sağa kaydır →";
@@ -184,6 +184,7 @@ function tablo(){
   if(cols.some(function(c){return c.id==="tumg"||c.id==="gecm";}))nt+="Tüm zaman: fonun elimizdeki en eski fiyatından bugüne getiri. Fiyat geçmişi en fazla yaklaşık 5 yıl geriye gidebildiği için daha eski fonlarda bu, fonun kuruluşundan değil kayıtlı geçmişin başından itibarendir; “Kayıtlı geçmiş” sütunu bunun kaç yıl olduğunu gösterir. ";
   if(needS)nt+="52 hf konum: fiyatın son 1 yılın en düşüğü (%0) ile en yükseği (%100) arasındaki yeri; Trend: haftalık EMA 13’ün EMA 39’un üstünde olup olmadığı. ";
   if(cols.some(function(c){return c.id==="vb"||c.id==="vs";}))nt+="Valör: alış ya da satış emrinden kaç iş günü sonra işlemin gerçekleştiği (Aynı gün, T+1, T+2…). Değer TEFAS’ın fon için bildirdiği bilgidir; fon yöneticisi değiştirebilir, tatil günleri ve emir saati sonucu etkileyebilir. “—” = TEFAS bu fon için valör bildirmemiş. ";
+  if(L.some(function(r){return (r.teyitsiz||[]).length;}))nt+="* işaretli getiri, TEFAS’ın bildirdiği değerle tam tutmadı; fonun fiyat geçmişinden hesaplandı (teyitsiz). ";
   nt+="Geçmiş getiri gelecek getirinin garantisi değildir; bu sayfa al/sat önerisi değildir, karar sana aittir.";
   document.getElementById("not").textContent=nt;}
 
